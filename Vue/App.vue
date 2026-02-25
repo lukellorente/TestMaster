@@ -9,12 +9,21 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, provide } from 'vue';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
+import 'theme-toggles/css/within.min.css';
 import './assets/styles.css';
 
+
 const isDark = ref(false);
+
+provide('isDark', isDark);
+provide('toggleTheme', () => {
+  isDark.value = !isDark.value;
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
+});
 
 onMounted(() => {
   const theme = localStorage.getItem('theme');
