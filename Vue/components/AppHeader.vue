@@ -1,4 +1,5 @@
 <template>
+
   <header>
     <div class="header-content">
       <router-link to="/">
@@ -12,7 +13,14 @@
           placeholder="buscar tests..."
           @keyup.enter="doSearch"
         />
-        <div class="theme-toggle" @click="toggleTheme" title="Cambiar tema">
+        <button
+          class="theme-toggle"
+          :class="{ 'theme-toggle--toggled': isDark }"
+          type="button"
+          @click="toggleTheme"
+          title="Cambiar tema"
+          aria-label="Cambiar tema"
+        >
           <span class="theme-toggle-sr">Cambiar tema</span>
           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="theme-toggle__within" height="1em" width="1em" viewBox="0 0 32 32" fill="currentColor">
             <clipPath id="theme-toggle__within__clip">
@@ -24,7 +32,7 @@
             <path class="theme-toggle__within__circle" d="M16 7.7c-4.6 0-8.2 3.7-8.2 8.2s3.6 8.4 8.2 8.4 8.2-3.7 8.2-8.2-3.6-8.4-8.2-8.4zm0 14.4c-3.4 0-6.1-2.9-6.1-6.2s2.7-6.1 6.1-6.1c3.4 0 6.1 2.9 6.1 6.2s-2.7 6.1-6.1 6.1z" />
             <path class="theme-toggle__within__inner" d="M16 9.5c-3.6 0-6.4 2.9-6.4 6.4s2.8 6.5 6.4 6.5 6.4-2.9 6.4-6.4-2.8-6.5-6.4-6.5z" />
           </svg>
-        </div>
+        </button>
 
         <template v-if="authStore.isLoggedIn">
           <router-link :to="`/profile/${authStore.userId}`" class="link">mi panel</router-link>
@@ -41,7 +49,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 
@@ -49,9 +57,8 @@ const authStore = useAuthStore();
 const router = useRouter();
 const searchQuery = ref('');
 
-const toggleTheme = () => {
-  window.toggleTheme?.();
-};
+const isDark = inject('isDark');
+const toggleTheme = inject('toggleTheme');
 
 const handleLogout = async () => {
   await authStore.logout();
