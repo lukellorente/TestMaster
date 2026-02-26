@@ -8,6 +8,7 @@ use App\Models\Test;
 use App\Models\TestAttempt;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -89,6 +90,70 @@ class ProfileController extends Controller
             'completed_tests' => $completedTests,
             'recent_activity' => $recentActivity,
             'is_own_profile' => $isOwnProfile,
+        ]);
+    }
+
+    /**
+     * Update user avatar
+     * 
+     * Permite al usuario subir una imagen de perfil.
+     * La imagen se almacena en storage/app/public/avatars y se devuelve la URL pública.
+     * Si el usuario ya tenía un avatar, se elimina el archivo anterior.
+     */
+    public function updateAvatar(Request $request): JsonResponse
+    {
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,jpg,png,gif,webp|max:2048', // Máximo 2MB
+        ]);
+
+        $user = $request->user();
+
+        // Eliminar avatar anterior si existe y es un archivo local
+        if ($user->avatar && str_starts_with($user->avatar, '/storage/avatars/')) {
+            $oldPath = str_replace('/storage/', '', $user->avatar);
+            if (Storage::disk('public')->exists($oldPath)) {
+                Storage::disk('public')->delete($oldPath);
+            }
+        }
+
+        // Guardar nueva imagen
+        $file = $request->file('avatar');
+        $filename = 'avatar_' . $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+        $path = $file->storeAs('avatars', $filename, 'public');
+
+        // Actualizar usuario con la nueva ruta del avatar
+        $user->update([
+            'avatar' => '/storage/' . $path,
+        ]);
+
+        return response()->json([
+            'message' => 'Avatar actualizado correctamente',
+            'avatar' => $user->avatar,
+        ]);
+    }
+
+    /**
+     * Delete user avatar
+     * 
+     * Elimina el avatar del usuario y restaura el avatar por defecto (inicial del nombre).
+     */
+    public function deleteAvatar(Request $request): JsonResponse
+    {
+        $user = $request->user();
+
+        // Eliminar archivo si existe
+        if ($user->avatar && str_starts_with($user->avatar, '/storage/avatars/')) {
+            $path = str_replace('/storage/', '', $user->avatar);
+            if (Storage::disk('public')->exists($path)) {
+                Storage::disk('public')->delete($path);
+            }
+        }
+
+        // Limpiar campo avatar
+        $user->update(['avatar' => null]);
+
+        return response()->json([
+            'message' => 'Avatar eliminado correctamente',
         ]);
     }
 }

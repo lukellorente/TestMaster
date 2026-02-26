@@ -32,6 +32,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
 
+    // Profile - Avatar
+    Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar']);
+    Route::delete('/profile/avatar', [ProfileController::class, 'deleteAvatar']);
+
     // Tests (authenticated)
     Route::post('/tests', [TestController::class, 'store']);
     Route::get('/tests/{id}/questions', [TestController::class, 'questions']);
