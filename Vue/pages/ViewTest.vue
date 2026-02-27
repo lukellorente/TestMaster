@@ -1,20 +1,18 @@
 <template>
-  <div v-if="loading" style="text-align: center; padding: 3rem; color: #666">
-    <i class="fa-solid fa-spinner fa-spin"></i> Cargando test...
-  </div>
-  <div v-else-if="error" style="text-align: center; padding: 3rem; color: #ef4444">
-    <i class="fa-solid fa-circle-exclamation"></i> {{ error }}
-  </div>
+  <BaseLoader v-if="loading" text="Cargando test..." size="large" />
+  <BaseAlert v-else-if="error" variant="error">{{ error }}</BaseAlert>
   <div v-else-if="test" style="max-width: 800px; margin: 0 auto">
     <!-- Categorías -->
     <div style="margin-bottom: 1rem">
-      <span
+      <BaseBadge
         v-for="cat in test.categories"
         :key="cat.id"
-        style="background: #f8f9fa; color: #667eea; padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.85rem; margin-right: 0.5rem"
+        variant="secondary"
+        :icon="cat.icon"
+        style="margin-right: 0.5rem"
       >
-        <i :class="cat.icon"></i> {{ cat.name }}
-      </span>
+        {{ cat.name }}
+      </BaseBadge>
     </div>
 
     <h1 style="font-size: 2rem; margin-bottom: 1rem">{{ test.title }}</h1>
@@ -24,37 +22,39 @@
     </p>
 
     <div style="margin-top: 1.5rem; color: #a0aec0; font-size: 0.9rem">
-      Creado por <strong style="color: #4a5568">{{ test.user?.name }}</strong>
+      Creado por 
+      <router-link v-if="test.user" :to="`/profile/${test.user.id}`" style="color: #4a5568; font-weight: 600; text-decoration: none">
+        {{ test.user?.name }}
+      </router-link>
       el {{ formatDateShort(test.created_at) }}
     </div>
 
     <!-- Info cards -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0">
-      <div class="info-card">
-        <div style="font-size: 2rem; margin-bottom: 0.5rem"><i class="fa-solid fa-file-lines"></i></div>
-        <div class="info-value">{{ test.questions_count }}</div>
-        <div class="info-label">Preguntas</div>
-      </div>
-
-      <div class="info-card">
-        <div style="font-size: 2rem; margin-bottom: 0.5rem"><i class="fa-solid fa-clock"></i></div>
-        <div class="info-value">{{ test.time_limit ? Math.round(test.time_limit / 60) + ' min' : 'Sin límite' }}</div>
-        <div class="info-label">Tiempo</div>
-      </div>
-
-      <div class="info-card">
-        <div style="font-size: 2rem; margin-bottom: 0.5rem">
-          <i :class="difficultyIcon"></i>
-        </div>
-        <div class="info-value">{{ difficultyText }}</div>
-        <div class="info-label">Dificultad</div>
-      </div>
-
-      <div class="info-card">
-        <div style="font-size: 2rem; margin-bottom: 0.5rem"><i class="fa-solid fa-users"></i></div>
-        <div class="info-value">{{ test.completed_attempts_count || 0 }}</div>
-        <div class="info-label">Personas</div>
-      </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0">
+      <StatsCard
+        :value="test.questions_count"
+        label="Preguntas"
+        icon="fa-solid fa-file-lines"
+        format="none"
+      />
+      <StatsCard
+        :value="test.time_limit ? Math.round(test.time_limit / 60) : '∞'"
+        label="Minutos"
+        icon="fa-solid fa-clock"
+        format="none"
+      />
+      <StatsCard
+        :value="difficultyText"
+        label="Dificultad"
+        :icon="difficultyIcon"
+        format="none"
+      />
+      <StatsCard
+        :value="test.completed_attempts_count || 0"
+        label="Intentos"
+        icon="fa-solid fa-users"
+        format="none"
+      />
     </div>
 
     <!-- Last attempt -->
@@ -103,17 +103,17 @@
     <div style="text-align: center; margin-bottom: 2rem">
       <template v-if="!authStore.isLoggedIn">
         <p style="color: #718096; margin-bottom: 1rem">Debes iniciar sesión para realizar este test</p>
-        <router-link to="/login" class="btn" style="padding: 1rem 3rem; font-size: 1.1rem">
+        <BaseButton to="/login" style="padding: 1rem 3rem; font-size: 1.1rem">
           Iniciar Sesión
-        </router-link>
+        </BaseButton>
       </template>
       <template v-else-if="test.max_attempts != -1 && (test.user_attempts || 0) >= test.max_attempts">
-        <div class="alert alert-info">Has alcanzado el número máximo de intentos para este test.</div>
+        <BaseAlert variant="info">Has alcanzado el número máximo de intentos para este test.</BaseAlert>
       </template>
       <template v-else>
-        <router-link :to="`/test/${test.id}/take`" class="btn" style="padding: 1rem 3rem; font-size: 1.1rem">
+        <BaseButton :to="`/test/${test.id}/take`" style="padding: 1rem 3rem; font-size: 1.1rem">
           Realizar Test
-        </router-link>
+        </BaseButton>
         <p v-if="test.user_attempts > 0" style="color: #718096; margin-top: 1rem; font-size: 0.9rem">
           Intento {{ test.user_attempts + 1 }} de {{ test.max_attempts == -1 ? '∞' : test.max_attempts }}
         </p>
@@ -121,18 +121,12 @@
     </div>
 
     <!-- Average stats -->
-    <div
+    <TestStats
       v-if="test.avg_score"
-      style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; text-align: center"
-    >
-      <h4 style="color: #4a5568; margin-bottom: 1rem">Estadísticas Generales</h4>
-      <div style="font-size: 2rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem">
-        {{ Number(test.avg_score).toFixed(1) }}%
-      </div>
-      <div style="color: #718096; font-size: 0.9rem">
-        Puntuación media de {{ test.completed_attempts_count }} persona{{ test.completed_attempts_count !== 1 ? 's' : '' }}
-      </div>
-    </div>
+      title="Estadísticas Generales"
+      :attempts-count="test.completed_attempts_count"
+      :avg-score="Number(test.avg_score)"
+    />
   </div>
 </template>
 
@@ -141,6 +135,12 @@ import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 import api from '../api/axios';
+import BaseButton from '../components/base/BaseButton.vue';
+import BaseLoader from '../components/base/BaseLoader.vue';
+import BaseAlert from '../components/base/BaseAlert.vue';
+import BaseBadge from '../components/base/BaseBadge.vue';
+import StatsCard from '../components/user/StatsCard.vue';
+import TestStats from '../components/test/TestStats.vue';
 
 const route = useRoute();
 const authStore = useAuthStore();
@@ -182,22 +182,6 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.info-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  text-align: center;
-}
-.info-value {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #667eea;
-}
-.info-label {
-  color: #718096;
-  font-size: 0.9rem;
-}
 .config-row {
   display: flex;
   justify-content: space-between;

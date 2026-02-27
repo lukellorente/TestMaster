@@ -1,7 +1,5 @@
 <template>
-  <div v-if="loading" style="text-align: center; padding: 3rem; color: #666">
-    <i class="fa-solid fa-spinner fa-spin"></i> Cargando perfil...
-  </div>
+  <BaseLoader v-if="loading" text="Cargando perfil..." size="large" />
 
   <main v-else-if="profile" style="max-width: 1000px; margin: 0 auto">
     <!-- Profile Header -->
@@ -151,30 +149,12 @@
     <!-- Tab: Statistics -->
     <div v-if="activeTab === 'stats'">
       <div class="stats-grid">
-        <div class="stat-box">
-          <div class="stat-value">{{ stats.tests_created }}</div>
-          <div class="stat-label">Tests Creados</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value">{{ stats.tests_completed }}</div>
-          <div class="stat-label">Tests Completados</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value">{{ stats.tests_passed }}</div>
-          <div class="stat-label">Aprobados</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value">{{ Number(stats.average_score || 0).toFixed(1) }}%</div>
-          <div class="stat-label">Promedio</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value">{{ stats.perfect_scores }}</div>
-          <div class="stat-label">Scores Perfectos</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value">{{ stats.current_streak }}</div>
-          <div class="stat-label">Racha Actual</div>
-        </div>
+        <StatsCard :value="stats.tests_created" label="Tests Creados" icon="fa-solid fa-file-lines" format="none" />
+        <StatsCard :value="stats.tests_completed" label="Tests Completados" icon="fa-solid fa-check-double" format="none" />
+        <StatsCard :value="stats.tests_passed" label="Aprobados" icon="fa-solid fa-trophy" icon-color="#10b981" format="none" />
+        <StatsCard :value="stats.average_score || 0" label="Promedio" icon="fa-solid fa-percent" format="percent" />
+        <StatsCard :value="stats.perfect_scores" label="Scores Perfectos" icon="fa-solid fa-star" icon-color="#f59e0b" format="none" />
+        <StatsCard :value="stats.current_streak" label="Racha Actual" icon="fa-solid fa-fire" icon-color="#ef4444" format="none" />
       </div>
 
       <!-- Progress bar -->
@@ -208,6 +188,8 @@
 import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import api from '../api/axios';
+import BaseLoader from '../components/base/BaseLoader.vue';
+import StatsCard from '../components/user/StatsCard.vue';
 
 const route = useRoute();
 const loading = ref(true);

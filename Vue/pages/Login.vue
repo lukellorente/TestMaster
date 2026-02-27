@@ -6,42 +6,35 @@
         Accede a tu cuenta de TestMaster
       </p>
 
-      <div v-if="error" class="alert alert-error">{{ error }}</div>
+      <BaseAlert v-if="error" variant="error" dismissible @dismiss="error = ''">
+        {{ error }}
+      </BaseAlert>
 
       <form @submit.prevent="handleLogin">
-        <div class="form-group">
-          <label class="form-label" for="email">Correo Electrónico</label>
-          <input
-            type="email"
-            id="email"
-            v-model="form.email"
-            class="form-input"
-            placeholder="tu@email.com"
-            required
-            autofocus
-          />
-        </div>
+        <BaseInput
+          v-model="form.email"
+          label="Correo Electrónico"
+          type="email"
+          placeholder="tu@email.com"
+          required
+          autofocus
+        />
 
-        <div class="form-group">
-          <label class="form-label" for="password">Contraseña</label>
-          <input
-            type="password"
-            id="password"
-            v-model="form.password"
-            class="form-input"
-            placeholder="••••••••"
-            required
-          />
-        </div>
+        <BaseInput
+          v-model="form.password"
+          label="Contraseña"
+          type="password"
+          placeholder="••••••••"
+          required
+        />
 
-        <button
+        <BaseButton
           type="submit"
-          class="btn"
+          :loading="submitting"
           style="width: 100%; padding: 0.75rem; margin-bottom: 1rem"
-          :disabled="submitting"
         >
           {{ submitting ? 'Iniciando...' : 'Iniciar Sesión' }}
-        </button>
+        </BaseButton>
       </form>
 
       <div style="text-align: center; padding-top: 1rem; border-top: 1px solid #e2e8f0">
@@ -75,6 +68,9 @@
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
+import BaseButton from '../components/base/BaseButton.vue';
+import BaseInput from '../components/base/BaseInput.vue';
+import BaseAlert from '../components/base/BaseAlert.vue';
 
 const authStore = useAuthStore();
 const router = useRouter();

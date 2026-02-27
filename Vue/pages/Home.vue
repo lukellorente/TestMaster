@@ -10,34 +10,23 @@
     </div>
 
     <!-- Filtros -->
-    <div class="filters">
-      <select v-model="filters.category">
-        <option value="">Todas las categorías</option>
-        <option v-for="cat in categories" :key="cat.id" :value="cat.id">
-          {{ cat.name }}
-        </option>
-      </select>
-
-      <select v-model="filters.sort">
-        <option value="recent">Más recientes</option>
-        <option value="views">Más vistos</option>
-        <option value="attempts">Más realizados</option>
-      </select>
-    </div>
+    <TestFilters
+      v-model:category="filters.category"
+      v-model:sort="filters.sort"
+      :categories="categories"
+    />
 
     <!-- Lista de tests -->
     <div class="tests-table-container">
-      <div v-if="loading" style="text-align: center; padding: 3rem; color: #666">
-        <i class="fa-solid fa-spinner fa-spin"></i> Cargando tests...
-      </div>
+      <BaseLoader v-if="loading" text="Cargando tests..." />
       <div
         v-else-if="tests.length === 0"
         style="text-align: center; padding: 3rem; color: #666; background: white; border-radius: 12px; border: 1px solid #e2e8f0"
       >
         <p>No hay tests disponibles aún.</p>
-        <router-link v-if="authStore.isLoggedIn" to="/create-test">
-          <button class="btn" style="margin-top: 1rem">Crear el Primer Test</button>
-        </router-link>
+        <BaseButton v-if="authStore.isLoggedIn" to="/create-test" style="margin-top: 1rem">
+          Crear el Primer Test
+        </BaseButton>
       </div>
       <table v-else class="tests-table">
         <thead>
@@ -53,7 +42,7 @@
             <td class="td-title">
               <router-link :to="`/test/${test.id}`" class="test-link">
                 {{ test.title }}
-                <span v-if="test.completed_attempts_count > 10" class="badge">popular</span>
+                <BaseBadge v-if="test.completed_attempts_count > 10" variant="popular">popular</BaseBadge>
               </router-link>
             </td>
             <td class="td-date">{{ formatDate(test.created_at) }}</td>
@@ -73,6 +62,10 @@ import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 import api from '../api/axios';
+import BaseButton from '../components/base/BaseButton.vue';
+import BaseLoader from '../components/base/BaseLoader.vue';
+import BaseBadge from '../components/base/BaseBadge.vue';
+import TestFilters from '../components/test/TestFilters.vue';
 
 const authStore = useAuthStore();
 const route = useRoute();

@@ -18,22 +18,22 @@
         </div>
 
         <div class="grid-2">
-          <div class="form-group">
-            <label class="form-label">Categoría</label>
-            <select v-model="form.category_id" class="form-input">
-              <option value="">Sin categoría</option>
-              <option v-for="cat in categories" :key="cat.id" :value="cat.id">{{ cat.name }}</option>
-            </select>
-          </div>
+          <BaseSelect
+            v-model="form.category_id"
+            label="Categoría"
+            :options="categories"
+            placeholder="Sin categoría"
+          />
 
-          <div class="form-group">
-            <label class="form-label">Dificultad</label>
-            <select v-model="form.difficulty" class="form-input">
-              <option value="easy">Fácil</option>
-              <option value="medium">Medio</option>
-              <option value="hard">Difícil</option>
-            </select>
-          </div>
+          <BaseSelect
+            v-model="form.difficulty"
+            label="Dificultad"
+            :options="[
+              { value: 'easy', label: 'Fácil' },
+              { value: 'medium', label: 'Medio' },
+              { value: 'hard', label: 'Difícil' }
+            ]"
+          />
         </div>
       </div>
 
@@ -138,25 +138,27 @@
         </div>
 
         <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-          <button type="button" class="btn" @click="addQuestion('multiple_choice')">+ Opción Múltiple</button>
-          <button type="button" class="btn" @click="addQuestion('true_false')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%)">+ Verdadero/Falso</button>
-          <button type="button" class="btn" @click="addQuestion('short_answer')" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%)">+ Respuesta Corta</button>
+          <BaseButton @click="addQuestion('multiple_choice')">+ Opción Múltiple</BaseButton>
+          <BaseButton variant="success" @click="addQuestion('true_false')">+ Verdadero/Falso</BaseButton>
+          <BaseButton variant="warning" @click="addQuestion('short_answer')">+ Respuesta Corta</BaseButton>
         </div>
         <p class="help-text" style="margin-top: 1rem">Añade al menos una pregunta para crear el test</p>
       </div>
 
       <!-- BOTONES DE ACCIÓN -->
       <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem">
-        <button type="submit" class="btn" style="padding: 1rem 2rem; background: #718096" :disabled="submitting" @click="submitStatus = 'draft'">
-          <i class="fa-solid fa-floppy-disk"></i> Guardar como Borrador
-        </button>
-        <button type="submit" class="btn" style="padding: 1rem 2rem" :disabled="submitting" @click="submitStatus = 'published'">
-          <i class="fa-solid fa-rocket"></i> Publicar Test
-        </button>
+        <BaseButton type="submit" variant="secondary" :loading="submitting" icon="fa-solid fa-floppy-disk" style="padding: 1rem 2rem" @click="submitStatus = 'draft'">
+          Guardar como Borrador
+        </BaseButton>
+        <BaseButton type="submit" :loading="submitting" icon="fa-solid fa-rocket" style="padding: 1rem 2rem" @click="submitStatus = 'published'">
+          Publicar Test
+        </BaseButton>
       </div>
 
       <div v-if="errors.length" style="margin-top: 1.5rem">
-        <div v-for="(e, i) in errors" :key="i" class="alert alert-error">{{ e }}</div>
+      <BaseAlert v-for="(e, i) in errors" :key="i" variant="error">
+        {{ e }}
+      </BaseAlert>
       </div>
     </form>
   </main>
@@ -166,6 +168,9 @@
 import { ref, reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import api from '../api/axios';
+import BaseButton from '../components/base/BaseButton.vue';
+import BaseAlert from '../components/base/BaseAlert.vue';
+import BaseSelect from '../components/base/BaseSelect.vue';
 
 const router = useRouter();
 const categories = ref([]);
