@@ -36,12 +36,12 @@
 
         <template v-if="authStore.isLoggedIn">
           <router-link :to="`/profile/${authStore.userId}`" class="link">mi panel</router-link>
-          <router-link to="/create-test" class="btn">crear test</router-link>
+          <BaseButton to="/create-test">crear test</BaseButton>
           <a href="#" class="link" @click.prevent="handleLogout">salir</a>
         </template>
         <template v-else>
           <router-link to="/login" class="link">iniciar sesión</router-link>
-          <router-link to="/register" class="btn">registrarse</router-link>
+          <BaseButton to="/register">registrarse</BaseButton>
         </template>
       </div>
     </div>
@@ -52,6 +52,7 @@
 import { ref, inject } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
+import BaseButton from './base/BaseButton.vue';
 
 const authStore = useAuthStore();
 const router = useRouter();

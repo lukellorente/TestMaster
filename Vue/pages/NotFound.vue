@@ -7,8 +7,12 @@
     <p style="font-size: 1.2rem; color: #718096; margin-bottom: 2rem">
       La página que buscas no existe o ha sido movida.
     </p>
-    <router-link to="/" class="btn" style="padding: 0.75rem 2rem; font-size: 1rem">
-      <i class="fa-solid fa-home"></i> Volver al Inicio
-    </router-link>
+    <BaseButton to="/" icon="fa-solid fa-home" style="padding: 0.75rem 2rem; font-size: 1rem">
+      Volver al Inicio
+    </BaseButton>
   </main>
 </template>
+
+<script setup>
+import BaseButton from '../components/base/BaseButton.vue';
+</script>

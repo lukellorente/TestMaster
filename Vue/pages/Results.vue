@@ -1,168 +1,89 @@
 <template>
-  <div v-if="loading" style="text-align: center; padding: 3rem; color: #666">
-    <i class="fa-solid fa-spinner fa-spin"></i> Cargando resultados...
-  </div>
+  <BaseLoader v-if="loading" text="Cargando resultados..." size="large" />
 
   <main v-else-if="attempt" style="max-width: 900px; margin: 0 auto">
     <!-- Score summary -->
     <div style="text-align: center; margin-bottom: 3rem">
-      <h1 style="font-size: 2rem; margin-bottom: 1rem">
+      <h1 style="font-size: 2rem; margin-bottom: 1.5rem">
         <template v-if="attempt.passed">¡Aprobado! <i class="fa-solid fa-champagne-glasses"></i></template>
         <template v-else>No Aprobado <i class="fa-solid fa-face-sad-tear"></i></template>
       </h1>
 
-      <div
-        :style="{
-          display: 'inline-block',
-          background: attempt.passed
-            ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
-            : 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)',
-          color: 'white',
-          padding: '2rem 3rem',
-          borderRadius: '16px',
-          marginBottom: '2rem',
-        }"
-      >
-        <div style="font-size: 4rem; font-weight: 700; margin-bottom: 0.5rem">
-          {{ Number(attempt.score).toFixed(1) }}%
-        </div>
-        <div style="font-size: 1.2rem; opacity: 0.9">
-          {{ attempt.points_earned }} de {{ attempt.total_points }} puntos
-        </div>
+      <ScoreCircle
+        :score="Number(attempt.score)"
+        :size="180"
+        :stroke-width="12"
+        :pass-threshold="attempt.test?.pass_score || 50"
+      />
+      
+      <div style="margin-top: 1rem; color: #718096">
+        {{ attempt.points_earned }} de {{ attempt.total_points }} puntos
       </div>
     </div>
 
     <!-- Stats grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem">
-      <div class="stat-card">
-        <div style="font-size: 2rem; margin-bottom: 0.5rem"><i class="fa-solid fa-check"></i></div>
-        <div style="font-size: 2rem; font-weight: 600; color: #10b981">{{ attempt.correct_answers }}</div>
-        <div style="color: #718096; font-size: 0.9rem">Correctas</div>
-      </div>
-      <div class="stat-card">
-        <div style="font-size: 2rem; margin-bottom: 0.5rem"><i class="fa-solid fa-xmark"></i></div>
-        <div style="font-size: 2rem; font-weight: 600; color: #ef4444">{{ attempt.incorrect_answers }}</div>
-        <div style="color: #718096; font-size: 0.9rem">Incorrectas</div>
-      </div>
-      <div v-if="attempt.unanswered > 0" class="stat-card">
-        <div style="font-size: 2rem; margin-bottom: 0.5rem"><i class="fa-regular fa-circle"></i></div>
-        <div style="font-size: 2rem; font-weight: 600; color: #a0aec0">{{ attempt.unanswered }}</div>
-        <div style="color: #718096; font-size: 0.9rem">Sin responder</div>
-      </div>
-      <div class="stat-card">
-        <div style="font-size: 2rem; margin-bottom: 0.5rem"><i class="fa-solid fa-clock"></i></div>
-        <div style="font-size: 2rem; font-weight: 600; color: #667eea">{{ formatTime(attempt.time_spent) }}</div>
-        <div style="color: #718096; font-size: 0.9rem">Tiempo</div>
-      </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 3rem">
+      <StatsCard
+        :value="attempt.correct_answers"
+        label="Correctas"
+        icon="fa-solid fa-check"
+        icon-color="#10b981"
+        format="none"
+      />
+      <StatsCard
+        :value="attempt.incorrect_answers"
+        label="Incorrectas"
+        icon="fa-solid fa-xmark"
+        icon-color="#ef4444"
+        format="none"
+      />
+      <StatsCard
+        v-if="attempt.unanswered > 0"
+        :value="attempt.unanswered"
+        label="Sin responder"
+        icon="fa-regular fa-circle"
+        icon-color="#a0aec0"
+        format="none"
+      />
+      <StatsCard
+        :value="attempt.time_spent"
+        label="Tiempo"
+        icon="fa-solid fa-clock"
+        icon-color="#667eea"
+        format="time"
+      />
     </div>
 
     <!-- Answer detail -->
     <template v-if="attempt.test && attempt.test.show_correct_answers">
       <h2 style="margin-bottom: 1.5rem">Detalle de Respuestas</h2>
 
-      <div
+      <QuestionResult
         v-for="(r, idx) in responses"
         :key="r.id"
-        :class="['result-card', r.is_correct ? 'correct' : 'incorrect']"
-      >
-        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem">
-          <span
-            :style="{
-              background: r.is_correct ? '#10b981' : '#ef4444',
-              color: 'white',
-              padding: '0.25rem 0.75rem',
-              borderRadius: '6px',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-            }"
-          >
-            Pregunta {{ idx + 1 }}
-          </span>
-          <span
-            :style="{ color: r.is_correct ? '#10b981' : '#ef4444', fontWeight: 600, fontSize: '1.1rem' }"
-          >
-            {{ r.is_correct ? '✓ Correcta' : '✗ Incorrecta' }}
-          </span>
-        </div>
-
-        <div style="font-size: 1.1rem; color: #1a202c; margin-bottom: 1.5rem" v-html="nl2br(r.question_text)"></div>
-
-        <!-- multiple_choice -->
-        <template v-if="r.type === 'multiple_choice'">
-          <div
-            v-for="opt in r.options"
-            :key="opt.id"
-            :style="optionStyle(r.given_answer, opt)"
-          >
-            <strong v-if="String(r.given_answer) === String(opt.id)" style="color: #667eea">Tu respuesta: </strong>
-            {{ opt.content }}
-            <span v-if="opt.is_correct && String(r.given_answer) !== String(opt.id)" style="color: #10b981; font-weight: 600">
-              &larr; Respuesta correcta
-            </span>
-          </div>
-        </template>
-
-        <!-- true_false -->
-        <template v-else-if="r.type === 'true_false'">
-          <div
-            :style="{
-              padding: '0.75rem 1rem',
-              border: '2px solid',
-              borderRadius: '8px',
-              marginBottom: '0.5rem',
-              background: r.is_correct ? '#d1fae5' : '#fee2e2',
-              borderColor: r.is_correct ? '#10b981' : '#ef4444',
-            }"
-          >
-            Tu respuesta: <strong>{{ r.given_answer === 'true' ? 'Verdadero' : 'Falso' }}</strong>
-          </div>
-        </template>
-
-        <!-- short_answer -->
-        <template v-else-if="r.type === 'short_answer'">
-          <div
-            :style="{
-              padding: '0.75rem 1rem',
-              border: '2px solid',
-              borderRadius: '8px',
-              marginBottom: '0.5rem',
-              background: r.is_correct ? '#d1fae5' : '#fee2e2',
-              borderColor: r.is_correct ? '#10b981' : '#ef4444',
-            }"
-          >
-            Tu respuesta: <strong>{{ r.given_answer }}</strong>
-          </div>
-          <div
-            v-if="!r.is_correct && r.options && r.options.length"
-            style="padding: 0.75rem 1rem; border: 2px solid #10b981; background: #d1fae5; border-radius: 8px"
-          >
-            Respuesta correcta: <strong>{{ r.options[0].content }}</strong>
-          </div>
-        </template>
-
-        <!-- Explanation -->
-        <div
-          v-if="attempt.test && attempt.test.show_explanations && r.explanation"
-          style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea"
-        >
-          <strong style="color: #667eea"><i class="fa-solid fa-lightbulb"></i> Explicación:</strong><br />
-          <span v-html="nl2br(r.explanation)"></span>
-        </div>
-      </div>
+        :number="idx + 1"
+        :content="r.question_text"
+        :is-correct="r.is_correct"
+        :answered="!!r.given_answer"
+        :user-answer-text="formatUserAnswer(r)"
+        :correct-answer-text="formatCorrectAnswer(r)"
+        :explanation="attempt.test.show_explanations ? r.explanation : ''"
+        :show-explanation="attempt.test.show_explanations"
+      />
     </template>
 
-    <div v-else class="alert alert-info">
+    <BaseAlert v-else variant="info">
       El creador del test ha desactivado la visualización de respuestas correctas.
-    </div>
+    </BaseAlert>
 
     <!-- Actions -->
     <div style="text-align: center; margin-top: 3rem">
-      <router-link :to="`/test/${attempt.test_id}`" class="btn" style="padding: 0.75rem 2rem; margin-right: 1rem">
+      <BaseButton :to="`/test/${attempt.test_id}`" style="padding: 0.75rem 2rem; margin-right: 1rem">
         Ver Información del Test
-      </router-link>
-      <router-link :to="`/test/${attempt.test_id}/take`" class="link" style="padding: 0.75rem 2rem">
+      </BaseButton>
+      <BaseButton :to="`/test/${attempt.test_id}/take`" variant="secondary" style="padding: 0.75rem 2rem">
         Volver a Intentar
-      </router-link>
+      </BaseButton>
     </div>
   </main>
 </template>
@@ -171,38 +92,45 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import api from '../api/axios';
+import BaseButton from '../components/base/BaseButton.vue';
+import BaseLoader from '../components/base/BaseLoader.vue';
+import BaseAlert from '../components/base/BaseAlert.vue';
+import ScoreCircle from '../components/results/ScoreCircle.vue';
+import QuestionResult from '../components/results/QuestionResult.vue';
+import StatsCard from '../components/user/StatsCard.vue';
 
 const route = useRoute();
 const loading = ref(true);
 const attempt = ref(null);
 const responses = ref([]);
 
-const nl2br = (s) => (s || '').replace(/\n/g, '<br>');
-
-const formatTime = (sec) => {
-  if (!sec) return '00:00';
-  const m = Math.floor(sec / 60);
-  const s = sec % 60;
-  return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+const formatUserAnswer = (r) => {
+  if (!r.given_answer) return '';
+  if (r.type === 'true_false') {
+    return r.given_answer === 'true' ? 'Verdadero' : 'Falso';
+  }
+  if (r.type === 'multiple_choice' && r.options) {
+    const opt = r.options.find(o => String(o.id) === String(r.given_answer));
+    return opt ? opt.content : r.given_answer;
+  }
+  return r.given_answer;
 };
 
-const optionStyle = (givenAnswer, opt) => {
-  const isUser = String(givenAnswer) === String(opt.id);
-  const isCorrect = !!opt.is_correct;
-  let bg = 'transparent';
-  let border = '#e2e8f0';
-
-  if (isUser && isCorrect) { bg = '#d1fae5'; border = '#10b981'; }
-  else if (isUser && !isCorrect) { bg = '#fee2e2'; border = '#ef4444'; }
-  else if (isCorrect) { bg = '#d1fae5'; border = '#10b981'; }
-
-  return {
-    padding: '0.75rem 1rem',
-    border: `2px solid ${border}`,
-    borderRadius: '8px',
-    marginBottom: '0.5rem',
-    background: bg,
-  };
+const formatCorrectAnswer = (r) => {
+  if (r.is_correct) return '';
+  if (r.type === 'true_false') {
+    // Find correct option
+    const correct = r.options?.find(o => o.is_correct);
+    return correct?.content === 'Verdadero' ? 'Verdadero' : 'Falso';
+  }
+  if (r.type === 'multiple_choice' && r.options) {
+    const correct = r.options.find(o => o.is_correct);
+    return correct ? correct.content : '';
+  }
+  if (r.type === 'short_answer' && r.options?.length) {
+    return r.options[0].content;
+  }
+  return '';
 };
 
 onMounted(async () => {
@@ -217,26 +145,3 @@ onMounted(async () => {
   }
 });
 </script>
-
-<style scoped>
-.stat-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  text-align: center;
-}
-.result-card {
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  margin-bottom: 1.5rem;
-  background: white;
-}
-.result-card.correct {
-  border-left: 4px solid #10b981;
-}
-.result-card.incorrect {
-  border-left: 4px solid #ef4444;
-}
-</style>

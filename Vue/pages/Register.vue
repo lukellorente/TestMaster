@@ -6,68 +6,55 @@
         Únete a TestMaster gratis
       </p>
 
-      <div v-if="error" class="alert alert-error">{{ error }}</div>
-      <div v-if="success" class="alert alert-success">{{ success }}</div>
+      <BaseAlert v-if="error" variant="error" dismissible @dismiss="error = ''">
+        {{ error }}
+      </BaseAlert>
+      <BaseAlert v-if="success" variant="success">
+        {{ success }}
+      </BaseAlert>
 
       <form @submit.prevent="handleRegister">
-        <div class="form-group">
-          <label class="form-label" for="name">Nombre Completo</label>
-          <input
-            type="text"
-            id="name"
-            v-model="form.name"
-            class="form-input"
-            placeholder="Juan Pérez"
-            required
-            autofocus
-          />
-        </div>
+        <BaseInput
+          v-model="form.name"
+          label="Nombre Completo"
+          type="text"
+          placeholder="Juan Pérez"
+          required
+          autofocus
+        />
 
-        <div class="form-group">
-          <label class="form-label" for="email">Correo Electrónico</label>
-          <input
-            type="email"
-            id="email"
-            v-model="form.email"
-            class="form-input"
-            placeholder="tu@email.com"
-            required
-          />
-        </div>
+        <BaseInput
+          v-model="form.email"
+          label="Correo Electrónico"
+          type="email"
+          placeholder="tu@email.com"
+          required
+        />
 
-        <div class="form-group">
-          <label class="form-label" for="password">Contraseña</label>
-          <input
-            type="password"
-            id="password"
-            v-model="form.password"
-            class="form-input"
-            placeholder="Mínimo 6 caracteres"
-            required
-          />
-          <small style="color: #718096; font-size: 0.85rem">Mínimo 6 caracteres</small>
-        </div>
+        <BaseInput
+          v-model="form.password"
+          label="Contraseña"
+          type="password"
+          placeholder="Mínimo 6 caracteres"
+          help="Mínimo 6 caracteres"
+          required
+        />
 
-        <div class="form-group">
-          <label class="form-label" for="password_confirmation">Confirmar Contraseña</label>
-          <input
-            type="password"
-            id="password_confirmation"
-            v-model="form.password_confirmation"
-            class="form-input"
-            placeholder="Repite tu contraseña"
-            required
-          />
-        </div>
+        <BaseInput
+          v-model="form.password_confirmation"
+          label="Confirmar Contraseña"
+          type="password"
+          placeholder="Repite tu contraseña"
+          required
+        />
 
-        <button
+        <BaseButton
           type="submit"
-          class="btn"
+          :loading="submitting"
           style="width: 100%; padding: 0.75rem; margin-bottom: 1rem"
-          :disabled="submitting"
         >
           {{ submitting ? 'Creando...' : 'Crear Cuenta' }}
-        </button>
+        </BaseButton>
       </form>
 
       <div style="text-align: center; padding-top: 1rem; border-top: 1px solid #e2e8f0">
@@ -86,6 +73,9 @@
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
+import BaseButton from '../components/base/BaseButton.vue';
+import BaseInput from '../components/base/BaseInput.vue';
+import BaseAlert from '../components/base/BaseAlert.vue';
 
 const authStore = useAuthStore();
 const router = useRouter();
