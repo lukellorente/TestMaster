@@ -27,17 +27,14 @@ TestMaster permite a los usuarios crear, resolver y administrar tests de diferen
 ## Características Principales
 
 - **Gestión de usuarios:** Registro, inicio de sesión, recuperación de contraseña, roles (admin, usuario), estadísticas individuales.
-- **Creación avanzada de tests:**
+- **Creación de tests:**
 	- Preguntas de opción múltiple, respuesta corta, ordenamiento, completar huecos, etc.
 	- Soporte para categorías y niveles de dificultad.
 	- Edición y clonación de tests.
 - **Intentos y resultados:**
-	- Los usuarios pueden realizar múltiples intentos.
+	- Los usuarios pueden realizar varios intentos.
 	- Visualización de resultados detallados y respuestas correctas/incorrectas.
 	- Estadísticas por test, usuario y grupo.
-- **Sistema de puntos y ranking:**
-	- Puntos por participación y aciertos.
-	- Ranking global y por grupo.
 - **Comunidades y grupos:**
 	- Creación y gestión de grupos de usuarios.
 	- Estadísticas y rankings por grupo.
@@ -118,8 +115,7 @@ Accede a [http://localhost:8000](http://localhost:8000) o según la configuraci�
 2. **Creación de tests:** Los administradores o usuarios autorizados crean tests y preguntas desde el panel.
 3. **Resolución de tests:** Los usuarios seleccionan un test, lo resuelven y envían sus respuestas.
 4. **Visualización de resultados:** El sistema muestra resultados detallados, respuestas correctas y estadísticas.
-5. **Ranking y puntos:** Los usuarios acumulan puntos y pueden ver su posición en el ranking global o de grupo.
-6. **Gestión de grupos:** Los usuarios pueden unirse o crear grupos/comunidades para competir o colaborar.
+5. **Gestión de grupos:** Los usuarios pueden unirse o crear grupos/comunidades para competir o colaborar.
 
 ## Ejemplos de Uso
 
@@ -134,7 +130,7 @@ Accede a [http://localhost:8000](http://localhost:8000) o según la configuraci�
 	4. Consulta tu resultado y repite si lo deseas.
 - **Ver estadísticas:**
 	1. Accede a tu perfil o al panel de grupo.
-	2. Visualiza tus puntos, intentos y posición en el ranking.
+	2. Visualiza tus intentos, medias, etc.
 
 ## Scripts Útiles
 
