@@ -4,21 +4,23 @@
       {{ label }}
       <span v-if="required" style="color: #ef4444">*</span>
     </label>
-    <input
-      v-if="type !== 'textarea'"
-      :id="inputId"
-      :type="type"
-      :value="modelValue"
-      :placeholder="placeholder"
-      :required="required"
-      :disabled="disabled"
-      :maxlength="maxlength"
-      :min="min"
-      :max="max"
-      class="form-input"
-      v-bind="$attrs"
-      @input="$emit('update:modelValue', $event.target.value)"
-    />
+    <div v-if="type !== 'textarea'" :class="['input-wrapper', { 'has-icon': icon }]">
+      <i v-if="icon" :class="icon" class="input-icon"></i>
+      <input
+        :id="inputId"
+        :type="type"
+        :value="modelValue"
+        :placeholder="placeholder"
+        :required="required"
+        :disabled="disabled"
+        :maxlength="maxlength"
+        :min="min"
+        :max="max"
+        class="form-input"
+        v-bind="$attrs"
+        @input="$emit('update:modelValue', $event.target.value)"
+      />
+    </div>
     <textarea
       v-else
       :id="inputId"
@@ -85,6 +87,10 @@ const props = defineProps({
     default: '',
   },
   error: {
+    type: String,
+    default: '',
+  },
+  icon: {
     type: String,
     default: '',
   },

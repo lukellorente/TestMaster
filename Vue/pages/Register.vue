@@ -1,10 +1,26 @@
 <template>
-  <div style="max-width: 500px; margin: 2rem auto">
-    <div style="background: white; padding: 2.5rem; border-radius: 12px; border: 1px solid #e2e8f0">
-      <h1 style="text-align: center; margin-bottom: 0.5rem; color: #1a202c">Crear Cuenta</h1>
-      <p style="text-align: center; color: #a0aec0; margin-bottom: 2rem">
+  <div class="auth-hero">
+    <div style="max-width: 520px; width: 100%; margin: 0 auto">
+      <div class="glass-card">
+    
+      <h1 style="text-align: center; margin-bottom: 0.25rem; color: #1a202c">Crear Cuenta</h1>
+      <p style="text-align: center; color: #a0aec0; margin-bottom: 1rem">
         Únete a TestMaster gratis
       </p>
+
+      <!-- Social Login -->
+      <div class="social-login">
+        <button type="button" class="btn-social btn-google">
+          <i class="fa-brands fa-google"></i>
+          Registrarse con Google
+        </button>
+        <button type="button" class="btn-social btn-github">
+          <i class="fa-brands fa-github"></i>
+          Registrarse con GitHub
+        </button>
+      </div>
+
+      <div class="auth-divider"><span>o</span></div>
 
       <BaseAlert v-if="error" variant="error" dismissible @dismiss="error = ''">
         {{ error }}
@@ -18,6 +34,7 @@
           v-model="form.name"
           label="Nombre Completo"
           type="text"
+          icon="fa-solid fa-user"
           placeholder="Juan Pérez"
           required
           autofocus
@@ -27,6 +44,7 @@
           v-model="form.email"
           label="Correo Electrónico"
           type="email"
+          icon="fa-solid fa-envelope"
           placeholder="tu@email.com"
           required
         />
@@ -35,6 +53,7 @@
           v-model="form.password"
           label="Contraseña"
           type="password"
+          icon="fa-solid fa-lock"
           placeholder="Mínimo 6 caracteres"
           help="Mínimo 6 caracteres"
           required
@@ -44,6 +63,7 @@
           v-model="form.password_confirmation"
           label="Confirmar Contraseña"
           type="password"
+          icon="fa-solid fa-lock"
           placeholder="Repite tu contraseña"
           required
         />
@@ -51,19 +71,20 @@
         <BaseButton
           type="submit"
           :loading="submitting"
-          style="width: 100%; padding: 0.75rem; margin-bottom: 1rem"
+          style="width: 100%; padding: 0.6rem; margin-bottom: 0.75rem"
         >
           {{ submitting ? 'Creando...' : 'Crear Cuenta' }}
         </BaseButton>
       </form>
 
-      <div style="text-align: center; padding-top: 1rem; border-top: 1px solid #e2e8f0">
-        <p style="color: #718096; font-size: 0.9rem">
+      <div style="text-align: center; padding-top: 0.75rem; border-top: 1px solid #e2e8f0">
+        <p style="color: #718096; font-size: 0.85rem">
           ¿Ya tienes cuenta?
           <router-link to="/login" style="color: #667eea; font-weight: 600; text-decoration: none">
             Inicia sesión aquí
           </router-link>
         </p>
+      </div>
       </div>
     </div>
   </div>
