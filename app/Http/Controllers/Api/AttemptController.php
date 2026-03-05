@@ -150,15 +150,15 @@ class AttemptController extends Controller
             }
 
             // Update user stats
-            $userStats = $user->stats;
-            if ($userStats) {
-                $userStats->tests_completed += 1;
-                $userStats->tests_passed += $passed ? 1 : 0;
-                $userStats->average_score = TestAttempt::where('user_id', $user->id)
-                    ->where('is_completed', true)
-                    ->avg('score');
-                $userStats->save();
-            }
+            $userStats = \App\Models\UserStat::firstOrCreate(['user_id' => $user->id]);
+            $userStats->tests_completed += 1;
+            $userStats->tests_passed += $passed ? 1 : 0;
+            $userStats->perfect_scores += ($score >= 100) ? 1 : 0;
+            $userStats->total_study_time += $timeSpent;
+            $userStats->average_score = TestAttempt::where('user_id', $user->id)
+                ->where('is_completed', true)
+                ->avg('score');
+            $userStats->save();
 
             // Update test stats
             $testStats = $test->stats;

@@ -56,21 +56,10 @@ return new class extends Migration
             $table->timestamp('created_at')->nullable();
         });
 
-        Schema::create('question_stats', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('question_id')->unique()->constrained()->cascadeOnDelete();
-            $table->unsignedInteger('times_answered')->default(0);
-            $table->unsignedInteger('times_correct')->default(0);
-            $table->unsignedInteger('times_incorrect')->default(0);
-            $table->decimal('difficulty_score', 5, 2)->default(0);
-            $table->unsignedInteger('average_time')->default(0);
-            $table->timestamp('updated_at')->nullable();
-        });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('question_stats');
         Schema::dropIfExists('question_order_items');
         Schema::dropIfExists('question_blanks');
         Schema::dropIfExists('question_options');

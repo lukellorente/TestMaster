@@ -11,7 +11,6 @@ class QuestionSeeder extends Seeder
     public function run(): void
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('question_stats')->truncate();
         DB::table('question_options')->truncate();
         DB::table('questions')->truncate();
         DB::table('test_categories')->truncate();
@@ -302,17 +301,6 @@ class QuestionSeeder extends Seeder
                 ]);
             }
 
-            if (isset($q['stats'])) {
-                DB::table('question_stats')->insert([
-                    'question_id' => $qId,
-                    'times_answered' => $q['stats']['times_answered'],
-                    'times_correct' => $q['stats']['times_correct'],
-                    'times_incorrect' => $q['stats']['times_incorrect'],
-                    'difficulty_score' => $q['stats']['difficulty_score'],
-                    'average_time' => $q['stats']['average_time'],
-                    'updated_at' => $now,
-                ]);
-            }
         }
     }
 }

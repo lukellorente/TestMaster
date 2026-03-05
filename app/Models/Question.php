@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Question extends Model
 {
@@ -32,11 +31,6 @@ class Question extends Model
     public function orderItems(): HasMany
     {
         return $this->hasMany(QuestionOrderItem::class);
-    }
-
-    public function stats(): HasOne
-    {
-        return $this->hasOne(QuestionStat::class);
     }
 
     public function responses(): HasMany

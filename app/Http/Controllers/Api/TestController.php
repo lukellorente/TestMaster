@@ -239,7 +239,8 @@ class TestController extends Controller
             TestStat::create(['test_id' => $test->id]);
 
             // Update user stats
-            $request->user()->stats()->increment('tests_created');
+            \App\Models\UserStat::firstOrCreate(['user_id' => $request->user()->id])
+                ->increment('tests_created');
 
             $test->load(['questions.options', 'categories']);
 
