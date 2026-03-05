@@ -1101,3 +1101,111 @@ body.dark-mode .auth-divider::before,
 body.dark-mode .auth-divider::after {
     background: #2d3748;
 }
+
+/* === DARK MODE: StatsCard component (ViewTest info cards, Profile stats, Results stats grid) === */
+body.dark-mode .stats-card {
+    background: #16213e !important;
+    border-color: #2d3748 !important;
+}
+
+body.dark-mode .stats-value {
+    color: #e2e8f0 !important;
+}
+
+/* === DARK MODE: BaseBadge secondary variant (ViewTest category tags) === */
+body.dark-mode .badge--secondary {
+    background: #2d3748 !important;
+    color: #e2e8f0 !important;
+}
+
+/* === DARK MODE: TestStats component (ViewTest Estadísticas Generales) === */
+body.dark-mode .test-stats {
+    background: #16213e !important;
+}
+
+body.dark-mode .stats-title {
+    color: #e2e8f0 !important;
+}
+
+/* === DARK MODE: TestInfo component (TakeTest) === */
+body.dark-mode .test-info {
+    background: #16213e !important;
+}
+
+body.dark-mode .test-info-title {
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .test-info-description {
+    color: #a0aec0 !important;
+}
+
+body.dark-mode .stat-item {
+    color: #a0aec0 !important;
+}
+
+/* === DARK MODE: QuestionCard (TakeTest question text) === */
+body.dark-mode .question-content {
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .question-points {
+    color: #a0aec0 !important;
+}
+
+/* === DARK MODE: Question answer options (TakeTest answer text) === */
+body.dark-mode .option-text {
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .option-marker {
+    background: #1a1a2e !important;
+    border-color: #4a5568 !important;
+    color: #a78bfa !important;
+}
+
+body.dark-mode .option-label:has(input:checked) .option-marker {
+    background: #667eea !important;
+    border-color: #667eea !important;
+    color: white !important;
+}
+
+/* === DARK MODE: QuestionResult component (Results answer detail) === */
+body.dark-mode .question-result {
+    background: #16213e !important;
+    border-color: #2d3748 !important;
+}
+
+body.dark-mode .result-content {
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .result-answer {
+    background: #1a1a2e !important;
+}
+
+body.dark-mode .answer-label {
+    color: #a0aec0 !important;
+}
+
+body.dark-mode .answer-value {
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .result-number {
+    color: #e2e8f0 !important;
+}
+
+/* === DARK MODE: ActivityFeed component (Profile activity tab) === */
+body.dark-mode .activity-feed {
+    background: #16213e !important;
+    border-color: #2d3748 !important;
+}
+
+body.dark-mode .activity-text {
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .activity-item:hover {
+    background: rgba(102, 126, 234, 0.1) !important;
+}
