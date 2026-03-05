@@ -108,7 +108,7 @@
             <i :class="a.type === 'test' ? 'fa-solid fa-file-lines' : 'fa-solid fa-circle-check'"></i>
           </div>
           <div style="flex: 1">
-            <div style="color: #1a202c; margin-bottom: 0.25rem">
+            <div style="margin-bottom: 0.25rem">
               <template v-if="a.type === 'test'">Creó el test <strong>{{ a.title }}</strong></template>
               <template v-else>Completó <strong>{{ a.title }}</strong></template>
             </div>
