@@ -7,6 +7,7 @@ use App\Models\UserStat;
 use App\Models\UserPoint;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,24 +18,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $testUser = User::updateOrCreate(
+            ['email' => 'test@example.com'],
+            [
+                'name' => 'Test User',
+                'password_hash' => Hash::make('password'),
+                'email_verified_at' => now(),
+            ]
+        );
 
-        $testUser = User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password_hash' => bcrypt('password'),
-        ]);
-        UserStat::create(['user_id' => $testUser->id]);
-        UserPoint::create(['user_id' => $testUser->id]);
+        UserStat::firstOrCreate(['user_id' => $testUser->id]);
+        UserPoint::firstOrCreate(['user_id' => $testUser->id]);
 
-        $adminUser = User::factory()->create([
-            'name' => 'Admin User',
-            'email' => 'admin@example.com',
-            'password_hash' => bcrypt('adminpassword'),
-            'role' => 'admin',
-        ]);
-        UserStat::create(['user_id' => $adminUser->id]);
-        UserPoint::create(['user_id' => $adminUser->id]);
+        $adminUser = User::updateOrCreate(
+            ['email' => 'admin@example.com'],
+            [
+                'name' => 'Admin User',
+                'password_hash' => Hash::make('adminpassword'),
+                'role' => 'admin',
+                'email_verified_at' => now(),
+            ]
+        );
+
+        UserStat::firstOrCreate(['user_id' => $adminUser->id]);
+        UserPoint::firstOrCreate(['user_id' => $adminUser->id]);
 
         // Ejecutar el seeder de preguntas y exámenes
         $this->call(QuestionSeeder::class);
