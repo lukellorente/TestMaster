@@ -183,18 +183,10 @@ class TestController extends Controller
                 if (is_array($content)) $content = '';
                 if (empty(trim($content))) continue;
 
-                // Log para depuración
-                if ($qData['type'] === 'multiple_choice') {
-                    \Log::info('Opciones recibidas para pregunta multiple_choice:', [
-                        'options' => $qData['options'] ?? null,
-                        'content' => $qData['content'] ?? null,
-                    ]);
-                }
-
                 $question = Question::create([
                     'test_id' => $test->id,
                     'type' => $qData['type'],
-                    'content' => $qData['content'],
+                    'content' => $content,
                     'explanation' => $qData['explanation'] ?? null,
                     'points' => $qData['points'] ?? 1,
                     'order_index' => $orderIndex++, 

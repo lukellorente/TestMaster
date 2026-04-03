@@ -15,6 +15,16 @@ fi
 
 chmod -R ugo+rw /.composer
 
+# Ensure Laravel writable directories exist and are writable.
+mkdir -p /var/www/html/storage/app/public/avatars \
+    /var/www/html/storage/framework/cache \
+    /var/www/html/storage/framework/sessions \
+    /var/www/html/storage/framework/views \
+    /var/www/html/bootstrap/cache || true
+
+chown -R sail:${WWWGROUP:-sail} /var/www/html/storage /var/www/html/bootstrap/cache 2>/dev/null || true
+chmod -R ug+rwX /var/www/html/storage /var/www/html/bootstrap/cache 2>/dev/null || true
+
 if [ $# -gt 0 ]; then
     if [ "$SUPERVISOR_PHP_USER" = "root" ]; then
         exec "$@"

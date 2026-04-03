@@ -8,6 +8,7 @@ use App\Models\Test;
 use App\Models\TestAttempt;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
@@ -107,19 +108,41 @@ class ProfileController extends Controller
         ]);
 
         $user = $request->user();
+        if (! $user) {
+            return response()->json(['message' => 'Unauthenticated.'], 401);
+        }
+
+        $disk = Storage::disk('public');
+
+        // Asegurar directorio de avatares
+        if (! $disk->exists('avatars')) {
+            $disk->makeDirectory('avatars');
+        }
 
         // Eliminar avatar anterior si existe y es un archivo local
         if ($user->avatar && str_starts_with($user->avatar, '/storage/avatars/')) {
             $oldPath = str_replace('/storage/', '', $user->avatar);
-            if (Storage::disk('public')->exists($oldPath)) {
-                Storage::disk('public')->delete($oldPath);
+            if ($disk->exists($oldPath)) {
+                $disk->delete($oldPath);
             }
         }
 
-        // Guardar nueva imagen
-        $file = $request->file('avatar');
-        $filename = 'avatar_' . $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
-        $path = $file->storeAs('avatars', $filename, 'public');
+        try {
+            // Guardar nueva imagen
+            $file = $request->file('avatar');
+            $filename = 'avatar_' . $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('avatars', $filename, 'public');
+        } catch (\Throwable $e) {
+            Log::error('Error uploading avatar', [
+                'user_id' => $user->id,
+                'error' => $e->getMessage(),
+                'exception' => $e,
+            ]);
+
+            return response()->json([
+                'message' => 'No se pudo guardar el avatar (revisa permisos de storage).',
+            ], 500);
+        }
 
         // Actualizar usuario con la nueva ruta del avatar
         $user->update([
