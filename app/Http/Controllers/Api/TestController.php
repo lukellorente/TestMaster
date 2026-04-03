@@ -121,6 +121,11 @@ class TestController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
+        $user = $request->user();
+        if (! $user) {
+            return response()->json(['message' => 'Unauthenticated.'], 401);
+        }
+
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
@@ -142,13 +147,13 @@ class TestController extends Controller
             'questions.*.points' => 'integer|min:1',
         ]);
 
-        return DB::transaction(function () use ($request) {
+        return DB::transaction(function () use ($request, $user) {
             $timeLimitSeconds = ($request->time_limit ?? 0) > 0
                 ? $request->time_limit * 60
                 : null;
 
             $test = Test::create([
-                'user_id' => $request->user()->id,
+                'user_id' => $user->id,
                 'title' => $request->title,
                 'description' => $request->description,
                 'is_public' => $request->boolean('is_public', true),
@@ -239,7 +244,7 @@ class TestController extends Controller
             TestStat::create(['test_id' => $test->id]);
 
             // Update user stats
-            \App\Models\UserStat::firstOrCreate(['user_id' => $request->user()->id])
+            \App\Models\UserStat::firstOrCreate(['user_id' => $user->id])
                 ->increment('tests_created');
 
             $test->load(['questions.options', 'categories']);
