@@ -63,18 +63,3 @@ watch(() => props.category, (val) => { localCategory.value = val; });
 watch(() => props.sort, (val) => { localSort.value = val; });
 </script>
 
-<style scoped>
-.filters {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-}
-
-.filters :deep(.form-group) {
-  margin-bottom: 0;
-}
-</style>
