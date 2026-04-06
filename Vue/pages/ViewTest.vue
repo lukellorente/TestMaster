@@ -218,6 +218,23 @@
           </template>
         </div>
 
+        <div v-if="isOwner" class="owner-card">
+          <h2 class="section-title">Gestionar test</h2>
+
+          <BaseAlert v-if="ownerError" variant="error">{{ ownerError }}</BaseAlert>
+
+          <div class="owner-actions">
+            <router-link :to="`/test/${test.id}/edit`" class="btn-action btn-action--primary">
+              <i class="fa-solid fa-pen"></i>
+              Editar test completo
+            </router-link>
+            <button class="btn-action btn-action--danger" :disabled="deletingOwner" @click="deleteTest">
+              <i class="fa-solid fa-trash"></i>
+              {{ deletingOwner ? 'Eliminando...' : 'Eliminar test' }}
+            </button>
+          </div>
+        </div>
+
         <!-- Estadísticas globales -->
         <div v-if="test.avg_score || test.completed_attempts_count" class="gstats-card">
           <h2 class="section-title">Estadísticas generales</h2>
@@ -244,18 +261,21 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 import api from '../api/axios';
 import BaseLoader from '../components/base/BaseLoader.vue';
 import BaseAlert from '../components/base/BaseAlert.vue';
 
 const route     = useRoute();
+const router    = useRouter();
 const authStore = useAuthStore();
 
 const test    = ref(null);
 const loading = ref(true);
 const error   = ref('');
+const deletingOwner = ref(false);
+const ownerError = ref('');
 
 // ─── Computed ─────────────────────────────────────────────────────────────────
 const attemptsExhausted = computed(() => {
@@ -270,6 +290,11 @@ const ctaHeading = computed(() => {
   return 'Realiza este test';
 });
 
+const isOwner = computed(() => {
+  if (!authStore.isLoggedIn || !test.value) return false;
+  return Number(authStore.userId) === Number(test.value.user_id);
+});
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const diffLabel = (d) =>
   ({ easy: 'Fácil', medium: 'Medio', hard: 'Difícil' }[d] ?? d);
@@ -279,6 +304,25 @@ const formatDate = (d) => {
   return new Date(d).toLocaleDateString('es-ES', {
     day: '2-digit', month: 'short', year: 'numeric',
   });
+};
+
+const deleteTest = async () => {
+  if (!test.value) return;
+  const ok = window.confirm('Esta accion eliminara el test y sus datos asociados. ¿Continuar?');
+  if (!ok) return;
+
+  ownerError.value = '';
+  deletingOwner.value = true;
+
+  try {
+    await api.delete(`/tests/${test.value.id}`);
+    await router.push('/');
+  } catch (err) {
+    ownerError.value = err.response?.data?.message || 'No se pudo eliminar el test.';
+    console.error(err);
+  } finally {
+    deletingOwner.value = false;
+  }
 };
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
@@ -684,6 +728,38 @@ onMounted(async () => {
   padding: 1.25rem 1.5rem;
 }
 
+.owner-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.owner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.btn-action--danger {
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  color: #c53030;
+}
+
+.btn-action--danger:hover {
+  background: #ffe6e6;
+  border-color: #fcb4b4;
+}
+
+.btn-action:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .gstats-list {
   display: flex;
   flex-direction: column;
@@ -715,6 +791,7 @@ body.dark-mode .test-hero,
 body.dark-mode .stat-chip,
 body.dark-mode .config-card,
 body.dark-mode .cta-card,
+body.dark-mode .owner-card,
 body.dark-mode .gstats-card {
   background: var(--tm-surface) !important;
   border-color: var(--tm-border) !important;
@@ -754,6 +831,12 @@ body.dark-mode .btn-action--ghost {
 
 body.dark-mode .btn-action--ghost:hover {
   background: var(--tm-hover);
+}
+
+body.dark-mode .btn-action--danger {
+  background: rgba(197, 48, 48, 0.1) !important;
+  border-color: rgba(197, 48, 48, 0.35) !important;
+  color: #fc8181 !important;
 }
 
 body.dark-mode .btn-action--primary {
@@ -823,5 +906,6 @@ body.dark-mode .val--no  { color: #4a5568 !important; }
   .prev-score {
     font-size: 1.75rem;
   }
+
 }
 </style>

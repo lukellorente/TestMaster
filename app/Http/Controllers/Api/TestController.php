@@ -8,6 +8,7 @@ use App\Models\Question;
 use App\Models\QuestionOption;
 use App\Models\TestStat;
 use App\Models\Category;
+use App\Models\UserStat;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -247,6 +248,250 @@ class TestController extends Controller
                     : 'Test guardado como borrador',
                 'test' => $test,
             ], 201);
+        });
+    }
+
+    /**
+     * Get editable test data (owner only)
+     */
+    public function edit(Request $request, int $id): JsonResponse
+    {
+        $user = $request->user();
+        if (! $user) {
+            return response()->json(['message' => 'Unauthenticated.'], 401);
+        }
+
+        $test = Test::with([
+            'categories:id',
+            'questions' => function ($q) {
+                $q->orderBy('order_index');
+            },
+            'questions.options' => function ($q) {
+                $q->orderBy('order_index');
+            },
+        ])->findOrFail($id);
+
+        if ((int) $test->user_id !== (int) $user->id) {
+            return response()->json([
+                'message' => 'No tienes permisos para editar este test.',
+            ], 403);
+        }
+
+        $data = $test->toArray();
+        $data['category_id'] = $test->categories->first()?->id;
+
+        return response()->json([
+            'test' => $data,
+        ]);
+    }
+
+    /**
+     * Update a test owned by the authenticated user
+     */
+    public function update(Request $request, int $id): JsonResponse
+    {
+        $user = $request->user();
+        if (! $user) {
+            return response()->json(['message' => 'Unauthenticated.'], 401);
+        }
+
+        $test = Test::with('categories:id')->findOrFail($id);
+
+        if ((int) $test->user_id !== (int) $user->id) {
+            return response()->json([
+                'message' => 'No tienes permisos para editar este test.',
+            ], 403);
+        }
+
+        $request->validate([
+            'title' => 'sometimes|required|string|max:255',
+            'description' => 'nullable|string',
+            'category_id' => 'nullable|exists:categories,id',
+            'difficulty' => 'sometimes|in:easy,medium,hard',
+            'time_limit' => 'nullable|integer|min:0',
+            'max_attempts' => 'sometimes|integer',
+            'pass_score' => 'sometimes|integer|min:0|max:100',
+            'is_public' => 'sometimes|boolean',
+            'shuffle_questions' => 'sometimes|boolean',
+            'shuffle_answers' => 'sometimes|boolean',
+            'show_correct_answers' => 'sometimes|boolean',
+            'show_explanations' => 'sometimes|boolean',
+            'status' => 'sometimes|in:draft,published,archived',
+            'questions' => 'sometimes|array|min:1',
+            'questions.*.type' => 'required_with:questions|in:multiple_choice,true_false,short_answer',
+            'questions.*.content' => 'required_with:questions|string',
+            'questions.*.explanation' => 'nullable|string',
+            'questions.*.points' => 'sometimes|integer|min:1',
+        ]);
+
+        return DB::transaction(function () use ($request, $test) {
+            $oldStatus = $test->status;
+            $newStatus = $request->has('status') ? $request->status : $test->status;
+
+            $test->fill([
+                'title' => $request->has('title') ? $request->title : $test->title,
+                'description' => $request->has('description') ? $request->description : $test->description,
+                'is_public' => $request->has('is_public') ? $request->boolean('is_public') : $test->is_public,
+                'time_limit' => $request->has('time_limit')
+                    ? (($request->time_limit ?? 0) > 0 ? $request->time_limit * 60 : null)
+                    : $test->time_limit,
+                'max_attempts' => $request->has('max_attempts') ? $request->max_attempts : $test->max_attempts,
+                'pass_score' => $request->has('pass_score') ? $request->pass_score : $test->pass_score,
+                'shuffle_questions' => $request->has('shuffle_questions')
+                    ? $request->boolean('shuffle_questions')
+                    : $test->shuffle_questions,
+                'shuffle_answers' => $request->has('shuffle_answers')
+                    ? $request->boolean('shuffle_answers')
+                    : $test->shuffle_answers,
+                'show_correct_answers' => $request->has('show_correct_answers')
+                    ? $request->boolean('show_correct_answers')
+                    : $test->show_correct_answers,
+                'show_explanations' => $request->has('show_explanations')
+                    ? $request->boolean('show_explanations')
+                    : $test->show_explanations,
+                'difficulty' => $request->has('difficulty') ? $request->difficulty : $test->difficulty,
+                'status' => $newStatus,
+            ]);
+
+            if ($newStatus === 'published' && $oldStatus !== 'published') {
+                $test->published_at = now();
+            } elseif ($newStatus !== 'published') {
+                $test->published_at = null;
+            }
+
+            $test->save();
+
+            if ($request->has('category_id')) {
+                $oldCategoryIds = $test->categories()->pluck('categories.id')->all();
+                $newCategoryIds = $request->category_id ? [(int) $request->category_id] : [];
+
+                $toDetach = array_values(array_diff($oldCategoryIds, $newCategoryIds));
+                $toAttach = array_values(array_diff($newCategoryIds, $oldCategoryIds));
+
+                if (! empty($toDetach)) {
+                    Category::whereIn('id', $toDetach)->decrement('tests_count');
+                }
+
+                if (! empty($toAttach)) {
+                    Category::whereIn('id', $toAttach)->increment('tests_count');
+                }
+
+                $test->categories()->sync($newCategoryIds);
+            }
+
+            if ($request->has('questions')) {
+                Question::where('test_id', $test->id)->delete();
+
+                $orderIndex = 1;
+                foreach ($request->questions as $qData) {
+                    $content = $qData['content'] ?? '';
+                    if (is_array($content)) {
+                        $content = '';
+                    }
+                    if (empty(trim($content))) {
+                        continue;
+                    }
+
+                    $question = Question::create([
+                        'test_id' => $test->id,
+                        'type' => $qData['type'],
+                        'content' => $content,
+                        'explanation' => $qData['explanation'] ?? null,
+                        'points' => $qData['points'] ?? 1,
+                        'order_index' => $orderIndex++,
+                    ]);
+
+                    if ($qData['type'] === 'multiple_choice') {
+                        foreach (($qData['options'] ?? []) as $idx => $opt) {
+                            $optionStr = is_array($opt) ? ($opt['content'] ?? '') : $opt;
+                            if (empty(trim($optionStr))) {
+                                continue;
+                            }
+
+                            QuestionOption::create([
+                                'question_id' => $question->id,
+                                'content' => $optionStr,
+                                'is_correct' => is_array($opt) ? ($opt['is_correct'] ?? false) : false,
+                                'order_index' => is_array($opt) ? ($opt['order_index'] ?? $idx) : $idx,
+                            ]);
+                        }
+                    } elseif ($qData['type'] === 'true_false') {
+                        $correct = $qData['correct'] ?? 'true';
+                        QuestionOption::create([
+                            'question_id' => $question->id,
+                            'content' => 'Verdadero',
+                            'is_correct' => $correct === 'true',
+                            'order_index' => 1,
+                        ]);
+                        QuestionOption::create([
+                            'question_id' => $question->id,
+                            'content' => 'Falso',
+                            'is_correct' => $correct === 'false',
+                            'order_index' => 2,
+                        ]);
+                    } elseif ($qData['type'] === 'short_answer') {
+                        $correctAnswer = $qData['correct_answer'] ?? '';
+                        if (is_array($correctAnswer)) {
+                            $correctAnswer = '';
+                        }
+                        $correctAnswer = trim($correctAnswer);
+
+                        if (! empty($correctAnswer)) {
+                            QuestionOption::create([
+                                'question_id' => $question->id,
+                                'content' => $correctAnswer,
+                                'is_correct' => true,
+                                'order_index' => 1,
+                            ]);
+                        }
+                    }
+                }
+            }
+
+            $test->load(['questions.options', 'categories']);
+
+            return response()->json([
+                'message' => 'Test actualizado correctamente',
+                'test' => $test,
+            ]);
+        });
+    }
+
+    /**
+     * Delete a test owned by the authenticated user
+     */
+    public function destroy(Request $request, int $id): JsonResponse
+    {
+        $user = $request->user();
+        if (! $user) {
+            return response()->json(['message' => 'Unauthenticated.'], 401);
+        }
+
+        $test = Test::with('categories:id')->findOrFail($id);
+
+        if ((int) $test->user_id !== (int) $user->id) {
+            return response()->json([
+                'message' => 'No tienes permisos para eliminar este test.',
+            ], 403);
+        }
+
+        return DB::transaction(function () use ($test, $user) {
+            $categoryIds = $test->categories()->pluck('categories.id')->all();
+
+            if (! empty($categoryIds)) {
+                Category::whereIn('id', $categoryIds)->decrement('tests_count');
+            }
+
+            $test->delete();
+
+            $userStat = UserStat::firstOrCreate(['user_id' => $user->id]);
+            if ($userStat->tests_created > 0) {
+                $userStat->decrement('tests_created');
+            }
+
+            return response()->json([
+                'message' => 'Test eliminado correctamente',
+            ]);
         });
     }
 

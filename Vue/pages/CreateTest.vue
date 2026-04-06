@@ -1,6 +1,6 @@
 <template>
   <main style="max-width: 1000px; margin: 0 auto">
-    <h1 style="font-size: 2rem; margin-bottom: 2rem">Crear Nuevo Test</h1>
+    <h1 style="font-size: 2rem; margin-bottom: 2rem">{{ isEditMode ? 'Editar Test' : 'Crear Nuevo Test' }}</h1>
 
     <form @submit.prevent="submitTest">
       <!-- INFORMACIÓN BÁSICA -->
@@ -142,16 +142,16 @@
           <BaseButton variant="success" @click="addQuestion('true_false')">+ Verdadero/Falso</BaseButton>
           <BaseButton variant="warning" @click="addQuestion('short_answer')">+ Respuesta Corta</BaseButton>
         </div>
-        <p class="help-text" style="margin-top: 1rem">Añade al menos una pregunta para crear el test</p>
+        <p class="help-text" style="margin-top: 1rem">Añade al menos una pregunta para guardar el test</p>
       </div>
 
       <!-- BOTONES DE ACCIÓN -->
       <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem">
         <BaseButton type="submit" variant="secondary" :loading="submitting" icon="fa-solid fa-floppy-disk" style="padding: 1rem 2rem" @click="submitStatus = 'draft'">
-          Guardar como Borrador
+          {{ isEditMode ? 'Guardar Cambios (Borrador)' : 'Guardar como Borrador' }}
         </BaseButton>
         <BaseButton type="submit" :loading="submitting" icon="fa-solid fa-rocket" style="padding: 1rem 2rem" @click="submitStatus = 'published'">
-          Publicar Test
+          {{ isEditMode ? 'Guardar y Publicar' : 'Publicar Test' }}
         </BaseButton>
       </div>
 
@@ -166,18 +166,21 @@
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import api from '../api/axios';
 import BaseButton from '../components/base/BaseButton.vue';
 import BaseAlert from '../components/base/BaseAlert.vue';
 import BaseSelect from '../components/base/BaseSelect.vue';
 
 const router = useRouter();
+const route = useRoute();
 const categories = ref([]);
 const submitting = ref(false);
 const submitStatus = ref('published');
 const errors = ref([]);
 let keyCounter = 0;
+const editingTestId = ref(route.params.id ? Number(route.params.id) : null);
+const isEditMode = ref(Boolean(editingTestId.value));
 
 const form = reactive({
   title: '',
@@ -228,9 +231,77 @@ onMounted(async () => {
   } catch (err) {
     console.error(err);
   }
-  // Add first question by default
-  addQuestion('multiple_choice');
+
+  if (isEditMode.value) {
+    await loadTestForEdit();
+  } else {
+    addQuestion('multiple_choice');
+  }
 });
+
+async function loadTestForEdit() {
+  errors.value = [];
+
+  try {
+    const { data } = await api.get(`/tests/${editingTestId.value}/edit`);
+    const t = data.test;
+
+    form.title = t.title ?? '';
+    form.description = t.description ?? '';
+    form.category_id = t.category_id ?? '';
+    form.difficulty = t.difficulty ?? 'medium';
+    form.time_limit = t.time_limit ? Math.round(t.time_limit / 60) : 0;
+    form.max_attempts = t.max_attempts ?? -1;
+    form.pass_score = t.pass_score ?? 70;
+    form.is_public = Boolean(t.is_public);
+    form.shuffle_questions = Boolean(t.shuffle_questions);
+    form.shuffle_answers = Boolean(t.shuffle_answers);
+    form.show_correct_answers = Boolean(t.show_correct_answers);
+    form.show_explanations = Boolean(t.show_explanations);
+
+    const mappedQuestions = (t.questions ?? []).map((q) => {
+      const mapped = {
+        _key: ++keyCounter,
+        type: q.type,
+        content: q.content ?? '',
+        explanation: q.explanation ?? '',
+        points: q.points ?? 1,
+      };
+
+      if (q.type === 'multiple_choice') {
+        const options = (q.options ?? []).map((opt) => ({ content: opt.content ?? '' }));
+        while (options.length < 2) {
+          options.push({ content: '' });
+        }
+
+        mapped.options = options;
+        const correctIdx = (q.options ?? []).findIndex((opt) => Boolean(opt.is_correct));
+        mapped.correctOption = correctIdx >= 0 ? correctIdx : 0;
+      } else if (q.type === 'true_false') {
+        const correct = (q.options ?? []).find((opt) => Boolean(opt.is_correct));
+        mapped.correct = correct?.content === 'Falso' ? 'false' : 'true';
+      } else if (q.type === 'short_answer') {
+        const correct = (q.options ?? []).find((opt) => Boolean(opt.is_correct));
+        mapped.correct_answer = correct?.content ?? '';
+      }
+
+      return mapped;
+    });
+
+    questions.value = mappedQuestions;
+    if (questions.value.length === 0) {
+      addQuestion('multiple_choice');
+    }
+  } catch (err) {
+    if (err.response?.status === 403) {
+      errors.value.push('No tienes permisos para editar este test.');
+    } else if (err.response?.status === 404) {
+      errors.value.push('El test no existe o fue eliminado.');
+    } else {
+      errors.value.push('No se pudo cargar el test para edición.');
+    }
+  }
+}
 
 async function submitTest() {
   errors.value = [];
@@ -247,7 +318,7 @@ async function submitTest() {
   // Build payload
   const payload = {
     ...form,
-    time_limit: form.time_limit ? form.time_limit * 60 : 0,
+    time_limit: form.time_limit ? form.time_limit : 0,
     status: submitStatus.value,
     questions: questions.value.map((q, idx) => {
       const base = {
@@ -279,7 +350,9 @@ async function submitTest() {
 
   submitting.value = true;
   try {
-    const { data } = await api.post('/tests', payload);
+    const { data } = isEditMode.value
+      ? await api.put(`/tests/${editingTestId.value}`, payload)
+      : await api.post('/tests', payload);
     router.push(`/test/${data.test.id}`);
   } catch (err) {
     if (err.response?.data?.errors) {

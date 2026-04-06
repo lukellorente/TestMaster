@@ -34,6 +34,12 @@ const routes = [
         component: CreateTest,
         meta: { requiresAuth: true },
     },
+    {
+        path: '/test/:id/edit',
+        name: 'edit-test',
+        component: CreateTest,
+        meta: { requiresAuth: true },
+    },
     { path: '/profile/:id', name: 'profile', component: Profile },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
 ];

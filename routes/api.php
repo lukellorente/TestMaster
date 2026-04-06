@@ -38,6 +38,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Tests (authenticated)
     Route::post('/tests', [TestController::class, 'store']);
+    Route::get('/tests/{id}/edit', [TestController::class, 'edit']);
+    Route::put('/tests/{id}', [TestController::class, 'update']);
+    Route::delete('/tests/{id}', [TestController::class, 'destroy']);
     Route::get('/tests/{id}/questions', [TestController::class, 'questions']);
 
     // Attempts
