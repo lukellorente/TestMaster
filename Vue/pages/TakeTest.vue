@@ -142,4 +142,15 @@ async function submitTest() {
   right: 2rem;
   z-index: 1000;
 }
+
+@media (max-width: 768px) {
+  .test-timer {
+    position: sticky;
+    top: 0.75rem;
+    right: auto;
+    margin: 0 auto 1rem;
+    width: 100%;
+    z-index: 1000;
+  }
+}
 </style>

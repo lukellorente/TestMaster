@@ -77,8 +77,8 @@
     </BaseAlert>
 
     <!-- Actions -->
-    <div style="text-align: center; margin-top: 3rem">
-      <BaseButton :to="`/test/${attempt.test_id}`" style="padding: 0.75rem 2rem; margin-right: 1rem">
+    <div class="results-actions">
+      <BaseButton :to="`/test/${attempt.test_id}`" style="padding: 0.75rem 2rem">
         Ver Información del Test
       </BaseButton>
       <BaseButton :to="`/test/${attempt.test_id}/take`" variant="secondary" style="padding: 0.75rem 2rem">
@@ -145,3 +145,25 @@ onMounted(async () => {
   }
 });
 </script>
+
+<style scoped>
+.results-actions {
+  text-align: center;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .results-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .results-actions :deep(.btn) {
+    width: 100%;
+  }
+}
+</style>

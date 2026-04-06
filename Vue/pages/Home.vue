@@ -4,85 +4,12 @@
     <!-- ═══════════════════════════════════════════════════
          HERO
     ═══════════════════════════════════════════════════ -->
-    <section class="hero">
-      <div class="hero-body">
-        <h1 class="hero-title">Pon a prueba lo que sabes</h1>
-        <p class="hero-sub">
-          Tests creados por la comunidad en programación, ciencias, historia y mucho más.
-          Realiza un test, comprueba tus resultados y mejora.
-        </p>
-        <div class="hero-actions">
-          <router-link v-if="authStore.isLoggedIn" to="/create-test" class="btn btn-primary">
-            <i class="fa-solid fa-plus"></i> Crear test
-          </router-link>
-          <router-link v-else to="/register" class="btn btn-primary">
-            <i class="fa-solid fa-rocket"></i> Empezar gratis
-          </router-link>
-          <router-link to="/login" v-if="!authStore.isLoggedIn" class="btn btn-ghost">
-            Iniciar sesión
-          </router-link>
-        </div>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat-chip">
-          <span class="stat-num">{{ stats.total_tests?.toLocaleString() ?? '—' }}</span>
-          <span class="stat-lbl">tests</span>
-        </div>
-        <div class="stat-chip">
-          <span class="stat-num">{{ stats.total_attempts?.toLocaleString() ?? '—' }}</span>
-          <span class="stat-lbl">intentos</span>
-        </div>
-        <div class="stat-chip">
-          <span class="stat-num">{{ stats.total_users?.toLocaleString() ?? '—' }}</span>
-          <span class="stat-lbl">usuarios</span>
-        </div>
-      </div>
-    </section>
+    <HomeHero :is-logged-in="authStore.isLoggedIn" :stats="stats" />
 
     <!-- ═══════════════════════════════════════════════════
          TEST DESTACADO (is_featured)
     ═══════════════════════════════════════════════════ -->
-    <section v-if="featuredTest" class="featured-wrap">
-      <p class="section-eyebrow">
-        <i class="fa-solid fa-star"></i> Destacado
-      </p>
-      <router-link :to="`/test/${featuredTest.id}`" class="featured-card">
-        <div class="featured-meta">
-          <div class="cat-row">
-            <span
-              v-for="cat in featuredTest.categories"
-              :key="cat.id"
-              class="cat-badge"
-            >{{ cat.name }}</span>
-            <span :class="['diff-badge', `diff-${featuredTest.difficulty}`]">
-              {{ diffLabel(featuredTest.difficulty) }}
-            </span>
-          </div>
-          <h2 class="featured-title">{{ featuredTest.title }}</h2>
-          <p v-if="featuredTest.description" class="featured-desc">
-            {{ truncate(featuredTest.description, 120) }}
-          </p>
-        </div>
-        <div class="featured-numbers">
-          <div class="feat-stat">
-            <span class="feat-n">{{ featuredTest.questions_count }}</span>
-            <span class="feat-l">preguntas</span>
-          </div>
-          <div class="feat-stat">
-            <span class="feat-n">{{ featuredTest.completed_attempts_count }}</span>
-            <span class="feat-l">intentos</span>
-          </div>
-          <div v-if="featuredTest.time_limit" class="feat-stat">
-            <span class="feat-n">{{ Math.round(featuredTest.time_limit / 60) }}</span>
-            <span class="feat-l">minutos</span>
-          </div>
-        </div>
-        <span class="featured-arrow">
-          <i class="fa-solid fa-arrow-right"></i>
-        </span>
-      </router-link>
-    </section>
+    <FeaturedTestCard v-if="featuredTest" :test="featuredTest" />
 
     <!-- ═══════════════════════════════════════════════════
          BARRA DE FILTROS
@@ -242,6 +169,8 @@ import { ref, reactive, onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 import api from '../api/axios';
+import HomeHero from '../components/home/HomeHero.vue';
+import FeaturedTestCard from '../components/home/FeaturedTestCard.vue';
 
 const authStore = useAuthStore();
 const route    = useRoute();
@@ -411,195 +340,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-/* ── Hero ────────────────────────────────────────────────────────────────── */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 2rem 2.25rem;
-  flex-wrap: wrap;
-}
-
-.hero-title {
-  font-size: 1.65rem;
-  font-weight: 600;
-  color: #1a202c;
-  margin-bottom: 0.5rem;
-}
-
-.hero-sub {
-  color: #718096;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  max-width: 440px;
-  margin-bottom: 1.25rem;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.hero-stats {
-  display: flex;
-  gap: 1rem;
-  flex-shrink: 0;
-  flex-wrap: wrap;
-}
-
-.stat-chip {
-  background: #f8f9fa;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 0.9rem 1.4rem;
-  text-align: center;
-  min-width: 100px;
-}
-
-.stat-num {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.stat-lbl {
-  display: block;
-  font-size: 0.8rem;
-  color: #a0aec0;
-  margin-top: 2px;
-}
-
-/* ── Botones ──────────────────────────────────────────────────────────────── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1.25rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  border: none;
-  transition: all 0.2s;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: #4a5568;
-  border: 1px solid #e2e8f0;
-}
-
-.btn-ghost:hover {
-  background: #f8f9fa;
-  border-color: #cbd5e0;
-}
-
-/* ── Sección destacado ────────────────────────────────────────────────────── */
-.section-eyebrow {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #667eea;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: 0.6rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.featured-card {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 1.5rem 2rem;
-  text-decoration: none;
-  transition: all 0.2s;
-  flex-wrap: wrap;
-}
-
-.featured-card:hover {
-  border-color: #667eea;
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.12);
-}
-
-.featured-meta {
-  flex: 1;
-  min-width: 200px;
-}
-
-.cat-row {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 0.6rem;
-}
-
-.featured-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #1a202c;
-  margin-bottom: 0.4rem;
-}
-
-.featured-desc {
-  font-size: 0.9rem;
-  color: #718096;
-  line-height: 1.55;
-}
-
-.featured-numbers {
-  display: flex;
-  gap: 2rem;
-  flex-shrink: 0;
-}
-
-.feat-stat {
-  text-align: center;
-}
-
-.feat-n {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1a202c;
-}
-
-.feat-l {
-  display: block;
-  font-size: 0.75rem;
-  color: #a0aec0;
-  margin-top: 2px;
-}
-
-.featured-arrow {
-  color: #667eea;
-  font-size: 1.1rem;
-  flex-shrink: 0;
 }
 
 /* ── Badges ───────────────────────────────────────────────────────────────── */
@@ -950,34 +690,21 @@ onMounted(() => {
 }
 
 /* ── Dark mode ────────────────────────────────────────────────────────────── */
-body.dark-mode .hero,
-body.dark-mode .featured-card,
 body.dark-mode .test-card,
 body.dark-mode .state-box {
   background: var(--tm-surface) !important;
   border-color: var(--tm-border) !important;
 }
 
-body.dark-mode .hero-title,
-body.dark-mode .featured-title,
 body.dark-mode .card-title,
 body.dark-mode .feat-n {
   color: var(--tm-text) !important;
 }
 
-body.dark-mode .hero-sub,
-body.dark-mode .featured-desc,
 body.dark-mode .card-desc,
-body.dark-mode .feat-l,
-body.dark-mode .stat-lbl,
 body.dark-mode .author-name,
 body.dark-mode .cstat {
   color: var(--tm-muted) !important;
-}
-
-body.dark-mode .stat-chip {
-  background: var(--tm-bg);
-  border-color: var(--tm-border);
 }
 
 body.dark-mode .search-input,
@@ -1006,14 +733,6 @@ body.dark-mode .card-footer {
   border-top-color: var(--tm-border);
 }
 
-body.dark-mode .btn-ghost {
-  color: var(--tm-muted);
-  border-color: var(--tm-border);
-}
-
-body.dark-mode .btn-ghost:hover {
-  background: var(--tm-hover);
-}
 
 body.dark-mode .page-btn {
   background: var(--tm-surface);
@@ -1023,35 +742,6 @@ body.dark-mode .page-btn {
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.5rem;
-  }
-
-  .hero-stats {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .stat-chip {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .featured-card {
-    flex-direction: column;
-    padding: 1.25rem;
-    gap: 1rem;
-  }
-
-  .featured-numbers {
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  .featured-arrow { display: none; }
-
   .filter-bar { flex-direction: column; align-items: stretch; }
 
   .search-wrap,
