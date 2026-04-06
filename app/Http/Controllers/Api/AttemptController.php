@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\DB;
 
 class AttemptController extends Controller
 {
+    private function canAttemptTest(Test $test, int $userId): bool
+    {
+        if ($test->is_public && $test->status === 'published') {
+            return true;
+        }
+
+        return (int) $test->user_id === (int) $userId;
+    }
+
     /**
      * Submit a test attempt
      */
@@ -28,6 +37,18 @@ class AttemptController extends Controller
         $user = $request->user();
         $testId = $request->test_id;
         $test = Test::findOrFail($testId);
+
+        if (! $this->canAttemptTest($test, (int) $user->id)) {
+            return response()->json([
+                'message' => 'Test no encontrado.',
+            ], 404);
+        }
+
+        if ($request->started_at > time()) {
+            return response()->json([
+                'message' => 'Marca de inicio inválida.',
+            ], 422);
+        }
 
         // Check max attempts
         $userAttempts = TestAttempt::where('user_id', $user->id)
@@ -201,10 +222,15 @@ class AttemptController extends Controller
         $responsesData = $responses->map(function ($response) use ($attempt) {
             $data = $response->toArray();
             if (in_array($response->question->type, ['multiple_choice', 'true_false', 'short_answer'])) {
-                $data['options'] = QuestionOption::where('question_id', $response->question_id)
-                    ->orderBy('order_index')
-                    ->get()
-                    ->toArray();
+                if ($attempt->test->show_correct_answers) {
+                    $data['options'] = QuestionOption::where('question_id', $response->question_id)
+                        ->orderBy('order_index')
+                        ->get()
+                        ->toArray();
+                } else {
+                    // Do not expose correct answer metadata when the test has it disabled.
+                    $data['options'] = [];
+                }
             }
             return $data;
         });

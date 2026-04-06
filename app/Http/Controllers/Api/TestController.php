@@ -15,6 +15,26 @@ use Illuminate\Support\Facades\DB;
 
 class TestController extends Controller
 {
+    private function canViewTest(Test $test): bool
+    {
+        if ($test->is_public && $test->status === 'published') {
+            return true;
+        }
+
+        $authUser = auth('sanctum')->user();
+        if (! $authUser) {
+            return false;
+        }
+
+        return (int) $authUser->id === (int) $test->user_id;
+    }
+
+    private function isOwner(Request $request, Test $test): bool
+    {
+        $user = $request->user();
+        return $user && (int) $user->id === (int) $test->user_id;
+    }
+
     /**
      * List public published tests (homepage)
      */
@@ -88,6 +108,12 @@ class TestController extends Controller
             }])
             ->findOrFail($id);
 
+        if (! $this->canViewTest($test)) {
+            return response()->json([
+                'message' => 'Test no encontrado.',
+            ], 404);
+        }
+
         // Average score
         $avgScore = $test->attempts()
             ->where('is_completed', true)
@@ -97,8 +123,9 @@ class TestController extends Controller
         $data['avg_score'] = $avgScore;
 
         // If user is authenticated, get their attempt info
-        if (auth('sanctum')->check()) {
-            $userId = auth('sanctum')->id();
+        $authUser = auth('sanctum')->user();
+        if ($authUser) {
+            $userId = $authUser->id;
             $data['user_attempts'] = $test->attempts()
                 ->where('user_id', $userId)
                 ->where('is_completed', true)
@@ -271,7 +298,7 @@ class TestController extends Controller
             },
         ])->findOrFail($id);
 
-        if ((int) $test->user_id !== (int) $user->id) {
+        if (! $this->isOwner($request, $test)) {
             return response()->json([
                 'message' => 'No tienes permisos para editar este test.',
             ], 403);
@@ -297,7 +324,7 @@ class TestController extends Controller
 
         $test = Test::with('categories:id')->findOrFail($id);
 
-        if ((int) $test->user_id !== (int) $user->id) {
+        if (! $this->isOwner($request, $test)) {
             return response()->json([
                 'message' => 'No tienes permisos para editar este test.',
             ], 403);
@@ -469,7 +496,7 @@ class TestController extends Controller
 
         $test = Test::with('categories:id')->findOrFail($id);
 
-        if ((int) $test->user_id !== (int) $user->id) {
+        if (! $this->isOwner($request, $test)) {
             return response()->json([
                 'message' => 'No tienes permisos para eliminar este test.',
             ], 403);
@@ -501,6 +528,12 @@ class TestController extends Controller
     public function questions(int $id): JsonResponse
     {
         $test = Test::findOrFail($id);
+
+        if (! $this->canViewTest($test)) {
+            return response()->json([
+                'message' => 'Test no encontrado.',
+            ], 404);
+        }
 
         $questionsQuery = Question::where('test_id', $id);
 

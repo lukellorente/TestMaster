@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 // Public routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/reset-password', [AuthController::class, 'resetPassword']);
 
 // Tests (public)
 Route::get('/tests', [TestController::class, 'index']);
@@ -31,6 +30,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // Auth
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
+    Route::post('/reset-password', [AuthController::class, 'resetPassword']);
 
     // Profile - Avatar
     Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar']);

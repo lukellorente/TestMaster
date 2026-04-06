@@ -18,6 +18,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $adminPassword = env('SEED_ADMIN_PASSWORD');
+        if (! $adminPassword) {
+            $adminPassword = bin2hex(random_bytes(12));
+            if ($this->command) {
+                $this->command->warn('SEED_ADMIN_PASSWORD no está definido. Password admin temporal: ' . $adminPassword);
+            }
+        }
+
         $testUser = User::updateOrCreate(
             ['email' => 'test@example.com'],
             [
@@ -34,7 +42,7 @@ class DatabaseSeeder extends Seeder
             ['email' => 'admin@example.com'],
             [
                 'name' => 'Admin User',
-                'password_hash' => Hash::make('adminpassword'),
+                'password_hash' => Hash::make($adminPassword),
                 'role' => 'admin',
                 'email_verified_at' => now(),
             ]

@@ -101,20 +101,28 @@ class AuthController extends Controller
      */
     public function resetPassword(Request $request): JsonResponse
     {
+        $user = $request->user();
+        if (! $user) {
+            return response()->json(['message' => 'Unauthenticated.'], 401);
+        }
+
         $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string|min:6',
+            'current_password' => 'required|string',
+            'password' => 'required|string|min:6|confirmed',
         ]);
 
-        $user = User::where('email', $request->email)->first();
-
-        if (!$user) {
-            return response()->json(['error' => 'Usuario no encontrado'], 404);
+        if (! Hash::check($request->current_password, $user->password_hash)) {
+            throw ValidationException::withMessages([
+                'current_password' => ['La contraseña actual es incorrecta.'],
+            ]);
         }
 
         $user->update([
             'password_hash' => Hash::make($request->password),
         ]);
+
+        // Revoke all existing tokens to force re-authentication on other devices.
+        $user->tokens()->delete();
 
         return response()->json([
             'message' => 'Contraseña actualizada correctamente',
