@@ -132,7 +132,7 @@
               </span>
             </div>
             <div v-if="test.user" class="card-author">
-              <div class="author-avatar">{{ test.user.name.charAt(0).toUpperCase() }}</div>
+              <UserAvatar :user="test.user" size="small" />
               <span class="author-name">{{ test.user.name }}</span>
             </div>
           </div>
@@ -171,6 +171,7 @@ import { useAuthStore } from '../stores/auth';
 import api from '../api/axios';
 import HomeHero from '../components/home/HomeHero.vue';
 import FeaturedTestCard from '../components/home/FeaturedTestCard.vue';
+import UserAvatar from '../components/user/UserAvatar.vue';
 
 const authStore = useAuthStore();
 const route    = useRoute();
@@ -628,19 +629,6 @@ onMounted(() => {
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
-}
-
-.author-avatar {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: white;
 }
 
 .author-name {

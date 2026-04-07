@@ -1,11 +1,12 @@
 <template>
   <div :class="['user-avatar', `avatar--${size}`]" :style="avatarStyle">
-    <template v-if="!imageUrl">{{ initial }}</template>
   </div>
 </template>
 
 <script setup>
 import { computed } from 'vue';
+
+const DEFAULT_AVATAR_URL = '/images/defaultpfp.jpg';
 
 const props = defineProps({
   user: {
@@ -27,16 +28,19 @@ const props = defineProps({
   },
 });
 
-const userName = computed(() => props.user?.name || props.name || '?');
-
-const initial = computed(() => {
-  return userName.value.charAt(0).toUpperCase();
-});
-
 const avatarUrl = computed(() => {
   if (props.imageUrl) return props.imageUrl;
-  if (props.user?.avatar_url) return `/uploads/avatars/${props.user.avatar_url}`;
-  return '';
+
+  const raw = props.user?.avatar || props.user?.avatar_url || '';
+  if (!raw) return DEFAULT_AVATAR_URL;
+
+  // Si viene como URL absoluta o ruta pública, úsala tal cual
+  if (typeof raw === 'string' && (raw.startsWith('http://') || raw.startsWith('https://') || raw.startsWith('/'))) {
+    return raw;
+  }
+
+  // Fallback: si solo llega el nombre de archivo, asumimos storage/app/public/avatars
+  return `/storage/avatars/${raw}`;
 });
 
 const avatarStyle = computed(() => {

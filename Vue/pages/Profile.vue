@@ -20,18 +20,16 @@
           >
             <div class="avatar">
               <img
-                v-if="avatarUrl"
                 :src="avatarUrl"
                 :alt="profile.user.name"
                 class="avatar-img"
               />
-              <span v-else>{{ initial }}</span>
             </div>
             <div v-if="profile.is_own_profile" class="avatar-edit-btn" title="Cambiar foto">
               <i class="fa-solid fa-camera"></i>
             </div>
             <button
-              v-if="profile.is_own_profile && avatarUrl"
+              v-if="profile.is_own_profile && hasCustomAvatar"
               class="avatar-delete-btn"
               @click.stop="deleteAvatar"
               title="Eliminar foto"
@@ -253,6 +251,8 @@ import { useRoute } from 'vue-router';
 import api from '../api/axios';
 import BaseLoader from '../components/base/BaseLoader.vue';
 
+const DEFAULT_AVATAR_URL = '/images/defaultpfp.jpg';
+
 const route     = useRoute();
 const DEFAULT_STATS = {
   tests_created: 0,
@@ -272,11 +272,8 @@ const uploadingAvatar = ref(false);
 // ─── Computed ─────────────────────────────────────────────────────────────────
 const stats = computed(() => profile.value?.stats ?? DEFAULT_STATS);
 
-const initial = computed(() =>
-  (profile.value?.user?.name ?? '?').charAt(0).toUpperCase()
-);
-
-const avatarUrl = computed(() => profile.value?.user?.avatar ?? null);
+const hasCustomAvatar = computed(() => Boolean(profile.value?.user?.avatar));
+const avatarUrl = computed(() => profile.value?.user?.avatar || DEFAULT_AVATAR_URL);
 
 const passRate = computed(() => {
   const s = stats.value;

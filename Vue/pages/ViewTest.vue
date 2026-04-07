@@ -36,9 +36,8 @@
           <p v-if="test.description" class="test-desc">{{ test.description }}</p>
 
           <div class="author-row">
-            <div class="author-avatar">
-              {{ test.user?.name?.charAt(0).toUpperCase() ?? '?' }}
-            </div>
+            <UserAvatar v-if="test.user" :user="test.user" size="small" />
+            <UserAvatar v-else name="?" size="small" />
             <span class="author-text">
               Creado por
               <router-link
@@ -266,6 +265,7 @@ import { useAuthStore } from '../stores/auth';
 import api from '../api/axios';
 import BaseLoader from '../components/base/BaseLoader.vue';
 import BaseAlert from '../components/base/BaseAlert.vue';
+import UserAvatar from '../components/user/UserAvatar.vue';
 
 const route     = useRoute();
 const router    = useRouter();
@@ -443,20 +443,6 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.author-avatar {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  font-weight: 600;
-  color: white;
-  flex-shrink: 0;
 }
 
 .author-text {

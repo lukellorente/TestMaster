@@ -181,17 +181,6 @@ class AttemptController extends Controller
                 ->avg('score');
             $userStats->save();
 
-            // Update test stats
-            $testStats = $test->stats;
-            if ($testStats) {
-                $testStats->attempts_count += 1;
-                $testStats->completions_count += 1;
-                $testStats->average_score = TestAttempt::where('test_id', $test->id)
-                    ->where('is_completed', true)
-                    ->avg('score');
-                $testStats->save();
-            }
-
             return response()->json([
                 'attempt_id' => $attempt->id,
                 'score' => round($score, 1),

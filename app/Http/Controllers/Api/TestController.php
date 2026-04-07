@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Test;
 use App\Models\Question;
 use App\Models\QuestionOption;
-use App\Models\TestStat;
 use App\Models\Category;
 use App\Models\UserStat;
 use Illuminate\Http\JsonResponse;
@@ -40,7 +39,7 @@ class TestController extends Controller
      */
     public function index(Request $request): JsonResponse
     {
-        $query = Test::with(['user:id,name', 'categories:id,name,icon'])
+        $query = Test::with(['user:id,name,avatar', 'categories:id,name,icon'])
             ->where('is_public', true)
             ->where('status', 'published')
             ->withCount('questions')
@@ -101,7 +100,7 @@ class TestController extends Controller
      */
     public function show(int $id): JsonResponse
     {
-        $test = Test::with(['user:id,name', 'categories:id,name,icon'])
+        $test = Test::with(['user:id,name,avatar', 'categories:id,name,icon'])
             ->withCount('questions')
             ->withCount(['attempts as completed_attempts_count' => function ($q) {
                 $q->where('is_completed', true);
@@ -259,9 +258,6 @@ class TestController extends Controller
                     }
                 }
             }
-
-            // Create test stats
-            TestStat::create(['test_id' => $test->id]);
 
             // Update user stats
             \App\Models\UserStat::firstOrCreate(['user_id' => $user->id])
