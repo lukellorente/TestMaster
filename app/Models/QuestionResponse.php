@@ -11,14 +11,15 @@ class QuestionResponse extends Model
 
     protected $fillable = [
         'attempt_id', 'question_id', 'given_answer',
-        'is_correct', 'points_earned', 'time_spent',
+        'is_correct', 'points_earned', 'time_spent', 'display_order',
     ];
 
     protected function casts(): array
     {
         return [
-            'given_answer' => 'array',
+            'given_answer' => 'string',
             'is_correct' => 'boolean',
+            'display_order' => 'integer',
         ];
     }
 

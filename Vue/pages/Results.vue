@@ -17,7 +17,11 @@
       />
       
       <div style="margin-top: 1rem; color: #718096">
-        {{ attempt.points_earned }} de {{ attempt.total_points }} puntos
+        {{ attempt.correct_answers }} de {{ totalQuestions }} respuestas correctas
+        <template v-if="showWeightedPoints">
+          <br />
+          {{ attempt.points_earned }} de {{ attempt.total_points }} puntos ponderados
+        </template>
       </div>
     </div>
 
@@ -55,24 +59,22 @@
     </div>
 
     <!-- Answer detail -->
-    <template v-if="attempt.test && attempt.test.show_correct_answers">
-      <h2 style="margin-bottom: 1.5rem">Detalle de Respuestas</h2>
+    <h2 style="margin-bottom: 1.5rem">Detalle de Respuestas</h2>
 
-      <QuestionResult
-        v-for="(r, idx) in responses"
-        :key="r.id"
-        :number="idx + 1"
-        :content="r.question_text"
-        :is-correct="r.is_correct"
-        :answered="!!r.given_answer"
-        :user-answer-text="formatUserAnswer(r)"
-        :correct-answer-text="formatCorrectAnswer(r)"
-        :explanation="attempt.test.show_explanations ? r.explanation : ''"
-        :show-explanation="attempt.test.show_explanations"
-      />
-    </template>
+    <QuestionResult
+      v-for="(r, idx) in responses"
+      :key="r.id"
+      :number="idx + 1"
+      :content="r.question_text"
+      :is-correct="r.is_correct"
+      :answered="r.answered"
+      :user-answer-text="getUserAnswerText(r)"
+      :correct-answer-text="getCorrectAnswerText(r)"
+      :explanation="attempt.test.show_explanations ? r.explanation : ''"
+      :show-explanation="attempt.test.show_explanations"
+    />
 
-    <BaseAlert v-else variant="info">
+    <BaseAlert v-if="attempt.test && !attempt.test.show_correct_answers" variant="info">
       El creador del test ha desactivado la visualización de respuestas correctas.
     </BaseAlert>
 
@@ -89,7 +91,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import api from '../api/axios';
 import BaseButton from '../components/base/BaseButton.vue';
@@ -104,33 +106,28 @@ const loading = ref(true);
 const attempt = ref(null);
 const responses = ref([]);
 
-const formatUserAnswer = (r) => {
-  if (!r.given_answer) return '';
-  if (r.type === 'true_false') {
-    return r.given_answer === 'true' ? 'Verdadero' : 'Falso';
-  }
-  if (r.type === 'multiple_choice' && r.options) {
-    const opt = r.options.find(o => String(o.id) === String(r.given_answer));
-    return opt ? opt.content : r.given_answer;
-  }
-  return r.given_answer;
-};
+const totalQuestions = computed(() => {
+  if (!attempt.value) return 0;
 
-const formatCorrectAnswer = (r) => {
-  if (r.is_correct) return '';
-  if (r.type === 'true_false') {
-    // Find correct option
-    const correct = r.options?.find(o => o.is_correct);
-    return correct?.content === 'Verdadero' ? 'Verdadero' : 'Falso';
+  return Number(attempt.value.correct_answers || 0)
+    + Number(attempt.value.incorrect_answers || 0)
+    + Number(attempt.value.unanswered || 0);
+});
+
+const showWeightedPoints = computed(() => {
+  if (!attempt.value) return false;
+
+  return Number(attempt.value.total_points || 0) !== totalQuestions.value;
+});
+
+const getUserAnswerText = (r) => r.given_answer_label || '';
+
+const getCorrectAnswerText = (r) => {
+  if (!attempt.value?.test?.show_correct_answers || r.is_correct) {
+    return '';
   }
-  if (r.type === 'multiple_choice' && r.options) {
-    const correct = r.options.find(o => o.is_correct);
-    return correct ? correct.content : '';
-  }
-  if (r.type === 'short_answer' && r.options?.length) {
-    return r.options[0].content;
-  }
-  return '';
+
+  return r.correct_answer_label || '';
 };
 
 onMounted(async () => {

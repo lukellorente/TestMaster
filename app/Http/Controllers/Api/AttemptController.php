@@ -14,6 +14,55 @@ use Illuminate\Support\Facades\DB;
 
 class AttemptController extends Controller
 {
+    private function encodeGivenAnswer(mixed $givenAnswer): ?string
+    {
+        if (is_null($givenAnswer)) {
+            return null;
+        }
+
+        return json_encode($givenAnswer, JSON_UNESCAPED_UNICODE);
+    }
+
+    private function decodeGivenAnswer(mixed $storedValue): mixed
+    {
+        if (is_null($storedValue)) {
+            return null;
+        }
+
+        if (is_array($storedValue) || is_bool($storedValue) || is_int($storedValue) || is_float($storedValue)) {
+            return $storedValue;
+        }
+
+        if (! is_string($storedValue)) {
+            return $storedValue;
+        }
+
+        $decoded = json_decode($storedValue, true);
+
+        if (json_last_error() === JSON_ERROR_NONE) {
+            return $decoded;
+        }
+
+        return $storedValue;
+    }
+
+    private function isAnsweredValue(mixed $value): bool
+    {
+        if (is_null($value)) {
+            return false;
+        }
+
+        if (is_string($value)) {
+            return trim($value) !== '';
+        }
+
+        if (is_array($value)) {
+            return count($value) > 0;
+        }
+
+        return true;
+    }
+
     private function canAttemptTest(Test $test, int $userId): bool
     {
         if ($test->is_public && $test->status === 'published') {
@@ -32,6 +81,8 @@ class AttemptController extends Controller
             'test_id' => 'required|exists:tests,id',
             'answers' => 'required|array',
             'started_at' => 'required|integer',
+            'question_order' => 'sometimes|array',
+            'question_order.*' => 'integer',
         ]);
 
         $user = $request->user();
@@ -62,8 +113,32 @@ class AttemptController extends Controller
             ], 422);
         }
 
-        // Get all questions
-        $questions = Question::where('test_id', $testId)->get();
+        // Build attempt question order from the client payload.
+        $questionsById = Question::where('test_id', $testId)->get()->keyBy('id');
+        $questionOrder = collect($request->input('question_order', []))
+            ->map(fn ($questionId) => (int) $questionId)
+            ->filter(fn ($questionId) => $questionId > 0)
+            ->values();
+
+        $orderedQuestions = collect();
+        $seenQuestionIds = [];
+
+        foreach ($questionOrder as $questionId) {
+            if (isset($seenQuestionIds[$questionId]) || ! $questionsById->has($questionId)) {
+                continue;
+            }
+
+            $orderedQuestions->push($questionsById->get($questionId));
+            $seenQuestionIds[$questionId] = true;
+        }
+
+        // Fallback for legacy clients or malformed order payloads.
+        foreach ($questionsById as $questionId => $question) {
+            if (! isset($seenQuestionIds[$questionId])) {
+                $orderedQuestions->push($question);
+            }
+        }
+
         $answers = $request->answers;
         $timeSpent = max(0, time() - $request->started_at);
 
@@ -75,18 +150,22 @@ class AttemptController extends Controller
         $totalPoints = 0;
         $responses = [];
 
-        foreach ($questions as $question) {
+        foreach ($orderedQuestions as $displayIndex => $question) {
             $totalPoints += $question->points;
-            $givenAnswer = $answers[$question->id] ?? null;
+            $givenAnswer = $answers[$question->id] ?? ($answers[(string) $question->id] ?? null);
             $isCorrect = false;
+            $displayOrder = $displayIndex + 1;
 
-            if (!$givenAnswer) {
+            $isUnanswered = ! $this->isAnsweredValue($givenAnswer);
+
+            if ($isUnanswered) {
                 $unanswered++;
                 $responses[] = [
                     'question_id' => $question->id,
                     'given_answer' => null,
                     'is_correct' => false,
                     'points_earned' => 0,
+                    'display_order' => $displayOrder,
                 ];
                 continue;
             }
@@ -126,9 +205,10 @@ class AttemptController extends Controller
 
             $responses[] = [
                 'question_id' => $question->id,
-                'given_answer' => is_array($givenAnswer) ? json_encode($givenAnswer) : (string) $givenAnswer,
+                'given_answer' => $this->encodeGivenAnswer($givenAnswer),
                 'is_correct' => $isCorrect,
                 'points_earned' => $isCorrect ? $question->points : 0,
+                'display_order' => $displayOrder,
             ];
         }
 
@@ -167,6 +247,7 @@ class AttemptController extends Controller
                     'given_answer' => $response['given_answer'],
                     'is_correct' => $response['is_correct'],
                     'points_earned' => $response['points_earned'],
+                    'display_order' => $response['display_order'],
                 ]);
             }
 
@@ -202,26 +283,74 @@ class AttemptController extends Controller
             ->where('user_id', $user->id)
             ->firstOrFail();
 
-        $responses = QuestionResponse::where('attempt_id', $attemptId)
-            ->with(['question:id,content,type,explanation,points,order_index'])
-            ->orderBy('id')
-            ->get();
+        $showCorrectAnswers = (bool) $attempt->test->show_correct_answers;
 
-        // Get options for each response
-        $responsesData = $responses->map(function ($response) use ($attempt) {
-            $data = $response->toArray();
-            if (in_array($response->question->type, ['multiple_choice', 'true_false', 'short_answer'])) {
-                if ($attempt->test->show_correct_answers) {
-                    $data['options'] = QuestionOption::where('question_id', $response->question_id)
-                        ->orderBy('order_index')
-                        ->get()
-                        ->toArray();
+        $responses = QuestionResponse::where('attempt_id', $attemptId)
+            ->with([
+                'question:id,content,type,explanation,points,order_index',
+                'question.options:id,question_id,content,is_correct,order_index',
+            ])
+            ->get()
+            ->sortBy(function ($response) {
+                if (! is_null($response->display_order)) {
+                    return (int) $response->display_order;
+                }
+
+                return (int) ($response->question->order_index ?? PHP_INT_MAX);
+            })
+            ->values();
+
+        $responsesData = $responses->map(function ($response) use ($showCorrectAnswers) {
+            $question = $response->question;
+            $questionType = $question?->type ?? null;
+            $options = $question?->options ?? collect();
+            $givenAnswerValue = $this->decodeGivenAnswer($response->given_answer);
+            $givenAnswerLabel = '';
+
+            if ($this->isAnsweredValue($givenAnswerValue)) {
+                if ($questionType === 'multiple_choice') {
+                    $selectedOption = $options->first(fn ($option) => (string) $option->id === (string) $givenAnswerValue);
+                    $givenAnswerLabel = $selectedOption?->content ?? 'Seleccion no disponible';
+                } elseif ($questionType === 'true_false') {
+                    if (is_bool($givenAnswerValue)) {
+                        $normalized = $givenAnswerValue ? 'true' : 'false';
+                    } else {
+                        $normalized = strtolower(trim((string) $givenAnswerValue));
+                    }
+
+                    if (in_array($normalized, ['true', 'verdadero', '1'], true)) {
+                        $givenAnswerLabel = 'Verdadero';
+                    } elseif (in_array($normalized, ['false', 'falso', '0'], true)) {
+                        $givenAnswerLabel = 'Falso';
+                    } else {
+                        $givenAnswerLabel = (string) $givenAnswerValue;
+                    }
                 } else {
-                    // Do not expose correct answer metadata when the test has it disabled.
-                    $data['options'] = [];
+                    $givenAnswerLabel = is_scalar($givenAnswerValue)
+                        ? (string) $givenAnswerValue
+                        : json_encode($givenAnswerValue, JSON_UNESCAPED_UNICODE);
                 }
             }
-            return $data;
+
+            $correctAnswerLabel = '';
+            if ($showCorrectAnswers && ! $response->is_correct) {
+                $correctOption = $options->first(fn ($option) => (bool) $option->is_correct);
+                $correctAnswerLabel = $correctOption?->content ?? '';
+            }
+
+            return [
+                'id' => $response->id,
+                'question_id' => $response->question_id,
+                'display_order' => $response->display_order,
+                'question_text' => $question?->content ?? '',
+                'type' => $questionType,
+                'explanation' => $question?->explanation ?? '',
+                'is_correct' => (bool) $response->is_correct,
+                'answered' => $this->isAnsweredValue($givenAnswerValue),
+                'given_answer' => $givenAnswerValue,
+                'given_answer_label' => $givenAnswerLabel,
+                'correct_answer_label' => $correctAnswerLabel,
+            ];
         });
 
         return response()->json([

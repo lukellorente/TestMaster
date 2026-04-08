@@ -125,6 +125,7 @@ async function submitTest() {
       test_id: route.params.id,
       answers,
       started_at: startedAt.value,
+      question_order: questions.value.map((q) => q.id),
     });
     router.push(`/results/${data.attempt_id}`);
   } catch (err) {
