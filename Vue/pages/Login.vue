@@ -47,18 +47,6 @@
           </p>
         </div>
 
-        <!-- Usuarios de prueba -->
-        <div
-          style="margin-top: 1rem; padding: 0.75rem; background: #f8f9fa; border-radius: 8px; border: 1px solid #e2e8f0">
-          <p style="font-size: 0.8rem; color: #4a5568; margin-bottom: 0.35rem; font-weight: 600">
-            <i class="fa-solid fa-wrench"></i> Usuarios de prueba:
-          </p>
-          <p style="font-size: 0.75rem; color: #718096; line-height: 1.6; margin: 0">
-            <strong>Estudiante:</strong> estudiante@example.com &nbsp;|&nbsp;
-            <strong>Admin:</strong> admin@example.com<br />
-            <em>Contraseña: password</em>
-          </p>
-        </div>
       </div>
     </div>
   </div>
