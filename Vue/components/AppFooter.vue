@@ -1,7 +1,7 @@
 <template>
   <footer>
     <p>
-      <img src="../assets/images/logo2.png" alt="TestMaster Logo" style="height: 80px; vertical-align: middle" />
+      <img src="/images/logo2.svg" alt="TestMaster Logo" style="height: 80px; vertical-align: middle" />
       &copy; {{ new Date().getFullYear() }}
     </p>
     <div class="footer-links">
