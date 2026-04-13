@@ -5,10 +5,10 @@
       &copy; {{ new Date().getFullYear() }}
     </p>
     <div class="footer-links">
-      <a href="#">ayuda</a>
-      <a href="#">privacidad</a>
-      <a href="#">términos</a>
-      <a href="#">contacto</a>
+      <a href="/help">Ayuda</a>
+      <a href="#">Privacidad</a>
+      <a href="#">Términos</a>
+      <a href="#">Contacto</a>
     </div>
   </footer>
 </template>
