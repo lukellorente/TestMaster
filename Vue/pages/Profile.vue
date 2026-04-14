@@ -251,7 +251,7 @@ import { useRoute } from 'vue-router';
 import api from '../api/axios';
 import BaseLoader from '../components/base/BaseLoader.vue';
 
-const DEFAULT_AVATAR_URL = '/images/defaultpfp.jpg';
+const DEFAULT_AVATAR_URL = '/images/defaultpfp.svg';
 
 const route     = useRoute();
 const DEFAULT_STATS = {

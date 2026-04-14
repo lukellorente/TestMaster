@@ -6,7 +6,7 @@
 <script setup>
 import { computed } from 'vue';
 
-const DEFAULT_AVATAR_URL = '/images/defaultpfp.jpg';
+const DEFAULT_AVATAR_URL = '/images/defaultpfp.svg';
 
 const props = defineProps({
   user: {

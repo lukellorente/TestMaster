@@ -1,14 +1,14 @@
 <template>
   <footer>
     <p>
-      <img src="../assets/images/logo2.png" alt="TestMaster Logo" style="height: 80px; vertical-align: middle" />
+      <img src="/images/logo2.svg" alt="TestMaster Logo" style="height: 80px; vertical-align: middle" />
       &copy; {{ new Date().getFullYear() }}
     </p>
     <div class="footer-links">
-      <a href="#">ayuda</a>
-      <a href="#">privacidad</a>
-      <a href="#">términos</a>
-      <a href="#">contacto</a>
+      <a href="/help">Ayuda</a>
+      <a href="#">Privacidad</a>
+      <a href="#">Términos</a>
+      <a href="#">Contacto</a>
     </div>
   </footer>
 </template>

@@ -9,6 +9,7 @@ import TakeTest from '../pages/TakeTest.vue';
 import Results from '../pages/Results.vue';
 import CreateTest from '../pages/CreateTest.vue';
 import Profile from '../pages/Profile.vue';
+import Help from '../pages/Help.vue';
 import NotFound from '../pages/NotFound.vue';
 
 const routes = [
@@ -41,6 +42,7 @@ const routes = [
         meta: { requiresAuth: true },
     },
     { path: '/profile/:id', name: 'profile', component: Profile },
+    { path: '/help', name: 'help', component: Help },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
 ];
 

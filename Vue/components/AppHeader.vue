@@ -2,7 +2,7 @@
   <header>
     <div class="header-content">
       <router-link to="/" class="header-brand" @click="closeMobileMenu">
-        <img src="../assets/images/logo.png" alt="TestMaster Logo" class="logo" />
+        <img src="/images/logo.svg" alt="TestMaster Logo" class="logo" />
       </router-link>
 
       <div class="header-actions">
