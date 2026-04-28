@@ -429,7 +429,7 @@ onUnmounted(() => {
   margin-right: -50vw;
   width: 100vw;
   margin-top: -2.5rem;
-  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 3.5rem 1.5rem 3rem;
 }
 
@@ -909,7 +909,7 @@ onUnmounted(() => {
 
 .privacy-footer-btn--primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  color: white !important;
 }
 
 .privacy-footer-btn--primary:hover {

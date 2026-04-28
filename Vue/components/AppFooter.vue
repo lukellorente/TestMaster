@@ -7,8 +7,8 @@
     <div class="footer-links">
       <a href="/help">Ayuda</a>
       <a href="/privacy">Privacidad</a>
-      <a href="#">Términos</a>
-      <a href="#">Contacto</a>
+      <a href="/terms">Términos</a>
+      <a href="/contact">Contacto</a>
     </div>
   </footer>
 </template>

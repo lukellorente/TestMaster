@@ -11,6 +11,8 @@ import CreateTest from '../pages/CreateTest.vue';
 import Profile from '../pages/Profile.vue';
 import Help from '../pages/Help.vue';
 import Privacy from '../pages/Privacy.vue';
+import Terms from '../pages/Terms.vue';
+import Contact from '../pages/Contact.vue';
 import NotFound from '../pages/NotFound.vue';
 
 const routes = [
@@ -45,6 +47,8 @@ const routes = [
     { path: '/profile/:id', name: 'profile', component: Profile },
     { path: '/help', name: 'help', component: Help },
     { path: '/privacy', name: 'privacy', component: Privacy }, 
+    { path: '/terms', name: 'terms', component: Terms },
+    { path: '/contact', name: 'contact', component: Contact },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
 ];
 
