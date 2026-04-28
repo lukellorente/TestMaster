@@ -50,13 +50,13 @@
 
         <div id="header-nav" class="header-nav" :class="{ 'is-open': mobileMenuOpen }">
           <template v-if="authStore.isLoggedIn">
-            <router-link :to="`/profile/${authStore.userId}`" class="link" @click="closeMobileMenu">mi panel</router-link>
-            <BaseButton to="/create-test" @click="closeMobileMenu">crear test</BaseButton>
-            <a href="#" class="link" @click.prevent="handleLogout">salir</a>
+            <router-link :to="`/profile/${authStore.userId}`" class="link" @click="closeMobileMenu">Mi Panel</router-link>
+            <BaseButton to="/create-test" @click="closeMobileMenu">Crear Test</BaseButton>
+            <a href="#" class="link" @click.prevent="handleLogout">Salir</a>
           </template>
           <template v-else>
-            <router-link to="/login" class="link" @click="closeMobileMenu">iniciar sesión</router-link>
-            <BaseButton to="/register" @click="closeMobileMenu">registrarse</BaseButton>
+            <router-link to="/login" class="link" @click="closeMobileMenu">Iniciar Sesión</router-link>
+            <BaseButton to="/register" @click="closeMobileMenu">Registrarse</BaseButton>
           </template>
         </div>
       </div>
