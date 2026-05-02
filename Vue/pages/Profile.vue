@@ -324,9 +324,9 @@ const syncStoredUserAvatar = (avatar) => {
 const timeAgo = (d) => {
   if (!d) return '';
   const diff = Math.floor((Date.now() - new Date(d)) / 1000);
-  if (diff < 60)     return 'hace un momento';
-  if (diff < 3600)   return `hace ${Math.floor(diff / 60)} min`;
-  if (diff < 86400)  return `hace ${Math.floor(diff / 3600)} h`;
+  if (diff < 60)     return 'Ahora mismo';
+  if (diff < 3540)   return `hace ${Math.floor(diff / 60)} min`;
+  if (diff < 86400)  return `hace ${Math.max(1, Math.round(diff / 3600))} h`;
   if (diff < 604800) return `hace ${Math.floor(diff / 86400)} días`;
   return formatDate(d);
 };
