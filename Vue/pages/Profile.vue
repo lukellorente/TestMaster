@@ -993,8 +993,19 @@ body.dark-mode .tab:hover {
   color: #dceaf0;
 }
 
+body.dark-mode .tab-count {
+  background: #122532;
+  color: #8aa0ac;
+  opacity: 1;
+}
+
 body.dark-mode .tab.active {
   color: white;
+}
+
+body.dark-mode .tab.active .tab-count {
+  background: #dceaf0;
+  color: #0f1b24;
 }
 
 body.dark-mode .act-item:hover {
