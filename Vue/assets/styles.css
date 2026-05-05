@@ -1050,6 +1050,24 @@ body.dark-mode .option-label:has(input:checked) .option-marker {
     color: white !important;
 }
 
+body.dark-mode .option-label:has(input:checked) {
+    background: var(--tm-surface-2) !important;
+    border-color: #667eea !important;
+}
+
+body.dark-mode .option-label:has(input:checked) .option-text {
+    color: var(--tm-text) !important;
+}
+
+body.dark-mode .option-label:hover:not(.option--correct):not(.option--incorrect) {
+    background: var(--tm-hover) !important;
+    border-color: #667eea !important;
+}
+
+body.dark-mode .option-label:hover:not(.option--correct):not(.option--incorrect) .option-text {
+    color: var(--tm-text) !important;
+}
+
 /* === DARK MODE: QuestionResult component (Results answer detail) === */
 body.dark-mode .question-result {
     background: var(--tm-surface) !important;
