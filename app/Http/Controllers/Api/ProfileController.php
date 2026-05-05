@@ -56,17 +56,17 @@ class ProfileController extends Controller
         $createdActivity = Test::where('user_id', $user->id)
             ->where('is_public', true)
             ->where('status', 'published')
-            ->select('id', 'title', 'created_at as date')
+            ->select('id', 'title', 'created_at')
             ->get()
-            ->map(fn($t) => ['type' => 'test', 'title' => $t->title, 'date' => $t->date, 'id' => $t->id]);
+            ->map(fn($t) => ['type' => 'test', 'title' => $t->title, 'date' => $t->created_at->toISOString(), 'id' => $t->id]);
 
         $attemptActivity = TestAttempt::where('user_id', $user->id)
             ->where('is_completed', true)
             ->whereHas('test', fn($q) => $q->where('is_public', true))
             ->with('test:id,title')
-            ->select('id', 'test_id', 'completed_at as date')
+            ->select('id', 'test_id', 'completed_at')
             ->get()
-            ->map(fn($a) => ['type' => 'attempt', 'title' => $a->test->title, 'date' => $a->date, 'id' => $a->id]);
+            ->map(fn($a) => ['type' => 'attempt', 'title' => $a->test->title, 'date' => $a->completed_at->toISOString(), 'id' => $a->id]);
 
         $recentActivity = $createdActivity->concat($attemptActivity)
             ->sortByDesc('date')

@@ -57,9 +57,9 @@ const formatTime = (dateStr) => {
   const now = new Date();
   const diff = Math.floor((now - date) / 1000);
   
-  if (diff < 60) return 'hace un momento';
-  if (diff < 3600) return `hace ${Math.floor(diff / 60)} min`;
-  if (diff < 86400) return `hace ${Math.floor(diff / 3600)} h`;
+  if (diff < 60) return 'Ahora mismo';
+  if (diff < 3540) return `hace ${Math.floor(diff / 60)} min`;
+  if (diff < 86400) return `hace ${Math.max(1, Math.round(diff / 3600))} h`;
   if (diff < 604800) return `hace ${Math.floor(diff / 86400)} d`;
   
   return date.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
