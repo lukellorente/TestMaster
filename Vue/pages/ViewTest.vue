@@ -217,7 +217,7 @@
           </template>
         </div>
 
-        <div v-if="isOwner" class="owner-card">
+        <div v-if="canManageTest" class="owner-card">
           <h2 class="section-title">Gestionar test</h2>
 
           <BaseAlert v-if="ownerError" variant="error">{{ ownerError }}</BaseAlert>
@@ -290,9 +290,16 @@ const ctaHeading = computed(() => {
   return 'Realiza este test';
 });
 
-const isOwner = computed(() => {
+const canManageTest = computed(() => {
   if (!authStore.isLoggedIn || !test.value) return false;
-  return Number(authStore.userId) === Number(test.value.user_id);
+
+  if (test.value.can_manage !== undefined && test.value.can_manage !== null) {
+    return !!test.value.can_manage;
+  }
+
+  const isOwner = Number(authStore.userId) === Number(test.value.user_id);
+  const isAdmin = authStore.userRole === 'admin' && authStore.user?.email === 'admin@example.com';
+  return isOwner || isAdmin;
 });
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

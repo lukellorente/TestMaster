@@ -8,6 +8,7 @@ use App\Models\Question;
 use App\Models\QuestionOption;
 use App\Models\Category;
 use App\Models\UserStat;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -25,13 +26,24 @@ class TestController extends Controller
             return false;
         }
 
+        if ($this->isAdminUser($authUser)) {
+            return true;
+        }
+
         return (int) $authUser->id === (int) $test->user_id;
     }
 
-    private function isOwner(Request $request, Test $test): bool
+    private function isAdminUser(?User $user): bool
     {
-        $user = $request->user();
-        return $user && (int) $user->id === (int) $test->user_id;
+        return $user
+            && $user->role === 'admin'
+            && $user->email === 'admin@example.com';
+    }
+
+    private function canManageTest(?User $user, Test $test): bool
+    {
+        return $user
+            && ((int) $user->id === (int) $test->user_id || $this->isAdminUser($user));
     }
 
     /**
@@ -123,6 +135,7 @@ class TestController extends Controller
 
         // If user is authenticated, get their attempt info
         $authUser = auth('sanctum')->user();
+        $data['can_manage'] = $this->canManageTest($authUser, $test);
         if ($authUser) {
             $userId = $authUser->id;
             $data['user_attempts'] = $test->attempts()
@@ -294,7 +307,7 @@ class TestController extends Controller
             },
         ])->findOrFail($id);
 
-        if (! $this->isOwner($request, $test)) {
+        if (! $this->canManageTest($user, $test)) {
             return response()->json([
                 'message' => 'No tienes permisos para editar este test.',
             ], 403);
@@ -320,7 +333,7 @@ class TestController extends Controller
 
         $test = Test::with('categories:id')->findOrFail($id);
 
-        if (! $this->isOwner($request, $test)) {
+        if (! $this->canManageTest($user, $test)) {
             return response()->json([
                 'message' => 'No tienes permisos para editar este test.',
             ], 403);
@@ -492,7 +505,7 @@ class TestController extends Controller
 
         $test = Test::with('categories:id')->findOrFail($id);
 
-        if (! $this->isOwner($request, $test)) {
+        if (! $this->canManageTest($user, $test)) {
             return response()->json([
                 'message' => 'No tienes permisos para eliminar este test.',
             ], 403);
