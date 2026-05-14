@@ -204,7 +204,8 @@ const diffOptions = [
 const sortOptions = [
   { value: 'recent',   label: 'Recientes' },
   { value: 'views',    label: 'Más vistos' },
-  { value: 'attempts', label: 'Más realizados' },
+  { value: 'longest',  label: 'Más largos' },
+  { value: 'shortest', label: 'Más cortos' },
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
