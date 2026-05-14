@@ -84,7 +84,8 @@ class TestController extends Controller
         $sort = $request->get('sort', 'recent');
         match ($sort) {
             'views' => $query->orderBy('views_count', 'desc'),
-            'attempts' => $query->orderBy('attempts_count', 'desc'),
+            // Order by the computed completed attempts count (withCount alias)
+            'attempts' => $query->orderBy('completed_attempts_count', 'desc'),
             'longest' => $query->orderBy('questions_count', 'desc')->orderBy('created_at', 'desc'),
             'shortest' => $query->orderBy('questions_count', 'asc')->orderBy('created_at', 'desc'),
             default => $query->orderBy('created_at', 'desc'),
