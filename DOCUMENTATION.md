@@ -876,7 +876,7 @@ Lista tests públicos y publicados con paginación.
 | `category_id` | int | Filtrar por categoría |
 | `difficulty` | string | Filtrar por dificultad (`easy`, `medium`, `hard`) |
 | `search` | string | Búsqueda en título y descripción |
-| `sort` | string | Ordenar: `recent` (defecto), `views`, `attempts` |
+| `sort` | string | Ordenar: `recent` (defecto), `views`, `longest`, `shortest` |
 | `per_page` | int | Elementos por página (defecto: 20) |
 
 **Respuesta:** Paginación estándar de Laravel (con `data`, `current_page`, `last_page`, `total`, etc.)
