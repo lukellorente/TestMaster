@@ -75,6 +75,14 @@ class AuthController extends Controller
             ]);
         }
 
+        // Solo se revela la suspensión a quien conoce la contraseña.
+        if ($user->isSuspended()) {
+            return response()->json([
+                'message' => 'Tu cuenta está suspendida. Escríbenos desde la página de contacto si crees que es un error.',
+                'suspended' => true,
+            ], 403);
+        }
+
         Auth::guard('web')->login($user);
         // Evita fijación de sesión.
         $request->session()->regenerate();

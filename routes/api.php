@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\AccountController;
+use App\Http\Controllers\Api\Admin\AdminCategoryController;
+use App\Http\Controllers\Api\Admin\AdminController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\TestController;
@@ -25,6 +27,7 @@ Route::middleware('throttle:auth')->group(function () {
 // Tests (public)
 Route::get('/tests', [TestController::class, 'index']);
 Route::get('/tests/stats', [TestController::class, 'stats']);
+Route::get('/tests/featured', [TestController::class, 'featured']);
 Route::get('/categories', [TestController::class, 'categories']);
 Route::get('/tests/{id}', [TestController::class, 'show'])->whereNumber('id');
 
@@ -52,10 +55,26 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/tests/{id}', [TestController::class, 'update'])->whereNumber('id');
     Route::delete('/tests/{id}', [TestController::class, 'destroy'])->whereNumber('id');
     Route::get('/tests/{id}/questions', [TestController::class, 'questions'])->whereNumber('id');
+    Route::post('/tests/{id}/unlock', [TestController::class, 'unlock'])->whereNumber('id')->middleware('throttle:unlock');
 
     // Mi progreso (privado)
     Route::get('/dashboard', [DashboardController::class, 'show']);
     Route::get('/dashboard/attempts', [DashboardController::class, 'attempts']);
+
+    // Administración
+    Route::prefix('admin')->middleware('admin')->group(function () {
+        Route::get('/metrics', [AdminController::class, 'metrics']);
+        Route::get('/tests', [AdminController::class, 'tests']);
+        Route::patch('/tests/{id}', [AdminController::class, 'updateTest'])->whereNumber('id');
+        Route::delete('/tests/{id}', [AdminController::class, 'destroyTest'])->whereNumber('id');
+        Route::get('/users', [AdminController::class, 'users']);
+        Route::patch('/users/{id}', [AdminController::class, 'updateUser'])->whereNumber('id');
+        Route::get('/categories', [AdminCategoryController::class, 'index']);
+        Route::post('/categories', [AdminCategoryController::class, 'store']);
+        Route::put('/categories/{id}', [AdminCategoryController::class, 'update'])->whereNumber('id');
+        Route::delete('/categories/{id}', [AdminCategoryController::class, 'destroy'])->whereNumber('id');
+        Route::get('/audit', [AdminController::class, 'audit']);
+    });
 
     // Attempts
     Route::post('/attempts/submit', [AttemptController::class, 'submit']);

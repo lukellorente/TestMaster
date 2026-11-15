@@ -21,6 +21,7 @@
             <div class="vt__tags">
               <span class="vt__cats">{{ categoryLabel }}</span>
               <span v-if="test.difficulty" :class="['pill', difficultyClass(test.difficulty)]">{{ difficultyLabel(test.difficulty) }}</span>
+              <span v-if="test.has_password" class="pill pill--neutral"><i class="fa-solid fa-lock" aria-hidden="true"></i> Con contraseña</span>
             </div>
             <h1 class="vt__title">{{ test.title }}</h1>
             <p v-if="test.description" class="vt__desc">{{ test.description }}</p>
@@ -107,6 +108,25 @@
               <router-link :to="{ path: '/register', query: { redirect: route.fullPath } }" class="btn btn--secondary btn--lg vt__full">Crear cuenta gratis</router-link>
             </template>
 
+            <!-- Test con contraseña aún sin desbloquear en esta sesión -->
+            <form v-else-if="test.locked" class="vt__unlock" novalidate @submit.prevent="unlock">
+              <p class="vt__note">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                El autor ha protegido este test con una contraseña.
+              </p>
+              <BaseInput
+                v-model="unlockPassword"
+                label="Contraseña del test"
+                type="password"
+                autocomplete="off"
+                :error="unlockError"
+                required
+              />
+              <button type="submit" class="btn btn--lg vt__full" :disabled="unlocking || !unlockPassword">
+                <i v-if="unlocking" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>Desbloquear
+              </button>
+            </form>
+
             <p v-else-if="attemptsExhausted" class="vt__note vt__note--box">
               Has usado los {{ test.max_attempts }} intentos que permite este test.
             </p>
@@ -121,7 +141,7 @@
             </template>
 
             <!-- El repaso no gasta intentos: se ofrece aunque se hayan agotado -->
-            <template v-if="authStore.isLoggedIn && test.pending_review_count > 0">
+            <template v-if="authStore.isLoggedIn && !test.locked && test.pending_review_count > 0">
               <router-link :to="`/test/${test.id}/review`" class="btn btn--secondary btn--lg vt__full">
                 <i class="fa-solid fa-rotate" aria-hidden="true"></i>
                 Repasar mis fallos ({{ test.pending_review_count }})
@@ -171,11 +191,34 @@ import UserAvatar from '../components/user/UserAvatar.vue';
 import { difficultyClass, difficultyLabel, penaltyLabel } from '../utils/tests';
 import ScoreChart from '../components/charts/ScoreChart.vue';
 import { useToast } from '../composables/useToast';
+import BaseInput from '../components/base/BaseInput.vue';
 
 const route = useRoute();
 const router = useRouter();
 const authStore = useAuthStore();
 const toast = useToast();
+
+// ─── Contraseña ──────────────────────────────────────────────────────────────
+const unlockPassword = ref('');
+const unlockError = ref('');
+const unlocking = ref(false);
+
+async function unlock() {
+  unlocking.value = true;
+  unlockError.value = '';
+  try {
+    await api.post(`/tests/${test.value.id}/unlock`, { password: unlockPassword.value });
+    test.value.locked = false;
+    unlockPassword.value = '';
+    toast.success('Test desbloqueado.');
+  } catch (err) {
+    unlockError.value = err.response?.status === 429
+      ? 'Demasiados intentos. Espera un minuto.'
+      : err.response?.data?.errors?.password?.[0] || 'No se ha podido comprobar la contraseña.';
+  } finally {
+    unlocking.value = false;
+  }
+}
 
 const test = ref(null);
 const loading = ref(true);
@@ -351,6 +394,16 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.vt__unlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vt__unlock .vt__note i {
+  margin-right: 6px;
 }
 
 .vt__tags {

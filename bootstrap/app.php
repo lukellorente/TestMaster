@@ -19,6 +19,13 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->statefulApi();
 
         $middleware->throttleApi('api');
+
+        // Una cuenta suspendida pierde el acceso aunque tenga la sesión abierta.
+        $middleware->appendToGroup('api', \App\Http\Middleware\EnsureAccountActive::class);
+
+        $middleware->alias([
+            'admin' => \App\Http\Middleware\EnsureAdmin::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

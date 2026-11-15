@@ -36,7 +36,18 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'last_login' => 'datetime',
             'privacy_accepted_at' => 'datetime',
+            'suspended_at' => 'datetime',
         ];
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin' && ! $this->isSuspended();
+    }
+
+    public function isSuspended(): bool
+    {
+        return $this->suspended_at !== null;
     }
 
     public function getAuthPassword(): string

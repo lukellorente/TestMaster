@@ -11,6 +11,8 @@ use App\Models\UserStat;
 use App\Models\User;
 use App\Questions\QuestionTypes;
 use App\Questions\ReviewQueue;
+use App\Support\TestAccess;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
@@ -21,33 +23,35 @@ class TestController extends Controller
 {
     private function canViewTest(Test $test): bool
     {
-        if ($test->is_public && $test->status === 'published') {
-            return true;
-        }
-
-        $authUser = auth('sanctum')->user();
-        if (! $authUser) {
-            return false;
-        }
-
-        if ($this->isAdminUser($authUser)) {
-            return true;
-        }
-
-        return (int) $authUser->id === (int) $test->user_id;
-    }
-
-    private function isAdminUser(?User $user): bool
-    {
-        return $user
-            && $user->role === 'admin'
-            && $user->email === 'admin@example.com';
+        return TestAccess::canView($test, auth('sanctum')->user());
     }
 
     private function canManageTest(?User $user, Test $test): bool
     {
-        return $user
-            && ((int) $user->id === (int) $test->user_id || $this->isAdminUser($user));
+        return TestAccess::canManage($test, $user);
+    }
+
+    /** Respuesta para un test con contraseña que aún no se ha desbloqueado en esta sesión. */
+    private function lockedResponse(): JsonResponse
+    {
+        return response()->json([
+            'message' => 'Este test está protegido con contraseña.',
+            'locked' => true,
+        ], 423);
+    }
+
+    /**
+     * Contraseña desde el editor: ausente = no cambia; null o '' = se quita; texto = se pone.
+     */
+    private function passwordFromRequest(Request $request, ?Test $test = null): ?string
+    {
+        if (! $request->has('password')) {
+            return $test?->getAttributes()['password'] ?? null;
+        }
+
+        $plain = (string) $request->input('password', '');
+
+        return $plain === '' ? null : Hash::make($plain);
     }
 
     /**
@@ -61,7 +65,8 @@ class TestController extends Controller
             ->withCount('questions')
             ->withCount(['attempts as completed_attempts_count' => function ($q) {
                 $q->completedExams();
-            }]);
+            }])
+            ->addSelect(DB::raw('(tests.password IS NOT NULL) as has_password'));
 
         // Filter by category
         if ($request->has('category_id')) {
@@ -97,6 +102,25 @@ class TestController extends Controller
 
         $perPage = min(max((int) $request->get('per_page', 20), 1), 50);
         $tests = $query->paginate($perPage);
+
+        return response()->json($tests);
+    }
+
+    /**
+     * Tests destacados por la administración, el más reciente primero.
+     */
+    public function featured(): JsonResponse
+    {
+        $tests = Test::with(['user:id,name,avatar', 'categories:id,name,icon'])
+            ->where('is_featured', true)
+            ->where('is_public', true)
+            ->where('status', 'published')
+            ->withCount('questions')
+            ->withCount(['attempts as completed_attempts_count' => fn ($q) => $q->completedExams()])
+            ->addSelect(DB::raw('(tests.password IS NOT NULL) as has_password'))
+            ->orderByDesc('featured_at')
+            ->limit(6)
+            ->get();
 
         return response()->json($tests);
     }
@@ -144,6 +168,8 @@ class TestController extends Controller
         // If user is authenticated, get their attempt info
         $authUser = auth('sanctum')->user();
         $data['can_manage'] = $this->canManageTest($authUser, $test);
+        $data['has_password'] = $test->hasPassword();
+        $data['locked'] = TestAccess::isLocked($test, $authUser, request()->hasSession() ? request()->session() : null);
         if ($authUser) {
             $userId = $authUser->id;
             $data['user_attempts'] = $test->attempts()
@@ -209,6 +235,7 @@ class TestController extends Controller
             'status' => 'in:draft,published',
             'questions' => 'required|array|min:1',
             'wrong_penalty' => 'numeric|min:0|max:1',
+            'password' => 'nullable|string|min:4|max:100',
             'questions.*.type' => ['required', Rule::in(QuestionTypes::keys())],
             'questions.*.content' => 'required|string',
             'questions.*.explanation' => 'nullable|string',
@@ -231,6 +258,7 @@ class TestController extends Controller
                 'max_attempts' => $request->get('max_attempts', -1),
                 'pass_score' => $request->get('pass_score', 70),
                 'wrong_penalty' => (float) $request->get('wrong_penalty', 0),
+                'password' => $this->passwordFromRequest($request),
                 'shuffle_questions' => $request->boolean('shuffle_questions'),
                 'shuffle_answers' => $request->boolean('shuffle_answers'),
                 'show_correct_answers' => $request->boolean('show_correct_answers', true),
@@ -295,6 +323,7 @@ class TestController extends Controller
 
         $data = $test->toArray();
         $data['category_id'] = $test->categories->first()?->id;
+        $data['has_password'] = $test->hasPassword();
 
         return response()->json([
             'test' => $data,
@@ -336,6 +365,7 @@ class TestController extends Controller
             'status' => 'sometimes|in:draft,published,archived',
             'questions' => 'sometimes|array|min:1',
             'wrong_penalty' => 'sometimes|numeric|min:0|max:1',
+            'password' => 'sometimes|nullable|string|min:4|max:100',
             'questions.*.type' => ['required_with:questions', Rule::in(QuestionTypes::keys())],
             'questions.*.content' => 'required_with:questions|string',
             'questions.*.id' => 'sometimes|nullable|integer',
@@ -361,6 +391,7 @@ class TestController extends Controller
                 'max_attempts' => $request->has('max_attempts') ? $request->max_attempts : $test->max_attempts,
                 'pass_score' => $request->has('pass_score') ? $request->pass_score : $test->pass_score,
                 'wrong_penalty' => $request->has('wrong_penalty') ? (float) $request->wrong_penalty : $test->wrong_penalty,
+                'password' => $this->passwordFromRequest($request, $test),
                 'shuffle_questions' => $request->has('shuffle_questions')
                     ? $request->boolean('shuffle_questions')
                     : $test->shuffle_questions,
@@ -435,24 +466,11 @@ class TestController extends Controller
             ], 403);
         }
 
-        return DB::transaction(function () use ($test, $user) {
-            $categoryIds = $test->categories()->pluck('categories.id')->all();
+        $test->deleteWithCounters();
 
-            if (! empty($categoryIds)) {
-                Category::whereIn('id', $categoryIds)->decrement('tests_count');
-            }
-
-            $test->delete();
-
-            $userStat = UserStat::firstOrCreate(['user_id' => $user->id]);
-            if ($userStat->tests_created > 0) {
-                $userStat->decrement('tests_created');
-            }
-
-            return response()->json([
-                'message' => 'Test eliminado correctamente',
-            ]);
-        });
+        return response()->json([
+            'message' => 'Test eliminado correctamente',
+        ]);
     }
 
     /**
@@ -467,6 +485,10 @@ class TestController extends Controller
             return response()->json([
                 'message' => 'Test no encontrado.',
             ], 404);
+        }
+
+        if (TestAccess::isLocked($test, $request->user(), $request->session())) {
+            return $this->lockedResponse();
         }
 
         $isReview = $request->query('mode') === 'review';
@@ -507,6 +529,28 @@ class TestController extends Controller
             ],
             'questions' => $questions,
         ]);
+    }
+
+    /**
+     * Desbloquea un test con contraseña para la sesión actual.
+     */
+    public function unlock(Request $request, int $id): JsonResponse
+    {
+        $request->validate(['password' => 'required|string|max:100']);
+
+        $test = Test::findOrFail($id);
+
+        if (! $this->canViewTest($test)) {
+            return response()->json(['message' => 'Test no encontrado.'], 404);
+        }
+
+        if ($test->hasPassword() && ! Hash::check($request->password, $test->getAttributes()['password'])) {
+            throw ValidationException::withMessages(['password' => 'La contraseña no es correcta.']);
+        }
+
+        TestAccess::unlock($test, $request->session());
+
+        return response()->json(['message' => 'Test desbloqueado.', 'locked' => false]);
     }
 
     /**

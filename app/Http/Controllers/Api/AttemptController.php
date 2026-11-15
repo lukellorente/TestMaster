@@ -11,6 +11,7 @@ use App\Models\UserStat;
 use App\Questions\AttemptScorer;
 use App\Questions\QuestionTypes;
 use App\Questions\ReviewQueue;
+use App\Support\TestAccess;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -49,15 +50,6 @@ class AttemptController extends Controller
         return $storedValue;
     }
 
-    private function canAttemptTest(Test $test, int $userId): bool
-    {
-        if ($test->is_public && $test->status === 'published') {
-            return true;
-        }
-
-        return (int) $test->user_id === (int) $userId;
-    }
-
     /**
      * Submit a test attempt
      */
@@ -76,10 +68,17 @@ class AttemptController extends Controller
         $testId = $request->test_id;
         $test = Test::findOrFail($testId);
 
-        if (! $this->canAttemptTest($test, (int) $user->id)) {
+        if (! TestAccess::canView($test, $user)) {
             return response()->json([
                 'message' => 'Test no encontrado.',
             ], 404);
+        }
+
+        if (TestAccess::isLocked($test, $user, $request->session())) {
+            return response()->json([
+                'message' => 'Este test está protegido con contraseña.',
+                'locked' => true,
+            ], 423);
         }
 
         if ($request->started_at > time()) {

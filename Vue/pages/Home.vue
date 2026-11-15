@@ -255,7 +255,6 @@ const fetchTests = async () => {
       pagination.value = { current_page: 1, last_page: 1, total: data.length };
     }
 
-    featuredTest.value = tests.value.find((t) => t.is_featured) || null;
   } catch (err) {
     console.error('Error cargando tests:', err);
     loadError.value = true;
@@ -362,8 +361,19 @@ watch(() => authStore.isLoggedIn, (logged) => {
   if (logged) fetchMyProfile();
 });
 
+// Destacados elegidos por la administración: se muestra el más reciente
+async function fetchFeatured() {
+  try {
+    const { data } = await api.get('/tests/featured');
+    featuredTest.value = data[0] ?? null;
+  } catch {
+    featuredTest.value = null;
+  }
+}
+
 onMounted(() => {
   fetchMeta();
+  fetchFeatured();
   fetchTests();
   fetchMyProfile();
 });

@@ -4,7 +4,10 @@
       <span class="ccard__cat">{{ categoryLabel }}</span>
       <span v-if="test.difficulty" :class="['pill', difficultyClass]">{{ difficultyLabel }}</span>
     </div>
-    <h3 class="ccard__title">{{ test.title }}</h3>
+    <h3 class="ccard__title">
+      <i v-if="test.has_password" class="fa-solid fa-lock ccard__lock" aria-hidden="true"></i>
+      <span v-if="test.has_password" class="sr-only">Protegido con contraseña. </span>{{ test.title }}
+    </h3>
     <p v-if="test.description" class="ccard__desc">{{ test.description }}</p>
     <span class="ccard__spacer"></span>
     <div class="ccard__foot">
@@ -50,6 +53,12 @@ const meta = computed(() => formatTestMeta(props.test));
 .ccard:hover {
   background: var(--sunk);
   color: var(--text);
+}
+
+.ccard__lock {
+  font-size: 0.8em;
+  color: var(--muted);
+  margin-right: 6px;
 }
 
 .ccard__top {

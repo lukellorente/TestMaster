@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -29,6 +30,8 @@ class Test extends Model
             'show_correct_answers' => 'boolean',
             'show_explanations' => 'boolean',
             'wrong_penalty' => 'float',
+            'has_password' => 'boolean',
+            'featured_at' => 'datetime',
             'published_at' => 'datetime',
         ];
     }
@@ -51,6 +54,31 @@ class Test extends Model
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class, 'test_categories');
+    }
+
+    public function hasPassword(): bool
+    {
+        return ! empty($this->attributes['password'] ?? null);
+    }
+
+    /**
+     * Borra el test y actualiza los contadores de sus categorías y de su autor
+     * (no de quien lo borra: puede ser un admin).
+     */
+    public function deleteWithCounters(): void
+    {
+        DB::transaction(function () {
+            $categoryIds = $this->categories()->pluck('categories.id')->all();
+            if ($categoryIds) {
+                Category::whereIn('id', $categoryIds)->where('tests_count', '>', 0)->decrement('tests_count');
+            }
+
+            if ($this->user_id) {
+                UserStat::where('user_id', $this->user_id)->where('tests_created', '>', 0)->decrement('tests_created');
+            }
+
+            $this->delete();
+        });
     }
 
 }

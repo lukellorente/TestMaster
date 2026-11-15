@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import api, { getCsrfCookie } from '../api/axios';
+import { clearAllDrafts } from '../utils/editorDraft';
 
 // La sesión vive en una cookie httpOnly; aquí solo se guarda el usuario en memoria.
 // Limpia restos del antiguo sistema de tokens Bearer en localStorage.
@@ -17,6 +18,7 @@ export const useAuthStore = defineStore('auth', {
     getters: {
         isLoggedIn: (state) => !!state.user,
         userId: (state) => state.user?.id,
+        isAdmin: (state) => state.user?.role === 'admin',
         userName: (state) => state.user?.name,
         userRole: (state) => state.user?.role,
     },
@@ -50,6 +52,8 @@ export const useAuthStore = defineStore('auth', {
             } catch {
                 // ignore
             }
+            // Solo al cerrar sesión a propósito: si la sesión caduca, el borrador debe sobrevivir.
+            clearAllDrafts();
             this.clearAuth();
         },
 
@@ -77,6 +81,7 @@ export const useAuthStore = defineStore('auth', {
             const { data } = await api.delete('/account', {
                 data: { password, delete_tests: deleteTests },
             });
+            clearAllDrafts(); // RGPD: al borrar la cuenta no quedan copias locales
             this.clearAuth();
             return data;
         },

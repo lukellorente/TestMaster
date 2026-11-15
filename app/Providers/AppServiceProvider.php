@@ -37,6 +37,11 @@ class AppServiceProvider extends ServiceProvider
             ];
         });
 
+        // Contraseña de un test: frena la fuerza bruta por usuario y test.
+        RateLimiter::for('unlock', function (Request $request) {
+            return Limit::perMinute(5)->by('unlock:' . ($request->user()?->id ?: $request->ip()) . ':' . $request->route('id'));
+        });
+
         // Operaciones sensibles de cuenta (cambio de contraseña, borrado, exportación).
         RateLimiter::for('sensitive', function (Request $request) {
             return Limit::perMinute(5)->by('sensitive:' . ($request->user()?->id ?: $request->ip()));

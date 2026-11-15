@@ -286,6 +286,12 @@ onMounted(async () => {
     startedAt.value = Math.floor(Date.now() / 1000);
     startTimer();
   } catch (err) {
+    // Test con contraseña sin desbloquear: se pide en la página del test
+    if (err.response?.status === 423) {
+      toast.info('Este test está protegido con contraseña.');
+      router.replace(`/test/${route.params.id}`);
+      return;
+    }
     console.error(err);
     loadError.value = err.response?.data?.message || 'No se pudieron cargar las preguntas.';
   } finally {

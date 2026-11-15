@@ -47,7 +47,7 @@
 |---|---|
 | **Visitante (sin cuenta)** | Ver la lista de tests públicos, ver detalles de un test, ver perfiles de usuarios |
 | **Usuario registrado** | Todo lo anterior + crear tests con preguntas, realizar tests, ver resultados detallados, gestionar su perfil |
-| **Admin** | Rol definido en BD, sin permisos especiales implementados aún |
+| **Admin** | Rol `admin`: panel `/admin` (métricas, tests, usuarios, categorías y registro de acciones) |
 
 ### Tipos de preguntas soportados
 
@@ -744,6 +744,13 @@ Todos los endpoints están bajo el prefijo `/api`. La autenticación se gestiona
 | `POST` | `/api/attempts/submit` | `AttemptController@submit` | Enviar intento de test (`mode`: `exam` por defecto o `review`) |
 | `GET` | `/api/dashboard?tz=Europe/Madrid` | `DashboardController@show` | Mi progreso: resumen, racha y calendario (en la zona horaria `tz`), dominio por categoría y fallos pendientes por test |
 | `GET` | `/api/dashboard/attempts?page=&mode=` | `DashboardController@attempts` | Historial de intentos propio, paginado (15) y filtrable por `exam`/`review` |
+| `GET` | `/api/tests/featured` | `TestController@featured` | Tests destacados (públicos y publicados), el más reciente primero |
+| `POST` | `/api/tests/{id}/unlock` | `TestController@unlock` | Desbloquea un test con contraseña para la sesión (5 intentos/min). Sin desbloquear, preguntas y envío responden `423` |
+| `GET` | `/api/admin/metrics` | `Admin\AdminController@metrics` | Métricas globales y series diarias de 30 días (solo admin) |
+| `GET/PATCH/DELETE` | `/api/admin/tests[/{id}]` | `Admin\AdminController` | Listar, destacar, cambiar estado y borrar tests |
+| `GET/PATCH` | `/api/admin/users[/{id}]` | `Admin\AdminController` | Listar, cambiar rol y suspender/reactivar. Un admin no puede cambiarse a sí mismo ni suspender a otro admin |
+| `GET/POST/PUT/DELETE` | `/api/admin/categories[/{id}]` | `Admin\AdminCategoryController` | CRUD de categorías |
+| `GET` | `/api/admin/audit` | `Admin\AdminController@audit` | Registro de acciones de administración |
 | `GET` | `/api/attempts/{attemptId}/results` | `AttemptController@results` | Ver resultados de un intento |
 
 #### Ruta web (catch-all)
@@ -1539,8 +1546,6 @@ Las siguientes tablas y modelos existen en la base de datos pero **no tienen con
 | **Historial de puntos** | `point_history` | Tabla creada, sin modelo/API/UI |
 | **Sistema de configuración** | `settings` | Tabla creada, sin modelo/API/UI |
 | **Logs de actividad** | `activity_logs` | Tabla creada, sin modelo/API/UI |
-| **Protección por contraseña de tests** | `tests.password` | Campo en BD, sin verificación en controladores |
-| **Tests destacados** | `tests.is_featured` | Campo en BD, sin lógica |
 | **Multimedia en preguntas** | `questions.image_url/audio_url/video_url` | Campos en BD, sin upload ni presentación |
 | **Gamificación avanzada** | `user_points`, `point_history` | Tablas creadas, sin cálculos |
 

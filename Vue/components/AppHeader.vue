@@ -8,6 +8,7 @@
       <nav class="app-header__nav" aria-label="Principal">
         <router-link to="/" class="nav-link">Explorar</router-link>
         <router-link v-if="authStore.isLoggedIn" to="/dashboard" class="nav-link">Mi progreso</router-link>
+        <router-link v-if="authStore.isAdmin" to="/admin" class="nav-link">Admin</router-link>
         <router-link to="/help" class="nav-link">Ayuda</router-link>
       </nav>
 
@@ -65,6 +66,7 @@
       <template v-if="authStore.isLoggedIn">
         <router-link to="/dashboard" class="nav-link" @click="closeMenu">Mi progreso</router-link>
         <router-link :to="`/profile/${authStore.userId}`" class="nav-link" @click="closeMenu">Mi perfil</router-link>
+        <router-link v-if="authStore.isAdmin" to="/admin" class="nav-link" @click="closeMenu">Admin</router-link>
         <router-link to="/create-test" class="nav-link" @click="closeMenu">Crear test</router-link>
         <router-link to="/help" class="nav-link" @click="closeMenu">Ayuda</router-link>
         <a href="#" class="nav-link" @click.prevent="handleLogout">Cerrar sesión</a>

@@ -25,6 +25,11 @@ export function setUnauthenticatedHandler(fn) {
     onUnauthenticated = fn;
 }
 
+let onSuspended = null;
+export function setSuspendedHandler(fn) {
+    onSuspended = fn;
+}
+
 api.interceptors.response.use(
     (response) => response,
     async (error) => {
@@ -40,6 +45,12 @@ api.interceptors.response.use(
 
         if (status === 401 && !config.skipAuthRedirect && onUnauthenticated) {
             onUnauthenticated();
+        }
+
+        // Cuenta suspendida con la sesión abierta: el servidor ya la ha cerrado.
+        // (En el login el formulario ya muestra el mensaje.)
+        if (status === 403 && error.response?.data?.suspended && onSuspended && config.url !== '/login') {
+            onSuspended(error.response.data.message);
         }
         return Promise.reject(error);
     }

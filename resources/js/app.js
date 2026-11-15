@@ -10,7 +10,8 @@ import { createPinia } from 'pinia';
 import router from '../../Vue/router';
 import App from '../../Vue/App.vue';
 
-import { setUnauthenticatedHandler } from '../../Vue/api/axios';
+import { setUnauthenticatedHandler, setSuspendedHandler } from '../../Vue/api/axios';
+import { useToast } from '../../Vue/composables/useToast';
 import { useAuthStore } from '../../Vue/stores/auth';
 
 const app = createApp(App);
@@ -24,6 +25,13 @@ setUnauthenticatedHandler(() => {
     if (current.meta?.requiresAuth) {
         router.push({ name: 'login', query: { redirect: current.fullPath } });
     }
+});
+
+// Cuenta suspendida por la administración: se sale y se explica el motivo.
+setSuspendedHandler((message) => {
+    useAuthStore().clearAuth();
+    useToast().error(message || 'Tu cuenta está suspendida.');
+    router.push({ name: 'login' });
 });
 
 app.mount('#app');

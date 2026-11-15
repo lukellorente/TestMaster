@@ -12,6 +12,20 @@
 
     <h1 class="ct__title">{{ isEditMode ? 'Editar test' : 'Crear test' }}</h1>
 
+    <!-- Copia local de una sesión anterior que no llegó a guardarse -->
+    <div v-if="pendingDraft" class="ct__draft" role="region" aria-label="Borrador recuperable">
+      <i class="fa-solid fa-clock-rotate-left ct__draft-icon" aria-hidden="true"></i>
+      <div class="ct__draft-text">
+        <strong>Tienes cambios sin guardar del {{ formatDraftDate(pendingDraft.savedAt) }}</strong>
+        <span v-if="draftIsStale">El test se ha modificado desde entonces: si lo recuperas, sustituirá a la versión actual.</span>
+        <span v-else>Se guardaron en este navegador antes de cerrar el editor.</span>
+      </div>
+      <div class="ct__draft-actions">
+        <button type="button" class="btn btn--secondary" @click="discardDraft">Descartar</button>
+        <button type="button" class="btn" @click="restoreDraft">Recuperar</button>
+      </div>
+    </div>
+
     <BaseLoader v-if="loadingTest" text="Cargando el test…" />
 
     <div v-else-if="loadError" class="ct__load-error panel" role="alert">
@@ -65,14 +79,35 @@
             :id="`q-${q._key}`"
             :key="q._key"
             class="ct__q"
-            :class="{ 'has-error': questionErrors[q._key] }"
+            :class="{
+              'has-error': questionErrors[q._key],
+              'is-dragging': drag.from === qIdx,
+              'drop-before': drag.over === qIdx && drag.before,
+              'drop-after': drag.over === qIdx && !drag.before,
+            }"
             :aria-labelledby="`qt-${q._key}`"
+            :draggable="drag.armed === q._key"
+            @dragstart="onDragStart($event, qIdx)"
+            @dragover.prevent="onDragOver($event, qIdx)"
+            @drop.prevent="onDrop"
+            @dragend="resetDrag"
           >
             <header class="ct__q-head">
               <h3 :id="`qt-${q._key}`" class="ct__q-title">
                 Pregunta {{ qIdx + 1 }}<span class="ct__muted"> · {{ questionTypeLabel(q.type) }}</span>
               </h3>
               <div class="ct__q-tools">
+                <!-- Asa para arrastrar con el ratón; con teclado se usan las flechas -->
+                <span
+                  v-if="questions.length > 1"
+                  class="icon-btn ct__handle"
+                  title="Arrastrar para reordenar"
+                  aria-hidden="true"
+                  @pointerdown="drag.armed = q._key"
+                  @pointerup="drag.armed = null"
+                >
+                  <i class="fa-solid fa-grip-vertical"></i>
+                </span>
                 <button type="button" class="icon-btn" :disabled="qIdx === 0" :aria-label="`Subir pregunta ${qIdx + 1}`" title="Subir" @click="moveQuestion(qIdx, -1)">
                   <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
                 </button>
@@ -268,6 +303,7 @@
           </article>
 
           <div v-if="!questions.length" class="ct__empty panel">Añade la primera pregunta para empezar.</div>
+          <p class="sr-only" aria-live="polite">{{ moveAnnouncement }}</p>
 
           <div class="ct__add" role="group" aria-label="Añadir pregunta">
             <span class="ct__muted">Añadir pregunta</span>
@@ -338,6 +374,30 @@
             help-text="Solo restan las respuestas totalmente incorrectas. En blanco no resta y la nota nunca baja de 0."
           />
 
+          <!-- Contraseña: no se guarda en el borrador local -->
+          <div class="ct__password">
+            <label class="ct__switch">
+              <input v-model="passwordEnabled" type="checkbox" /><span>Proteger con contraseña</span>
+            </label>
+            <template v-if="passwordEnabled">
+              <p v-if="hadPassword && !changingPassword" class="help-text ct__password-note">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                Este test ya tiene contraseña.
+                <button type="button" class="ct__link" @click="changingPassword = true">Cambiarla</button>
+              </p>
+              <BaseInput
+                v-else
+                v-model="passwordValue"
+                label="Contraseña"
+                type="password"
+                autocomplete="new-password"
+                maxlength="100"
+                help-text="Mínimo 4 caracteres. Se pedirá a todos menos a ti."
+                :error="fieldErrors.password"
+              />
+            </template>
+          </div>
+
           <div class="ct__switches">
             <label class="ct__switch"><input v-model="form.is_public" type="checkbox" /><span>Visible en el catálogo</span></label>
             <label class="ct__switch"><input v-model="form.shuffle_questions" type="checkbox" /><span>Desordenar preguntas</span></label>
@@ -354,8 +414,11 @@
           <p v-if="errorSummary" class="ct__bar-error" role="alert">
             <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>{{ errorSummary }}
           </p>
-          <span v-else class="ct__muted ct__bar-status">{{ dirty ? 'Cambios sin guardar' : (isEditMode ? 'Sin cambios' : '') }}</span>
+          <span v-else class="ct__muted ct__bar-status">{{ statusText }}</span>
           <div class="ct__bar-actions">
+            <button type="button" class="btn btn--ghost btn--lg" @click="showPreview = true">
+              <i class="fa-regular fa-eye" aria-hidden="true"></i>Vista previa
+            </button>
             <button type="button" class="btn btn--secondary btn--lg" :disabled="submitting" @click="submitTest('draft')">
               Guardar borrador
             </button>
@@ -368,6 +431,13 @@
       </div>
     </form>
 
+    <TestPreview
+      v-model="showPreview"
+      :form="form"
+      :questions="questions"
+      :time-limit-minutes="noTimeLimit ? 0 : Math.max(1, Number(timeMinutes) || 1)"
+    />
+
     <BaseModal v-model="showRemove" title="¿Eliminar esta pregunta?" max-width="420px">
       <p class="ct__modal-text">Se perderá lo que hayas escrito en ella.</p>
       <template #footer>
@@ -377,7 +447,7 @@
     </BaseModal>
 
     <BaseModal v-model="showLeave" title="¿Salir sin guardar?" max-width="420px" @close="cancelLeave">
-      <p class="ct__modal-text">Tienes cambios sin guardar en este test.</p>
+      <p class="ct__modal-text">Tienes cambios sin guardar en este test. Si sales, se descartarán.</p>
       <template #footer>
         <button type="button" class="btn btn--secondary" @click="cancelLeave">Seguir editando</button>
         <button type="button" class="btn btn--danger" @click="confirmLeave">Salir sin guardar</button>
@@ -396,10 +466,15 @@ import BaseLoader from '../components/base/BaseLoader.vue';
 import BaseModal from '../components/base/BaseModal.vue';
 import { plural, QUESTION_TYPES, PENALTY_OPTIONS, questionTypeLabel, countBlanks } from '../utils/tests';
 import { useToast } from '../composables/useToast';
+import { useAuthStore } from '../stores/auth';
+import TestPreview from '../components/test/TestPreview.vue';
+import { draftKey, readDraft, writeDraft, removeDraft } from '../utils/editorDraft';
 
 const router = useRouter();
 const route = useRoute();
 const toast = useToast();
+const authStore = useAuthStore();
+const showPreview = ref(false);
 
 const categories = ref([]);
 const submitting = ref(false);
@@ -407,7 +482,21 @@ const submitStatus = ref('published');
 const loadingTest = ref(false);
 const loadError = ref('');
 const serverErrors = ref([]);
-const fieldErrors = reactive({ title: '', pass_score: '' });
+const fieldErrors = reactive({ title: '', pass_score: '', password: '' });
+
+// Contraseña del test. Nunca se recibe del servidor: solo si existe.
+const passwordEnabled = ref(false);
+const hadPassword = ref(false);
+const changingPassword = ref(false);
+const passwordValue = ref('');
+const settingNewPassword = computed(() => passwordEnabled.value && (!hadPassword.value || changingPassword.value));
+
+/** Qué enviar: undefined = no cambia; null = quitarla; texto = nueva. */
+function passwordPayload() {
+  if (settingNewPassword.value) return passwordValue.value;
+  if (!passwordEnabled.value && hadPassword.value) return null;
+  return undefined;
+}
 const questionErrors = ref({});
 let keyCounter = 0;
 
@@ -531,11 +620,49 @@ function duplicateQuestion(idx) {
   focusQuestion(copy);
 }
 
+const moveAnnouncement = ref('');
+
 function moveQuestion(idx, dir) {
   const to = idx + dir;
   if (to < 0 || to >= questions.value.length) return;
   const list = questions.value;
   [list[idx], list[to]] = [list[to], list[idx]];
+  moveAnnouncement.value = `Pregunta movida a la posición ${to + 1} de ${list.length}.`;
+}
+
+// ─── Arrastrar y soltar ──────────────────────────────────────────────────────
+// La tarjeta solo es arrastrable mientras se pulsa el asa: así se puede seguir
+// seleccionando texto dentro de los campos.
+const drag = reactive({ armed: null, from: null, over: null, before: true });
+
+function resetDrag() {
+  Object.assign(drag, { armed: null, from: null, over: null, before: true });
+}
+
+function onDragStart(e, idx) {
+  if (drag.armed === null) return e.preventDefault();
+  drag.from = idx;
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', String(idx)); // Firefox no arrastra sin datos
+}
+
+function onDragOver(e, idx) {
+  if (drag.from === null) return;
+  const rect = e.currentTarget.getBoundingClientRect();
+  drag.over = idx;
+  drag.before = e.clientY < rect.top + rect.height / 2;
+}
+
+function onDrop() {
+  const { from, over, before } = drag;
+  resetDrag();
+  if (from === null || over === null) return;
+  let to = before ? over : over + 1;
+  if (from < to) to -= 1;
+  if (to === from) return;
+  const [moved] = questions.value.splice(from, 1);
+  questions.value.splice(to, 0, moved);
+  moveAnnouncement.value = `Pregunta movida a la posición ${to + 1} de ${questions.value.length}.`;
 }
 
 function removeOption(q, oIdx) {
@@ -573,7 +700,7 @@ const dirty = ref(false);
 let trackChanges = false;
 let saved = false;
 
-watch([form, questions, timeMinutes, noTimeLimit, attemptsCount, unlimitedAttempts], () => {
+watch([form, questions, timeMinutes, noTimeLimit, attemptsCount, unlimitedAttempts, passwordEnabled, passwordValue], () => {
   if (trackChanges) dirty.value = true;
 }, { deep: true });
 
@@ -594,10 +721,85 @@ const cancelLeave = () => {
 
 const confirmLeave = () => {
   showLeave.value = false;
+  // Salir sin guardar es descartar a propósito: no se ofrece recuperarlo después
+  removeDraft(storageKey.value);
   const next = pendingLeave;
   pendingLeave = null;
   next?.();
 };
+
+// ─── Copia local (autoguardado) ──────────────────────────────────────────────
+const storageKey = computed(() => draftKey(authStore.userId, editingTestId.value));
+const pendingDraft = ref(null);
+const draftSavedAt = ref(null);
+let baseUpdatedAt = null; // versión del test en el servidor al abrir el editor
+let draftTimer = null;
+
+const snapshot = () => ({
+  form: { ...form },
+  timeMinutes: timeMinutes.value,
+  noTimeLimit: noTimeLimit.value,
+  attemptsCount: attemptsCount.value,
+  unlimitedAttempts: unlimitedAttempts.value,
+  questions: JSON.parse(JSON.stringify(questions.value)),
+  baseUpdatedAt,
+});
+
+// Para comparar contenido sin las claves internas de Vue
+const comparable = (snap) => JSON.stringify({
+  ...snap,
+  baseUpdatedAt: undefined,
+  questions: snap.questions.map(({ _key, ...rest }) => rest),
+});
+
+const draftIsStale = computed(() => isEditMode.value && pendingDraft.value?.baseUpdatedAt !== baseUpdatedAt);
+
+const formatDraftDate = (ts) =>
+  new Date(ts).toLocaleString('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+
+function checkForDraft() {
+  const draft = readDraft(storageKey.value);
+  if (draft && comparable(draft) !== comparable(snapshot())) pendingDraft.value = draft;
+  else if (draft) removeDraft(storageKey.value);
+}
+
+function restoreDraft() {
+  const d = pendingDraft.value;
+  pendingDraft.value = null;
+  Object.assign(form, d.form);
+  timeMinutes.value = d.timeMinutes;
+  noTimeLimit.value = d.noTimeLimit;
+  attemptsCount.value = d.attemptsCount;
+  unlimitedAttempts.value = d.unlimitedAttempts;
+  questions.value = d.questions;
+  keyCounter = Math.max(keyCounter, ...d.questions.map((q) => q._key || 0));
+  draftSavedAt.value = d.savedAt;
+  toast.success('Borrador recuperado. Guárdalo para no perderlo.');
+}
+
+function discardDraft() {
+  pendingDraft.value = null;
+  removeDraft(storageKey.value);
+}
+
+// Guarda poco después de cada cambio. Mientras se decide qué hacer con un borrador
+// anterior no se guarda nada, para no pisarlo.
+watch([form, questions, timeMinutes, noTimeLimit, attemptsCount, unlimitedAttempts], () => {
+  if (!trackChanges || saved || pendingDraft.value || !authStore.userId) return;
+  clearTimeout(draftTimer);
+  draftTimer = setTimeout(() => {
+    draftSavedAt.value = writeDraft(storageKey.value, snapshot());
+  }, 800);
+}, { deep: true });
+
+const statusText = computed(() => {
+  if (dirty.value && draftSavedAt.value) {
+    const time = new Date(draftSavedAt.value).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+    return `Sin guardar · copia en este navegador a las ${time}`;
+  }
+  if (dirty.value) return 'Cambios sin guardar';
+  return isEditMode.value ? 'Sin cambios' : '';
+});
 
 function onBeforeUnload(e) {
   if (dirty.value && !saved) {
@@ -622,16 +824,21 @@ onMounted(async () => {
     questions.value.push(newQuestion('multiple_choice'));
   }
   await nextTick();
+  if (!loadError.value) checkForDraft();
   trackChanges = true;
 });
 
-onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload));
+onBeforeUnmount(() => {
+  window.removeEventListener('beforeunload', onBeforeUnload);
+  clearTimeout(draftTimer);
+});
 
 async function loadTestForEdit() {
   loadingTest.value = true;
   try {
     const { data } = await api.get(`/tests/${editingTestId.value}/edit`);
     const t = data.test;
+    baseUpdatedAt = t.updated_at ?? null;
 
     form.title = t.title ?? '';
     form.description = t.description ?? '';
@@ -639,6 +846,8 @@ async function loadTestForEdit() {
     form.difficulty = t.difficulty ?? 'medium';
     form.pass_score = t.pass_score ?? 70;
     form.wrong_penalty = Number(t.wrong_penalty) || 0;
+    hadPassword.value = Boolean(t.has_password);
+    passwordEnabled.value = hadPassword.value;
     form.is_public = Boolean(t.is_public);
     form.shuffle_questions = Boolean(t.shuffle_questions);
     form.shuffle_answers = Boolean(t.shuffle_answers);
@@ -702,6 +911,7 @@ function validate() {
   fieldErrors.title = form.title.trim() ? '' : 'Ponle un título al test.';
   const ps = Number(form.pass_score);
   fieldErrors.pass_score = Number.isFinite(ps) && ps >= 0 && ps <= 100 ? '' : 'Usa un valor entre 0 y 100.';
+  fieldErrors.password = settingNewPassword.value && passwordValue.value.length < 4 ? 'Usa al menos 4 caracteres.' : '';
 
   const qErrors = {};
   for (const q of questions.value) {
@@ -737,14 +947,15 @@ function validate() {
   }
   questionErrors.value = qErrors;
 
-  return !fieldErrors.title && !fieldErrors.pass_score && !Object.keys(qErrors).length && questions.value.length > 0;
+  return !fieldErrors.title && !fieldErrors.pass_score && !fieldErrors.password
+    && !Object.keys(qErrors).length && questions.value.length > 0;
 }
 
 const errorSummary = computed(() => {
   if (serverErrors.value.length) return serverErrors.value[0];
   const nQ = Object.keys(questionErrors.value).length;
   const parts = [];
-  if (fieldErrors.title || fieldErrors.pass_score) parts.push('revisa los datos del test');
+  if (fieldErrors.title || fieldErrors.pass_score || fieldErrors.password) parts.push('revisa los datos del test');
   if (nQ) parts.push(`${plural(nQ, 'pregunta necesita', 'preguntas necesitan')} cambios`);
   if (!parts.length) return '';
   const s = parts.join(' y ');
@@ -783,6 +994,7 @@ async function submitTest(status) {
     time_limit: noTimeLimit.value ? 0 : Math.max(1, Number(timeMinutes.value) || 1),
     max_attempts: unlimitedAttempts.value ? -1 : Math.max(1, Number(attemptsCount.value) || 1),
     wrong_penalty: Number(form.wrong_penalty) || 0,
+    ...(passwordPayload() !== undefined ? { password: passwordPayload() } : {}),
     status,
     questions: questions.value.map((q, idx) => {
       const base = {
@@ -827,6 +1039,8 @@ async function submitTest(status) {
       : await api.post('/tests', payload);
     saved = true;
     dirty.value = false;
+    clearTimeout(draftTimer);
+    removeDraft(storageKey.value);
     toast.success(status === 'published' ? 'Test publicado.' : 'Borrador guardado.');
     router.push(`/test/${data.test.id}`);
   } catch (err) {
@@ -941,6 +1155,65 @@ async function submitTest(status) {
 
 .ct__q.has-error {
   border-color: var(--negative);
+}
+
+.ct__q.is-dragging {
+  opacity: 0.4;
+}
+
+.ct__q.drop-before {
+  box-shadow: 0 -3px 0 var(--accent);
+}
+
+.ct__q.drop-after {
+  box-shadow: 0 3px 0 var(--accent);
+}
+
+.ct__handle {
+  cursor: grab;
+  color: var(--muted);
+  touch-action: none;
+}
+
+.ct__handle:active {
+  cursor: grabbing;
+}
+
+/* Borrador recuperable */
+.ct__draft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: -16px 0 24px;
+  padding: 16px 20px;
+  border-radius: var(--radius-panel);
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.ct__draft-icon {
+  color: var(--accent-ink);
+  font-size: 1.25rem;
+}
+
+.ct__draft-text {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--fs-small);
+  color: var(--text-body);
+}
+
+.ct__draft-text strong {
+  color: var(--text);
+}
+
+.ct__draft-actions {
+  display: flex;
+  gap: 8px;
 }
 
 .ct__q-head {
@@ -1136,6 +1409,33 @@ async function submitTest(status) {
   accent-color: var(--accent);
 }
 
+.ct__password {
+  border-top: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.ct__password .ct__switch {
+  border-bottom: 0;
+}
+
+.ct__password-note {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.ct__link {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--accent-ink);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .ct__switches {
   display: flex;
   flex-direction: column;
@@ -1254,6 +1554,13 @@ async function submitTest(status) {
 
   .ct__side {
     position: static;
+  }
+}
+
+@media (hover: none) {
+  /* En pantallas táctiles no hay arrastrar y soltar nativo: se usan las flechas */
+  .ct__handle {
+    display: none;
   }
 }
 
