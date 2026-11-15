@@ -278,7 +278,7 @@ class AttemptController extends Controller
     {
         $user = auth('sanctum')->user();
 
-        $attempt = TestAttempt::with('test:id,title,show_correct_answers,show_explanations')
+        $attempt = TestAttempt::with('test:id,title,pass_score,max_attempts,time_limit,show_correct_answers,show_explanations')
             ->where('id', $attemptId)
             ->where('user_id', $user->id)
             ->firstOrFail();
@@ -353,9 +353,30 @@ class AttemptController extends Controller
             ];
         });
 
+        // Comparativa: media del test, tu mejor intento anterior e intentos restantes
+        $completed = TestAttempt::where('test_id', $attempt->test_id)->where('is_completed', true);
+        $userCompleted = (clone $completed)->where('user_id', $user->id);
+        $attemptsUsed = (clone $userCompleted)->count();
+        $maxAttempts = (int) $attempt->test->max_attempts;
+
+        $previousBest = (clone $userCompleted)
+            ->where('id', '!=', $attempt->id)
+            ->where('completed_at', '<', $attempt->completed_at)
+            ->max('score');
+
+        $comparison = [
+            'test_average' => ($avg = (clone $completed)->avg('score')) !== null ? round((float) $avg, 1) : null,
+            'test_attempts' => (clone $completed)->count(),
+            'previous_best' => $previousBest !== null ? round((float) $previousBest, 1) : null,
+            'attempt_number' => (clone $userCompleted)->where('completed_at', '<=', $attempt->completed_at)->count(),
+            'attempts_used' => $attemptsUsed,
+            'attempts_remaining' => $maxAttempts === -1 ? null : max(0, $maxAttempts - $attemptsUsed),
+        ];
+
         return response()->json([
             'attempt' => $attempt,
             'responses' => $responsesData,
+            'comparison' => $comparison,
         ]);
     }
 }

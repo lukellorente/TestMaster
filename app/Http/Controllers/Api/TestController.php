@@ -150,7 +150,7 @@ class TestController extends Controller
                 ->where('user_id', $userId)
                 ->where('is_completed', true)
                 ->orderBy('completed_at', 'desc')
-                ->first(['score', 'completed_at']);
+                ->first(['id', 'score', 'completed_at']);
         }
 
         // Increment views
@@ -182,6 +182,7 @@ class TestController extends Controller
             'shuffle_answers' => 'boolean',
             'show_correct_answers' => 'boolean',
             'show_explanations' => 'boolean',
+            'display_mode' => 'in:paged,all',
             'status' => 'in:draft,published',
             'questions' => 'required|array|min:1',
             'questions.*.type' => 'required|in:multiple_choice,true_false,short_answer',
@@ -207,6 +208,7 @@ class TestController extends Controller
                 'shuffle_answers' => $request->boolean('shuffle_answers'),
                 'show_correct_answers' => $request->boolean('show_correct_answers', true),
                 'show_explanations' => $request->boolean('show_explanations', true),
+                'display_mode' => $request->get('display_mode', 'paged'),
                 'difficulty' => $request->get('difficulty', 'medium'),
                 'status' => $request->get('status', 'draft'),
                 'published_at' => $request->status === 'published' ? now() : null,
@@ -355,6 +357,7 @@ class TestController extends Controller
             'shuffle_answers' => 'sometimes|boolean',
             'show_correct_answers' => 'sometimes|boolean',
             'show_explanations' => 'sometimes|boolean',
+            'display_mode' => 'sometimes|in:paged,all',
             'status' => 'sometimes|in:draft,published,archived',
             'questions' => 'sometimes|array|min:1',
             'questions.*.type' => 'required_with:questions|in:multiple_choice,true_false,short_answer',
@@ -388,6 +391,7 @@ class TestController extends Controller
                 'show_explanations' => $request->has('show_explanations')
                     ? $request->boolean('show_explanations')
                     : $test->show_explanations,
+                'display_mode' => $request->has('display_mode') ? $request->display_mode : $test->display_mode,
                 'difficulty' => $request->has('difficulty') ? $request->difficulty : $test->difficulty,
                 'status' => $newStatus,
             ]);
@@ -577,6 +581,7 @@ class TestController extends Controller
                 'id' => $test->id,
                 'title' => $test->title,
                 'time_limit' => $test->time_limit,
+                'display_mode' => $test->display_mode ?? 'paged',
                 'shuffle_questions' => $test->shuffle_questions,
             ],
             'questions' => $questions,

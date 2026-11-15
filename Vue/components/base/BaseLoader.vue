@@ -20,7 +20,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: '#667eea',
+    default: 'var(--accent)',
   },
   center: {
     type: Boolean,
@@ -36,7 +36,7 @@ const containerStyle = computed(() => ({
 
 <style scoped>
 .loader {
-  color: #718096;
+  color: var(--muted);
 }
 
 .loader--small {

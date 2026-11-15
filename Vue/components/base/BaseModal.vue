@@ -2,7 +2,7 @@
   <Teleport to="body">
     <Transition name="modal">
       <div v-if="modelValue" class="modal-overlay" @click.self="closeOnOverlay && close()">
-        <div class="modal-container" :style="{ maxWidth: maxWidth }">
+        <div class="modal-container" role="dialog" aria-modal="true" :aria-label="title" :style="{ maxWidth: maxWidth }">
           <div class="modal-header">
             <h3 class="modal-title">{{ title }}</h3>
             <button type="button" class="modal-close" @click="close" aria-label="Cerrar">
@@ -63,7 +63,7 @@ watch(
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--scrim);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,28 +72,28 @@ watch(
 }
 
 .modal-container {
-  background: white;
+  background: var(--bg);
+  color: var(--text);
   border-radius: 12px;
   width: 100%;
   max-height: 90vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-float);
 }
 
 .modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 1.5rem 1.5rem 0;
 }
 
 .modal-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1a202c;
+  color: var(--text);
   margin: 0;
 }
 
@@ -101,7 +101,7 @@ watch(
   background: none;
   border: none;
   font-size: 1.25rem;
-  color: #a0aec0;
+  color: var(--muted);
   cursor: pointer;
   padding: 0.25rem;
   display: flex;
@@ -111,7 +111,7 @@ watch(
 }
 
 .modal-close:hover {
-  color: #4a5568;
+  color: var(--text);
 }
 
 .modal-body {
@@ -120,8 +120,7 @@ watch(
 }
 
 .modal-footer {
-  padding: 1rem 1.5rem;
-  border-top: 1px solid #e2e8f0;
+  padding: 0 1.5rem 1.5rem;
   display: flex;
   gap: 0.75rem;
   justify-content: flex-end;

@@ -16,21 +16,21 @@ import Contact from '../pages/Contact.vue';
 import NotFound from '../pages/NotFound.vue';
 
 const routes = [
-    { path: '/', name: 'home', component: Home },
+    { path: '/', name: 'home', component: Home, meta: { redesigned: true } },
     { path: '/login', name: 'login', component: Login },
     { path: '/register', name: 'register', component: Register },
-    { path: '/test/:id', name: 'view-test', component: ViewTest },
+    { path: '/test/:id', name: 'view-test', component: ViewTest, meta: { redesigned: true } },
     {
         path: '/test/:id/take',
         name: 'take-test',
         component: TakeTest,
-        meta: { requiresAuth: true },
+        meta: { requiresAuth: true, redesigned: true, hideChrome: true },
     },
     {
         path: '/results/:attemptId',
         name: 'results',
         component: Results,
-        meta: { requiresAuth: true },
+        meta: { requiresAuth: true, redesigned: true },
     },
     {
         path: '/create-test',

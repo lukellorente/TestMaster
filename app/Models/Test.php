@@ -13,7 +13,7 @@ class Test extends Model
         'user_id', 'title', 'description', 'is_public', 'is_featured',
         'password', 'time_limit', 'max_attempts', 'pass_score',
         'shuffle_questions', 'shuffle_answers', 'show_correct_answers',
-        'show_explanations', 'difficulty', 'status', 'views_count',
+        'show_explanations', 'display_mode', 'difficulty', 'status', 'views_count',
         'attempts_count', 'average_score', 'published_at',
     ];
 

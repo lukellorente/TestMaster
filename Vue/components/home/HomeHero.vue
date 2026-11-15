@@ -1,203 +1,182 @@
 <template>
   <section class="hero">
-    <div class="hero-body">
-      <h1 class="hero-title">Pon a prueba lo que sabes</h1>
-      <p class="hero-sub">
-        Tests creados por la comunidad en programación, ciencias, historia y mucho más.
-        Realiza un test, comprueba tus resultados y mejora.
+    <div class="hero__copy">
+      <h1 class="hero__title">Pon a prueba lo que sabes</h1>
+      <p class="hero__sub">
+        Tests creados por la comunidad sobre programación, ciencias, historia y mucho más.
+        Respondes, ves tu nota al momento y repasas cada fallo con su explicación.
       </p>
-      <div class="hero-actions">
-        <router-link v-if="isLoggedIn" to="/create-test" class="btn btn-primary">
-          <i class="fa-solid fa-plus"></i> Crear test
-        </router-link>
-        <router-link v-else to="/register" class="btn btn-primary">
-          <i class="fa-solid fa-rocket"></i> Empezar gratis
-        </router-link>
-        <router-link to="/login" v-if="!isLoggedIn" class="btn btn-ghost">
-          Iniciar sesión
-        </router-link>
+      <div class="hero__actions">
+        <router-link to="/register" class="btn btn--lg">Crear cuenta gratis</router-link>
+        <a href="#tests" class="btn btn--secondary btn--lg">Ver tests</a>
       </div>
+      <p v-if="hasStats" class="hero__stats tabular">
+        {{ fmt(stats.total_tests) }} tests · {{ fmt(stats.total_attempts) }} intentos · {{ fmt(stats.total_users) }} usuarios
+      </p>
     </div>
 
-    <div class="hero-stats">
-      <div class="stat-chip">
-        <span class="stat-num">{{ stats?.total_tests?.toLocaleString() ?? '—' }}</span>
-        <span class="stat-lbl">tests</span>
+    <!-- Ilustración: una pregunta tal y como se ve al hacer un test -->
+    <div class="hero__demo panel" aria-hidden="true">
+      <div class="demo__top">
+        <span class="demo__test">Fundamentos de SQL</span>
+        <span class="demo__timer tabular"><i class="fa-regular fa-clock"></i>08:42</span>
       </div>
-      <div class="stat-chip">
-        <span class="stat-num">{{ stats?.total_attempts?.toLocaleString() ?? '—' }}</span>
-        <span class="stat-lbl">intentos</span>
+      <div class="demo__progress">
+        <span>Pregunta 5 de 12</span>
+        <div class="progress"><div class="progress__bar" style="width: 41.6%"></div></div>
       </div>
-      <div class="stat-chip">
-        <span class="stat-num">{{ stats?.total_users?.toLocaleString() ?? '—' }}</span>
-        <span class="stat-lbl">usuarios</span>
+      <p class="demo__q">¿Qué cláusula filtra los grupos después de un GROUP BY?</p>
+      <div class="demo__opts">
+        <div class="demo__opt"><span class="demo__key">A</span>WHERE</div>
+        <div class="demo__opt is-sel"><span class="demo__key">B</span>HAVING</div>
+        <div class="demo__opt"><span class="demo__key">C</span>ORDER BY</div>
+        <div class="demo__opt"><span class="demo__key">D</span>LIMIT</div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-defineProps({
-  isLoggedIn: {
-    type: Boolean,
-    required: true,
-  },
-  stats: {
-    type: Object,
-    default: () => ({}),
-  },
+import { computed } from 'vue';
+
+const props = defineProps({
+  stats: { type: Object, default: () => ({}) },
 });
+
+const hasStats = computed(() => props.stats && props.stats.total_tests != null);
+const fmt = (n) => Number(n ?? 0).toLocaleString('es-ES');
 </script>
 
 <style scoped>
-/* ── Hero ────────────────────────────────────────────────────────────────── */
 .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero__title {
+  font-size: var(--fs-display);
+  line-height: 1.04;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.hero__sub {
+  font-size: 1.125rem;
+  color: var(--text-body);
+  max-width: 480px;
+  margin: 0;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.hero__stats {
+  font-size: var(--fs-small);
+  color: var(--muted);
+  margin: 0;
+}
+
+.hero__demo {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.demo__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 2rem 2.25rem;
-  flex-wrap: wrap;
+  font-size: var(--fs-meta);
 }
 
-.hero-title {
-  font-size: 1.65rem;
-  font-weight: 600;
-  color: #1a202c;
-  margin-bottom: 0.5rem;
+.demo__test {
+  font-weight: 500;
 }
 
-.hero-sub {
-  color: #718096;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  max-width: 440px;
-  margin-bottom: 1.25rem;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.hero-stats {
-  display: flex;
-  gap: 1rem;
-  flex-shrink: 0;
-  flex-wrap: wrap;
-}
-
-.stat-chip {
-  background: #f8f9fa;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 0.9rem 1.4rem;
-  text-align: center;
-  min-width: 100px;
-}
-
-.stat-num {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.stat-lbl {
-  display: block;
-  font-size: 0.8rem;
-  color: #a0aec0;
-  margin-top: 2px;
-}
-
-/* ── Botones ──────────────────────────────────────────────────────────────── */
-.btn {
+.demo__timer {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1.25rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  gap: 6px;
+  background: var(--bg);
+  color: var(--muted);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.demo__progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: var(--fs-meta);
+  color: var(--muted);
+}
+
+.demo__q {
+  font-size: 1.3rem;
   font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  border: none;
-  transition: all 0.2s;
+  line-height: 1.35;
+  margin: 0;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+.demo__opts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
+.demo__opt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 10px 14px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  background: var(--bg);
 }
 
-.btn-ghost {
-  background: transparent;
-  color: #4a5568;
-  border: 1px solid #e2e8f0;
+.demo__key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-control);
+  background: var(--raised);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  color: var(--muted);
 }
 
-.btn-ghost:hover {
-  background: #f8f9fa;
-  border-color: #cbd5e0;
+.demo__opt.is-sel {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1px var(--accent);
 }
 
-/* ── Dark mode ────────────────────────────────────────────────────────────── */
-body.dark-mode .hero {
-  background: var(--tm-surface) !important;
-  border-color: var(--tm-border) !important;
+.demo__opt.is-sel .demo__key {
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
-body.dark-mode .hero-title {
-  color: var(--tm-text) !important;
-}
-
-body.dark-mode .hero-sub,
-body.dark-mode .stat-lbl {
-  color: var(--tm-muted) !important;
-}
-
-body.dark-mode .stat-chip {
-  background: var(--tm-bg);
-  border-color: var(--tm-border);
-}
-
-body.dark-mode .btn-ghost {
-  color: var(--tm-muted);
-  border-color: var(--tm-border);
-}
-
-body.dark-mode .btn-ghost:hover {
-  background: var(--tm-hover);
-}
-
-/* ── Responsive ───────────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .hero {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.5rem;
-  }
-
-  .hero-stats {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .stat-chip {
-    flex: 1;
-    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
   }
 }
 </style>

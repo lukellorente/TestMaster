@@ -60,6 +60,15 @@
           </div>
 
           <div class="form-group">
+            <label class="form-label" for="display-mode">Presentación de las preguntas</label>
+            <select id="display-mode" v-model="form.display_mode" class="form-input" aria-describedby="display-mode-help">
+              <option value="paged">Una por pantalla</option>
+              <option value="all">Todas en una página</option>
+            </select>
+            <p id="display-mode-help" class="help-text">«Una por pantalla» funciona mejor en móvil.</p>
+          </div>
+
+          <div class="form-group">
             <label class="checkbox-label"><input type="checkbox" v-model="form.is_public" /> <span>Hacer público</span></label>
           </div>
           <div class="form-group">
@@ -195,6 +204,7 @@ const form = reactive({
   shuffle_answers: false,
   show_correct_answers: true,
   show_explanations: true,
+  display_mode: 'paged',
 });
 
 const questions = ref([]);
@@ -258,6 +268,7 @@ async function loadTestForEdit() {
     form.shuffle_answers = Boolean(t.shuffle_answers);
     form.show_correct_answers = Boolean(t.show_correct_answers);
     form.show_explanations = Boolean(t.show_explanations);
+    form.display_mode = t.display_mode === 'all' ? 'all' : 'paged';
 
     const mappedQuestions = (t.questions ?? []).map((q) => {
       const mapped = {

@@ -1,95 +1,104 @@
 <template>
-  <header>
-    <div class="header-content">
-      <router-link to="/" class="header-brand" @click="closeMobileMenu">
-        <img src="/images/logo.svg" alt="TestMaster Logo" class="logo" />
+  <header class="app-header">
+    <div class="page-wrap app-header__inner">
+      <router-link to="/" class="app-header__brand" @click="closeMenu">
+        <img src="/images/logo.svg" alt="TestMaster, inicio" class="logo" />
       </router-link>
 
-      <div class="header-actions">
-        <div class="header-primary">
-          <input
-            v-model="searchQuery"
-            type="text"
-            class="search"
-            placeholder="buscar tests..."
-            @keyup.enter="doSearch"
-          />
+      <nav class="app-header__nav" aria-label="Principal">
+        <router-link to="/" class="nav-link">Explorar</router-link>
+        <router-link v-if="authStore.isLoggedIn" :to="`/profile/${authStore.userId}`" class="nav-link">Mi panel</router-link>
+        <router-link to="/help" class="nav-link">Ayuda</router-link>
+      </nav>
 
-          <button
-            class="theme-toggle"
-            :class="{ 'theme-toggle--toggled': isDark }"
-            type="button"
-            @click="toggleTheme"
-            title="Cambiar tema"
-            aria-label="Cambiar tema"
+      <span class="app-header__spacer"></span>
+
+      <div class="app-header__actions">
+        <template v-if="authStore.isLoggedIn">
+          <router-link to="/create-test" class="btn hide-mobile">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>Crear test
+          </router-link>
+        </template>
+        <template v-else>
+          <router-link to="/login" class="btn btn--ghost hide-mobile">Iniciar sesión</router-link>
+          <router-link to="/register" class="btn">Crear cuenta</router-link>
+        </template>
+
+        <button
+          class="icon-btn"
+          type="button"
+          :aria-label="isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+          :title="isDark ? 'Modo claro' : 'Modo oscuro'"
+          @click="toggleTheme"
+        >
+          <i :class="isDark ? 'fa-regular fa-sun' : 'fa-regular fa-moon'" aria-hidden="true"></i>
+        </button>
+
+        <template v-if="authStore.isLoggedIn">
+          <router-link
+            :to="`/profile/${authStore.userId}`"
+            class="icon-btn hide-mobile"
+            :aria-label="`Perfil de ${authStore.userName}`"
           >
-            <span class="theme-toggle-sr">Cambiar tema</span>
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="theme-toggle__within" height="1em" width="1em" viewBox="0 0 32 32" fill="currentColor">
-              <clipPath id="theme-toggle__within__clip">
-                <path d="M0 0h32v32h-32ZM6 16A1 1 0 0026 16 1 1 0 006 16" />
-              </clipPath>
-              <g clip-path="url(#theme-toggle__within__clip)">
-                <path d="M30.7 21.3 27.1 16l3.7-5.3c.4-.5.1-1.3-.6-1.4l-6.3-1.1-1.1-6.3c-.1-.6-.8-.9-1.4-.6L16 5l-5.4-3.7c-.5-.4-1.3-.1-1.4.6l-1 6.3-6.4 1.1c-.6.1-.9.9-.6 1.3L4.9 16l-3.7 5.3c-.4.5-.1 1.3.6 1.4l6.3 1.1 1.1 6.3c.1.6.8.9 1.4.6l5.3-3.7 5.3 3.7c.5.4 1.3.1 1.4-.6l1.1-6.3 6.3-1.1c.8-.1 1.1-.8.7-1.4zM16 25.1c-5.1 0-9.1-4.1-9.1-9.1 0-5.1 4.1-9.1 9.1-9.1s9.1 4.1 9.1 9.1c0 5.1-4 9.1-9.1 9.1z" />
-              </g>
-              <path class="theme-toggle__within__circle" d="M16 7.7c-4.6 0-8.2 3.7-8.2 8.2s3.6 8.4 8.2 8.4 8.2-3.7 8.2-8.2-3.6-8.4-8.2-8.4zm0 14.4c-3.4 0-6.1-2.9-6.1-6.2s2.7-6.1 6.1-6.1c3.4 0 6.1 2.9 6.1 6.2s-2.7 6.1-6.1 6.1z" />
-              <path class="theme-toggle__within__inner" d="M16 9.5c-3.6 0-6.4 2.9-6.4 6.4s2.8 6.5 6.4 6.5 6.4-2.9 6.4-6.4-2.8-6.5-6.4-6.5z" />
-            </svg>
+            <UserAvatar :user="authStore.user" size="small" />
+          </router-link>
+          <button type="button" class="icon-btn hide-mobile" aria-label="Cerrar sesión" title="Cerrar sesión" @click="handleLogout">
+            <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
           </button>
+        </template>
 
-          <button
-            class="menu-toggle"
-            type="button"
-            :aria-expanded="mobileMenuOpen ? 'true' : 'false'"
-            aria-controls="header-nav"
-            :aria-label="mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'"
-            @click="mobileMenuOpen = !mobileMenuOpen"
-          >
-            <i class="fa-solid" :class="mobileMenuOpen ? 'fa-xmark' : 'fa-bars'" aria-hidden="true"></i>
-          </button>
-        </div>
-
-        <div id="header-nav" class="header-nav" :class="{ 'is-open': mobileMenuOpen }">
-          <template v-if="authStore.isLoggedIn">
-            <router-link :to="`/profile/${authStore.userId}`" class="link" @click="closeMobileMenu">Mi Panel</router-link>
-            <BaseButton to="/create-test" @click="closeMobileMenu">Crear Test</BaseButton>
-            <a href="#" class="link" @click.prevent="handleLogout">Salir</a>
-          </template>
-          <template v-else>
-            <router-link to="/login" class="link" @click="closeMobileMenu">Iniciar Sesión</router-link>
-            <BaseButton to="/register" @click="closeMobileMenu">Registrarse</BaseButton>
-          </template>
-        </div>
+        <button
+          class="icon-btn menu-toggle"
+          type="button"
+          :aria-expanded="menuOpen ? 'true' : 'false'"
+          aria-controls="mobile-menu"
+          :aria-label="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
+          @click="menuOpen = !menuOpen"
+        >
+          <i class="fa-solid" :class="menuOpen ? 'fa-xmark' : 'fa-bars'" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
+
+    <nav id="mobile-menu" class="mobile-menu" :class="{ 'is-open': menuOpen }" aria-label="Menú móvil">
+      <router-link to="/" class="nav-link" @click="closeMenu">Explorar</router-link>
+      <template v-if="authStore.isLoggedIn">
+        <router-link :to="`/profile/${authStore.userId}`" class="nav-link" @click="closeMenu">Mi panel</router-link>
+        <router-link to="/create-test" class="nav-link" @click="closeMenu">Crear test</router-link>
+        <router-link to="/help" class="nav-link" @click="closeMenu">Ayuda</router-link>
+        <a href="#" class="nav-link" @click.prevent="handleLogout">Cerrar sesión</a>
+      </template>
+      <template v-else>
+        <router-link to="/help" class="nav-link" @click="closeMenu">Ayuda</router-link>
+        <router-link to="/login" class="nav-link" @click="closeMenu">Iniciar sesión</router-link>
+      </template>
+    </nav>
   </header>
 </template>
 
 <script setup>
-import { ref, inject } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, inject, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
-import BaseButton from './base/BaseButton.vue';
+import UserAvatar from './user/UserAvatar.vue';
 
 const authStore = useAuthStore();
 const router = useRouter();
-const searchQuery = ref('');
-const mobileMenuOpen = ref(false);
+const route = useRoute();
+const menuOpen = ref(false);
 
 const isDark = inject('isDark');
 const toggleTheme = inject('toggleTheme');
 
+const closeMenu = () => {
+  menuOpen.value = false;
+};
+
+watch(() => route.fullPath, closeMenu);
+
 const handleLogout = async () => {
   await authStore.logout();
-  closeMobileMenu();
+  closeMenu();
   router.push('/');
-};
-
-const doSearch = () => {
-  router.push({ path: '/', query: { search: searchQuery.value } });
-  closeMobileMenu();
-};
-
-const closeMobileMenu = () => {
-  mobileMenuOpen.value = false;
 };
 </script>

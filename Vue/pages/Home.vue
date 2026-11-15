@@ -1,249 +1,264 @@
 <template>
-  <div class="home">
+  <div class="home page-wrap">
 
-    <!-- ═══════════════════════════════════════════════════
-         HERO
-    ═══════════════════════════════════════════════════ -->
-    <HomeHero :is-logged-in="authStore.isLoggedIn" :stats="stats" />
+    <!-- ═══ Visitante: portada ═══ -->
+    <template v-if="!authStore.isLoggedIn">
+      <HomeHero :stats="stats" class="home__hero" />
 
-    <!-- ═══════════════════════════════════════════════════
-         TEST DESTACADO (is_featured)
-    ═══════════════════════════════════════════════════ -->
-    <FeaturedTestCard v-if="featuredTest" :test="featuredTest" />
+      <section id="como" class="home__section how" aria-labelledby="h-how">
+        <div class="how__copy">
+          <h2 id="h-how" class="home__h2">Cómo funciona</h2>
+          <ol class="how__steps">
+            <li>
+              <strong>Elige un test</strong>
+              <span>Filtra por categoría y dificultad, o busca un tema concreto.</span>
+            </li>
+            <li>
+              <strong>Respóndelo a tu ritmo</strong>
+              <span>Una pregunta por pantalla, con la barra de progreso siempre a la vista y temporizador si el autor lo ha puesto.</span>
+            </li>
+            <li>
+              <strong>Repasa tus fallos</strong>
+              <span>Ves cada respuesta corregida y tu nota frente a la media del test.</span>
+            </li>
+          </ol>
+        </div>
 
-    <!-- ═══════════════════════════════════════════════════
-         BARRA DE FILTROS
-    ═══════════════════════════════════════════════════ -->
-    <section class="filter-section">
-      <div class="filter-bar">
-        <!-- Búsqueda -->
-        <div class="search-wrap">
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <!-- Ilustración: así se ve un resultado -->
+        <div class="how__demo panel" aria-hidden="true">
+          <div class="demo-score">
+            <div class="demo-ring" style="--pct: 75"><span class="tabular">75 %</span></div>
+            <div class="demo-score__text">
+              <strong>Aprobado</strong>
+              <span>9 de 12 correctas · 11 min 24 s</span>
+              <span class="demo-score__delta">11 puntos por encima de la media del test</span>
+            </div>
+          </div>
+          <div class="demo-row"><span class="demo-x"><i class="fa-solid fa-xmark"></i></span><span>¿Qué hace un LEFT JOIN con las filas sin coincidencia?</span><em>Pregunta 7</em></div>
+          <div class="demo-row"><span class="demo-x"><i class="fa-solid fa-xmark"></i></span><span>COUNT(*) ignora las filas con valores NULL.</span><em>Pregunta 10</em></div>
+        </div>
+      </section>
+    </template>
+
+    <!-- ═══ Con sesión: saludo ═══ -->
+    <section v-else class="greet" aria-labelledby="h-greet">
+      <div class="greet__text">
+        <h1 id="h-greet" class="greet__title">Hola, {{ firstName }}</h1>
+        <p v-if="lastAttempt" class="greet__line">
+          Tu último intento fue un {{ Math.round(lastAttempt.score) }} % en {{ lastAttempt.test?.title }}, {{ relativeDay(lastAttempt.completed_at) }}.
+          <router-link :to="`/results/${lastAttempt.id}`">Ver resultado</router-link>
+        </p>
+        <p v-else-if="profileLoaded" class="greet__line">Aún no has hecho ningún test. Elige uno del catálogo para empezar.</p>
+      </div>
+      <dl v-if="myStats" class="greet__stats" aria-label="Tu actividad">
+        <div><dt>Tests hechos</dt><dd class="tabular">{{ myStats.tests_completed ?? 0 }}</dd></div>
+        <div><dt>Aprobados</dt><dd class="tabular">{{ myStats.tests_passed ?? 0 }}</dd></div>
+        <div>
+          <dt>Nota media</dt>
+          <dd class="tabular">{{ myStats.tests_completed ? `${Math.round(myStats.average_score)} %` : '—' }}</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ═══ Catálogo ═══ -->
+    <section id="tests" class="catalog" :class="{ 'home__section': !authStore.isLoggedIn }" aria-labelledby="h-tests">
+      <h2 v-if="!authStore.isLoggedIn" class="home__h2">Explora los tests</h2>
+
+      <div class="catalog__filters" role="search">
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass search__icon" aria-hidden="true"></i>
+          <label for="catalog-search" class="sr-only">Buscar tests</label>
           <input
+            id="catalog-search"
             v-model="searchQuery"
-            type="text"
-            class="search-input"
-            placeholder="Buscar tests..."
+            type="search"
+            class="search__input"
+            placeholder="Buscar por tema, título o autor"
+            @input="onSearchInput"
             @keyup.enter="applySearch"
           />
-          <button v-if="searchQuery" class="search-clear" @click="clearSearch">
-            <i class="fa-solid fa-xmark"></i>
+          <button v-if="searchQuery" type="button" class="search__clear icon-btn" aria-label="Borrar búsqueda" @click="clearSearch">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
         </div>
 
-        <!-- Categoría -->
-        <select v-model="filters.category" class="filter-select" @change="fetchTests">
-          <option value="">Todas las categorías</option>
-          <option v-for="cat in categories" :key="cat.id" :value="cat.id">
-            {{ cat.name }}
-          </option>
-        </select>
-
-        <!-- Dificultad (pills) -->
-        <div class="pill-group">
-          <button
-            v-for="opt in diffOptions"
-            :key="opt.value"
-            :class="['pill', { active: filters.difficulty === opt.value }]"
-            @click="setDifficulty(opt.value)"
-          >{{ opt.label }}</button>
+        <div class="catalog__row">
+          <div class="chips" role="group" aria-label="Categoría">
+            <button type="button" class="chip" :aria-pressed="String(!filters.category)" @click="setCategory('')">Todas</button>
+            <button
+              v-for="cat in categories"
+              :key="cat.id"
+              type="button"
+              class="chip"
+              :aria-pressed="String(String(filters.category) === String(cat.id))"
+              @click="setCategory(cat.id)"
+            >{{ cat.name }}</button>
+          </div>
+          <div class="catalog__selects">
+            <label for="f-diff" class="catalog__label">Dificultad</label>
+            <select id="f-diff" v-model="filters.difficulty" @change="onFilterChange">
+              <option v-for="opt in diffOptions" :key="opt.value" :value="opt.value">{{ opt.label }}</option>
+            </select>
+            <label for="f-sort" class="catalog__label">Ordenar</label>
+            <select id="f-sort" v-model="filters.sort" @change="onFilterChange">
+              <option v-for="opt in sortOptions" :key="opt.value" :value="opt.value">{{ opt.label }}</option>
+            </select>
+          </div>
         </div>
       </div>
 
-      <!-- Ordenación -->
-      <div class="sort-row">
-        <span class="sort-label">Ordenar por</span>
+      <FeaturedTestCard v-if="featuredTest && !hasActiveFilters" :test="featuredTest" />
+
+      <div class="catalog__head">
+        <h2 :class="authStore.isLoggedIn ? 'catalog__h' : 'sr-only'">{{ listHeading }}</h2>
+        <span v-if="!loading && pagination" class="catalog__count tabular">{{ plural(pagination.total, 'test', 'tests') }}</span>
+      </div>
+
+      <!-- Cargando: esqueleto con la forma de las tarjetas -->
+      <div v-if="loading" class="grid" aria-busy="true" aria-label="Cargando tests">
+        <div v-for="n in 6" :key="n" class="skeleton"></div>
+      </div>
+
+      <div v-else-if="loadError" class="state panel" role="alert">
+        <p class="state__title">No se han podido cargar los tests</p>
+        <p class="state__text">Comprueba tu conexión e inténtalo de nuevo.</p>
+        <button type="button" class="btn btn--secondary" @click="fetchTests">Reintentar</button>
+      </div>
+
+      <div v-else-if="tests.length === 0" class="state panel">
+        <p class="state__title">No hay tests que coincidan</p>
+        <p class="state__text">Prueba con otra categoría o con menos filtros.</p>
+        <div class="state__actions">
+          <button type="button" class="btn btn--secondary" @click="resetFilters">Quitar filtros</button>
+          <router-link v-if="authStore.isLoggedIn" to="/create-test" class="btn">Crear test</router-link>
+        </div>
+      </div>
+
+      <div v-else class="grid">
+        <CatalogCard v-for="test in tests" :key="test.id" :test="test" />
+      </div>
+
+      <nav v-if="pagination && pagination.last_page > 1" class="pager" aria-label="Paginación">
         <button
-          v-for="opt in sortOptions"
-          :key="opt.value"
-          :class="['sort-btn', { active: filters.sort === opt.value }]"
-          @click="setSort(opt.value)"
-        >{{ opt.label }}</button>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════
-         GRID DE TESTS
-    ═══════════════════════════════════════════════════ -->
-    <section class="tests-section">
-
-      <!-- Loading -->
-      <div v-if="loading" class="state-box">
-        <i class="fa-solid fa-spinner fa-spin"></i>
-        <p>Cargando tests...</p>
-      </div>
-
-      <!-- Empty -->
-      <div v-else-if="tests.length === 0" class="state-box">
-        <i class="fa-solid fa-box-open"></i>
-        <p>No hay tests que coincidan con tu búsqueda.</p>
-        <button class="btn btn-ghost" @click="resetFilters">Limpiar filtros</button>
-      </div>
-
-      <!-- Grid -->
-      <div v-else class="cards-grid">
-        <router-link
-          v-for="test in tests"
-          :key="test.id"
-          :to="`/test/${test.id}`"
-          class="test-card"
-        >
-          <!-- Cabecera de la card -->
-          <div class="card-header">
-            <div class="card-cats">
-              <span
-                v-for="cat in test.categories"
-                :key="cat.id"
-                class="cat-badge"
-              >{{ cat.name }}</span>
-            </div>
-            <div class="card-badges">
-              <span v-if="test.completed_attempts_count > 10" class="pop-badge">
-                popular
-              </span>
-              <span :class="['diff-badge', `diff-${test.difficulty}`]">
-                {{ diffLabel(test.difficulty) }}
-              </span>
-            </div>
-          </div>
-
-          <!-- Título -->
-          <h3 class="card-title">{{ test.title }}</h3>
-
-          <!-- Descripción -->
-          <p v-if="test.description" class="card-desc">
-            {{ truncate(test.description, 90) }}
-          </p>
-
-          <!-- Stats de la card -->
-          <div class="card-footer">
-            <div class="card-stats">
-              <span class="cstat">
-                <i class="fa-solid fa-circle-question"></i>
-                {{ test.questions_count }} preg.
-              </span>
-              <span v-if="test.time_limit" class="cstat">
-                <i class="fa-regular fa-clock"></i>
-                {{ Math.round(test.time_limit / 60) }} min
-              </span>
-              <span class="cstat">
-                <i class="fa-regular fa-eye"></i>
-                {{ test.completed_attempts_count }}
-              </span>
-            </div>
-            <div v-if="test.user" class="card-author">
-              <UserAvatar :user="test.user" size="small" />
-              <span class="author-name">{{ test.user.name }}</span>
-            </div>
-          </div>
-        </router-link>
-      </div>
-
-      <!-- Paginación -->
-      <div v-if="pagination && pagination.last_page > 1" class="pagination">
-        <button
-          class="page-btn"
+          type="button"
+          class="btn btn--secondary"
           :disabled="pagination.current_page === 1"
           @click="changePage(pagination.current_page - 1)"
         >
-          <i class="fa-solid fa-chevron-left"></i>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Anterior
         </button>
-        <span class="page-info">
-          {{ pagination.current_page }} / {{ pagination.last_page }}
-        </span>
+        <span class="pager__info tabular">Página {{ pagination.current_page }} de {{ pagination.last_page }}</span>
         <button
-          class="page-btn"
+          type="button"
+          class="btn btn--secondary"
           :disabled="pagination.current_page === pagination.last_page"
           @click="changePage(pagination.current_page + 1)"
         >
-          <i class="fa-solid fa-chevron-right"></i>
+          Siguiente<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
         </button>
-      </div>
+      </nav>
     </section>
 
+    <!-- ═══ Visitante: crear tests ═══ -->
+    <section v-if="!authStore.isLoggedIn" class="home__section create" aria-labelledby="h-create">
+      <div class="create__copy">
+        <h2 id="h-create" class="home__h2">Crea tests para tu clase o tu equipo</h2>
+        <p>
+          Opción múltiple, verdadero o falso y respuesta corta. Tú decides el tiempo, la nota de aprobado,
+          los intentos y si las preguntas salen una a una o todas juntas.
+        </p>
+        <div><router-link to="/register" class="btn btn--lg">Crear mi primer test</router-link></div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, watch } from 'vue';
+import { ref, reactive, computed, onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 import api from '../api/axios';
 import HomeHero from '../components/home/HomeHero.vue';
 import FeaturedTestCard from '../components/home/FeaturedTestCard.vue';
-import UserAvatar from '../components/user/UserAvatar.vue';
+import CatalogCard from '../components/test/CatalogCard.vue';
+import { plural, relativeDay } from '../utils/tests';
 
 const authStore = useAuthStore();
-const route    = useRoute();
-const router   = useRouter();
+const route = useRoute();
+const router = useRouter();
 
 // ─── Estado ──────────────────────────────────────────────────────────────────
-const tests        = ref([]);
-const stats        = ref({});
-const categories   = ref([]);
+const tests = ref([]);
+const stats = ref({});
+const categories = ref([]);
 const featuredTest = ref(null);
-const loading      = ref(true);
-const searchQuery  = ref(route.query.search || '');
-const pagination   = ref(null);
+const loading = ref(true);
+const loadError = ref(false);
+const searchQuery = ref(route.query.search || '');
+const pagination = ref(null);
+
+const myStats = ref(null);
+const lastAttempt = ref(null);
+const profileLoaded = ref(false);
 
 const filters = reactive({
-  category:   route.query.category   || '',
-  sort:       route.query.sort       || 'recent',
+  category: route.query.category || '',
+  sort: route.query.sort || 'recent',
   difficulty: route.query.difficulty || '',
-  page:       Number(route.query.page) || 1,
+  page: Number(route.query.page) || 1,
 });
 
-// ─── Opciones estáticas ───────────────────────────────────────────────────────
 const diffOptions = [
-  { value: '',     label: 'Todos' },
-  { value: 'easy',   label: 'Fácil' },
-  { value: 'medium', label: 'Medio' },
-  { value: 'hard',   label: 'Difícil' },
+  { value: '', label: 'Todas' },
+  { value: 'easy', label: 'Fácil' },
+  { value: 'medium', label: 'Media' },
+  { value: 'hard', label: 'Difícil' },
 ];
 
 const sortOptions = [
-  { value: 'recent',   label: 'Recientes' },
+  { value: 'recent', label: 'Más recientes' },
   { value: 'attempts', label: 'Más realizados' },
-  { value: 'longest',  label: 'Más largos' },
   { value: 'shortest', label: 'Más cortos' },
+  { value: 'longest', label: 'Más largos' },
 ];
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-const diffLabel = (d) => ({ easy: 'Fácil', medium: 'Medio', hard: 'Difícil' }[d] || d);
-const truncate  = (str, n) => str && str.length > n ? str.slice(0, n).trimEnd() + '…' : str;
+const firstName = computed(() => (authStore.userName || '').split(' ')[0] || 'de nuevo');
 
-// ─── Peticiones API ───────────────────────────────────────────────────────────
+const hasActiveFilters = computed(
+  () => Boolean(searchQuery.value || filters.category || filters.difficulty || filters.page > 1)
+);
+
+const listHeading = computed(() => {
+  if (searchQuery.value) return `Resultados para «${searchQuery.value}»`;
+  const cat = categories.value.find((c) => String(c.id) === String(filters.category));
+  if (cat) return cat.name;
+  return sortOptions.find((o) => o.value === filters.sort)?.label ?? 'Tests';
+});
+
+// ─── API ─────────────────────────────────────────────────────────────────────
 const fetchTests = async () => {
   loading.value = true;
+  loadError.value = false;
   try {
-    const params = {
-      sort:    filters.sort,
-      page:    filters.page,
-      per_page: 12,
-    };
-    if (filters.category)   params.category_id = filters.category;
-    if (filters.difficulty)  params.difficulty  = filters.difficulty;
-    if (searchQuery.value)   params.search      = searchQuery.value;
+    const params = { sort: filters.sort, page: filters.page, per_page: 12 };
+    if (filters.category) params.category_id = filters.category;
+    if (filters.difficulty) params.difficulty = filters.difficulty;
+    if (searchQuery.value) params.search = searchQuery.value;
 
     const { data } = await api.get('/tests', { params });
 
-    // La API devuelve paginación Laravel (data.data) o array directo
     if (data.data) {
       tests.value = data.data;
-      pagination.value = {
-        current_page: data.current_page,
-        last_page:    data.last_page,
-        total:        data.total,
-      };
+      pagination.value = { current_page: data.current_page, last_page: data.last_page, total: data.total };
     } else {
-      tests.value    = data;
-      pagination.value = null;
+      tests.value = data;
+      pagination.value = { current_page: 1, last_page: 1, total: data.length };
     }
 
-    // Destacado: primer test con is_featured = true
-    featuredTest.value = tests.value.find(t => t.is_featured) || null;
+    featuredTest.value = tests.value.find((t) => t.is_featured) || null;
   } catch (err) {
     console.error('Error cargando tests:', err);
+    loadError.value = true;
   } finally {
     loading.value = false;
   }
@@ -251,22 +266,54 @@ const fetchTests = async () => {
 
 const fetchMeta = async () => {
   try {
-    const [statsRes, catsRes] = await Promise.all([
-      api.get('/tests/stats'),
-      api.get('/categories'),
-    ]);
-    stats.value      = statsRes.data;
+    const [statsRes, catsRes] = await Promise.all([api.get('/tests/stats'), api.get('/categories')]);
+    stats.value = statsRes.data;
     categories.value = catsRes.data;
   } catch (err) {
     console.error('Error cargando metadatos:', err);
   }
 };
 
-// ─── Acciones de filtrado ─────────────────────────────────────────────────────
-const applySearch = () => {
-  filters.page = 1;
+const fetchMyProfile = async () => {
+  if (!authStore.isLoggedIn || !authStore.userId) return;
+  try {
+    const { data } = await api.get(`/profile/${authStore.userId}`);
+    myStats.value = data.stats || null;
+    lastAttempt.value = data.completed_tests?.[0] || null;
+  } catch (err) {
+    console.error('Error cargando el perfil:', err);
+  } finally {
+    profileLoaded.value = true;
+  }
+};
+
+// ─── Filtros ─────────────────────────────────────────────────────────────────
+const syncQueryParams = () => {
+  const query = {};
+  if (searchQuery.value) query.search = searchQuery.value;
+  if (filters.category) query.category = filters.category;
+  if (filters.difficulty) query.difficulty = filters.difficulty;
+  if (filters.sort !== 'recent') query.sort = filters.sort;
+  if (filters.page > 1) query.page = filters.page;
+  router.replace({ query });
+};
+
+const refresh = () => {
   syncQueryParams();
   fetchTests();
+};
+
+const applySearch = () => {
+  clearTimeout(searchTimer);
+  filters.page = 1;
+  refresh();
+};
+
+// Busca mientras se escribe, sin lanzar una petición por tecla
+let searchTimer = null;
+const onSearchInput = () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(applySearch, 350);
 };
 
 const clearSearch = () => {
@@ -274,54 +321,36 @@ const clearSearch = () => {
   applySearch();
 };
 
-const setDifficulty = (val) => {
-  filters.difficulty = val;
+const setCategory = (id) => {
+  filters.category = id;
   filters.page = 1;
-  syncQueryParams();
-  fetchTests();
+  refresh();
 };
 
-const setSort = (val) => {
-  filters.sort = val;
+const onFilterChange = () => {
   filters.page = 1;
-  syncQueryParams();
-  fetchTests();
+  refresh();
 };
 
 const changePage = (page) => {
   filters.page = page;
-  syncQueryParams();
-  fetchTests();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  refresh();
+  document.getElementById('tests')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
 const resetFilters = () => {
-  searchQuery.value  = '';
-  filters.category   = '';
+  searchQuery.value = '';
+  filters.category = '';
   filters.difficulty = '';
-  filters.sort       = 'recent';
-  filters.page       = 1;
-  syncQueryParams();
-  fetchTests();
+  filters.sort = 'recent';
+  filters.page = 1;
+  refresh();
 };
 
-// Mantiene la URL sincronizada con los filtros activos
-const syncQueryParams = () => {
-  const query = {};
-  if (searchQuery.value)   query.search     = searchQuery.value;
-  if (filters.category)    query.category   = filters.category;
-  if (filters.difficulty)  query.difficulty = filters.difficulty;
-  if (filters.sort !== 'recent') query.sort = filters.sort;
-  if (filters.page > 1)    query.page       = filters.page;
-  router.replace({ query });
-};
-
-// ─── Watchers ─────────────────────────────────────────────────────────────────
-// Reactiva la búsqueda cuando el header empuja un ?search= nuevo
 watch(
   () => route.query.search,
   (val) => {
-    if (val !== searchQuery.value) {
+    if ((val || '') !== searchQuery.value) {
       searchQuery.value = val || '';
       filters.page = 1;
       fetchTests();
@@ -329,413 +358,458 @@ watch(
   }
 );
 
-// ─── Init ─────────────────────────────────────────────────────────────────────
+watch(() => authStore.isLoggedIn, (logged) => {
+  if (logged) fetchMyProfile();
+});
+
 onMounted(() => {
   fetchMeta();
   fetchTests();
+  fetchMyProfile();
 });
 </script>
 
 <style scoped>
-/* ── Página ──────────────────────────────────────────────────────────────── */
 .home {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  padding-top: 56px;
 }
 
-/* ── Badges ───────────────────────────────────────────────────────────────── */
-.cat-badge {
-  font-size: 0.72rem;
-  font-weight: 500;
-  padding: 3px 10px;
-  border-radius: 20px;
-  background: #ebf0ff;
-  color: #4c5fd5;
-  white-space: nowrap;
+.home__hero {
+  padding-top: 32px;
 }
 
-.diff-badge {
-  font-size: 0.72rem;
-  font-weight: 500;
-  padding: 3px 10px;
-  border-radius: 20px;
-  white-space: nowrap;
+.home__section {
+  margin-top: 160px;
 }
 
-.diff-easy   { background: #e8f5e9; color: #2e7d32; }
-.diff-medium { background: #fff8e1; color: #e65100; }
-.diff-hard   { background: #fce4ec; color: #c62828; }
-
-.pop-badge {
-  font-size: 0.68rem;
-  font-weight: 500;
-  padding: 3px 9px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
-  white-space: nowrap;
-}
-
-/* ── Filtros ──────────────────────────────────────────────────────────────── */
-.filter-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.filter-bar {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.search-wrap {
-  position: relative;
-  flex: 1;
-  min-width: 200px;
-}
-
-.search-icon {
-  position: absolute;
-  left: 0.85rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #a0aec0;
-  font-size: 0.85rem;
-  pointer-events: none;
-}
-
-.search-input {
-  width: 100%;
-  padding: 0.55rem 2.25rem 0.55rem 2.25rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-family: inherit;
-  background: white;
-  color: #2d3748;
-  transition: border-color 0.2s;
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.search-clear {
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #a0aec0;
-  font-size: 0.85rem;
-  padding: 0;
-  line-height: 1;
-}
-
-.search-clear:hover { color: #4a5568; }
-
-.filter-select {
-  padding: 0.55rem 2rem 0.55rem 0.85rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-family: inherit;
-  background: white;
-  color: #2d3748;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23a0aec0' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  cursor: pointer;
-  transition: border-color 0.2s;
-}
-
-.filter-select:focus {
-  outline: none;
-  border-color: #667eea;
-}
-
-.pill-group {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.pill {
-  padding: 5px 14px;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  font-size: 0.82rem;
-  font-family: inherit;
-  cursor: pointer;
-  background: white;
-  color: #718096;
-  transition: all 0.15s;
-}
-
-.pill:hover { border-color: #cbd5e0; background: #f8f9fa; }
-
-.pill.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-color: transparent;
-  color: white;
-}
-
-.sort-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.sort-label {
-  font-size: 0.82rem;
-  color: #a0aec0;
-}
-
-.sort-btn {
-  padding: 4px 12px;
-  border-radius: 6px;
-  border: none;
-  background: none;
-  font-size: 0.82rem;
-  font-family: inherit;
-  color: #718096;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.sort-btn:hover { background: #f8f9fa; color: #2d3748; }
-
-.sort-btn.active {
-  background: #f0f0ff;
-  color: #667eea;
-  font-weight: 500;
-}
-
-/* ── Estado vacío / loading ───────────────────────────────────────────────── */
-.state-box {
-  text-align: center;
-  padding: 3.5rem 1.5rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  color: #a0aec0;
-}
-
-.state-box i {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.state-box p {
-  margin-bottom: 1.25rem;
-  font-size: 0.95rem;
-}
-
-/* ── Grid de cards ────────────────────────────────────────────────────────── */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
-}
-
-.test-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 1.25rem;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  transition: all 0.2s;
-}
-
-.test-card:hover {
-  border-color: #c3cfe2;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.card-cats {
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-  flex: 1;
-}
-
-.card-badges {
-  display: flex;
-  gap: 5px;
-  flex-shrink: 0;
-}
-
-.card-title {
-  font-size: 0.98rem;
+.home__h2 {
+  font-size: 2rem;
   font-weight: 600;
-  color: #1a202c;
-  line-height: 1.4;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
 }
 
-.card-desc {
-  font-size: 0.85rem;
-  color: #718096;
-  line-height: 1.55;
-  flex: 1;
-}
-
-.card-footer {
-  display: flex;
+/* ── Cómo funciona ── */
+.how {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 64px;
   align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 0.6rem;
-  border-top: 1px solid #f7fafc;
 }
 
-.card-stats {
+.how__copy {
   display: flex;
-  gap: 0.85rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.cstat {
-  font-size: 0.78rem;
-  color: #a0aec0;
+.how__steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.how__steps li {
+  display: flex;
+  flex-direction: column;
   gap: 4px;
 }
 
-.cstat i { font-size: 0.72rem; color: #cbd5e0; }
+.how__steps strong {
+  font-size: var(--fs-lead);
+  font-weight: 600;
+}
 
-.card-author {
+.how__steps span {
+  color: var(--text-body);
+}
+
+.how__demo {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.demo-score {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 24px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.demo-ring {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent) calc(var(--pct) * 1%), var(--border) 0);
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
 }
 
-.author-name {
-  font-size: 0.78rem;
-  color: #a0aec0;
+.demo-ring span {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: var(--raised);
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
-/* ── Paginación ───────────────────────────────────────────────────────────── */
-.pagination {
+.demo-score__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--text-body);
+}
+
+.demo-score__text strong {
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.demo-score__delta {
+  color: var(--positive);
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.demo-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 12px;
+  background: var(--bg);
+  border-radius: var(--radius-card);
+  padding: 12px 14px;
+  font-size: var(--fs-small);
 }
 
-.page-btn {
-  width: 36px;
+.demo-row span:nth-child(2) {
+  flex: 1;
+}
+
+.demo-row em {
+  font-style: normal;
+  font-size: var(--fs-meta);
+  color: var(--muted);
+}
+
+.demo-x {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--negative-bg);
+  color: var(--negative-ink);
+  display: inline-grid;
+  place-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Saludo ── */
+.greet {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 40px;
+}
+
+.greet__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.greet__title {
+  font-size: 1.875rem;
+  margin: 0;
+}
+
+.greet__line {
+  color: var(--text-body);
+  margin: 0;
+}
+
+.greet__line a {
+  font-weight: 500;
+}
+
+.greet__stats {
+  display: flex;
+  margin: 0;
+}
+
+.greet__stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 24px;
+  border-left: 1px solid var(--border);
+}
+
+.greet__stats > div:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.greet__stats dt {
+  font-size: var(--fs-meta);
+  color: var(--muted);
+}
+
+.greet__stats dd {
+  margin: 0;
+  font-size: 1.375rem;
+}
+
+/* ── Catálogo ── */
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.catalog__filters {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search {
+  position: relative;
+}
+
+.search__icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+}
+
+.search__input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--control);
+  border-radius: var(--radius-card);
+  padding: 0 48px 0 44px;
+  font: inherit;
+  font-size: var(--fs-body);
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.search__input::placeholder {
+  color: var(--muted);
+}
+
+.search__input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.search__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search__clear {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.catalog__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.catalog__selects {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.catalog__selects select {
   height: 36px;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  background: white;
-  color: #4a5568;
-  cursor: pointer;
+}
+
+.catalog__label {
+  font-size: var(--fs-meta);
+  color: var(--muted);
+}
+
+.catalog__label + select + .catalog__label {
+  margin-left: 8px;
+}
+
+.catalog__head {
   display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: -12px;
+}
+
+.catalog__h {
+  font-size: var(--fs-section);
+  font-weight: 600;
+  margin: 0;
+}
+
+.catalog__count {
+  font-size: var(--fs-meta);
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.skeleton {
+  height: 196px;
+  border-radius: var(--radius-panel);
+  background: var(--raised);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.55; }
+}
+
+.state {
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  transition: all 0.15s;
-}
-
-.page-btn:hover:not(:disabled) {
-  border-color: #667eea;
-  color: #667eea;
-}
-
-.page-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.page-info {
-  font-size: 0.88rem;
-  color: #718096;
-  min-width: 60px;
+  gap: 8px;
   text-align: center;
 }
 
-/* ── Dark mode ────────────────────────────────────────────────────────────── */
-body.dark-mode .test-card,
-body.dark-mode .state-box {
-  background: var(--tm-surface) !important;
-  border-color: var(--tm-border) !important;
+.state__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-body.dark-mode .card-title,
-body.dark-mode .feat-n {
-  color: var(--tm-text) !important;
+.state__text {
+  color: var(--text-body);
+  margin: 0 0 8px;
 }
 
-body.dark-mode .card-desc,
-body.dark-mode .author-name,
-body.dark-mode .cstat {
-  color: var(--tm-muted) !important;
+.state__actions {
+  display: flex;
+  gap: 8px;
 }
 
-body.dark-mode .search-input,
-body.dark-mode .filter-select {
-  background: var(--tm-bg) !important;
-  border-color: var(--tm-border) !important;
-  color: var(--tm-text) !important;
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
-body.dark-mode .pill {
-  background: var(--tm-bg);
-  border-color: var(--tm-border);
-  color: var(--tm-muted);
+.pager__info {
+  font-size: var(--fs-small);
+  color: var(--muted);
 }
 
-body.dark-mode .pill:hover {
-  background: var(--tm-hover);
+/* ── Crear tests ── */
+.create {
+  background: var(--raised);
+  border-radius: 12px;
+  padding: 64px;
 }
 
-body.dark-mode .sort-btn:hover {
-  background: var(--tm-hover);
-  color: var(--tm-text);
+.create__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 560px;
 }
 
-body.dark-mode .card-footer {
-  border-top-color: var(--tm-border);
+.create__copy p {
+  font-size: var(--fs-lead);
+  color: var(--text-body);
+  margin: 0;
 }
 
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .how,
+  .greet {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
 
-body.dark-mode .page-btn {
-  background: var(--tm-surface);
-  border-color: var(--tm-border);
-  color: var(--tm-muted);
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-/* ── Responsive ───────────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .filter-bar { flex-direction: column; align-items: stretch; }
+@media (max-width: 720px) {
+  .home {
+    padding-top: 32px;
+  }
 
-  .search-wrap,
-  .filter-select { width: 100%; }
+  .home__section {
+    margin-top: 96px;
+  }
 
-  .cards-grid { grid-template-columns: 1fr; }
+  .home__h2 {
+    font-size: 1.625rem;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    width: 100%;
+  }
+
+  .catalog__selects {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px 12px;
+  }
+
+  .catalog__label + select + .catalog__label {
+    margin-left: 0;
+  }
+
+  .greet__stats > div {
+    padding: 0 16px;
+  }
+
+  .create {
+    padding: 32px 24px;
+  }
 }
 </style>

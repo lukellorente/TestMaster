@@ -1,260 +1,140 @@
 <template>
-  <BaseLoader v-if="loading" text="Cargando test..." size="large" />
-  <BaseAlert v-else-if="error" variant="error">{{ error }}</BaseAlert>
+  <div class="page-wrap vt">
+    <BaseLoader v-if="loading" text="Cargando test..." size="large" />
 
-  <div v-else-if="test" class="view-test">
+    <div v-else-if="error" class="vt__error panel" role="alert">
+      <p class="vt__error-title">{{ error }}</p>
+      <router-link to="/" class="btn btn--secondary">Volver al catálogo</router-link>
+    </div>
 
-      <!-- Layout principal -->
-    <div class="page-layout">
+    <template v-else-if="test">
+      <nav class="vt__crumbs" aria-label="Ruta">
+        <router-link to="/">Explorar</router-link>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ test.title }}</span>
+      </nav>
 
-      <!-- ═══════════════════════════════════════
-           COLUMNA PRINCIPAL
-      ═══════════════════════════════════════ -->
-      <div class="main-col">
+      <div class="vt__layout">
+        <!-- ═══ Columna principal ═══ -->
+        <div class="vt__main">
+          <section class="vt__hero">
+            <div class="vt__tags">
+              <span class="vt__cats">{{ categoryLabel }}</span>
+              <span v-if="test.difficulty" :class="['pill', difficultyClass(test.difficulty)]">{{ difficultyLabel(test.difficulty) }}</span>
+            </div>
+            <h1 class="vt__title">{{ test.title }}</h1>
+            <p v-if="test.description" class="vt__desc">{{ test.description }}</p>
+            <div class="vt__author">
+              <UserAvatar v-if="test.user" :user="test.user" size="small" />
+              <span>
+                <template v-if="test.user">
+                  Creado por <router-link :to="`/profile/${test.user.id}`">{{ test.user.name }}</router-link> ·
+                </template>
+                {{ formatDate(test.created_at) }}
+              </span>
+            </div>
+          </section>
 
-        <!-- Hero -->
-        <section class="test-hero">
-          <div class="hero-badges">
-            <span
-              v-for="cat in test.categories"
-              :key="cat.id"
-              class="cat-badge"
-            >
-              <i v-if="cat.icon" :class="`fa-solid fa-${cat.icon}`"></i>
-              {{ cat.name }}
+          <dl class="vt__strip" aria-label="Datos del test">
+            <div><dt>Preguntas</dt><dd class="tabular">{{ test.questions_count }}</dd></div>
+            <div><dt>Tiempo límite</dt><dd class="tabular">{{ test.time_limit ? `${Math.round(test.time_limit / 60)} min` : 'Sin límite' }}</dd></div>
+            <div><dt>Intentos</dt><dd class="tabular">{{ test.completed_attempts_count ?? 0 }}</dd></div>
+            <div><dt>Nota media</dt><dd class="tabular">{{ test.avg_score ? `${Math.round(test.avg_score)} %` : '—' }}</dd></div>
+          </dl>
+
+          <!-- Tu último intento -->
+          <router-link
+            v-if="test.last_attempt"
+            :to="`/results/${test.last_attempt.id}`"
+            class="vt__prev"
+            :class="lastPassed ? 'is-pass' : 'is-fail'"
+          >
+            <span class="vt__prev-icon" aria-hidden="true">
+              <i :class="lastPassed ? 'fa-solid fa-check' : 'fa-solid fa-xmark'"></i>
             </span>
-            <span :class="['diff-badge', `diff-${test.difficulty}`]">
-              {{ diffLabel(test.difficulty) }}
+            <span class="vt__prev-text">
+              <strong>{{ lastPassed ? 'Aprobaste tu último intento' : 'No aprobaste tu último intento' }}</strong>
+              <span>
+                {{ formatDate(test.last_attempt.completed_at) }}
+                <template v-if="test.max_attempts !== -1"> · intento {{ test.user_attempts }} de {{ test.max_attempts }}</template>
+              </span>
             </span>
-            <span v-if="test.completed_attempts_count > 10" class="pop-badge">
-              popular
-            </span>
-          </div>
+            <span class="vt__prev-score tabular">{{ Math.round(test.last_attempt.score) }} %</span>
+          </router-link>
 
-          <h1 class="test-title">{{ test.title }}</h1>
-
-          <p v-if="test.description" class="test-desc">{{ test.description }}</p>
-
-          <div class="author-row">
-            <UserAvatar v-if="test.user" :user="test.user" size="small" />
-            <UserAvatar v-else name="?" size="small" />
-            <span class="author-text">
-              Creado por
-              <router-link
-                v-if="test.user"
-                :to="`/profile/${test.user.id}`"
-                class="author-link"
-              >{{ test.user.name }}</router-link>
-              · {{ formatDate(test.created_at) }}
-            </span>
-          </div>
-        </section>
-
-        <!-- Métricas rápidas -->
-        <div class="stat-strip">
-          <div class="stat-chip">
-            <i class="fa-solid fa-circle-question stat-icon"></i>
-            <span class="stat-val">{{ test.questions_count }}</span>
-            <span class="stat-lbl">preguntas</span>
-          </div>
-          <div class="stat-chip">
-            <i class="fa-regular fa-clock stat-icon"></i>
-            <span class="stat-val">
-              {{ test.time_limit ? Math.round(test.time_limit / 60) + ' min' : '∞' }}
-            </span>
-            <span class="stat-lbl">tiempo límite</span>
-          </div>
-          <div class="stat-chip">
-            <i class="fa-solid fa-users stat-icon"></i>
-            <span class="stat-val">{{ test.completed_attempts_count ?? 0 }}</span>
-            <span class="stat-lbl">intentos</span>
-          </div>
-          <div class="stat-chip">
-            <i class="fa-solid fa-chart-simple stat-icon"></i>
-            <span class="stat-val">
-              {{ test.avg_score ? Number(test.avg_score).toFixed(1) + '%' : '—' }}
-            </span>
-            <span class="stat-lbl">nota media</span>
-          </div>
+          <section class="vt__config" aria-labelledby="h-config">
+            <h2 id="h-config" class="vt__h2">Cómo es este test</h2>
+            <dl class="vt__rows">
+              <div><dt>Nota para aprobar</dt><dd class="tabular">{{ test.pass_score }} %</dd></div>
+              <div><dt>Intentos permitidos</dt><dd>{{ test.max_attempts === -1 ? 'Ilimitados' : test.max_attempts }}</dd></div>
+              <div><dt>Presentación</dt><dd>{{ test.display_mode === 'all' ? 'Todas las preguntas en una página' : 'Una pregunta por pantalla' }}</dd></div>
+              <div><dt>Orden de las preguntas</dt><dd>{{ test.shuffle_questions ? 'Aleatorio' : 'Fijo' }}</dd></div>
+              <div><dt>Orden de las respuestas</dt><dd>{{ test.shuffle_answers ? 'Aleatorio' : 'Fijo' }}</dd></div>
+              <div><dt>Respuestas correctas al terminar</dt><dd>{{ test.show_correct_answers ? 'Se muestran' : 'No se muestran' }}</dd></div>
+              <div><dt>Explicaciones</dt><dd>{{ test.show_explanations ? 'Se muestran' : 'No se muestran' }}</dd></div>
+            </dl>
+          </section>
         </div>
 
-        <!-- Banner resultado previo -->
-        <div v-if="test.last_attempt" class="prev-banner">
-          <div class="prev-left">
-            <div :class="['prev-icon', test.last_attempt.score >= test.pass_score ? 'prev-icon--pass' : 'prev-icon--fail']">
-              <i :class="test.last_attempt.score >= test.pass_score ? 'fa-solid fa-check' : 'fa-solid fa-xmark'"></i>
-            </div>
-            <div class="prev-info">
-              <p class="prev-title">
-                {{ test.last_attempt.score >= test.pass_score ? 'Aprobado en tu último intento' : 'No aprobado en tu último intento' }}
-              </p>
-              <p class="prev-sub">
-                Completado el {{ formatDate(test.last_attempt.completed_at) }}
-                <span v-if="test.max_attempts !== -1">
-                  · Intento {{ test.user_attempts }} de {{ test.max_attempts }}
-                </span>
-              </p>
-            </div>
-          </div>
-          <div :class="['prev-score', test.last_attempt.score >= test.pass_score ? 'prev-score--pass' : 'prev-score--fail']">
-            {{ Number(test.last_attempt.score).toFixed(1) }}%
-          </div>
-        </div>
+        <!-- ═══ Lateral ═══ -->
+        <aside class="vt__side">
+          <div class="vt__cta panel">
+            <h2 class="vt__cta-title">{{ ctaHeading }}</h2>
+            <dl class="vt__cta-rows">
+              <div><dt>Duración</dt><dd>{{ test.time_limit ? `${Math.round(test.time_limit / 60)} min` : 'Sin límite' }}</dd></div>
+              <div><dt>Preguntas</dt><dd class="tabular">{{ test.questions_count }}</dd></div>
+              <div v-if="authStore.isLoggedIn && test.max_attempts !== -1">
+                <dt>Tus intentos</dt><dd class="tabular">{{ test.user_attempts ?? 0 }} de {{ test.max_attempts }}</dd>
+              </div>
+              <div><dt>Para aprobar</dt><dd class="tabular">{{ test.pass_score }} %</dd></div>
+            </dl>
 
-        <!-- Configuración -->
-        <section class="config-card">
-          <h2 class="section-title">Configuración del test</h2>
-          <div class="config-list">
-            <div class="config-row">
-              <span class="config-label">Nota mínima para aprobar</span>
-              <span class="config-val">{{ test.pass_score }}%</span>
-            </div>
-            <div class="config-row">
-              <span class="config-label">Intentos permitidos</span>
-              <span class="config-val">
-                {{ test.max_attempts === -1 ? 'Ilimitados' : test.max_attempts }}
-              </span>
-            </div>
-            <div class="config-row">
-              <span class="config-label">Orden de preguntas</span>
-              <span class="config-val">
-                {{ test.shuffle_questions ? 'Aleatorio' : 'Fijo' }}
-              </span>
-            </div>
-            <div class="config-row">
-              <span class="config-label">Orden de respuestas</span>
-              <span class="config-val">
-                {{ test.shuffle_answers ? 'Aleatorio' : 'Fijo' }}
-              </span>
-            </div>
-            <div class="config-row">
-              <span class="config-label">Mostrar respuestas correctas</span>
-              <span :class="['config-val', test.show_correct_answers ? 'val--yes' : 'val--no']">
-                <i :class="test.show_correct_answers ? 'fa-solid fa-check' : 'fa-solid fa-xmark'"></i>
-                {{ test.show_correct_answers ? 'Sí' : 'No' }}
-              </span>
-            </div>
-            <div class="config-row config-row--last">
-              <span class="config-label">Mostrar explicaciones</span>
-              <span :class="['config-val', test.show_explanations ? 'val--yes' : 'val--no']">
-                <i :class="test.show_explanations ? 'fa-solid fa-check' : 'fa-solid fa-xmark'"></i>
-                {{ test.show_explanations ? 'Sí' : 'No' }}
-              </span>
-            </div>
-          </div>
-        </section>
+            <template v-if="!authStore.isLoggedIn">
+              <p class="vt__note">Inicia sesión para hacer este test y guardar tu nota.</p>
+              <router-link to="/login" class="btn btn--lg vt__full">Iniciar sesión</router-link>
+              <router-link to="/register" class="btn btn--secondary btn--lg vt__full">Crear cuenta gratis</router-link>
+            </template>
 
-      </div>
-
-      <!-- ═══════════════════════════════════════
-           SIDEBAR
-      ═══════════════════════════════════════ -->
-      <aside class="side-col">
-
-        <!-- Panel de acción principal -->
-        <div class="cta-card">
-          <p class="cta-heading">
-            {{ ctaHeading }}
-          </p>
-
-          <div class="cta-meta">
-            <div class="cta-row">
-              <span class="cta-label">Duración aprox.</span>
-              <span class="cta-value">
-                {{ test.time_limit ? Math.round(test.time_limit / 60) + ' min' : 'Sin límite' }}
-              </span>
-            </div>
-            <div class="cta-row">
-              <span class="cta-label">Preguntas</span>
-              <span class="cta-value">{{ test.questions_count }}</span>
-            </div>
-            <div v-if="authStore.isLoggedIn && test.max_attempts !== -1" class="cta-row">
-              <span class="cta-label">Tus intentos</span>
-              <span class="cta-value">
-                {{ test.user_attempts ?? 0 }} de {{ test.max_attempts }}
-              </span>
-            </div>
-            <div class="cta-row">
-              <span class="cta-label">Para aprobar</span>
-              <span class="cta-value">{{ test.pass_score }}%</span>
-            </div>
-          </div>
-
-          <div class="cta-sep"></div>
-
-          <!-- Sin sesión -->
-          <template v-if="!authStore.isLoggedIn">
-            <p class="cta-note">
-              Debes iniciar sesión para realizar este test.
+            <p v-else-if="attemptsExhausted" class="vt__note vt__note--box">
+              Has usado los {{ test.max_attempts }} intentos que permite este test.
             </p>
-            <router-link to="/login" class="btn-action btn-action--primary">
-              Iniciar sesión
+
+            <template v-else>
+              <router-link :to="`/test/${test.id}/take`" class="btn btn--lg vt__full">
+                {{ test.user_attempts > 0 ? 'Volver a intentarlo' : 'Empezar test' }}
+              </router-link>
+              <p v-if="test.max_attempts !== -1 && test.user_attempts > 0" class="vt__note">
+                Será tu intento {{ test.user_attempts + 1 }} de {{ test.max_attempts }}.
+              </p>
+            </template>
+          </div>
+
+          <div v-if="canManageTest" class="vt__owner panel">
+            <h2 class="vt__h3">Gestionar test</h2>
+            <BaseAlert v-if="ownerError" variant="error">{{ ownerError }}</BaseAlert>
+            <router-link :to="`/test/${test.id}/edit`" class="btn btn--secondary vt__full">
+              <i class="fa-solid fa-pen" aria-hidden="true"></i>Editar test
             </router-link>
-            <router-link to="/register" class="btn-action btn-action--ghost">
-              Crear cuenta gratis
-            </router-link>
-          </template>
-
-          <!-- Intentos agotados -->
-          <template v-else-if="attemptsExhausted">
-            <BaseAlert variant="info" :show-icon="false">
-              Has alcanzado el número máximo de intentos para este test.
-            </BaseAlert>
-          </template>
-
-          <!-- Puede intentar -->
-          <template v-else>
-            <router-link
-              :to="`/test/${test.id}/take`"
-              class="btn-action btn-action--primary"
-            >
-              <i class="fa-solid fa-play"></i>
-              {{ test.user_attempts > 0 ? 'Volver a intentar' : 'Empezar test' }}
-            </router-link>
-            <p v-if="test.user_attempts > 0 && test.max_attempts !== -1" class="cta-note">
-              Intento {{ test.user_attempts + 1 }} de {{ test.max_attempts }}
-            </p>
-          </template>
-        </div>
-
-        <div v-if="canManageTest" class="owner-card">
-          <h2 class="section-title">Gestionar test</h2>
-
-          <BaseAlert v-if="ownerError" variant="error">{{ ownerError }}</BaseAlert>
-
-          <div class="owner-actions">
-            <router-link :to="`/test/${test.id}/edit`" class="btn-action btn-action--primary">
-              <i class="fa-solid fa-pen"></i>
-              Editar test completo
-            </router-link>
-            <button class="btn-action btn-action--danger" :disabled="deletingOwner" @click="deleteTest">
-              <i class="fa-solid fa-trash"></i>
-              {{ deletingOwner ? 'Eliminando...' : 'Eliminar test' }}
+            <button type="button" class="btn btn--ghost vt__full vt__danger" :disabled="deletingOwner" @click="confirmDelete = true">
+              <i class="fa-regular fa-trash-can" aria-hidden="true"></i>{{ deletingOwner ? 'Eliminando…' : 'Eliminar test' }}
             </button>
           </div>
-        </div>
+        </aside>
+      </div>
 
-        <!-- Estadísticas globales -->
-        <div v-if="test.avg_score || test.completed_attempts_count" class="gstats-card">
-          <h2 class="section-title">Estadísticas generales</h2>
-          <div class="gstats-list">
-            <div class="gstat-row">
-              <span class="gstat-label">Total intentos</span>
-              <span class="gstat-val">{{ test.completed_attempts_count ?? 0 }}</span>
-            </div>
-            <div v-if="test.avg_score" class="gstat-row">
-              <span class="gstat-label">Nota media</span>
-              <span class="gstat-val">{{ Number(test.avg_score).toFixed(1) }}%</span>
-            </div>
-            <div class="gstat-row gstat-row--last">
-              <span class="gstat-label">Visitas</span>
-              <span class="gstat-val">{{ test.views_count ?? 0 }}</span>
-            </div>
-          </div>
-        </div>
+      <!-- Botón fijo en móvil -->
+      <div v-if="mobileCta" class="vt__sticky">
+        <router-link :to="mobileCta.to" class="btn btn--lg vt__full">{{ mobileCta.label }}</router-link>
+      </div>
 
-      </aside>
-    </div>
+      <BaseModal v-model="confirmDelete" title="¿Eliminar este test?" max-width="440px">
+        <p class="vt__modal-text">Se borrarán el test, sus preguntas y todos los intentos. No se puede deshacer.</p>
+        <template #footer>
+          <button type="button" class="btn btn--secondary" @click="confirmDelete = false">Cancelar</button>
+          <button type="button" class="btn btn--danger" :disabled="deletingOwner" @click="deleteTest">Eliminar</button>
+        </template>
+      </BaseModal>
+    </template>
   </div>
 </template>
 
@@ -265,17 +145,22 @@ import { useAuthStore } from '../stores/auth';
 import api from '../api/axios';
 import BaseLoader from '../components/base/BaseLoader.vue';
 import BaseAlert from '../components/base/BaseAlert.vue';
+import BaseModal from '../components/base/BaseModal.vue';
 import UserAvatar from '../components/user/UserAvatar.vue';
+import { difficultyClass, difficultyLabel } from '../utils/tests';
+import { useToast } from '../composables/useToast';
 
-const route     = useRoute();
-const router    = useRouter();
+const route = useRoute();
+const router = useRouter();
 const authStore = useAuthStore();
+const toast = useToast();
 
-const test    = ref(null);
+const test = ref(null);
 const loading = ref(true);
-const error   = ref('');
+const error = ref('');
 const deletingOwner = ref(false);
 const ownerError = ref('');
+const confirmDelete = ref(false);
 
 // ─── Computed ─────────────────────────────────────────────────────────────────
 const attemptsExhausted = computed(() => {
@@ -284,10 +169,26 @@ const attemptsExhausted = computed(() => {
 });
 
 const ctaHeading = computed(() => {
-  if (!authStore.isLoggedIn)   return 'Realiza este test';
+  if (!authStore.isLoggedIn) return 'Haz este test';
   if (attemptsExhausted.value) return 'Intentos agotados';
-  if (test.value?.user_attempts > 0) return 'Ya has realizado este test';
-  return 'Realiza este test';
+  if (test.value?.user_attempts > 0) return 'Ya lo has hecho';
+  return 'Haz este test';
+});
+
+const lastPassed = computed(
+  () => test.value?.last_attempt && Number(test.value.last_attempt.score) >= Number(test.value.pass_score)
+);
+
+const categoryLabel = computed(() => (test.value?.categories || []).map((c) => c.name).join(' · ') || 'General');
+
+const mobileCta = computed(() => {
+  if (!test.value) return null;
+  if (!authStore.isLoggedIn) return { to: '/login', label: 'Inicia sesión para empezar' };
+  if (attemptsExhausted.value) return null;
+  return {
+    to: `/test/${test.value.id}/take`,
+    label: test.value.user_attempts > 0 ? 'Volver a intentarlo' : 'Empezar test',
+  };
 });
 
 const canManageTest = computed(() => {
@@ -303,28 +204,23 @@ const canManageTest = computed(() => {
 });
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
-const diffLabel = (d) =>
-  ({ easy: 'Fácil', medium: 'Medio', hard: 'Difícil' }[d] ?? d);
-
 const formatDate = (d) => {
   if (!d) return '';
-  return new Date(d).toLocaleDateString('es-ES', {
-    day: '2-digit', month: 'short', year: 'numeric',
-  });
+  return new Date(d).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
 };
 
 const deleteTest = async () => {
   if (!test.value) return;
-  const ok = window.confirm('Esta accion eliminara el test y sus datos asociados. ¿Continuar?');
-  if (!ok) return;
-
   ownerError.value = '';
   deletingOwner.value = true;
 
   try {
     await api.delete(`/tests/${test.value.id}`);
+    confirmDelete.value = false;
+    toast.success('Test eliminado.');
     await router.push('/');
   } catch (err) {
+    confirmDelete.value = false;
     ownerError.value = err.response?.data?.message || 'No se pudo eliminar el test.';
     console.error(err);
   } finally {
@@ -335,7 +231,7 @@ const deleteTest = async () => {
 // ─── Init ─────────────────────────────────────────────────────────────────────
 onMounted(async () => {
   if (!route.params.id) {
-    error.value = 'ID de test inválido.';
+    error.value = 'El enlace del test no es válido.';
     loading.value = false;
     return;
   }
@@ -343,7 +239,7 @@ onMounted(async () => {
     const { data } = await api.get(`/tests/${route.params.id}`);
     test.value = data;
   } catch (err) {
-    error.value = 'No se pudo cargar el test.';
+    error.value = err.response?.status === 404 ? 'Este test no existe o ya no está publicado.' : 'No se pudo cargar el test.';
     console.error(err);
   } finally {
     loading.value = false;
@@ -352,553 +248,370 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-/* ── Página ──────────────────────────────────────────────────────────────── */
-.view-test {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.vt {
+  padding-top: 32px;
 }
 
-/* ── Layout dos columnas ─────────────────────────────────────────────────── */
-.page-layout {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 1.5rem;
-  align-items: start;
-}
-
-.main-col {
+.vt__crumbs {
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  gap: 8px;
+  font-size: var(--fs-small);
+  color: var(--muted);
+  margin-bottom: 32px;
   min-width: 0;
 }
 
-.side-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* ── Hero ────────────────────────────────────────────────────────────────── */
-.test-hero {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 2rem;
-}
-
-.hero-badges {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.cat-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 4px 11px;
-  border-radius: 20px;
-  background: #ebf0ff;
-  color: #4c5fd5;
-}
-
-.cat-badge i {
-  font-size: 10px;
-}
-
-.diff-badge {
-  font-size: 11px;
-  font-weight: 500;
-  padding: 4px 11px;
-  border-radius: 20px;
-}
-
-.diff-easy   { background: #e8f5e9; color: #2e7d32; }
-.diff-medium { background: #fff8e1; color: #e65100; }
-.diff-hard   { background: #fce4ec; color: #c62828; }
-
-.pop-badge {
-  font-size: 11px;
-  font-weight: 500;
-  padding: 4px 11px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
-}
-
-.test-title {
-  font-size: 1.65rem;
-  font-weight: 600;
-  color: #1a202c;
-  line-height: 1.3;
-  margin-bottom: 0.75rem;
-}
-
-.test-desc {
-  font-size: 0.95rem;
-  color: #718096;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
-}
-
-.author-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.author-text {
-  font-size: 13px;
-  color: #a0aec0;
-}
-
-.author-link {
-  color: #4a5568;
-  font-weight: 500;
+.vt__crumbs a {
+  color: var(--muted);
   text-decoration: none;
-  transition: color 0.15s;
 }
 
-.author-link:hover {
-  color: #667eea;
+.vt__crumbs a:hover {
+  color: var(--text);
 }
 
-/* ── Stats strip ─────────────────────────────────────────────────────────── */
-.stat-strip {
+.vt__crumbs [aria-current] {
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vt__layout {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 48px;
+  align-items: start;
 }
 
-.stat-chip {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1rem;
+.vt__main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  text-align: center;
+  gap: 32px;
 }
 
-.stat-icon {
-  font-size: 14px;
-  color: #667eea;
-  margin-bottom: 2px;
-}
-
-.stat-val {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1a202c;
-  line-height: 1;
-}
-
-.stat-lbl {
-  font-size: 11px;
-  color: #a0aec0;
-}
-
-/* ── Banner resultado previo ─────────────────────────────────────────────── */
-.prev-banner {
-  background: #f0fff4;
-  border: 1px solid #9ae6b4;
-  border-radius: 14px;
-  padding: 1.25rem 1.5rem;
+/* Hero */
+.vt__hero {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.prev-left {
+.vt__tags {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.prev-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: white;
-  flex-shrink: 0;
+.vt__cats {
+  font-size: var(--fs-small);
+  color: var(--muted);
 }
 
-.prev-icon--pass { background: #38a169; }
-.prev-icon--fail { background: #e53e3e; }
-
-.prev-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #22543d;
-  margin-bottom: 3px;
-}
-
-.prev-sub {
-  font-size: 12px;
-  color: #48bb78;
-}
-
-.prev-score {
+.vt__title {
   font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1;
-  flex-shrink: 0;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin: 0;
 }
 
-.prev-score--pass { color: #276749; }
-.prev-score--fail { color: #c53030; }
-
-/* prev-banner cuando es fallo */
-.prev-banner:has(.prev-icon--fail) {
-  background: #fff5f5;
-  border-color: #feb2b2;
+.vt__desc {
+  font-size: var(--fs-lead);
+  color: var(--text-body);
+  max-width: 680px;
+  margin: 0;
 }
 
-.prev-banner:has(.prev-icon--fail) .prev-title { color: #742a2a; }
-.prev-banner:has(.prev-icon--fail) .prev-sub   { color: #fc8181; }
-
-/* ── Config card ─────────────────────────────────────────────────────────── */
-.config-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 1.5rem;
-}
-
-.section-title {
-  font-size: 11px;
-  font-weight: 600;
-  color: #a0aec0;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: 1rem;
-}
-
-.config-list {
+.vt__author {
   display: flex;
-  flex-direction: column;
-}
-
-.config-row {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #f7fafc;
-  gap: 1rem;
+  gap: 10px;
+  font-size: var(--fs-small);
+  color: var(--muted);
+  margin-top: 4px;
 }
 
-.config-row--last {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.config-label {
-  font-size: 13px;
-  color: #718096;
-}
-
-.config-val {
-  font-size: 13px;
+.vt__author a {
+  color: var(--text);
   font-weight: 500;
-  color: #2d3748;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  flex-shrink: 0;
-}
-
-.val--yes { color: #38a169; }
-.val--no  { color: #a0aec0; }
-
-/* ── CTA card (sidebar) ──────────────────────────────────────────────────── */
-.cta-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.cta-heading {
-  font-size: 15px;
-  font-weight: 600;
-  color: #1a202c;
-}
-
-.cta-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.cta-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-}
-
-.cta-label { color: #718096; }
-
-.cta-value {
-  font-weight: 500;
-  color: #2d3748;
-}
-
-.cta-sep {
-  height: 1px;
-  background: #f7fafc;
-  margin: 0 -0.25rem;
-}
-
-.cta-note {
-  font-size: 12px;
-  color: #a0aec0;
-  text-align: center;
-  line-height: 1.55;
-}
-
-/* ── Botones de acción ───────────────────────────────────────────────────── */
-.btn-action {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: inherit;
   text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s;
 }
 
-.btn-action--primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+.vt__author a:hover {
+  color: var(--accent);
 }
 
-.btn-action--primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.4);
+/* Strip de datos */
+.vt__strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--raised);
+  border-radius: var(--radius-panel);
+  margin: 0;
 }
 
-.btn-action--ghost {
-  background: transparent;
-  border: 1px solid #e2e8f0;
-  color: #4a5568;
-}
-
-.btn-action--ghost:hover {
-  background: #f8f9fa;
-  border-color: #cbd5e0;
-}
-
-/* ── Global stats card (sidebar) ─────────────────────────────────────────── */
-.gstats-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
-}
-
-.owner-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
+.vt__strip > div {
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 2px;
+  border-left: 1px solid var(--border);
 }
 
-.owner-actions {
+.vt__strip > div:first-child {
+  border-left: 0;
+}
+
+.vt__strip dt {
+  font-size: var(--fs-meta);
+  color: var(--muted);
+}
+
+.vt__strip dd {
+  margin: 0;
+  font-size: 1.375rem;
+}
+
+/* Último intento */
+.vt__prev {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: var(--radius-panel);
+  text-decoration: none;
+  color: var(--text);
+  transition: filter 0.15s;
+}
+
+.vt__prev.is-pass {
+  background: var(--positive-bg);
+}
+
+.vt__prev.is-fail {
+  background: var(--negative-bg);
+}
+
+.vt__prev:hover {
+  color: var(--text);
+  filter: brightness(0.98);
+}
+
+.vt__prev-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.is-pass .vt__prev-icon {
+  background: var(--positive);
+}
+
+.is-fail .vt__prev-icon {
+  background: var(--negative);
+}
+
+.vt__prev-text {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  font-size: var(--fs-small);
 }
 
-.btn-action--danger {
-  background: #fff5f5;
-  border: 1px solid #fed7d7;
-  color: #c53030;
+.vt__prev-text strong {
+  font-size: var(--fs-body);
+  font-weight: 600;
 }
 
-.btn-action--danger:hover {
-  background: #ffe6e6;
-  border-color: #fcb4b4;
+.vt__prev-text span {
+  color: var(--text-body);
 }
 
-.btn-action:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+.vt__prev-score {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-.gstats-list {
-  display: flex;
-  flex-direction: column;
+/* Configuración */
+.vt__h2 {
+  font-size: var(--fs-section);
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 
-.gstat-row {
+.vt__rows {
+  margin: 0;
+}
+
+.vt__rows > div {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #f7fafc;
-  font-size: 13px;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-small);
 }
 
-.gstat-row--last {
-  border-bottom: none;
-  padding-bottom: 0;
+.vt__rows dt {
+  color: var(--text-body);
 }
 
-.gstat-label { color: #718096; }
+.vt__rows dd {
+  margin: 0;
+  font-weight: 500;
+  text-align: right;
+}
 
-.gstat-val {
+/* Lateral */
+.vt__side {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vt__cta,
+.vt__owner {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vt__cta-title {
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #1a202c;
+  margin: 0;
 }
 
-/* ── Dark mode ───────────────────────────────────────────────────────────── */
-body.dark-mode .test-hero,
-body.dark-mode .stat-chip,
-body.dark-mode .config-card,
-body.dark-mode .cta-card,
-body.dark-mode .owner-card,
-body.dark-mode .gstats-card {
-  background: var(--tm-surface) !important;
-  border-color: var(--tm-border) !important;
+.vt__cta-rows {
+  margin: 0 0 8px;
 }
 
-body.dark-mode .test-title,
-body.dark-mode .stat-val,
-body.dark-mode .cta-heading,
-body.dark-mode .cta-value,
-body.dark-mode .gstat-val,
-body.dark-mode .config-val {
-  color: var(--tm-text) !important;
+.vt__cta-rows > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-small);
 }
 
-body.dark-mode .test-desc,
-body.dark-mode .config-label,
-body.dark-mode .cta-label,
-body.dark-mode .gstat-label,
-body.dark-mode .author-text,
-body.dark-mode .stat-lbl {
-  color: var(--tm-muted) !important;
+.vt__cta-rows dt {
+  color: var(--muted);
 }
 
-body.dark-mode .config-row,
-body.dark-mode .gstat-row {
-  border-bottom-color: var(--tm-border) !important;
+.vt__cta-rows dd {
+  margin: 0;
+  font-weight: 500;
 }
 
-body.dark-mode .cta-sep {
-  background: var(--tm-border);
+.vt__full {
+  width: 100%;
 }
 
-body.dark-mode .btn-action--ghost {
-  border-color: var(--tm-border);
-  color: var(--tm-muted);
+.vt__note {
+  font-size: var(--fs-meta);
+  color: var(--muted);
+  margin: 0;
+  text-align: center;
 }
 
-body.dark-mode .btn-action--ghost:hover {
-  background: var(--tm-hover);
+.vt__note--box {
+  text-align: left;
+  font-size: var(--fs-small);
+  background: var(--bg);
+  color: var(--text-body);
+  padding: 12px 14px;
+  border-radius: var(--radius-card);
 }
 
-body.dark-mode .btn-action--danger {
-  background: rgba(197, 48, 48, 0.1) !important;
-  border-color: rgba(197, 48, 48, 0.35) !important;
-  color: #fc8181 !important;
+.vt__h3 {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  margin: 0;
 }
 
-body.dark-mode .btn-action--primary {
-  color: #fff !important;
+.vt__danger {
+  color: var(--negative);
 }
 
-body.dark-mode .prev-banner {
-  background: rgba(56, 161, 105, 0.1) !important;
-  border-color: var(--tm-border) !important;
+.vt__danger:hover {
+  background: var(--negative-bg);
+  color: var(--negative-ink);
 }
 
-body.dark-mode .prev-title { color: var(--tm-text) !important; }
-body.dark-mode .prev-sub   { color: var(--tm-muted) !important; }
-body.dark-mode .prev-score--pass { color: var(--tm-text) !important; }
-body.dark-mode .prev-score--fail { color: var(--tm-text) !important; }
-
-body.dark-mode .cat-badge {
-  background: rgba(102, 126, 234, 0.15) !important;
-  color: #a78bfa !important;
+.vt__modal-text {
+  color: var(--text-body);
+  margin: 0;
 }
 
-body.dark-mode .author-link {
-  color: #a0aec0 !important;
+.vt__error {
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-top: 32px;
 }
 
-body.dark-mode .author-link:hover {
-  color: #a78bfa !important;
+.vt__error-title {
+  font-weight: 600;
+  margin: 0;
 }
 
-body.dark-mode .val--yes { color: #68d391 !important; }
-body.dark-mode .val--no  { color: #4a5568 !important; }
+.vt__sticky {
+  display: none;
+}
 
-/* ── Responsive ──────────────────────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .page-layout {
-    grid-template-columns: 1fr;
+@media (max-width: 960px) {
+  .vt__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
   }
 
-  .side-col {
+  .vt__side {
     position: static;
-    order: -1;
-  }
-
-  .stat-strip {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 480px) {
-  .test-hero {
-    padding: 1.25rem;
-  }
-
-  .test-title {
-    font-size: 1.35rem;
-  }
-
-  .stat-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .prev-banner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .prev-score {
+@media (max-width: 720px) {
+  .vt__title {
     font-size: 1.75rem;
   }
 
+  .vt__strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vt__strip > div:nth-child(3) {
+    border-left: 0;
+  }
+
+  .vt__strip > div:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+
+  /* En móvil la acción principal queda siempre a mano */
+  .vt__sticky {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
+    background: var(--bg);
+    border-top: 1px solid var(--rule);
+  }
+
+  .vt {
+    padding-bottom: 88px;
+  }
 }
 </style>

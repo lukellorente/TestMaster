@@ -4,11 +4,11 @@
     :to="to"
     :type="to ? undefined : type"
     :disabled="disabled || loading"
-    :class="['btn', `btn--${variant}`, { 'btn--loading': loading }]"
+    :class="['btn', `btn--${variant}`, { 'btn--loading': loading, 'btn--lg': size === 'lg' }]"
     v-bind="$attrs"
   >
-    <i v-if="loading" class="fa-solid fa-spinner fa-spin"></i>
-    <i v-else-if="icon" :class="icon"></i>
+    <i v-if="loading" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+    <i v-else-if="icon" :class="icon" aria-hidden="true"></i>
     <slot />
   </component>
 </template>
@@ -29,12 +29,17 @@ defineProps({
   variant: {
     type: String,
     default: 'primary',
-    validator: (v) => ['primary', 'secondary', 'success', 'warning', 'danger'].includes(v),
+    validator: (v) => ['primary', 'secondary', 'ghost', 'success', 'warning', 'danger'].includes(v),
   },
   // Icono FontAwesome
   icon: {
     type: String,
     default: null,
+  },
+  // Tamaño: md (40px) o lg (44px)
+  size: {
+    type: String,
+    default: 'md',
   },
   // Estado de carga
   loading: {

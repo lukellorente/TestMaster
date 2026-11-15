@@ -1,0 +1,108 @@
+/* ─────────────────────────────────────────────────────────────
+   TestMaster · design tokens
+   Un único acento (azul del logo). El modo oscuro solo redefine
+   estas variables: los componentes nunca usan colores literales.
+   El tema se aplica con <html data-theme="light|dark">.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+    color-scheme: light;
+
+    /* Superficies */
+    --bg: #ffffff;
+    --raised: #f4f6f9;          /* paneles: un paso de tono sobre el fondo */
+    --sunk: #eef1f5;            /* hover / activo sobre un panel */
+    --border: #e3e6eb;
+    --rule: #eef0f3;            /* separadores suaves */
+    --control: #cfd4db;         /* bordes de inputs */
+
+    /* Texto (todos ≥ 4.5:1 sobre --bg y --raised) */
+    --text: #111318;
+    --text-body: #3d434d;
+    --muted: #545b67;
+
+    /* Acento */
+    --accent: #2f6feb;
+    --accent-hover: #2459c7;
+    --accent-soft: #e9f0fd;
+    --accent-ink: #1d4fb8;
+    --on-accent: #ffffff;
+
+    /* Estado */
+    --positive: #247b50;
+    --positive-bg: #dcfae5;
+    --positive-ink: #0b3d20;
+    --negative: #c4242a;
+    --negative-bg: #ffedea;
+    --negative-ink: #831c1e;
+    --warning-bg: #fffbeb;
+    --warning-ink: #92400e;
+    --info-bg: var(--accent-soft);
+    --info-ink: var(--accent-ink);
+
+    --chart-muted: #9aa1ad;
+    --scrim: rgba(17, 19, 24, 0.45);
+    --shadow-float: 0 20px 48px rgba(0, 0, 0, 0.18);
+
+    /* Forma */
+    --radius-panel: 10px;
+    --radius-card: 8px;
+    --radius-control: 6px;
+    --radius-pill: 999px;
+
+    /* Tipografía */
+    --font-sans: 'Wix Madefor Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --fs-meta: 0.8125rem;   /* 13 */
+    --fs-small: 0.875rem;   /* 14 */
+    --fs-body: 0.9375rem;   /* 15 */
+    --fs-lead: 1.0625rem;   /* 17 */
+    --fs-section: 1.125rem; /* 18 */
+    --fs-title: 1.75rem;    /* 28 */
+    --fs-display: 3.5rem;   /* 56 */
+
+    /* Layout */
+    --page-max: 1200px;
+    --gutter: 32px;
+    --header-h: 64px;
+}
+
+:root[data-theme='dark'] {
+    color-scheme: dark;
+
+    --bg: #111111;
+    --raised: #1a1a1a;
+    --sunk: #222222;
+    --border: #2a2a2a;
+    --rule: #1f1f1f;
+    --control: #3d3d3d;
+
+    --text: #f3f3f3;
+    --text-body: #cfcfcf;
+    --muted: #b4b4b4;
+
+    --accent: #6b9bff;
+    --accent-hover: #89afff;
+    --accent-soft: #1a2540;
+    --accent-ink: #9dbcff;
+    --on-accent: #0b0d12;
+
+    --positive: #4cc489;
+    --positive-bg: #14291d;
+    --positive-ink: #8fe0b4;
+    --negative: #ff7b72;
+    --negative-bg: #2e1716;
+    --negative-ink: #ffb3ad;
+    --warning-bg: #2b2112;
+    --warning-ink: #f5c26b;
+
+    --chart-muted: #6b6b6b;
+    --scrim: rgba(0, 0, 0, 0.6);
+    --shadow-float: 0 20px 48px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 720px) {
+    :root {
+        --gutter: 16px;
+        --fs-display: 2.375rem; /* 38 */
+    }
+}
