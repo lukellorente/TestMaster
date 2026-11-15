@@ -13,7 +13,7 @@
         <span aria-hidden="true">/</span>
         <router-link :to="`/test/${attempt.test_id}`">{{ attempt.test?.title }}</router-link>
         <span aria-hidden="true">/</span>
-        <span aria-current="page">{{ comparison?.attempt_number ? `Intento ${comparison.attempt_number}` : 'Resultado' }}</span>
+        <span aria-current="page">{{ isReview ? 'Repaso' : comparison?.attempt_number ? `Intento ${comparison.attempt_number}` : 'Resultado' }}</span>
       </nav>
 
       <div class="rs__top">
@@ -22,11 +22,11 @@
           <div class="rs__ring" role="img" :aria-label="`Nota ${score} por ciento`" :style="{ '--pct': score }">
             <div class="rs__ring-inner">
               <span class="rs__ring-num tabular">{{ score }} %</span>
-              <span class="rs__ring-sub">se aprueba con {{ passScore }} %</span>
+              <span class="rs__ring-sub">{{ isReview ? 'en este repaso' : `se aprueba con ${passScore} %` }}</span>
             </div>
           </div>
           <div class="rs__summary">
-            <h1 id="rs-title" class="rs__title">{{ attempt.passed ? 'Aprobado' : 'No aprobado' }}</h1>
+            <h1 id="rs-title" class="rs__title">{{ resultTitle }}</h1>
             <p class="rs__line">
               {{ attempt.correct_answers }} de {{ totalQuestions }} correctas en {{ formatDuration(attempt.time_spent) }}.
               <template v-if="progressLine">{{ progressLine }}</template>
@@ -34,8 +34,13 @@
             <p v-if="showWeightedPoints" class="rs__line">
               {{ formatPoints(attempt.points_earned) }} de {{ plural(attempt.total_points, 'punto', 'puntos') }}<template v-if="penalty">, con penalización de {{ penalty }} por fallo</template>.
             </p>
+            <p v-if="isReview" class="rs__line">{{ reviewLine }}</p>
             <div class="rs__actions">
-              <router-link v-if="canRetry" :to="`/test/${attempt.test_id}/take`" class="btn btn--lg">Reintentar</router-link>
+              <router-link v-if="pendingReview > 0" :to="`/test/${attempt.test_id}/review`" class="btn btn--lg" :class="{ 'btn--secondary': !isReview && canRetry }">
+                <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+                {{ isReview ? 'Seguir repasando' : 'Repasar mis fallos' }} ({{ pendingReview }})
+              </router-link>
+              <router-link v-if="!isReview && canRetry" :to="`/test/${attempt.test_id}/take`" class="btn btn--lg">Reintentar</router-link>
               <router-link :to="`/test/${attempt.test_id}`" class="btn btn--secondary btn--lg">Volver al test</router-link>
               <router-link to="/" class="btn btn--ghost btn--lg">Explorar más tests</router-link>
             </div>
@@ -152,6 +157,20 @@ const attempt = ref(null);
 const responses = ref([]);
 const comparison = ref(null);
 const tab = ref('all');
+const pendingReview = ref(0);
+
+const isReview = computed(() => attempt.value?.mode === 'review');
+
+const resultTitle = computed(() => {
+  if (isReview.value) return pendingReview.value ? 'Repaso terminado' : '¡Fallos superados!';
+  return attempt.value?.passed ? 'Aprobado' : 'No aprobado';
+});
+
+const reviewLine = computed(() =>
+  pendingReview.value
+    ? `Te ${pendingReview.value === 1 ? 'queda 1 pregunta' : `quedan ${pendingReview.value} preguntas`} por dominar. Este repaso no cuenta para tu nota.`
+    : 'Has acertado todas las preguntas que habías fallado. Este repaso no cuenta para tu nota.'
+);
 
 const score = computed(() => Math.round(Number(attempt.value?.score ?? 0)));
 const passScore = computed(() => Number(attempt.value?.test?.pass_score ?? 50));
@@ -251,6 +270,7 @@ onMounted(async () => {
     attempt.value = data.attempt;
     responses.value = data.responses;
     comparison.value = data.comparison ?? null;
+    pendingReview.value = Number(data.pending_review_count) || 0;
   } catch (err) {
     console.error(err);
   } finally {

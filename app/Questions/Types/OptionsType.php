@@ -50,14 +50,17 @@ abstract class OptionsType extends BaseType
 
     public function store(Question $question, array $data): void
     {
+        $rows = [];
         foreach ($this->filledOptions($data) as $index => $option) {
-            QuestionOption::create([
+            $rows[] = [
                 'question_id' => $question->id,
                 'content' => $option['content'],
                 'is_correct' => $option['is_correct'],
                 'order_index' => $index,
-            ]);
+            ];
         }
+
+        self::syncRows($question->options()->get(), $rows, QuestionOption::class);
     }
 
     public function forTaking(Question $question, bool $shuffle): array

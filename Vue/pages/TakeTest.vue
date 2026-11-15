@@ -6,7 +6,9 @@
         <button type="button" class="tt__exit" aria-label="Salir del test" @click="requestExit">
           <i class="fa-solid fa-xmark" aria-hidden="true"></i><span class="tt__hide-sm">Salir</span>
         </button>
-        <span class="tt__name">{{ testTitle || 'Cargando…' }}</span>
+        <span class="tt__name">
+          <span v-if="isReview" class="pill pill--medium tt__mode">Repaso de fallos</span>{{ testTitle || 'Cargando…' }}
+        </span>
         <span class="tt__spacer"></span>
         <span v-if="questions.length" class="tt__count tt__hide-sm tabular">{{ answeredCount }} de {{ questions.length }} respondidas</span>
         <span
@@ -36,6 +38,14 @@
 
     <div v-else-if="loadError" class="tt__col tt__state">
       <p class="tt__state-title">{{ loadError }}</p>
+      <router-link :to="`/test/${route.params.id}`" class="btn btn--secondary">Volver al test</router-link>
+    </div>
+
+    <!-- Repaso sin preguntas pendientes -->
+    <div v-else-if="!questions.length" class="tt__col tt__state">
+      <i class="fa-solid fa-circle-check tt__state-icon" aria-hidden="true"></i>
+      <p class="tt__state-title">{{ isReview ? 'No tienes fallos pendientes en este test' : 'Este test no tiene preguntas' }}</p>
+      <p v-if="isReview" class="tt__state-text">Has acertado todas las preguntas que habías fallado.</p>
       <router-link :to="`/test/${route.params.id}`" class="btn btn--secondary">Volver al test</router-link>
     </div>
 
@@ -135,7 +145,9 @@
 
     <!-- ═══ Confirmar salida ═══ -->
     <BaseModal v-model="showExit" title="¿Salir del test?" max-width="440px" @close="cancelExit">
-      <p class="tt__modal-text">Si sales ahora se perderán tus respuestas y no contará como intento.</p>
+      <p class="tt__modal-text">
+        Si sales ahora se perderán tus respuestas<template v-if="!isReview"> y no contará como intento</template>.
+      </p>
       <template #footer>
         <button type="button" class="btn btn--secondary" @click="cancelExit">Seguir con el test</button>
         <button type="button" class="btn btn--danger" @click="confirmExit">Salir</button>
@@ -166,6 +178,7 @@ const testTitle = ref('');
 const timeLimit = ref(0);
 const displayMode = ref('paged');
 const penalty = ref('');
+const isReview = computed(() => route.name === 'review-test');
 const questions = ref([]);
 const answers = reactive({});
 const startedAt = ref(null);
@@ -262,7 +275,9 @@ onMounted(async () => {
   window.addEventListener('keydown', onKeydown);
   window.addEventListener('beforeunload', onBeforeUnload);
   try {
-    const { data } = await api.get(`/tests/${route.params.id}/questions`);
+    const { data } = await api.get(`/tests/${route.params.id}/questions`, {
+      params: isReview.value ? { mode: 'review' } : {},
+    });
     testTitle.value = data.test.title;
     timeLimit.value = data.test.time_limit || 0;
     displayMode.value = data.test.display_mode === 'all' ? 'all' : 'paged';
@@ -330,6 +345,7 @@ async function submitTest() {
       answers,
       started_at: startedAt.value,
       question_order: questions.value.map((q) => q.id),
+      mode: isReview.value ? 'review' : 'exam',
     });
     submitted.value = true;
     if (timer) clearInterval(timer);
@@ -345,6 +361,20 @@ async function submitTest() {
 </script>
 
 <style scoped>
+.tt__mode {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.tt__state-icon {
+  font-size: 2rem;
+  color: var(--positive);
+}
+
+.tt__state-text {
+  margin: 0;
+  color: var(--text-body);
+}
 .tt__penalty {
   display: flex;
   gap: 8px;

@@ -15,12 +15,12 @@ class ShortAnswerType extends BaseType
 
     public function store(Question $question, array $data): void
     {
-        QuestionOption::create([
+        self::syncRows($question->options()->get(), [[
             'question_id' => $question->id,
             'content' => self::clean($data['correct_answer'] ?? ''),
             'is_correct' => true,
             'order_index' => 1,
-        ]);
+        ]], QuestionOption::class);
     }
 
     public function grade(Question $question, mixed $answer): float

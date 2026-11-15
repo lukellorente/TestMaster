@@ -16,7 +16,7 @@ interface QuestionType
     /** Columnas extra de `questions` que aporta este tipo (por ejemplo, la respuesta numérica). */
     public function attributes(array $data): array;
 
-    /** Crea las filas auxiliares (opciones, huecos, elementos) de una pregunta recién creada. */
+    /** Crea o sincroniza las filas auxiliares (opciones, huecos, elementos) de la pregunta. */
     public function store(Question $question, array $data): void;
 
     /** Datos que recibe el alumno para responder. Nunca debe revelar la solución. */

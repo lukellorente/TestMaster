@@ -110,6 +110,15 @@
                 Será tu intento {{ test.user_attempts + 1 }} de {{ test.max_attempts }}.
               </p>
             </template>
+
+            <!-- El repaso no gasta intentos: se ofrece aunque se hayan agotado -->
+            <template v-if="authStore.isLoggedIn && test.pending_review_count > 0">
+              <router-link :to="`/test/${test.id}/review`" class="btn btn--secondary btn--lg vt__full">
+                <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+                Repasar mis fallos ({{ test.pending_review_count }})
+              </router-link>
+              <p class="vt__note">Solo las preguntas que fallaste. No gasta intentos ni cuenta para tu nota.</p>
+            </template>
           </div>
 
           <div v-if="canManageTest" class="vt__owner panel">

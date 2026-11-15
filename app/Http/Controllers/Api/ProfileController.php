@@ -36,14 +36,14 @@ class ProfileController extends Controller
             ->where('status', 'published')
             ->withCount('questions')
             ->withCount(['attempts as completed_attempts_count' => function ($q) {
-                $q->where('is_completed', true);
+                $q->completedExams();
             }])
             ->orderBy('created_at', 'desc')
             ->get();
 
         // Completed tests
         $completedTests = TestAttempt::where('user_id', $user->id)
-            ->where('is_completed', true)
+            ->completedExams()
             ->whereHas('test', function ($q) {
                 $q->where('is_public', true);
             })
@@ -68,7 +68,7 @@ class ProfileController extends Controller
             ->map(fn($t) => ['type' => 'test', 'title' => $t->title, 'date' => $t->created_at->toISOString(), 'id' => $t->id]);
 
         $attemptActivity = ! $isOwnProfile ? collect() : TestAttempt::where('user_id', $user->id)
-            ->where('is_completed', true)
+            ->completedExams()
             ->whereHas('test', fn($q) => $q->where('is_public', true))
             ->with('test:id,title')
             ->select('id', 'test_id', 'completed_at')

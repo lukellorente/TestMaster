@@ -66,14 +66,17 @@ class FillBlankType extends BaseType
     {
         $caseSensitive = filter_var($data['case_sensitive'] ?? false, FILTER_VALIDATE_BOOLEAN);
 
+        $rows = [];
         foreach ($this->acceptedFromPayload($data) as $index => $answers) {
-            QuestionBlank::create([
+            $rows[] = [
                 'question_id' => $question->id,
                 'blank_index' => $index,
                 'correct_answers' => $answers,
                 'case_sensitive' => $caseSensitive,
-            ]);
+            ];
         }
+
+        self::syncRows($question->blanks()->get(), $rows, QuestionBlank::class);
     }
 
     public function forTaking(Question $question, bool $shuffle): array

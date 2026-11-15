@@ -526,6 +526,7 @@ function addQuestion(type) {
 function duplicateQuestion(idx) {
   const copy = JSON.parse(JSON.stringify(questions.value[idx]));
   copy._key = ++keyCounter;
+  delete copy.id; // la copia es una pregunta nueva
   questions.value.splice(idx + 1, 0, copy);
   focusQuestion(copy);
 }
@@ -653,6 +654,8 @@ async function loadTestForEdit() {
     questions.value = (t.questions ?? []).map((q) => {
       const mapped = {
         _key: ++keyCounter,
+        // Se conserva el id para actualizar la pregunta sin perder el historial de respuestas
+        id: q.id,
         type: q.type,
         content: q.content ?? '',
         explanation: q.explanation ?? '',
@@ -783,6 +786,7 @@ async function submitTest(status) {
     status,
     questions: questions.value.map((q, idx) => {
       const base = {
+        id: q.id ?? null,
         type: q.type,
         content: q.content.trim(),
         explanation: q.explanation?.trim() || null,

@@ -38,13 +38,16 @@ class OrderItemsType extends BaseType
 
     public function store(Question $question, array $data): void
     {
+        $rows = [];
         foreach ($this->itemsFromPayload($data) as $index => $content) {
-            QuestionOrderItem::create([
+            $rows[] = [
                 'question_id' => $question->id,
                 'content' => $content,
                 'correct_order' => $index + 1,
-            ]);
+            ];
         }
+
+        self::syncRows($question->orderItems()->get(), $rows, QuestionOrderItem::class);
     }
 
     /** Siempre se desordenan, y nunca se entregan ya en el orden correcto. */

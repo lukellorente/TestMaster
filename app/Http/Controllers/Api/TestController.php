@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\UserStat;
 use App\Models\User;
 use App\Questions\QuestionTypes;
+use App\Questions\ReviewQueue;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
@@ -59,7 +60,7 @@ class TestController extends Controller
             ->where('status', 'published')
             ->withCount('questions')
             ->withCount(['attempts as completed_attempts_count' => function ($q) {
-                $q->where('is_completed', true);
+                $q->completedExams();
             }]);
 
         // Filter by category
@@ -108,7 +109,7 @@ class TestController extends Controller
         $stats = [
             'total_tests' => Test::where('is_public', true)->where('status', 'published')->count(),
             'total_users' => \App\Models\User::count(),
-            'total_attempts' => \App\Models\TestAttempt::where('is_completed', true)->count(),
+            'total_attempts' => \App\Models\TestAttempt::completedExams()->count(),
         ];
 
         return response()->json($stats);
@@ -122,7 +123,7 @@ class TestController extends Controller
         $test = Test::with(['user:id,name,avatar', 'categories:id,name,icon'])
             ->withCount('questions')
             ->withCount(['attempts as completed_attempts_count' => function ($q) {
-                $q->where('is_completed', true);
+                $q->completedExams();
             }])
             ->findOrFail($id);
 
@@ -134,7 +135,7 @@ class TestController extends Controller
 
         // Average score
         $avgScore = $test->attempts()
-            ->where('is_completed', true)
+            ->completedExams()
             ->avg('score');
 
         $data = $test->toArray();
@@ -147,14 +148,16 @@ class TestController extends Controller
             $userId = $authUser->id;
             $data['user_attempts'] = $test->attempts()
                 ->where('user_id', $userId)
-                ->where('is_completed', true)
+                ->completedExams()
                 ->count();
 
             $data['last_attempt'] = $test->attempts()
                 ->where('user_id', $userId)
-                ->where('is_completed', true)
+                ->completedExams()
                 ->orderBy('completed_at', 'desc')
                 ->first(['id', 'score', 'completed_at']);
+
+            $data['pending_review_count'] = app(ReviewQueue::class)->pendingCount($userId, $test->id);
         }
 
         // Increment views
@@ -229,7 +232,7 @@ class TestController extends Controller
                     ->increment('tests_count');
             }
 
-            $this->createQuestions($test, $request->questions);
+            $this->syncQuestions($test, $request->questions);
 
             // Update user stats
             \App\Models\UserStat::firstOrCreate(['user_id' => $user->id])
@@ -319,6 +322,7 @@ class TestController extends Controller
             'wrong_penalty' => 'sometimes|numeric|min:0|max:1',
             'questions.*.type' => ['required_with:questions', Rule::in(QuestionTypes::keys())],
             'questions.*.content' => 'required_with:questions|string',
+            'questions.*.id' => 'sometimes|nullable|integer',
             'questions.*.explanation' => 'nullable|string',
             'questions.*.points' => 'sometimes|integer|min:1',
         ]);
@@ -385,8 +389,7 @@ class TestController extends Controller
             }
 
             if ($request->has('questions')) {
-                Question::where('test_id', $test->id)->delete();
-                $this->createQuestions($test, $request->questions);
+                $this->syncQuestions($test, $request->questions);
             }
 
             $test->load(['questions.options', 'categories']);
@@ -437,9 +440,10 @@ class TestController extends Controller
     }
 
     /**
-     * Get test questions for taking the test
+     * Get test questions for taking the test.
+     * Con `?mode=review` devuelve solo las preguntas que el usuario tiene pendientes de repasar.
      */
-    public function questions(int $id): JsonResponse
+    public function questions(Request $request, int $id, ReviewQueue $reviewQueue): JsonResponse
     {
         $test = Test::findOrFail($id);
 
@@ -449,7 +453,13 @@ class TestController extends Controller
             ], 404);
         }
 
+        $isReview = $request->query('mode') === 'review';
+
         $questionsQuery = Question::where('test_id', $id)->with(QuestionTypes::RELATIONS);
+
+        if ($isReview) {
+            $questionsQuery->whereIn('id', $reviewQueue->pendingQuestionIds((int) $request->user()->id, $test->id));
+        }
 
         if ($test->shuffle_questions) {
             $questionsQuery->inRandomOrder();
@@ -472,7 +482,9 @@ class TestController extends Controller
             'test' => [
                 'id' => $test->id,
                 'title' => $test->title,
-                'time_limit' => $test->time_limit,
+                'mode' => $isReview ? 'review' : 'exam',
+                // El repaso es para estudiar: sin límite de tiempo.
+                'time_limit' => $isReview ? null : $test->time_limit,
                 'display_mode' => $test->display_mode ?? 'paged',
                 'shuffle_questions' => $test->shuffle_questions,
                 'wrong_penalty' => $test->wrong_penalty,
@@ -508,22 +520,41 @@ class TestController extends Controller
         }
     }
 
-    private function createQuestions(Test $test, array $questions): void
+    /**
+     * Guarda las preguntas del editor. Las que traen `id` de este test se actualizan
+     * en su sitio en lugar de borrarse y recrearse: así no se pierden las respuestas
+     * de intentos anteriores (historial y repaso de fallos). Las que ya no vienen se borran.
+     */
+    private function syncQuestions(Test $test, array $questions): void
     {
+        $existing = Question::where('test_id', $test->id)->get()->keyBy('id');
+        $keptIds = [];
+
         foreach (array_values($questions) as $index => $data) {
             $type = QuestionTypes::get($data['type']);
-
-            $question = Question::create(array_merge([
+            $attributes = array_merge([
                 'test_id' => $test->id,
                 'type' => $data['type'],
                 'content' => trim($data['content']),
                 'explanation' => $data['explanation'] ?? null,
                 'points' => $data['points'] ?? 1,
                 'order_index' => $index + 1,
-            ], $type->attributes($data)));
+            ], $type->attributes($data));
+
+            $question = $existing->get((int) ($data['id'] ?? 0));
+
+            // Un id ajeno, repetido o con otro tipo se trata como pregunta nueva.
+            if ($question && $question->type === $data['type'] && ! in_array($question->id, $keptIds, true)) {
+                $question->update($attributes);
+            } else {
+                $question = Question::create($attributes);
+            }
 
             $type->store($question, $data);
+            $keptIds[] = $question->id;
         }
+
+        Question::where('test_id', $test->id)->whereNotIn('id', $keptIds)->delete();
     }
 
     /**

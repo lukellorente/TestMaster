@@ -543,6 +543,7 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 | `time_spent` | unsigned int | default: 0 | Tiempo empleado (seg) |
 | `is_completed` | boolean | default: false, indexed | Si se completó |
 | `passed` | boolean | default: false | Si aprobó |
+| `mode` | enum | default: `exam` | `exam` o `review` (repaso de fallos). Los repasos no gastan intentos ni cuentan en medias ni estadísticas: usa el scope `TestAttempt::completedExams()` |
 | `started_at` | timestamp | nullable | Hora de inicio |
 | `completed_at` | timestamp | nullable | Hora de finalización |
 | `ip_address` | varchar(45) | nullable | IP del usuario |
@@ -739,8 +740,8 @@ Todos los endpoints están bajo el prefijo `/api`. La autenticación se gestiona
 | `POST` | `/api/logout` | `AuthController@logout` | Cerrar sesión (revoca token) |
 | `GET` | `/api/me` | `AuthController@me` | Obtener datos del usuario autenticado |
 | `POST` | `/api/tests` | `TestController@store` | Crear un test con preguntas |
-| `GET` | `/api/tests/{id}/questions` | `TestController@questions` | Obtener preguntas para realizar test |
-| `POST` | `/api/attempts/submit` | `AttemptController@submit` | Enviar intento de test |
+| `GET` | `/api/tests/{id}/questions` | `TestController@questions` | Obtener preguntas para realizar test (`?mode=review`: solo las pendientes de repasar, sin límite de tiempo) |
+| `POST` | `/api/attempts/submit` | `AttemptController@submit` | Enviar intento de test (`mode`: `exam` por defecto o `review`) |
 | `GET` | `/api/attempts/{attemptId}/results` | `AttemptController@results` | Ver resultados de un intento |
 
 #### Ruta web (catch-all)

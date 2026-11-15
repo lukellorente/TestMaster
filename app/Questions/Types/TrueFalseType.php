@@ -35,14 +35,17 @@ class TrueFalseType extends BaseType
     {
         $correct = $this->correctFromPayload($data);
 
+        $rows = [];
         foreach (['Verdadero' => 'true', 'Falso' => 'false'] as $content => $value) {
-            QuestionOption::create([
+            $rows[] = [
                 'question_id' => $question->id,
                 'content' => $content,
                 'is_correct' => $correct === $value,
                 'order_index' => $value === 'true' ? 1 : 2,
-            ]);
+            ];
         }
+
+        self::syncRows($question->options()->get(), $rows, QuestionOption::class);
     }
 
     private static function toBool(mixed $answer): ?bool

@@ -27,6 +27,13 @@ const routes = [
         meta: { requiresAuth: true, hideChrome: true },
     },
     {
+        // Repasar mis fallos: misma pantalla, solo con las preguntas pendientes
+        path: '/test/:id/review',
+        name: 'review-test',
+        component: TakeTest,
+        meta: { requiresAuth: true, hideChrome: true },
+    },
+    {
         path: '/results/:attemptId',
         name: 'results',
         component: Results,
