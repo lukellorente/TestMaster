@@ -25,8 +25,20 @@ if [[ ! -f .env ]]; then
     echo "❌ No existe .env. Cópialo de .env.example y configúralo antes de desplegar."
     exit 1
 fi
-if ! grep -qE '^APP_DOMAIN=.+' .env; then
-    echo "❌ APP_DOMAIN no está definido en .env (Caddy lo necesita para el certificado HTTPS)."
+for var in APP_DOMAIN DB_DATABASE DB_USERNAME DB_PASSWORD WWWUSER WWWGROUP; do
+    if ! grep -qE "^${var}=.+" .env; then
+        echo "❌ Falta ${var} en .env (o está comentado con #, o tiene espacios alrededor del =)."
+        exit 1
+    fi
+done
+
+# El contenedor escribe en esta carpeta (vendor, node_modules, public/build) con el uid WWWUSER.
+env_uid=$(grep -E '^WWWUSER=' .env | tail -n1 | cut -d= -f2 | tr -d '"'\'' \r')
+dir_uid=$(stat -c %u .)
+if [[ "$env_uid" != "$dir_uid" ]]; then
+    echo "❌ WWWUSER=${env_uid} en .env, pero la carpeta del proyecto pertenece al uid ${dir_uid}."
+    echo "   Pon WWWUSER=$(id -u) y WWWGROUP=$(id -g) en .env y ejecuta:"
+    echo "   sudo chown -R $(id -u):$(id -g) ."
     exit 1
 fi
 
@@ -63,13 +75,20 @@ echo "✅ MySQL está listo."
 
 # ─── Aplicación ───────────────────────────────────────────────────────
 step "Instalar dependencias PHP" $APP composer install --no-dev --optimize-autoloader --no-interaction
+if ! $APP test -f vendor/autoload.php; then
+    echo "❌ No se han podido instalar las dependencias PHP: el resto de pasos fallaría. Abortando."
+    exit 1
+fi
 
 if ! grep -qE '^APP_KEY=.+' .env; then
     step "Generar APP_KEY (primera instalación)" $APP php artisan key:generate --force
 fi
 
-step "Limpiar caché Laravel" $APP php artisan optimize:clear
+# Primero solo la config cacheada (para que las migraciones lean el .env actual).
+# La caché completa va después: vive en la tabla `cache`, que en una instalación nueva aún no existe.
+step "Limpiar configuración cacheada" $APP php artisan config:clear
 step "Ejecutar migraciones" $APP php artisan migrate --force
+step "Limpiar caché Laravel" $APP php artisan optimize:clear
 step "Enlazar storage (avatares)" $APP php artisan storage:link --force
 
 # ─── Frontend ─────────────────────────────────────────────────────────
@@ -78,6 +97,10 @@ step "Build de assets" $APP npm run build
 
 # ─── Optimización ─────────────────────────────────────────────────────
 step "Cachear configuración, rutas y vistas" $APP php artisan optimize
+
+# El servidor PHP arrancó con el contenedor, antes de instalar dependencias y generar
+# APP_KEY: si falló, Supervisor deja de reintentarlo. Se reinicia con todo ya listo.
+step "Reiniciar la aplicación" $COMPOSE restart laravel.test
 
 # ─── Resumen ──────────────────────────────────────────────────────────
 echo
