@@ -158,6 +158,22 @@ class TestController extends Controller
                 ->first(['id', 'score', 'completed_at']);
 
             $data['pending_review_count'] = app(ReviewQueue::class)->pendingCount($userId, $test->id);
+
+            // Evolución de tus notas en este test (solo exámenes, los 30 últimos en orden cronológico).
+            $data['score_history'] = $test->attempts()
+                ->where('user_id', $userId)
+                ->completedExams()
+                ->orderByDesc('completed_at')
+                ->limit(30)
+                ->get(['id', 'score', 'passed', 'completed_at'])
+                ->reverse()
+                ->values()
+                ->map(fn ($a) => [
+                    'id' => $a->id,
+                    'score' => round((float) $a->score, 1),
+                    'passed' => (bool) $a->passed,
+                    'completed_at' => $a->completed_at?->toIso8601String(),
+                ]);
         }
 
         // Increment views

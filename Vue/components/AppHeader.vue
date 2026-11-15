@@ -7,7 +7,7 @@
 
       <nav class="app-header__nav" aria-label="Principal">
         <router-link to="/" class="nav-link">Explorar</router-link>
-        <router-link v-if="authStore.isLoggedIn" :to="`/profile/${authStore.userId}`" class="nav-link">Mi panel</router-link>
+        <router-link v-if="authStore.isLoggedIn" to="/dashboard" class="nav-link">Mi progreso</router-link>
         <router-link to="/help" class="nav-link">Ayuda</router-link>
       </nav>
 
@@ -63,7 +63,8 @@
     <nav id="mobile-menu" class="mobile-menu" :class="{ 'is-open': menuOpen }" aria-label="Menú móvil">
       <router-link to="/" class="nav-link" @click="closeMenu">Explorar</router-link>
       <template v-if="authStore.isLoggedIn">
-        <router-link :to="`/profile/${authStore.userId}`" class="nav-link" @click="closeMenu">Mi panel</router-link>
+        <router-link to="/dashboard" class="nav-link" @click="closeMenu">Mi progreso</router-link>
+        <router-link :to="`/profile/${authStore.userId}`" class="nav-link" @click="closeMenu">Mi perfil</router-link>
         <router-link to="/create-test" class="nav-link" @click="closeMenu">Crear test</router-link>
         <router-link to="/help" class="nav-link" @click="closeMenu">Ayuda</router-link>
         <a href="#" class="nav-link" @click.prevent="handleLogout">Cerrar sesión</a>

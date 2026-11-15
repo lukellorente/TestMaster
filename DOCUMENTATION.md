@@ -742,6 +742,8 @@ Todos los endpoints están bajo el prefijo `/api`. La autenticación se gestiona
 | `POST` | `/api/tests` | `TestController@store` | Crear un test con preguntas |
 | `GET` | `/api/tests/{id}/questions` | `TestController@questions` | Obtener preguntas para realizar test (`?mode=review`: solo las pendientes de repasar, sin límite de tiempo) |
 | `POST` | `/api/attempts/submit` | `AttemptController@submit` | Enviar intento de test (`mode`: `exam` por defecto o `review`) |
+| `GET` | `/api/dashboard?tz=Europe/Madrid` | `DashboardController@show` | Mi progreso: resumen, racha y calendario (en la zona horaria `tz`), dominio por categoría y fallos pendientes por test |
+| `GET` | `/api/dashboard/attempts?page=&mode=` | `DashboardController@attempts` | Historial de intentos propio, paginado (15) y filtrable por `exam`/`review` |
 | `GET` | `/api/attempts/{attemptId}/results` | `AttemptController@results` | Ver resultados de un intento |
 
 #### Ruta web (catch-all)

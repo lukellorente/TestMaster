@@ -9,6 +9,7 @@ import TakeTest from '../pages/TakeTest.vue';
 import Results from '../pages/Results.vue';
 import CreateTest from '../pages/CreateTest.vue';
 import Profile from '../pages/Profile.vue';
+import Dashboard from '../pages/Dashboard.vue';
 import Help from '../pages/Help.vue';
 import Privacy from '../pages/Privacy.vue';
 import Terms from '../pages/Terms.vue';
@@ -52,6 +53,7 @@ const routes = [
         meta: { requiresAuth: true },
     },
     { path: '/profile/:id', name: 'profile', component: Profile },
+    { path: '/dashboard', name: 'dashboard', component: Dashboard, meta: { requiresAuth: true } },
     { path: '/help', name: 'help', component: Help },
     { path: '/privacy', name: 'privacy', component: Privacy }, 
     { path: '/terms', name: 'terms', component: Terms },

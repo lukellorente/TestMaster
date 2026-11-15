@@ -28,6 +28,10 @@
     --accent-ink: #1d4fb8;
     --on-accent: #ffffff;
 
+    /* Gráficas: una sola serie, validada contra la superficie (dataviz validate_palette) */
+    --chart-1: #2f6feb;
+    --chart-wash: rgba(47, 111, 235, 0.1);
+
     /* Estado */
     --positive: #247b50;
     --positive-bg: #dcfae5;
@@ -85,6 +89,10 @@
     --accent-soft: #1a2540;
     --accent-ink: #9dbcff;
     --on-accent: #0b0d12;
+
+    /* Un paso más oscuro que el acento: #6b9bff se sale de la banda de luminosidad sobre fondo oscuro */
+    --chart-1: #5b8ef8;
+    --chart-wash: rgba(91, 142, 248, 0.12);
 
     --positive: #4cc489;
     --positive-bg: #14291d;

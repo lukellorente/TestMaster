@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AccountController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\AttemptController;
 use App\Http\Controllers\Api\ProfileController;
@@ -51,6 +52,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/tests/{id}', [TestController::class, 'update'])->whereNumber('id');
     Route::delete('/tests/{id}', [TestController::class, 'destroy'])->whereNumber('id');
     Route::get('/tests/{id}/questions', [TestController::class, 'questions'])->whereNumber('id');
+
+    // Mi progreso (privado)
+    Route::get('/dashboard', [DashboardController::class, 'show']);
+    Route::get('/dashboard/attempts', [DashboardController::class, 'attempts']);
 
     // Attempts
     Route::post('/attempts/submit', [AttemptController::class, 'submit']);

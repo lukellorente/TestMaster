@@ -63,6 +63,15 @@
             <span class="vt__prev-score tabular">{{ Math.round(test.last_attempt.score) }} %</span>
           </router-link>
 
+          <!-- Evolución de tus notas (solo exámenes) -->
+          <section v-if="test.score_history?.length > 1" class="vt__evo" aria-labelledby="h-evo">
+            <div class="vt__evo-head">
+              <h2 id="h-evo" class="vt__h2">Tu evolución</h2>
+              <span class="vt__evo-sub">{{ evolutionNote }}</span>
+            </div>
+            <ScoreChart :points="test.score_history" :pass-score="Number(test.pass_score)" />
+          </section>
+
           <section class="vt__config" aria-labelledby="h-config">
             <h2 id="h-config" class="vt__h2">Cómo es este test</h2>
             <dl class="vt__rows">
@@ -160,6 +169,7 @@ import BaseAlert from '../components/base/BaseAlert.vue';
 import BaseModal from '../components/base/BaseModal.vue';
 import UserAvatar from '../components/user/UserAvatar.vue';
 import { difficultyClass, difficultyLabel, penaltyLabel } from '../utils/tests';
+import ScoreChart from '../components/charts/ScoreChart.vue';
 import { useToast } from '../composables/useToast';
 
 const route = useRoute();
@@ -190,6 +200,17 @@ const ctaHeading = computed(() => {
 const lastPassed = computed(
   () => test.value?.last_attempt && Number(test.value.last_attempt.score) >= Number(test.value.pass_score)
 );
+
+// "De 40 % a 75 % en 4 intentos" (o la mejor nota si la última bajó)
+const evolutionNote = computed(() => {
+  const h = test.value?.score_history ?? [];
+  if (h.length < 2) return '';
+  const first = Math.round(h[0].score);
+  const last = Math.round(h[h.length - 1].score);
+  const best = Math.round(Math.max(...h.map((p) => Number(p.score))));
+  const base = `De ${first} % a ${last} % en ${h.length} intentos`;
+  return best > last ? `${base} · tu mejor nota: ${best} %` : base;
+});
 
 const categoryLabel = computed(() => (test.value?.categories || []).map((c) => c.name).join(' · ') || 'General');
 
@@ -260,6 +281,29 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+.vt__evo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vt__evo-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vt__evo-head .vt__h2 {
+  margin: 0;
+}
+
+.vt__evo-sub {
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+
 .vt {
   padding-top: 32px;
 }
