@@ -70,7 +70,7 @@
           >
             <header class="ct__q-head">
               <h3 :id="`qt-${q._key}`" class="ct__q-title">
-                Pregunta {{ qIdx + 1 }}<span class="ct__muted"> · {{ typeLabel(q.type) }}</span>
+                Pregunta {{ qIdx + 1 }}<span class="ct__muted"> · {{ questionTypeLabel(q.type) }}</span>
               </h3>
               <div class="ct__q-tools">
                 <button type="button" class="icon-btn" :disabled="qIdx === 0" :aria-label="`Subir pregunta ${qIdx + 1}`" title="Subir" @click="moveQuestion(qIdx, -1)">
@@ -94,23 +94,39 @@
               label="Enunciado"
               type="textarea"
               rows="2"
-              placeholder="Escribe la pregunta"
+              :placeholder="q.type === 'fill_blank' ? 'La capital de Francia es ___.' : 'Escribe la pregunta'"
+              :help-text="q.type === 'fill_blank' ? 'Escribe ___ (tres guiones bajos) donde vaya cada hueco.' : ''"
               :error="questionErrors[q._key]?.content"
               required
             />
 
-            <!-- Opción múltiple -->
-            <fieldset v-if="q.type === 'multiple_choice'" class="ct__opts" :aria-describedby="`qo-help-${q._key}`">
+            <!-- Opción múltiple (una correcta) y selección múltiple (varias) -->
+            <fieldset
+              v-if="q.type === 'multiple_choice' || q.type === 'multiple_select'"
+              class="ct__opts"
+              :aria-describedby="`qo-help-${q._key}`"
+            >
               <legend class="field-legend">Respuestas</legend>
-              <p :id="`qo-help-${q._key}`" class="help-text ct__opts-help">Marca el círculo de la respuesta correcta.</p>
-              <div v-for="(opt, oIdx) in q.options" :key="oIdx" class="ct__opt" :class="{ 'is-correct': q.correctOption === oIdx }">
+              <p :id="`qo-help-${q._key}`" class="help-text ct__opts-help">
+                <template v-if="q.type === 'multiple_choice'">Marca el círculo de la respuesta correcta.</template>
+                <template v-else>Marca todas las correctas. Cada correcta marcada suma y cada incorrecta resta, sin bajar de 0.</template>
+              </p>
+              <div v-for="(opt, oIdx) in q.options" :key="oIdx" class="ct__opt" :class="{ 'is-correct': isOptionCorrect(q, oIdx) }">
                 <input
+                  v-if="q.type === 'multiple_choice'"
                   v-model="q.correctOption"
                   type="radio"
                   class="ct__radio"
                   :name="`correct_${q._key}`"
                   :value="oIdx"
                   :aria-label="`Marcar la opción ${String.fromCharCode(65 + oIdx)} como correcta`"
+                />
+                <input
+                  v-else
+                  v-model="opt.correct"
+                  type="checkbox"
+                  class="ct__radio"
+                  :aria-label="`La opción ${String.fromCharCode(65 + oIdx)} es correcta`"
                 />
                 <label :for="`qo-${q._key}-${oIdx}`" class="sr-only">Opción {{ String.fromCharCode(65 + oIdx) }}</label>
                 <input
@@ -120,7 +136,7 @@
                   class="form-input ct__opt-input"
                   :placeholder="`Opción ${String.fromCharCode(65 + oIdx)}`"
                 />
-                <span v-if="q.correctOption === oIdx" class="pill pill--easy ct__opt-tag">Correcta</span>
+                <span v-if="isOptionCorrect(q, oIdx)" class="pill pill--easy ct__opt-tag">Correcta</span>
                 <button
                   v-if="q.options.length > 2"
                   type="button"
@@ -132,10 +148,86 @@
                 </button>
               </div>
               <p v-if="questionErrors[q._key]?.options" class="error-text">{{ questionErrors[q._key].options }}</p>
-              <button v-if="q.options.length < 8" type="button" class="btn btn--ghost ct__add-opt" @click="q.options.push({ content: '' })">
+              <button v-if="q.options.length < 8" type="button" class="btn btn--ghost ct__add-opt" @click="q.options.push({ content: '', correct: false })">
                 <i class="fa-solid fa-plus" aria-hidden="true"></i>Añadir opción
               </button>
             </fieldset>
+
+            <!-- Rellenar huecos -->
+            <fieldset v-else-if="q.type === 'fill_blank'" class="ct__opts" :aria-describedby="`qb-help-${q._key}`">
+              <legend class="field-legend">Respuestas de los huecos</legend>
+              <p :id="`qb-help-${q._key}`" class="help-text ct__opts-help">
+                Si se admiten varias respuestas, sepáralas con una barra: <code>París | Paris</code>
+              </p>
+              <button type="button" class="btn btn--ghost ct__add-opt" @click="insertBlank(q)">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>Insertar hueco en el enunciado
+              </button>
+              <div v-for="(blank, bIdx) in q.blanks" :key="bIdx" class="ct__opt">
+                <label :for="`qb-${q._key}-${bIdx}`" class="ct__blank-n tabular">({{ bIdx + 1 }})</label>
+                <input
+                  :id="`qb-${q._key}-${bIdx}`"
+                  v-model="q.blanks[bIdx]"
+                  type="text"
+                  class="form-input ct__opt-input"
+                  :placeholder="`Respuesta del hueco ${bIdx + 1}`"
+                />
+              </div>
+              <label class="ct__check"><input v-model="q.case_sensitive" type="checkbox" />Distinguir mayúsculas y minúsculas</label>
+              <p v-if="questionErrors[q._key]?.blanks" class="error-text">{{ questionErrors[q._key].blanks }}</p>
+            </fieldset>
+
+            <!-- Ordenar elementos -->
+            <fieldset v-else-if="q.type === 'order_items'" class="ct__opts" :aria-describedby="`qi-help-${q._key}`">
+              <legend class="field-legend">Elementos en el orden correcto</legend>
+              <p :id="`qi-help-${q._key}`" class="help-text ct__opts-help">El alumno los verá desordenados. Cada elemento en su sitio suma su parte.</p>
+              <div v-for="(item, iIdx) in q.items" :key="iIdx" class="ct__opt">
+                <span class="ct__blank-n tabular" aria-hidden="true">{{ iIdx + 1 }}.</span>
+                <label :for="`qi-${q._key}-${iIdx}`" class="sr-only">Elemento {{ iIdx + 1 }}</label>
+                <input
+                  :id="`qi-${q._key}-${iIdx}`"
+                  v-model="item.content"
+                  type="text"
+                  class="form-input ct__opt-input"
+                  :placeholder="`Elemento ${iIdx + 1}`"
+                />
+                <button type="button" class="icon-btn" :disabled="iIdx === 0" :aria-label="`Subir elemento ${iIdx + 1}`" @click="moveItem(q, iIdx, -1)">
+                  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="icon-btn" :disabled="iIdx === q.items.length - 1" :aria-label="`Bajar elemento ${iIdx + 1}`" @click="moveItem(q, iIdx, 1)">
+                  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                </button>
+                <button v-if="q.items.length > 2" type="button" class="icon-btn" :aria-label="`Quitar elemento ${iIdx + 1}`" @click="q.items.splice(iIdx, 1)">
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p v-if="questionErrors[q._key]?.items" class="error-text">{{ questionErrors[q._key].items }}</p>
+              <button v-if="q.items.length < 10" type="button" class="btn btn--ghost ct__add-opt" @click="q.items.push({ content: '' })">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>Añadir elemento
+              </button>
+            </fieldset>
+
+            <!-- Numérica -->
+            <div v-else-if="q.type === 'numeric'" class="ct__grid2 ct__numeric">
+              <BaseInput
+                v-model="q.numeric_answer"
+                :id="`qn-${q._key}`"
+                label="Respuesta correcta"
+                inputmode="decimal"
+                placeholder="3,14"
+                :error="questionErrors[q._key]?.numeric"
+                required
+              />
+              <BaseInput
+                v-model="q.numeric_tolerance"
+                :id="`qt-${q._key}-tol`"
+                label="Margen aceptado (±)"
+                inputmode="decimal"
+                placeholder="0"
+                optional
+                help-text="Con 0,01, de 3,13 a 3,15 cuenta como correcta."
+                :error="questionErrors[q._key]?.tolerance"
+              />
+            </div>
 
             <!-- Verdadero / falso -->
             <fieldset v-else-if="q.type === 'true_false'" class="ct__opts">
@@ -152,7 +244,7 @@
 
             <!-- Respuesta corta -->
             <BaseInput
-              v-else
+              v-else-if="q.type === 'short_answer'"
               v-model="q.correct_answer"
               :id="`qa-${q._key}`"
               label="Respuesta correcta"
@@ -179,14 +271,15 @@
 
           <div class="ct__add" role="group" aria-label="Añadir pregunta">
             <span class="ct__muted">Añadir pregunta</span>
-            <button type="button" class="btn btn--secondary" @click="addQuestion('multiple_choice')">
-              <i class="fa-solid fa-plus" aria-hidden="true"></i>Opción múltiple
-            </button>
-            <button type="button" class="btn btn--secondary" @click="addQuestion('true_false')">
-              <i class="fa-solid fa-plus" aria-hidden="true"></i>Verdadero o falso
-            </button>
-            <button type="button" class="btn btn--secondary" @click="addQuestion('short_answer')">
-              <i class="fa-solid fa-plus" aria-hidden="true"></i>Respuesta corta
+            <button
+              v-for="(meta, type) in QUESTION_TYPES"
+              :key="type"
+              type="button"
+              class="btn btn--secondary"
+              :title="meta.hint"
+              @click="addQuestion(type)"
+            >
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>{{ meta.label }}
             </button>
           </div>
         </section>
@@ -236,6 +329,13 @@
             min="0"
             max="100"
             :error="fieldErrors.pass_score"
+          />
+
+          <BaseSelect
+            v-model="form.wrong_penalty"
+            label="Penalización por fallo"
+            :options="PENALTY_OPTIONS"
+            help-text="Solo restan las respuestas totalmente incorrectas. En blanco no resta y la nota nunca baja de 0."
           />
 
           <div class="ct__switches">
@@ -294,7 +394,7 @@ import BaseInput from '../components/base/BaseInput.vue';
 import BaseSelect from '../components/base/BaseSelect.vue';
 import BaseLoader from '../components/base/BaseLoader.vue';
 import BaseModal from '../components/base/BaseModal.vue';
-import { plural } from '../utils/tests';
+import { plural, QUESTION_TYPES, PENALTY_OPTIONS, questionTypeLabel, countBlanks } from '../utils/tests';
 import { useToast } from '../composables/useToast';
 
 const router = useRouter();
@@ -322,6 +422,7 @@ const form = reactive({
   time_limit: 0,
   max_attempts: -1,
   pass_score: 70,
+  wrong_penalty: 0,
   is_public: true,
   shuffle_questions: false,
   shuffle_answers: false,
@@ -338,23 +439,76 @@ const unlimitedAttempts = ref(true);
 
 const questions = ref([]);
 
-const typeLabel = (t) =>
-  ({ multiple_choice: 'Opción múltiple', true_false: 'Verdadero o falso', short_answer: 'Respuesta corta' }[t] ?? t);
-
 const totalPoints = computed(() => questions.value.reduce((s, q) => s + (Number(q.points) || 0), 0));
 
 // ─── Preguntas ───────────────────────────────────────────────────────────────
+const emptyOptions = (n) => Array.from({ length: n }, () => ({ content: '', correct: false }));
+
 function newQuestion(type) {
   const q = { _key: ++keyCounter, type, content: '', explanation: '', points: 1 };
   if (type === 'multiple_choice') {
-    q.options = [{ content: '' }, { content: '' }, { content: '' }, { content: '' }];
+    q.options = emptyOptions(4);
     q.correctOption = 0;
+  } else if (type === 'multiple_select') {
+    q.options = emptyOptions(4);
   } else if (type === 'true_false') {
     q.correct = 'true';
+  } else if (type === 'fill_blank') {
+    q.blanks = [];
+    q.case_sensitive = false;
+  } else if (type === 'order_items') {
+    q.items = [{ content: '' }, { content: '' }, { content: '' }];
+  } else if (type === 'numeric') {
+    q.numeric_answer = '';
+    q.numeric_tolerance = '';
   } else {
     q.correct_answer = '';
   }
   return q;
+}
+
+const isOptionCorrect = (q, idx) =>
+  q.type === 'multiple_choice' ? q.correctOption === idx : Boolean(q.options[idx]?.correct);
+
+// ─── Huecos y elementos ──────────────────────────────────────────────────────
+/** Ajusta la lista de respuestas al número de ___ del enunciado, sin perder lo escrito. */
+function syncBlanks(q) {
+  const n = countBlanks(q.content);
+  if (q.blanks.length < n) q.blanks.push(...Array(n - q.blanks.length).fill(''));
+  else if (q.blanks.length > n) q.blanks.splice(n);
+}
+
+watch(questions, (list) => {
+  list.filter((q) => q.type === 'fill_blank').forEach(syncBlanks);
+}, { deep: true });
+
+/** Inserta ___ donde está el cursor del enunciado (o al final). */
+async function insertBlank(q) {
+  const el = document.getElementById(`qc-${q._key}`);
+  const at = el && document.activeElement === el ? el.selectionStart : q.content.length;
+  const before = q.content.slice(0, at);
+  const after = q.content.slice(at);
+  const pad = before && !/\s$/.test(before) ? ' ' : '';
+  q.content = `${before}${pad}___${after && !/^\s/.test(after) ? ' ' : ''}${after}`;
+  await nextTick();
+  el?.focus();
+  const caret = before.length + pad.length + 3;
+  el?.setSelectionRange(caret, caret);
+}
+
+function moveItem(q, idx, dir) {
+  const to = idx + dir;
+  if (to < 0 || to >= q.items.length) return;
+  [q.items[idx], q.items[to]] = [q.items[to], q.items[idx]];
+}
+
+/** "París | Paris" → ['París', 'Paris'] */
+const splitAlternatives = (text) => String(text ?? '').split('|').map((a) => a.trim()).filter(Boolean);
+
+/** Acepta coma decimal: "3,14" → 3.14; devuelve null si no es un número. */
+function parseNumber(text) {
+  const clean = String(text ?? '').trim().replace(/\s/g, '').replace(',', '.');
+  return clean !== '' && Number.isFinite(Number(clean)) ? Number(clean) : null;
 }
 
 async function focusQuestion(q) {
@@ -394,7 +548,11 @@ const removeIdx = ref(-1);
 
 function isBlank(q) {
   return !q.content.trim() && !q.explanation?.trim()
-    && !(q.options || []).some((o) => o.content.trim()) && !q.correct_answer?.trim();
+    && !(q.options || []).some((o) => o.content.trim())
+    && !(q.items || []).some((it) => it.content.trim())
+    && !(q.blanks || []).some((b) => b.trim())
+    && !q.correct_answer?.trim()
+    && !String(q.numeric_answer ?? '').trim();
 }
 
 function requestRemove(idx) {
@@ -479,6 +637,7 @@ async function loadTestForEdit() {
     form.category_id = t.category_id ?? t.categories?.[0]?.id ?? '';
     form.difficulty = t.difficulty ?? 'medium';
     form.pass_score = t.pass_score ?? 70;
+    form.wrong_penalty = Number(t.wrong_penalty) || 0;
     form.is_public = Boolean(t.is_public);
     form.shuffle_questions = Boolean(t.shuffle_questions);
     form.shuffle_answers = Boolean(t.shuffle_answers);
@@ -500,12 +659,21 @@ async function loadTestForEdit() {
         points: q.points ?? 1,
       };
 
-      if (q.type === 'multiple_choice') {
-        const options = (q.options ?? []).map((opt) => ({ content: opt.content ?? '' }));
-        while (options.length < 2) options.push({ content: '' });
+      if (q.type === 'multiple_choice' || q.type === 'multiple_select') {
+        const options = (q.options ?? []).map((opt) => ({ content: opt.content ?? '', correct: Boolean(opt.is_correct) }));
+        while (options.length < 2) options.push({ content: '', correct: false });
         mapped.options = options;
-        const correctIdx = (q.options ?? []).findIndex((opt) => Boolean(opt.is_correct));
+        const correctIdx = options.findIndex((opt) => opt.correct);
         mapped.correctOption = correctIdx >= 0 ? correctIdx : 0;
+      } else if (q.type === 'fill_blank') {
+        mapped.blanks = (q.blanks ?? []).map((b) => (b.correct_answers ?? []).join(' | '));
+        mapped.case_sensitive = Boolean(q.blanks?.[0]?.case_sensitive);
+      } else if (q.type === 'order_items') {
+        mapped.items = (q.order_items ?? []).map((it) => ({ content: it.content ?? '' }));
+        while (mapped.items.length < 2) mapped.items.push({ content: '' });
+      } else if (q.type === 'numeric') {
+        mapped.numeric_answer = q.numeric_answer != null ? String(q.numeric_answer).replace('.', ',') : '';
+        mapped.numeric_tolerance = Number(q.numeric_tolerance) ? String(q.numeric_tolerance).replace('.', ',') : '';
       } else if (q.type === 'true_false') {
         const correct = (q.options ?? []).find((opt) => Boolean(opt.is_correct));
         mapped.correct = correct?.content === 'Falso' ? 'false' : 'true';
@@ -540,6 +708,26 @@ function validate() {
       const filled = q.options.filter((o) => o.content.trim());
       if (filled.length < 2) e.options = 'Escribe al menos dos respuestas.';
       else if (!q.options[q.correctOption]?.content.trim()) e.options = 'La respuesta marcada como correcta está vacía.';
+    }
+    if (q.type === 'multiple_select') {
+      const filled = q.options.filter((o) => o.content.trim());
+      if (filled.length < 2) e.options = 'Escribe al menos dos respuestas.';
+      else if (!filled.some((o) => o.correct)) e.options = 'Marca al menos una respuesta correcta.';
+    }
+    if (q.type === 'fill_blank') {
+      if (!q.blanks.length) e.blanks = 'Añade al menos un hueco con ___ en el enunciado.';
+      else {
+        const missing = q.blanks.findIndex((b) => !splitAlternatives(b).length);
+        if (missing >= 0) e.blanks = `Escribe la respuesta del hueco ${missing + 1}.`;
+      }
+    }
+    if (q.type === 'order_items' && q.items.filter((it) => it.content.trim()).length < 2) {
+      e.items = 'Escribe al menos dos elementos.';
+    }
+    if (q.type === 'numeric') {
+      if (parseNumber(q.numeric_answer) === null) e.numeric = 'Escribe un número, por ejemplo 3,14.';
+      const tol = String(q.numeric_tolerance ?? '').trim();
+      if (tol && !(parseNumber(tol) >= 0)) e.tolerance = 'Usa 0 o un número positivo.';
     }
     if (q.type === 'short_answer' && !q.correct_answer?.trim()) e.answer = 'Escribe la respuesta correcta.';
     if (Object.keys(e).length) qErrors[q._key] = e;
@@ -591,6 +779,7 @@ async function submitTest(status) {
     ...form,
     time_limit: noTimeLimit.value ? 0 : Math.max(1, Number(timeMinutes.value) || 1),
     max_attempts: unlimitedAttempts.value ? -1 : Math.max(1, Number(attemptsCount.value) || 1),
+    wrong_penalty: Number(form.wrong_penalty) || 0,
     status,
     questions: questions.value.map((q, idx) => {
       const base = {
@@ -601,12 +790,20 @@ async function submitTest(status) {
         order_index: idx,
       };
 
-      if (q.type === 'multiple_choice') {
-        // Las opciones vacías se descartan, conservando cuál es la correcta
+      if (q.type === 'multiple_choice' || q.type === 'multiple_select') {
+        // Las opciones vacías se descartan, conservando cuáles son correctas
         const kept = q.options
-          .map((o, i) => ({ content: o.content.trim(), is_correct: i === q.correctOption }))
+          .map((o, i) => ({ content: o.content.trim(), is_correct: isOptionCorrect(q, i) }))
           .filter((o) => o.content);
         base.options = kept.map((o, i) => ({ ...o, order_index: i }));
+      } else if (q.type === 'fill_blank') {
+        base.blanks = q.blanks.map((b) => ({ answers: splitAlternatives(b) }));
+        base.case_sensitive = Boolean(q.case_sensitive);
+      } else if (q.type === 'order_items') {
+        base.items = q.items.map((it) => it.content.trim()).filter(Boolean);
+      } else if (q.type === 'numeric') {
+        base.numeric_answer = parseNumber(q.numeric_answer);
+        base.numeric_tolerance = parseNumber(q.numeric_tolerance) ?? 0;
       } else if (q.type === 'true_false') {
         base.options = [
           { content: 'Verdadero', is_correct: q.correct === 'true', order_index: 0 },
@@ -827,6 +1024,31 @@ async function submitTest(status) {
 
 .ct__add-opt {
   align-self: flex-start;
+}
+
+.ct__blank-n {
+  flex-shrink: 0;
+  min-width: 28px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.ct__opt .icon-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  background: transparent;
+}
+
+.ct__opts code {
+  font-size: 0.85em;
+  padding: 1px 6px;
+  border-radius: var(--radius-control);
+  background: var(--raised);
+}
+
+.ct__numeric :deep(.field) {
+  margin-bottom: 16px;
 }
 
 .ct__tf {

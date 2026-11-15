@@ -68,6 +68,7 @@
             <dl class="vt__rows">
               <div><dt>Nota para aprobar</dt><dd class="tabular">{{ test.pass_score }} %</dd></div>
               <div><dt>Intentos permitidos</dt><dd>{{ test.max_attempts === -1 ? 'Ilimitados' : test.max_attempts }}</dd></div>
+              <div><dt>Penalización por fallo</dt><dd>{{ penaltyLabel(test.wrong_penalty) ? `Resta ${penaltyLabel(test.wrong_penalty)} de la pregunta` : 'No' }}</dd></div>
               <div><dt>Presentación</dt><dd>{{ test.display_mode === 'all' ? 'Todas las preguntas en una página' : 'Una pregunta por pantalla' }}</dd></div>
               <div><dt>Orden de las preguntas</dt><dd>{{ test.shuffle_questions ? 'Aleatorio' : 'Fijo' }}</dd></div>
               <div><dt>Orden de las respuestas</dt><dd>{{ test.shuffle_answers ? 'Aleatorio' : 'Fijo' }}</dd></div>
@@ -88,6 +89,7 @@
                 <dt>Tus intentos</dt><dd class="tabular">{{ test.user_attempts ?? 0 }} de {{ test.max_attempts }}</dd>
               </div>
               <div><dt>Para aprobar</dt><dd class="tabular">{{ test.pass_score }} %</dd></div>
+              <div v-if="penaltyLabel(test.wrong_penalty)"><dt>Cada fallo</dt><dd class="tabular">resta {{ penaltyLabel(test.wrong_penalty) }}</dd></div>
             </dl>
 
             <template v-if="!authStore.isLoggedIn">
@@ -148,7 +150,7 @@ import BaseLoader from '../components/base/BaseLoader.vue';
 import BaseAlert from '../components/base/BaseAlert.vue';
 import BaseModal from '../components/base/BaseModal.vue';
 import UserAvatar from '../components/user/UserAvatar.vue';
-import { difficultyClass, difficultyLabel } from '../utils/tests';
+import { difficultyClass, difficultyLabel, penaltyLabel } from '../utils/tests';
 import { useToast } from '../composables/useToast';
 
 const route = useRoute();

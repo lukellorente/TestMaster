@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Test;
 use App\Models\TestAttempt;
 use App\Models\Question;
-use App\Models\QuestionOption;
 use App\Models\QuestionResponse;
+use App\Models\UserStat;
+use App\Questions\AttemptScorer;
+use App\Questions\QuestionTypes;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -46,23 +48,6 @@ class AttemptController extends Controller
         return $storedValue;
     }
 
-    private function isAnsweredValue(mixed $value): bool
-    {
-        if (is_null($value)) {
-            return false;
-        }
-
-        if (is_string($value)) {
-            return trim($value) !== '';
-        }
-
-        if (is_array($value)) {
-            return count($value) > 0;
-        }
-
-        return true;
-    }
-
     private function canAttemptTest(Test $test, int $userId): bool
     {
         if ($test->is_public && $test->status === 'published') {
@@ -75,7 +60,7 @@ class AttemptController extends Controller
     /**
      * Submit a test attempt
      */
-    public function submit(Request $request): JsonResponse
+    public function submit(Request $request, AttemptScorer $scorer): JsonResponse
     {
         $request->validate([
             'test_id' => 'required|exists:tests,id',
@@ -114,7 +99,10 @@ class AttemptController extends Controller
         }
 
         // Build attempt question order from the client payload.
-        $questionsById = Question::where('test_id', $testId)->get()->keyBy('id');
+        $questionsById = Question::where('test_id', $testId)
+            ->with(QuestionTypes::RELATIONS)
+            ->get()
+            ->keyBy('id');
         $questionOrder = collect($request->input('question_order', []))
             ->map(fn ($questionId) => (int) $questionId)
             ->filter(fn ($questionId) => $questionId > 0)
@@ -139,97 +127,20 @@ class AttemptController extends Controller
             }
         }
 
-        $answers = $request->answers;
         $timeSpent = max(0, time() - $request->started_at);
+        $result = $scorer->score($orderedQuestions, $request->answers, (float) $test->wrong_penalty);
+        $passed = $result->score >= $test->pass_score;
 
-        // Calculate results
-        $correctAnswers = 0;
-        $incorrectAnswers = 0;
-        $unanswered = 0;
-        $pointsEarned = 0;
-        $totalPoints = 0;
-        $responses = [];
-
-        foreach ($orderedQuestions as $displayIndex => $question) {
-            $totalPoints += $question->points;
-            $givenAnswer = $answers[$question->id] ?? ($answers[(string) $question->id] ?? null);
-            $isCorrect = false;
-            $displayOrder = $displayIndex + 1;
-
-            $isUnanswered = ! $this->isAnsweredValue($givenAnswer);
-
-            if ($isUnanswered) {
-                $unanswered++;
-                $responses[] = [
-                    'question_id' => $question->id,
-                    'given_answer' => null,
-                    'is_correct' => false,
-                    'points_earned' => 0,
-                    'display_order' => $displayOrder,
-                ];
-                continue;
-            }
-
-            // Check answer by question type
-            if ($question->type === 'multiple_choice') {
-                $option = QuestionOption::where('id', $givenAnswer)
-                    ->where('question_id', $question->id)
-                    ->first();
-                $isCorrect = $option && $option->is_correct;
-            } elseif ($question->type === 'true_false') {
-                $correctOption = QuestionOption::where('question_id', $question->id)
-                    ->where('is_correct', true)
-                    ->first();
-                if ($correctOption) {
-                    $isCorrect = (strtolower($givenAnswer) === 'true' && $correctOption->content === 'Verdadero')
-                              || (strtolower($givenAnswer) === 'false' && $correctOption->content === 'Falso');
-                }
-            } elseif ($question->type === 'short_answer') {
-                $correctOptions = QuestionOption::where('question_id', $question->id)
-                    ->where('is_correct', true)
-                    ->get();
-                foreach ($correctOptions as $option) {
-                    if (strcasecmp(trim($givenAnswer), trim($option->content)) === 0) {
-                        $isCorrect = true;
-                        break;
-                    }
-                }
-            }
-
-            if ($isCorrect) {
-                $correctAnswers++;
-                $pointsEarned += $question->points;
-            } else {
-                $incorrectAnswers++;
-            }
-
-            $responses[] = [
-                'question_id' => $question->id,
-                'given_answer' => $this->encodeGivenAnswer($givenAnswer),
-                'is_correct' => $isCorrect,
-                'points_earned' => $isCorrect ? $question->points : 0,
-                'display_order' => $displayOrder,
-            ];
-        }
-
-        $score = $totalPoints > 0 ? ($pointsEarned / $totalPoints) * 100 : 0;
-        $passed = $score >= $test->pass_score;
-
-        return DB::transaction(function () use (
-            $user, $testId, $score, $pointsEarned, $totalPoints,
-            $correctAnswers, $incorrectAnswers, $unanswered,
-            $timeSpent, $passed, $request, $responses, $test
-        ) {
-            // Create attempt
+        return DB::transaction(function () use ($user, $testId, $result, $timeSpent, $passed, $request) {
             $attempt = TestAttempt::create([
                 'user_id' => $user->id,
                 'test_id' => $testId,
-                'score' => $score,
-                'points_earned' => $pointsEarned,
-                'total_points' => $totalPoints,
-                'correct_answers' => $correctAnswers,
-                'incorrect_answers' => $incorrectAnswers,
-                'unanswered' => $unanswered,
+                'score' => $result->score,
+                'points_earned' => $result->pointsEarned,
+                'total_points' => $result->totalPoints,
+                'correct_answers' => $result->correct,
+                'incorrect_answers' => $result->incorrect,
+                'unanswered' => $result->unanswered,
                 'time_spent' => $timeSpent,
                 'is_completed' => true,
                 'passed' => $passed,
@@ -237,23 +148,21 @@ class AttemptController extends Controller
                 'completed_at' => now(),
             ]);
 
-            // Save responses
-            foreach ($responses as $response) {
+            foreach ($result->responses as $response) {
                 QuestionResponse::create([
                     'attempt_id' => $attempt->id,
                     'question_id' => $response['question_id'],
-                    'given_answer' => $response['given_answer'],
+                    'given_answer' => $this->encodeGivenAnswer($response['given_answer']),
                     'is_correct' => $response['is_correct'],
                     'points_earned' => $response['points_earned'],
                     'display_order' => $response['display_order'],
                 ]);
             }
 
-            // Update user stats
-            $userStats = \App\Models\UserStat::firstOrCreate(['user_id' => $user->id]);
+            $userStats = UserStat::firstOrCreate(['user_id' => $user->id]);
             $userStats->tests_completed += 1;
             $userStats->tests_passed += $passed ? 1 : 0;
-            $userStats->perfect_scores += ($score >= 100) ? 1 : 0;
+            $userStats->perfect_scores += ($result->score >= 100) ? 1 : 0;
             $userStats->total_study_time += $timeSpent;
             $userStats->average_score = TestAttempt::where('user_id', $user->id)
                 ->where('is_completed', true)
@@ -262,7 +171,7 @@ class AttemptController extends Controller
 
             return response()->json([
                 'attempt_id' => $attempt->id,
-                'score' => round($score, 1),
+                'score' => round($result->score, 1),
                 'passed' => $passed,
                 'message' => $passed ? '¡Aprobado!' : 'No Aprobado',
             ]);
@@ -276,7 +185,7 @@ class AttemptController extends Controller
     {
         $user = auth('sanctum')->user();
 
-        $attempt = TestAttempt::with('test:id,title,pass_score,max_attempts,time_limit,show_correct_answers,show_explanations')
+        $attempt = TestAttempt::with('test:id,title,pass_score,wrong_penalty,max_attempts,time_limit,show_correct_answers,show_explanations')
             ->where('id', $attemptId)
             ->where('user_id', $user->id)
             ->firstOrFail();
@@ -285,8 +194,10 @@ class AttemptController extends Controller
 
         $responses = QuestionResponse::where('attempt_id', $attemptId)
             ->with([
-                'question:id,content,type,explanation,points,order_index',
+                'question:id,content,type,explanation,points,order_index,numeric_answer,numeric_tolerance',
                 'question.options:id,question_id,content,is_correct,order_index',
+                'question.blanks',
+                'question.orderItems',
             ])
             ->get()
             ->sortBy(function ($response) {
@@ -300,54 +211,35 @@ class AttemptController extends Controller
 
         $responsesData = $responses->map(function ($response) use ($showCorrectAnswers) {
             $question = $response->question;
-            $questionType = $question?->type ?? null;
-            $options = $question?->options ?? collect();
+            $type = $question ? QuestionTypes::get($question->type) : null;
             $givenAnswerValue = $this->decodeGivenAnswer($response->given_answer);
-            $givenAnswerLabel = '';
+            $answered = QuestionTypes::isAnswered($givenAnswerValue);
+            $earned = (float) $response->points_earned;
 
-            if ($this->isAnsweredValue($givenAnswerValue)) {
-                if ($questionType === 'multiple_choice') {
-                    $selectedOption = $options->first(fn ($option) => (string) $option->id === (string) $givenAnswerValue);
-                    $givenAnswerLabel = $selectedOption?->content ?? 'Seleccion no disponible';
-                } elseif ($questionType === 'true_false') {
-                    if (is_bool($givenAnswerValue)) {
-                        $normalized = $givenAnswerValue ? 'true' : 'false';
-                    } else {
-                        $normalized = strtolower(trim((string) $givenAnswerValue));
-                    }
-
-                    if (in_array($normalized, ['true', 'verdadero', '1'], true)) {
-                        $givenAnswerLabel = 'Verdadero';
-                    } elseif (in_array($normalized, ['false', 'falso', '0'], true)) {
-                        $givenAnswerLabel = 'Falso';
-                    } else {
-                        $givenAnswerLabel = (string) $givenAnswerValue;
-                    }
-                } else {
-                    $givenAnswerLabel = is_scalar($givenAnswerValue)
-                        ? (string) $givenAnswerValue
-                        : json_encode($givenAnswerValue, JSON_UNESCAPED_UNICODE);
-                }
-            }
-
-            $correctAnswerLabel = '';
-            if ($showCorrectAnswers && ! $response->is_correct) {
-                $correctOption = $options->first(fn ($option) => (bool) $option->is_correct);
-                $correctAnswerLabel = $correctOption?->content ?? '';
-            }
+            $status = match (true) {
+                ! $answered => 'none',
+                (bool) $response->is_correct => 'ok',
+                $earned > 0 => 'partial',
+                default => 'bad',
+            };
 
             return [
                 'id' => $response->id,
                 'question_id' => $response->question_id,
                 'display_order' => $response->display_order,
                 'question_text' => $question?->content ?? '',
-                'type' => $questionType,
+                'type' => $question?->type,
                 'explanation' => $question?->explanation ?? '',
                 'is_correct' => (bool) $response->is_correct,
-                'answered' => $this->isAnsweredValue($givenAnswerValue),
+                'status' => $status,
+                'answered' => $answered,
+                'points' => (int) ($question?->points ?? 0),
+                'points_earned' => $earned,
                 'given_answer' => $givenAnswerValue,
-                'given_answer_label' => $givenAnswerLabel,
-                'correct_answer_label' => $correctAnswerLabel,
+                'given_answer_label' => $answered && $type ? $type->answerLabel($question, $givenAnswerValue) : '',
+                'correct_answer_label' => $showCorrectAnswers && ! $response->is_correct && $type
+                    ? $type->correctLabel($question)
+                    : '',
             ];
         });
 

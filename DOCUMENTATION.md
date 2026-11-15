@@ -51,16 +51,21 @@
 
 ### Tipos de preguntas soportados
 
-| Tipo | Implementado en el código | Definido en BD |
+| Tipo | Datos | Puntuación |
 |---|---|---|
-| `multiple_choice` (opción múltiple) | ✅ Frontend + Backend | ✅ |
-| `true_false` (verdadero/falso) | ✅ Frontend + Backend | ✅ |
-| `short_answer` (respuesta corta) | ✅ Frontend + Backend | ✅ |
-| `fill_blank` (rellenar huecos) | ❌ | ✅ |
-| `drag_drop` (arrastrar y soltar) | ❌ | ✅ |
-| `order_items` (ordenar elementos) | ❌ | ✅ |
-| `numeric` (numérica) | ❌ | ✅ |
-| `image_hotspot` (punto en imagen) | ❌ | ✅ |
+| `multiple_choice` (opción múltiple) | `question_options`, una correcta | Todo o nada |
+| `multiple_select` (selección múltiple) | `question_options`, una o más correctas | Parcial: (aciertos − errores) / correctas, mínimo 0 |
+| `true_false` (verdadero/falso) | `question_options` (Verdadero / Falso) | Todo o nada |
+| `short_answer` (respuesta corta) | `question_options` (respuesta aceptada) | Todo o nada, sin mayúsculas ni espacios sobrantes |
+| `fill_blank` (rellenar huecos) | `___` en el enunciado + `question_blanks` | Parcial: huecos acertados / huecos |
+| `order_items` (ordenar elementos) | `question_order_items` | Parcial: elementos en su posición / elementos |
+| `numeric` (numérica) | `questions.numeric_answer` y `numeric_tolerance` | Todo o nada, dentro del margen ± |
+
+Cada tipo vive en `app/Questions/Types/` (validación, guardado, datos para el alumno, corrección y etiquetas de resultados). `App\Questions\AttemptScorer` calcula la nota:
+
+- Cada pregunta aporta `fracción de acierto × puntos`.
+- Con `tests.wrong_penalty` > 0, una respuesta con 0 aciertos resta `wrong_penalty × puntos`. Las parciales y las preguntas en blanco no restan.
+- La nota es `puntos obtenidos / puntos totales` y nunca baja de 0 %. Solo cuenta como correcta una pregunta con el 100 % de acierto.
 
 ---
 
@@ -471,7 +476,7 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 |---|---|---|---|
 | `id` | bigint (PK) | auto_increment | — |
 | `test_id` | bigint (FK→tests) | cascade delete, indexed | Test al que pertenece |
-| `type` | enum | indexed | `multiple_choice`, `true_false`, `short_answer`, `fill_blank`, `drag_drop`, `order_items`, `numeric`, `image_hotspot` |
+| `type` | enum | indexed | `multiple_choice`, `multiple_select`, `true_false`, `short_answer`, `fill_blank`, `order_items`, `numeric` |
 | `content` | text | not null | Texto/enunciado de la pregunta |
 | `explanation` | text | nullable | Explicación de la respuesta correcta |
 | `points` | int | default: 1 | Puntos que vale la pregunta |
@@ -491,7 +496,7 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 | `order_index` | int | default: 0 | Orden de aparición |
 | `image_url` | varchar(255) | nullable | Imagen de la opción |
 
-##### Tabla `question_blanks` (para tipo fill_blank — no implementado)
+##### Tabla `question_blanks` (para tipo fill_blank)
 | Columna | Tipo | Restricciones | Descripción |
 |---|---|---|---|
 | `id` | bigint (PK) | auto_increment | — |
@@ -500,7 +505,7 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 | `correct_answers` | json | — | Array de respuestas válidas |
 | `case_sensitive` | boolean | default: false | Si distingue mayúsculas |
 
-##### Tabla `question_order_items` (para tipo order_items — no implementado)
+##### Tabla `question_order_items` (para tipo order_items)
 | Columna | Tipo | Restricciones | Descripción |
 |---|---|---|---|
 | `id` | bigint (PK) | auto_increment | — |
@@ -1531,7 +1536,6 @@ Las siguientes tablas y modelos existen en la base de datos pero **no tienen con
 | **Historial de puntos** | `point_history` | Tabla creada, sin modelo/API/UI |
 | **Sistema de configuración** | `settings` | Tabla creada, sin modelo/API/UI |
 | **Logs de actividad** | `activity_logs` | Tabla creada, sin modelo/API/UI |
-| **5 tipos de pregunta adicionales** | `question_blanks`, `question_order_items` + lógica | Tablas parciales, sin lógica en controladores |
 | **Protección por contraseña de tests** | `tests.password` | Campo en BD, sin verificación en controladores |
 | **Tests destacados** | `tests.is_featured` | Campo en BD, sin lógica |
 | **Multimedia en preguntas** | `questions.image_url/audio_url/video_url` | Campos en BD, sin upload ni presentación |

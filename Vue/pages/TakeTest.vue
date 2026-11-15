@@ -43,8 +43,8 @@
     <template v-else-if="isPaged && current">
       <main class="tt__col tt__main">
         <div class="tt__qhead">
-          <span class="tt__meta">Pregunta {{ index + 1 }} de {{ questions.length }} · {{ typeLabel(current.type) }}</span>
-          <h1 ref="questionHeading" class="tt__q" tabindex="-1">{{ current.content }}</h1>
+          <span class="tt__meta">Pregunta {{ index + 1 }} de {{ questions.length }} · {{ questionTypeLabel(current.type) }}</span>
+          <h1 ref="questionHeading" class="tt__q" tabindex="-1">{{ promptOf(current) }}</h1>
         </div>
         <img v-if="current.image_url" :src="`/uploads/${current.image_url}`" alt="" class="tt__img" />
 
@@ -90,8 +90,8 @@
         :aria-labelledby="`qh-${q.id}`"
       >
         <div class="tt__qhead">
-          <span class="tt__meta">Pregunta {{ i + 1 }} de {{ questions.length }} · {{ typeLabel(q.type) }}</span>
-          <h2 :id="`qh-${q.id}`" class="tt__q tt__q--sm">{{ q.content }}</h2>
+          <span class="tt__meta">Pregunta {{ i + 1 }} de {{ questions.length }} · {{ questionTypeLabel(q.type) }}</span>
+          <h2 :id="`qh-${q.id}`" class="tt__q tt__q--sm">{{ promptOf(q) }}</h2>
         </div>
         <img v-if="q.image_url" :src="`/uploads/${q.image_url}`" alt="" class="tt__img" />
         <AnswerInput v-model="answers[q.id]" :question="q" :number="i + 1" />
@@ -106,6 +106,10 @@
     <BaseModal v-model="showReview" title="¿Enviar tus respuestas?" max-width="460px">
       <p class="tt__modal-text">
         Has respondido {{ answeredCount }} de {{ questions.length }} preguntas. Cuando envíes ya no podrás cambiarlas.
+      </p>
+      <p v-if="penalty" class="tt__modal-text tt__penalty">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        Cada respuesta incorrecta resta {{ penalty }} de sus puntos. Las preguntas en blanco no restan.
       </p>
       <div v-if="pending.length" class="tt__pending">
         <span class="tt__pending-title">{{ pending.length === 1 ? '1 pregunta sin responder' : `${pending.length} preguntas sin responder` }}</span>
@@ -147,7 +151,7 @@ import api from '../api/axios';
 import BaseLoader from '../components/base/BaseLoader.vue';
 import BaseModal from '../components/base/BaseModal.vue';
 import AnswerInput from '../components/question/AnswerInput.vue';
-import { formatClock } from '../utils/tests';
+import { formatClock, questionTypeLabel, isAnswerFilled, numberBlanks, penaltyLabel } from '../utils/tests';
 import { useToast } from '../composables/useToast';
 
 const route = useRoute();
@@ -161,6 +165,7 @@ const submitted = ref(false);
 const testTitle = ref('');
 const timeLimit = ref(0);
 const displayMode = ref('paged');
+const penalty = ref('');
 const questions = ref([]);
 const answers = reactive({});
 const startedAt = ref(null);
@@ -175,10 +180,10 @@ let pendingLeave = null;
 const isPaged = computed(() => displayMode.value !== 'all');
 const current = computed(() => questions.value[index.value]);
 
-const isAnswered = (q) => {
-  const v = answers[q.id];
-  return v !== undefined && v !== null && String(v).trim() !== '';
-};
+const isAnswered = (q) => isAnswerFilled(answers[q.id]);
+
+// En «Rellenar huecos» los ___ se numeran para relacionarlos con sus campos
+const promptOf = (q) => (q.type === 'fill_blank' ? numberBlanks(q.content) : q.content);
 
 const answeredCount = computed(() => questions.value.filter(isAnswered).length);
 const progressPct = computed(() =>
@@ -187,9 +192,6 @@ const progressPct = computed(() =>
 const pending = computed(() =>
   questions.value.map((q, i) => ({ q, i })).filter(({ q }) => !isAnswered(q))
 );
-
-const typeLabel = (t) =>
-  ({ multiple_choice: 'Opción múltiple', true_false: 'Verdadero o falso', short_answer: 'Respuesta corta' }[t] ?? '');
 
 // ─── Navegación ──────────────────────────────────────────────────────────────
 const goTo = async (i) => {
@@ -218,7 +220,7 @@ const openReview = () => {
 const onKeydown = (e) => {
   if (!isPaged.value || showReview.value || showExit.value) return;
   const tag = e.target?.tagName;
-  if ((tag === 'INPUT' && e.target.type !== 'radio') || tag === 'TEXTAREA') return;
+  if ((tag === 'INPUT' && !['radio', 'checkbox'].includes(e.target.type)) || tag === 'TEXTAREA') return;
   if (e.key === 'ArrowRight' && !e.altKey) goTo(index.value + 1);
   if (e.key === 'ArrowLeft' && !e.altKey) goTo(index.value - 1);
 };
@@ -264,6 +266,7 @@ onMounted(async () => {
     testTitle.value = data.test.title;
     timeLimit.value = data.test.time_limit || 0;
     displayMode.value = data.test.display_mode === 'all' ? 'all' : 'paged';
+    penalty.value = penaltyLabel(data.test.wrong_penalty);
     questions.value = data.questions;
     startedAt.value = Math.floor(Date.now() / 1000);
     startTimer();
@@ -342,6 +345,14 @@ async function submitTest() {
 </script>
 
 <style scoped>
+.tt__penalty {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin-top: 12px;
+  font-size: var(--fs-small);
+}
+
 .tt {
   min-height: 100vh;
   display: flex;

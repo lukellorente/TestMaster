@@ -11,7 +11,7 @@ class Test extends Model
 {
     protected $fillable = [
         'user_id', 'title', 'description', 'is_public', 'is_featured',
-        'password', 'time_limit', 'max_attempts', 'pass_score',
+        'password', 'time_limit', 'max_attempts', 'pass_score', 'wrong_penalty',
         'shuffle_questions', 'shuffle_answers', 'show_correct_answers',
         'show_explanations', 'display_mode', 'difficulty', 'status', 'views_count',
         'attempts_count', 'average_score', 'published_at',
@@ -28,6 +28,7 @@ class Test extends Model
             'shuffle_answers' => 'boolean',
             'show_correct_answers' => 'boolean',
             'show_explanations' => 'boolean',
+            'wrong_penalty' => 'float',
             'published_at' => 'datetime',
         ];
     }

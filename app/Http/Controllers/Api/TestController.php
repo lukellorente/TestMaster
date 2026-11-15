@@ -9,7 +9,10 @@ use App\Models\QuestionOption;
 use App\Models\Category;
 use App\Models\UserStat;
 use App\Models\User;
+use App\Questions\QuestionTypes;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -186,11 +189,14 @@ class TestController extends Controller
             'display_mode' => 'in:paged,all',
             'status' => 'in:draft,published',
             'questions' => 'required|array|min:1',
-            'questions.*.type' => 'required|in:multiple_choice,true_false,short_answer',
+            'wrong_penalty' => 'numeric|min:0|max:1',
+            'questions.*.type' => ['required', Rule::in(QuestionTypes::keys())],
             'questions.*.content' => 'required|string',
             'questions.*.explanation' => 'nullable|string',
             'questions.*.points' => 'integer|min:1',
         ]);
+
+        $this->validateQuestions($request->questions);
 
         return DB::transaction(function () use ($request, $user) {
             $timeLimitSeconds = ($request->time_limit ?? 0) > 0
@@ -205,6 +211,7 @@ class TestController extends Controller
                 'time_limit' => $timeLimitSeconds,
                 'max_attempts' => $request->get('max_attempts', -1),
                 'pass_score' => $request->get('pass_score', 70),
+                'wrong_penalty' => (float) $request->get('wrong_penalty', 0),
                 'shuffle_questions' => $request->boolean('shuffle_questions'),
                 'shuffle_answers' => $request->boolean('shuffle_answers'),
                 'show_correct_answers' => $request->boolean('show_correct_answers', true),
@@ -222,61 +229,7 @@ class TestController extends Controller
                     ->increment('tests_count');
             }
 
-            // Create questions
-            $orderIndex = 1;
-            foreach ($request->questions as $qData) {
-                $content = $qData['content'] ?? '';
-                if (is_array($content)) $content = '';
-                if (empty(trim($content))) continue;
-
-                $question = Question::create([
-                    'test_id' => $test->id,
-                    'type' => $qData['type'],
-                    'content' => $content,
-                    'explanation' => $qData['explanation'] ?? null,
-                    'points' => $qData['points'] ?? 1,
-                    'order_index' => $orderIndex++, 
-                ]);
-
-                if ($qData['type'] === 'multiple_choice') {
-                    foreach (($qData['options'] ?? []) as $idx => $opt) {
-                        $optionStr = is_array($opt) ? ($opt['content'] ?? '') : $opt;
-                        if (empty(trim($optionStr))) continue;
-                        QuestionOption::create([
-                            'question_id' => $question->id,
-                            'content' => $optionStr,
-                            'is_correct' => is_array($opt) ? ($opt['is_correct'] ?? false) : false,
-                            'order_index' => is_array($opt) ? ($opt['order_index'] ?? $idx) : $idx,
-                        ]);
-                    }
-                } elseif ($qData['type'] === 'true_false') {
-                    $correct = $qData['correct'] ?? 'true';
-                    QuestionOption::create([
-                        'question_id' => $question->id,
-                        'content' => 'Verdadero',
-                        'is_correct' => $correct === 'true',
-                        'order_index' => 1,
-                    ]);
-                    QuestionOption::create([
-                        'question_id' => $question->id,
-                        'content' => 'Falso',
-                        'is_correct' => $correct === 'false',
-                        'order_index' => 2,
-                    ]);
-                } elseif ($qData['type'] === 'short_answer') {
-                    $correctAnswer = $qData['correct_answer'] ?? '';
-                    if (is_array($correctAnswer)) $correctAnswer = '';
-                    $correctAnswer = trim($correctAnswer);
-                    if (!empty($correctAnswer)) {
-                        QuestionOption::create([
-                            'question_id' => $question->id,
-                            'content' => $correctAnswer,
-                            'is_correct' => true,
-                            'order_index' => 1,
-                        ]);
-                    }
-                }
-            }
+            $this->createQuestions($test, $request->questions);
 
             // Update user stats
             \App\Models\UserStat::firstOrCreate(['user_id' => $user->id])
@@ -311,6 +264,8 @@ class TestController extends Controller
             'questions.options' => function ($q) {
                 $q->orderBy('order_index');
             },
+            'questions.blanks',
+            'questions.orderItems',
         ])->findOrFail($id);
 
         if (! $this->canManageTest($user, $test)) {
@@ -361,11 +316,16 @@ class TestController extends Controller
             'display_mode' => 'sometimes|in:paged,all',
             'status' => 'sometimes|in:draft,published,archived',
             'questions' => 'sometimes|array|min:1',
-            'questions.*.type' => 'required_with:questions|in:multiple_choice,true_false,short_answer',
+            'wrong_penalty' => 'sometimes|numeric|min:0|max:1',
+            'questions.*.type' => ['required_with:questions', Rule::in(QuestionTypes::keys())],
             'questions.*.content' => 'required_with:questions|string',
             'questions.*.explanation' => 'nullable|string',
             'questions.*.points' => 'sometimes|integer|min:1',
         ]);
+
+        if ($request->has('questions')) {
+            $this->validateQuestions($request->questions);
+        }
 
         return DB::transaction(function () use ($request, $test) {
             $oldStatus = $test->status;
@@ -380,6 +340,7 @@ class TestController extends Controller
                     : $test->time_limit,
                 'max_attempts' => $request->has('max_attempts') ? $request->max_attempts : $test->max_attempts,
                 'pass_score' => $request->has('pass_score') ? $request->pass_score : $test->pass_score,
+                'wrong_penalty' => $request->has('wrong_penalty') ? (float) $request->wrong_penalty : $test->wrong_penalty,
                 'shuffle_questions' => $request->has('shuffle_questions')
                     ? $request->boolean('shuffle_questions')
                     : $test->shuffle_questions,
@@ -425,71 +386,7 @@ class TestController extends Controller
 
             if ($request->has('questions')) {
                 Question::where('test_id', $test->id)->delete();
-
-                $orderIndex = 1;
-                foreach ($request->questions as $qData) {
-                    $content = $qData['content'] ?? '';
-                    if (is_array($content)) {
-                        $content = '';
-                    }
-                    if (empty(trim($content))) {
-                        continue;
-                    }
-
-                    $question = Question::create([
-                        'test_id' => $test->id,
-                        'type' => $qData['type'],
-                        'content' => $content,
-                        'explanation' => $qData['explanation'] ?? null,
-                        'points' => $qData['points'] ?? 1,
-                        'order_index' => $orderIndex++,
-                    ]);
-
-                    if ($qData['type'] === 'multiple_choice') {
-                        foreach (($qData['options'] ?? []) as $idx => $opt) {
-                            $optionStr = is_array($opt) ? ($opt['content'] ?? '') : $opt;
-                            if (empty(trim($optionStr))) {
-                                continue;
-                            }
-
-                            QuestionOption::create([
-                                'question_id' => $question->id,
-                                'content' => $optionStr,
-                                'is_correct' => is_array($opt) ? ($opt['is_correct'] ?? false) : false,
-                                'order_index' => is_array($opt) ? ($opt['order_index'] ?? $idx) : $idx,
-                            ]);
-                        }
-                    } elseif ($qData['type'] === 'true_false') {
-                        $correct = $qData['correct'] ?? 'true';
-                        QuestionOption::create([
-                            'question_id' => $question->id,
-                            'content' => 'Verdadero',
-                            'is_correct' => $correct === 'true',
-                            'order_index' => 1,
-                        ]);
-                        QuestionOption::create([
-                            'question_id' => $question->id,
-                            'content' => 'Falso',
-                            'is_correct' => $correct === 'false',
-                            'order_index' => 2,
-                        ]);
-                    } elseif ($qData['type'] === 'short_answer') {
-                        $correctAnswer = $qData['correct_answer'] ?? '';
-                        if (is_array($correctAnswer)) {
-                            $correctAnswer = '';
-                        }
-                        $correctAnswer = trim($correctAnswer);
-
-                        if (! empty($correctAnswer)) {
-                            QuestionOption::create([
-                                'question_id' => $question->id,
-                                'content' => $correctAnswer,
-                                'is_correct' => true,
-                                'order_index' => 1,
-                            ]);
-                        }
-                    }
-                }
+                $this->createQuestions($test, $request->questions);
             }
 
             $test->load(['questions.options', 'categories']);
@@ -552,7 +449,7 @@ class TestController extends Controller
             ], 404);
         }
 
-        $questionsQuery = Question::where('test_id', $id);
+        $questionsQuery = Question::where('test_id', $id)->with(QuestionTypes::RELATIONS);
 
         if ($test->shuffle_questions) {
             $questionsQuery->inRandomOrder();
@@ -560,23 +457,16 @@ class TestController extends Controller
             $questionsQuery->orderBy('order_index');
         }
 
-        // La explicación solo se muestra en resultados (puede revelar la respuesta correcta).
-        $questions = $questionsQuery->get()->makeHidden(['explanation']);
-
-        foreach ($questions as $question) {
-            if (in_array($question->type, ['multiple_choice', 'true_false'])) {
-                $optionsQuery = QuestionOption::where('question_id', $question->id);
-                if ($test->shuffle_answers) {
-                    $optionsQuery->inRandomOrder();
-                } else {
-                    $optionsQuery->orderBy('order_index');
-                }
-                // Don't expose is_correct to client
-                $question->options = $optionsQuery->get(['id', 'question_id', 'content', 'order_index', 'image_url']);
-            } else {
-                $question->options = null;
-            }
-        }
+        // Se construye a mano para no filtrar la solución (opciones correctas, respuesta
+        // numérica, explicación...). Cada tipo decide qué datos extra ve el alumno.
+        $questions = $questionsQuery->get()->map(fn (Question $question) => array_merge([
+            'id' => $question->id,
+            'type' => $question->type,
+            'content' => $question->content,
+            'points' => $question->points,
+            'order_index' => $question->order_index,
+            'image_url' => $question->image_url,
+        ], QuestionTypes::get($question->type)->forTaking($question, (bool) $test->shuffle_answers)));
 
         return response()->json([
             'test' => [
@@ -585,9 +475,55 @@ class TestController extends Controller
                 'time_limit' => $test->time_limit,
                 'display_mode' => $test->display_mode ?? 'paged',
                 'shuffle_questions' => $test->shuffle_questions,
+                'wrong_penalty' => $test->wrong_penalty,
             ],
             'questions' => $questions,
         ]);
+    }
+
+    /**
+     * Valida lo específico de cada tipo de pregunta (opciones, huecos, elementos...).
+     *
+     * @throws ValidationException
+     */
+    private function validateQuestions(array $questions): void
+    {
+        $errors = [];
+
+        foreach (array_values($questions) as $index => $data) {
+            if (! is_array($data) || trim((string) ($data['content'] ?? '')) === '') {
+                $errors["questions.{$index}.content"] = 'La pregunta '.($index + 1).' necesita un enunciado.';
+
+                continue;
+            }
+
+            $error = QuestionTypes::get($data['type'])->validate($data);
+            if ($error !== null) {
+                $errors["questions.{$index}"] = 'La pregunta '.($index + 1).' '.$error;
+            }
+        }
+
+        if ($errors) {
+            throw ValidationException::withMessages($errors);
+        }
+    }
+
+    private function createQuestions(Test $test, array $questions): void
+    {
+        foreach (array_values($questions) as $index => $data) {
+            $type = QuestionTypes::get($data['type']);
+
+            $question = Question::create(array_merge([
+                'test_id' => $test->id,
+                'type' => $data['type'],
+                'content' => trim($data['content']),
+                'explanation' => $data['explanation'] ?? null,
+                'points' => $data['points'] ?? 1,
+                'order_index' => $index + 1,
+            ], $type->attributes($data)));
+
+            $type->store($question, $data);
+        }
     }
 
     /**

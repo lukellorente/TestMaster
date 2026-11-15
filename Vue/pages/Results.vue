@@ -31,7 +31,9 @@
               {{ attempt.correct_answers }} de {{ totalQuestions }} correctas en {{ formatDuration(attempt.time_spent) }}.
               <template v-if="progressLine">{{ progressLine }}</template>
             </p>
-            <p v-if="showWeightedPoints" class="rs__line">{{ attempt.points_earned }} de {{ attempt.total_points }} puntos ponderados.</p>
+            <p v-if="showWeightedPoints" class="rs__line">
+              {{ formatPoints(attempt.points_earned) }} de {{ plural(attempt.total_points, 'punto', 'puntos') }}<template v-if="penalty">, con penalización de {{ penalty }} por fallo</template>.
+            </p>
             <div class="rs__actions">
               <router-link v-if="canRetry" :to="`/test/${attempt.test_id}/take`" class="btn btn--lg">Reintentar</router-link>
               <router-link :to="`/test/${attempt.test_id}`" class="btn btn--secondary btn--lg">Volver al test</router-link>
@@ -63,7 +65,8 @@
 
       <dl class="rs__strip" aria-label="Resumen">
         <div><dt>Correctas</dt><dd class="tabular">{{ attempt.correct_answers }}</dd></div>
-        <div><dt>Incorrectas</dt><dd class="tabular" :class="{ 'is-neg': attempt.incorrect_answers > 0 }">{{ attempt.incorrect_answers }}</dd></div>
+        <div v-if="partialCount"><dt>Parciales</dt><dd class="tabular">{{ partialCount }}</dd></div>
+        <div><dt>Incorrectas</dt><dd class="tabular" :class="{ 'is-neg': wrongCount > 0 }">{{ wrongCount }}</dd></div>
         <div><dt>Sin responder</dt><dd class="tabular">{{ attempt.unanswered }}</dd></div>
         <div>
           <dt>Tiempo</dt>
@@ -113,8 +116,11 @@
 
               <template v-else>
                 <div class="rs__answers">
-                  <div class="rs__ans" :class="r.status === 'bad' ? 'is-bad' : 'is-none'">
-                    <span>Tu respuesta</span>
+                  <div class="rs__ans" :class="`is-${r.status}`">
+                    <span>
+                      Tu respuesta
+                      <template v-if="r.pointsNote"> · {{ r.pointsNote }}</template>
+                    </span>
                     <strong>{{ r.status === 'none' ? 'Sin responder' : r.given_answer_label }}</strong>
                   </div>
                   <div v-if="attempt.test?.show_correct_answers && r.correct_answer_label" class="rs__ans is-ok">
@@ -138,7 +144,7 @@ import { computed, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import api from '../api/axios';
 import BaseLoader from '../components/base/BaseLoader.vue';
-import { formatClock, formatDuration, plural } from '../utils/tests';
+import { formatClock, formatDuration, formatPoints, penaltyLabel, plural } from '../utils/tests';
 
 const route = useRoute();
 const loading = ref(true);
@@ -157,8 +163,15 @@ const totalQuestions = computed(() => {
     + Number(attempt.value.unanswered || 0);
 });
 
+const penalty = computed(() => penaltyLabel(attempt.value?.test?.wrong_penalty));
+
+// Los puntos se muestran cuando no coinciden con el número de aciertos:
+// preguntas con distinto valor, respuestas parciales o penalizaciones.
 const showWeightedPoints = computed(
-  () => attempt.value && Number(attempt.value.total_points || 0) !== totalQuestions.value
+  () => attempt.value && (
+    Number(attempt.value.total_points || 0) !== totalQuestions.value
+    || Number(attempt.value.points_earned) !== Number(attempt.value.correct_answers)
+  )
 );
 
 // ─── Comparativa ─────────────────────────────────────────────────────────────
@@ -194,24 +207,43 @@ const attemptsNote = computed(() => {
 });
 
 // ─── Respuestas ──────────────────────────────────────────────────────────────
+function pointsNote(r) {
+  const earned = Number(r.points_earned) || 0;
+  if (r.status === 'partial') return `${formatPoints(earned)} de ${plural(r.points, 'punto', 'puntos')}`;
+  if (r.status === 'bad' && earned < 0) return `resta ${formatPoints(-earned)}`;
+  return '';
+}
+
 const rows = computed(() =>
-  responses.value.map((r, i) => ({
-    ...r,
-    n: i + 1,
-    status: r.is_correct ? 'ok' : r.answered ? 'bad' : 'none',
-  }))
+  responses.value.map((r, i) => {
+    const status = r.status ?? (r.is_correct ? 'ok' : r.answered ? 'bad' : 'none');
+    return { ...r, n: i + 1, status, pointsNote: pointsNote({ ...r, status }) };
+  })
 );
 
-const tabs = computed(() => [
-  { id: 'all', label: 'Todas', count: rows.value.length },
-  { id: 'bad', label: 'Incorrectas', count: rows.value.filter((r) => r.status === 'bad').length },
-  { id: 'none', label: 'Sin responder', count: rows.value.filter((r) => r.status === 'none').length },
-]);
+const countBy = (status) => rows.value.filter((r) => r.status === status).length;
+const partialCount = computed(() => countBy('partial'));
+const wrongCount = computed(() => countBy('bad'));
+
+const tabs = computed(() => {
+  const list = [
+    { id: 'all', label: 'Todas', count: rows.value.length },
+    { id: 'bad', label: 'Incorrectas', count: wrongCount.value },
+    { id: 'none', label: 'Sin responder', count: countBy('none') },
+  ];
+  if (partialCount.value) list.splice(1, 0, { id: 'partial', label: 'Parciales', count: partialCount.value });
+  return list;
+});
 
 const visibleRows = computed(() => (tab.value === 'all' ? rows.value : rows.value.filter((r) => r.status === tab.value)));
 
-const statusLabel = { ok: 'Correcta', bad: 'Incorrecta', none: 'Sin responder' };
-const statusIcon = { ok: 'fa-solid fa-check', bad: 'fa-solid fa-xmark', none: 'fa-solid fa-minus' };
+const statusLabel = { ok: 'Correcta', partial: 'Parcialmente correcta', bad: 'Incorrecta', none: 'Sin responder' };
+const statusIcon = {
+  ok: 'fa-solid fa-check',
+  partial: 'fa-solid fa-circle-half-stroke',
+  bad: 'fa-solid fa-xmark',
+  none: 'fa-solid fa-minus',
+};
 
 onMounted(async () => {
   try {
@@ -547,6 +579,12 @@ onMounted(async () => {
 .rs__icon.is-none {
   background: var(--sunk);
   color: var(--muted);
+}
+
+.rs__icon.is-partial,
+.rs__ans.is-partial {
+  background: var(--warning-bg);
+  color: var(--warning-ink);
 }
 
 .rs__row-body {

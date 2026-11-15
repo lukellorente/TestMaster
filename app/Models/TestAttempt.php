@@ -20,6 +20,7 @@ class TestAttempt extends Model
     protected function casts(): array
     {
         return [
+            'points_earned' => 'float',
             'is_completed' => 'boolean',
             'passed' => 'boolean',
             'started_at' => 'datetime',

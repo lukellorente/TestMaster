@@ -19,6 +19,7 @@ class QuestionResponse extends Model
         return [
             'given_answer' => 'string',
             'is_correct' => 'boolean',
+            'points_earned' => 'float',
             'display_order' => 'integer',
         ];
     }
