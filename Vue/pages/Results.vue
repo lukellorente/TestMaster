@@ -500,7 +500,7 @@ onMounted(async () => {
 .rs__tab[aria-selected='true'] {
   background: var(--bg);
   color: var(--text);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  font-weight: 600;
 }
 
 .rs__tab-count {

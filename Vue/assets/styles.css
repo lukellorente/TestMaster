@@ -660,140 +660,140 @@ body.dark-mode {
     color: var(--text);
 }
 
-body.dark-mode .legacy .legacy header {
+body.dark-mode .legacy header {
     background: var(--tm-surface-2);
     border-bottom-color: var(--tm-border);
 }
 
-body.dark-mode .legacy .legacy .search {
+body.dark-mode .legacy .search {
     background: var(--tm-bg);
     border-color: var(--tm-border);
     color: var(--tm-text);
 }
 
-body.dark-mode .legacy .legacy .search:focus {
+body.dark-mode .legacy .search:focus {
     background: var(--tm-surface);
     border-color: var(--accent);
 }
 
-body.dark-mode .legacy .legacy .search::placeholder {
+body.dark-mode .legacy .search::placeholder {
     color: var(--tm-muted);
 }
 
-body.dark-mode .legacy .legacy .link {
+body.dark-mode .legacy .link {
     color: var(--tm-muted);
 }
 
-body.dark-mode .legacy .legacy .link:hover {
+body.dark-mode .legacy .link:hover {
     color: var(--accent);
 }
 
-body.dark-mode .legacy .legacy .theme-toggle {
+body.dark-mode .legacy .theme-toggle {
     color: var(--tm-muted);
 }
 
-body.dark-mode .legacy .legacy .theme-toggle:hover {
+body.dark-mode .legacy .theme-toggle:hover {
     color: var(--accent);
 }
 
-body.dark-mode .legacy .legacy main {
+body.dark-mode .legacy main {
     background: transparent;
 }
 
 /* Containers dark mode */
-body.dark-mode .legacy .legacy .card,
-body.dark-mode .legacy .legacy .profile-header,
-body.dark-mode .legacy .legacy .stat-box,
-body.dark-mode .legacy .legacy .tabs,
-body.dark-mode .legacy .legacy .question-card,
-body.dark-mode .legacy .legacy .test-card,
-body.dark-mode .legacy .legacy .modal-container,
-body.dark-mode .legacy .legacy .countdown-timer,
-body.dark-mode .legacy .legacy .section,
-body.dark-mode .legacy .legacy .empty-state-box,
-body.dark-mode .legacy .legacy [style*="background: white"],
-body.dark-mode .legacy .legacy [style*="background:white"],
-body.dark-mode .legacy .legacy div[style*="background: white"],
-body.dark-mode .legacy .legacy div[style*="background:white"] {
+body.dark-mode .legacy .card,
+body.dark-mode .legacy .profile-header,
+body.dark-mode .legacy .stat-box,
+body.dark-mode .legacy .tabs,
+body.dark-mode .legacy .question-card,
+body.dark-mode .legacy .test-card,
+body.dark-mode .legacy .modal-container,
+body.dark-mode .legacy .countdown-timer,
+body.dark-mode .legacy .section,
+body.dark-mode .legacy .empty-state-box,
+body.dark-mode .legacy [style*="background: white"],
+body.dark-mode .legacy [style*="background:white"],
+body.dark-mode .legacy div[style*="background: white"],
+body.dark-mode .legacy div[style*="background:white"] {
     background: var(--tm-surface) !important;
     border-color: var(--tm-border) !important;
 }
 
 /* Table dark */
-body.dark-mode .legacy .legacy .test-item {
+body.dark-mode .legacy .test-item {
     border-bottom-color: var(--tm-border);
 }
 
-body.dark-mode .legacy .legacy .test-item:hover {
+body.dark-mode .legacy .test-item:hover {
     background: var(--tm-hover);
 }
 
-body.dark-mode .legacy .legacy .test-title {
+body.dark-mode .legacy .test-title {
     color: var(--tm-text);
 }
 
-body.dark-mode .legacy .legacy .test-meta {
+body.dark-mode .legacy .test-meta {
     color: var(--tm-muted);
 }
 
 /* Titles & text */
-body.dark-mode .legacy .legacy h1,
-body.dark-mode .legacy .legacy h2,
-body.dark-mode .legacy .legacy h3,
-body.dark-mode .legacy .legacy h4,
-body.dark-mode .legacy .legacy h5,
-body.dark-mode .legacy .legacy .profile-name,
-body.dark-mode .legacy .legacy .form-label,
-body.dark-mode .legacy .legacy label,
-body.dark-mode .legacy .legacy [style*="color: #1a202c"],
-body.dark-mode .legacy .legacy [style*="color:#1a202c"],
-body.dark-mode .legacy .legacy [style*="color: #2d3748"],
-body.dark-mode .legacy .legacy [style*="color:#2d3748"] {
+body.dark-mode .legacy h1,
+body.dark-mode .legacy h2,
+body.dark-mode .legacy h3,
+body.dark-mode .legacy h4,
+body.dark-mode .legacy h5,
+body.dark-mode .legacy .profile-name,
+body.dark-mode .legacy .form-label,
+body.dark-mode .legacy label,
+body.dark-mode .legacy [style*="color: #1a202c"],
+body.dark-mode .legacy [style*="color:#1a202c"],
+body.dark-mode .legacy [style*="color: #2d3748"],
+body.dark-mode .legacy [style*="color:#2d3748"] {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy p,
-body.dark-mode .legacy .legacy .profile-meta,
-body.dark-mode .legacy .legacy [style*="color: #a0aec0"],
-body.dark-mode .legacy .legacy [style*="color:#a0aec0"],
-body.dark-mode .legacy .legacy [style*="color: #718096"],
-body.dark-mode .legacy .legacy [style*="color:#718096"],
-body.dark-mode .legacy .legacy [style*="color: #4a5568"],
-body.dark-mode .legacy .legacy [style*="color:#4a5568"],
-body.dark-mode .legacy .legacy [style*="color: #666"],
-body.dark-mode .legacy .legacy [style*="color:#666"] {
+body.dark-mode .legacy p,
+body.dark-mode .legacy .profile-meta,
+body.dark-mode .legacy [style*="color: #a0aec0"],
+body.dark-mode .legacy [style*="color:#a0aec0"],
+body.dark-mode .legacy [style*="color: #718096"],
+body.dark-mode .legacy [style*="color:#718096"],
+body.dark-mode .legacy [style*="color: #4a5568"],
+body.dark-mode .legacy [style*="color:#4a5568"],
+body.dark-mode .legacy [style*="color: #666"],
+body.dark-mode .legacy [style*="color:#666"] {
     color: var(--tm-muted) !important;
 }
 
 /* Footer dark */
-body.dark-mode .legacy .legacy footer {
+body.dark-mode .legacy footer {
     background: transparent;
     border-top-color: var(--tm-border);
     color: var(--tm-muted);
 }
 
-body.dark-mode .legacy .legacy .footer-links a {
+body.dark-mode .legacy .footer-links a {
     color: var(--tm-muted);
 }
 
-body.dark-mode .legacy .legacy .footer-links a:hover {
+body.dark-mode .legacy .footer-links a:hover {
     color: var(--accent);
 }
 
 /* Forms dark */
-body.dark-mode .legacy .legacy input[type="text"],
-body.dark-mode .legacy .legacy input[type="email"],
-body.dark-mode .legacy .legacy input[type="password"],
-body.dark-mode .legacy .legacy input[type="number"],
-body.dark-mode .legacy .legacy input[type="search"],
-body.dark-mode .legacy .legacy textarea,
-body.dark-mode .legacy .legacy .form-input {
+body.dark-mode .legacy input[type="text"],
+body.dark-mode .legacy input[type="email"],
+body.dark-mode .legacy input[type="password"],
+body.dark-mode .legacy input[type="number"],
+body.dark-mode .legacy input[type="search"],
+body.dark-mode .legacy textarea,
+body.dark-mode .legacy .form-input {
     background: var(--tm-bg) !important;
     border-color: var(--tm-border) !important;
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy select {
+body.dark-mode .legacy select {
     background: var(--tm-bg) !important;
     border-color: var(--tm-border) !important;
     color: var(--tm-text) !important;
@@ -802,137 +802,137 @@ body.dark-mode .legacy .legacy select {
     background-position: right 1rem center !important;
 }
 
-body.dark-mode .legacy .legacy select:focus,
-body.dark-mode .legacy .legacy input:focus,
-body.dark-mode .legacy .legacy textarea:focus,
-body.dark-mode .legacy .legacy .form-input:focus {
+body.dark-mode .legacy select:focus,
+body.dark-mode .legacy input:focus,
+body.dark-mode .legacy textarea:focus,
+body.dark-mode .legacy .form-input:focus {
     border-color: var(--accent) !important;
     background: var(--tm-surface) !important;
 }
 
-body.dark-mode .legacy .legacy input::placeholder,
-body.dark-mode .legacy .legacy textarea::placeholder {
+body.dark-mode .legacy input::placeholder,
+body.dark-mode .legacy textarea::placeholder {
     color: var(--tm-muted) !important;
 }
 
 /* Tabs dark */
-body.dark-mode .legacy .legacy .tab {
+body.dark-mode .legacy .tab {
     background: var(--tm-surface);
     color: var(--tm-muted);
     border-color: var(--tm-border);
 }
 
-body.dark-mode .legacy .legacy .tab:hover {
+body.dark-mode .legacy .tab:hover {
     background: var(--tm-bg);
 }
 
-body.dark-mode .legacy .legacy .tab.active {
+body.dark-mode .legacy .tab.active {
     background: var(--accent);
     color: white;
 }
 
 /* Empty states & filters dark */
-body.dark-mode .legacy .legacy .empty-state {
+body.dark-mode .legacy .empty-state {
     background: var(--tm-surface);
     border-color: var(--tm-border);
 }
 
-body.dark-mode .legacy .legacy .filters {
+body.dark-mode .legacy .filters {
     background: var(--tm-surface);
     border-color: var(--tm-border);
 }
 
 /* Alerts dark */
-body.dark-mode .legacy .legacy .alert {
+body.dark-mode .legacy .alert {
     background: var(--tm-surface);
 }
 
-body.dark-mode .legacy .legacy .alert--success {
+body.dark-mode .legacy .alert--success {
     background: rgba(16, 185, 129, 0.2);
     border-color: rgba(16, 185, 129, 0.4);
     color: #6ee7b7;
 }
 
-body.dark-mode .legacy .legacy .alert--warning {
+body.dark-mode .legacy .alert--warning {
     background: rgba(245, 158, 11, 0.2);
     border-color: rgba(245, 158, 11, 0.4);
     color: #fcd34d;
 }
 
-body.dark-mode .legacy .legacy .alert--error {
+body.dark-mode .legacy .alert--error {
     background: rgba(239, 68, 68, 0.2);
     border-color: rgba(239, 68, 68, 0.4);
     color: #fca5a5;
 }
 
-body.dark-mode .legacy .legacy .alert--info {
+body.dark-mode .legacy .alert--info {
     background: rgba(59, 130, 246, 0.2);
     border-color: rgba(59, 130, 246, 0.4);
     color: #93c5fd;
 }
 
 /* Borders dark */
-body.dark-mode .legacy .legacy [style*="border: 1px solid #e2e8f0"],
-body.dark-mode .legacy .legacy [style*="border:1px solid #e2e8f0"],
-body.dark-mode .legacy .legacy [style*="border-bottom: 1px solid"],
-body.dark-mode .legacy .legacy [style*="border-top: 1px solid"] {
+body.dark-mode .legacy [style*="border: 1px solid #e2e8f0"],
+body.dark-mode .legacy [style*="border:1px solid #e2e8f0"],
+body.dark-mode .legacy [style*="border-bottom: 1px solid"],
+body.dark-mode .legacy [style*="border-top: 1px solid"] {
     border-color: var(--tm-border) !important;
 }
 
 /* Backgrounds dark */
-body.dark-mode .legacy .legacy [style*="background: #e2e8f0"],
-body.dark-mode .legacy .legacy [style*="background:#e2e8f0"],
-body.dark-mode .legacy .legacy [style*="background: #f7fafc"],
-body.dark-mode .legacy .legacy [style*="background:#f7fafc"],
-body.dark-mode .legacy .legacy [style*="background: #f8f9fa"],
-body.dark-mode .legacy .legacy [style*="background:#f8f9fa"] {
+body.dark-mode .legacy [style*="background: #e2e8f0"],
+body.dark-mode .legacy [style*="background:#e2e8f0"],
+body.dark-mode .legacy [style*="background: #f7fafc"],
+body.dark-mode .legacy [style*="background:#f7fafc"],
+body.dark-mode .legacy [style*="background: #f8f9fa"],
+body.dark-mode .legacy [style*="background:#f8f9fa"] {
     background: var(--tm-surface) !important;
 }
 
 /* Tables generic dark */
-body.dark-mode .legacy .legacy table {
+body.dark-mode .legacy table {
     border-color: var(--tm-border);
 }
 
-body.dark-mode .legacy .legacy th {
+body.dark-mode .legacy th {
     background: var(--tm-surface);
     color: var(--tm-text);
     border-color: var(--tm-border);
 }
 
-body.dark-mode .legacy .legacy td {
+body.dark-mode .legacy td {
     border-color: var(--tm-border);
     color: var(--tm-text);
 }
 
-body.dark-mode .legacy .legacy tr:hover {
+body.dark-mode .legacy tr:hover {
     background: var(--tm-hover);
 }
 
 /* Links dark */
-body.dark-mode .legacy .legacy a:not(.btn):not(.link) {
+body.dark-mode .legacy a:not(.btn):not(.link) {
     color: var(--accent);
 }
 
-body.dark-mode .legacy .legacy strong {
+body.dark-mode .legacy strong {
     color: var(--tm-text);
 }
 
 /* Options dark */
-body.dark-mode .legacy .legacy .option-label {
+body.dark-mode .legacy .option-label {
     background: var(--tm-bg);
     border-color: var(--tm-border);
     color: var(--tm-text);
 }
 
-body.dark-mode .legacy .legacy .option-label:hover {
+body.dark-mode .legacy .option-label:hover {
     background: var(--tm-hover);
     border-color: var(--accent);
 }
 
 /* Radio & checkbox */
-body.dark-mode .legacy .legacy input[type="radio"],
-body.dark-mode .legacy .legacy input[type="checkbox"] {
+body.dark-mode .legacy input[type="radio"],
+body.dark-mode .legacy input[type="checkbox"] {
     accent-color: var(--accent);
 }
 
@@ -955,51 +955,51 @@ body.dark-mode::-webkit-scrollbar-thumb:hover {
 }
 
 /* Section & cards dark */
-body.dark-mode .legacy .legacy .section-title {
+body.dark-mode .legacy .section-title {
     color: var(--tm-text);
     border-bottom-color: var(--tm-border);
 }
 
-body.dark-mode .legacy .legacy .question-number {
+body.dark-mode .legacy .question-number {
     color: var(--tm-text);
 }
 
-body.dark-mode .legacy .legacy .help-text {
+body.dark-mode .legacy .help-text {
     color: var(--tm-muted);
 }
 
 /* Results dark */
-body.dark-mode .legacy .legacy [style*="background: #d1fae5"],
-body.dark-mode .legacy .legacy [style*="background:#d1fae5"] {
+body.dark-mode .legacy [style*="background: #d1fae5"],
+body.dark-mode .legacy [style*="background:#d1fae5"] {
     background: rgba(16, 185, 129, 0.2) !important;
     color: #6ee7b7 !important;
 }
 
-body.dark-mode .legacy .legacy [style*="background: #fee2e2"],
-body.dark-mode .legacy .legacy [style*="background:#fee2e2"] {
+body.dark-mode .legacy [style*="background: #fee2e2"],
+body.dark-mode .legacy [style*="background:#fee2e2"] {
     background: rgba(239, 68, 68, 0.2) !important;
     color: #fca5a5 !important;
 }
 
-body.dark-mode .legacy .legacy [style*="border-color: #10b981"] {
+body.dark-mode .legacy [style*="border-color: #10b981"] {
     background: rgba(16, 185, 129, 0.2) !important;
     border-color: #10b981 !important;
 }
 
-body.dark-mode .legacy .legacy [style*="border-color: #ef4444"] {
+body.dark-mode .legacy [style*="border-color: #ef4444"] {
     background: rgba(239, 68, 68, 0.2) !important;
     border-color: #ef4444 !important;
 }
 
-body.dark-mode .legacy .legacy [style*="color: #10b981"] {
+body.dark-mode .legacy [style*="color: #10b981"] {
     color: #6ee7b7 !important;
 }
 
-body.dark-mode .legacy .legacy [style*="color: #ef4444"] {
+body.dark-mode .legacy [style*="color: #ef4444"] {
     color: #fca5a5 !important;
 }
 
-body.dark-mode .legacy .legacy [style*="color: #667eea"] {
+body.dark-mode .legacy [style*="color: #667eea"] {
     color: #a78bfa !important;
 }
 
@@ -1024,7 +1024,7 @@ body.dark-mode .legacy .legacy [style*="color: #667eea"] {
     padding: 2.25rem;
 }
 
-body.dark-mode .legacy .legacy .glass-card {
+body.dark-mode .legacy .glass-card {
     background: rgba(22, 33, 62, 0.35);
     border: 1px solid var(--accent-soft);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
@@ -1076,12 +1076,12 @@ body.dark-mode .legacy .legacy .glass-card {
 }
 
 /* Dark mode hero with hexagon pattern */
-body.dark-mode .legacy .legacy .auth-hero {
+body.dark-mode .legacy .auth-hero {
     background-color: var(--tm-bg);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%233a5566' fill-opacity='0.08' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-body.dark-mode .legacy .legacy .auth-hero::before {
+body.dark-mode .legacy .auth-hero::before {
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -1104,7 +1104,7 @@ body.dark-mode .legacy .legacy .auth-hero::before {
     pointer-events: none;
 }
 
-body.dark-mode .legacy .legacy .input-icon {
+body.dark-mode .legacy .input-icon {
     color: var(--tm-muted);
 }
 
@@ -1151,17 +1151,17 @@ body.dark-mode .legacy .legacy .input-icon {
     color: #333;
 }
 
-body.dark-mode .legacy .legacy .btn-social {
+body.dark-mode .legacy .btn-social {
     background: rgba(15, 34, 48, 0.35);
     border-color: var(--tm-border);
     color: var(--tm-text);
 }
 
-body.dark-mode .legacy .legacy .btn-social:hover {
+body.dark-mode .legacy .btn-social:hover {
     background: rgba(15, 34, 48, 0.55);
 }
 
-body.dark-mode .legacy .legacy .btn-github i {
+body.dark-mode .legacy .btn-github i {
     color: #e2e8f0;
 }
 
@@ -1186,187 +1186,187 @@ body.dark-mode .legacy .legacy .btn-github i {
     padding: 0 1rem;
 }
 
-body.dark-mode .legacy .legacy .auth-divider::before,
-body.dark-mode .legacy .legacy .auth-divider::after {
+body.dark-mode .legacy .auth-divider::before,
+body.dark-mode .legacy .auth-divider::after {
     background: var(--tm-border);
 }
 
 /* === DARK MODE: StatsCard component (ViewTest info cards, Profile stats, Results stats grid) === */
-body.dark-mode .legacy .legacy .stats-card {
+body.dark-mode .legacy .stats-card {
     background: var(--tm-surface) !important;
     border-color: var(--tm-border) !important;
 }
 
-body.dark-mode .legacy .legacy .stats-value {
+body.dark-mode .legacy .stats-value {
     color: var(--tm-text) !important;
 }
 
 /* === DARK MODE: BaseBadge secondary variant (ViewTest category tags) === */
-body.dark-mode .legacy .legacy .badge--secondary {
+body.dark-mode .legacy .badge--secondary {
     background: var(--tm-border) !important;
     color: var(--tm-text) !important;
 }
 
 /* === DARK MODE: TestStats component (ViewTest Estadísticas Generales) === */
-body.dark-mode .legacy .legacy .test-stats {
+body.dark-mode .legacy .test-stats {
     background: var(--tm-surface) !important;
 }
 
-body.dark-mode .legacy .legacy .stats-title {
+body.dark-mode .legacy .stats-title {
     color: var(--tm-text) !important;
 }
 
 /* === DARK MODE: TestInfo component (TakeTest) === */
-body.dark-mode .legacy .legacy .test-info {
+body.dark-mode .legacy .test-info {
     background: var(--tm-surface) !important;
 }
 
-body.dark-mode .legacy .legacy .test-info-title {
+body.dark-mode .legacy .test-info-title {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .test-info-description {
+body.dark-mode .legacy .test-info-description {
     color: var(--tm-muted) !important;
 }
 
-body.dark-mode .legacy .legacy .stat-item {
+body.dark-mode .legacy .stat-item {
     color: var(--tm-muted) !important;
 }
 
 /* === DARK MODE: QuestionCard (TakeTest question text) === */
-body.dark-mode .legacy .legacy .question-content {
+body.dark-mode .legacy .question-content {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .question-points {
+body.dark-mode .legacy .question-points {
     color: var(--tm-muted) !important;
 }
 
 /* === DARK MODE: Question answer options (TakeTest answer text) === */
-body.dark-mode .legacy .legacy .option-text {
+body.dark-mode .legacy .option-text {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .option-marker {
+body.dark-mode .legacy .option-marker {
     background: var(--tm-surface-2) !important;
     border-color: var(--tm-border) !important;
     color: var(--tm-muted) !important;
 }
 
-body.dark-mode .legacy .legacy .option-label:has(input:checked) .option-marker {
+body.dark-mode .legacy .option-label:has(input:checked) .option-marker {
     background: var(--accent) !important;
     border-color: var(--accent) !important;
     color: white !important;
 }
 
-body.dark-mode .legacy .legacy .option-label:has(input:checked) {
+body.dark-mode .legacy .option-label:has(input:checked) {
     background: var(--tm-surface-2) !important;
     border-color: var(--accent) !important;
 }
 
-body.dark-mode .legacy .legacy .option-label:has(input:checked) .option-text {
+body.dark-mode .legacy .option-label:has(input:checked) .option-text {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .option-label:hover:not(.option--correct):not(.option--incorrect) {
+body.dark-mode .legacy .option-label:hover:not(.option--correct):not(.option--incorrect) {
     background: var(--tm-hover) !important;
     border-color: var(--accent) !important;
 }
 
-body.dark-mode .legacy .legacy .option-label:hover:not(.option--correct):not(.option--incorrect) .option-text {
+body.dark-mode .legacy .option-label:hover:not(.option--correct):not(.option--incorrect) .option-text {
     color: var(--tm-text) !important;
 }
 
 /* === DARK MODE: QuestionResult component (Results answer detail) === */
-body.dark-mode .legacy .legacy .question-result {
+body.dark-mode .legacy .question-result {
     background: var(--tm-surface) !important;
     border-color: var(--tm-border) !important;
 }
 
-body.dark-mode .legacy .legacy .result-content {
+body.dark-mode .legacy .result-content {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .result-answer {
+body.dark-mode .legacy .result-answer {
     background: var(--tm-bg) !important;
 }
 
-body.dark-mode .legacy .legacy .answer-label {
+body.dark-mode .legacy .answer-label {
     color: var(--tm-muted) !important;
 }
 
-body.dark-mode .legacy .legacy .answer-value {
+body.dark-mode .legacy .answer-value {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .result-number {
+body.dark-mode .legacy .result-number {
     color: var(--tm-text) !important;
 }
 
 /* === DARK MODE: ActivityFeed component (Profile activity tab) === */
-body.dark-mode .legacy .legacy .activity-feed {
+body.dark-mode .legacy .activity-feed {
     background: var(--tm-surface) !important;
     border-color: var(--tm-border) !important;
 }
 
-body.dark-mode .legacy .legacy .activity-text {
+body.dark-mode .legacy .activity-text {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .activity-item:hover {
+body.dark-mode .legacy .activity-item:hover {
     background: var(--tm-hover) !important;
 }
 
 /* === DARK MODE: Scoped components that need global overrides === */
-body.dark-mode .legacy .legacy .test-card {
+body.dark-mode .legacy .test-card {
     background: var(--tm-surface) !important;
     border-color: var(--tm-border) !important;
 }
 
-body.dark-mode .legacy .legacy .test-card-title {
+body.dark-mode .legacy .test-card-title {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .test-card-description,
-body.dark-mode .legacy .legacy .test-card-author {
+body.dark-mode .legacy .test-card-description,
+body.dark-mode .legacy .test-card-author {
     color: var(--tm-muted) !important;
 }
 
-body.dark-mode .legacy .legacy .test-card-author {
+body.dark-mode .legacy .test-card-author {
     border-top-color: var(--tm-border) !important;
 }
 
-body.dark-mode .legacy .legacy .countdown-timer {
+body.dark-mode .legacy .countdown-timer {
     background: var(--tm-surface) !important;
     border-color: var(--tm-border) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
 }
 
-body.dark-mode .legacy .legacy .timer-label {
+body.dark-mode .legacy .timer-label {
     color: var(--tm-muted) !important;
 }
 
-body.dark-mode .legacy .legacy .modal-container {
+body.dark-mode .legacy .modal-container {
     background: var(--tm-surface) !important;
     border: 1px solid var(--tm-border) !important;
 }
 
-body.dark-mode .legacy .legacy .modal-header {
+body.dark-mode .legacy .modal-header {
     border-bottom-color: var(--tm-border) !important;
 }
 
-body.dark-mode .legacy .legacy .modal-title {
+body.dark-mode .legacy .modal-title {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .modal-close {
+body.dark-mode .legacy .modal-close {
     color: var(--tm-muted) !important;
 }
 
-body.dark-mode .legacy .legacy .modal-close:hover {
+body.dark-mode .legacy .modal-close:hover {
     color: var(--tm-text) !important;
 }
 
-body.dark-mode .legacy .legacy .modal-footer {
+body.dark-mode .legacy .modal-footer {
     border-top-color: var(--tm-border) !important;
 }

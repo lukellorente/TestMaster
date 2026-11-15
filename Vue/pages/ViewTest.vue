@@ -91,8 +91,8 @@
 
             <template v-if="!authStore.isLoggedIn">
               <p class="vt__note">Inicia sesión para hacer este test y guardar tu nota.</p>
-              <router-link to="/login" class="btn btn--lg vt__full">Iniciar sesión</router-link>
-              <router-link to="/register" class="btn btn--secondary btn--lg vt__full">Crear cuenta gratis</router-link>
+              <router-link :to="{ path: '/login', query: { redirect: route.fullPath } }" class="btn btn--lg vt__full">Iniciar sesión</router-link>
+              <router-link :to="{ path: '/register', query: { redirect: route.fullPath } }" class="btn btn--secondary btn--lg vt__full">Crear cuenta gratis</router-link>
             </template>
 
             <p v-else-if="attemptsExhausted" class="vt__note vt__note--box">
@@ -183,7 +183,7 @@ const categoryLabel = computed(() => (test.value?.categories || []).map((c) => c
 
 const mobileCta = computed(() => {
   if (!test.value) return null;
-  if (!authStore.isLoggedIn) return { to: '/login', label: 'Inicia sesión para empezar' };
+  if (!authStore.isLoggedIn) return { to: { path: '/login', query: { redirect: route.fullPath } }, label: 'Inicia sesión para empezar' };
   if (attemptsExhausted.value) return null;
   return {
     to: `/test/${test.value.id}/take`,

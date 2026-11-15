@@ -17,8 +17,8 @@ import NotFound from '../pages/NotFound.vue';
 
 const routes = [
     { path: '/', name: 'home', component: Home, meta: { redesigned: true } },
-    { path: '/login', name: 'login', component: Login },
-    { path: '/register', name: 'register', component: Register },
+    { path: '/login', name: 'login', component: Login, meta: { redesigned: true } },
+    { path: '/register', name: 'register', component: Register, meta: { redesigned: true } },
     { path: '/test/:id', name: 'view-test', component: ViewTest, meta: { redesigned: true } },
     {
         path: '/test/:id/take',
@@ -36,15 +36,15 @@ const routes = [
         path: '/create-test',
         name: 'create-test',
         component: CreateTest,
-        meta: { requiresAuth: true },
+        meta: { requiresAuth: true, redesigned: true },
     },
     {
         path: '/test/:id/edit',
         name: 'edit-test',
         component: CreateTest,
-        meta: { requiresAuth: true },
+        meta: { requiresAuth: true, redesigned: true },
     },
-    { path: '/profile/:id', name: 'profile', component: Profile },
+    { path: '/profile/:id', name: 'profile', component: Profile, meta: { redesigned: true } },
     { path: '/help', name: 'help', component: Help },
     { path: '/privacy', name: 'privacy', component: Privacy }, 
     { path: '/terms', name: 'terms', component: Terms },
@@ -60,7 +60,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     const authStore = useAuthStore();
     if (to.meta.requiresAuth && !authStore.isLoggedIn) {
-        next({ name: 'login' });
+        next({ name: 'login', query: { redirect: to.fullPath } });
     } else {
         next();
     }
