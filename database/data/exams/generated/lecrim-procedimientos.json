@@ -1,0 +1,675 @@
+{
+    "slug": "lecrim-procedimientos",
+    "title": "LECrim: procedimiento abreviado y juicio rápido",
+    "description": "Test de nivel difícil para repasar el procedimiento abreviado, los juicios rápidos, los delitos leves y el habeas corpus de cara a las oposiciones de Justicia. Actualizado con la normativa vigente a noviembre de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:47:19+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 757 de la Ley de Enjuiciamiento Criminal, el procedimiento abreviado se aplica al enjuiciamiento de los delitos castigados con pena privativa de libertad no superior a:",
+            "explanation": "El artículo 757 LECrim fija el límite en pena privativa de libertad no superior a nueve años, o cualquier otra pena de distinta naturaleza, única, conjunta o alternativa, cualquiera que sea su cuantía o duración.",
+            "options": [
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nueve años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el procedimiento abreviado, el enjuiciamiento corresponde al Juzgado de lo Penal cuando la pena privativa de libertad solicitada no exceda de:",
+            "explanation": "El Juzgado de lo Penal conoce de los delitos con pena privativa de libertad no superior a cinco años, y la Audiencia Provincial de los castigados con pena superior (artículo 14 LECrim).",
+            "options": [
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nueve años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dictado el auto de continuación por los trámites del procedimiento abreviado, ¿de qué plazo común disponen el Ministerio Fiscal y las acusaciones personadas para solicitar la apertura del juicio oral o el sobreseimiento?",
+            "explanation": "Según el artículo 780 LECrim, el plazo común es de diez días.",
+            "options": [
+                {
+                    "content": "Tres días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Abierto el juicio oral en el procedimiento abreviado y dado traslado de las acusaciones, ¿de qué plazo dispone la defensa para presentar su escrito de defensa?",
+            "explanation": "El artículo 784.1 LECrim concede a la defensa un plazo de diez días para presentar su escrito.",
+            "options": [
+                {
+                    "content": "Diez días",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 787 de la LECrim, la conformidad del acusado antes de iniciarse el juicio oral en el procedimiento abreviado exige, en caso de pena de prisión, que la pena más grave solicitada no exceda de:",
+            "explanation": "El artículo 787 LECrim permite la sentencia de conformidad cuando la pena de prisión no excede de seis años.",
+            "options": [
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nueve años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 786.1 de la LECrim, en el procedimiento abreviado puede celebrarse el juicio en ausencia del acusado debidamente citado cuando la pena solicitada no exceda de:",
+            "explanation": "Se admite el juicio en ausencia si la pena solicitada no excede de dos años de privación de libertad o, si es de distinta naturaleza, de seis años de duración.",
+            "options": [
+                {
+                    "content": "Un año de privación de libertad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años de privación de libertad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres años de privación de libertad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años de privación de libertad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué plazo debe interponerse el recurso de apelación contra la sentencia dictada por el Juzgado de lo Penal en el procedimiento abreviado (artículo 790 LECrim)?",
+            "explanation": "El recurso de apelación contra sentencias en el procedimiento abreviado se interpone por escrito ante el órgano que dictó la resolución en el plazo de diez días.",
+            "options": [
+                {
+                    "content": "Cinco días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 777 de la LECrim, cuando se prevea fundadamente que una prueba no podrá practicarse en el juicio oral o pudiera motivar su suspensión, ¿qué debe hacer el Juez de Instrucción?",
+            "explanation": "El artículo 777.2 LECrim regula la prueba anticipada: el Juez la practica de inmediato, garantizando la contradicción.",
+            "options": [
+                {
+                    "content": "Practicarla inmediatamente, asegurando la posibilidad de contradicción de las partes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Encomendar su práctica a la Policía Judicial sin intervención de las partes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prescindir de ella y continuar la instrucción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reservarla al Juzgado de lo Penal para después de la apertura del juicio oral",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 795 de la LECrim, el enjuiciamiento rápido de determinados delitos exige, entre otros requisitos, que estén castigados con pena privativa de libertad que no exceda de:",
+            "explanation": "El artículo 795 LECrim exige pena privativa de libertad que no exceda de cinco años, o penas de distinta naturaleza cuya duración no exceda de diez.",
+            "options": [
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nueve años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el enjuiciamiento rápido de delitos, si la pena es de distinta naturaleza a la privativa de libertad, su duración no puede exceder de:",
+            "explanation": "El artículo 795.1.1.ª LECrim admite cualesquiera otras penas de distinta naturaleza cuya duración no exceda de diez años, cualquiera que sea su cuantía.",
+            "options": [
+                {
+                    "content": "Seis años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ocho años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Doce años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre los presupuestos del enjuiciamiento rápido del artículo 795 de la LECrim:",
+            "explanation": "La ausencia de antecedentes penales no es un presupuesto del enjuiciamiento rápido; los demás son requisitos del artículo 795 LECrim.",
+            "options": [
+                {
+                    "content": "Que el proceso se incoe en virtud de atestado policial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que la Policía Judicial haya detenido a una persona y la haya puesto a disposición del Juzgado de guardia, o la haya citado ante él como denunciada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que se trate de un delito flagrante, de alguno de los expresamente enumerados o de instrucción presumiblemente sencilla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que el investigado carezca de antecedentes penales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes delitos puede ser objeto de enjuiciamiento rápido por razón de su tipo, dentro de los límites de pena del artículo 795 LECrim?",
+            "explanation": "El artículo 795 LECrim incluye expresamente los delitos contra la seguridad vial, junto con lesiones, coacciones, amenazas, hurto, robo, daños y otros.",
+            "options": [
+                {
+                    "content": "Los delitos contra la seguridad vial",
+                    "is_correct": true
+                },
+                {
+                    "content": "El homicidio doloso",
+                    "is_correct": false
+                },
+                {
+                    "content": "El delito de cohecho",
+                    "is_correct": false
+                },
+                {
+                    "content": "La malversación de caudales públicos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 801 de la LECrim, en el enjuiciamiento rápido el Juzgado de guardia puede dictar sentencia de conformidad cuando la pena de prisión solicitada no exceda de:",
+            "explanation": "La conformidad ante el Juzgado de guardia en el procedimiento para el enjuiciamiento rápido se limita a penas de prisión que no excedan de tres años.",
+            "options": [
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la conformidad prestada ante el Juzgado de guardia en el enjuiciamiento rápido, la pena de prisión solicitada se reduce, según el artículo 801 de la LECrim, en:",
+            "explanation": "El artículo 801.2 LECrim prevé la reducción en un tercio de la pena solicitada.",
+            "options": [
+                {
+                    "content": "Una cuarta parte",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un tercio",
+                    "is_correct": true
+                },
+                {
+                    "content": "La mitad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos tercios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El procedimiento de habeas corpus está regulado en:",
+            "explanation": "La Ley Orgánica 6/1984, de 24 de mayo, regula el procedimiento de habeas corpus, en desarrollo del artículo 17.4 de la Constitución.",
+            "options": [
+                {
+                    "content": "La Ley Orgánica 6/1985, de 1 de julio",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Ley Orgánica 10/1995, de 23 de noviembre",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Ley Orgánica 5/1995, de 22 de mayo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Ley Orgánica 6/1984, de 24 de mayo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 6/1984, ¿qué órgano es competente para conocer de la solicitud de habeas corpus?",
+            "explanation": "Es competente el Juez de Instrucción del lugar de la privación de libertad; en su defecto, el del lugar de la detención y, subsidiariamente, el de las últimas noticias.",
+            "options": [
+                {
+                    "content": "El Juez de Instrucción del lugar en que se encuentre la persona privada de libertad",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Juez de lo Penal del lugar de comisión del delito",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Audiencia Provincial de la capital de provincia",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Juez Decano del partido judicial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 6/1984, ¿quién no está legitimado para instar el procedimiento de habeas corpus?",
+            "explanation": "La ley legitima al detenido, su cónyuge o pareja, descendientes, ascendientes, hermanos, tutores, Defensor del Pueblo y Ministerio Fiscal; el Juez puede actuar de oficio. No existe acción popular.",
+            "options": [
+                {
+                    "content": "El Defensor del Pueblo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ministerio Fiscal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier ciudadano en ejercicio de la acción popular",
+                    "is_correct": true
+                },
+                {
+                    "content": "El cónyuge de la persona privada de libertad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Admitida a trámite la solicitud de habeas corpus, el Juez debe resolver en el plazo máximo de:",
+            "explanation": "La Ley Orgánica 6/1984 establece que el Juez resuelve, mediante auto, en el plazo de veinticuatro horas desde la admisión.",
+            "options": [
+                {
+                    "content": "Doce horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinticuatro horas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuarenta y ocho horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Setenta y dos horas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es un supuesto de persona ilegalmente detenida a los efectos del artículo 1 de la Ley Orgánica 6/1984:",
+            "explanation": "El habeas corpus no ampara la privación de libertad acordada por resolución judicial, que se impugna por los recursos ordinarios.",
+            "options": [
+                {
+                    "content": "La detenida sin que concurran los supuestos legales o sin cumplirse los requisitos y formalidades legales",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ilícitamente internada en cualquier establecimiento o lugar",
+                    "is_correct": false
+                },
+                {
+                    "content": "La detenida por plazo superior al legal sin ser liberada o entregada a la autoridad judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "La que se encuentra en prisión provisional acordada por auto judicial motivado",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es una de las resoluciones que el Juez puede adoptar al resolver el habeas corpus:",
+            "explanation": "El Juez de habeas corpus controla la legalidad de la detención y no decreta la prisión provisional, que corresponde al proceso penal.",
+            "options": [
+                {
+                    "content": "Acordar la prisión provisional del detenido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Archivar las actuaciones si la detención es conforme a la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ordenar la inmediata puesta en libertad si no concurren los supuestos legales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ordenar la puesta a disposición judicial inmediata si se ha excedido el plazo de detención",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con carácter general, ¿qué órgano conoce del enjuiciamiento de los delitos leves?",
+            "explanation": "Los Jueces de Instrucción conocen del fallo de los delitos leves, salvo atribución específica a otros órganos, como los Juzgados de Violencia sobre la Mujer.",
+            "options": [
+                {
+                    "content": "El Juzgado de lo Penal",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Audiencia Provincial",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Juzgado de Instrucción",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Juzgado de Menores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 33.4 del Código Penal, ¿cuál de las siguientes penas es leve?",
+            "explanation": "La multa de hasta tres meses es pena leve; la prisión de tres meses, la multa de más de tres meses y la localización permanente de tres meses y un día a seis meses son menos graves.",
+            "options": [
+                {
+                    "content": "Multa de hasta tres meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Prisión de tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Multa superior a tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Localización permanente de seis meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Contra las sentencias dictadas por el Juzgado de Instrucción en el juicio por delito leve cabe recurso de apelación ante:",
+            "explanation": "Las sentencias en juicios por delito leve dictadas por el Juzgado de Instrucción son apelables ante la Audiencia Provincial.",
+            "options": [
+                {
+                    "content": "El Juzgado de lo Penal",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tribunal Superior de Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de lo Penal de la Audiencia Nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Audiencia Provincial",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el juicio por delito leve, ¿es preceptiva la intervención de abogado?",
+            "explanation": "En el juicio por delito leve no es preceptiva la intervención de abogado ni de procurador, aunque las partes pueden valerse de ellos.",
+            "options": [
+                {
+                    "content": "Sí, siempre, tanto para el denunciante como para el denunciado",
+                    "is_correct": false
+                },
+                {
+                    "content": "No, las partes pueden comparecer por sí mismas, sin perjuicio de que puedan valerse de abogado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo es preceptiva para el denunciado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo lo es cuando la pena prevista sea de multa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 779.1.4.ª de la LECrim, la resolución que acuerda seguir las diligencias previas por los trámites del procedimiento abreviado debe contener:",
+            "explanation": "El auto debe determinar los hechos punibles e identificar a la persona imputada; la calificación y las pruebas se formulan después en los escritos de acusación y defensa.",
+            "options": [
+                {
+                    "content": "La calificación jurídica definitiva y la pena que se solicita",
+                    "is_correct": false
+                },
+                {
+                    "content": "La determinación de los hechos punibles y la identificación de la persona a la que se atribuyen",
+                    "is_correct": true
+                },
+                {
+                    "content": "La relación de pruebas que se practicarán en el juicio oral",
+                    "is_correct": false
+                },
+                {
+                    "content": "La fijación de la fecha del juicio oral",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 767 de la LECrim, en el procedimiento abreviado la persona investigada debe ser asistida por abogado:",
+            "explanation": "El artículo 767 LECrim garantiza la asistencia letrada desde la detención o desde que aparezca la imputación contra persona determinada.",
+            "options": [
+                {
+                    "content": "Solo desde la apertura del juicio oral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente cuando se acuerde su prisión provisional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde la detención o desde que de las actuaciones resulte la imputación de un delito contra persona determinada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo a partir de su primera declaración ante el Juez",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 13.4 del Código Penal, cuando la pena, por su extensión, pueda incluirse tanto entre las leves como entre las menos graves, el delito se considerará:",
+            "explanation": "El artículo 13.4 CP establece que, en ese caso, el delito se considera leve en todo caso.",
+            "options": [
+                {
+                    "content": "Menos grave, en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grave, si concurre reincidencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Menos grave o leve, a criterio del Fiscal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Leve, en todo caso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En el procedimiento de habeas corpus no es preceptiva la intervención de abogado ni de procurador para formular la solicitud.",
+            "explanation": "La Ley Orgánica 6/1984 permite instar el procedimiento sin abogado ni procurador, y garantiza así la rapidez del control de la detención.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 17.2 de la Constitución, la detención preventiva no puede durar más de cuarenta y ocho horas.",
+            "explanation": "El plazo máximo constitucional de la detención preventiva es de setenta y dos horas, tras las cuales el detenido debe ser puesto en libertad o a disposición judicial.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En los juicios por delito leve, el Ministerio Fiscal no asiste al juicio cuando la persecución del delito depende de la denuncia del perjudicado.",
+            "explanation": "El artículo 969.2 LECrim exime de asistir al Ministerio Fiscal en los delitos leves perseguibles solo mediante denuncia del perjudicado.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

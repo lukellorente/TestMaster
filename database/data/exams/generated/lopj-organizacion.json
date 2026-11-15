@@ -1,0 +1,629 @@
+{
+    "slug": "lopj-organizacion",
+    "title": "LOPJ 6/1985 - Organización de juzgados y tribunales",
+    "description": "Test de repaso de la LOPJ sobre planta y demarcación, órdenes jurisdiccionales, TS, Audiencia Nacional, TSJ y los nuevos tribunales de instancia. Me ha servido para preparar el examen de Justicia, espero que os ayude.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:37:05+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 30 de la LOPJ, a efectos judiciales el territorio nacional se organiza en:",
+            "explanation": "La demarcación judicial se articula en municipios, partidos, provincias y comunidades autónomas.",
+            "options": [
+                {
+                    "content": "Municipios, comarcas, provincias y comunidades autónomas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Municipios, partidos, provincias y comunidades autónomas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Partidos, provincias y comunidades autónomas, exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Municipios, distritos, provincias y regiones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOPJ, el partido judicial está formado por:",
+            "explanation": "El partido judicial agrupa municipios limítrofes de una misma provincia.",
+            "options": [
+                {
+                    "content": "La agrupación de provincias limítrofes de una misma comunidad autónoma",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cada uno de los municipios de más de 50.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "La agrupación de comarcas de una misma provincia",
+                    "is_correct": false
+                },
+                {
+                    "content": "La agrupación de municipios limítrofes pertenecientes a la misma provincia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOPJ, los juzgados y tribunales ejercerán su jurisdicción:",
+            "explanation": "La jurisdicción solo se ejerce en los supuestos atribuidos por la LOPJ o por otras leyes.",
+            "options": [
+                {
+                    "content": "Exclusivamente en los casos en que les venga atribuida por la LOPJ o por otra ley",
+                    "is_correct": true
+                },
+                {
+                    "content": "En todos los asuntos que les planteen los ciudadanos, con independencia de la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo en los casos atribuidos expresamente por la LOPJ, y no por otras leyes",
+                    "is_correct": false
+                },
+                {
+                    "content": "En los casos que determine el Consejo General del Poder Judicial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es un orden jurisdiccional:",
+            "explanation": "Los órdenes son civil, penal, contencioso-administrativo, social y militar; el mercantil se integra en el civil.",
+            "options": [
+                {
+                    "content": "Civil",
+                    "is_correct": false
+                },
+                {
+                    "content": "Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mercantil",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contencioso-administrativo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOPJ y la Constitución, la jurisdicción militar se ejercerá:",
+            "explanation": "El principio de unidad jurisdiccional limita la jurisdicción militar al ámbito estrictamente castrense y a los supuestos de estado de sitio.",
+            "options": [
+                {
+                    "content": "En todos los delitos cometidos por militares",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el ámbito estrictamente castrense y en los supuestos de estado de sitio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente en tiempo de guerra",
+                    "is_correct": false
+                },
+                {
+                    "content": "En los asuntos que decida el Ministerio de Defensa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10 de la LOPJ, a los solos efectos prejudiciales, cada orden jurisdiccional podrá conocer de asuntos que no le estén atribuidos privativamente. Esta decisión:",
+            "explanation": "La decisión prejudicial solo produce efectos en el proceso en que se dicta.",
+            "options": [
+                {
+                    "content": "Producirá efecto de cosa juzgada en el orden que sí sea competente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vinculará al Tribunal Supremo en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Será recurrible directamente ante el Tribunal Constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "No surtirá efecto fuera del proceso en que se produzca",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Tribunal Supremo, según la LOPJ:",
+            "explanation": "El Tribunal Supremo tiene su sede en Madrid y jurisdicción en toda España; en garantías constitucionales el superior es el Tribunal Constitucional.",
+            "options": [
+                {
+                    "content": "Tiene su sede en Madrid y jurisdicción en toda España",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tiene su sede en Madrid y jurisdicción solo en la Comunidad de Madrid",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es el órgano superior en garantías constitucionales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tiene jurisdicción únicamente en los órdenes civil y penal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántas Salas tiene el Tribunal Supremo según el artículo 55 de la LOPJ?",
+            "explanation": "Son cinco: Civil, Penal, Contencioso-Administrativo, Social y Militar.",
+            "options": [
+                {
+                    "content": "Cuatro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siete",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La Sala Quinta del Tribunal Supremo es la Sala de lo Militar.",
+            "explanation": "Las Salas del Tribunal Supremo son Primera (Civil), Segunda (Penal), Tercera (Contencioso-Administrativo), Cuarta (Social) y Quinta (Militar).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 61 de la LOPJ, la Sala Especial del Tribunal Supremo está integrada por:",
+            "explanation": "La Sala del artículo 61 la forman el Presidente, los Presidentes de Sala y el magistrado más antiguo y el más moderno de cada Sala.",
+            "options": [
+                {
+                    "content": "Los Presidentes de Sala y tres magistrados de cada Sala elegidos por sorteo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Tribunal Supremo, los Presidentes de Sala y el magistrado más antiguo y el más moderno de cada Sala",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente del Tribunal Supremo y dos magistrados de cada Sala designados por el CGPJ",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todos los magistrados del Tribunal Supremo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Corresponde a la Sala de lo Penal del Tribunal Supremo la instrucción y el enjuiciamiento de las causas contra:",
+            "explanation": "La Sala de lo Penal del Tribunal Supremo conoce de las causas contra los aforados ante él, entre ellos diputados y senadores.",
+            "options": [
+                {
+                    "content": "Los magistrados de los Tribunales Superiores de Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los alcaldes de capitales de provincia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los miembros de los parlamentos autonómicos en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los diputados y senadores",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué Sala del Tribunal Supremo conoce de los recursos contencioso-administrativos contra actos y disposiciones del Consejo de Ministros?",
+            "explanation": "Los actos del Consejo de Ministros se recurren ante la Sala Tercera del Tribunal Supremo.",
+            "options": [
+                {
+                    "content": "La Sala Tercera",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Sala de lo Contencioso-Administrativo de la Audiencia Nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala Primera",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de lo Contencioso-Administrativo del TSJ de Madrid",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una Sala de la Audiencia Nacional:",
+            "explanation": "La Audiencia Nacional tiene Salas de lo Penal, de lo Contencioso-Administrativo y de lo Social, pero no de lo Civil.",
+            "options": [
+                {
+                    "content": "Sala de lo Penal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sala de lo Civil",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sala de lo Contencioso-Administrativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sala de lo Social",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Entre otros, es competencia de la Sala de lo Penal de la Audiencia Nacional el enjuiciamiento de:",
+            "explanation": "El terrorismo es una de las materias atribuidas a los órganos penales de la Audiencia Nacional.",
+            "options": [
+                {
+                    "content": "Los delitos de hurto cometidos en Madrid",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los delitos leves de lesiones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los delitos de terrorismo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los delitos de lesiones por imprudencia en accidentes de tráfico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué órganos instruyen las causas cuyo enjuiciamiento corresponde a la Sala de lo Penal de la Audiencia Nacional?",
+            "explanation": "La instrucción corresponde a los Juzgados Centrales de Instrucción, con sede en Madrid.",
+            "options": [
+                {
+                    "content": "Los Juzgados Centrales de Instrucción",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los Juzgados de Instrucción de Madrid",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Juzgados de Vigilancia Penitenciaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de Apelación de la Audiencia Nacional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Contra las sentencias dictadas en primera instancia por la Sala de lo Penal de la Audiencia Nacional cabe recurso de apelación ante:",
+            "explanation": "La Audiencia Nacional cuenta con una Sala de Apelación que resuelve estos recursos.",
+            "options": [
+                {
+                    "content": "La Sala de lo Penal del Tribunal Supremo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de lo Penal del TSJ de Madrid",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de Apelación de la Audiencia Nacional",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Audiencia Provincial de Madrid",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOPJ, el Tribunal Superior de Justicia:",
+            "explanation": "El TSJ culmina la organización judicial en la comunidad autónoma, sin perjuicio de la competencia del Tribunal Supremo.",
+            "options": [
+                {
+                    "content": "Está subordinado a la Audiencia Nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Culmina la organización judicial en el ámbito de la comunidad autónoma, sin perjuicio de la jurisdicción del Tribunal Supremo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tiene jurisdicción en toda España en materia social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se crea en cada provincia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 70 de la LOPJ, el Tribunal Superior de Justicia se compone de:",
+            "explanation": "El TSJ tiene tres Salas: Civil y Penal, Contencioso-Administrativo y Social.",
+            "options": [
+                {
+                    "content": "Cuatro Salas: Civil, Penal, Contencioso-Administrativo y Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos Salas: Civil y Penal, y Contencioso-Administrativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco Salas, incluida la de lo Militar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Salas Civil y Penal, de lo Contencioso-Administrativo y de lo Social",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El Presidente del Tribunal Superior de Justicia es nombrado por el Rey a propuesta del Consejo General del Poder Judicial.",
+            "explanation": "El Presidente del TSJ, que representa al Poder Judicial en la comunidad autónoma, es nombrado por el Rey a propuesta del CGPJ.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué Sala del Tribunal Superior de Justicia conoce de los recursos de suplicación en materia laboral?",
+            "explanation": "El recurso de suplicación corresponde a la Sala de lo Social del TSJ.",
+            "options": [
+                {
+                    "content": "La Sala Civil y Penal",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de lo Contencioso-Administrativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de lo Social",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Sala de Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando el Estatuto de Autonomía lo prevea, el recurso de casación en materia de derecho civil foral o especial propio de la comunidad autónoma corresponde a:",
+            "explanation": "La Sala Civil y Penal del TSJ conoce de ese recurso de casación cuando el Estatuto de Autonomía así lo establece.",
+            "options": [
+                {
+                    "content": "La Sala Civil y Penal del Tribunal Superior de Justicia",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Sala de lo Social del Tribunal Superior de Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Audiencia Provincial",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Audiencia Nacional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOPJ, las Audiencias Provinciales tienen:",
+            "explanation": "Las Audiencias Provinciales tienen su sede en la capital de la provincia y extienden su jurisdicción a toda ella.",
+            "options": [
+                {
+                    "content": "Sede en la capital del partido judicial y jurisdicción en este",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sede en la capital de la comunidad autónoma y jurisdicción en esta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sede en la capital de la provincia y jurisdicción en toda ella",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sede en Madrid y jurisdicción en toda España",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOPJ, los jueces de paz son nombrados por un periodo de:",
+            "explanation": "El juez de paz es nombrado por cuatro años por la Sala de Gobierno del TSJ, a partir de la propuesta del Ayuntamiento.",
+            "options": [
+                {
+                    "content": "Tres años por el Pleno del CGPJ",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis años por el Ayuntamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años por el Ministerio de Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años por la Sala de Gobierno del Tribunal Superior de Justicia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 299 de la LOPJ, la carrera judicial está integrada por las categorías de:",
+            "explanation": "Las categorías son tres: Magistrado del Tribunal Supremo, Magistrado y Juez.",
+            "options": [
+                {
+                    "content": "Magistrado del Tribunal Supremo, Magistrado y Juez",
+                    "is_correct": true
+                },
+                {
+                    "content": "Presidente de Sala, Magistrado y Juez",
+                    "is_correct": false
+                },
+                {
+                    "content": "Magistrado del Tribunal Supremo, Magistrado, Juez y Juez de paz",
+                    "is_correct": false
+                },
+                {
+                    "content": "Magistrado, Juez y Secretario judicial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los tribunales de instancia se crearon mediante:",
+            "explanation": "Fue la LO 1/2025, de 2 de enero, de medidas en materia de eficiencia del Servicio Público de Justicia.",
+            "options": [
+                {
+                    "content": "La Ley Orgánica 5/2024, del Derecho de Defensa",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Ley Orgánica 1/2025, de medidas en materia de eficiencia del Servicio Público de Justicia",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Ley Orgánica 2/2024, de representación paritaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Ley 38/1988, de Demarcación y de Planta Judicial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los tribunales de instancia, según la LOPJ reformada por la LO 1/2025, tienen:",
+            "explanation": "Cada tribunal de instancia extiende su jurisdicción a su provincia y tiene sede en la capital.",
+            "options": [
+                {
+                    "content": "Jurisdicción en toda España",
+                    "is_correct": false
+                },
+                {
+                    "content": "Jurisdicción en toda su provincia y sede en la capital de esta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Jurisdicción en el municipio donde se ubiquen",
+                    "is_correct": false
+                },
+                {
+                    "content": "Jurisdicción en la comunidad autónoma",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes órganos NO se integra como sección en los tribunales de instancia:",
+            "explanation": "Los Juzgados de Paz subsisten al margen de los tribunales de instancia.",
+            "options": [
+                {
+                    "content": "Los antiguos Juzgados de Primera Instancia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los antiguos Juzgados de lo Penal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los antiguos Juzgados de lo Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Juzgados de Paz",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La LO 1/2025 suprimió las Audiencias Provinciales y las sustituyó por los tribunales de instancia.",
+            "explanation": "Las Audiencias Provinciales siguen existiendo; los tribunales de instancia sustituyen a los juzgados unipersonales.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

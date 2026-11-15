@@ -1,0 +1,675 @@
+{
+    "slug": "auxilio-judicial-actos-comunicacion",
+    "title": "Auxilio Judicial: actos de comunicación (LEC)",
+    "description": "Test de actos de comunicación de la LEC para el temario de Auxilio Judicial. Lo hice para repasar antes del examen, con preguntas de dificultad media.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:39:18+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley de Enjuiciamiento Civil, ¿cómo se denomina el acto de comunicación cuya finalidad es dar noticia de una resolución, diligencia o actuación?",
+            "explanation": "La notificación sirve para dar noticia de una resolución, diligencia o actuación (art. 149 LEC).",
+            "options": [
+                {
+                    "content": "Emplazamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Notificación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Requerimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Citación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El emplazamiento es el acto de comunicación mediante el cual se:",
+            "explanation": "El emplazamiento llama al destinatario para que se persone en el juicio dentro de un plazo determinado.",
+            "options": [
+                {
+                    "content": "Ordena al destinatario que haga o deje de hacer algo.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Convoca al destinatario a comparecer en lugar, día y hora determinados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Concede al destinatario un plazo para que se persone en el juicio.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solicita auxilio a otro tribunal para practicar una diligencia.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el acto de comunicación que convoca a una persona para comparecer ante el órgano judicial en un lugar, día y hora determinados?",
+            "explanation": "La citación es la comunicación para comparecer en lugar, día y hora concretos; el emplazamiento, en cambio, concede un plazo para personarse.",
+            "options": [
+                {
+                    "content": "Citación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Emplazamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Notificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mandamiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 149 de la LEC, el requerimiento tiene por objeto:",
+            "explanation": "El requerimiento ordena una conducta, de hacer o no hacer, al destinatario, normalmente con apercibimiento de las consecuencias de no atenderlo.",
+            "options": [
+                {
+                    "content": "Dar noticia de una resolución judicial.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ordenar al destinatario que haga o no haga alguna cosa bajo determinado apercibimiento.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pedir a otro tribunal que practique una actuación en su demarcación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Llamar a una persona a personarse en el procedimiento.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un Juzgado ordena la anotación preventiva de un embargo sobre un inmueble. ¿Qué acto de comunicación se dirige al Registro de la Propiedad para ello?",
+            "explanation": "Los mandamientos se dirigen a registradores, notarios y otras personas ajenas al proceso para ordenar actuaciones como anotaciones o certificaciones.",
+            "options": [
+                {
+                    "content": "Exhorto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Requerimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Emplazamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mandamiento",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El exhorto es el acto de comunicación que se utiliza para:",
+            "explanation": "Los exhortos son comunicaciones entre órganos judiciales para pedir cooperación cuando la actuación debe practicarse fuera de la demarcación del tribunal.",
+            "options": [
+                {
+                    "content": "Solicitar auxilio judicial a otro órgano judicial para practicar una actuación fuera de la circunscripción del tribunal.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Citar a un testigo que reside en el mismo partido judicial.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ordenar a un notario la expedición de un testimonio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Notificar una sentencia a un procurador.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un Juzgado necesita solicitar información a un organismo de la Administración que no es parte en el proceso. ¿Qué acto de comunicación se emplea habitualmente?",
+            "explanation": "El oficio es la comunicación dirigida a autoridades y funcionarios no judiciales y a organismos que no son parte en el proceso.",
+            "options": [
+                {
+                    "content": "Citación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exhorto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Oficio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Emplazamiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 404 de la LEC, admitida la demanda en el juicio ordinario, se emplazará al demandado para que la conteste en el plazo de:",
+            "explanation": "En el juicio ordinario el demandado dispone de veinte días hábiles para contestar a la demanda desde el emplazamiento.",
+            "options": [
+                {
+                    "content": "Diez días hábiles.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días hábiles.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días hábiles.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días hábiles.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el proceso monitorio, ¿qué plazo se concede al deudor requerido para pagar o comparecer y oponerse (art. 815 LEC)?",
+            "explanation": "El Letrado de la Administración de Justicia requiere al deudor para que, en el plazo de veinte días, pague o comparezca y alegue las razones de su negativa.",
+            "options": [
+                {
+                    "content": "Cinco días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Treinta días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 292 de la LEC, al testigo citado en forma que no comparezca sin causa justificada se le impondrá una multa de:",
+            "explanation": "La incomparecencia injustificada del testigo conlleva multa de 180 a 600 euros, sin perjuicio de otras responsabilidades.",
+            "options": [
+                {
+                    "content": "60 a 300 euros.",
+                    "is_correct": false
+                },
+                {
+                    "content": "100 a 300 euros.",
+                    "is_correct": false
+                },
+                {
+                    "content": "180 a 600 euros.",
+                    "is_correct": true
+                },
+                {
+                    "content": "300 a 1.200 euros.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el destinatario de una notificación personal no es hallado en su domicilio, la copia de la resolución puede entregarse a cualquier empleado o familiar que se encuentre en él, siempre que sea mayor de:",
+            "explanation": "El artículo 161 de la LEC admite la entrega a empleados, familiares o personas del domicilio mayores de catorce años que hagan constar su identidad.",
+            "options": [
+                {
+                    "content": "Catorce años.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dieciséis años.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dieciocho años.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Doce años.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando una parte actúa representada por procurador, los actos de comunicación del tribunal se practican, como regla general:",
+            "explanation": "Los actos de comunicación con las partes personadas se realizan a través de su procurador, que las representa a estos efectos.",
+            "options": [
+                {
+                    "content": "Directamente a la parte en su domicilio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al abogado de la parte.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por edicto en el tablón de anuncios.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al procurador, que representa a la parte en el proceso.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué supuesto procede, con carácter subsidiario, el acto de comunicación por edictos?",
+            "explanation": "El edicto es subsidiario: solo procede cuando, tras agotar las averiguaciones de domicilio, no es posible localizar al destinatario.",
+            "options": [
+                {
+                    "content": "Cuando el destinatario es una persona jurídica.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando la parte contraria lo solicita por conveniencia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando, agotados los medios de averiguación, se ignora el domicilio o paradero del destinatario.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando el destinatario reside fuera de la provincia del tribunal.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los actos de comunicación por medios electrónicos, cuando consta la correcta remisión pero el destinatario no accede a su contenido, la comunicación se entiende efectuada transcurridos:",
+            "explanation": "Según el artículo 162 de la LEC, pasados tres días desde la puesta a disposición sin acceder al contenido, se entiende realizada la comunicación.",
+            "options": [
+                {
+                    "content": "Un día.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué cuerpo de funcionarios de la Administración de Justicia tiene encomendada, de manera principal, la práctica de los actos de comunicación personales fuera de la sede judicial?",
+            "explanation": "Al Cuerpo de Auxilio Judicial le corresponden los actos de comunicación y ejecución que deban realizarse fuera de la oficina judicial.",
+            "options": [
+                {
+                    "content": "Cuerpo de Auxilio Judicial.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuerpo de Gestión Procesal y Administrativa.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpo de Tramitación Procesal y Administrativa.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpo de Letrados de la Administración de Justicia.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el destinatario de un acto de comunicación se niega a recibir la copia de la resolución, el funcionario:",
+            "explanation": "La negativa a recibir la copia no impide la comunicación: se documenta y el acto produce efectos, quedando la copia a disposición del interesado.",
+            "options": [
+                {
+                    "content": "Suspende la comunicación y devuelve el expediente al juzgado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo comunica al Ministerio Fiscal para que actúe de oficio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impone una multa en el acto al destinatario.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hace constar la negativa, le informa de que la copia queda a su disposición en la oficina judicial y la comunicación se tiene por efectuada.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué norma regula en España la cooperación jurídica internacional en materia civil, incluida la notificación de documentos judiciales al extranjero?",
+            "explanation": "La Ley 29/2015, de cooperación jurídica internacional en materia civil, regula, entre otras cuestiones, la notificación y traslado de documentos judiciales.",
+            "options": [
+                {
+                    "content": "Ley 29/2015, de 30 de julio.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ley 15/2015, de 2 de julio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley 42/2015, de 5 de octubre.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley 39/2015, de 1 de octubre.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para averiguar el domicilio de un demandado persona física cuyo paradero se desconoce, el órgano judicial puede acudir, entre otros medios, a:",
+            "explanation": "El Punto Neutro Judicial permite consultar bases de datos de organismos y registros para localizar el domicilio, según el artículo 156 de la LEC.",
+            "options": [
+                {
+                    "content": "El Punto Neutro Judicial.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Registro Civil exclusivamente.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Agencia de Protección de Datos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Junta Electoral Central.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si una parte no comunica el cambio del domicilio que designó para recibir notificaciones, ¿qué consecuencia se produce?",
+            "explanation": "Las partes deben comunicar los cambios de domicilio; mientras no lo hagan, las comunicaciones practicadas en el domicilio designado son válidas.",
+            "options": [
+                {
+                    "content": "Se declara nulo todo lo actuado hasta ese momento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se suspende el procedimiento hasta que lo comunique.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los actos de comunicación realizados en el domicilio anterior surten plenos efectos.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se le impone automáticamente una multa coercitiva.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 304 de la LEC, en la citación de una parte para el interrogatorio se le apercibe de que, si no comparece sin justa causa:",
+            "explanation": "La incomparecencia injustificada de la parte citada a interrogatorio puede dar lugar a la ficta confessio, es decir, a tener por reconocidos los hechos perjudiciales.",
+            "options": [
+                {
+                    "content": "Podrá ser multada con 600 euros y se archivará la causa.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrán considerarse reconocidos como ciertos los hechos del interrogatorio en que hubiese intervenido y que le sean perjudiciales.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se suspenderá el juicio por un plazo de diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Será declarada en rebeldía.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre los actos de comunicación:",
+            "explanation": "Ordenar a un registrador una actuación es propio del mandamiento; la citación convoca a comparecer en lugar, día y hora determinados.",
+            "options": [
+                {
+                    "content": "La notificación da noticia de una resolución, diligencia o actuación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El emplazamiento concede un plazo para personarse en el juicio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El requerimiento ordena hacer o no hacer alguna cosa.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La citación se utiliza para ordenar a un registrador la práctica de un asiento.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El demandado que, habiendo sido emplazado en forma, no comparece en el plazo concedido:",
+            "explanation": "La falta de comparecencia del demandado emplazado en forma conlleva su declaración de rebeldía (art. 496 LEC), que no equivale a allanamiento ni a admisión de hechos.",
+            "options": [
+                {
+                    "content": "Será declarado en rebeldía.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se entiende que se allana a la demanda.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se entiende que reconoce los hechos de la demanda.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Será citado de nuevo con apercibimiento de multa.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 150 de la LEC, las resoluciones procesales se notifican:",
+            "explanation": "Las resoluciones se notifican a todos los que sean parte en el proceso y también a quienes se refieran o puedan ser afectados por ellas.",
+            "options": [
+                {
+                    "content": "Solo al demandante y al demandado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "A todos los que sean parte en el proceso y, en su caso, a las personas a quienes se refieran o puedan afectar.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente a las partes que lo soliciten expresamente.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo a los procuradores, nunca a las partes.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes es un acto de comunicación del tribunal según la LEC?",
+            "explanation": "El artículo 149 de la LEC enumera como actos de comunicación la notificación, el emplazamiento, la citación, el requerimiento, los mandamientos, los oficios y los exhortos.",
+            "options": [
+                {
+                    "content": "La notificación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El emplazamiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El requerimiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todas las anteriores son correctas.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una vez practicado un acto de comunicación por el funcionario, ¿cómo queda constancia de su realización en las actuaciones?",
+            "explanation": "La práctica del acto se documenta en la correspondiente diligencia, con fecha, destinatario o persona que recibe la copia y demás circunstancias.",
+            "options": [
+                {
+                    "content": "Mediante una diligencia que documenta el acto, su fecha y la persona que lo recibe.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mediante un auto motivado del juez.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediante un decreto del Letrado de la Administración de Justicia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No es necesario dejar constancia si el destinatario lo recibe personalmente.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 130 de la LEC, las actuaciones judiciales deben practicarse, salvo excepciones, en horas hábiles, que son las comprendidas entre las:",
+            "explanation": "Son horas hábiles las que median entre las ocho y las veinte horas, salvo previsión legal o urgencia que permita habilitar otras.",
+            "options": [
+                {
+                    "content": "7 y las 21 horas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "9 y las 18 horas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "8 y las 20 horas.",
+                    "is_correct": true
+                },
+                {
+                    "content": "8 y las 22 horas.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los actos de comunicación se practican bajo la dirección de:",
+            "explanation": "Corresponde al Letrado de la Administración de Justicia la dirección de la práctica de los actos de comunicación en la oficina judicial.",
+            "options": [
+                {
+                    "content": "El Juez o Magistrado titular del órgano.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Letrado de la Administración de Justicia.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Secretario Coordinador Provincial.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ministerio Fiscal.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El requerimiento es el acto de comunicación mediante el cual se ordena al destinatario hacer o no hacer alguna cosa.",
+            "explanation": "Así lo define el artículo 149 de la LEC: el requerimiento ordena una conducta de hacer o no hacer.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La comunicación por edictos es el medio preferente para notificar a un demandado, antes de intentar la notificación personal.",
+            "explanation": "El edicto es subsidiario: solo se acude a él cuando se ignora el domicilio o paradero tras agotar las averiguaciones.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los mandamientos se dirigen a las partes del proceso para que se personen en el juicio.",
+            "explanation": "Los mandamientos se dirigen a registradores, notarios u otras personas ajenas al proceso; la llamada a personarse es el emplazamiento.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

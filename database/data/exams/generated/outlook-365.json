@@ -1,0 +1,445 @@
+{
+    "slug": "outlook-365",
+    "title": "Outlook 365 correo y calendario",
+    "description": "Test de repaso sobre Outlook 365: correo, reglas, carpetas, calendario, contactos y tareas. Nivel básico, ideal para el examen de ofimática de oposiciones.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:34:56+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "En Outlook 365, ¿qué campo del mensaje permite enviar una copia a un destinatario sin que el resto de destinatarios vea su dirección?",
+            "explanation": "Cco (copia oculta) envía una copia sin que los demás destinatarios vean la dirección del receptor oculto.",
+            "options": [
+                {
+                    "content": "Para",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cc",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cco",
+                    "is_correct": true
+                },
+                {
+                    "content": "Asunto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes opciones permite responder a todos los destinatarios de un mensaje recibido, incluidos los que figuran en copia?",
+            "explanation": "«Responder a todos» envía la respuesta al remitente y al resto de destinatarios de Para y Cc.",
+            "options": [
+                {
+                    "content": "Responder",
+                    "is_correct": false
+                },
+                {
+                    "content": "Responder a todos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Reenviar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mover a carpeta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Outlook, ¿en qué carpeta se almacenan por defecto los mensajes que se han guardado sin enviar?",
+            "explanation": "Los mensajes guardados sin enviar se almacenan en la carpeta Borradores.",
+            "options": [
+                {
+                    "content": "Bandeja de salida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Elementos enviados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Elementos eliminados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Borradores",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué función de Outlook permite aplicar automáticamente acciones, como mover mensajes a una carpeta, a los correos que cumplen determinadas condiciones?",
+            "explanation": "Las reglas aplican acciones automáticas a mensajes según condiciones definidas por el usuario.",
+            "options": [
+                {
+                    "content": "Reglas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Categorías",
+                    "is_correct": false
+                },
+                {
+                    "content": "Firmas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vista previa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre las reglas de Outlook:",
+            "explanation": "Las reglas pueden aplicarse a mensajes entrantes según múltiples condiciones; no están limitadas a mensajes leídos.",
+            "options": [
+                {
+                    "content": "Pueden mover mensajes a una carpeta determinada.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pueden basarse en el remitente del mensaje.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pueden mostrar una alerta de escritorio al recibir un mensaje.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo pueden aplicarse a mensajes ya leídos.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes acciones sirve para organizar el correo creando una nueva carpeta en Outlook?",
+            "explanation": "Con el botón derecho sobre la cuenta o una carpeta se accede a la opción «Nueva carpeta».",
+            "options": [
+                {
+                    "content": "Clic derecho sobre la cuenta o una carpeta y elegir «Nueva carpeta»",
+                    "is_correct": true
+                },
+                {
+                    "content": "Archivo > Imprimir",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vista > Panel de lectura",
+                    "is_correct": false
+                },
+                {
+                    "content": "Inicio > Marcar como no leído",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué sucede por defecto al eliminar un mensaje de la Bandeja de entrada en Outlook?",
+            "explanation": "Al eliminar un mensaje, este pasa a Elementos eliminados, desde donde aún puede recuperarse.",
+            "options": [
+                {
+                    "content": "Se borra definitivamente de inmediato",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se mueve a la carpeta Elementos eliminados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se mueve a Borradores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se mueve a Correo no deseado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el calendario de Outlook, ¿cómo se denomina un evento que ocupa todo el día y no tiene hora de inicio y fin concretas?",
+            "explanation": "Al marcar «Todo el día», el elemento se convierte en un evento de día completo.",
+            "options": [
+                {
+                    "content": "Reunión periódica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cita privada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Evento de día completo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tarea",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes elementos del calendario de Outlook implica invitar a otras personas y comprobar su disponibilidad?",
+            "explanation": "Una reunión incluye asistentes invitados, mientras que una cita es un elemento propio sin invitados.",
+            "options": [
+                {
+                    "content": "Cita",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reunión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nota",
+                    "is_correct": false
+                },
+                {
+                    "content": "Categoría",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para que una cita se repita todas las semanas en el calendario, ¿qué opción debe utilizarse?",
+            "explanation": "La opción Periodicidad permite repetir citas o reuniones diaria, semanal, mensual o anualmente.",
+            "options": [
+                {
+                    "content": "Recordatorio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Periodicidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Importancia alta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mostrar como ocupado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Outlook, ¿qué opción de respuesta a una invitación de reunión indica que quizá se asista pero no es seguro?",
+            "explanation": "«Provisional» indica que el asistente aún no confirma su asistencia.",
+            "options": [
+                {
+                    "content": "Aceptar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Provisional",
+                    "is_correct": true
+                },
+                {
+                    "content": "Rechazar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Proponer nueva hora",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Dónde se guardan en Outlook los nombres, direcciones de correo y teléfonos de las personas con las que se mantiene contacto?",
+            "explanation": "La sección Personas (Contactos) almacena los datos de los contactos.",
+            "options": [
+                {
+                    "content": "En Personas (Contactos)",
+                    "is_correct": true
+                },
+                {
+                    "content": "En Tareas",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el Calendario",
+                    "is_correct": false
+                },
+                {
+                    "content": "En Elementos enviados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se denomina en Outlook el conjunto de contactos agrupados bajo un nombre para enviarles un mensaje a todos a la vez?",
+            "explanation": "Un grupo de contactos o lista de distribución permite enviar un correo a varios contactos a la vez.",
+            "options": [
+                {
+                    "content": "Lista de distribución o grupo de contactos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Regla de correo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Carpeta de búsqueda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Categoría de color",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a las tareas de Outlook, ¿cuál de los siguientes datos puede asignarse a una tarea?",
+            "explanation": "Las tareas admiten fecha de inicio, fecha de vencimiento, prioridad y estado, entre otros datos.",
+            "options": [
+                {
+                    "content": "Fecha de vencimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Servidor SMTP",
+                    "is_correct": false
+                },
+                {
+                    "content": "Regla de salida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Zona horaria del servidor",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué aplicación de Microsoft 365 integra tareas personales y permite crear listas de tareas conectadas con Outlook?",
+            "explanation": "Microsoft To Do se integra con Outlook y muestra las tareas marcadas con indicador.",
+            "options": [
+                {
+                    "content": "Microsoft To Do",
+                    "is_correct": true
+                },
+                {
+                    "content": "Microsoft Access",
+                    "is_correct": false
+                },
+                {
+                    "content": "Microsoft Publisher",
+                    "is_correct": false
+                },
+                {
+                    "content": "Microsoft Visio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Outlook, ¿qué se utiliza para adjuntar un archivo a un mensaje nuevo?",
+            "explanation": "El botón Adjuntar archivo, en la pestaña Insertar o en el mensaje, permite añadir ficheros.",
+            "options": [
+                {
+                    "content": "Opción Adjuntar archivo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Opción Periodicidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Opción Cco",
+                    "is_correct": false
+                },
+                {
+                    "content": "Opción Zona horaria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la función de una firma en Outlook?",
+            "explanation": "La firma inserta de forma automática un bloque de texto, como nombre y cargo, al final de los mensajes.",
+            "options": [
+                {
+                    "content": "Añadir automáticamente un texto predefinido al final de los mensajes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cifrar todos los mensajes enviados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bloquear a remitentes desconocidos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Archivar los mensajes antiguos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Outlook, la carpeta Bandeja de salida contiene los mensajes que ya se han enviado correctamente.",
+            "explanation": "La Bandeja de salida contiene mensajes pendientes de enviar; los ya enviados están en Elementos enviados.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Outlook es posible configurar una respuesta automática (fuera de la oficina) para cuando el usuario esté ausente.",
+            "explanation": "Las respuestas automáticas permiten indicar ausencia y responder automáticamente a los remitentes.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Todas las opciones de configuración de Outlook son iguales en Outlook clásico y en Outlook web, sin ninguna diferencia.",
+            "explanation": "Outlook clásico, nuevo Outlook y Outlook web comparten funciones básicas, pero presentan diferencias en algunas opciones y en la interfaz.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

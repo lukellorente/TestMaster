@@ -1,0 +1,560 @@
+{
+    "slug": "access-365",
+    "title": "Access 365 básico: tablas, consultas, formularios",
+    "description": "Test de Access 365 para repasar antes del examen: tipos de datos, claves, relaciones, consultas, formularios e informes. Preguntas de nivel medio sacadas del temario de ofimática.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:33:52+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "En Microsoft Access 365, ¿qué tipo de datos debe utilizarse para almacenar un valor que solo puede ser Sí/No?",
+            "explanation": "Access dispone del tipo de datos Sí/No para valores booleanos (verdadero/falso).",
+            "options": [
+                {
+                    "content": "Texto corto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sí/No",
+                    "is_correct": true
+                },
+                {
+                    "content": "Número",
+                    "is_correct": false
+                },
+                {
+                    "content": "Objeto OLE",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de datos de Access genera automáticamente un valor numérico único para cada nuevo registro?",
+            "explanation": "Autonumeración asigna un valor único a cada registro nuevo y suele usarse como clave principal.",
+            "options": [
+                {
+                    "content": "Autonumeración",
+                    "is_correct": true
+                },
+                {
+                    "content": "Número",
+                    "is_correct": false
+                },
+                {
+                    "content": "Moneda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hipervínculo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para guardar textos largos de más de 255 caracteres, como observaciones, ¿qué tipo de datos es el más adecuado en Access 365?",
+            "explanation": "Texto largo (antes Memo) permite almacenar grandes cantidades de texto; Texto corto admite hasta 255 caracteres.",
+            "options": [
+                {
+                    "content": "Texto corto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Número",
+                    "is_correct": false
+                },
+                {
+                    "content": "Texto largo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Búsqueda",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la clave principal de una tabla de Access, señale la respuesta incorrecta:",
+            "explanation": "Una tabla solo tiene una clave principal, aunque esta puede estar formada por varios campos (clave compuesta).",
+            "options": [
+                {
+                    "content": "Identifica de forma única cada registro.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No admite valores nulos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No admite valores duplicados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una tabla puede tener varias claves principales independientes.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se denomina la clave formada por dos o más campos que identifican conjuntamente un registro?",
+            "explanation": "Cuando varios campos forman juntos la clave principal se habla de clave compuesta.",
+            "options": [
+                {
+                    "content": "Clave externa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Clave compuesta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Clave alternativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Clave de búsqueda",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué campo de una tabla hija se utiliza para establecer una relación con la clave principal de otra tabla?",
+            "explanation": "La clave externa en la tabla relacionada se corresponde con la clave principal de la tabla primaria.",
+            "options": [
+                {
+                    "content": "Clave principal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Campo calculado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Campo de Autonumeración",
+                    "is_correct": false
+                },
+                {
+                    "content": "Clave externa (foránea)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué permite garantizar la opción «Exigir integridad referencial» en una relación de Access?",
+            "explanation": "La integridad referencial impide registrar valores en la tabla secundaria sin su correspondiente en la primaria.",
+            "options": [
+                {
+                    "content": "Que no existan registros relacionados huérfanos en la tabla secundaria",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que todas las tablas tengan el mismo número de registros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que los campos sean siempre de tipo Texto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que la base de datos se cifre automáticamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para implementar una relación de muchos a muchos entre dos tablas en Access se debe:",
+            "explanation": "Una relación varios a varios se resuelve con una tabla de unión que contiene las claves de ambas tablas.",
+            "options": [
+                {
+                    "content": "Unir directamente las dos claves principales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crear una tabla intermedia con dos relaciones de uno a varios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usar un campo de tipo Búsqueda sin más tablas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crear una consulta de actualización",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de consulta de Access modifica los datos existentes en una tabla según unos criterios?",
+            "explanation": "La consulta de actualización cambia valores de los registros que cumplen los criterios indicados.",
+            "options": [
+                {
+                    "content": "Consulta de selección",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta de referencias cruzadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta de actualización",
+                    "is_correct": true
+                },
+                {
+                    "content": "Consulta de parámetros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de consulta presenta los datos resumidos en filas y columnas, como una hoja de cálculo con encabezados de fila y de columna?",
+            "explanation": "La consulta de referencias cruzadas agrupa y resume datos en formato de matriz.",
+            "options": [
+                {
+                    "content": "Consulta de datos anexados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta de eliminación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta de creación de tabla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta de referencias cruzadas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de consulta añade registros de una tabla al final de otra?",
+            "explanation": "La consulta de datos anexados inserta los registros resultantes en una tabla de destino.",
+            "options": [
+                {
+                    "content": "Consulta de datos anexados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Consulta de actualización",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta de selección",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta de eliminación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la vista Diseño de una consulta, ¿qué fila de la cuadrícula se utiliza para escribir las condiciones que deben cumplir los registros?",
+            "explanation": "La fila Criterios recoge las condiciones de filtrado; la fila O permite criterios alternativos.",
+            "options": [
+                {
+                    "content": "Campo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Criterios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Orden",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mostrar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué operador se utiliza en un criterio de Access para buscar textos que comiencen por «Gar», como García o Garrido?",
+            "explanation": "El operador Como con el comodín * permite buscar patrones de texto.",
+            "options": [
+                {
+                    "content": "Como \"Gar*\"",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entre \"Gar\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "En \"Gar\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "Igual \"Gar%\"",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una consulta de selección, ¿qué tipo de combinación devuelve todos los registros de la tabla izquierda y solo los coincidentes de la derecha?",
+            "explanation": "La combinación externa izquierda (LEFT JOIN) incluye todos los registros de la tabla izquierda.",
+            "options": [
+                {
+                    "content": "Combinación interna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Combinación externa izquierda",
+                    "is_correct": true
+                },
+                {
+                    "content": "Producto cartesiano",
+                    "is_correct": false
+                },
+                {
+                    "content": "Combinación cruzada de totales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para calcular la suma de un campo agrupada por categoría en una consulta, ¿qué botón se activa en la vista Diseño?",
+            "explanation": "El botón Totales añade la fila Total, con Agrupar por, Suma, Promedio, Cuenta, etc.",
+            "options": [
+                {
+                    "content": "Parámetros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Generar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Totales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Propiedades",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué consulta solicita al usuario un valor cada vez que se ejecuta, por ejemplo escribiendo [Introduzca el año] en la fila Criterios?",
+            "explanation": "Un texto entre corchetes que no es un campo se interpreta como parámetro y Access pide su valor.",
+            "options": [
+                {
+                    "content": "Consulta de parámetros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Consulta de eliminación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta de unión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta de creación de tabla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes vistas de un formulario permite modificar el diseño mientras se visualizan los datos reales?",
+            "explanation": "La vista Presentación permite ajustar controles viendo los datos en tiempo real.",
+            "options": [
+                {
+                    "content": "Vista Hoja de datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vista Presentación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Vista Preliminar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vista SQL",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un formulario de Access, ¿cómo se denomina el control que muestra un valor calculado o datos no vinculados directamente a un campo, como el resultado de una expresión?",
+            "explanation": "Un cuadro de texto con una expresión en su Origen del control muestra un valor calculado.",
+            "options": [
+                {
+                    "content": "Cuadro de texto independiente o calculado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Botón de opción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Control de pestaña",
+                    "is_correct": false
+                },
+                {
+                    "content": "Marco de objeto enlazado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué propiedad de un control de formulario determina el campo de la tabla o la expresión de la que obtiene sus datos?",
+            "explanation": "Origen del control vincula el control con un campo o una expresión.",
+            "options": [
+                {
+                    "content": "Nombre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Valor predeterminado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Máscara de entrada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Origen del control",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué objeto de Access se utiliza principalmente para presentar e imprimir datos agrupados y resumidos?",
+            "explanation": "Los informes están pensados para presentar, agrupar, resumir e imprimir la información.",
+            "options": [
+                {
+                    "content": "Informe",
+                    "is_correct": true
+                },
+                {
+                    "content": "Macro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consulta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tabla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un informe de Access, ¿en qué sección se coloca normalmente un total general de todo el informe?",
+            "explanation": "El pie de informe aparece una sola vez al final y suele contener totales generales.",
+            "options": [
+                {
+                    "content": "Encabezado de página",
+                    "is_correct": false
+                },
+                {
+                    "content": "Detalle",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pie de informe",
+                    "is_correct": true
+                },
+                {
+                    "content": "Encabezado de grupo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre los formularios de Access:",
+            "explanation": "Existen formularios continuos y de hoja de datos que muestran varios registros a la vez.",
+            "options": [
+                {
+                    "content": "Pueden usar como origen una tabla o una consulta.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Permiten introducir y modificar registros.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pueden incluir subformularios.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo pueden mostrar un registro a la vez y nunca varios.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Access, un campo de tipo Autonumeración puede utilizarse como clave principal de una tabla.",
+            "explanation": "Es habitual usar Autonumeración como clave principal porque genera valores únicos automáticamente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una consulta de selección modifica de forma permanente los datos de las tablas de origen al ejecutarse.",
+            "explanation": "La consulta de selección solo recupera y muestra datos; modifican datos las de acción (actualización, eliminación, anexar).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En la ventana Relaciones de Access, una relación de uno a varios une la clave principal de la tabla primaria con un campo de la tabla relacionada.",
+            "explanation": "En la relación uno a varios, cada registro de la tabla primaria puede tener muchos registros relacionados en la secundaria.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}
