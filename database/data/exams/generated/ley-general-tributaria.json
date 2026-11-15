@@ -1,0 +1,782 @@
+{
+    "slug": "ley-general-tributaria",
+    "title": "Ley 58/2003 General Tributaria - Agentes de Hacienda",
+    "description": "Test de la Ley General Tributaria para preparar la oposición a Agentes de Hacienda: tributos, obligados tributarios, prescripción, gestión y recaudación. Lo hice con el temario actualizado a 2026 y tiene algunas preguntas bastante traicioneras.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:19:30+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 2.2 de la Ley 58/2003, General Tributaria, los tributos se clasifican en tasas, contribuciones especiales e impuestos. ¿Cuál de las siguientes figuras NO es un tributo?",
+            "explanation": "El artículo 2.2 de la LGT solo reconoce tres clases de tributos: tasas, contribuciones especiales e impuestos. Los precios públicos son ingresos públicos no tributarios.",
+            "options": [
+                {
+                    "content": "Las tasas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las contribuciones especiales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los precios públicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los impuestos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "De los siguientes principios, ¿cuál NO figura entre los que, según el artículo 3.1 de la LGT, rigen la ordenación del sistema tributario?",
+            "explanation": "La eficacia es un principio de aplicación del sistema tributario (art. 3.2), junto con la proporcionalidad y la limitación de costes indirectos. Los otros tres son principios de ordenación (art. 3.1).",
+            "options": [
+                {
+                    "content": "Generalidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Progresividad",
+                    "is_correct": false
+                },
+                {
+                    "content": "No confiscatoriedad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eficacia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 8 de la LGT, que enumera las materias reservadas a la ley, señale la materia que NO está sujeta a reserva de ley tributaria:",
+            "explanation": "Los modelos de declaración son una materia de rango reglamentario. Los elementos esenciales del tributo y los beneficios fiscales sí están reservados a la ley.",
+            "options": [
+                {
+                    "content": "La delimitación del hecho imponible, del devengo y de la base imponible",
+                    "is_correct": false
+                },
+                {
+                    "content": "La aprobación de los modelos de declaración y autoliquidación",
+                    "is_correct": true
+                },
+                {
+                    "content": "El establecimiento de exenciones, reducciones y bonificaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "La fijación del tipo de gravamen",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se denominan, según la LGT, los supuestos en que, a pesar de realizarse el hecho imponible, la ley exime del cumplimiento de la obligación tributaria principal?",
+            "explanation": "El artículo 22 de la LGT define la exención como el supuesto en el que se realiza el hecho imponible pero la ley exime de la obligación principal. En la no sujeción, el hecho imponible ni siquiera se realiza.",
+            "options": [
+                {
+                    "content": "Exención",
+                    "is_correct": true
+                },
+                {
+                    "content": "No sujeción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bonificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deducción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 15 de la LGT, cuando se declara el conflicto en la aplicación de la norma tributaria, ¿qué consecuencia procede?",
+            "explanation": "En el conflicto en la aplicación de la norma se liquida el tributo eliminando la ventaja fiscal obtenida y se exigen intereses de demora, pero no procede sanción.",
+            "options": [
+                {
+                    "content": "Se exigirá el tributo eludido junto con la sanción mínima prevista para la infracción grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se declarará la nulidad de los actos o negocios y se devolverán las cantidades ingresadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se exigirá el tributo aplicando la norma que hubiera correspondido a los actos usuales o propios, sin intereses de demora ni sanciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se exigirá el tributo aplicando la norma que hubiera correspondido a los actos usuales o propios, con intereses de demora y sin imposición de sanciones",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 58 de la LGT, ¿cuál de los siguientes conceptos NO forma parte de la deuda tributaria?",
+            "explanation": "El artículo 58.3 de la LGT establece que las sanciones tributarias no forman parte de la deuda tributaria, aunque en su recaudación se apliquen las normas generales de recaudación.",
+            "options": [
+                {
+                    "content": "Los intereses de demora",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las sanciones tributarias pecuniarias",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los recargos por declaración extemporánea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los recargos del período ejecutivo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la LGT, los obligados tributarios tienen derecho a no aportar los documentos que ya se encuentren en poder de la Administración actuante, siempre que indiquen el día y el procedimiento en que los presentaron.",
+            "explanation": "Es uno de los derechos y garantías de los obligados tributarios recogidos en el artículo 34.1 de la LGT.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO constituye un supuesto que permita a la Administración determinar la base imponible por estimación indirecta:",
+            "explanation": "La mera presentación extemporánea no impide conocer la base imponible; da lugar a recargos. La estimación indirecta exige que la Administración no pueda conocer los datos necesarios por las causas tasadas en la ley.",
+            "options": [
+                {
+                    "content": "La presentación de una declaración fuera de plazo sin requerimiento previo",
+                    "is_correct": true
+                },
+                {
+                    "content": "La resistencia, obstrucción, excusa o negativa a la actuación inspectora",
+                    "is_correct": false
+                },
+                {
+                    "content": "El incumplimiento sustancial de las obligaciones contables o registrales",
+                    "is_correct": false
+                },
+                {
+                    "content": "La desaparición o destrucción, incluso por fuerza mayor, de los libros y registros contables",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 36 de la LGT, ¿quién es el sustituto?",
+            "explanation": "El sustituto ocupa el lugar del contribuyente por imposición de la ley y cumple tanto la obligación principal como las obligaciones formales inherentes. El que realiza el hecho imponible es el contribuyente.",
+            "options": [
+                {
+                    "content": "El sujeto pasivo que realiza el hecho imponible",
+                    "is_correct": false
+                },
+                {
+                    "content": "El obligado a practicar e ingresar una retención a cuenta del tributo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El sujeto pasivo que, por imposición de la ley y en lugar del contribuyente, está obligado a cumplir la obligación tributaria principal y las formales inherentes a la misma",
+                    "is_correct": true
+                },
+                {
+                    "content": "La persona que responde de la deuda junto al deudor principal por declaración de la Administración",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 35 de la LGT, la concurrencia de varios obligados tributarios en un mismo presupuesto de una obligación determina, salvo disposición legal en contrario, que queden obligados frente a la Administración:",
+            "explanation": "El artículo 35 de la LGT establece como regla general la solidaridad entre los obligados que concurran en el mismo presupuesto de la obligación.",
+            "options": [
+                {
+                    "content": "De forma mancomunada y por partes iguales",
+                    "is_correct": false
+                },
+                {
+                    "content": "De forma subsidiaria, por orden de cuantía de su participación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solidariamente",
+                    "is_correct": true
+                },
+                {
+                    "content": "En proporción a su participación en el hecho imponible, sin vínculo entre ellos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 43 de la LGT, ¿cuál de los siguientes sujetos responde como responsable subsidiario?",
+            "explanation": "Los supuestos de las tres primeras opciones son de responsabilidad solidaria (art. 42). El artículo 43 recoge la responsabilidad subsidiaria de los administradores de personas jurídicas.",
+            "options": [
+                {
+                    "content": "Quienes sean causantes o colaboren activamente en la realización de una infracción tributaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quienes sean causantes o colaboren en la ocultación de bienes para impedir la actuación de la Administración",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quienes sucedan en la titularidad de explotaciones económicas por las deudas del anterior titular",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los administradores de hecho o de derecho de personas jurídicas que hayan cometido infracciones tributarias, cuando no hubieran realizado los actos necesarios de su incumbencia para el cumplimiento de las obligaciones tributarias",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 48 de la LGT, el domicilio fiscal de las personas jurídicas residentes en territorio español es:",
+            "explanation": "Para las personas jurídicas rige el domicilio social, siempre que en él esté efectivamente centralizada la gestión y dirección. En otro caso, es el lugar donde se lleve a cabo esa gestión o dirección.",
+            "options": [
+                {
+                    "content": "El lugar donde radique el mayor valor de su inmovilizado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El domicilio del administrador único o del presidente del consejo de administración",
+                    "is_correct": false
+                },
+                {
+                    "content": "El domicilio social, siempre que en él esté efectivamente centralizada su gestión administrativa y la dirección de sus negocios",
+                    "is_correct": true
+                },
+                {
+                    "content": "El lugar donde se haya inscrito en el Registro Mercantil, en todo caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LGT, ¿cuál de los siguientes derechos NO prescribe a los cuatro años?",
+            "explanation": "El artículo 66 bis de la LGT fija en diez años el plazo para iniciar la comprobación de bases imponibles negativas y deducciones pendientes. Los demás derechos prescriben a los cuatro años (art. 66).",
+            "options": [
+                {
+                    "content": "El derecho de la Administración a iniciar el procedimiento de comprobación de bases imponibles negativas o deducciones pendientes de aplicar",
+                    "is_correct": true
+                },
+                {
+                    "content": "El derecho de la Administración a determinar la deuda tributaria mediante la oportuna liquidación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El derecho de la Administración a exigir el pago de las deudas tributarias liquidadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El derecho a solicitar la devolución de ingresos indebidos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 67 de la LGT, el plazo de prescripción del derecho a solicitar la devolución de ingresos indebidos comienza a contarse, como regla general:",
+            "explanation": "En la devolución de ingresos indebidos, el cómputo arranca el día siguiente a aquel en que se realizó el ingreso indebido, o desde la firmeza de la resolución o sentencia que declare improcedente el acto.",
+            "options": [
+                {
+                    "content": "Desde la fecha en que se presente la solicitud de devolución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde el 1 de enero del año siguiente al del ingreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde el día siguiente a aquel en que finalice el plazo de pago en período voluntario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde el día siguiente a aquel en que se realizó el ingreso indebido",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 68 de la LGT, ¿cuál de las siguientes circunstancias interrumpe la prescripción del derecho de la Administración a exigir el pago de las deudas tributarias liquidadas?",
+            "explanation": "La prescripción del derecho a exigir el pago se interrumpe por cualquier acción administrativa dirigida de forma efectiva a la recaudación, por la interposición de reclamaciones o recursos y por actuaciones fehacientes del obligado conducentes al pago.",
+            "options": [
+                {
+                    "content": "La mera expiración del plazo de pago en período voluntario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier acción de la Administración tributaria dirigida de forma efectiva a la recaudación de la deuda",
+                    "is_correct": true
+                },
+                {
+                    "content": "El cambio de domicilio fiscal comunicado por el obligado tributario",
+                    "is_correct": false
+                },
+                {
+                    "content": "El simple transcurso de un año sin actuación alguna de la Administración",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 69 de la LGT, la prescripción ganada solo puede aplicarse cuando el obligado tributario la invoque expresamente, por lo que la Administración no puede apreciarla de oficio.",
+            "explanation": "La prescripción se aplica de oficio, sin necesidad de que la invoque o excepcione el obligado tributario, incluso en los casos en que se haya pagado la deuda.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 104 de la LGT, el plazo máximo en que debe notificarse la resolución de los procedimientos tributarios no podrá exceder, salvo que una norma con rango de ley establezca uno mayor o lo disponga la normativa comunitaria europea, de:",
+            "explanation": "El artículo 104.1 de la LGT fija ese límite en seis meses, salvo norma con rango de ley que establezca otro mayor o normativa europea.",
+            "options": [
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Doce meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando no ha sido posible practicar la notificación tributaria, se cita al interesado para ser notificado por comparecencia mediante anuncios. Según el artículo 112 de la LGT, ¿de cuántos días dispone para comparecer?",
+            "explanation": "El plazo de comparecencia es de quince días naturales desde el día siguiente a la publicación. Transcurrido sin comparecer, la notificación se entiende producida desde el día siguiente al del vencimiento de ese plazo.",
+            "options": [
+                {
+                    "content": "Quince días naturales, contados desde el día siguiente al de la publicación del anuncio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez días hábiles, contados desde el día siguiente al de la publicación del anuncio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días naturales, contados desde el día de la publicación del anuncio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes, contado desde el día siguiente al de la publicación del anuncio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el procedimiento de verificación de datos de la LGT, ¿en cuál de los siguientes supuestos puede la Administración tributaria iniciarlo?",
+            "explanation": "La discrepancia entre los datos declarados y los que obran en poder de la Administración es uno de los supuestos legales de verificación de datos. Las otras opciones corresponden a procedimientos de mayor alcance, como la inspección.",
+            "options": [
+                {
+                    "content": "Cuando sea necesario examinar la contabilidad mercantil del obligado tributario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando los datos declarados no coincidan con los contenidos en otras declaraciones presentadas por el mismo obligado o con los que obren en poder de la Administración",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando deba realizarse una regularización de la situación tributaria del obligado mediante visita a sus oficinas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando proceda determinar la base imponible por estimación indirecta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre el procedimiento de comprobación limitada regulado en la LGT:",
+            "explanation": "En la comprobación limitada la Administración no puede requerir la exhibición de la contabilidad mercantil. Esa actuación queda reservada a otros procedimientos, como el de inspección.",
+            "options": [
+                {
+                    "content": "Se inicia de oficio",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Administración puede examinar los datos y antecedentes que obren en su poder",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Administración puede requerir a terceros información sobre operaciones realizadas con el obligado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Administración puede requerir al obligado la exhibición de su contabilidad mercantil",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LGT, dictada resolución en un procedimiento de comprobación limitada, ¿qué efecto produce en relación con el objeto comprobado?",
+            "explanation": "El artículo 140 de la LGT impide una nueva regularización sobre el objeto comprobado, salvo descubrimiento de nuevos hechos o circunstancias derivados de actuaciones distintas.",
+            "options": [
+                {
+                    "content": "Impide cualquier actuación posterior de inspección sobre cualquier hecho del mismo período",
+                    "is_correct": false
+                },
+                {
+                    "content": "Permite iniciar una nueva regularización sobre el mismo objeto sin ninguna limitación",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Administración no podrá efectuar una nueva regularización sobre el objeto comprobado, salvo que en un procedimiento posterior se descubran nuevos hechos o circunstancias que resulten de actuaciones distintas",
+                    "is_correct": true
+                },
+                {
+                    "content": "La liquidación practicada tiene carácter definitivo y excluye la rectificación por la Administración en todo caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la LGT, la presentación de la solicitud de tasación pericial contradictoria no suspende la ejecución de la liquidación ni el plazo para interponer recurso o reclamación económico-administrativa contra ella.",
+            "explanation": "El artículo 135 de la LGT establece que la solicitud de tasación pericial contradictoria suspende la ejecución de la liquidación y el plazo para interponer recurso o reclamación.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la tasación pericial contradictoria, según el artículo 135 de la LGT, ¿cuándo debe designarse un perito tercero?",
+            "explanation": "El perito tercero se designa cuando la diferencia alcanza 120.000 euros o el 10 por 100 de la tasación del perito de la Administración. Por debajo de esos umbrales se estará a la tasación del perito del obligado.",
+            "options": [
+                {
+                    "content": "Si la diferencia entre ambas tasaciones es igual o superior a 120.000 euros o al 10 por 100 de la tasación practicada por el perito de la Administración",
+                    "is_correct": true
+                },
+                {
+                    "content": "Si la diferencia entre ambas tasaciones es igual o superior a 60.000 euros o al 5 por 100 de la tasación practicada por el perito del obligado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Si la diferencia entre ambas tasaciones es igual o superior a 300.000 euros y al 20 por 100 de la tasación de la Administración",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siempre que el obligado tributario lo solicite expresamente, con independencia de la diferencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 150 de la LGT, ¿cuál es el plazo general de duración de las actuaciones del procedimiento de inspección, sin perjuicio de los supuestos en que se amplía?",
+            "explanation": "El plazo general es de dieciocho meses, y de veintisiete cuando concurren las circunstancias que señala la ley, como una cifra de negocios igual o superior al umbral de auditoría.",
+            "options": [
+                {
+                    "content": "Doce meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dieciocho meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinticuatro meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta y seis meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 31 de la LGT, transcurrido el plazo fijado por la normativa del tributo o, en su defecto, un determinado plazo sin que se haya ordenado el pago de la devolución por causa imputable a la Administración, esta abonará interés de demora. ¿Cuál es ese plazo supletorio?",
+            "explanation": "El artículo 31.2 de la LGT fija en seis meses el plazo supletorio a partir del cual la Administración debe abonar interés de demora por la devolución no ordenada.",
+            "options": [
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Doce meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 26 de la LGT, y salvo que la Ley de Presupuestos Generales del Estado establezca otro, el interés de demora tributario es:",
+            "explanation": "El artículo 26.6 de la LGT remite al interés legal del dinero incrementado en un 25 por 100, salvo que la Ley de Presupuestos fije otro diferente.",
+            "options": [
+                {
+                    "content": "El interés legal del dinero incrementado en un 25 por 100",
+                    "is_correct": true
+                },
+                {
+                    "content": "El interés legal del dinero incrementado en un 50 por 100",
+                    "is_correct": false
+                },
+                {
+                    "content": "El interés legal del dinero sin incremento alguno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El euríbor a doce meses incrementado en dos puntos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un obligado tributario presenta una autoliquidación fuera de plazo, sin requerimiento previo de la Administración, con un retraso de tres meses y diez días. Según el artículo 27 de la LGT, ¿qué recargo por declaración extemporánea resulta aplicable, antes de cualquier reducción?",
+            "explanation": "Corrección interna: el recargo es del 1 por 100 más un 1 por 100 por cada mes completo de retraso (tres meses completos), es decir, el 4 por 100. El 15 por 100 solo se aplica con retrasos superiores a doce meses.",
+            "options": [
+                {
+                    "content": "El 4 por 100",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 3 por 100",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 5 por 100",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 15 por 100",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 62 de la LGT, para las deudas resultantes de liquidaciones practicadas por la Administración, si la notificación se realiza entre los días 1 y 15 de un mes, el plazo de pago en período voluntario finaliza:",
+            "explanation": "Las liquidaciones notificadas entre los días 1 y 15 se pagan hasta el día 20 del mes posterior. Las notificadas entre el 16 y el último día, hasta el día 5 del segundo mes posterior.",
+            "options": [
+                {
+                    "content": "El día 5 del mes siguiente o, si no fuera hábil, el inmediato hábil siguiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El día 20 del mismo mes o, si no fuera hábil, el inmediato hábil siguiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El día 5 del segundo mes posterior o, si no fuera hábil, el inmediato hábil siguiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El día 20 del mes posterior o, si no fuera hábil, el inmediato hábil siguiente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 161 de la LGT, si un obligado presenta una autoliquidación fuera de plazo sin realizar el ingreso, el período ejecutivo se inicia:",
+            "explanation": "Para autoliquidaciones presentadas sin ingreso, el período ejecutivo comienza el día siguiente a la finalización del plazo de ingreso o, si se presentan fuera de plazo, el día siguiente al de su presentación.",
+            "options": [
+                {
+                    "content": "El día siguiente a aquel en que finalizó el plazo reglamentario de presentación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El día siguiente al de la presentación de la autoliquidación",
+                    "is_correct": true
+                },
+                {
+                    "content": "El día siguiente a la notificación de la providencia de apremio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Transcurridos quince días desde la presentación de la autoliquidación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 28 de la LGT, cuando resulta exigible el recargo ejecutivo del 5 por 100, no se exigen los intereses de demora devengados desde el inicio del período ejecutivo.",
+            "explanation": "El recargo ejecutivo y el recargo de apremio reducido excluyen los intereses de demora devengados desde el inicio del período ejecutivo. El recargo de apremio ordinario del 20 por 100 sí es compatible con ellos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un obligado ingresa la totalidad de la deuda no pagada en período voluntario más el propio recargo después de que se le haya notificado la providencia de apremio, pero antes de que finalice el plazo del artículo 62.5 de la LGT para las deudas apremiadas. ¿Qué recargo le corresponde?",
+            "explanation": "Es el recargo de apremio reducido, del 10 por 100. El del 5 por 100 exige ingresar antes de la notificación de la providencia, y el del 20 por 100 se aplica en los demás casos.",
+            "options": [
+                {
+                    "content": "El 5 por 100",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 15 por 100",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 10 por 100",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 20 por 100",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es motivo de oposición a la providencia de apremio según el artículo 167 de la LGT:",
+            "explanation": "La cuantía de la liquidación se discute impugnando esta, no oponiéndose a la providencia de apremio. Los motivos de oposición son tasados y se limitan a los recogidos en el artículo 167.3.",
+            "options": [
+                {
+                    "content": "Disconformidad con la cuantía de la deuda contenida en la liquidación apremiada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falta de notificación de la liquidación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Extinción total de la deuda o prescripción del derecho a exigir el pago",
+                    "is_correct": false
+                },
+                {
+                    "content": "Anulación de la liquidación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 77 de la LGT, ¿en qué supuesto NO tiene la Hacienda Pública prelación para el cobro de los créditos tributarios vencidos y no satisfechos?",
+            "explanation": "La prelación de la Hacienda se aplica en cualquier concurrencia con otros acreedores, salvo frente a derechos reales debidamente inscritos antes de que se haga constar el derecho de la Hacienda Pública.",
+            "options": [
+                {
+                    "content": "Cuando concurra con acreedores comunes sin garantía real alguna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando el deudor sea una persona jurídica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando la deuda tributaria se encuentre en período ejecutivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando concurra con acreedores de dominio, prenda, hipoteca u otro derecho real inscrito con anterioridad a la anotación del derecho de la Hacienda Pública",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 75 de la LGT, las deudas tributarias solo podrán condonarse:",
+            "explanation": "La condonación de deudas tributarias requiere una ley que determine su cuantía y requisitos, en coherencia con el principio de reserva de ley en materia tributaria.",
+            "options": [
+                {
+                    "content": "Por acuerdo motivado del Ministro de Hacienda, por razones de equidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "En virtud de ley, en la cuantía y con los requisitos que en ella se determinen",
+                    "is_correct": true
+                },
+                {
+                    "content": "Por acuerdo del Consejo de Ministros, a propuesta de la Agencia Tributaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por resolución del órgano de recaudación, previo informe de la Abogacía del Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 65 de la LGT, ¿qué efecto produce la presentación de una solicitud de aplazamiento o fraccionamiento de una deuda en período voluntario?",
+            "explanation": "La solicitud en período voluntario impide el inicio del período ejecutivo, pero se siguen devengando intereses de demora durante el aplazamiento.",
+            "options": [
+                {
+                    "content": "Impide el inicio del período ejecutivo, pero no el devengo de los intereses de demora",
+                    "is_correct": true
+                },
+                {
+                    "content": "Impide el inicio del período ejecutivo y también el devengo de los intereses de demora",
+                    "is_correct": false
+                },
+                {
+                    "content": "No impide el inicio del período ejecutivo, pero suspende el devengo de intereses de demora",
+                    "is_correct": false
+                },
+                {
+                    "content": "No produce efecto alguno hasta que se resuelva la solicitud",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

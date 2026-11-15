@@ -1,0 +1,782 @@
+{
+    "slug": "ce-titulo-i-derechos",
+    "title": "CE Título I: Derechos y deberes fundamentales",
+    "description": "Test difícil del Título I de la Constitución Española (arts. 10 a 55) con derechos, deberes, principios rectores, garantías y suspensión de derechos. Muy útil para repasar antes del examen de la AGE.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:33:03+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10.2 de la Constitución Española, las normas relativas a los derechos fundamentales y a las libertades que la Constitución reconoce se interpretarán:",
+            "explanation": "El artículo 10.2 CE remite a la Declaración Universal de Derechos Humanos y a los tratados y acuerdos internacionales sobre las mismas materias ratificados por España.",
+            "options": [
+                {
+                    "content": "Exclusivamente de conformidad con la propia Constitución y las leyes orgánicas que las desarrollen",
+                    "is_correct": false
+                },
+                {
+                    "content": "De conformidad con la Declaración Universal de Derechos Humanos y los tratados y acuerdos internacionales sobre las mismas materias ratificados por España",
+                    "is_correct": true
+                },
+                {
+                    "content": "De conformidad con el Convenio Europeo de Derechos Humanos y la jurisprudencia del Tribunal Europeo de Derechos Humanos",
+                    "is_correct": false
+                },
+                {
+                    "content": "De conformidad con la Carta de los Derechos Fundamentales de la Unión Europea y el Derecho de la Unión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta en relación con los artículos 11 y 12 de la Constitución Española:",
+            "explanation": "El artículo 12 CE fija la mayoría de edad a los dieciocho años. Las otras tres afirmaciones recogen el contenido del artículo 11.",
+            "options": [
+                {
+                    "content": "La nacionalidad española se adquiere, se conserva y se pierde de acuerdo con lo establecido por la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ningún español de origen podrá ser privado de su nacionalidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Estado podrá concertar tratados de doble nacionalidad con los países iberoamericanos o con aquellos que hayan tenido o tengan una particular vinculación con España",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los españoles son mayores de edad a los dieciséis años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 13.2 de la Constitución, solamente los españoles serán titulares de los derechos reconocidos en el artículo:",
+            "explanation": "El artículo 13.2 CE reserva a los españoles los derechos del artículo 23, con la excepción del sufragio en elecciones municipales por reciprocidad.",
+            "options": [
+                {
+                    "content": "23, salvo lo que, atendiendo a criterios de reciprocidad, pueda establecerse por tratado o ley para el sufragio en las elecciones municipales",
+                    "is_correct": true
+                },
+                {
+                    "content": "21, salvo lo que pueda establecerse por tratado para los nacionales de la Unión Europea",
+                    "is_correct": false
+                },
+                {
+                    "content": "29, salvo lo que pueda establecerse por ley orgánica para los residentes de larga duración",
+                    "is_correct": false
+                },
+                {
+                    "content": "19, salvo lo que pueda establecerse por tratado para los nacionales iberoamericanos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 13.3 de la Constitución, la extradición solo se concederá en cumplimiento de un tratado o de la ley, atendiendo al principio de reciprocidad. ¿Qué delitos quedan excluidos?",
+            "explanation": "El artículo 13.3 CE excluye de la extradición los delitos políticos, pero precisa que los actos de terrorismo no se consideran como tales.",
+            "options": [
+                {
+                    "content": "Los delitos políticos, incluidos los actos de terrorismo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los delitos políticos y los delitos militares",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los delitos políticos, no considerándose como tales los actos de terrorismo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ninguno, siempre que exista reciprocidad con el Estado requirente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale qué circunstancia NO se menciona expresamente en el artículo 14 de la Constitución como motivo por el que no puede prevalecer discriminación alguna:",
+            "explanation": "El artículo 14 CE cita nacimiento, raza, sexo, religión, opinión y cualquier otra condición o circunstancia personal o social, sin nombrar la orientación sexual.",
+            "options": [
+                {
+                    "content": "La orientación sexual",
+                    "is_correct": true
+                },
+                {
+                    "content": "La raza",
+                    "is_correct": false
+                },
+                {
+                    "content": "La religión",
+                    "is_correct": false
+                },
+                {
+                    "content": "La opinión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 15 de la Constitución, la pena de muerte:",
+            "explanation": "El artículo 15 CE abole la pena de muerte, salvo lo que puedan disponer las leyes penales militares para tiempos de guerra.",
+            "options": [
+                {
+                    "content": "Está abolida sin excepción alguna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Está abolida, salvo lo que dispongan las leyes penales para delitos de terrorismo con resultado de muerte",
+                    "is_correct": false
+                },
+                {
+                    "content": "Queda abolida, salvo lo que puedan disponer las leyes penales militares para tiempos de guerra",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo puede imponerse durante la vigencia del estado de sitio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 16 de la Constitución Española, ¿cuál de las siguientes afirmaciones es correcta?",
+            "explanation": "El artículo 16.3 CE dispone que ninguna confesión tendrá carácter estatal. Además, nadie puede ser obligado a declarar sobre su ideología, religión o creencias (art. 16.2).",
+            "options": [
+                {
+                    "content": "La religión católica tendrá carácter estatal por su arraigo histórico",
+                    "is_correct": false
+                },
+                {
+                    "content": "La libertad ideológica y religiosa no admite limitación alguna en sus manifestaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrá obligarse a declarar sobre la religión cuando así lo exija la autoridad judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ninguna confesión tendrá carácter estatal",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 17.2 de la Constitución, la detención preventiva no podrá durar más del tiempo estrictamente necesario para el esclarecimiento de los hechos y, en todo caso, en el plazo máximo de:",
+            "explanation": "El artículo 17.2 CE fija un máximo de setenta y dos horas para poner al detenido en libertad o a disposición judicial.",
+            "options": [
+                {
+                    "content": "Cuarenta y ocho horas, el detenido deberá ser puesto en libertad o a disposición de la autoridad judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Setenta y dos horas, el detenido deberá ser puesto en libertad o a disposición de la autoridad judicial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinticuatro horas, el detenido deberá ser puesto en libertad o a disposición del Ministerio Fiscal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco días, el detenido deberá ser puesto en libertad o a disposición de la autoridad judicial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta en relación con el artículo 17 de la Constitución:",
+            "explanation": "El artículo 17.4 CE remite a la ley la determinación del plazo máximo de la prisión provisional; la Constitución no lo fija.",
+            "options": [
+                {
+                    "content": "Nadie puede ser privado de su libertad sino con la observancia de lo establecido en dicho artículo y en los casos y en la forma previstos en la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ley regulará un procedimiento de «habeas corpus» para producir la inmediata puesta a disposición judicial de toda persona detenida ilegalmente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El plazo máximo de duración de la prisión provisional lo fija directamente la Constitución en dos años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Toda persona detenida debe ser informada de forma inmediata, y de modo que le sea comprensible, de sus derechos y de las razones de su detención",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 18.2 de la Constitución, el domicilio es inviolable. Señale cuál de los siguientes supuestos NO habilita por sí solo la entrada o el registro en él:",
+            "explanation": "El artículo 18.2 CE solo admite entrar o registrar con consentimiento del titular, resolución judicial o flagrante delito.",
+            "options": [
+                {
+                    "content": "La autorización del Ministerio Fiscal",
+                    "is_correct": true
+                },
+                {
+                    "content": "El consentimiento del titular",
+                    "is_correct": false
+                },
+                {
+                    "content": "La resolución judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "El flagrante delito",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 19 de la Constitución, el derecho a entrar y salir libremente de España puede ser limitado por motivos políticos o ideológicos cuando lo establezca una ley.",
+            "explanation": "El artículo 19 CE establece expresamente que este derecho no podrá ser limitado por motivos políticos o ideológicos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 20.1.d) de la Constitución, se reconoce y protege el derecho a comunicar o recibir libremente por cualquier medio de difusión información:",
+            "explanation": "El artículo 20.1.d) CE habla de información veraz, y remite a la ley la cláusula de conciencia y el secreto profesional.",
+            "options": [
+                {
+                    "content": "Objetiva y completa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veraz",
+                    "is_correct": true
+                },
+                {
+                    "content": "Oficial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contrastada por fuentes institucionales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 20.5 de la Constitución, solo podrá acordarse el secuestro de publicaciones, grabaciones y otros medios de información en virtud de:",
+            "explanation": "El artículo 20.5 CE exige resolución judicial para el secuestro, y el artículo 20.2 prohíbe la censura previa.",
+            "options": [
+                {
+                    "content": "Acuerdo motivado del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Autorización del Ministerio Fiscal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Orden del Delegado del Gobierno en caso de urgencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolución judicial",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 21 de la Constitución, la autoridad podrá prohibir las reuniones en lugares de tránsito público y manifestaciones:",
+            "explanation": "El derecho de reunión no necesita autorización previa; solo cabe la prohibición por razones fundadas de alteración del orden público con peligro para personas o bienes (art. 21.2 CE).",
+            "options": [
+                {
+                    "content": "Cuando no se haya obtenido autorización previa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando lo solicite el Delegado del Gobierno por razones de seguridad ciudadana",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando existan razones fundadas de alteración del orden público, con peligro para personas o bienes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando no se comuniquen con al menos diez días de antelación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 22 de la Constitución, las asociaciones solo podrán ser disueltas o suspendidas en sus actividades en virtud de:",
+            "explanation": "El artículo 22.4 CE reserva a la autoridad judicial, mediante resolución motivada, la disolución o suspensión de asociaciones.",
+            "options": [
+                {
+                    "content": "Acuerdo motivado del Consejo de Ministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolución judicial motivada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Resolución del Ministerio del Interior previo informe del Ministerio Fiscal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sentencia del Tribunal Constitucional a instancia del Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 23.2 de la Constitución, los ciudadanos tienen derecho a acceder en condiciones de igualdad a las funciones y cargos públicos:",
+            "explanation": "El artículo 23.2 CE garantiza el acceso en condiciones de igualdad, con los requisitos que señalen las leyes.",
+            "options": [
+                {
+                    "content": "Con los requisitos que establezca el Gobierno por real decreto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivamente mediante oposición libre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Con los requisitos que señalen las leyes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siempre que ostenten la nacionalidad española de origen",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes derechos NO se recoge expresamente en el artículo 24.2 de la Constitución:",
+            "explanation": "El artículo 24.2 CE no menciona expresamente la asistencia de intérprete. Sí recoge los otros tres derechos, además de la presunción de inocencia.",
+            "options": [
+                {
+                    "content": "Al juez ordinario predeterminado por la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "A ser asistido por intérprete en todo proceso",
+                    "is_correct": true
+                },
+                {
+                    "content": "A utilizar los medios de prueba pertinentes para la defensa",
+                    "is_correct": false
+                },
+                {
+                    "content": "A un proceso público sin dilaciones indebidas y con todas las garantías",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 25.2 de la Constitución Española:",
+            "explanation": "El artículo 25.2 CE orienta las penas privativas de libertad a la reeducación y reinserción social y prohíbe los trabajos forzados. El condenado conserva sus derechos, salvo las limitaciones expresas del fallo, el sentido de la pena y la ley penitenciaria.",
+            "options": [
+                {
+                    "content": "Las penas privativas de libertad podrán consistir en trabajos forzados en tiempos de guerra",
+                    "is_correct": false
+                },
+                {
+                    "content": "El condenado a pena de prisión no gozará de los derechos fundamentales del Capítulo segundo durante su cumplimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las penas privativas de libertad y las medidas de seguridad estarán orientadas hacia la reeducación y reinserción social, y no podrán consistir en trabajos forzados",
+                    "is_correct": true
+                },
+                {
+                    "content": "La finalidad exclusiva de las penas privativas de libertad es la retribución del delito",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El artículo 26 de la Constitución prohíbe los Tribunales de Honor en el ámbito de la Administración civil y de las organizaciones profesionales.",
+            "explanation": "Así lo establece literalmente el artículo 26 CE.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta en relación con el artículo 27 de la Constitución:",
+            "explanation": "El artículo 27.10 CE reconoce la autonomía de las Universidades, no la de los centros concertados.",
+            "options": [
+                {
+                    "content": "Se reconoce la autonomía de los centros concertados en los términos que la ley establezca",
+                    "is_correct": true
+                },
+                {
+                    "content": "La enseñanza básica es obligatoria y gratuita",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los poderes públicos inspeccionarán y homologarán el sistema educativo para garantizar el cumplimiento de las leyes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los profesores, los padres y, en su caso, los alumnos intervendrán en el control y gestión de todos los centros sostenidos por la Administración con fondos públicos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 28.2 de la Constitución, la ley que regule el ejercicio del derecho de huelga establecerá las garantías precisas para asegurar:",
+            "explanation": "El artículo 28.2 CE vincula la regulación de la huelga con el mantenimiento de los servicios esenciales de la comunidad.",
+            "options": [
+                {
+                    "content": "El mantenimiento del orden público durante la huelga",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los servicios mínimos en el sector público",
+                    "is_correct": false
+                },
+                {
+                    "content": "La paz social en las empresas afectadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El mantenimiento de los servicios esenciales de la comunidad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 29 de la Constitución, los miembros de las Fuerzas o Institutos armados o de los demás Cuerpos sometidos a disciplina militar podrán ejercer el derecho de petición:",
+            "explanation": "El artículo 29.2 CE limita a estos colectivos al ejercicio individual y conforme a su legislación específica.",
+            "options": [
+                {
+                    "content": "Individual y colectivamente, previa autorización del mando",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo individualmente y con arreglo a lo dispuesto en su legislación específica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente a través de sus asociaciones profesionales",
+                    "is_correct": false
+                },
+                {
+                    "content": "No podrán ejercerlo mientras se encuentren en servicio activo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 30 de la Constitución, ¿cuál de las siguientes afirmaciones es correcta?",
+            "explanation": "El artículo 30.4 CE permite regular por ley esos deberes. Además, el 30.1 habla de derecho y deber de defender a España, y el 30.3 prevé que pueda establecerse un servicio civil.",
+            "options": [
+                {
+                    "content": "Los españoles tienen el deber, pero no el derecho, de defender a España",
+                    "is_correct": false
+                },
+                {
+                    "content": "La objeción de conciencia exime en todo caso de cualquier prestación social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediante ley podrán regularse los deberes de los ciudadanos en los casos de grave riesgo, catástrofe o calamidad pública",
+                    "is_correct": true
+                },
+                {
+                    "content": "El servicio civil es obligatorio para todos los españoles mayores de edad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 31.1 de la Constitución, el sistema tributario justo mediante el cual todos contribuirán al sostenimiento de los gastos públicos está inspirado en los principios de:",
+            "explanation": "El artículo 31.1 CE cita la igualdad y la progresividad, con la prohibición de alcance confiscatorio.",
+            "options": [
+                {
+                    "content": "Igualdad y progresividad, sin que en ningún caso tenga alcance confiscatorio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Generalidad y proporcionalidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Suficiencia y neutralidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solidaridad y equidad interterritorial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 33.3 de la Constitución, nadie podrá ser privado de sus bienes y derechos sino:",
+            "explanation": "El artículo 33.3 CE exige causa justificada de utilidad pública o interés social, indemnización y conformidad con las leyes.",
+            "options": [
+                {
+                    "content": "Por causa de utilidad pública exclusivamente, con indemnización previa y justa fijada por un juez",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por causa justificada de utilidad pública o interés social, mediante la correspondiente indemnización y de conformidad con las leyes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Por razones de interés general o seguridad nacional, previa autorización judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por causa de utilidad pública o interés social, sin que proceda indemnización si se atiende a la función social de la propiedad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 37.1 de la Constitución, la ley garantizará el derecho a la negociación colectiva laboral entre los representantes de los trabajadores y empresarios, así como:",
+            "explanation": "El artículo 37.1 CE garantiza la negociación colectiva laboral y la fuerza vinculante de los convenios.",
+            "options": [
+                {
+                    "content": "La obligación de homologación administrativa de todo convenio",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ratificación de los convenios por el Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El carácter meramente orientativo de los convenios",
+                    "is_correct": false
+                },
+                {
+                    "content": "La fuerza vinculante de los convenios",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El artículo 38 de la Constitución reconoce la libertad de empresa en el marco de la economía de mercado.",
+            "explanation": "El artículo 38 CE reconoce la libertad de empresa en el marco de la economía de mercado, y los poderes públicos garantizan y protegen su ejercicio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 47 de la Constitución, ¿cuál de las siguientes afirmaciones es correcta?",
+            "explanation": "El artículo 47 CE, un principio rector, prevé la participación de la comunidad en las plusvalías urbanísticas. No es un derecho fundamental tutelable en amparo.",
+            "options": [
+                {
+                    "content": "La comunidad participará en las plusvalías que genere la acción urbanística de los entes públicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "El derecho a una vivienda digna y adecuada es un derecho fundamental susceptible de recurso de amparo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todo el suelo urbanizable será de titularidad pública",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los poderes públicos adquirirán gratuitamente suelo para construir vivienda protegida",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 53.1 de la Constitución, el ejercicio de los derechos y libertades del Capítulo segundo del Título I solo podrá regularse:",
+            "explanation": "El artículo 53.1 CE exige ley y que esta respete el contenido esencial de los derechos.",
+            "options": [
+                {
+                    "content": "Por reglamento del Consejo de Ministros, previo dictamen del Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por ley aprobada por mayoría de dos tercios del Congreso de los Diputados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por ley, que en todo caso deberá respetar su contenido esencial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Por acuerdo de las Cortes Generales en sesión conjunta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 53.2 de la Constitución, el procedimiento ante los Tribunales ordinarios para tutelar el artículo 14 y la Sección primera del Capítulo segundo se basará en los principios de:",
+            "explanation": "El artículo 53.2 CE habla de un procedimiento basado en la preferencia y la sumariedad, y en su caso del recurso de amparo ante el Tribunal Constitucional.",
+            "options": [
+                {
+                    "content": "Gratuidad y oralidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Preferencia y sumariedad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Celeridad y economía procesal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Inmediación y contradicción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 53.3 de la Constitución, el reconocimiento, el respeto y la protección de los principios reconocidos en el Capítulo tercero:",
+            "explanation": "El artículo 53.3 CE añade que solo podrán alegarse ante la jurisdicción ordinaria de acuerdo con lo que dispongan las leyes que los desarrollen.",
+            "options": [
+                {
+                    "content": "Son directamente exigibles ante cualquier órgano judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pueden tutelarse mediante recurso de amparo ante el Tribunal Constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Carecen de valor normativo y tienen carácter meramente programático",
+                    "is_correct": false
+                },
+                {
+                    "content": "Informarán la legislación positiva, la práctica judicial y la actuación de los poderes públicos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 54 de la Constitución, el Defensor del Pueblo es:",
+            "explanation": "El artículo 54 CE lo define como alto comisionado de las Cortes Generales, que puede supervisar la actividad de la Administración y dar cuenta a las Cortes.",
+            "options": [
+                {
+                    "content": "Un alto comisionado de las Cortes Generales, designado por estas para la defensa de los derechos comprendidos en el Título I",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un alto comisionado del Gobierno, designado por el Congreso de los Diputados para la defensa de los derechos fundamentales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un órgano del Poder Judicial, designado por el Consejo General del Poder Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un comisionado del Congreso de los Diputados, designado por el Senado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 55.1 de la Constitución, ¿cuál de los siguientes derechos puede ser suspendido cuando se acuerde la declaración del estado de excepción o de sitio?",
+            "explanation": "El artículo 55.1 CE incluye entre los derechos suspendibles el 18.2, junto con los artículos 17, 18.3, 19, 20.1.a) y d), 20.5, 21, 28.2 y 37.2. Los artículos 15, 16 y 24 no figuran en esa lista.",
+            "options": [
+                {
+                    "content": "La tutela judicial efectiva (art. 24)",
+                    "is_correct": false
+                },
+                {
+                    "content": "La libertad ideológica (art. 16)",
+                    "is_correct": false
+                },
+                {
+                    "content": "La inviolabilidad del domicilio (art. 18.2)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El derecho a la vida (art. 15)",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué prevé el artículo 55.2 de la Constitución Española?",
+            "explanation": "El artículo 55.2 CE lo permite por ley orgánica, de forma individual y con la necesaria intervención judicial y el adecuado control parlamentario. Su uso injustificado o abusivo produce responsabilidad penal.",
+            "options": [
+                {
+                    "content": "Que el Gobierno pueda suspender derechos de cualquier ciudadano mediante real decreto-ley convalidado por el Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que una ley orgánica pueda determinar, para personas determinadas y con intervención judicial y control parlamentario, la suspensión de ciertos derechos en investigaciones sobre bandas armadas o elementos terroristas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que el Congreso, por mayoría absoluta y sin intervención judicial, pueda suspender los derechos del artículo 17 de forma colectiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que la declaración del estado de alarma permita suspender el secreto de las comunicaciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 55.1 de la Constitución, la declaración del estado de excepción permite suspender el derecho a la educación reconocido en el artículo 27.",
+            "explanation": "El artículo 27 no figura entre los derechos que el artículo 55.1 CE permite suspender con el estado de excepción o de sitio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

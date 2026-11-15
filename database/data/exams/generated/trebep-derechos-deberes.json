@@ -1,0 +1,560 @@
+{
+    "slug": "trebep-derechos-deberes",
+    "title": "TREBEP: derechos, deberes y código de conducta",
+    "description": "Test del TREBEP para repasar derechos, permisos, vacaciones y código de conducta antes del examen de la AGE. Son preguntas fáciles, ideales para empezar el tema.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:59:42+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 14 del TREBEP, ¿cuál de los siguientes es un derecho individual de los empleados públicos?",
+            "explanation": "El artículo 14 TREBEP reconoce el derecho a recibir protección eficaz en materia de seguridad y salud en el trabajo. Los demás supuestos no figuran como derechos individuales.",
+            "options": [
+                {
+                    "content": "A elegir libremente el destino sin proceso de provisión",
+                    "is_correct": false
+                },
+                {
+                    "content": "A recibir protección eficaz en materia de seguridad y salud en el trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "A acumular las vacaciones de varios años",
+                    "is_correct": false
+                },
+                {
+                    "content": "A percibir siempre las retribuciones de un nivel superior",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El artículo 15 del TREBEP regula los derechos individuales de los empleados públicos que se ejercen:",
+            "explanation": "El artículo 15 TREBEP recoge los derechos individuales ejercidos colectivamente, como la libertad sindical, la negociación colectiva, la huelga o la reunión.",
+            "options": [
+                {
+                    "content": "De forma exclusiva por los funcionarios de carrera",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente a través de las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo durante el periodo de prácticas",
+                    "is_correct": false
+                },
+                {
+                    "content": "De forma colectiva",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es un derecho individual ejercido colectivamente según el artículo 15 del TREBEP:",
+            "explanation": "La inamovilidad en la condición de funcionario de carrera es un derecho individual del artículo 14, no uno de los ejercidos colectivamente del artículo 15.",
+            "options": [
+                {
+                    "content": "La libertad sindical",
+                    "is_correct": false
+                },
+                {
+                    "content": "El derecho de reunión",
+                    "is_correct": false
+                },
+                {
+                    "content": "La inamovilidad en la condición de funcionario de carrera",
+                    "is_correct": true
+                },
+                {
+                    "content": "El planteamiento de conflictos colectivos de trabajo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con el derecho de huelga de los empleados públicos, el TREBEP establece que se ejercerá:",
+            "explanation": "El TREBEP reconoce el derecho de huelga con la garantía del mantenimiento de los servicios esenciales de la comunidad.",
+            "options": [
+                {
+                    "content": "Sin ninguna limitación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo con autorización previa del superior jerárquico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Con la garantía del mantenimiento de los servicios esenciales de la comunidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente en el ámbito de las Comunidades Autónomas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuáles son los órganos específicos de representación de los funcionarios según el TREBEP?",
+            "explanation": "El TREBEP establece que los órganos específicos de representación de los funcionarios son los Delegados de Personal y las Juntas de Personal.",
+            "options": [
+                {
+                    "content": "Los Comités de Empresa y los Delegados Sindicales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Delegados de Personal y las Juntas de Personal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las Mesas Generales y los Consejos de Personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Comisiones Paritarias y los Comités de Seguridad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las Juntas de Personal se constituyen en unidades electorales que cuenten con un censo mínimo de:",
+            "explanation": "Según el TREBEP, las Juntas de Personal se constituyen en unidades electorales con un censo mínimo de 50 funcionarios.",
+            "options": [
+                {
+                    "content": "25 funcionarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 funcionarios",
+                    "is_correct": true
+                },
+                {
+                    "content": "75 funcionarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "100 funcionarios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 49 del TREBEP, el permiso por nacimiento para la madre biológica tendrá una duración de:",
+            "explanation": "El artículo 49 TREBEP fija en dieciséis semanas el permiso por nacimiento de la madre biológica.",
+            "options": [
+                {
+                    "content": "Doce semanas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Catorce semanas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dieciocho semanas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dieciséis semanas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el permiso por nacimiento de la madre biológica, ¿cuántas semanas inmediatamente posteriores al parto son de descanso obligatorio e ininterrumpido?",
+            "explanation": "Las seis semanas inmediatamente posteriores al parto son de descanso obligatorio e ininterrumpido.",
+            "options": [
+                {
+                    "content": "Seis semanas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuatro semanas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ocho semanas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez semanas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 50 del TREBEP, las vacaciones anuales retribuidas por año completo de servicio serán de:",
+            "explanation": "El artículo 50 TREBEP establece veintidós días hábiles anuales por año completo de servicio, o los días proporcionales si el tiempo de servicio fue menor.",
+            "options": [
+                {
+                    "content": "Veintiún días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veintidós días hábiles",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinte días hábiles",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "A efectos del cómputo de las vacaciones del artículo 50 del TREBEP, los sábados:",
+            "explanation": "El artículo 50 TREBEP indica que los sábados no se consideran días hábiles, sin perjuicio de las adaptaciones que se establezcan para los horarios especiales.",
+            "options": [
+                {
+                    "content": "Se consideran días hábiles en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se consideran días hábiles solo en agosto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo cuentan si se trabajan de forma habitual",
+                    "is_correct": false
+                },
+                {
+                    "content": "No se consideran días hábiles, sin perjuicio de las adaptaciones para horarios especiales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, al cumplir quince años de servicio los funcionarios tienen derecho a disfrutar de:",
+            "explanation": "Al cumplir quince años de servicio corresponden veintitrés días hábiles, y se añade un día más a los veinte, veinticinco y treinta años.",
+            "options": [
+                {
+                    "content": "Veintitrés días hábiles de vacaciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinticinco días hábiles de vacaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veintidós días hábiles de vacaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veintiséis días hábiles de vacaciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Por el fallecimiento de un familiar de segundo grado de consanguinidad o afinidad, cuando el hecho ocurre en distinta localidad, el permiso es de:",
+            "explanation": "En el segundo grado el permiso es de dos días hábiles en la misma localidad y cuatro días hábiles si es en distinta.",
+            "options": [
+                {
+                    "content": "Dos días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro días hábiles",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco días hábiles",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El permiso por razón de matrimonio de un funcionario tiene una duración de:",
+            "explanation": "El TREBEP concede quince días naturales de permiso por matrimonio.",
+            "options": [
+                {
+                    "content": "Diez días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días naturales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Quince días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días naturales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Por traslado de domicilio sin cambio de residencia, el TREBEP concede un permiso de:",
+            "explanation": "El permiso por traslado de domicilio sin cambio de residencia es de un día.",
+            "options": [
+                {
+                    "content": "Tres días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Medio día",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un día",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El permiso por lactancia de un hijo menor de doce meses consiste en:",
+            "explanation": "El TREBEP reconoce una hora de ausencia del trabajo, divisible en dos fracciones, por lactancia de un hijo menor de doce meses.",
+            "options": [
+                {
+                    "content": "Una hora de ausencia del trabajo, que podrá dividirse en dos fracciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos horas de ausencia diarias sin posibilidad de fraccionarlas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta minutos de ausencia al día",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una semana al año",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para concurrir a exámenes finales y otras pruebas definitivas de aptitud y evaluación en centros oficiales, el permiso se concede:",
+            "explanation": "El TREBEP concede permiso por el tiempo indispensable para concurrir a exámenes finales y otras pruebas definitivas de aptitud y evaluación en centros oficiales.",
+            "options": [
+                {
+                    "content": "Por un máximo de tres días al año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por el tiempo indispensable para su celebración",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo si el examen es de una oposición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por una jornada completa por examen",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué artículo del TREBEP lleva por título «Deberes de los empleados públicos. Código de Conducta»?",
+            "explanation": "El artículo 52 TREBEP regula los deberes de los empleados públicos y el Código de Conducta. Los artículos 53 y 54 desarrollan los principios éticos y de conducta.",
+            "options": [
+                {
+                    "content": "Artículo 50",
+                    "is_correct": false
+                },
+                {
+                    "content": "Artículo 51",
+                    "is_correct": false
+                },
+                {
+                    "content": "Artículo 53",
+                    "is_correct": false
+                },
+                {
+                    "content": "Artículo 52",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es un principio al que deben ajustarse los empleados públicos según el artículo 52 del TREBEP:",
+            "explanation": "El artículo 52 enumera principios como objetividad, integridad, neutralidad, responsabilidad o imparcialidad, pero no la discrecionalidad absoluta.",
+            "options": [
+                {
+                    "content": "Objetividad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Neutralidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Discrecionalidad absoluta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Integridad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según los principios de conducta del TREBEP, los empleados públicos obedecerán las instrucciones y órdenes profesionales de los superiores, salvo que:",
+            "explanation": "Deben obedecerse las órdenes de los superiores salvo que constituyan una infracción manifiesta del ordenamiento jurídico.",
+            "options": [
+                {
+                    "content": "Supongan un cambio de horario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Constituyan una infracción manifiesta del ordenamiento jurídico",
+                    "is_correct": true
+                },
+                {
+                    "content": "No hayan sido dadas por escrito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Provengan de un superior de otro departamento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "De acuerdo con los principios de conducta del TREBEP, los empleados públicos administrarán los recursos y bienes públicos con:",
+            "explanation": "Los empleados públicos deben administrar los recursos y bienes públicos con austeridad y no utilizarlos en provecho propio.",
+            "options": [
+                {
+                    "content": "Austeridad, sin utilizarlos en provecho propio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Libertad absoluta de uso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Preferencia para fines personales urgentes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Discrecionalidad, según el criterio de cada empleado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según los principios éticos del TREBEP, los empleados públicos rechazarán cualquier regalo, favor o servicio en condiciones ventajosas que:",
+            "explanation": "Los empleados públicos deben rechazar regalos, favores o servicios en condiciones ventajosas que vayan más allá de los usos y costumbres de la cortesía.",
+            "options": [
+                {
+                    "content": "Sea de escaso valor económico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Les ofrezca un compañero de trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se entregue fuera del horario laboral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vaya más allá de los usos y costumbres de la cortesía",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, ¿por cuánto tiempo se concede el permiso por deber inexcusable de carácter público o personal?",
+            "explanation": "El TREBEP concede este permiso por el tiempo indispensable para el cumplimiento del deber.",
+            "options": [
+                {
+                    "content": "Por el tiempo indispensable",
+                    "is_correct": true
+                },
+                {
+                    "content": "Por un máximo de un día al mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por tres días hábiles al año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por media jornada en cada caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el TREBEP, los empleados públicos tienen derecho a la libertad de expresión dentro de los límites del ordenamiento jurídico.",
+            "explanation": "El artículo 14 TREBEP reconoce la libertad de expresión dentro de los límites del ordenamiento jurídico.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el TREBEP, los principios del Código de Conducta informarán la interpretación y aplicación del régimen disciplinario de los empleados públicos.",
+            "explanation": "El artículo 52 TREBEP establece que los principios y reglas del Código de Conducta informan la interpretación y aplicación del régimen disciplinario.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El permiso por nacimiento de dieciséis semanas del artículo 49 del TREBEP corresponde únicamente a la madre biológica.",
+            "explanation": "El progenitor distinto de la madre biológica también tiene derecho a un permiso de dieciséis semanas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

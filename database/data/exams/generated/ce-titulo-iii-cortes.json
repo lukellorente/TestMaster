@@ -1,0 +1,675 @@
+{
+    "slug": "ce-titulo-iii-cortes",
+    "title": "Tema 3 - Las Cortes Generales (CE Título III)",
+    "description": "Test del tema 3 para repasar las Cortes Generales (arts. 66 a 96 de la CE) antes del examen de la AGE. Incluye Congreso, Senado, leyes, decretos y tratados.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:35:39+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta en relación con las Cortes Generales según el artículo 66 de la Constitución:",
+            "explanation": "Las Cortes ejercen la potestad legislativa del Estado, no la reglamentaria, que corresponde al Gobierno (art. 66.2 CE).",
+            "options": [
+                {
+                    "content": "Representan al pueblo español",
+                    "is_correct": false
+                },
+                {
+                    "content": "Están formadas por el Congreso de los Diputados y el Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejercen la potestad reglamentaria del Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aprueban los Presupuestos del Estado y controlan la acción del Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 67 de la Constitución, los miembros de las Cortes Generales:",
+            "explanation": "El art. 67 prohíbe el mandato imperativo y las acumulaciones de actas entre ambas Cámaras o con Asambleas de Comunidades Autónomas.",
+            "options": [
+                {
+                    "content": "No estarán ligados por mandato imperativo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Estarán ligados por las instrucciones de su grupo parlamentario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrán ser miembros de ambas Cámaras simultáneamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrán acumular el acta de diputado con la de una Asamblea autonómica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 68 de la Constitución, el Congreso de los Diputados se compone de un número de diputados:",
+            "explanation": "El art. 68.1 CE establece que el Congreso se compone de un mínimo de 300 y un máximo de 400 diputados, y la ley electoral concreta la cifra.",
+            "options": [
+                {
+                    "content": "Fijo de 350",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mínimo de 300 y máximo de 400",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mínimo de 250 y máximo de 350",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mínimo de 350 y máximo de 450",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 68 de la Constitución, las elecciones al Congreso tendrán lugar:",
+            "explanation": "El art. 68.6 CE fija ese plazo de treinta a sesenta días desde la terminación del mandato, y el Congreso electo debe convocarse dentro de los veinticinco días siguientes a las elecciones.",
+            "options": [
+                {
+                    "content": "Entre los quince y los cuarenta y cinco días desde la terminación del mandato",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dentro de los diez días siguientes a la terminación del mandato",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre los cuarenta y los setenta días desde la terminación del mandato",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre los treinta y los sesenta días desde la terminación del mandato",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 69.1 de la Constitución, el Senado es:",
+            "explanation": "El art. 69.1 CE define al Senado como la Cámara de representación territorial.",
+            "options": [
+                {
+                    "content": "La Cámara de representación de los partidos políticos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una Cámara de segunda lectura sin potestad legislativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Cámara de representación territorial",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Cámara de representación de las Corporaciones Locales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 69 de la Constitución, cada Comunidad Autónoma designará, además, un senador y otro más:",
+            "explanation": "El art. 69.5 CE prevé un senador y otro más por cada millón de habitantes del territorio de la Comunidad.",
+            "options": [
+                {
+                    "content": "Por cada millón de habitantes de su respectivo territorio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Por cada quinientos mil habitantes de su territorio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por cada provincia que integre la Comunidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por cada dos millones de habitantes de su territorio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 69 de la Constitución, ¿cuántos senadores elegirán Ceuta y Melilla cada una de ellas?",
+            "explanation": "El art. 69.4 CE atribuye dos senadores a cada una de las ciudades de Ceuta y Melilla.",
+            "options": [
+                {
+                    "content": "Uno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 71 de la Constitución, las causas contra diputados y senadores serán competencia de:",
+            "explanation": "El art. 71.3 CE atribuye su enjuiciamiento a la Sala de lo Penal del Tribunal Supremo.",
+            "options": [
+                {
+                    "content": "El Tribunal Constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de lo Penal del Tribunal Supremo",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Audiencia Nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tribunal Superior de Justicia de su Comunidad Autónoma",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 72 de la Constitución, los Reglamentos de las Cámaras serán aprobados por:",
+            "explanation": "El art. 72.1 CE establece que las Cámaras aprueban sus Reglamentos por mayoría absoluta.",
+            "options": [
+                {
+                    "content": "Mayoría simple de cada Cámara",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres quintos de los miembros de cada Cámara",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mayoría absoluta de sus miembros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos tercios de los miembros de cada Cámara",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 72 de la Constitución, las sesiones conjuntas de las Cámaras serán presididas por:",
+            "explanation": "El art. 72.3 CE dispone que las sesiones conjuntas las preside el Presidente del Congreso.",
+            "options": [
+                {
+                    "content": "El Presidente del Congreso",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente del Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Rey",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 73 de la Constitución, las Cámaras se reunirán anualmente en dos períodos ordinarios de sesiones:",
+            "explanation": "El art. 73.1 CE fija los períodos de septiembre a diciembre y de febrero a junio.",
+            "options": [
+                {
+                    "content": "Octubre a diciembre y marzo a junio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Septiembre a diciembre y febrero a junio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Septiembre a noviembre y enero a julio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Octubre a enero y marzo a julio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 75 de la Constitución, ¿cuál de las siguientes materias puede ser objeto de delegación del Pleno en las Comisiones Legislativas Permanentes?",
+            "explanation": "Quedan excluidos la reforma constitucional, las cuestiones internacionales, las leyes orgánicas y de bases y los Presupuestos (art. 75.3 CE); una ley ordinaria no excluida sí puede delegarse.",
+            "options": [
+                {
+                    "content": "Las leyes orgánicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las leyes de bases",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Presupuestos Generales del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una ley ordinaria no excluida expresamente por la Constitución",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 76 de la Constitución, respecto a las Comisiones de investigación:",
+            "explanation": "El art. 76.1 CE establece que las conclusiones no son vinculantes para los Tribunales, sin perjuicio de su comunicación al Ministerio Fiscal.",
+            "options": [
+                {
+                    "content": "Solo pueden crearse por el Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "La comparecencia ante ellas es voluntaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sus conclusiones no serán vinculantes para los Tribunales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sus conclusiones vinculan a los Tribunales si las aprueba el Pleno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 78 de la Constitución, la Diputación Permanente de cada Cámara estará compuesta por un mínimo de:",
+            "explanation": "El art. 78.1 CE fija un mínimo de veintiún miembros, que representan a los grupos parlamentarios en proporción a su importancia numérica.",
+            "options": [
+                {
+                    "content": "Veintiún miembros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Quince miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinticinco miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta y un miembros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Según el artículo 81 de la Constitución, son leyes orgánicas:",
+            "explanation": "Los Presupuestos Generales del Estado se aprueban por ley ordinaria, no orgánica (art. 81.1 CE).",
+            "options": [
+                {
+                    "content": "Las relativas al desarrollo de los derechos fundamentales y de las libertades públicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las que aprueben los Presupuestos Generales del Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las que aprueben los Estatutos de Autonomía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las que regulen el régimen electoral general",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 81 de la Constitución, la aprobación, modificación o derogación de las leyes orgánicas exigirá:",
+            "explanation": "El art. 81.2 CE exige mayoría absoluta del Congreso en votación final sobre el conjunto del proyecto.",
+            "options": [
+                {
+                    "content": "Mayoría simple del Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos tercios del Congreso en votación final",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayoría absoluta de cada una de las Cámaras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayoría absoluta del Congreso en una votación final sobre el conjunto del proyecto",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 82 de la Constitución, las Cortes Generales pueden delegar en el Gobierno la potestad de dictar normas con rango de ley sobre materias reservadas a ley orgánica.",
+            "explanation": "El art. 82.1 CE prohíbe la delegación legislativa en materias reservadas a ley orgánica.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 86 de la Constitución, los decretos-leyes deberán ser sometidos a debate y votación de totalidad en el Congreso en el plazo de:",
+            "explanation": "El art. 86.2 CE establece el plazo de los treinta días siguientes a su promulgación para su convalidación o derogación.",
+            "options": [
+                {
+                    "content": "Quince días siguientes a su promulgación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días siguientes a su promulgación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días siguientes a su promulgación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sesenta días siguientes a su promulgación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 87 de la Constitución, la iniciativa legislativa popular exigirá como mínimo:",
+            "explanation": "El art. 87.3 CE exige no menos de 500.000 firmas acreditadas, y una ley orgánica regula su ejercicio.",
+            "options": [
+                {
+                    "content": "300.000 firmas acreditadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "500.000 firmas acreditadas",
+                    "is_correct": true
+                },
+                {
+                    "content": "750.000 firmas acreditadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.000.000 de firmas acreditadas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 90 de la Constitución, en los proyectos declarados urgentes por el Gobierno o por el Congreso, el plazo del Senado para vetar o enmendar el texto se reduce a:",
+            "explanation": "El plazo general de dos meses se reduce a veinte días naturales en los proyectos urgentes (art. 90.3 CE).",
+            "options": [
+                {
+                    "content": "Veinte días naturales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 90 de la Constitución, si el Senado opone su veto, el Congreso podrá levantarlo por mayoría simple una vez transcurrido el plazo de:",
+            "explanation": "El veto se levanta por mayoría absoluta o por mayoría simple tras dos meses desde su interposición (art. 90.2 CE).",
+            "options": [
+                {
+                    "content": "Diez días desde la interposición del veto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días desde la interposición del veto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes desde la interposición del veto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses desde la interposición del veto",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 91 de la Constitución, el Rey sancionará las leyes aprobadas por las Cortes Generales en el plazo de:",
+            "explanation": "El art. 91 CE fija quince días para la sanción, tras los cuales el Rey promulga la ley y ordena su inmediata publicación.",
+            "options": [
+                {
+                    "content": "Diez días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": true
+                },
+                {
+                    "content": "Treinta días",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 92 de la Constitución, el referéndum consultivo sobre decisiones políticas de especial trascendencia será convocado por el Rey, mediante propuesta del:",
+            "explanation": "El art. 92.2 CE exige propuesta del Presidente del Gobierno y autorización previa del Congreso.",
+            "options": [
+                {
+                    "content": "Presidente del Gobierno, previamente autorizada por el Congreso de los Diputados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Presidente del Congreso, previamente autorizada por el Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consejo de Ministros, previamente autorizada por el Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Presidente del Gobierno, previo dictamen del Consejo de Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 93 de la Constitución, la celebración de tratados por los que se atribuya a una organización internacional el ejercicio de competencias derivadas de la Constitución se autorizará mediante:",
+            "explanation": "El art. 93 CE exige ley orgánica para autorizar esos tratados.",
+            "options": [
+                {
+                    "content": "Ley ordinaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley orgánica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Real decreto-ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acuerdo del Consejo de Ministros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Según el artículo 94 de la Constitución, requiere previa autorización de las Cortes Generales la prestación del consentimiento del Estado para obligarse por medio de tratados que:",
+            "explanation": "El art. 94.1 CE enumera categorías por su materia, no por la condición del Estado con el que se celebran.",
+            "options": [
+                {
+                    "content": "Sean de carácter político",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sean de carácter militar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Afecten a la integridad territorial del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se celebren con Estados miembros de la Unión Europea, sea cual sea su contenido",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 95 de la Constitución, si un tratado internacional contiene estipulaciones contrarias a la Constitución, ¿qué órgano declarará si existe o no esa contradicción a requerimiento del Gobierno o de cualquiera de las Cámaras?",
+            "explanation": "El art. 95.2 CE atribuye esta declaración al Tribunal Constitucional.",
+            "options": [
+                {
+                    "content": "El Tribunal Constitucional",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tribunal Supremo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo General del Poder Judicial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 96 de la Constitución, los tratados internacionales válidamente celebrados y publicados oficialmente en España forman parte del ordenamiento interno.",
+            "explanation": "Así lo establece el art. 96.1 CE, que añade que solo pueden derogarse, modificarse o suspenderse según los propios tratados o el Derecho internacional.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 71 de la Constitución, durante su mandato los diputados y senadores solo podrán ser detenidos en caso de flagrante delito.",
+            "explanation": "El art. 71.2 CE reconoce esta inmunidad, y además no pueden ser inculpados ni procesados sin autorización de la Cámara respectiva.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 79 de la Constitución, el voto de los diputados y senadores es:",
+            "explanation": "El art. 79.3 CE dispone que el voto de los senadores y diputados es personal e indelegable.",
+            "options": [
+                {
+                    "content": "Delegable por escrito en caso de enfermedad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Delegable en el portavoz del grupo parlamentario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Personal e indelegable",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siempre secreto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 80 de la Constitución, las sesiones plenarias de las Cámaras:",
+            "explanation": "El art. 80 CE establece la publicidad de las sesiones plenarias con esas excepciones.",
+            "options": [
+                {
+                    "content": "Serán secretas, salvo acuerdo en contrario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Serán públicas, salvo acuerdo en contrario adoptado por mayoría absoluta o con arreglo al Reglamento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Serán públicas sin excepción alguna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Serán públicas, salvo decisión del Presidente de la Cámara",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

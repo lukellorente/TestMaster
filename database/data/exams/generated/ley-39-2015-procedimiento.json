@@ -1,0 +1,897 @@
+{
+    "slug": "ley-39-2015-procedimiento",
+    "title": "Ley 39/2015 - Procedimiento administrativo común completo",
+    "description": "Test difícil de la Ley 39/2015 (Título IV) para repasar el procedimiento común: iniciación, ordenación, instrucción, terminación, plazos y silencio. Muy útil para preparar el examen de AGE, con los plazos más típicos de trampa.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:49:46+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 53.2 de la Ley 39/2015, en los procedimientos administrativos de naturaleza sancionadora, señale cuál NO es un derecho de los presuntos responsables:",
+            "explanation": "El artículo 53.2 reconoce el derecho a ser notificado de la imputación, a conocer al instructor y a la autoridad sancionadora, y a la presunción de no responsabilidad; no existe un derecho a elegir al instructor.",
+            "options": [
+                {
+                    "content": "A ser notificados de los hechos que se les imputen, de las infracciones que tales hechos puedan constituir y de las sanciones que, en su caso, se les pudieran imponer.",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la presunción de no existencia de responsabilidad administrativa mientras no se demuestre lo contrario.",
+                    "is_correct": false
+                },
+                {
+                    "content": "A designar libremente al instructor del procedimiento entre los funcionarios del órgano competente.",
+                    "is_correct": true
+                },
+                {
+                    "content": "A conocer la identidad del instructor, de la autoridad competente para imponer la sanción y de la norma que atribuya tal competencia.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 55 de la Ley 39/2015, en los procedimientos de naturaleza sancionadora las actuaciones previas a la iniciación se orientarán a:",
+            "explanation": "El artículo 55 fija esa finalidad para las actuaciones previas sancionadoras, que realizan los órganos con funciones de investigación, averiguación e inspección.",
+            "options": [
+                {
+                    "content": "Determinar con la mayor precisión posible los hechos susceptibles de motivar la incoación, la identificación de las personas que puedan resultar responsables y las circunstancias relevantes que concurran.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Practicar la prueba que fundamentará la sanción, de modo que no deba repetirse durante la instrucción.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Notificar a los presuntos responsables la propuesta de sanción para que formulen alegaciones.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolver sobre la procedencia de acumular el procedimiento a otros con identidad sustancial.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las medidas provisionales adoptadas antes de la iniciación del procedimiento, en casos de urgencia inaplazable, deberán ser confirmadas, modificadas o levantadas en el acuerdo de iniciación, que deberá efectuarse dentro de los:",
+            "explanation": "Según el artículo 56, el acuerdo de iniciación debe dictarse en quince días; si no se inicia en ese plazo, las medidas quedan sin efecto.",
+            "options": [
+                {
+                    "content": "Diez días siguientes a su adopción.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días siguientes a su adopción.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinte días siguientes a su adopción.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días siguientes a su adopción.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 57 de la Ley 39/2015, contra el acuerdo de acumulación de procedimientos con identidad sustancial o íntima conexión cabe recurso de alzada.",
+            "explanation": "El artículo 57 establece que contra el acuerdo de acumulación no cabrá recurso alguno.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 58 de la Ley 39/2015, los procedimientos se iniciarán de oficio por acuerdo del órgano competente. Señale la opción que NO es una de las formas previstas:",
+            "explanation": "La solicitud del interesado es una forma de iniciación a instancia de parte (art. 54), no de oficio; el artículo 58 recoge iniciativa propia, orden superior, petición razonada y denuncia.",
+            "options": [
+                {
+                    "content": "Por propia iniciativa del órgano competente.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Como consecuencia de orden superior.",
+                    "is_correct": false
+                },
+                {
+                    "content": "A petición razonada de otros órganos o por denuncia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por solicitud presentada por el interesado.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con la denuncia, el artículo 62 de la Ley 39/2015 establece que su presentación:",
+            "explanation": "El artículo 62 dispone expresamente que la denuncia no confiere por sí sola la condición de interesado.",
+            "options": [
+                {
+                    "content": "Obliga al órgano competente a iniciar el procedimiento en el plazo de un mes.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No confiere, por sí sola, la condición de interesado en el procedimiento.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Otorga siempre la condición de interesado al denunciante.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exige que el denunciante acredite previamente un interés legítimo.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 63 de la Ley 39/2015, los procedimientos de naturaleza sancionadora:",
+            "explanation": "El artículo 63 exige inicio siempre de oficio y separación de órganos entre la fase instructora y la sancionadora.",
+            "options": [
+                {
+                    "content": "Podrán iniciarse a solicitud del presunto infractor cuando este reconozca los hechos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se iniciarán de oficio o a instancia de parte según la gravedad de la infracción.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se iniciarán siempre de oficio por acuerdo del órgano competente, con debida separación entre la fase instructora y la sancionadora, encomendadas a órganos distintos.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Podrán encomendar la instrucción y la resolución al mismo órgano cuando este sea unipersonal.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 64 de la Ley 39/2015, si en un procedimiento sancionador el interesado no efectúa alegaciones en plazo sobre el contenido del acuerdo de iniciación, este podrá ser considerado propuesta de resolución cuando:",
+            "explanation": "El artículo 64 permite esa consideración si el acuerdo de iniciación contiene un pronunciamiento preciso sobre la responsabilidad imputada, y así debe advertirse al interesado.",
+            "options": [
+                {
+                    "content": "Contenga un pronunciamiento preciso acerca de la responsabilidad imputada.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La sanción prevista tenga carácter únicamente pecuniario.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El instructor lo ratifique expresamente por escrito.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hayan transcurrido tres meses desde su notificación.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es un contenido que, según el artículo 66.1 de la Ley 39/2015, deban incluir las solicitudes de iniciación:",
+            "explanation": "El artículo 66.1 no exige acreditar capacidad económica; sí exige identificación, medio de notificación, hechos y petición, lugar y fecha, firma y órgano destinatario.",
+            "options": [
+                {
+                    "content": "Los hechos, razones y petición en que se concrete, con toda claridad, la solicitud.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lugar y fecha.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Firma del solicitante o acreditación de la autenticidad de su voluntad expresada por cualquier medio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acreditación documental de la capacidad económica del solicitante.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los procedimientos de responsabilidad patrimonial de las Administraciones Públicas, el derecho a reclamar prescribe, con carácter general, al cabo de:",
+            "explanation": "El artículo 67 fija el plazo de un año; en daños físicos o psíquicos se cuenta desde la curación o la determinación del alcance de las secuelas.",
+            "options": [
+                {
+                    "content": "Seis meses desde el hecho lesivo.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año desde producido el hecho o acto que motive la indemnización o desde que se manifieste su efecto lesivo.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos años desde producido el hecho lesivo.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años desde producido el hecho lesivo.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si la solicitud de iniciación no reúne los requisitos exigidos, según el artículo 68 de la Ley 39/2015 se requerirá al interesado para que:",
+            "explanation": "El artículo 68 concede diez días y prevé el desistimiento, que debe declararse mediante resolución expresa conforme al artículo 21.",
+            "options": [
+                {
+                    "content": "En cinco días subsane la falta, con archivo automático de la solicitud si no lo hace.",
+                    "is_correct": false
+                },
+                {
+                    "content": "En quince días subsane la falta, y se le tendrá por desistido sin necesidad de resolución.",
+                    "is_correct": false
+                },
+                {
+                    "content": "En diez días subsane la falta o acompañe los documentos preceptivos, y si no lo hace se le tendrá por desistido de su petición, previa resolución dictada en los términos del artículo 21.",
+                    "is_correct": true
+                },
+                {
+                    "content": "En diez días subsane la falta, y si no lo hace la solicitud se entenderá desestimada por silencio.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 69.4 de la Ley 39/2015, la inexactitud, falsedad u omisión de carácter esencial en una declaración responsable o comunicación determinará:",
+            "explanation": "El artículo 69.4 lo prevé así, y la Administración puede exigir además restituir la situación jurídica al momento anterior al ejercicio del derecho.",
+            "options": [
+                {
+                    "content": "La imposibilidad de continuar con el ejercicio del derecho o actividad desde que se tenga constancia de tales hechos, sin perjuicio de las responsabilidades que procedan.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La caducidad automática del procedimiento de comprobación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente la obligación de subsanar el dato en el plazo de diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La suspensión del derecho durante un máximo de tres meses.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 70 de la Ley 39/2015, señale qué NO forma parte del expediente administrativo:",
+            "explanation": "El artículo 70.4 excluye del expediente la información auxiliar o de apoyo, como notas, borradores, opiniones, resúmenes e informes internos.",
+            "options": [
+                {
+                    "content": "Los informes, preceptivos y facultativos, solicitados antes de la resolución que ponga fin al procedimiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las notificaciones y demás diligencias del procedimiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los dictámenes y las pruebas practicadas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los borradores, notas, resúmenes y comunicaciones internas de carácter auxiliar o de apoyo.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con la concentración de trámites, el artículo 72 de la Ley 39/2015 establece que:",
+            "explanation": "El artículo 72 impone la concentración en un solo acto de los trámites que admitan impulso simultáneo.",
+            "options": [
+                {
+                    "content": "Los trámites se cumplirán siempre de forma sucesiva para garantizar la audiencia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se concentrarán trámites cuando lo soliciten todos los interesados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se acordarán en un solo acto todos los trámites que, por su naturaleza, admitan un impulso simultáneo y no sea obligatorio su cumplimiento sucesivo.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La concentración de trámites solo es posible en la tramitación de urgencia.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Salvo que la norma correspondiente fije un plazo distinto, los trámites que deban ser cumplimentados por los interesados deberán realizarse en el plazo de:",
+            "explanation": "Así lo dispone el artículo 73; además, la actuación del interesado producirá efectos si se realiza antes o dentro del día en que se notifique la resolución que tenga por transcurrido el plazo.",
+            "options": [
+                {
+                    "content": "Diez días a partir del día siguiente al de la notificación del correspondiente acto.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco días a partir del día siguiente al de la notificación del correspondiente acto.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días a partir del día siguiente al de la notificación del correspondiente acto.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días a partir del día siguiente al de la notificación del correspondiente acto.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 74 de la Ley 39/2015, las cuestiones incidentales que se susciten en el procedimiento, incluso las referidas a la nulidad de actuaciones:",
+            "explanation": "El artículo 74 solo admite la suspensión en caso de recusación.",
+            "options": [
+                {
+                    "content": "Suspenderán siempre la tramitación hasta su resolución.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No suspenderán la tramitación del procedimiento, salvo la recusación.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Suspenderán la tramitación cuando se refieran a la nulidad de actuaciones.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No suspenderán la tramitación en ningún caso, ni siquiera la recusación.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando la Administración no tenga por ciertos los hechos alegados por los interesados, el instructor acordará la apertura de un período de prueba por un plazo:",
+            "explanation": "El artículo 77 fija el período de prueba entre diez y treinta días.",
+            "options": [
+                {
+                    "content": "No superior a quince días ni inferior a cinco.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No superior a sesenta días ni inferior a veinte.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No superior a veinte días ni inferior a diez.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No superior a treinta días ni inferior a diez.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 78 de la Ley 39/2015, en la notificación del inicio de las actuaciones para la práctica de las pruebas admitidas se consignará el lugar, fecha y hora, con la advertencia, en su caso, de que el interesado puede nombrar técnicos para que le asistan.",
+            "explanation": "Es el contenido previsto en el artículo 78 para la práctica de la prueba, que debe comunicarse con antelación suficiente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 77 de la Ley 39/2015, el instructor solo podrá rechazar las pruebas propuestas por los interesados:",
+            "explanation": "El artículo 77 limita el rechazo a pruebas manifiestamente improcedentes o innecesarias y exige resolución motivada.",
+            "options": [
+                {
+                    "content": "Cuando las considere inconvenientes, sin necesidad de motivar la decisión.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando sean manifiestamente improcedentes o innecesarias, mediante resolución motivada.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando el interesado no anticipe su coste, en todo caso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando se propongan después de transcurrido el trámite de alegaciones.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Salvo disposición expresa en contrario, según el artículo 80 de la Ley 39/2015 los informes serán:",
+            "explanation": "El artículo 80 establece el carácter facultativo y no vinculante como regla general, con plazo de diez días salvo que una disposición permita o requiera otro.",
+            "options": [
+                {
+                    "content": "Preceptivos y vinculantes, y se emitirán en el plazo de quince días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Preceptivos y no vinculantes, y se emitirán en el plazo de diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Facultativos y no vinculantes, y se emitirán a través de medios electrónicos en el plazo de diez días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Facultativos y vinculantes, y se emitirán en el plazo de treinta días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Instruido el procedimiento e inmediatamente antes de redactar la propuesta de resolución, se pondrá de manifiesto a los interesados, que dispondrán de un plazo de alegaciones:",
+            "explanation": "Es el trámite de audiencia del artículo 82, con plazo de entre diez y quince días.",
+            "options": [
+                {
+                    "content": "No inferior a diez días ni superior a quince.",
+                    "is_correct": true
+                },
+                {
+                    "content": "No inferior a cinco días ni superior a diez.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No inferior a quince días ni superior a treinta.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No inferior a diez días ni superior a veinte.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 83 de la Ley 39/2015, el plazo para formular alegaciones en el trámite de información pública no podrá ser, en ningún caso, inferior a:",
+            "explanation": "El artículo 83 fija un mínimo de veinte días; además, comparecer en este trámite no otorga por sí mismo la condición de interesado.",
+            "options": [
+                {
+                    "content": "Diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 84 de la Ley 39/2015, señale cuál NO es una causa de terminación del procedimiento:",
+            "explanation": "La suspensión del plazo no termina el procedimiento; el artículo 84 recoge resolución, desistimiento, renuncia, caducidad e imposibilidad material sobrevenida.",
+            "options": [
+                {
+                    "content": "El desistimiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La declaración de caducidad.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La suspensión del plazo máximo para resolver.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La renuncia al derecho en que se funde la solicitud, cuando no esté prohibida por el ordenamiento jurídico.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los procedimientos sancionadores de carácter únicamente pecuniario, el reconocimiento de la responsabilidad y el pago voluntario dan lugar a reducciones, acumulables entre sí, de al menos:",
+            "explanation": "El artículo 85 establece reducciones de, al menos, el 20 % sobre la sanción propuesta, acumulables entre sí.",
+            "options": [
+                {
+                    "content": "El 10 % sobre el importe de la sanción propuesta cada una.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 20 % sobre el importe de la sanción propuesta cada una.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 30 % sobre el importe de la sanción propuesta cada una.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 50 % sobre el importe de la sanción propuesta cada una.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 85 de la Ley 39/2015, si la sanción tiene únicamente carácter pecuniario, el pago voluntario por el presunto responsable en cualquier momento anterior a la resolución implicará:",
+            "explanation": "El pago voluntario termina el procedimiento, pero no afecta a la reposición ni a la indemnización de daños.",
+            "options": [
+                {
+                    "content": "La terminación del procedimiento, salvo en lo relativo a la reposición de la situación alterada o a la indemnización por los daños y perjuicios causados.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La continuación del procedimiento hasta su resolución, sin efecto alguno.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La terminación del procedimiento sin excepción alguna.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La terminación del procedimiento únicamente si se paga después de dictarse la resolución.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la terminación convencional del artículo 86 de la Ley 39/2015, señale la respuesta INCORRECTA:",
+            "explanation": "El artículo 86 permite acuerdos, pactos, convenios o contratos con personas tanto de Derecho público como privado.",
+            "options": [
+                {
+                    "content": "Los acuerdos no pueden ser contrarios al ordenamiento jurídico.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No pueden versar sobre materias no susceptibles de transacción.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deben tener por objeto satisfacer el interés público que las Administraciones tienen encomendado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo pueden celebrarse con personas jurídicas de Derecho público.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando se trate de cuestiones conexas no planteadas por los interesados, el órgano competente podrá pronunciarse sobre ellas en la resolución, poniéndolo antes de manifiesto a aquellos por un plazo no superior a:",
+            "explanation": "Así lo establece el artículo 88, para que los interesados formulen alegaciones y aporten, en su caso, medios de prueba.",
+            "options": [
+                {
+                    "content": "Cinco días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinte días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un procedimiento sancionador, si el órgano competente para resolver considera que la infracción o la sanción revisten mayor gravedad que la determinada en la propuesta de resolución:",
+            "explanation": "Es una de las especialidades de la resolución en los procedimientos sancionadores (art. 90), que garantiza la audiencia del inculpado.",
+            "options": [
+                {
+                    "content": "Podrá imponer la sanción más grave directamente, motivando su decisión.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo notificará al inculpado para que aporte cuantas alegaciones estime convenientes, concediéndole un plazo de quince días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Deberá archivar el procedimiento e iniciar uno nuevo.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Devolverá el expediente al instructor para nueva audiencia, sin intervención del inculpado.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 94 de la Ley 39/2015, la Administración aceptará de plano el desistimiento o la renuncia y declarará concluso el procedimiento, salvo que:",
+            "explanation": "El artículo 94 prevé la continuación si terceros personados la solicitan en diez días, o si el interés general aconseja sustanciar la cuestión.",
+            "options": [
+                {
+                    "content": "Habiéndose personado terceros interesados, insten estos su continuación en el plazo de diez días desde que fueron notificados del desistimiento o renuncia.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hayan transcurrido tres meses desde que se presentó la solicitud.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El órgano superior jerárquico ordene la continuación sin motivación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El desistimiento se haya presentado por medios electrónicos.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los procedimientos iniciados a solicitud del interesado, cuando se paralicen por causa imputable a él, la Administración le advertirá de que, transcurrido el plazo de ______, se producirá la caducidad:",
+            "explanation": "Es el plazo de tres meses del artículo 95; consumido sin que el requerido reanude la tramitación, se archivan las actuaciones.",
+            "options": [
+                {
+                    "content": "Un mes.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis meses.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a los efectos de la caducidad del procedimiento, según el artículo 95 de la Ley 39/2015:",
+            "explanation": "El artículo 95 lo establece así y permite incorporar al nuevo procedimiento los trámites cuyo contenido se hubiera mantenido igual.",
+            "options": [
+                {
+                    "content": "Produce por sí sola la prescripción de las acciones del particular.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Interrumpe el plazo de prescripción de las acciones de la Administración.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impide en todo caso iniciar un nuevo procedimiento sobre el mismo asunto.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No produce por sí sola la prescripción de las acciones, pero los procedimientos caducados no interrumpen el plazo de prescripción.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Salvo que reste menos para su tramitación ordinaria, los procedimientos tramitados de manera simplificada (art. 96 de la Ley 39/2015) deberán ser resueltos en:",
+            "explanation": "El artículo 96 fija treinta días, contados desde el día siguiente a la notificación del acuerdo de tramitación simplificada.",
+            "options": [
+                {
+                    "content": "Quince días desde el acuerdo de tramitación simplificada.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días a contar desde el día siguiente al que se notifique al interesado el acuerdo de tramitación simplificada.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuarenta y cinco días desde la fecha de la solicitud.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sesenta días desde la notificación del acuerdo de iniciación.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 21 de la Ley 39/2015, el plazo máximo para notificar la resolución expresa:",
+            "explanation": "El artículo 21 fija el límite de seis meses, con la excepción indicada, y un plazo supletorio de tres meses.",
+            "options": [
+                {
+                    "content": "No podrá exceder de seis meses, salvo que una norma con rango de ley o el Derecho de la Unión Europea establezca uno mayor; si la norma reguladora no lo fija, será de tres meses.",
+                    "is_correct": true
+                },
+                {
+                    "content": "No podrá exceder de tres meses en ningún caso; si la norma no lo fija, será de seis meses.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No podrá exceder de un año; si la norma no lo fija, será de seis meses.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No podrá exceder de seis meses en ningún caso; si la norma no lo fija, será de un mes.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 22 de la Ley 39/2015, cuando deban solicitarse informes preceptivos y determinantes del contenido de la resolución, el plazo máximo para resolver se suspende por el tiempo que medie entre la petición y la recepción del informe, sin que la suspensión pueda exceder de:",
+            "explanation": "La suspensión por informe preceptivo y determinante no puede exceder de tres meses; si no se recibe, el procedimiento prosigue.",
+            "options": [
+                {
+                    "content": "Un mes.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 33 de la Ley 39/2015, cuando razones de interés público lo aconsejen podrá acordarse la tramitación de urgencia, por la cual:",
+            "explanation": "La urgencia reduce a la mitad los plazos, excepto los de presentación de solicitudes y recursos.",
+            "options": [
+                {
+                    "content": "Se reducirán a un tercio los plazos del procedimiento ordinario.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se reducirán a la mitad todos los plazos, incluidos los de presentación de solicitudes y recursos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se reducirán a la mitad los plazos del procedimiento ordinario, salvo los relativos a la presentación de solicitudes y recursos.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se reducirán a una cuarta parte los plazos, salvo los de presentación de solicitudes.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 32 de la Ley 39/2015, la Administración puede ampliar de oficio o a petición de los interesados un plazo que ya haya vencido, siempre que no se perjudiquen derechos de terceros.",
+            "explanation": "El artículo 32 prohíbe ampliar un plazo ya vencido; la petición y la decisión deben producirse antes del vencimiento.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un acto se notifica el 31 de octubre de 2026 concediendo un plazo de un mes. De acuerdo con el artículo 30 de la Ley 39/2015, el plazo concluye el:",
+            "explanation": "Los plazos en meses se cuentan desde el día siguiente y, si el mes de vencimiento no tiene día equivalente, expiran el último día del mes; el 30 de noviembre de 2026 es lunes, hábil.",
+            "options": [
+                {
+                    "content": "30 de noviembre de 2026.",
+                    "is_correct": true
+                },
+                {
+                    "content": "1 de diciembre de 2026.",
+                    "is_correct": false
+                },
+                {
+                    "content": "29 de noviembre de 2026.",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 de noviembre de 2026.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 24 de la Ley 39/2015, ¿en cuál de los siguientes supuestos el silencio administrativo tiene efecto estimatorio?",
+            "explanation": "El artículo 24.1 prevé la estimación por silencio del recurso de alzada contra una desestimación presunta, salvo en las materias de silencio negativo.",
+            "options": [
+                {
+                    "content": "Procedimientos relativos al ejercicio del derecho de petición del artículo 29 de la Constitución.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Recurso de alzada interpuesto contra la desestimación por silencio de una solicitud, siempre que no se refiera a materias de silencio negativo.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Procedimientos de responsabilidad patrimonial de las Administraciones Públicas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solicitudes cuya estimación transfiera al solicitante facultades relativas al dominio público.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 24 de la Ley 39/2015, la estimación por silencio administrativo tiene, a todos los efectos, la consideración de acto administrativo finalizador del procedimiento.",
+            "explanation": "Así lo establece el artículo 24, mientras que la desestimación por silencio solo permite interponer el recurso procedente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El certificado acreditativo del silencio administrativo producido se expedirá de oficio por el órgano competente para resolver en el plazo de:",
+            "explanation": "El artículo 24 fija quince días; si lo pide el interesado, el plazo se cuenta desde que la petición tenga entrada en el registro electrónico del órgano competente.",
+            "options": [
+                {
+                    "content": "Cinco días desde que expire el plazo máximo para resolver.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días desde que expire el plazo máximo para resolver.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días desde que expire el plazo máximo para resolver.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días desde que expire el plazo máximo para resolver.",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

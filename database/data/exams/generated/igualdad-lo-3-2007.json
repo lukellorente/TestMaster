@@ -1,0 +1,560 @@
+{
+    "slug": "igualdad-lo-3-2007",
+    "title": "Igualdad efectiva de mujeres y hombres (LO 3/2007)",
+    "description": "Test para repasar la Ley de Igualdad (LO 3/2007) y, sobre todo, el Título V sobre igualdad en el empleo público. Va bien para preparar oposiciones a la AGE.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:03:41+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según la Disposición adicional primera de la LO 3/2007, se entiende por «composición equilibrada» la presencia de mujeres y hombres de forma que, en el conjunto al que se refiera, las personas de cada sexo no superen el:",
+            "explanation": "La Disposición adicional primera define la composición equilibrada con la banda 60/40.",
+            "options": [
+                {
+                    "content": "50 % ni sean menos del 50 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "60 % ni sean menos del 40 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "70 % ni sean menos del 30 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "55 % ni sean menos del 45 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es un criterio de actuación de las Administraciones públicas en el empleo público según el artículo 51 de la LO 3/2007:",
+            "explanation": "El artículo 51 no prevé ninguna reserva general del 50 % de las plazas de acceso. Las otras tres opciones sí figuran entre sus criterios.",
+            "options": [
+                {
+                    "content": "Remover los obstáculos que impliquen la pervivencia de cualquier tipo de discriminación para lograr la igualdad efectiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Facilitar la conciliación de la vida personal, familiar y laboral sin menoscabo de la promoción profesional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Establecer medidas efectivas de protección frente al acoso sexual y por razón de sexo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reservar el 50 % de las plazas de acceso al empleo público a mujeres en todas las convocatorias",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 7 de la LO 3/2007, constituye acoso por razón de sexo:",
+            "explanation": "Es la definición del artículo 7.2. El trato desfavorable por embarazo o maternidad es discriminación directa, regulada en el artículo 8.",
+            "options": [
+                {
+                    "content": "Cualquier comportamiento realizado en función del sexo de una persona, con el propósito o el efecto de atentar contra su dignidad y crear un entorno intimidatorio, degradante u ofensivo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente el comportamiento físico de naturaleza sexual reiterado en el tiempo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo la conducta que condicione la retribución de la persona afectada",
+                    "is_correct": false
+                },
+                {
+                    "content": "El trato desfavorable a las mujeres por embarazo o maternidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 8 de la LO 3/2007, todo trato desfavorable a las mujeres relacionado con el embarazo o la maternidad constituye:",
+            "explanation": "El artículo 8 lo califica expresamente como discriminación directa por razón de sexo.",
+            "options": [
+                {
+                    "content": "Discriminación indirecta por razón de sexo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una acción positiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Discriminación directa por razón de sexo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una diferencia de trato justificada por requisito profesional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes definiciones corresponde a la discriminación indirecta por razón de sexo (art. 6 LO 3/2007)?",
+            "explanation": "La primera opción describe la discriminación directa, la tercera el acoso sexual y la cuarta una acción positiva. La segunda es la definición del artículo 6.2.",
+            "options": [
+                {
+                    "content": "La situación en que una persona es tratada de manera menos favorable que otra en situación comparable por razón de su sexo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La situación en que una disposición, criterio o práctica aparentemente neutros sitúa a personas de un sexo en desventaja particular respecto de las del otro, salvo justificación objetiva y proporcionada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cualquier comportamiento verbal o físico de naturaleza sexual que atente contra la dignidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La medida específica a favor de las mujeres para corregir desigualdades de hecho",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El condicionamiento de un derecho o de una expectativa de derecho a la aceptación de una situación constitutiva de acoso sexual o de acoso por razón de sexo se considera también acto de discriminación por razón de sexo.",
+            "explanation": "Así lo establece el artículo 7.4 de la LO 3/2007.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LO 3/2007, el Plan para la Igualdad entre mujeres y hombres en la Administración General del Estado y en sus organismos públicos vinculados o dependientes es aprobado por el Gobierno:",
+            "explanation": "El artículo 64 dispone que el Gobierno aprobará el Plan al inicio de cada legislatura.",
+            "options": [
+                {
+                    "content": "Con carácter anual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cada dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cada cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al inicio de cada legislatura",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 53 de la LO 3/2007, los tribunales y órganos de selección del personal de la Administración General del Estado responderán al principio de presencia equilibrada de mujeres y hombres:",
+            "explanation": "El artículo 53 admite la excepción solo por razones fundadas y objetivas, debidamente motivadas.",
+            "options": [
+                {
+                    "content": "Sin excepción alguna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Salvo razones fundadas y objetivas, debidamente motivadas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Salvo que la convocatoria disponga otra cosa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente cuando el órgano tenga más de diez miembros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para la prevención del acoso sexual y del acoso por razón de sexo, las Administraciones públicas negociarán un protocolo de actuación con:",
+            "explanation": "El artículo 62 de la LO 3/2007 prevé la negociación del protocolo con la representación legal de las personas trabajadoras.",
+            "options": [
+                {
+                    "content": "El Defensor del Pueblo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Instituto de las Mujeres",
+                    "is_correct": false
+                },
+                {
+                    "content": "La representación legal de las personas trabajadoras",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Consejo de Ministros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 52 de la LO 3/2007, el Gobierno atenderá al principio de presencia equilibrada de mujeres y hombres en el nombramiento de:",
+            "explanation": "El artículo 52 se refiere a los órganos directivos de la AGE y de sus organismos públicos, considerados en su conjunto, cuya designación corresponda al Gobierno.",
+            "options": [
+                {
+                    "content": "Los titulares de los órganos directivos de la Administración General del Estado y de los organismos públicos vinculados o dependientes de ella cuya designación le corresponda",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente los Ministros y Ministras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo los miembros de los tribunales de oposiciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivamente los titulares de las Delegaciones del Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LO 3/2007, las Unidades de Igualdad se crean encomendando a un órgano directivo de:",
+            "explanation": "El artículo 77 dispone que en cada Ministerio se encomendará a uno de sus órganos directivos el desarrollo de las funciones relacionadas con el principio de igualdad.",
+            "options": [
+                {
+                    "content": "Cada Delegación del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cada Comunidad Autónoma",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cada Ministerio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente el Ministerio competente en materia de igualdad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9 de la LO 3/2007 (indemnidad frente a represalias), el trato adverso que sufra una persona por haber presentado una queja, denuncia, demanda o recurso para exigir el cumplimiento del principio de igualdad se considera:",
+            "explanation": "El artículo 9 califica ese trato adverso como discriminación por razón de sexo.",
+            "options": [
+                {
+                    "content": "Una infracción disciplinaria leve",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una discriminación por razón de sexo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un supuesto de acción positiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una falta de cortesía administrativa sin consecuencias",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10 de la LO 3/2007, los actos y las cláusulas de los negocios jurídicos que constituyan o causen discriminación por razón de sexo se considerarán:",
+            "explanation": "El artículo 10 los declara nulos y sin efecto, y prevé además responsabilidad mediante un sistema de reparaciones o indemnizaciones.",
+            "options": [
+                {
+                    "content": "Anulables, salvo convalidación posterior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Válidos, pero sancionables administrativamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Irregularidades no invalidantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nulos y sin efecto",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA sobre las acciones positivas del artículo 11 de la LO 3/2007:",
+            "explanation": "Las acciones positivas son temporales: solo se aplican mientras subsistan las situaciones de desigualdad que las justifican.",
+            "options": [
+                {
+                    "content": "Son medidas específicas a favor de las mujeres para corregir situaciones patentes de desigualdad de hecho",
+                    "is_correct": false
+                },
+                {
+                    "content": "Serán aplicables en tanto subsistan las situaciones que las justifican",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deberán ser razonables y proporcionadas en relación con el objetivo perseguido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tienen carácter permanente e indefinido, con independencia de la situación de desigualdad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las obligaciones derivadas de la LO 3/2007 solo vinculan a las personas físicas y jurídicas de nacionalidad española.",
+            "explanation": "El artículo 2.2 obliga a toda persona física o jurídica que se encuentre o actúe en territorio español, cualquiera que sea su nacionalidad, domicilio o residencia.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LO 3/2007, cuando la parte actora aporte indicios fundados de discriminación por razón de sexo en un procedimiento no penal, ¿a quién corresponde probar la ausencia de discriminación y la proporcionalidad de las medidas adoptadas?",
+            "explanation": "El artículo 13 invierte la carga de la prueba: corresponde a la parte demandada acreditar la ausencia de discriminación. Esto no se aplica a los procesos penales.",
+            "options": [
+                {
+                    "content": "A la parte actora",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al Ministerio Fiscal",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la Inspección de Trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la parte demandada",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El principio de transversalidad de la LO 3/2007 (art. 15) implica que el principio de igualdad de trato y oportunidades:",
+            "explanation": "Las Administraciones lo integran de forma activa en sus normas, en la definición y presupuestación de políticas públicas y en el conjunto de sus actividades.",
+            "options": [
+                {
+                    "content": "Informa con carácter transversal la actuación de todos los Poderes Públicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo afecta a las políticas de empleo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se aplica únicamente a la Administración General del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es aplicable solo a las normas con rango de ley",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LO 3/2007, los proyectos de disposiciones de carácter general y los planes de especial relevancia económica, social, cultural y artística deberán incorporar un informe sobre su impacto por razón de género cuando se sometan a la aprobación de:",
+            "explanation": "La ley exige el informe de impacto de género para los proyectos que se sometan a la aprobación del Consejo de Ministros.",
+            "options": [
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Congreso de los Diputados",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Conferencia Sectorial de Igualdad",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Ministros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5 de la LO 3/2007, una diferencia de trato basada en una característica relacionada con el sexo NO constituye discriminación en el acceso al empleo cuando:",
+            "explanation": "El artículo 5 solo admite la diferencia de trato cuando la característica sea un requisito profesional esencial y determinante, con objetivo legítimo y requisito proporcionado.",
+            "options": [
+                {
+                    "content": "La empresa o administración lo considere conveniente para su organización",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dicha característica constituya un requisito profesional esencial y determinante, siendo el objetivo legítimo y el requisito proporcionado",
+                    "is_correct": true
+                },
+                {
+                    "content": "La persona candidata lo consienta expresamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se trate de puestos de nueva creación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con las pruebas de acceso al empleo público de la Administración General del Estado, la LO 3/2007 establece que:",
+            "explanation": "La ley, en su regulación de la formación para la igualdad, obliga a que las pruebas de acceso incluyan el estudio y la aplicación de este principio.",
+            "options": [
+                {
+                    "content": "Reservarán un porcentaje fijo de plazas a mujeres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se realizarán por separado para hombres y mujeres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contemplarán el estudio y la aplicación del principio de igualdad entre mujeres y hombres en los diversos ámbitos de la función pública",
+                    "is_correct": true
+                },
+                {
+                    "content": "No podrán incluir contenidos sobre igualdad por razones de neutralidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La Ley Orgánica 3/2007, para la igualdad efectiva de mujeres y hombres, es de fecha:",
+            "explanation": "Es la Ley Orgánica 3/2007, de 22 de marzo.",
+            "options": [
+                {
+                    "content": "13 de marzo de 2007",
+                    "is_correct": false
+                },
+                {
+                    "content": "22 de marzo de 2007",
+                    "is_correct": true
+                },
+                {
+                    "content": "28 de diciembre de 2007",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 de abril de 2007",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tras las modificaciones introducidas en 2019, ¿a partir de qué número de personas trabajadoras están obligadas las empresas a elaborar y aplicar un plan de igualdad (art. 45 LO 3/2007)?",
+            "explanation": "Con la reforma del Real Decreto-ley 6/2019, el umbral quedó fijado en las empresas de 50 o más personas trabajadoras.",
+            "options": [
+                {
+                    "content": "25 o más",
+                    "is_correct": false
+                },
+                {
+                    "content": "100 o más",
+                    "is_correct": false
+                },
+                {
+                    "content": "250 o más",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 o más",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LO 3/2007, los derechos de conciliación de la vida personal, familiar y laboral:",
+            "explanation": "El artículo 44 reconoce estos derechos a trabajadores y trabajadoras para fomentar la corresponsabilidad y evitar discriminaciones por su ejercicio.",
+            "options": [
+                {
+                    "content": "Se reconocen solo a las trabajadoras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se reconocen a las personas trabajadoras en forma que fomente la asunción equilibrada de las responsabilidades familiares, evitando toda discriminación basada en su ejercicio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se reconocen únicamente al personal funcionario con hijos menores de tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se concederán solo si no afectan a la organización del servicio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El Plan Estratégico de Igualdad de Oportunidades, previsto en la LO 3/2007 para las materias de competencia del Estado, es aprobado por las Cortes Generales.",
+            "explanation": "El artículo 17 atribuye su aprobación periódica al Gobierno.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El principio de igualdad de trato entre mujeres y hombres supone, según el artículo 3 de la LO 3/2007, la ausencia de toda discriminación, directa o indirecta, por razón de sexo, y especialmente las derivadas de:",
+            "explanation": "El artículo 3 menciona expresamente las discriminaciones derivadas de la maternidad, la asunción de obligaciones familiares y el estado civil.",
+            "options": [
+                {
+                    "content": "La maternidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La asunción de obligaciones familiares",
+                    "is_correct": false
+                },
+                {
+                    "content": "El estado civil",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todas las anteriores son correctas",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

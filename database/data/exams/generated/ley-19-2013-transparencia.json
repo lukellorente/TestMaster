@@ -1,0 +1,560 @@
+{
+    "slug": "ley-19-2013-transparencia",
+    "title": "Ley 19/2013 de Transparencia y buen gobierno",
+    "description": "Test de la Ley 19/2013 para el temario de la AGE: publicidad activa, derecho de acceso, límites y Consejo de Transparencia. Lo hice para repasar antes del examen, espero que os sirva.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:01:48+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1 de la Ley 19/2013, de 9 de diciembre, esta norma tiene por objeto:",
+            "explanation": "El artículo 1 recoge tres objetivos: transparencia de la actividad pública, derecho de acceso a la información y obligaciones de buen gobierno.",
+            "options": [
+                {
+                    "content": "Regular el procedimiento administrativo común de las Administraciones Públicas y el régimen de sus órganos colegiados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ampliar y reforzar la transparencia de la actividad pública, regular y garantizar el derecho de acceso a la información relativa a aquella actividad y establecer las obligaciones de buen gobierno.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Regular exclusivamente la publicidad de los contratos del sector público y de las subvenciones concedidas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Establecer el régimen de protección de datos personales en el ámbito de la Administración General del Estado.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 3 de la Ley 19/2013, las entidades privadas que perciban durante el período de un año ayudas o subvenciones públicas deberán cumplir las obligaciones de transparencia cuando la cuantía sea superior a:",
+            "explanation": "El artículo 3 fija el umbral en más de 100.000 euros, o bien que al menos el 40 % de sus ingresos anuales sea ayuda pública (con un mínimo de 5.000 euros).",
+            "options": [
+                {
+                    "content": "60.000 euros.",
+                    "is_correct": false
+                },
+                {
+                    "content": "150.000 euros.",
+                    "is_correct": false
+                },
+                {
+                    "content": "100.000 euros.",
+                    "is_correct": true
+                },
+                {
+                    "content": "200.000 euros.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con la información institucional, organizativa y de planificación del artículo 6 de la Ley 19/2013, los sujetos obligados deben publicar:",
+            "explanation": "Funciones, normativa aplicable y estructura organizativa son información institucional y organizativa; las demás opciones pertenecen a la información económica o de relevancia jurídica.",
+            "options": [
+                {
+                    "content": "Las funciones que desarrollan, la normativa que les sea de aplicación y su estructura organizativa.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las retribuciones anuales de los altos cargos y de los máximos responsables de las entidades.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los presupuestos, con descripción de las principales partidas presupuestarias.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las directrices, instrucciones y circulares que supongan una interpretación del Derecho.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes informaciones se incluye entre la de relevancia jurídica que debe publicarse conforme al artículo 7 de la Ley 19/2013?",
+            "explanation": "El artículo 7 recoge la información de relevancia jurídica, como las directrices e instrucciones; contratos, subvenciones y cuentas son información económica del artículo 8.",
+            "options": [
+                {
+                    "content": "Los contratos celebrados, con indicación del importe de adjudicación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las subvenciones y ayudas públicas concedidas, con su importe y beneficiarios.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las cuentas anuales y los informes de auditoría de cuentas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las directrices, instrucciones, acuerdos y circulares que supongan una interpretación del Derecho o tengan efectos jurídicos.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta respecto de la información de carácter económico, presupuestario y estadístico que deben publicar los sujetos del artículo 8 de la Ley 19/2013:",
+            "explanation": "Convenios, presupuestos y subvenciones sí son información del artículo 8; los procedimientos disciplinarios abiertos no figuran entre ella.",
+            "options": [
+                {
+                    "content": "Los convenios suscritos, con mención de las partes firmantes, su objeto y obligaciones económicas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los presupuestos, con descripción de las principales partidas presupuestarias.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las subvenciones y ayudas públicas concedidas, con su importe, objetivo y beneficiarios.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los procedimientos disciplinarios abiertos contra los empleados públicos de la entidad.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los partidos políticos, las organizaciones sindicales y las organizaciones empresariales están sujetos a las obligaciones de publicidad activa de la Ley 19/2013.",
+            "explanation": "El artículo 3 los incluye expresamente entre los sujetos que deben cumplir las obligaciones de publicidad activa.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10 de la Ley 19/2013, el Portal de la Transparencia, que facilita el acceso a la información objeto de publicidad activa, es desarrollado por:",
+            "explanation": "El artículo 10 encomienda a la Administración General del Estado el desarrollo del Portal de la Transparencia.",
+            "options": [
+                {
+                    "content": "El Consejo de Transparencia y Buen Gobierno.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Defensor del Pueblo.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Congreso de los Diputados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Administración General del Estado.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 19/2013, el incumplimiento reiterado de las obligaciones de publicidad activa tiene la consideración de infracción grave a los efectos del régimen disciplinario aplicable a sus responsables.",
+            "explanation": "El artículo 9 establece que el incumplimiento reiterado de la publicidad activa es infracción grave a efectos disciplinarios.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 12 de la Ley 19/2013, en los términos previstos en el artículo 105.b) de la Constitución, tienen derecho a acceder a la información pública:",
+            "explanation": "El artículo 12 reconoce el derecho a todas las personas, sin exigir nacionalidad, edad ni interés acreditado.",
+            "options": [
+                {
+                    "content": "Solo los ciudadanos españoles mayores de edad.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo quienes ostenten la condición de interesados en un procedimiento administrativo.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todas las personas.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo quienes acrediten un interés legítimo y directo.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "A efectos de la Ley 19/2013, se entiende por información pública:",
+            "explanation": "El artículo 13 define la información pública con independencia del formato y de que se haya elaborado o adquirido en el ejercicio de funciones.",
+            "options": [
+                {
+                    "content": "Los contenidos o documentos, cualquiera que sea su formato o soporte, que obren en poder de los sujetos obligados y hayan sido elaborados o adquiridos en el ejercicio de sus funciones.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente los documentos en soporte electrónico elaborados por el propio sujeto obligado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo los documentos que hayan sido objeto de aprobación definitiva y publicación oficial.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los documentos elaborados por el sujeto obligado, con exclusión de los que haya adquirido de terceros.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO figura entre los límites al derecho de acceso del artículo 14.1 de la Ley 19/2013:",
+            "explanation": "Seguridad nacional, relaciones exteriores y secreto profesional son límites del artículo 14.1; la reputación de los altos cargos no lo es.",
+            "options": [
+                {
+                    "content": "La seguridad nacional.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las relaciones exteriores.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El secreto profesional y la propiedad intelectual e industrial.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La reputación personal de los altos cargos.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 14.2 de la Ley 19/2013, la aplicación de los límites al derecho de acceso:",
+            "explanation": "Los límites no operan automáticamente: deben justificarse y ponderarse caso por caso, con proporcionalidad.",
+            "options": [
+                {
+                    "content": "Es automática cuando la información solicitada guarde relación con alguno de ellos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Será justificada y proporcionada a su finalidad de protección, y atenderá al caso concreto, en especial a la concurrencia de un interés superior que justifique el acceso.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Corresponde decidirla siempre al Consejo de Transparencia y Buen Gobierno antes de resolver la solicitud.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exige siempre autorización judicial previa.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si la información solicitada contuviera datos especialmente protegidos que revelen la ideología, afiliación sindical, religión o creencias, el acceso solo se podrá autorizar, salvo que el afectado los hubiera hecho manifiestamente públicos, si se cuenta con:",
+            "explanation": "El artículo 15 exige consentimiento expreso y por escrito para estos datos, salvo que el afectado los haya hecho manifiestamente públicos.",
+            "options": [
+                {
+                    "content": "El consentimiento tácito del afectado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La autorización del Consejo de Transparencia y Buen Gobierno.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El consentimiento expreso y por escrito del afectado.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La resolución motivada del órgano que posea la información, sin necesidad de consentimiento.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 16 de la Ley 19/2013, cuando la aplicación de un límite no afecte a la totalidad de la información solicitada:",
+            "explanation": "El acceso parcial es la regla cuando el límite solo afecta a parte de la información, con la salvedad de que el resultado carezca de sentido o sea distorsionado.",
+            "options": [
+                {
+                    "content": "Se concederá el acceso parcial, previa omisión de la información afectada por el límite, salvo que resulte una información distorsionada o sin sentido.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se denegará siempre el acceso a la totalidad de la información.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se concederá el acceso total si el solicitante justifica su interés.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se remitirá la solicitud al Consejo de Transparencia para que decida qué parte se entrega.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre la solicitud de acceso a la información pública en la Ley 19/2013:",
+            "explanation": "El solicitante no está obligado a motivar su solicitud, y la ausencia de motivación no es por sí sola causa de rechazo.",
+            "options": [
+                {
+                    "content": "Debe dirigirse al titular del órgano administrativo o entidad que posea la información.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe contener la identidad del solicitante.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe contener la información que se solicita.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe estar motivada necesariamente, siendo inadmitida a trámite en caso contrario.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme al artículo 18 de la Ley 19/2013, se inadmitirán a trámite, mediante resolución motivada, las solicitudes:",
+            "explanation": "La información auxiliar o de apoyo es una de las causas de inadmisión del artículo 18; la falta de motivación o la antigüedad no lo son.",
+            "options": [
+                {
+                    "content": "Presentadas por personas jurídicas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Referidas a información de carácter auxiliar o de apoyo, como notas, borradores, resúmenes o informes internos.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que no expongan los motivos por los que se pide la información.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Relativas a documentos con más de un año de antigüedad.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si la información solicitada pudiera afectar a derechos o intereses de terceros debidamente identificados, el artículo 19 de la Ley 19/2013 les concede, para realizar alegaciones, un plazo de:",
+            "explanation": "Se concede un plazo de quince días, con suspensión del plazo para resolver, e informando de ello al solicitante.",
+            "options": [
+                {
+                    "content": "5 días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "20 días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 20 de la Ley 19/2013, la resolución en que se conceda o deniegue el acceso deberá notificarse en el plazo máximo de:",
+            "explanation": "El plazo general es de un mes desde que la solicitud llega al órgano competente, ampliable por otro mes.",
+            "options": [
+                {
+                    "content": "Un mes desde la recepción de la solicitud por el órgano competente para resolver, ampliable por otro mes si el volumen o la complejidad lo justifican.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez días hábiles desde la presentación de la solicitud, no ampliables.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses desde la presentación de la solicitud, no ampliables.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses desde la recepción de la solicitud, ampliables por otros tres.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Transcurrido el plazo máximo para resolver una solicitud de acceso a la información pública sin que se haya dictado resolución expresa, la solicitud se entenderá:",
+            "explanation": "En esta materia el silencio es negativo, lo que permite reclamar ante el Consejo de Transparencia o acudir a la vía contencioso-administrativa.",
+            "options": [
+                {
+                    "content": "Estimada por silencio positivo.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Concedida solo parcialmente.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Caducada, y el procedimiento se archivará sin posibilidad de reclamación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desestimada por silencio administrativo.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En cuanto al coste del acceso a la información pública, la Ley 19/2013 establece que:",
+            "explanation": "El acceso en sí es gratuito; solo las copias o el cambio de formato pueden generar exacciones.",
+            "options": [
+                {
+                    "content": "El acceso estará siempre sujeto al pago de una tasa fija.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El acceso será gratuito, aunque la expedición de copias o la transposición a un formato distinto del original puede dar lugar a exacciones.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El acceso es gratuito en todo caso, incluidas las copias en cualquier formato.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo es gratuito para las personas físicas.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 19/2013, la reclamación ante el Consejo de Transparencia y Buen Gobierno es obligatoria antes de poder impugnar en vía contencioso-administrativa una resolución en materia de acceso.",
+            "explanation": "La reclamación tiene carácter potestativo y previo a la vía contencioso-administrativa: es una opción del interesado, no una obligación.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El plazo para interponer la reclamación ante el Consejo de Transparencia y Buen Gobierno frente a una resolución expresa en materia de acceso es de:",
+            "explanation": "El artículo 24 fija un plazo de un mes, contado desde el día siguiente a la notificación o a la producción de los efectos del silencio.",
+            "options": [
+                {
+                    "content": "Diez días hábiles desde la notificación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días hábiles desde la notificación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes desde la notificación del acto impugnado o desde que se produzcan los efectos del silencio.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos meses desde la notificación del acto impugnado.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la naturaleza del Consejo de Transparencia y Buen Gobierno, la Ley 19/2013 establece que:",
+            "explanation": "La Ley le atribuye personalidad jurídica propia, plena capacidad de obrar y actuación con autonomía e independencia.",
+            "options": [
+                {
+                    "content": "Tiene personalidad jurídica propia y plena capacidad de obrar, y actúa con autonomía e independencia en el cumplimiento de sus fines.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Carece de personalidad jurídica y está integrado jerárquicamente en un Ministerio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es un órgano auxiliar dependiente de las Cortes Generales.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es una sociedad mercantil estatal encargada de gestionar el Portal de la Transparencia.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Presidente del Consejo de Transparencia y Buen Gobierno es nombrado por un período de:",
+            "explanation": "La Ley 19/2013 establece un mandato de cinco años no renovable, nombrado mediante Real Decreto.",
+            "options": [
+                {
+                    "content": "Tres años, renovable por una sola vez.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años, renovable por períodos iguales.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis años, no renovable.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años, no renovable.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es una función del Consejo de Transparencia y Buen Gobierno según la Ley 19/2013:",
+            "explanation": "El Consejo no ejerce funciones jurisdiccionales: los recursos contra sus resoluciones los resuelve la jurisdicción contencioso-administrativa.",
+            "options": [
+                {
+                    "content": "Velar por el cumplimiento de las obligaciones de publicidad.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolver en vía jurisdiccional los recursos contencioso-administrativos contra sus propias resoluciones.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Asesorar en materia de transparencia, acceso a la información pública y buen gobierno.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Promover actividades de formación y sensibilización para el conocimiento de las materias de la Ley.",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

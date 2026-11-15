@@ -1,0 +1,453 @@
+{
+    "slug": "ley-50-1997-gobierno",
+    "title": "Ley 50/1997 del Gobierno",
+    "description": "Test de la Ley 50/1997 del Gobierno para repasar antes del examen de la AGE: composición, funciones, Consejo de Ministros, comisiones delegadas y Gobierno en funciones.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:54:56+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 98 de la Constitución y la Ley 50/1997, ¿cómo se compone el Gobierno?",
+            "explanation": "El Gobierno se compone del Presidente, de los Vicepresidentes (en su caso) y de los Ministros. Secretarios de Estado y Subsecretarios son órganos superiores o directivos de la Administración, no miembros del Gobierno.",
+            "options": [
+                {
+                    "content": "Presidente, Ministros y Secretarios de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Presidente, Vicepresidentes en su caso, y Ministros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Presidente, Subsecretarios y Ministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Presidente, Ministros y Directores Generales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre las funciones del Gobierno:",
+            "explanation": "La potestad legislativa corresponde a las Cortes Generales; el Gobierno solo la ejerce de forma excepcional (decretos-leyes y decretos legislativos).",
+            "options": [
+                {
+                    "content": "Dirige la política interior y exterior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dirige la Administración civil y militar y la defensa del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejerce la función ejecutiva y la potestad reglamentaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejerce con carácter ordinario la potestad legislativa del Estado",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La Ley 50/1997, del Gobierno, tiene fecha de:",
+            "explanation": "Es la Ley 50/1997, de 27 de noviembre, del Gobierno.",
+            "options": [
+                {
+                    "content": "27 de noviembre de 1997",
+                    "is_correct": true
+                },
+                {
+                    "content": "27 de diciembre de 1997",
+                    "is_correct": false
+                },
+                {
+                    "content": "26 de noviembre de 1997",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 de octubre de 1997",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Quién nombra y separa a los Ministros?",
+            "explanation": "Según el artículo 100 de la Constitución, los demás miembros del Gobierno son nombrados y separados por el Rey, a propuesta del Presidente.",
+            "options": [
+                {
+                    "content": "El Presidente del Gobierno, directamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Congreso de los Diputados, a propuesta del Presidente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Rey, a propuesta del Presidente del Gobierno",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Consejo de Ministros, por mayoría",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Quién crea, modifica y suprime los departamentos ministeriales mediante real decreto?",
+            "explanation": "Entre las competencias del Presidente figura crear, modificar y suprimir los departamentos ministeriales y las Secretarías de Estado mediante real decreto.",
+            "options": [
+                {
+                    "content": "El Consejo de Ministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Gobierno",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Congreso de los Diputados",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Rey, con refrendo del Ministro de Hacienda",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Presidente del Gobierno puede proponer al Rey la convocatoria de un referéndum consultivo:",
+            "explanation": "El artículo 92 de la Constitución exige la autorización previa del Congreso de los Diputados, y la Ley 50/1997 lo recoge entre las competencias del Presidente.",
+            "options": [
+                {
+                    "content": "Previa autorización del Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Previo dictamen del Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Previa autorización de las Cortes Generales en sesión conjunta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Previa autorización del Congreso de los Diputados",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En caso de vacante, ausencia o enfermedad del Presidente del Gobierno, le suplen:",
+            "explanation": "La suplencia recae en los Vicepresidentes según su orden y, si no los hay, en los Ministros según el orden de precedencia de los departamentos.",
+            "options": [
+                {
+                    "content": "Los Vicepresidentes por su orden y, en su defecto, los Ministros por orden de precedencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente del Congreso de los Diputados",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ministro de más edad",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Secretario de Estado de la Presidencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Quién declara el estado de alarma?",
+            "explanation": "El estado de alarma lo declara el Gobierno mediante decreto acordado en Consejo de Ministros, dando cuenta al Congreso.",
+            "options": [
+                {
+                    "content": "El Congreso de los Diputados por mayoría absoluta",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Rey, a propuesta del Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Gobierno, mediante decreto acordado en Consejo de Ministros",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente del Gobierno, sin deliberación del Consejo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con el estado de sitio, el Consejo de Ministros:",
+            "explanation": "El estado de sitio lo declara el Congreso por mayoría absoluta, exclusivamente a propuesta del Gobierno.",
+            "options": [
+                {
+                    "content": "Lo declara directamente mediante real decreto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Propone su declaración al Congreso de los Diputados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lo declara previa autorización del Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo declara por decreto y lo comunica al Congreso en 15 días",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un real decreto-ley aprobado por el Consejo de Ministros debe ser convalidado por el Congreso en el plazo de:",
+            "explanation": "El artículo 86 de la Constitución fija el plazo de convalidación en los treinta días siguientes a la promulgación del decreto-ley.",
+            "options": [
+                {
+                    "content": "Quince días desde su publicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días desde su aprobación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sesenta días desde su publicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los treinta días siguientes a su promulgación",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la opción que NO es una forma que adoptan las decisiones del Consejo de Ministros:",
+            "explanation": "Las decisiones del Consejo de Ministros adoptan la forma de real decreto-ley, real decreto legislativo, real decreto o acuerdo. La orden ministerial es la forma de las disposiciones de los Ministros.",
+            "options": [
+                {
+                    "content": "Orden ministerial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Real decreto legislativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Real decreto-ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acuerdo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la función de la Comisión General de Secretarios de Estado y Subsecretarios?",
+            "explanation": "Es un órgano de apoyo que prepara y estudia los asuntos que se elevan al Consejo de Ministros, sin decisión propia sobre ellos.",
+            "options": [
+                {
+                    "content": "Sustituir al Consejo de Ministros cuando este no pueda reunirse",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aprobar los reglamentos ejecutivos de las leyes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estudiar los asuntos que vayan a ser sometidos al Consejo de Ministros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Resolver los recursos de alzada contra actos de los Ministros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una función de las Comisiones Delegadas del Gobierno?",
+            "explanation": "Las Comisiones Delegadas examinan cuestiones de política general que afecten a varios ministerios, estudian propuestas conjuntas para el Consejo y resuelven asuntos interministeriales que no requieran su decisión.",
+            "options": [
+                {
+                    "content": "Resolver asuntos que afecten a más de un Ministerio y no requieran decisión del Consejo de Ministros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aprobar reales decretos-leyes en caso de urgencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Proponer al Rey la disolución de las Cortes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Declarar el estado de excepción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 98.3 de la Constitución, los miembros del Gobierno no podrán ejercer:",
+            "explanation": "No pueden ejercer otras funciones representativas distintas del mandato parlamentario, ni empleo público ajeno al cargo, ni actividad profesional o mercantil.",
+            "options": [
+                {
+                    "content": "El mandato parlamentario como Diputado o Senador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Funciones representativas distintas del mandato parlamentario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Funciones propias de su cargo ministerial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tareas de dirección política de un partido",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. El Gobierno cesa:",
+            "explanation": "El Gobierno cesa por elecciones generales, pérdida de confianza parlamentaria, dimisión o fallecimiento del Presidente. La dimisión de un Ministro solo supone su cese individual.",
+            "options": [
+                {
+                    "content": "Tras la celebración de elecciones generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por dimisión de un Ministro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Por pérdida de la confianza parlamentaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por fallecimiento del Presidente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 50/1997, el Gobierno en funciones limitará su gestión:",
+            "explanation": "Se abstendrá de adoptar otras medidas, salvo casos de urgencia debidamente acreditados o de interés general.",
+            "options": [
+                {
+                    "content": "A la aprobación de reales decretos-leyes",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la ejecución del presupuesto prorrogado",
+                    "is_correct": false
+                },
+                {
+                    "content": "A asuntos de interés exclusivamente económico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al despacho ordinario de los asuntos públicos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes actuaciones NO puede realizar el Gobierno en funciones?",
+            "explanation": "La Ley 50/1997 prohíbe al Gobierno en funciones aprobar el Proyecto de Ley de Presupuestos Generales del Estado y presentar proyectos de ley al Congreso.",
+            "options": [
+                {
+                    "content": "Aprobar reglamentos de despacho ordinario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adoptar medidas urgentes debidamente acreditadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aprobar el Proyecto de Ley de Presupuestos Generales del Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Facilitar el traspaso de poderes al nuevo Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El Presidente del Gobierno en funciones no podrá proponer al Rey la disolución de alguna de las Cámaras o de las Cortes Generales.",
+            "explanation": "Así lo establece la Ley 50/1997: el Presidente en funciones tampoco puede plantear la cuestión de confianza ni proponer un referéndum consultivo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El Gobierno responde solidariamente en su gestión política ante el Congreso de los Diputados.",
+            "explanation": "Es el principio de responsabilidad política solidaria del artículo 108 de la Constitución, sin perjuicio de la responsabilidad directa de cada Ministro por su gestión.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 50/1997, el Gobierno en funciones ejercerá sus funciones con el fin de:",
+            "explanation": "La Ley impone al Gobierno en funciones facilitar la formación del nuevo Gobierno y el traspaso de poderes, con una gestión limitada.",
+            "options": [
+                {
+                    "content": "Facilitar el normal desarrollo del proceso de formación del nuevo Gobierno y el traspaso de poderes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Impulsar su programa político hasta la siguiente moción de censura",
+                    "is_correct": false
+                },
+                {
+                    "content": "Preparar la disolución de las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mantener la dirección política del Estado con plenitud de funciones",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

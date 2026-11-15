@@ -1,0 +1,568 @@
+{
+    "slug": "ce-titulo-preliminar",
+    "title": "Constitución Española - Título Preliminar",
+    "description": "Test sobre el Título Preliminar de la Constitución Española (artículos 1 a 9) para repasar antes del examen de la AGE. Preguntas tipo oposición, con la CE de 1978 vigente en 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:26:43+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1.1 de la Constitución Española, España se constituye en un:",
+            "explanation": "El artículo 1.1 CE define a España como un Estado social y democrático de Derecho.",
+            "options": [
+                {
+                    "content": "Estado social y democrático de Derecho",
+                    "is_correct": true
+                },
+                {
+                    "content": "Estado democrático y social de Derecho, de carácter federal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estado de Derecho, democrático y autonómico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estado social y democrático de Derecho, descentralizado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es un valor superior del ordenamiento jurídico según el artículo 1.1 de la Constitución:",
+            "explanation": "Los valores superiores del artículo 1.1 son libertad, justicia, igualdad y pluralismo político. La solidaridad se menciona en el artículo 2, pero no como valor superior.",
+            "options": [
+                {
+                    "content": "La libertad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "El pluralismo político",
+                    "is_correct": false
+                },
+                {
+                    "content": "La solidaridad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1.2 de la Constitución, la soberanía nacional reside en:",
+            "explanation": "El artículo 1.2 CE establece que la soberanía nacional reside en el pueblo español, del que emanan los poderes del Estado.",
+            "options": [
+                {
+                    "content": "Las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "El pueblo español",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Nación española constituida en Cortes",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Rey, como Jefe del Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la forma política del Estado español según el artículo 1.3 de la Constitución?",
+            "explanation": "El artículo 1.3 CE dispone que la forma política del Estado español es la Monarquía parlamentaria.",
+            "options": [
+                {
+                    "content": "La Monarquía parlamentaria",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Monarquía constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "La República parlamentaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Monarquía democrática y autonómica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 2 de la Constitución, esta se fundamenta en:",
+            "explanation": "El artículo 2 CE se fundamenta en la indisoluble unidad de la Nación española, patria común e indivisible de todos los españoles.",
+            "options": [
+                {
+                    "content": "La soberanía del pueblo español y la división de poderes",
+                    "is_correct": false
+                },
+                {
+                    "content": "La igualdad de las nacionalidades y regiones que integran España",
+                    "is_correct": false
+                },
+                {
+                    "content": "La indisoluble unidad de la Nación española, patria común e indivisible de todos los españoles",
+                    "is_correct": true
+                },
+                {
+                    "content": "La unidad de la Nación española y el pacto entre las Comunidades Autónomas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El artículo 2 de la Constitución reconoce y garantiza el derecho a la autonomía de las nacionalidades y regiones que integran la Nación española y la:",
+            "explanation": "El artículo 2 CE garantiza la autonomía de nacionalidades y regiones y la solidaridad entre todas ellas.",
+            "options": [
+                {
+                    "content": "Igualdad entre todas ellas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cooperación entre todas ellas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lealtad institucional entre todas ellas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solidaridad entre todas ellas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 3.1 de la Constitución, respecto del castellano, lengua española oficial del Estado:",
+            "explanation": "El artículo 3.1 CE establece el deber de conocer el castellano y el derecho a usarlo.",
+            "options": [
+                {
+                    "content": "Todos los españoles tienen el derecho a conocerla y el deber de usarla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo es obligatorio su conocimiento en las Comunidades sin lengua propia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todos los españoles tienen el deber de conocerla y el derecho a usarla",
+                    "is_correct": true
+                },
+                {
+                    "content": "Todos los españoles tienen el deber de conocerla y de usarla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 3.2 de la Constitución, las demás lenguas españolas serán también oficiales en las respectivas Comunidades Autónomas:",
+            "explanation": "El artículo 3.2 CE remite a los Estatutos de Autonomía la oficialidad de las demás lenguas españolas.",
+            "options": [
+                {
+                    "content": "De acuerdo con sus Estatutos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando así lo disponga una ley orgánica estatal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Si lo acuerda el Parlamento autonómico por mayoría absoluta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conforme a lo que establezcan las Cortes Generales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 3.3 de la Constitución, la riqueza de las distintas modalidades lingüísticas de España es:",
+            "explanation": "El artículo 3.3 CE considera la riqueza de las modalidades lingüísticas un patrimonio cultural objeto de especial respeto y protección.",
+            "options": [
+                {
+                    "content": "Un derecho fundamental de los ciudadanos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un principio rector de la política social y económica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un patrimonio cultural que será objeto de especial respeto y protección",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una competencia exclusiva de las Comunidades Autónomas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 4.1 de la Constitución, la bandera de España está formada por tres franjas horizontales, roja, amarilla y roja, siendo:",
+            "explanation": "El artículo 4.1 CE establece que la franja amarilla tiene doble anchura que cada una de las rojas.",
+            "options": [
+                {
+                    "content": "La roja de doble anchura que cada una de las amarillas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las tres de igual anchura",
+                    "is_correct": false
+                },
+                {
+                    "content": "La amarilla de triple anchura que cada una de las rojas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La amarilla de doble anchura que cada una de las rojas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 4.2 de la Constitución, las banderas y enseñas propias de las Comunidades Autónomas reconocidas en sus Estatutos:",
+            "explanation": "El artículo 4.2 CE prevé su uso junto a la bandera de España en edificios públicos y actos oficiales.",
+            "options": [
+                {
+                    "content": "Sustituirán a la bandera de España en sus edificios públicos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se utilizarán junto a la bandera de España en sus edificios públicos y en sus actos oficiales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo podrán utilizarse en actos oficiales de carácter cultural",
+                    "is_correct": false
+                },
+                {
+                    "content": "Requieren autorización de las Cortes Generales para cada uso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5 de la Constitución, la capital del Estado es:",
+            "explanation": "El artículo 5 CE dice únicamente que la capital del Estado es la villa de Madrid.",
+            "options": [
+                {
+                    "content": "La villa de Madrid",
+                    "is_correct": true
+                },
+                {
+                    "content": "La ciudad de Madrid y su área metropolitana",
+                    "is_correct": false
+                },
+                {
+                    "content": "La villa de Madrid, sede de las Cortes y del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comunidad de Madrid",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 6 de la Constitución, los partidos políticos son:",
+            "explanation": "El artículo 6 CE los define como instrumento fundamental para la participación política.",
+            "options": [
+                {
+                    "content": "Asociaciones de interés público que financia el Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Órganos de representación directa de la soberanía popular",
+                    "is_correct": false
+                },
+                {
+                    "content": "Instrumento fundamental para la participación política",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entidades de Derecho público con estructura jerárquica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta en relación con los partidos políticos según el artículo 6 de la Constitución:",
+            "explanation": "Según el artículo 6 CE, la creación de los partidos y el ejercicio de su actividad son libres dentro del respeto a la Constitución y a la ley, sin autorización previa.",
+            "options": [
+                {
+                    "content": "Expresan el pluralismo político",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su creación requiere autorización administrativa previa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Concurren a la formación y manifestación de la voluntad popular",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su estructura interna y funcionamiento deberán ser democráticos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 7 de la Constitución, los sindicatos de trabajadores y las asociaciones empresariales contribuyen a:",
+            "explanation": "El artículo 7 CE les atribuye la defensa y promoción de los intereses económicos y sociales que les son propios.",
+            "options": [
+                {
+                    "content": "La formación de la voluntad popular y la participación política",
+                    "is_correct": false
+                },
+                {
+                    "content": "La defensa y promoción de los intereses económicos y sociales que les son propios",
+                    "is_correct": true
+                },
+                {
+                    "content": "La negociación de los Presupuestos Generales del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La representación de los ciudadanos ante las Cortes Generales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 8.1 de la Constitución, las Fuerzas Armadas están constituidas por:",
+            "explanation": "El artículo 8.1 CE enumera el Ejército de Tierra, la Armada y el Ejército del Aire.",
+            "options": [
+                {
+                    "content": "El Ejército de Tierra, la Armada, el Ejército del Aire y la Guardia Civil",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ejército de Tierra, la Armada y la Unidad Militar de Emergencias",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ejército de Tierra, el Ejército del Aire y la Guardia Real",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ejército de Tierra, la Armada y el Ejército del Aire",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 8.2 de la Constitución, las bases de la organización militar serán reguladas por:",
+            "explanation": "El artículo 8.2 CE dispone que una ley orgánica regulará las bases de la organización militar conforme a los principios de la Constitución.",
+            "options": [
+                {
+                    "content": "Una ley ordinaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un real decreto del Consejo de Ministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una ley orgánica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una ley de bases aprobada por las Cortes Generales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9.1 de la Constitución:",
+            "explanation": "El artículo 9.1 CE sujeta a ciudadanos y poderes públicos a la Constitución y al resto del ordenamiento jurídico.",
+            "options": [
+                {
+                    "content": "Los ciudadanos y los poderes públicos están sujetos a la Constitución y al resto del ordenamiento jurídico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo los poderes públicos están sujetos a la Constitución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los ciudadanos están sujetos a la ley y los poderes públicos a la Constitución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los ciudadanos y los poderes públicos están sujetos únicamente a la Constitución y a las leyes orgánicas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9.2 de la Constitución, corresponde a los poderes públicos:",
+            "explanation": "El artículo 9.2 CE obliga a promover condiciones de libertad e igualdad reales y efectivas y a remover los obstáculos que lo impidan.",
+            "options": [
+                {
+                    "content": "Garantizar la igualdad formal de todos los ciudadanos ante la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Remover los obstáculos que impidan o dificulten la plenitud de la libertad y la igualdad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Asegurar la distribución equitativa de la renta personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eliminar las desigualdades territoriales entre Comunidades Autónomas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes principios NO está garantizado expresamente por el artículo 9.3 de la Constitución:",
+            "explanation": "La inamovilidad judicial se recoge en el artículo 117, no en el 9.3, que enumera legalidad, jerarquía normativa, publicidad, irretroactividad, seguridad jurídica, responsabilidad e interdicción de la arbitrariedad.",
+            "options": [
+                {
+                    "content": "El principio de legalidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La jerarquía normativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "La inamovilidad de los jueces",
+                    "is_correct": true
+                },
+                {
+                    "content": "La seguridad jurídica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9.3 de la Constitución, esta garantiza la irretroactividad de las disposiciones:",
+            "explanation": "El artículo 9.3 CE garantiza la irretroactividad de las disposiciones sancionadoras no favorables o restrictivas de derechos individuales.",
+            "options": [
+                {
+                    "content": "Sancionadoras no favorables o restrictivas de derechos individuales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sancionadoras, favorables o no",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fiscales que establezcan nuevos tributos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Administrativas de carácter general",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes principios aparece garantizado en el artículo 9.3 de la Constitución?",
+            "explanation": "El artículo 9.3 CE garantiza expresamente la interdicción de la arbitrariedad de los poderes públicos. Los demás se regulan en otros artículos.",
+            "options": [
+                {
+                    "content": "La presunción de inocencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "La interdicción de la arbitrariedad de los poderes públicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "La libertad de empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "La inviolabilidad del domicilio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 6 de la Constitución, la creación de los partidos políticos y el ejercicio de su actividad son libres:",
+            "explanation": "El artículo 6 CE condiciona su libertad únicamente al respeto a la Constitución y a la ley.",
+            "options": [
+                {
+                    "content": "Dentro del respeto a la Constitución y a la ley",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siempre que se inscriban en el Registro del Ministerio del Interior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Si obtienen representación en las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando su ámbito de actuación sea estatal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 8.1 de la Constitución, las Fuerzas Armadas tienen como misión garantizar la soberanía e independencia de España, defender su integridad territorial y el ordenamiento constitucional.",
+            "explanation": "Es la redacción literal de la misión de las Fuerzas Armadas en el artículo 8.1 CE.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 7 de la Constitución, la estructura interna y el funcionamiento de los sindicatos de trabajadores y de las asociaciones empresariales deberán ser democráticos.",
+            "explanation": "El artículo 7 CE exige estructura interna y funcionamiento democráticos, además de libertad de creación y actividad dentro del respeto a la Constitución y a la ley.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

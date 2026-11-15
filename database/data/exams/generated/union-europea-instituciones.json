@@ -1,0 +1,675 @@
+{
+    "slug": "union-europea-instituciones",
+    "title": "La Unión Europea: instituciones y fuentes del derecho",
+    "description": "Test del tema de la Unión Europea para la oposición de la AGE: tratados, instituciones y fuentes del derecho. Lo hice repasando el TUE y el TFUE tras Lisboa, espero que os sirva.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:07:43+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué Tratados, firmados en 1957, crearon la Comunidad Económica Europea y la Comunidad Europea de la Energía Atómica (Euratom)?",
+            "explanation": "La CEE y Euratom se crearon con los Tratados de Roma de 1957, que entraron en vigor en 1958. El Tratado de París (1951) creó la CECA.",
+            "options": [
+                {
+                    "content": "Los Tratados de París",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Tratados de Roma",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Tratado de Maastricht",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tratado de Niza",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué Tratado, firmado en 1992, creó la Unión Europea?",
+            "explanation": "El Tratado de la Unión Europea se firmó en Maastricht en 1992 y entró en vigor en 1993.",
+            "options": [
+                {
+                    "content": "El Tratado de Maastricht",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Tratado de Ámsterdam",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tratado de Niza",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Acta Única Europea",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Tratado de Lisboa, que reformó los Tratados constitutivos de la Unión, entró en vigor el:",
+            "explanation": "El Tratado de Lisboa se firmó el 13 de diciembre de 2007 y entró en vigor el 1 de diciembre de 2009.",
+            "options": [
+                {
+                    "content": "1 de enero de 2009",
+                    "is_correct": false
+                },
+                {
+                    "content": "13 de diciembre de 2007",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 de diciembre de 2009",
+                    "is_correct": true
+                },
+                {
+                    "content": "1 de noviembre de 1993",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 13 del Tratado de la Unión Europea, señale cuál de los siguientes órganos NO es una institución de la Unión:",
+            "explanation": "El Comité de las Regiones es un órgano consultivo, no una de las siete instituciones enumeradas en el artículo 13 TUE.",
+            "options": [
+                {
+                    "content": "El Tribunal de Cuentas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Banco Central Europeo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Comité de las Regiones",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Consejo Europeo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 14 del TUE, el número de miembros del Parlamento Europeo no excederá de:",
+            "explanation": "El artículo 14.2 TUE fija un máximo de setecientos cincuenta miembros, más el Presidente.",
+            "options": [
+                {
+                    "content": "750, incluido el Presidente",
+                    "is_correct": false
+                },
+                {
+                    "content": "705, más el Presidente",
+                    "is_correct": false
+                },
+                {
+                    "content": "750, más el Presidente",
+                    "is_correct": true
+                },
+                {
+                    "content": "800, más el Presidente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la composición del Parlamento Europeo, la representación de los ciudadanos es degresivamente proporcional, con un umbral mínimo y máximo de escaños por Estado miembro de:",
+            "explanation": "El artículo 14.2 TUE establece un mínimo de seis miembros por Estado y que ningún Estado tenga más de noventa y seis.",
+            "options": [
+                {
+                    "content": "4 y 96",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 y 96",
+                    "is_correct": true
+                },
+                {
+                    "content": "6 y 99",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 y 90",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA respecto al Parlamento Europeo:",
+            "explanation": "Como regla general, los actos legislativos solo pueden adoptarse a propuesta de la Comisión, que ostenta la iniciativa legislativa.",
+            "options": [
+                {
+                    "content": "Elige al Presidente de la Comisión a propuesta del Consejo Europeo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejerce, conjuntamente con el Consejo, la función presupuestaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejerce, conjuntamente con el Consejo, la función legislativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ostenta el monopolio de la iniciativa legislativa",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 234 del TFUE, la moción de censura del Parlamento Europeo contra la Comisión requiere:",
+            "explanation": "El artículo 234 TFUE exige dos tercios de los votos emitidos, que representen además la mayoría de los miembros del Parlamento.",
+            "options": [
+                {
+                    "content": "Mayoría simple de los votos emitidos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayoría absoluta de los miembros del Parlamento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayoría de dos tercios de los votos emitidos, que represente a la vez la mayoría de los miembros del Parlamento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mayoría de tres quintos de los miembros del Parlamento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto al Consejo Europeo, señale quién NO es miembro del mismo:",
+            "explanation": "Según el artículo 15.2 TUE, el Alto Representante participa en los trabajos del Consejo Europeo, pero no es miembro del mismo.",
+            "options": [
+                {
+                    "content": "El Alto Representante de la Unión para Asuntos Exteriores y Política de Seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente de la Comisión Europea",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Consejo Europeo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Jefes de Estado o de Gobierno de los Estados miembros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 15 del TUE, el Presidente del Consejo Europeo es elegido por mayoría cualificada para un mandato de:",
+            "explanation": "El Presidente del Consejo Europeo es elegido por mayoría cualificada para dos años y medio, con posibilidad de una sola renovación.",
+            "options": [
+                {
+                    "content": "Dos años y medio, renovable una sola vez",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco años, no renovable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años y medio, renovable sin límite",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses, por turno rotatorio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 15 del TUE, ¿cuál de las siguientes afirmaciones sobre el Consejo Europeo es correcta?",
+            "explanation": "El Consejo Europeo da impulso político a la Unión y define sus orientaciones y prioridades generales, pero no ejerce función legislativa.",
+            "options": [
+                {
+                    "content": "Ejerce la función legislativa conjuntamente con el Parlamento Europeo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ostenta la iniciativa legislativa en materia de política exterior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Controla la legalidad de los actos de las instituciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Da a la Unión los impulsos necesarios para su desarrollo y define sus orientaciones y prioridades políticas generales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 16 del TUE, el Consejo está compuesto por:",
+            "explanation": "El Consejo está formado por un representante de cada Estado miembro a nivel ministerial, facultado para comprometer al Gobierno de dicho Estado.",
+            "options": [
+                {
+                    "content": "Los Jefes de Estado o de Gobierno de los Estados miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un representante de cada Estado miembro a nivel ministerial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un representante de cada Estado miembro a nivel de embajador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un número de representantes proporcional a la población de cada Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con arreglo a la regla general del artículo 16 del TUE, la mayoría cualificada en el Consejo se define como:",
+            "explanation": "El artículo 16.4 TUE exige el 55 % de los miembros del Consejo (mínimo quince) que representen al menos el 65 % de la población.",
+            "options": [
+                {
+                    "content": "Al menos el 60 % de los miembros del Consejo, que incluya al menos 16 de ellos, y el 62 % de la población",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al menos el 55 % de los miembros del Consejo, que incluya al menos 14 de ellos, y el 60 % de la población",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al menos el 72 % de los miembros del Consejo y el 65 % de la población",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al menos el 55 % de los miembros del Consejo, que incluya al menos quince de ellos, y que representen al menos el 65 % de la población de la Unión",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 16 del TUE, una minoría de bloqueo en el Consejo debe estar compuesta, como mínimo, por:",
+            "explanation": "El artículo 16.4 TUE dispone que la minoría de bloqueo estará compuesta al menos por cuatro miembros del Consejo; de lo contrario se considera alcanzada la mayoría cualificada.",
+            "options": [
+                {
+                    "content": "Dos miembros del Consejo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres miembros del Consejo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro miembros del Consejo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco miembros del Consejo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Quién preside la formación del Consejo de Asuntos Exteriores?",
+            "explanation": "Según el artículo 18.3 TUE, el Alto Representante preside el Consejo de Asuntos Exteriores; el resto de formaciones se rigen por la presidencia rotatoria.",
+            "options": [
+                {
+                    "content": "El Presidente del Consejo Europeo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Alto Representante de la Unión para Asuntos Exteriores y Política de Seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente de la Comisión Europea",
+                    "is_correct": false
+                },
+                {
+                    "content": "El representante del Estado que ejerce la presidencia rotatoria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 17 del TUE, el Presidente de la Comisión es:",
+            "explanation": "El Consejo Europeo propone al candidato por mayoría cualificada, teniendo en cuenta las elecciones europeas, y el Parlamento lo elige por mayoría de sus miembros.",
+            "options": [
+                {
+                    "content": "Propuesto por el Consejo Europeo por mayoría cualificada y elegido por el Parlamento Europeo por mayoría de los miembros que lo componen",
+                    "is_correct": true
+                },
+                {
+                    "content": "Propuesto por el Parlamento Europeo y nombrado por el Consejo Europeo por unanimidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Propuesto por el Consejo por mayoría cualificada y elegido por el Parlamento Europeo por mayoría simple",
+                    "is_correct": false
+                },
+                {
+                    "content": "Elegido directamente por los ciudadanos de la Unión por sufragio universal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué institución vela por la aplicación de los Tratados y puede iniciar el procedimiento por incumplimiento contra un Estado miembro?",
+            "explanation": "La Comisión, como guardiana de los Tratados, supervisa la aplicación del Derecho de la Unión y puede incoar el recurso por incumplimiento (art. 258 TFUE).",
+            "options": [
+                {
+                    "content": "El Consejo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Parlamento Europeo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo Europeo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comisión Europea",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 19 del TUE, el Tribunal de Justicia de la Unión Europea comprende:",
+            "explanation": "El artículo 19.1 TUE enumera el Tribunal de Justicia, el Tribunal General y los tribunales especializados.",
+            "options": [
+                {
+                    "content": "El Tribunal de Justicia, el Tribunal General y tribunales especializados",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Tribunal de Justicia, el Tribunal General y el Tribunal de Cuentas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tribunal de Justicia y el Tribunal Europeo de Derechos Humanos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tribunal de Justicia, el Tribunal de Primera Instancia y el Tribunal de la Función Pública",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué procedimiento permite a un órgano jurisdiccional nacional plantear al Tribunal de Justicia dudas sobre la interpretación del Derecho de la Unión o sobre la validez de sus actos?",
+            "explanation": "La cuestión prejudicial está regulada en el artículo 267 TFUE y garantiza la aplicación uniforme del Derecho de la Unión.",
+            "options": [
+                {
+                    "content": "El recurso de anulación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El recurso por omisión",
+                    "is_correct": false
+                },
+                {
+                    "content": "La cuestión prejudicial",
+                    "is_correct": true
+                },
+                {
+                    "content": "El recurso por incumplimiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 263 del TFUE, el recurso de anulación debe interponerse en el plazo de:",
+            "explanation": "El artículo 263 TFUE fija un plazo de dos meses, contados según los criterios que establece el propio artículo.",
+            "options": [
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 253 del TFUE, los jueces y abogados generales del Tribunal de Justicia son designados por común acuerdo de los Gobiernos de los Estados miembros para un mandato de:",
+            "explanation": "El mandato es de seis años, con renovación parcial cada tres años, y es renovable.",
+            "options": [
+                {
+                    "content": "Seis años, renovable",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis años, no renovable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nueve años, no renovable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años, renovable",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 283 del TFUE, los miembros del Comité Ejecutivo del Banco Central Europeo son nombrados para un mandato de:",
+            "explanation": "El Presidente, el Vicepresidente y los demás miembros del Comité Ejecutivo son nombrados por ocho años, sin posibilidad de renovación.",
+            "options": [
+                {
+                    "content": "Cinco años, renovable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis años, renovable una vez",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ocho años, renovable una vez",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ocho años, no renovable",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 127 del TFUE, el objetivo principal del Sistema Europeo de Bancos Centrales es:",
+            "explanation": "El artículo 127.1 TFUE establece como objetivo principal la estabilidad de precios; sin perjuicio de él, apoya las políticas económicas generales de la Unión.",
+            "options": [
+                {
+                    "content": "Fomentar el pleno empleo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mantener la estabilidad de precios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Garantizar el crecimiento económico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mantener el equilibrio presupuestario de los Estados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Eurosistema está integrado por:",
+            "explanation": "El Eurosistema agrupa al BCE y a los bancos centrales de los Estados que han adoptado el euro; el SEBC incluye a los de todos los Estados miembros.",
+            "options": [
+                {
+                    "content": "El Banco Central Europeo y los bancos centrales de todos los Estados miembros de la Unión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente el Comité Ejecutivo del Banco Central Europeo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Banco Central Europeo y los bancos centrales nacionales de los Estados miembros cuya moneda es el euro",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Banco Central Europeo y la Comisión Europea",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con las fuentes del Derecho de la Unión, forman parte del Derecho originario todos los siguientes, EXCEPTO:",
+            "explanation": "Las directivas son Derecho derivado, adoptado por las instituciones en aplicación de los Tratados.",
+            "options": [
+                {
+                    "content": "Los Tratados constitutivos y sus modificaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Tratados de adhesión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los protocolos anexos a los Tratados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las directivas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 288 del TFUE, el reglamento:",
+            "explanation": "Así define el artículo 288 TFUE al reglamento; las otras opciones describen la directiva, la decisión con destinatarios y las recomendaciones o dictámenes.",
+            "options": [
+                {
+                    "content": "Tiene alcance general, es obligatorio en todos sus elementos y directamente aplicable en cada Estado miembro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Obliga al Estado destinatario en cuanto al resultado, dejando libertad en cuanto a la forma y los medios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es obligatorio solo para los destinatarios que designe",
+                    "is_correct": false
+                },
+                {
+                    "content": "No tiene carácter vinculante",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 288 del TFUE, la directiva:",
+            "explanation": "La directiva vincula en cuanto al resultado y requiere, por regla general, transposición al ordenamiento nacional.",
+            "options": [
+                {
+                    "content": "Es obligatoria en todos sus elementos y directamente aplicable en los Estados miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obliga al Estado miembro destinatario en cuanto al resultado que deba conseguirse, dejando a las instancias nacionales la elección de la forma y de los medios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Carece de fuerza vinculante y solo expresa una opinión de la institución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo es obligatoria para los particulares a los que designe",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 288 del TFUE, las recomendaciones y los dictámenes son actos jurídicamente vinculantes para sus destinatarios.",
+            "explanation": "El artículo 288 TFUE dispone expresamente que las recomendaciones y los dictámenes no son vinculantes.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El Parlamento Europeo tiene su sede en Estrasburgo, donde se celebran los períodos parciales de sesiones plenarias mensuales.",
+            "explanation": "Según el Protocolo sobre las sedes de las instituciones, el Parlamento tiene su sede en Estrasburgo, donde se celebran doce períodos de sesiones plenarias mensuales.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 15 del TUE, salvo disposición en contrario de los Tratados, el Consejo Europeo se pronuncia por mayoría cualificada.",
+            "explanation": "El artículo 15.4 TUE establece que, salvo disposición en contrario, el Consejo Europeo se pronuncia por consenso.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

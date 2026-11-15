@@ -1,0 +1,453 @@
+{
+    "slug": "ce-poder-judicial",
+    "title": "Poder Judicial en la Constitución",
+    "description": "Test sobre el Título VI de la Constitución (arts. 117 a 127) y el CGPJ para repasar el temario de Administración General del Estado. Muy útil para preparar el bloque de organización del Estado.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:38:09+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 117.1 de la Constitución Española, la justicia emana del pueblo y se administra en nombre de:",
+            "explanation": "El artículo 117.1 CE establece que la justicia emana del pueblo y se administra en nombre del Rey por Jueces y Magistrados integrantes del poder judicial.",
+            "options": [
+                {
+                    "content": "La Nación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Rey",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ley",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 117.1 de la Constitución, señale la respuesta incorrecta. Los Jueces y Magistrados integrantes del poder judicial son:",
+            "explanation": "El artículo 117.1 los califica de independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley; no son electivos.",
+            "options": [
+                {
+                    "content": "Independientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Inamovibles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Responsables",
+                    "is_correct": false
+                },
+                {
+                    "content": "Electivos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 117.2 de la Constitución, los Jueces y Magistrados no podrán ser separados, suspendidos, trasladados ni jubilados, sino por alguna de las causas y con las garantías previstas en:",
+            "explanation": "La inamovilidad judicial del artículo 117.2 CE queda sujeta a las causas y garantías previstas en la ley.",
+            "options": [
+                {
+                    "content": "El Reglamento del Consejo General del Poder Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un acuerdo del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ley",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una resolución del Tribunal Supremo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de Tribunales prohíbe expresamente el artículo 117.6 de la Constitución?",
+            "explanation": "El artículo 117.6 CE dice: «Se prohíben los Tribunales de excepción».",
+            "options": [
+                {
+                    "content": "Los Tribunales de excepción",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los Tribunales militares en estado de sitio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Tribunales del Jurado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Tribunales Superiores de Justicia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 118 de la Constitución, es obligado cumplir las sentencias y demás resoluciones de los Jueces y Tribunales que sean:",
+            "explanation": "El artículo 118 CE obliga a cumplir las sentencias y demás resoluciones firmes de los Jueces y Tribunales, y a prestar la colaboración requerida.",
+            "options": [
+                {
+                    "content": "Recurribles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Firmes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Publicadas en el boletín oficial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Notificadas al Ministerio Fiscal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 119 de la Constitución, la justicia será gratuita cuando así lo disponga la ley y, en todo caso, respecto de:",
+            "explanation": "El artículo 119 CE garantiza la gratuidad, en todo caso, para quienes acrediten insuficiencia de recursos para litigar.",
+            "options": [
+                {
+                    "content": "Los funcionarios públicos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los menores de edad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quienes acrediten insuficiencia de recursos para litigar",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los demandados en procesos penales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto al artículo 120 de la Constitución, señale la respuesta incorrecta:",
+            "explanation": "El artículo 120 CE establece la publicidad de las actuaciones como regla general, con las excepciones de las leyes de procedimiento; no son secretas en materia criminal.",
+            "options": [
+                {
+                    "content": "Las actuaciones judiciales serán secretas en materia criminal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las actuaciones judiciales serán públicas, con las excepciones que prevean las leyes de procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "El procedimiento será predominantemente oral, sobre todo en materia criminal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las sentencias serán siempre motivadas y se pronunciarán en audiencia pública",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 121 de la Constitución, los daños causados por error judicial y por el funcionamiento anormal de la Administración de Justicia darán derecho a una indemnización a cargo:",
+            "explanation": "El artículo 121 CE prevé la indemnización a cargo del Estado, conforme a la ley.",
+            "options": [
+                {
+                    "content": "Del Juez o Magistrado causante",
+                    "is_correct": false
+                },
+                {
+                    "content": "Del Consejo General del Poder Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "De la Comunidad Autónoma correspondiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Del Estado",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 122.1 de la Constitución, los Jueces y Magistrados de carrera formarán:",
+            "explanation": "El artículo 122.1 CE señala que los Jueces y Magistrados de carrera formarán un Cuerpo único; su estatuto lo regula la Ley Orgánica del Poder Judicial.",
+            "options": [
+                {
+                    "content": "Un Cuerpo único",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos Cuerpos, uno de Jueces y otro de Magistrados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una Escala judicial y fiscal conjunta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tantos Cuerpos como órdenes jurisdiccionales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 122.2 de la Constitución, el Consejo General del Poder Judicial tiene funciones, en particular, en materia de nombramientos, ascensos, inspección y régimen disciplinario. ¿Cuál de las siguientes NO se menciona entre ellas?",
+            "explanation": "Resolver recursos de casación es función jurisdiccional del Tribunal Supremo, no del CGPJ, que es el órgano de gobierno del poder judicial.",
+            "options": [
+                {
+                    "content": "Nombramientos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Inspección",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolución de recursos de casación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Régimen disciplinario",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 122.3 de la Constitución, el Consejo General del Poder Judicial estará integrado por el Presidente del Tribunal Supremo y por veinte miembros nombrados por el Rey por un período de:",
+            "explanation": "El artículo 122.3 CE fija un mandato de cinco años para los veinte vocales.",
+            "options": [
+                {
+                    "content": "Cuatro años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siete años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 122.3 de la Constitución, los cuatro miembros del CGPJ propuestos por el Congreso y los cuatro propuestos por el Senado deben serlo por mayoría de:",
+            "explanation": "El artículo 122.3 CE exige mayoría de tres quintos en cada Cámara.",
+            "options": [
+                {
+                    "content": "Mayoría absoluta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos tercios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres quintos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mayoría simple",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 122.3 de la Constitución, los miembros del CGPJ elegidos entre abogados y otros juristas de reconocida competencia deben tener más de:",
+            "explanation": "El artículo 122.3 CE exige más de quince años de ejercicio profesional.",
+            "options": [
+                {
+                    "content": "Quince años de ejercicio en su profesión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez años de ejercicio en su profesión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte años de ejercicio en su profesión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Doce años de ejercicio en su profesión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 123 de la Constitución, el Tribunal Supremo, con jurisdicción en toda España, es el órgano jurisdiccional superior en todos los órdenes, salvo lo dispuesto en materia de:",
+            "explanation": "El artículo 123.1 CE exceptúa las garantías constitucionales, que corresponden al Tribunal Constitucional.",
+            "options": [
+                {
+                    "content": "Derecho foral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuentas públicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencias autonómicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Garantías constitucionales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 124.4 de la Constitución, el Fiscal General del Estado será nombrado por el Rey, a propuesta:",
+            "explanation": "El artículo 124.4 CE dispone que el nombramiento se hace a propuesta del Gobierno, oído el CGPJ.",
+            "options": [
+                {
+                    "content": "Del Consejo General del Poder Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Del Gobierno, oído el Consejo General del Poder Judicial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Del Congreso de los Diputados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Del Ministro de Justicia, oído el Senado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 125 de la Constitución, los ciudadanos podrán participar en la Administración de Justicia mediante la institución de:",
+            "explanation": "El artículo 125 CE reconoce la acción popular y la participación ciudadana mediante el Jurado, en los procesos penales que la ley determine.",
+            "options": [
+                {
+                    "content": "El Defensor del Pueblo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El escabinado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Jurado",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 126 de la Constitución, la policía judicial depende de los Jueces, de los Tribunales y del Ministerio Fiscal en sus funciones de:",
+            "explanation": "El artículo 126 CE sitúa a la policía judicial bajo su dependencia en las funciones de averiguación del delito y descubrimiento y aseguramiento del delincuente.",
+            "options": [
+                {
+                    "content": "Averiguación del delito y descubrimiento y aseguramiento del delincuente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mantenimiento del orden público",
+                    "is_correct": false
+                },
+                {
+                    "content": "Protección de las autoridades del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejecución de las sanciones administrativas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 127.1 de la Constitución, los Jueces, Magistrados y Fiscales, mientras se hallen en activo, no podrán:",
+            "explanation": "El artículo 127.1 CE les prohíbe desempeñar otros cargos públicos y pertenecer a partidos políticos o sindicatos; el 127.2 prevé su asociación profesional.",
+            "options": [
+                {
+                    "content": "Asociarse profesionalmente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejercer funciones jurisdiccionales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Participar en la Administración de Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pertenecer a partidos políticos o sindicatos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 123.2 de la Constitución, el Presidente del Tribunal Supremo será nombrado por el Rey a propuesta del Gobierno.",
+            "explanation": "Es nombrado por el Rey a propuesta del Consejo General del Poder Judicial, en la forma que determine la ley (art. 123.2 CE).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El artículo 117.5 de la Constitución admite el ejercicio de la jurisdicción militar en el ámbito estrictamente castrense y en los supuestos de estado de sitio.",
+            "explanation": "El principio de unidad jurisdiccional del artículo 117.5 CE se exceptúa para la jurisdicción militar en el ámbito estrictamente castrense y en los supuestos de estado de sitio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

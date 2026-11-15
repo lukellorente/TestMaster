@@ -1,0 +1,453 @@
+{
+    "slug": "violencia-genero-lo-1-2004",
+    "title": "LO 1/2004 Violencia de género",
+    "description": "Test de repaso de la LO 1/2004 con sensibilización, derechos de las víctimas y tutela institucional. Me ha servido para preparar el temario de la AGE de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:06:00+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el Título I de la Ley Orgánica 1/2004, ¿qué plan aprobará el Gobierno en materia de sensibilización?",
+            "explanation": "El artículo 3 de la LO 1/2004 prevé que el Gobierno apruebe el Plan Nacional de Sensibilización y Prevención de la Violencia de Género.",
+            "options": [
+                {
+                    "content": "Estrategia Estatal para la Erradicación de la Violencia Doméstica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Plan Integral de Protección de la Familia y la Infancia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Plan Nacional de Sensibilización y Prevención de la Violencia de Género",
+                    "is_correct": true
+                },
+                {
+                    "content": "Plan Estatal de Atención Urgente a las Víctimas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LO 1/2004, los planes de formación inicial y permanente del profesorado deben incluir formación específica en materia de:",
+            "explanation": "La Ley exige formación específica en igualdad del profesorado, que le habilite para la educación en valores y la detección precoz de la violencia.",
+            "options": [
+                {
+                    "content": "Mediación familiar y resolución judicial de conflictos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Igualdad, para educar en el respeto de los derechos y libertades y detectar precozmente la violencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Protección de datos de carácter personal del alumnado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seguridad ciudadana y primeros auxilios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el ámbito educativo, ¿qué deben asegurar las Administraciones competentes en caso de cambio de residencia derivado de actos de violencia de género?",
+            "explanation": "La LO 1/2004 garantiza la escolarización inmediata de los hijos e hijas que se vean afectados por un cambio de residencia derivado de la violencia de género.",
+            "options": [
+                {
+                    "content": "La escolarización inmediata de los hijos e hijas afectados",
+                    "is_correct": true
+                },
+                {
+                    "content": "La reserva de plaza en el centro de origen durante un curso completo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La exención de la prueba de acceso al nuevo centro durante dos cursos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El traslado del alumnado a un centro privado concertado de su elección",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "De acuerdo con la LO 1/2004 y la Ley General de Publicidad, se considerará ilícita la publicidad que:",
+            "explanation": "La Ley considera ilícita la publicidad que utilice la imagen de la mujer con carácter vejatorio o discriminatorio, conforme a la Ley General de Publicidad.",
+            "options": [
+                {
+                    "content": "No incluya mensajes expresos a favor de la igualdad entre mujeres y hombres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Esté dirigida exclusivamente a un público femenino",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se emita en horario de protección infantil",
+                    "is_correct": false
+                },
+                {
+                    "content": "Utilice la imagen de la mujer con carácter vejatorio o discriminatorio",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En el seno de qué órgano se constituye la Comisión contra la Violencia de Género, que apoya técnicamente y orienta la planificación de las medidas sanitarias?",
+            "explanation": "La Comisión contra la Violencia de Género se constituye en el seno del Consejo Interterritorial del Sistema Nacional de Salud.",
+            "options": [
+                {
+                    "content": "Conferencia Sectorial de Igualdad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Observatorio Estatal de Violencia sobre la Mujer",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consejo Interterritorial del Sistema Nacional de Salud",
+                    "is_correct": true
+                },
+                {
+                    "content": "Consejo General del Poder Judicial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la LO 1/2004, la difusión de informaciones relativas a la violencia de género por los medios de comunicación debe garantizar la defensa de los derechos humanos, la libertad y la dignidad de las víctimas y de sus hijos e hijas.",
+            "explanation": "Es el mandato que la Ley dirige a los medios de comunicación en materia de tratamiento de la información sobre violencia de género.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto al derecho a la información de las víctimas de violencia de género, la LO 1/2004 establece que tienen derecho a recibir:",
+            "explanation": "La Ley reconoce a las víctimas el derecho a plena información y asesoramiento adecuado a su situación personal, a través de los servicios, organismos u oficinas de las Administraciones Públicas.",
+            "options": [
+                {
+                    "content": "Información únicamente a través de los Juzgados de Violencia sobre la Mujer",
+                    "is_correct": false
+                },
+                {
+                    "content": "Plena información y asesoramiento adecuado a su situación personal, a través de los servicios u oficinas que dispongan las Administraciones Públicas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Información limitada a las medidas judiciales de protección ya adoptadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Información solo si han presentado denuncia y han obtenido una orden de protección",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LO 1/2004, el derecho a la asistencia social integral de las víctimas se articula a través de servicios sociales de:",
+            "explanation": "La Ley prevé servicios sociales de atención, de emergencia, de apoyo y acogida y de recuperación integral.",
+            "options": [
+                {
+                    "content": "Atención, emergencia, apoyo y acogida y recuperación integral",
+                    "is_correct": true
+                },
+                {
+                    "content": "Información, mediación, reinserción y seguimiento penitenciario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Emergencia y acogida exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Orientación laboral y asistencia sanitaria únicamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En materia de asistencia jurídica, la LO 1/2004 dispone que, con carácter general:",
+            "explanation": "La Ley prevé una asistencia jurídica inmediata y especializada, en la que una misma dirección letrada asume la defensa de la víctima en los procedimientos relacionados con la violencia sufrida.",
+            "options": [
+                {
+                    "content": "La víctima deberá contar con un letrado distinto para cada procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ministerio Fiscal asumirá su defensa en todos los procedimientos civiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "La asistencia letrada solo se presta en el proceso penal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una misma dirección letrada asumirá su defensa en los procesos y procedimientos derivados de la violencia padecida",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LO 1/2004, la suspensión de la relación laboral con reserva del puesto de trabajo de la trabajadora víctima de violencia de género tendrá una duración inicial que no podrá exceder de:",
+            "explanation": "La duración inicial no puede exceder de seis meses, prorrogable judicialmente por periodos de tres meses hasta un máximo de dieciocho.",
+            "options": [
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nueve meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Doce meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las ausencias o faltas de puntualidad al trabajo motivadas por la situación física o psicológica derivada de la violencia de género se considerarán justificadas:",
+            "explanation": "La Ley las considera justificadas cuando lo determinen los servicios sociales de atención o de salud, sin perjuicio de comunicarlo a la empresa a la mayor brevedad.",
+            "options": [
+                {
+                    "content": "Solo cuando exista sentencia firme condenatoria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando así lo determinen los servicios sociales de atención o de salud, según proceda",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente si la empresa las autoriza previamente por escrito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando lo acuerde el Juzgado de Guardia en un plazo de 24 horas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes medios sirve para acreditar las situaciones de violencia de género a efectos de los derechos laborales y de Seguridad Social?",
+            "explanation": "La sentencia condenatoria y la orden de protección son medios de acreditación previstos por la Ley, además del informe del Ministerio Fiscal con indicios en su caso.",
+            "options": [
+                {
+                    "content": "Un informe elaborado por la propia empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un certificado de empadronamiento en el municipio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una declaración responsable de la trabajadora sin otra prueba",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una orden de protección a favor de la víctima",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El programa de acción específico incluido en el Plan de Empleo, según la LO 1/2004, se dirige a:",
+            "explanation": "El programa de acción específico está destinado a las víctimas de violencia de género inscritas como demandantes de empleo.",
+            "options": [
+                {
+                    "content": "Las víctimas de violencia de género inscritas como demandantes de empleo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Todas las mujeres mayores de 45 años desempleadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las funcionarias víctimas de violencia de género exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las víctimas con contrato indefinido que soliciten movilidad geográfica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para acceder a la ayuda de pago único prevista en la LO 1/2004, la víctima no debe tener rentas mensuales superiores al siguiente porcentaje del salario mínimo interprofesional (sin pagas extraordinarias):",
+            "explanation": "La Ley exige carecer de rentas superiores al 75 % del SMI, excluida la parte proporcional de las pagas extraordinarias, además de especial dificultad para obtener empleo.",
+            "options": [
+                {
+                    "content": "El 50 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 100 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 75 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 125 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LO 1/2004, las víctimas de violencia de género serán consideradas colectivo prioritario en el acceso a:",
+            "explanation": "La Ley las considera colectivo prioritario en el acceso a viviendas protegidas y residencias públicas para mayores, en los términos de la legislación aplicable.",
+            "options": [
+                {
+                    "content": "Viviendas de protección oficial en régimen de propiedad exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Viviendas protegidas y residencias públicas para mayores",
+                    "is_correct": true
+                },
+                {
+                    "content": "Centros de formación profesional de titularidad privada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Plazas de empleo público sin necesidad de superar pruebas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la LO 1/2004, los derechos reconocidos a las víctimas de violencia de género solo se garantizan a las mujeres de nacionalidad española.",
+            "explanation": "La Ley los garantiza a todas las víctimas con independencia de su origen, religión o cualquier otra condición o circunstancia personal o social.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué órgano formula las políticas públicas del Gobierno en relación con la violencia de género y coordina e impulsa las acciones que se realicen en esta materia?",
+            "explanation": "Estas funciones corresponden a la Delegación Especial del Gobierno contra la Violencia sobre la Mujer, regulada en el Título III.",
+            "options": [
+                {
+                    "content": "Delegación Especial del Gobierno contra la Violencia sobre la Mujer",
+                    "is_correct": true
+                },
+                {
+                    "content": "Observatorio Estatal de Violencia sobre la Mujer",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fiscalía contra la Violencia sobre la Mujer",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comisión del Consejo Interterritorial del Sistema Nacional de Salud",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 30 de la LO 1/2004, el Observatorio Estatal de Violencia sobre la Mujer es:",
+            "explanation": "El Observatorio es un órgano colegiado de asesoramiento, evaluación, colaboración institucional, elaboración de informes y estudios y propuestas en materia de violencia de género.",
+            "options": [
+                {
+                    "content": "Un órgano jurisdiccional integrado en el Consejo General del Poder Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un organismo autónomo con personalidad jurídica propia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un órgano consultivo dependiente del Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un órgano colegiado al que corresponde el asesoramiento, la evaluación, la colaboración institucional y la elaboración de informes y propuestas de actuación",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Título III de la LO 1/2004, en el ámbito de las Fuerzas y Cuerpos de Seguridad se establecerán:",
+            "explanation": "La Ley prevé unidades especializadas en la prevención de la violencia de género y en el control de la ejecución de las medidas judiciales.",
+            "options": [
+                {
+                    "content": "Juzgados especializados dependientes del Ministerio del Interior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Oficinas de atención exclusivamente en capitales de provincia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Unidades especializadas en la prevención de la violencia de género y en el control de la ejecución de las medidas judiciales adoptadas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un cuerpo único estatal que sustituirá a las policías locales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los planes de colaboración previstos en el Título III deben implicar a todos los siguientes, salvo uno. Señale la respuesta incorrecta:",
+            "explanation": "Los planes de colaboración implican a las Administraciones sanitarias, la Administración de Justicia, las Fuerzas y Cuerpos de Seguridad, los servicios sociales y los organismos de igualdad, pero no a las Fuerzas Armadas.",
+            "options": [
+                {
+                    "content": "Las Administraciones sanitarias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Fuerzas Armadas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las Fuerzas y Cuerpos de Seguridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los servicios sociales y organismos de igualdad",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

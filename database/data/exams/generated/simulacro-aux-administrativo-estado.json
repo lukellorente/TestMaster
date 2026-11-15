@@ -1,0 +1,1119 @@
+{
+    "slug": "simulacro-aux-administrativo-estado",
+    "title": "SIMULACRO Auxiliar Administrativo del Estado 2026 (parte 1)",
+    "description": "Simulacro de 50 preguntas del bloque I para Auxiliar Administrativo del Estado: Constitución, leyes 39 y 40/2015, TREBEP, igualdad y UE. Nivel difícil, tipo examen real, para ir probándote antes de la convocatoria.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:19:45+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es uno de los valores superiores del ordenamiento jurídico según el artículo 1.1 de la Constitución Española:",
+            "explanation": "El artículo 1.1 CE propugna como valores superiores la libertad, la justicia, la igualdad y el pluralismo político; la solidaridad no figura entre ellos.",
+            "options": [
+                {
+                    "content": "Libertad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Igualdad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solidaridad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 168 de la Constitución, la propuesta de revisión total de la Constitución debe ser aprobada por:",
+            "explanation": "El procedimiento agravado del artículo 168 exige dos tercios de cada Cámara, disolución de las Cortes, nueva ratificación por dos tercios y referéndum.",
+            "options": [
+                {
+                    "content": "Mayoría absoluta de cada Cámara",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayoría de dos tercios de cada Cámara, con disolución inmediata de las Cortes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mayoría de tres quintos de cada Cámara",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayoría de dos tercios del Congreso y mayoría absoluta del Senado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Aprobada una reforma constitucional por el procedimiento del artículo 167 CE, ¿quién puede solicitar que se someta a referéndum?",
+            "explanation": "El artículo 167.3 CE permite solicitar el referéndum a una décima parte de los miembros de cualquiera de las Cámaras dentro de los quince días siguientes a la aprobación de la reforma.",
+            "options": [
+                {
+                    "content": "Una quinta parte de los miembros del Congreso, en el plazo de treinta días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cuarta parte de los miembros del Senado, en el plazo de un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una décima parte de los miembros de cualquiera de las Cámaras, en los quince días siguientes a su aprobación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un tercio de los miembros de ambas Cámaras, en los diez días siguientes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 116 de la Constitución, la duración del estado de excepción no podrá exceder de:",
+            "explanation": "El estado de excepción dura como máximo treinta días, prorrogables por otro plazo igual con los mismos requisitos (art. 116.3 CE).",
+            "options": [
+                {
+                    "content": "Treinta días, prorrogable por otro plazo igual",
+                    "is_correct": true
+                },
+                {
+                    "content": "Quince días, prorrogable por otro plazo igual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días, sin posibilidad de prórroga",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sesenta días, prorrogable por otro plazo igual",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 116.4 de la Constitución, el estado de sitio es declarado por la mayoría absoluta del Congreso de los Diputados, a propuesta exclusiva del Gobierno.",
+            "explanation": "Así lo establece el artículo 116.4 CE para la declaración del estado de sitio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 159 de la CE, el Tribunal Constitucional se compone de 12 miembros nombrados por el Rey. ¿Cuántos de ellos lo son a propuesta del Senado?",
+            "explanation": "Cuatro a propuesta del Congreso, cuatro del Senado (ambos por mayoría de tres quintos), dos del Gobierno y dos del Consejo General del Poder Judicial.",
+            "options": [
+                {
+                    "content": "Dos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a las Cortes Generales, señale la respuesta incorrecta:",
+            "explanation": "Los Ministros son nombrados y separados por el Rey a propuesta del Presidente del Gobierno (art. 100 CE), no por las Cortes.",
+            "options": [
+                {
+                    "content": "Representan al pueblo español",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejercen la potestad legislativa del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Controlan la acción del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nombran a los Ministros del Gobierno",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 68.1 de la Constitución, el Congreso se compone de un mínimo de 300 Diputados y un máximo de:",
+            "explanation": "El Congreso se compone de un mínimo de 300 y un máximo de 400 Diputados, elegidos por sufragio universal, libre, igual, directo y secreto.",
+            "options": [
+                {
+                    "content": "400",
+                    "is_correct": true
+                },
+                {
+                    "content": "350",
+                    "is_correct": false
+                },
+                {
+                    "content": "450",
+                    "is_correct": false
+                },
+                {
+                    "content": "500",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme al artículo 99 de la Constitución, si transcurridos dos meses desde la primera votación de investidura ningún candidato hubiera obtenido la confianza del Congreso:",
+            "explanation": "El artículo 99.5 CE prevé la disolución de las Cortes y la convocatoria de elecciones, con el refrendo del Presidente del Congreso.",
+            "options": [
+                {
+                    "content": "El Rey propondrá un nuevo candidato en un plazo de quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Rey disolverá ambas Cámaras y convocará nuevas elecciones, con el refrendo del Presidente del Congreso",
+                    "is_correct": true
+                },
+                {
+                    "content": "Continuará en funciones el Gobierno sin límite de tiempo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Senado designará al Presidente del Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 113 de la Constitución, para que prospere una moción de censura se requiere el voto favorable de:",
+            "explanation": "La moción de censura exige mayoría absoluta del Congreso y debe incluir un candidato a la Presidencia del Gobierno.",
+            "options": [
+                {
+                    "content": "La mayoría simple del Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres quintos de los miembros del Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos tercios de los miembros del Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mayoría absoluta de los miembros del Congreso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 86 de la Constitución, los Decretos-leyes deberán ser sometidos a debate y votación de totalidad en el Congreso de los Diputados para su convalidación en el plazo de:",
+            "explanation": "El artículo 86.2 CE fija un plazo de treinta días siguientes a la promulgación del Decreto-ley.",
+            "options": [
+                {
+                    "content": "Los treinta días siguientes a su promulgación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los treinta días hábiles siguientes a su promulgación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los quince días siguientes a su publicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los tres meses siguientes a su promulgación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a las leyes orgánicas, señale la respuesta incorrecta:",
+            "explanation": "El artículo 81 CE exige mayoría absoluta del Congreso en una votación final sobre el conjunto, no del Senado.",
+            "options": [
+                {
+                    "content": "Desarrollan los derechos fundamentales y las libertades públicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aprueban los Estatutos de Autonomía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su aprobación exige mayoría absoluta del Senado en una votación final sobre el conjunto del proyecto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Regulan el régimen electoral general",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO se enuncia en el artículo 103.1 de la Constitución como principio de actuación de la Administración Pública:",
+            "explanation": "El artículo 103.1 CE cita eficacia, jerarquía, descentralización, desconcentración y coordinación; la transparencia aparece en la Ley 40/2015, no en ese artículo.",
+            "options": [
+                {
+                    "content": "Jerarquía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Transparencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desconcentración",
+                    "is_correct": false
+                },
+                {
+                    "content": "Coordinación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes derechos NO es susceptible de recurso de amparo ante el Tribunal Constitucional según el artículo 53.2 de la Constitución?",
+            "explanation": "El amparo cubre el artículo 14, la Sección 1.ª del Capítulo II (arts. 15 a 29) y la objeción de conciencia del artículo 30; la propiedad (art. 33) está en la Sección 2.ª.",
+            "options": [
+                {
+                    "content": "La igualdad ante la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "La objeción de conciencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "El derecho a la propiedad privada",
+                    "is_correct": true
+                },
+                {
+                    "content": "La libertad ideológica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme al artículo 17 de la Constitución, la detención preventiva no podrá durar más del tiempo estrictamente necesario y, en todo caso, en el plazo máximo de:",
+            "explanation": "Transcurridas setenta y dos horas, el detenido debe ser puesto en libertad o a disposición de la autoridad judicial (art. 17.2 CE).",
+            "options": [
+                {
+                    "content": "Setenta y dos horas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuarenta y ocho horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Noventa y seis horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinticuatro horas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a los principios garantizados por el artículo 9.3 de la Constitución, señale la afirmación incorrecta:",
+            "explanation": "El artículo 9.3 CE garantiza la irretroactividad solo de las disposiciones sancionadoras no favorables o restrictivas de derechos individuales.",
+            "options": [
+                {
+                    "content": "Se garantiza la publicidad de las normas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se garantiza la jerarquía normativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se garantiza la seguridad jurídica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se garantiza la irretroactividad de todas las disposiciones normativas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 64 de la Constitución, la propuesta y el nombramiento del Presidente del Gobierno serán refrendados por:",
+            "explanation": "El artículo 64.1 CE atribuye el refrendo de estos actos al Presidente del Congreso.",
+            "options": [
+                {
+                    "content": "El Presidente del Gobierno en funciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Congreso de los Diputados",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente del Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ministro de la Presidencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 21 de la Ley 39/2015, cuando las normas reguladoras de los procedimientos no fijen el plazo máximo, este será de:",
+            "explanation": "El plazo supletorio para resolver y notificar es de tres meses (art. 21.3 Ley 39/2015).",
+            "options": [
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, si el plazo se fija en meses y en el mes de vencimiento no hay día equivalente al de inicio del cómputo, se entenderá que el plazo expira:",
+            "explanation": "El artículo 30.4 establece que el plazo concluye el último día del mes cuando no existe día equivalente.",
+            "options": [
+                {
+                    "content": "El último día del mes",
+                    "is_correct": true
+                },
+                {
+                    "content": "El primer día del mes siguiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El primer día hábil del mes siguiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El penúltimo día del mes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si la solicitud de iniciación no reúne los requisitos exigidos, el artículo 68 de la Ley 39/2015 requiere al interesado para que la subsane en el plazo de:",
+            "explanation": "Se concede un plazo de diez días, con indicación de que, si no se hace, se le tendrá por desistido de su petición.",
+            "options": [
+                {
+                    "content": "Cinco días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El plazo para interponer recurso de alzada contra un acto expreso es de:",
+            "explanation": "Si el acto fuera expreso, el plazo es de un mes; si no lo fuera, de tres meses (art. 122 Ley 39/2015).",
+            "options": [
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Contra una resolución que pone fin a la vía administrativa cabe interponer recurso de alzada.",
+            "explanation": "El recurso de alzada se interpone contra actos que no ponen fin a la vía administrativa; contra los que sí la agotan cabe reposición potestativa o recurso contencioso-administrativo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El recurso extraordinario de revisión por error de hecho que resulte de los propios documentos incorporados al expediente debe interponerse en el plazo de:",
+            "explanation": "Para la causa primera el plazo es de cuatro años; en los demás casos, tres meses desde el conocimiento de los documentos o la firmeza de la sentencia (art. 125 Ley 39/2015).",
+            "options": [
+                {
+                    "content": "Tres meses desde la notificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años desde la notificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años desde la notificación de la resolución impugnada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un año desde la notificación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 47 de la Ley 39/2015, es causa de nulidad de pleno derecho:",
+            "explanation": "Las otras opciones son supuestos de anulabilidad del artículo 48.",
+            "options": [
+                {
+                    "content": "Prescindir total y absolutamente del procedimiento legalmente establecido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cualquier infracción del ordenamiento jurídico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un defecto de forma que no impida alcanzar el fin del acto",
+                    "is_correct": false
+                },
+                {
+                    "content": "La actuación fuera del tiempo establecido cuando el término no sea esencial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 14.2 de la Ley 39/2015, ¿cuál de los siguientes sujetos NO está obligado a relacionarse a través de medios electrónicos con las Administraciones Públicas?",
+            "explanation": "Las personas físicas pueden elegir en todo momento si se comunican por medios electrónicos o no (art. 14.1).",
+            "options": [
+                {
+                    "content": "Las personas jurídicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las entidades sin personalidad jurídica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los empleados públicos para los trámites derivados de su condición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las personas físicas que no ejerzan una actividad profesional",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando la notificación electrónica es obligatoria, se entenderá rechazada si transcurren sin acceder a su contenido:",
+            "explanation": "El artículo 43.2 de la Ley 39/2015 fija diez días naturales desde la puesta a disposición.",
+            "options": [
+                {
+                    "content": "Cinco días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días naturales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días naturales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El derecho a reclamar responsabilidad patrimonial a las Administraciones Públicas prescribe, con carácter general, al año de:",
+            "explanation": "El artículo 67.1 de la Ley 39/2015 fija un año desde el hecho lesivo; en daños físicos o psíquicos, desde la curación o la determinación del alcance de las secuelas.",
+            "options": [
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Producido el hecho o acto que motive la indemnización",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuatro años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 49 de la Ley 40/2015, los convenios con duración determinada no podrán tener una vigencia superior a cuatro años, salvo que la normativa aplicable prevea otro plazo, y podrán prorrogarse:",
+            "explanation": "Antes de que finalice el plazo, las partes pueden acordar unánimemente su prórroga hasta cuatro años adicionales.",
+            "options": [
+                {
+                    "content": "Por un máximo de dos años más",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por un máximo de un año más",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sin límite alguno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por un máximo de cuatro años adicionales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 23 de la Ley 40/2015, es motivo de abstención tener parentesco con cualquiera de los interesados dentro del:",
+            "explanation": "El artículo 23.2.b) menciona el parentesco de consanguinidad dentro del cuarto grado o de afinidad dentro del segundo.",
+            "options": [
+                {
+                    "content": "Cuarto grado de consanguinidad o segundo de afinidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tercer grado de consanguinidad o primero de afinidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Segundo grado de consanguinidad o segundo de afinidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuarto grado de consanguinidad o cuarto de afinidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9 de la Ley 40/2015, no podrá ser objeto de delegación de competencias:",
+            "explanation": "El artículo 9.2 excluye de la delegación, entre otros asuntos, la adopción de disposiciones de carácter general.",
+            "options": [
+                {
+                    "content": "La concesión de licencias",
+                    "is_correct": false
+                },
+                {
+                    "content": "La adopción de disposiciones de carácter general",
+                    "is_correct": true
+                },
+                {
+                    "content": "La convocatoria de pruebas selectivas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La resolución de procedimientos de concesión de subvenciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la encomienda de gestión regulada en el artículo 11 de la Ley 40/2015, es correcto que:",
+            "explanation": "La encomienda se refiere a actividades de carácter material, técnico o de servicios, y el encomendante conserva la competencia.",
+            "options": [
+                {
+                    "content": "Implica la cesión de la titularidad de la competencia al órgano encomendado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo puede realizarse entre órganos de la misma Administración",
+                    "is_correct": false
+                },
+                {
+                    "content": "No supone cesión de la titularidad de la competencia ni de los elementos sustantivos de su ejercicio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tiene por objeto actividades de carácter jurídico y normativo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Salvo que su normativa específica disponga otra cosa, para la válida constitución de un órgano colegiado se requiere la presencia del Presidente y del Secretario, o de quienes les sustituyan, y de al menos:",
+            "explanation": "Así lo establece el artículo 17.2 de la Ley 40/2015 sobre el quórum de constitución.",
+            "options": [
+                {
+                    "content": "Un tercio de sus miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos tercios de sus miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres quintos de sus miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mitad de sus miembros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 84 de la Ley 40/2015, ¿cuál de las siguientes entidades NO forma parte del sector público institucional estatal?",
+            "explanation": "Las Delegaciones del Gobierno integran la Administración General del Estado en su organización territorial, no el sector público institucional.",
+            "options": [
+                {
+                    "content": "Los organismos autónomos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Delegaciones del Gobierno",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las autoridades administrativas independientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las sociedades mercantiles estatales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 147 de la Ley 40/2015, la Conferencia Sectorial es un órgano de cooperación que reúne, como Presidente, a:",
+            "explanation": "Se compone del miembro del Gobierno que corresponda y de los miembros de los Consejos de Gobierno autonómicos competentes.",
+            "options": [
+                {
+                    "content": "Un miembro del Gobierno de la Administración General del Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un presidente autonómico elegido por rotación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Senado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 56 del TREBEP, uno de los requisitos generales para participar en procesos selectivos es tener cumplidos:",
+            "explanation": "Se exige tener cumplidos dieciséis años y no exceder, en su caso, la edad máxima de jubilación forzosa.",
+            "options": [
+                {
+                    "content": "Dieciocho años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diecisiete años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dieciséis años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinte años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, el funcionario interino nombrado para la ejecución de programas de carácter temporal tiene una duración máxima de:",
+            "explanation": "El artículo 10 TREBEP fija tres años, ampliables hasta doce meses más por las leyes de Función Pública.",
+            "options": [
+                {
+                    "content": "Un año, prorrogable por otro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años, ampliables seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años, sin ampliación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años, ampliables hasta doce meses más",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto al personal eventual regulado en el artículo 12 del TREBEP, señale la respuesta incorrecta:",
+            "explanation": "El TREBEP establece que la condición de personal eventual no podrá constituir mérito para el acceso a la función pública o la promoción interna.",
+            "options": [
+                {
+                    "content": "Constituye mérito para el acceso a la función pública y la promoción interna",
+                    "is_correct": true
+                },
+                {
+                    "content": "Realiza funciones expresamente calificadas como de confianza o asesoramiento especial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su nombramiento y cese son libres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cesa en todo caso cuando cesa la autoridad a la que presta su función",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 97 del TREBEP, las infracciones graves prescriben a los:",
+            "explanation": "Las muy graves prescriben a los tres años, las graves a los dos años y las leves a los seis meses.",
+            "options": [
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el TREBEP, la pertenencia a los órganos de selección será siempre a título individual, no pudiendo ostentarse en representación o por cuenta de nadie.",
+            "explanation": "Así lo dispone el artículo 60 del TREBEP para garantizar la imparcialidad y profesionalidad de los órganos de selección.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La excedencia voluntaria por interés particular exige haber prestado servicios efectivos en cualquiera de las Administraciones Públicas durante un período mínimo inmediatamente anterior de:",
+            "explanation": "El artículo 89.2 del TREBEP exige cinco años de servicios efectivos previos.",
+            "options": [
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 39 del TREBEP, las Juntas de Personal se constituyen en unidades electorales que cuenten con una plantilla de:",
+            "explanation": "Entre seis y cuarenta y nueve funcionarios se eligen Delegados de personal; con cincuenta o más, Juntas de Personal.",
+            "options": [
+                {
+                    "content": "Treinta o más funcionarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuarenta o más funcionarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cien o más funcionarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cincuenta o más funcionarios",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 76 del TREBEP, la titulación exigida para el acceso a los cuerpos del Subgrupo C2 es:",
+            "explanation": "Al C2 se accede con el título de Graduado en ESO; el C1 exige Bachiller o Técnico.",
+            "options": [
+                {
+                    "content": "Graduado en Educación Secundaria Obligatoria",
+                    "is_correct": true
+                },
+                {
+                    "content": "Bachiller o Técnico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Técnico Superior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Título universitario de Grado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes conceptos NO forma parte de las retribuciones básicas de los funcionarios de carrera según el TREBEP?",
+            "explanation": "Las básicas son sueldo, trienios y pagas extraordinarias; el complemento de destino es una retribución complementaria.",
+            "options": [
+                {
+                    "content": "El sueldo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El complemento de destino",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los trienios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las pagas extraordinarias",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la disposición adicional primera de la Ley Orgánica 3/2007, existe composición equilibrada cuando las personas de cada sexo están representadas entre:",
+            "explanation": "Ninguno de los sexos puede superar el sesenta por ciento ni ser inferior al cuarenta por ciento.",
+            "options": [
+                {
+                    "content": "El treinta y el setenta por ciento",
+                    "is_correct": false
+                },
+                {
+                    "content": "El cuarenta y cinco y el cincuenta y cinco por ciento",
+                    "is_correct": false
+                },
+                {
+                    "content": "El cuarenta y el sesenta por ciento",
+                    "is_correct": true
+                },
+                {
+                    "content": "El treinta y cinco y el sesenta y cinco por ciento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La violencia de género regulada en la Ley Orgánica 1/2004 exige que exista convivencia entre agresor y víctima.",
+            "explanation": "La ley incluye la violencia ejercida por quienes sean o hayan sido cónyuges o estén o hayan estado ligados por relaciones similares de afectividad, aun sin convivencia.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 3/2007, las empresas están obligadas a elaborar y aplicar un plan de igualdad cuando tengan una plantilla de:",
+            "explanation": "Tras la reforma de 2019, la obligación alcanza a las empresas de cincuenta o más trabajadores.",
+            "options": [
+                {
+                    "content": "Cien o más personas trabajadoras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Doscientas cincuenta o más personas trabajadoras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta o más personas trabajadoras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cincuenta o más personas trabajadoras",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La situación en que una disposición, criterio o práctica aparentemente neutro pone a personas de un sexo en desventaja particular respecto de las del otro, salvo justificación objetiva, constituye:",
+            "explanation": "Es la definición de discriminación indirecta del artículo 6.2 de la Ley Orgánica 3/2007.",
+            "options": [
+                {
+                    "content": "Discriminación indirecta por razón de sexo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Discriminación directa por razón de sexo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acción positiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acoso por razón de sexo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 288 del Tratado de Funcionamiento de la UE, ¿qué acto es obligatorio en todos sus elementos y directamente aplicable en cada Estado miembro?",
+            "explanation": "La directiva obliga en cuanto al resultado y deja a los Estados la forma y los medios; recomendaciones y dictámenes no son vinculantes.",
+            "options": [
+                {
+                    "content": "La directiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "El reglamento",
+                    "is_correct": true
+                },
+                {
+                    "content": "La recomendación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El dictamen",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El Consejo Europeo ejerce, junto con el Parlamento Europeo, la función legislativa de la Unión Europea.",
+            "explanation": "Según el artículo 15 del TUE, el Consejo Europeo no ejerce función legislativa; la ejercen el Parlamento Europeo y el Consejo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos eurodiputados corresponden a España en el Parlamento Europeo de la legislatura 2024-2029?",
+            "explanation": "Tras la redistribución de escaños de 2024, España pasó de 59 a 61 eurodiputados.",
+            "options": [
+                {
+                    "content": "54",
+                    "is_correct": false
+                },
+                {
+                    "content": "59",
+                    "is_correct": false
+                },
+                {
+                    "content": "61",
+                    "is_correct": true
+                },
+                {
+                    "content": "64",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

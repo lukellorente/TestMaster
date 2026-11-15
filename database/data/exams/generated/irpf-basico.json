@@ -1,0 +1,560 @@
+{
+    "slug": "irpf-basico",
+    "title": "IRPF básico para Agentes de Hacienda",
+    "description": "Test de repaso de IRPF para el temario de Agentes de Hacienda: hecho imponible, rentas exentas, rendimientos del trabajo y obligación de declarar. Lo he preparado con la Ley 35/2006, a ver qué tal os va.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:21:10+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1 de la Ley 35/2006, el Impuesto sobre la Renta de las Personas Físicas es un tributo:",
+            "explanation": "El artículo 1 define el IRPF como tributo de carácter directo, personal y naturaleza progresiva que grava la renta de las personas físicas.",
+            "options": [
+                {
+                    "content": "Indirecto, real y de naturaleza proporcional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Directo, personal y de naturaleza progresiva",
+                    "is_correct": true
+                },
+                {
+                    "content": "Directo, real y de naturaleza proporcional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Indirecto, personal y de naturaleza progresiva",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 6 de la Ley 35/2006, el hecho imponible del IRPF es:",
+            "explanation": "El hecho imponible es la obtención de renta por el contribuyente, sea cual sea su origen y la forma en que se perciba.",
+            "options": [
+                {
+                    "content": "La titularidad de un patrimonio neto superior al mínimo exento",
+                    "is_correct": false
+                },
+                {
+                    "content": "La percepción de rendimientos dinerarios exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "La obtención de renta por el contribuyente",
+                    "is_correct": true
+                },
+                {
+                    "content": "La realización de una actividad económica de forma habitual",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es un componente de la renta del contribuyente según el artículo 6 de la Ley 35/2006:",
+            "explanation": "La renta se compone de rendimientos del trabajo, del capital y de actividades económicas, ganancias y pérdidas patrimoniales e imputaciones de renta; las cuotas del IBI no son un componente de renta.",
+            "options": [
+                {
+                    "content": "Los rendimientos del trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las ganancias y pérdidas patrimoniales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los rendimientos del capital",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las cuotas del Impuesto sobre Bienes Inmuebles satisfechas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 6.4 de la Ley 35/2006, no está sujeta al IRPF:",
+            "explanation": "Las adquisiciones lucrativas por herencia o donación tributan por el Impuesto sobre Sucesiones y Donaciones y no por el IRPF.",
+            "options": [
+                {
+                    "content": "La renta que esté sujeta al Impuesto sobre Sucesiones y Donaciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "La renta obtenida por la venta de acciones cotizadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La renta procedente de la venta de una vivienda habitual",
+                    "is_correct": false
+                },
+                {
+                    "content": "La renta obtenida por premios en concursos públicos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "De conformidad con el artículo 6.3 de la Ley 35/2006, NO se entiende obtenida renta en el supuesto de:",
+            "explanation": "La ley excluye la obtención de renta en la disolución del régimen económico matrimonial, la división de la cosa común y la disolución de comunidades de bienes, sin perjuicio de las compensaciones en metálico.",
+            "options": [
+                {
+                    "content": "La venta de un inmueble por precio superior al de adquisición",
+                    "is_correct": false
+                },
+                {
+                    "content": "La disolución de la comunidad de bienes o la división de la cosa común",
+                    "is_correct": true
+                },
+                {
+                    "content": "El cobro de dividendos de una sociedad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La transmisión onerosa de participaciones en fondos de inversión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "A efectos de determinar la residencia habitual en territorio español (artículo 9 de la Ley 35/2006), uno de los criterios es que el contribuyente permanezca en dicho territorio más de:",
+            "explanation": "Se considera residente quien permanezca más de 183 días durante el año natural en territorio español, o tenga en él su núcleo principal o base de actividades o intereses económicos.",
+            "options": [
+                {
+                    "content": "90 días durante el año natural",
+                    "is_correct": false
+                },
+                {
+                    "content": "120 días durante el año natural",
+                    "is_correct": false
+                },
+                {
+                    "content": "183 días durante el año natural",
+                    "is_correct": true
+                },
+                {
+                    "content": "200 días durante el año natural",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con carácter general, el IRPF se devenga:",
+            "explanation": "El período impositivo es el año natural y el impuesto se devenga el 31 de diciembre, salvo fallecimiento del contribuyente.",
+            "options": [
+                {
+                    "content": "El 1 de enero de cada año",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 30 de junio de cada año",
+                    "is_correct": false
+                },
+                {
+                    "content": "El último día del plazo de presentación de la declaración",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 31 de diciembre de cada año",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes rentas está exenta del IRPF según el artículo 7 de la Ley 35/2006?",
+            "explanation": "Las indemnizaciones por responsabilidad civil por daños personales están exentas en la cuantía legal o judicialmente reconocida; las demás opciones tributan como rendimientos del trabajo.",
+            "options": [
+                {
+                    "content": "Las indemnizaciones por responsabilidad civil por daños personales, en la cuantía legal o judicialmente reconocida",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las pensiones de jubilación de la Seguridad Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las prestaciones por desempleo percibidas de forma periódica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las retribuciones de los administradores de sociedades",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En las indemnizaciones por despido o cese del trabajador, la exención del artículo 7 de la Ley 35/2006 se aplica a la cuantía obligatoria establecida en el Estatuto de los Trabajadores, con un límite de:",
+            "explanation": "Está exenta la indemnización en la cuantía mínima obligatoria, con un máximo de 180.000 euros; el exceso tributa como rendimiento del trabajo.",
+            "options": [
+                {
+                    "content": "60.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "100.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "180.000 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "300.000 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Están exentas del IRPF:",
+            "explanation": "Las prestaciones por desempleo son rendimientos del trabajo sujetos a gravamen; las otras tres figuran entre las rentas exentas del artículo 7.",
+            "options": [
+                {
+                    "content": "Las pensiones por incapacidad permanente absoluta o gran invalidez de la Seguridad Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las anualidades por alimentos percibidas de los padres por decisión judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las prestaciones públicas por nacimiento y cuidado de menor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las prestaciones por desempleo en su modalidad de pago periódico",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 17.1 de la Ley 35/2006, se consideran rendimientos íntegros del trabajo:",
+            "explanation": "El concepto es amplio: incluye cualquier contraprestación o utilidad, cualquiera que sea su denominación o naturaleza, dineraria o en especie.",
+            "options": [
+                {
+                    "content": "Solo las contraprestaciones dinerarias derivadas de una relación laboral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todas las contraprestaciones o utilidades, dinerarias o en especie, que deriven directa o indirectamente del trabajo personal o de la relación laboral o estatutaria",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las contraprestaciones derivadas exclusivamente de contratos de duración indefinida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente las retribuciones sujetas a retención a cuenta del impuesto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes rentas se califica como rendimiento del trabajo?",
+            "explanation": "El artículo 17.2 incluye expresamente entre los rendimientos del trabajo las prestaciones por desempleo.",
+            "options": [
+                {
+                    "content": "Los dividendos de una sociedad anónima",
+                    "is_correct": false
+                },
+                {
+                    "content": "El alquiler de una vivienda de la que es propietario",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ganancia por la venta de acciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las prestaciones por desempleo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la afirmación correcta sobre las rentas en especie del artículo 42 de la Ley 35/2006:",
+            "explanation": "Esa es la definición legal de renta en especie. Pueden constituir rendimientos del trabajo y se valoran conforme a las reglas del artículo 43.",
+            "options": [
+                {
+                    "content": "Consisten en la utilización, consumo u obtención, para fines particulares, de bienes, derechos o servicios de forma gratuita o por precio inferior al de mercado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo pueden ser rendimientos del capital mobiliario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nunca tributan cuando las entrega el empleador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se valoran siempre por su coste para el pagador, sin ajustes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Reglamento del IRPF, la asignación para gastos de locomoción del trabajador que utiliza su vehículo particular queda exceptuada de gravamen hasta un máximo por kilómetro recorrido de:",
+            "explanation": "Con justificación del desplazamiento, la cantidad exceptuada es de 0,19 euros por kilómetro, más los gastos de peaje y aparcamiento justificados.",
+            "options": [
+                {
+                    "content": "0,12 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,19 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "0,26 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,35 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los gastos de manutención de empleados desplazados a un municipio distinto del lugar de trabajo en territorio español, con pernoctación, el importe diario exceptuado de gravamen es de:",
+            "explanation": "Con pernoctación en España son 53,34 euros diarios; sin pernoctación, 26,67 euros. En el extranjero las cifras son 91,35 y 48,08 euros.",
+            "options": [
+                {
+                    "content": "26,67 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "48,08 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "91,35 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "53,34 euros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 19.2 de la Ley 35/2006, como «otros gastos» deducibles de los rendimientos del trabajo se computan con carácter general:",
+            "explanation": "Con carácter general, se deducen 2.000 euros anuales en concepto de otros gastos, con incrementos en supuestos como la movilidad geográfica o la discapacidad.",
+            "options": [
+                {
+                    "content": "1.000 euros anuales",
+                    "is_correct": false
+                },
+                {
+                    "content": "2.000 euros anuales",
+                    "is_correct": true
+                },
+                {
+                    "content": "3.000 euros anuales",
+                    "is_correct": false
+                },
+                {
+                    "content": "5.000 euros anuales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las cuotas satisfechas a sindicatos y a colegios profesionales (cuando la colegiación sea obligatoria) son gasto deducible del rendimiento del trabajo con el límite anual de:",
+            "explanation": "El artículo 19.2 permite deducir esas cuotas con un máximo de 500 euros anuales.",
+            "options": [
+                {
+                    "content": "300 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "500 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.500 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los gastos de defensa jurídica derivados directamente de litigios con el empleador son deducibles del rendimiento del trabajo con el límite anual de:",
+            "explanation": "El artículo 19.2 fija un límite de 300 euros anuales para los gastos de defensa jurídica frente al empleador.",
+            "options": [
+                {
+                    "content": "300 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "500 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "600 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.200 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los rendimientos del trabajo con período de generación superior a dos años y no obtenidos de forma periódica o recurrente se integran en la base imponible aplicando una reducción del:",
+            "explanation": "El artículo 18.2 aplica una reducción del 30 por ciento a estos rendimientos irregulares, con un límite de cuantía fijado reglamentariamente.",
+            "options": [
+                {
+                    "content": "20 por ciento",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 por ciento",
+                    "is_correct": true
+                },
+                {
+                    "content": "40 por ciento",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 por ciento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los contribuyentes que reciban primas de seguros de enfermedad satisfechas por la empresa, a favor del propio trabajador, su cónyuge y descendientes, tienen la retribución en especie exenta hasta:",
+            "explanation": "La prima exenta es de 500 euros anuales por persona, con un límite superior para personas con discapacidad.",
+            "options": [
+                {
+                    "content": "250 euros anuales por persona",
+                    "is_correct": false
+                },
+                {
+                    "content": "500 euros anuales por persona",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.000 euros anuales por persona",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.500 euros anuales por persona",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 96 de la Ley 35/2006, no están obligados a declarar los contribuyentes que obtengan rendimientos íntegros del trabajo, procedentes de un único pagador, inferiores a:",
+            "explanation": "El límite general es de 22.000 euros anuales cuando todos los rendimientos proceden de un único pagador.",
+            "options": [
+                {
+                    "content": "15.000 euros anuales",
+                    "is_correct": false
+                },
+                {
+                    "content": "18.000 euros anuales",
+                    "is_correct": false
+                },
+                {
+                    "content": "20.000 euros anuales",
+                    "is_correct": false
+                },
+                {
+                    "content": "22.000 euros anuales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un contribuyente percibe 20.000 euros de un pagador y 2.000 euros de otro, ambos obligados a retener, y no tiene otras rentas. ¿Está obligado a declarar?",
+            "explanation": "Con más de un pagador, el límite baja a 15.000 euros si la suma de lo percibido del segundo y restantes pagadores supera 1.500 euros anuales.",
+            "options": [
+                {
+                    "content": "No, porque no alcanza los 22.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sí, porque el segundo pagador supera 1.500 euros y el total supera 15.000 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "No, porque cada pagador es inferior a 22.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sí, porque siempre hay obligación cuando existen dos pagadores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las pensiones compensatorias recibidas del cónyuge por sentencia judicial se consideran rendimientos del trabajo para el perceptor.",
+            "explanation": "El artículo 17.2 de la Ley 35/2006 las incluye entre los rendimientos del trabajo del perceptor.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El IRPF es un tributo íntegramente cedido a las comunidades autónomas de régimen común, por lo que el Estado no retiene ninguna parte de su rendimiento.",
+            "explanation": "Es un tributo cedido parcialmente, con un porcentaje del 50 por ciento del rendimiento a las comunidades autónomas de régimen común.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Se presume, salvo prueba en contrario, que un contribuyente tiene su residencia habitual en España cuando residan en ella el cónyuge no separado legalmente y los hijos menores de edad que dependan de él.",
+            "explanation": "Es la presunción del artículo 9.1.b) de la Ley 35/2006, que admite prueba en contrario.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

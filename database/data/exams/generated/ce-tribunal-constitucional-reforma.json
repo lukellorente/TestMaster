@@ -1,0 +1,453 @@
+{
+    "slug": "ce-tribunal-constitucional-reforma",
+    "title": "Tribunal Constitucional y reforma constitucional",
+    "description": "Test para repasar el Tribunal Constitucional y la reforma de la Constitución (Títulos IX y X de la CE y lo básico de la LOTC), de cara a las oposiciones de la AGE. Actualizado a finales de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:41:01+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 159 de la Constitución, el Tribunal Constitucional se compone de:",
+            "explanation": "El artículo 159.1 CE establece que el Tribunal Constitucional se compone de 12 miembros nombrados por el Rey.",
+            "options": [
+                {
+                    "content": "9 miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "12 miembros",
+                    "is_correct": true
+                },
+                {
+                    "content": "15 miembros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "De los miembros del Tribunal Constitucional, ¿cuántos son nombrados por el Rey a propuesta del Consejo General del Poder Judicial?",
+            "explanation": "Según el artículo 159.1 CE, cuatro son propuestos por el Congreso, cuatro por el Senado, dos por el Gobierno y dos por el CGPJ.",
+            "options": [
+                {
+                    "content": "Dos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 159.3 de la Constitución, los miembros del Tribunal Constitucional serán designados por un período de:",
+            "explanation": "El artículo 159.3 CE fija un mandato de nueve años con renovación por terceras partes cada tres.",
+            "options": [
+                {
+                    "content": "Seis años, renovándose por mitades cada tres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nueve años, renovándose por mitades cada cuatro y medio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Doce años, renovándose por cuartas partes cada tres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nueve años, renovándose por terceras partes cada tres",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los miembros del Tribunal Constitucional deben ser juristas de reconocida competencia con más de:",
+            "explanation": "El artículo 159.2 CE exige juristas de reconocida competencia con más de quince años de ejercicio profesional.",
+            "options": [
+                {
+                    "content": "Diez años de ejercicio profesional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince años de ejercicio profesional",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinte años de ejercicio profesional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años de ejercicio profesional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 159.5 de la Constitución, los miembros del Tribunal Constitucional serán independientes e inamovibles en el ejercicio de su mandato.",
+            "explanation": "Así lo establece expresamente el artículo 159.5 CE.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 160 de la Constitución, el Presidente del Tribunal Constitucional es nombrado por el Rey entre los miembros del Tribunal, a propuesta del mismo en Pleno, por un período de:",
+            "explanation": "El artículo 160 CE fija un mandato de tres años para el Presidente del Tribunal Constitucional.",
+            "options": [
+                {
+                    "content": "Tres años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuatro años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nueve años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una competencia del Tribunal Constitucional según el artículo 161 de la Constitución:",
+            "explanation": "El control de legalidad de los reglamentos corresponde a la jurisdicción contencioso-administrativa, no al Tribunal Constitucional.",
+            "options": [
+                {
+                    "content": "El recurso de inconstitucionalidad contra leyes",
+                    "is_correct": false
+                },
+                {
+                    "content": "El recurso de amparo por violación de derechos y libertades",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los conflictos de competencia entre el Estado y las Comunidades Autónomas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El control de legalidad de los reglamentos del Gobierno",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando el Gobierno impugna ante el Tribunal Constitucional disposiciones o resoluciones de las Comunidades Autónomas, la impugnación produce la suspensión de las mismas, que el Tribunal deberá ratificar o levantar en un plazo no superior a:",
+            "explanation": "Lo dispone el artículo 161.2 CE: el Tribunal ratificará o levantará la suspensión en plazo no superior a cinco meses.",
+            "options": [
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco meses",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 162.1 de la Constitución, ¿quién NO está legitimado para interponer el recurso de inconstitucionalidad?",
+            "explanation": "El Ministerio Fiscal está legitimado para el recurso de amparo, pero no para el de inconstitucionalidad (art. 162 CE).",
+            "options": [
+                {
+                    "content": "El Presidente del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Defensor del Pueblo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cincuenta senadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ministerio Fiscal",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 164 de la Constitución, las sentencias del Tribunal Constitucional tienen el valor de cosa juzgada:",
+            "explanation": "El artículo 164.1 CE dispone que las sentencias se publican en el BOE y tienen valor de cosa juzgada a partir del día siguiente de su publicación.",
+            "options": [
+                {
+                    "content": "Desde la fecha en que se dictan",
+                    "is_correct": false
+                },
+                {
+                    "content": "A partir del día siguiente de su publicación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Transcurridos veinte días desde su publicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una vez notificadas a todas las partes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Quién puede plantear ante el Tribunal Constitucional la cuestión de inconstitucionalidad regulada en el artículo 163 de la Constitución?",
+            "explanation": "El artículo 163 CE atribuye la legitimación a los órganos judiciales cuando consideren que una norma con rango de ley aplicable al caso pueda ser contraria a la Constitución.",
+            "options": [
+                {
+                    "content": "El Defensor del Pueblo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier ciudadano con interés legítimo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un órgano judicial",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente del Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 167 de la Constitución, los proyectos de reforma constitucional deberán ser aprobados por una mayoría de:",
+            "explanation": "El artículo 167.1 CE exige una mayoría de tres quintos de cada una de las Cámaras.",
+            "options": [
+                {
+                    "content": "Dos tercios de cada Cámara",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mayoría absoluta de cada Cámara",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres quintos de cada una de las Cámaras",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres cuartos de cada una de las Cámaras",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 166 de la Constitución, la iniciativa de reforma constitucional puede ejercerse también mediante iniciativa popular.",
+            "explanation": "El artículo 166 remite solo a los apartados 1 y 2 del artículo 87, por lo que no cabe la iniciativa popular.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Aprobada una reforma constitucional por el procedimiento del artículo 167, será sometida a referéndum para su ratificación cuando así lo soliciten, dentro de los quince días siguientes a su aprobación:",
+            "explanation": "El artículo 167.3 CE prevé el referéndum a solicitud de una décima parte de los miembros de cualquiera de las Cámaras.",
+            "options": [
+                {
+                    "content": "Una décima parte de los miembros de cualquiera de las Cámaras",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una quinta parte de los miembros del Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cuarta parte de los miembros de cualquiera de las Cámaras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una décima parte de los miembros del Congreso exclusivamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes partes de la Constitución solo puede revisarse mediante el procedimiento agravado del artículo 168?",
+            "explanation": "El artículo 168 CE se aplica a la revisión total, al Título preliminar, al Capítulo II, Sección 1.ª del Título I y al Título II.",
+            "options": [
+                {
+                    "content": "El Título III, De las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Título IV, Del Gobierno y de la Administración",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Título VIII, De la Organización Territorial del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Título II, De la Corona",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 169 de la Constitución, no podrá iniciarse la reforma constitucional:",
+            "explanation": "El artículo 169 CE prohíbe iniciar la reforma en tiempo de guerra o durante la vigencia de los estados de alarma, excepción o sitio.",
+            "options": [
+                {
+                    "content": "En el último año de la legislatura",
+                    "is_correct": false
+                },
+                {
+                    "content": "Durante el período de disolución de las Cortes",
+                    "is_correct": false
+                },
+                {
+                    "content": "En tiempo de guerra o de vigencia de alguno de los estados del artículo 116",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mientras esté pendiente un recurso de inconstitucionalidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1 de la Ley Orgánica 2/1979, del Tribunal Constitucional, este es:",
+            "explanation": "El artículo 1 LOTC define al Tribunal como intérprete supremo de la Constitución, independiente de los demás órganos constitucionales y sometido solo a la Constitución y a su Ley Orgánica.",
+            "options": [
+                {
+                    "content": "El órgano superior del Poder Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "El intérprete supremo de la Constitución",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un órgano dependiente del Consejo General del Poder Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un órgano consultivo de las Cortes Generales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 2/1979, el recurso de inconstitucionalidad contra una ley debe interponerse en el plazo de:",
+            "explanation": "El artículo 33 LOTC fija el plazo de tres meses a partir de la publicación de la norma impugnada.",
+            "options": [
+                {
+                    "content": "Un mes desde su publicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses desde su aprobación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses desde su publicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses a partir de su publicación oficial",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 2/1979, el Tribunal Constitucional actúa en Pleno, en Salas y en Secciones. ¿Cuántas Salas tiene y cuántos magistrados integran cada una?",
+            "explanation": "La LOTC establece dos Salas, cada una compuesta por seis magistrados.",
+            "options": [
+                {
+                    "content": "Tres Salas de cuatro magistrados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos Salas de seis magistrados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos Salas de cuatro magistrados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro Salas de tres magistrados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 44 de la Ley Orgánica 2/1979, el recurso de amparo contra violaciones de derechos originadas por un órgano judicial debe interponerse en el plazo de:",
+            "explanation": "El artículo 44.2 LOTC establece un plazo de treinta días siguientes a la notificación de la resolución recaída en el proceso judicial.",
+            "options": [
+                {
+                    "content": "Diez días desde la notificación de la resolución recaída en el proceso judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días desde la notificación de la resolución recaída en el proceso judicial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sesenta días desde la notificación de la resolución recaída en el proceso judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses desde la notificación de la resolución recaída en el proceso judicial",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}
