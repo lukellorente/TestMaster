@@ -42,7 +42,7 @@ const sections = [
     color: 'blue',
     title: 'Objeto y ámbito de aplicación',
     content: [
-      'Los presentes Términos y Condiciones (en adelante, "Términos") regulan el acceso y uso de la plataforma TestMaster, accesible en <strong>testmaster.myddns.me</strong> y sus subdominios, así como cualquier aplicación móvil o herramienta asociada (en conjunto, el "Servicio").',
+      'Los presentes Términos y Condiciones (en adelante, "Términos") regulan el acceso y uso de la plataforma TestMaster, accesible en <strong>testmaster.app</strong> y sus subdominios, así como cualquier aplicación móvil o herramienta asociada (en conjunto, el "Servicio").',
       'El Servicio es operado por <strong>Luke Llorente</strong> (en adelante, "TestMaster", "nosotros", "el responsable"). Al registrarte o usar el Servicio aceptas estos Términos junto con nuestra <strong>Política de Privacidad</strong>, que forma parte integrante de este acuerdo.',
     ],
     highlight: {
