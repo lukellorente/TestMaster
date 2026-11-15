@@ -1,0 +1,679 @@
+{
+    "slug": "excel-365-formulas",
+    "title": "Excel 365 - fórmulas y funciones",
+    "description": "Test difícil de Excel 365 para el temario de ofimática: referencias, SI, BUSCARX, CONTAR.SI, texto, fechas, tablas dinámicas y errores. Muy útil para repasar antes del examen de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:33:23+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "En la celda C2 se escribe la fórmula =$A2*B$1 y se copia en la celda D3. ¿Qué fórmula contendrá D3?",
+            "explanation": "La columna anclada ($A) y la fila anclada ($1) no cambian; la fila de $A2 pasa a 3 y la columna de B$1 pasa a C.",
+            "options": [
+                {
+                    "content": "=$A2*B$1",
+                    "is_correct": false
+                },
+                {
+                    "content": "=$A3*C$1",
+                    "is_correct": true
+                },
+                {
+                    "content": "=$B3*C$2",
+                    "is_correct": false
+                },
+                {
+                    "content": "=$A3*B$2",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con el cursor en la referencia A1 dentro de la barra de fórmulas, se pulsa dos veces la tecla F4. ¿Cómo queda la referencia?",
+            "explanation": "F4 alterna cíclicamente: A1 → $A$1 → A$1 → $A1 → A1.",
+            "options": [
+                {
+                    "content": "$A$1",
+                    "is_correct": false
+                },
+                {
+                    "content": "$A1",
+                    "is_correct": false
+                },
+                {
+                    "content": "A$1",
+                    "is_correct": true
+                },
+                {
+                    "content": "A1",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si A1 contiene 6,99, ¿qué devuelve =SI(A1>=9;\"Sobresaliente\";SI(A1>=7;\"Notable\";SI(A1>=5;\"Aprobado\";\"Suspenso\")))?",
+            "explanation": "6,99 no cumple ≥9 ni ≥7, pero sí ≥5, por lo que devuelve «Aprobado».",
+            "options": [
+                {
+                    "content": "Notable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Suspenso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sobresaliente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aprobado",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si A1 vale 4 y B1 vale 2, ¿qué resultado devuelve =SI(O(A1>5;B1<3);\"X\";\"Y\")?",
+            "explanation": "O devuelve VERDADERO si al menos una condición se cumple; B1<3 es verdadera, por lo que SI devuelve «X».",
+            "options": [
+                {
+                    "content": "Y",
+                    "is_correct": false
+                },
+                {
+                    "content": "X",
+                    "is_correct": true
+                },
+                {
+                    "content": "#¡VALOR!",
+                    "is_correct": false
+                },
+                {
+                    "content": "FALSO",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes funciones trata únicamente el error #N/A y deja pasar el resto de errores?",
+            "explanation": "SI.ND solo captura #N/A, mientras que SI.ERROR captura cualquier tipo de error.",
+            "options": [
+                {
+                    "content": "SI.ERROR",
+                    "is_correct": false
+                },
+                {
+                    "content": "ESERROR",
+                    "is_correct": false
+                },
+                {
+                    "content": "SI.ND",
+                    "is_correct": true
+                },
+                {
+                    "content": "ESERR",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la sintaxis de BUSCARX, ¿qué argumento ocupa la cuarta posición?",
+            "explanation": "El orden es valor_buscado; matriz_buscada; matriz_devuelta; [si_no_se_encuentra]; [modo_coincidencia]; [modo_búsqueda].",
+            "options": [
+                {
+                    "content": "modo_coincidencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "modo_búsqueda",
+                    "is_correct": false
+                },
+                {
+                    "content": "matriz_devuelta",
+                    "is_correct": false
+                },
+                {
+                    "content": "si_no_se_encuentra",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En BUSCARX, ¿qué comportamiento tiene el argumento modo_coincidencia con el valor 1?",
+            "explanation": "0 es exacta (valor por defecto), -1 exacta o siguiente menor, 1 exacta o siguiente mayor y 2 coincidencia con comodines.",
+            "options": [
+                {
+                    "content": "Coincidencia exacta o, si no existe, el siguiente elemento mayor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Coincidencia exacta o, si no existe, el siguiente elemento menor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Coincidencia con caracteres comodín",
+                    "is_correct": false
+                },
+                {
+                    "content": "Coincidencia exacta únicamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué valor del argumento modo_búsqueda de BUSCARX hace que se busque de la última a la primera celda del rango?",
+            "explanation": "El valor -1 realiza la búsqueda de último a primero; 1 es el valor por defecto (de primero a último) y 2 y -2 son búsquedas binarias.",
+            "options": [
+                {
+                    "content": "1",
+                    "is_correct": false
+                },
+                {
+                    "content": "2",
+                    "is_correct": false
+                },
+                {
+                    "content": "-1",
+                    "is_correct": true
+                },
+                {
+                    "content": "0",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la afirmación INCORRECTA sobre la función BUSCARX:",
+            "explanation": "BUSCARX usa matrices independientes para buscar y devolver, por lo que puede buscar hacia la izquierda; esa limitación era propia de BUSCARV.",
+            "options": [
+                {
+                    "content": "Puede devolver varias columnas o filas a la vez como matriz dinámica.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por defecto realiza una coincidencia exacta.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Permite buscar de abajo arriba.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exige que la columna de búsqueda sea la primera columna del rango devuelto.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué cuenta la fórmula =CONTAR.SI(A1:A10;\"Ma*\")?",
+            "explanation": "El asterisco es un comodín de cualquier número de caracteres y CONTAR.SI no distingue mayúsculas de minúsculas.",
+            "options": [
+                {
+                    "content": "Las celdas de texto que empiezan por «Ma», sin distinguir mayúsculas de minúsculas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las celdas que contienen exactamente «Ma*»",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las celdas de texto que terminan en «Ma»",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las celdas que empiezan por «Ma» distinguiendo mayúsculas de minúsculas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué cuenta =CONTAR.SI(A1:A10;\"??\")?",
+            "explanation": "Cada signo de interrogación sustituye exactamente un carácter, por lo que «??» equivale a textos de longitud 2.",
+            "options": [
+                {
+                    "content": "Las celdas que contienen el texto literal «??»",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las celdas que contienen como mínimo dos caracteres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las celdas de texto con exactamente dos caracteres",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las celdas vacías",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve =EXTRAE(\"Administrativo\";4;5)?",
+            "explanation": "Empezando en el carácter 4 («i») y tomando 5 caracteres se obtiene «inist».",
+            "options": [
+                {
+                    "content": "minis",
+                    "is_correct": false
+                },
+                {
+                    "content": "inist",
+                    "is_correct": true
+                },
+                {
+                    "content": "dmini",
+                    "is_correct": false
+                },
+                {
+                    "content": "nistr",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué resultado devuelve =IZQUIERDA(DERECHA(\"Oposiciones2026\";4);2)?",
+            "explanation": "DERECHA devuelve «2026» y IZQUIERDA toma sus dos primeros caracteres: «20».",
+            "options": [
+                {
+                    "content": "26",
+                    "is_correct": false
+                },
+                {
+                    "content": "2026",
+                    "is_correct": false
+                },
+                {
+                    "content": "es",
+                    "is_correct": false
+                },
+                {
+                    "content": "20",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve =ENCONTRAR(\"A\";\"banana\")?",
+            "explanation": "ENCONTRAR distingue mayúsculas de minúsculas, así que no halla «A» en «banana» y devuelve #¡VALOR!; HALLAR sí las ignoraría.",
+            "options": [
+                {
+                    "content": "#¡VALOR!",
+                    "is_correct": true
+                },
+                {
+                    "content": "2",
+                    "is_correct": false
+                },
+                {
+                    "content": "4",
+                    "is_correct": false
+                },
+                {
+                    "content": "0",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve =UNIRCADENAS(\"-\";VERDADERO;\"A\";\"\";\"B\")?",
+            "explanation": "Con ignorar_vacío en VERDADERO se omiten las cadenas vacías y solo se insertan delimitadores entre los textos no vacíos.",
+            "options": [
+                {
+                    "content": "A--B",
+                    "is_correct": false
+                },
+                {
+                    "content": "A-B-",
+                    "is_correct": false
+                },
+                {
+                    "content": "A-B",
+                    "is_correct": true
+                },
+                {
+                    "content": "AB",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos caracteres devuelve =LARGO(ESPACIOS(\" Hola  mundo \"))?",
+            "explanation": "ESPACIOS elimina los espacios iniciales y finales y deja uno solo entre palabras: «Hola mundo» tiene 10 caracteres.",
+            "options": [
+                {
+                    "content": "10",
+                    "is_correct": true
+                },
+                {
+                    "content": "13",
+                    "is_correct": false
+                },
+                {
+                    "content": "11",
+                    "is_correct": false
+                },
+                {
+                    "content": "12",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué fecha devuelve =FECHA(2026;14;1)?",
+            "explanation": "FECHA admite meses mayores que 12 y los traslada al año siguiente: el mes 14 de 2026 es febrero de 2027.",
+            "options": [
+                {
+                    "content": "01/02/2027",
+                    "is_correct": true
+                },
+                {
+                    "content": "01/02/2026",
+                    "is_correct": false
+                },
+                {
+                    "content": "01/12/2026",
+                    "is_correct": false
+                },
+                {
+                    "content": "#¡NUM!",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve =SIFECHA(\"01/01/2026\";\"15/11/2026\";\"m\")?",
+            "explanation": "Con la unidad «m» SIFECHA devuelve los meses completos transcurridos: de enero a mediados de noviembre hay 10.",
+            "options": [
+                {
+                    "content": "11",
+                    "is_correct": false
+                },
+                {
+                    "content": "10",
+                    "is_correct": true
+                },
+                {
+                    "content": "9",
+                    "is_correct": false
+                },
+                {
+                    "content": "315",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve =FIN.MES(FECHA(2026;1;31);1)?",
+            "explanation": "FIN.MES devuelve el último día del mes situado un mes después; febrero de 2026 no es bisiesto, así que termina el día 28.",
+            "options": [
+                {
+                    "content": "03/03/2026",
+                    "is_correct": false
+                },
+                {
+                    "content": "28/02/2026",
+                    "is_correct": true
+                },
+                {
+                    "content": "31/02/2026",
+                    "is_correct": false
+                },
+                {
+                    "content": "01/03/2026",
+                    "is_correct": false
+                },
+                {
+                    "content": "28/02/2027",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El 15 de noviembre de 2026 es domingo. ¿Qué devuelve =DIASEM(FECHA(2026;11;15);2)?",
+            "explanation": "Con tipo 2 la semana va de lunes (1) a domingo (7), por lo que el domingo devuelve 7.",
+            "options": [
+                {
+                    "content": "1",
+                    "is_correct": false
+                },
+                {
+                    "content": "0",
+                    "is_correct": false
+                },
+                {
+                    "content": "6",
+                    "is_correct": false
+                },
+                {
+                    "content": "7",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una tabla dinámica, ¿qué función de resumen aplica Excel por defecto a un campo numérico y a un campo de texto al arrastrarlos al área Valores?",
+            "explanation": "Excel suma los campos numéricos y cuenta los campos de texto; también cuenta si el campo numérico contiene celdas vacías o texto.",
+            "options": [
+                {
+                    "content": "Promedio para el numérico y Cuenta para el de texto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Suma para ambos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Suma para el numérico y Recuento para el de texto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Recuento para ambos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué herramienta de las tablas dinámicas permite filtrar de forma visual por periodos de tiempo (meses, trimestres, años)?",
+            "explanation": "La escala de tiempo se aplica a campos de fecha; la segmentación de datos filtra por elementos de cualquier campo.",
+            "options": [
+                {
+                    "content": "Segmentación de datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Escala de tiempo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Campo calculado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Minigráfico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al intentar agrupar por meses un campo de fechas en una tabla dinámica aparece «No se puede agrupar esa selección». ¿Cuál es la causa más habitual?",
+            "explanation": "La agrupación falla si la columna contiene celdas en blanco o valores que Excel no reconoce como fechas.",
+            "options": [
+                {
+                    "content": "La tabla dinámica está en otra hoja",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hay celdas vacías o texto en la columna de fechas del origen",
+                    "is_correct": true
+                },
+                {
+                    "content": "El campo de fechas está en el área Filtros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hay más de 12 meses distintos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para mostrar cada importe como porcentaje del total general en una tabla dinámica, ¿qué opción se utiliza?",
+            "explanation": "La opción «Mostrar valores como» de la configuración de campo de valor ofrece varios cálculos porcentuales, entre ellos % del total general.",
+            "options": [
+                {
+                    "content": "Configuración de campo de valor › Mostrar valores como › % del total general",
+                    "is_correct": true
+                },
+                {
+                    "content": "Insertar › Campo calculado › Porcentaje",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diseño › Subtotales › Mostrar porcentaje",
+                    "is_correct": false
+                },
+                {
+                    "content": "Analizar › Agrupar campo › % del total",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una fórmula de matriz dinámica devuelve #¡DESBORDAMIENTO! (#SPILL!). ¿Cuál es la causa más probable?",
+            "explanation": "El error aparece cuando el resultado no puede expandirse porque hay datos u otros obstáculos en el rango de derrame.",
+            "options": [
+                {
+                    "content": "El rango de derrame contiene celdas no vacías que lo bloquean",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se ha dividido entre cero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falta un argumento obligatorio en la función",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una o varias celdas donde debería derramarse el resultado están ocupadas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se tenía =SUMA(B2:B10) y se elimina la columna B completa. ¿Qué error aparecerá?",
+            "explanation": "#¡REF! indica que la fórmula hace referencia a celdas que ya no existen, como las de una columna eliminada.",
+            "options": [
+                {
+                    "content": "#¡NOMBRE?",
+                    "is_correct": false
+                },
+                {
+                    "content": "#¡REF!",
+                    "is_correct": true
+                },
+                {
+                    "content": "#¡DIV/0!",
+                    "is_correct": false
+                },
+                {
+                    "content": "#N/A",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al escribir =SUMAA(A1:A5) en lugar de =SUMA(A1:A5), ¿qué error devuelve Excel?",
+            "explanation": "#¡NOMBRE? aparece cuando Excel no reconoce un nombre de función o de rango.",
+            "options": [
+                {
+                    "content": "#¡VALOR!",
+                    "is_correct": false
+                },
+                {
+                    "content": "#¡NUM!",
+                    "is_correct": false
+                },
+                {
+                    "content": "#¡NOMBRE?",
+                    "is_correct": true
+                },
+                {
+                    "content": "#¡REF!",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En SUMAR.SI.CONJUNTO, el primer argumento es el rango que se suma, mientras que en SUMAR.SI el rango de suma va en el último lugar.",
+            "explanation": "SUMAR.SI.CONJUNTO empieza por rango_suma, y SUMAR.SI lo coloca al final como argumento opcional.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La función CONTAR.SI permite aplicar varios criterios sobre rangos distintos en una misma fórmula.",
+            "explanation": "CONTAR.SI admite un único rango y un único criterio; para varios criterios se usa CONTAR.SI.CONJUNTO.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Si una tabla dinámica se basa en una Tabla de Excel, las filas añadidas a esa tabla se incluyen en la tabla dinámica tras actualizarla.",
+            "explanation": "Las Tablas de Excel amplían su rango automáticamente, y la tabla dinámica recoge los nuevos datos al actualizarse.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

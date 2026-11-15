@@ -1,0 +1,537 @@
+{
+    "slug": "windows-11",
+    "title": "Windows 11 y Explorador de archivos",
+    "description": "Test para repasar Windows 11 y el Explorador de archivos: atajos, cuentas, configuración y accesibilidad. Va bien para el bloque de ofimática de las oposiciones.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:34:31+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué combinación de teclas abre directamente la aplicación Configuración de Windows 11?",
+            "explanation": "Win + I abre Configuración. Win + R abre Ejecutar, Win + S la búsqueda y Win + X el menú de acceso rápido.",
+            "options": [
+                {
+                    "content": "Win + R",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + I",
+                    "is_correct": true
+                },
+                {
+                    "content": "Win + S",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + X",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atajo de teclado abre el Explorador de archivos en Windows 11?",
+            "explanation": "Win + E abre una ventana del Explorador de archivos.",
+            "options": [
+                {
+                    "content": "Win + E",
+                    "is_correct": true
+                },
+                {
+                    "content": "Win + F",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + A",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + Z",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el Explorador de archivos, ¿qué tecla permite cambiar el nombre del archivo o carpeta seleccionados?",
+            "explanation": "F2 activa el modo de edición del nombre del elemento seleccionado.",
+            "options": [
+                {
+                    "content": "F1",
+                    "is_correct": false
+                },
+                {
+                    "content": "F4",
+                    "is_correct": false
+                },
+                {
+                    "content": "F5",
+                    "is_correct": false
+                },
+                {
+                    "content": "F2",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué combinación elimina un archivo de forma permanente sin enviarlo a la Papelera de reciclaje (tras confirmar)?",
+            "explanation": "Mayús + Supr borra el elemento de forma definitiva, sin pasar por la Papelera.",
+            "options": [
+                {
+                    "content": "Ctrl + Supr",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alt + Supr",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayús + Supr",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ctrl + Mayús + Z",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tecla actualiza el contenido de la carpeta que se muestra en el Explorador de archivos?",
+            "explanation": "F5 actualiza la vista actual. F3 sitúa el cursor en la búsqueda.",
+            "options": [
+                {
+                    "content": "F3",
+                    "is_correct": false
+                },
+                {
+                    "content": "F5",
+                    "is_correct": true
+                },
+                {
+                    "content": "F7",
+                    "is_correct": false
+                },
+                {
+                    "content": "F10",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el Explorador de archivos, ¿qué combinación sube al nivel superior de la carpeta actual?",
+            "explanation": "Alt + Flecha arriba sube a la carpeta superior. Alt + Flecha izquierda retrocede en el historial.",
+            "options": [
+                {
+                    "content": "Alt + Flecha izquierda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl + Flecha arriba",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayús + Retroceso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alt + Flecha arriba",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dentro del Explorador de archivos, ¿qué combinación selecciona todos los elementos de la carpeta abierta?",
+            "explanation": "Ctrl + A selecciona todo el contenido de la carpeta.",
+            "options": [
+                {
+                    "content": "Ctrl + E",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl + T",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl + A",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ctrl + S",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué combinación de teclas abre el Administrador de tareas directamente?",
+            "explanation": "Ctrl + Mayús + Esc abre el Administrador de tareas sin pasar por otra pantalla.",
+            "options": [
+                {
+                    "content": "Ctrl + Mayús + Esc",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ctrl + Alt + Tab",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alt + F4",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + Pausa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué combinación bloquea la sesión del usuario actual en Windows 11?",
+            "explanation": "Win + L bloquea el equipo y muestra la pantalla de bloqueo.",
+            "options": [
+                {
+                    "content": "Win + K",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + B",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + U",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + L",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atajo abre la herramienta Recortes para capturar una parte de la pantalla?",
+            "explanation": "Win + Mayús + S activa la captura de pantalla con la herramienta Recortes.",
+            "options": [
+                {
+                    "content": "Win + Mayús + S",
+                    "is_correct": true
+                },
+                {
+                    "content": "Win + Ctrl + R",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alt + Mayús + P",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl + Mayús + C",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué combinación abre la Vista de tareas, que muestra las ventanas abiertas y los escritorios virtuales?",
+            "explanation": "Win + Tab abre la Vista de tareas.",
+            "options": [
+                {
+                    "content": "Win + Tab",
+                    "is_correct": true
+                },
+                {
+                    "content": "Win + V",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + M",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + H",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de cuenta de usuario de Windows 11 puede instalar aplicaciones para todos los usuarios y cambiar la configuración general del sistema?",
+            "explanation": "La cuenta de administrador tiene control total sobre el equipo, incluida la instalación de software y los cambios globales.",
+            "options": [
+                {
+                    "content": "Estándar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Invitado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Administrador",
+                    "is_correct": true
+                },
+                {
+                    "content": "Niño supervisado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de cuenta permite iniciar sesión con un correo electrónico y sincronizar ajustes y archivos con OneDrive?",
+            "explanation": "La cuenta Microsoft vincula el usuario con servicios en línea como OneDrive y la sincronización de ajustes.",
+            "options": [
+                {
+                    "content": "Cuenta local",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuenta Microsoft",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuenta de servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuenta integrada de Windows",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la afirmación incorrecta sobre las cuentas de usuario en Windows 11:",
+            "explanation": "Una cuenta estándar necesita credenciales de administrador para los cambios que afectan a todo el sistema.",
+            "options": [
+                {
+                    "content": "Una cuenta local puede usarse sin dirección de correo electrónico.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cuenta estándar puede ejecutar las aplicaciones ya instaladas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cuenta de administrador puede crear otras cuentas de usuario.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cuenta estándar puede cambiar cualquier configuración del sistema sin credenciales de administrador.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Configuración de Windows 11, ¿en qué apartado se añade una cuenta para otra persona que usará el equipo?",
+            "explanation": "En Cuentas, dentro de «Otros usuarios» o «Familia», se agregan nuevas cuentas.",
+            "options": [
+                {
+                    "content": "Cuentas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sistema",
+                    "is_correct": false
+                },
+                {
+                    "content": "Privacidad y seguridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hora e idioma",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué apartado de Configuración se buscan e instalan las actualizaciones del sistema operativo?",
+            "explanation": "Windows Update es el apartado de Configuración donde se gestionan las actualizaciones.",
+            "options": [
+                {
+                    "content": "Aplicaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Accesibilidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Windows Update",
+                    "is_correct": true
+                },
+                {
+                    "content": "Juegos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atajo de teclado activa la Lupa de Windows 11?",
+            "explanation": "Win + + activa la Lupa y aumenta el zoom. Win + Esc la cierra.",
+            "options": [
+                {
+                    "content": "Win + signo más (+)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Win + signo menos (−)",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl + Alt + L",
+                    "is_correct": false
+                },
+                {
+                    "content": "Win + Alt + Z",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué combinación activa o desactiva el Narrador, el lector de pantalla de Windows 11?",
+            "explanation": "Win + Ctrl + Intro inicia y detiene el Narrador.",
+            "options": [
+                {
+                    "content": "Win + Ctrl + Intro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Win + Mayús + N",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl + Alt + Supr",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alt + Mayús + Intro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ocurre habitualmente al pulsar cinco veces seguidas la tecla Mayús en Windows 11?",
+            "explanation": "Pulsar Mayús cinco veces ofrece activar las Teclas especiales, que facilitan combinaciones sin pulsar varias teclas a la vez.",
+            "options": [
+                {
+                    "content": "Se abre el Narrador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se activa la Lupa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se bloquea el teclado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se ofrece activar las Teclas especiales (pegajosas)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Accesibilidad de Configuración, ¿qué opción permite aplicar combinaciones de colores que mejoran la legibilidad a personas con baja visión?",
+            "explanation": "Los temas de contraste, en Accesibilidad > Contraste de colores, cambian los colores para facilitar la lectura.",
+            "options": [
+                {
+                    "content": "Subtítulos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Temas de contraste",
+                    "is_correct": true
+                },
+                {
+                    "content": "Audio mono",
+                    "is_correct": false
+                },
+                {
+                    "content": "Control por voz",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para ver la extensión de los archivos (por ejemplo, .docx) en el Explorador de archivos de Windows 11, ¿qué menú se usa?",
+            "explanation": "En el menú Ver, submenú Mostrar, se activa «Extensiones de nombre de archivo».",
+            "options": [
+                {
+                    "content": "Ver > Mostrar > Extensiones de nombre de archivo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Compartir > Extensiones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nuevo > Extensiones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ordenar > Tipo de archivo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En el Explorador de archivos de Windows 11, la combinación Ctrl + T abre una nueva pestaña.",
+            "explanation": "Desde Windows 11 22H2 el Explorador admite pestañas, y Ctrl + T abre una nueva.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los archivos que se eliminan de un disco USB extraíble con la tecla Supr se envían siempre a la Papelera de reciclaje del equipo.",
+            "explanation": "Normalmente los archivos de unidades extraíbles se borran de forma definitiva, sin pasar por la Papelera.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La combinación Win + D muestra el escritorio minimizando las ventanas abiertas.",
+            "explanation": "Win + D muestra u oculta el escritorio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,537 @@
+{
+    "slug": "cuerpos-administracion-justicia",
+    "title": "Cuerpos de funcionarios al servicio de la Administración de Justicia",
+    "description": "Test sobre el Libro VI de la LOPJ para repasar antes del examen de Justicia: cuerpos, funciones, acceso, situaciones administrativas y régimen disciplinario. Sacado del temario de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:48:35+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica del Poder Judicial, ¿cuál de los siguientes NO es un Cuerpo general de funcionarios al servicio de la Administración de Justicia?",
+            "explanation": "Los Cuerpos generales son Gestión Procesal y Administrativa, Tramitación Procesal y Administrativa y Auxilio Judicial; el de Oficiales Judiciales Superiores no existe.",
+            "options": [
+                {
+                    "content": "Cuerpo de Gestión Procesal y Administrativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpo de Tramitación Procesal y Administrativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpo de Auxilio Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpo de Oficiales Judiciales Superiores",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes es un Cuerpo especial al servicio de la Administración de Justicia según la LOPJ?",
+            "explanation": "Entre los Cuerpos especiales están los Médicos Forenses, los Facultativos y los Técnicos Especialistas del INTCF y los Ayudantes de Laboratorio.",
+            "options": [
+                {
+                    "content": "Cuerpo de Peritos Judiciales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpo de Médicos Forenses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuerpo de Agentes Procesales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpo de Inspectores de Justicia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Entre las funciones propias del Cuerpo de Auxilio Judicial se encuentra:",
+            "explanation": "El Cuerpo de Auxilio Judicial se ocupa, entre otras tareas, de los actos de comunicación y ejecución, y de la seguridad y el orden en las salas.",
+            "options": [
+                {
+                    "content": "Dictar autos de tramitación del procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dirigir la oficina judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Realizar los actos de comunicación y ejecución que se les encomienden",
+                    "is_correct": true
+                },
+                {
+                    "content": "Emitir informes periciales médicos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes funciones corresponde al Cuerpo de Tramitación Procesal y Administrativa?",
+            "explanation": "El Cuerpo de Tramitación colabora en la tramitación de los procedimientos y en la documentación de actuaciones; la fe pública corresponde a los Letrados de la Administración de Justicia.",
+            "options": [
+                {
+                    "content": "Dictar sentencias en procedimientos de menor cuantía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tramitar los procedimientos conforme a las instrucciones recibidas y documentar las actuaciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Practicar autopsias judiciales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejercer la fe pública judicial con carácter exclusivo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta correcta sobre el Cuerpo de Gestión Procesal y Administrativa:",
+            "explanation": "El Cuerpo de Gestión Procesal y Administrativa se clasifica en el grupo A2.",
+            "options": [
+                {
+                    "content": "Se integra en el grupo C2",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se integra en el grupo A2",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se integra en el grupo A1",
+                    "is_correct": false
+                },
+                {
+                    "content": "No pertenece a ningún grupo de clasificación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para ingresar por turno libre en el Cuerpo de Auxilio Judicial se exige, con carácter general, la titulación de:",
+            "explanation": "El acceso al Cuerpo de Auxilio Judicial exige el título de Graduado en ESO o equivalente.",
+            "options": [
+                {
+                    "content": "Graduado en Educación Secundaria Obligatoria o equivalente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Bachiller o Técnico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diplomado o Grado universitario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Licenciado en Derecho",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para el ingreso por turno libre en el Cuerpo de Tramitación Procesal y Administrativa se exige:",
+            "explanation": "Para Tramitación Procesal y Administrativa se requiere Bachiller o Técnico.",
+            "options": [
+                {
+                    "content": "Graduado en ESO únicamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grado universitario obligatoriamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Título de Bachiller o Técnico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ninguna titulación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto al ingreso en los Cuerpos de funcionarios de la Administración de Justicia, la LOPJ establece que se realizará:",
+            "explanation": "El ingreso se hace por oposición libre, además de existir un turno de promoción interna conforme a los principios de igualdad, mérito y capacidad.",
+            "options": [
+                {
+                    "content": "Por libre designación del Ministerio de Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediante sorteo entre los aspirantes que reúnan los requisitos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por designación de los Presidentes de los Tribunales Superiores de Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediante oposición libre, sin perjuicio de la promoción interna",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los funcionarios de qué Cuerpo pueden acceder por promoción interna al Cuerpo de Gestión Procesal y Administrativa?",
+            "explanation": "La promoción interna se produce desde el Cuerpo inmediatamente inferior de la carrera procesal, es decir, Tramitación.",
+            "options": [
+                {
+                    "content": "Tramitación Procesal y Administrativa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Médicos Forenses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Técnicos Especialistas del INTCF",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ayudantes de Laboratorio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los Cuerpos de funcionarios al servicio de la Administración de Justicia son, según la LOPJ:",
+            "explanation": "Son Cuerpos de carácter nacional, sin perjuicio de las competencias de las Comunidades Autónomas en la gestión de su personal.",
+            "options": [
+                {
+                    "content": "Cuerpos de carácter autonómico exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpos de carácter provincial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpos propios de cada Tribunal Superior de Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuerpos nacionales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el sistema ordinario de provisión de puestos de trabajo de los funcionarios de los Cuerpos generales?",
+            "explanation": "La provisión ordinaria se hace por concurso de traslados; la libre designación es excepcional.",
+            "options": [
+                {
+                    "content": "Concurso de traslados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Libre designación como regla general",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sorteo público",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nombramiento discrecional del Presidente del Tribunal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es una situación administrativa de los funcionarios al servicio de la Administración de Justicia:",
+            "explanation": "Las situaciones previstas son servicio activo, servicios especiales, servicio en Comunidades Autónomas, excedencia voluntaria y suspensión; el permiso indefinido no existe.",
+            "options": [
+                {
+                    "content": "Servicio activo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servicios especiales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Excedencia voluntaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Permiso retribuido indefinido",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Pasa a la situación de servicios especiales el funcionario de Justicia que:",
+            "explanation": "El desempeño de cargos electos como el de parlamentario nacional da lugar a servicios especiales.",
+            "options": [
+                {
+                    "content": "Solicita una excedencia por interés particular",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resulta elegido Diputado o Senador de las Cortes Generales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Es trasladado a otro juzgado de la misma localidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Disfruta de sus vacaciones anuales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La excedencia para atender al cuidado de cada hijo, tanto por naturaleza como por adopción, tendrá una duración máxima de:",
+            "explanation": "La excedencia por cuidado de hijos tiene una duración máxima de tres años, contados desde el nacimiento o la resolución de adopción.",
+            "options": [
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la suspensión provisional de un funcionario de Justicia, señale la respuesta correcta:",
+            "explanation": "La suspensión provisional es una medida cautelar adoptada mientras se tramita el procedimiento disciplinario o penal.",
+            "options": [
+                {
+                    "content": "Solo puede acordarse una vez firme la sanción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puede acordarse como medida preventiva durante la tramitación de un procedimiento disciplinario o penal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nunca conlleva pérdida de retribuciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo la puede acordar un Juez de Paz",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la LOPJ, las faltas disciplinarias de los funcionarios al servicio de la Administración de Justicia se clasifican en muy graves, graves y leves.",
+            "explanation": "El régimen disciplinario distingue tres categorías de faltas: muy graves, graves y leves.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes sanciones solo puede imponerse por la comisión de una falta muy grave?",
+            "explanation": "La separación del servicio es la sanción más severa y está reservada a las faltas muy graves.",
+            "options": [
+                {
+                    "content": "Apercibimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Multa de cuantía mínima",
+                    "is_correct": false
+                },
+                {
+                    "content": "Separación del servicio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Traslado a otra localidad con carácter cautelar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Constituye falta muy grave de los funcionarios de Justicia:",
+            "explanation": "La discriminación por esas causas figura entre las faltas muy graves; las otras opciones son faltas de menor entidad.",
+            "options": [
+                {
+                    "content": "La incorrección con el público",
+                    "is_correct": false
+                },
+                {
+                    "content": "Toda actuación que suponga discriminación por razón de raza, sexo, religión, lengua u opinión",
+                    "is_correct": true
+                },
+                {
+                    "content": "El descuido en el cumplimiento de las tareas encomendadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La falta de respeto leve a un compañero",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes conductas constituye falta leve:",
+            "explanation": "La incorrección en el trato es la falta leve típica; las demás conductas son de mayor gravedad.",
+            "options": [
+                {
+                    "content": "El abandono del servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "La discriminación por razón de sexo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La incorrección con el público, superiores, compañeros o subordinados",
+                    "is_correct": true
+                },
+                {
+                    "content": "La revelación de datos reservados con perjuicio grave",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En materia disciplinaria, la LOPJ establece que no se podrá imponer sanción por faltas graves o muy graves:",
+            "explanation": "Rige el principio de procedimiento previo con garantías, entre ellas la audiencia del interesado.",
+            "options": [
+                {
+                    "content": "Sin la tramitación previa del procedimiento, con audiencia del interesado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sin informe favorable del Consejo General del Poder Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sin autorización de las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sin el voto de los sindicatos más representativos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los funcionarios de los Cuerpos generales de Justicia, en la oficina judicial, no dependen en ningún caso del Letrado de la Administración de Justicia.",
+            "explanation": "Los funcionarios destinados en la oficina judicial dependen funcionalmente del Letrado de la Administración de Justicia, director técnico-procesal de la misma.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los Médicos Forenses tienen entre sus funciones:",
+            "explanation": "El Cuerpo de Médicos Forenses presta asistencia técnica en materia de medicina legal a órganos judiciales y fiscales.",
+            "options": [
+                {
+                    "content": "Tramitar ejecuciones civiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Realizar actos de comunicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejercer la dirección de la oficina fiscal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prestar asistencia técnica a Juzgados, Tribunales y Fiscalías en su especialidad médica",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para ingresar en el Cuerpo de Médicos Forenses se exige, entre otros requisitos, estar en posesión del título de:",
+            "explanation": "Para ser Médico Forense es necesaria la titulación en Medicina (Licenciatura o Grado) y superar la oposición.",
+            "options": [
+                {
+                    "content": "Licenciado o Graduado en Derecho",
+                    "is_correct": false
+                },
+                {
+                    "content": "Licenciado o Graduado en Medicina",
+                    "is_correct": true
+                },
+                {
+                    "content": "Bachiller",
+                    "is_correct": false
+                },
+                {
+                    "content": "Técnico Superior en Laboratorio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El ingreso en los Cuerpos de funcionarios al servicio de la Administración de Justicia se realiza, con carácter general, por libre designación.",
+            "explanation": "El ingreso se produce por oposición, conforme a los principios de igualdad, mérito y capacidad; no por libre designación.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

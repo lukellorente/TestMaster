@@ -1,0 +1,675 @@
+{
+    "slug": "word-365",
+    "title": "Word (Microsoft 365) para oposiciones",
+    "description": "Test de Word (Microsoft 365) para repasar el apartado de ofimática de las oposiciones: cinta, estilos, secciones, combinar correspondencia, tablas y atajos. Dificultad media, ideal para antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:32:13+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "En Word (Microsoft 365), ¿en qué pestaña de la cinta se encuentra el comando para insertar una tabla de contenido automática?",
+            "explanation": "La tabla de contenido, las notas al pie, las citas y la bibliografía están en la pestaña Referencias.",
+            "options": [
+                {
+                    "content": "Insertar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vista",
+                    "is_correct": false
+                },
+                {
+                    "content": "Referencias",
+                    "is_correct": true
+                },
+                {
+                    "content": "Revisar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. En la pestaña Inicio de Word se encuentran los grupos:",
+            "explanation": "El grupo Ilustraciones pertenece a la pestaña Insertar, no a Inicio.",
+            "options": [
+                {
+                    "content": "Portapapeles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fuente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estilos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ilustraciones",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes pestañas de la cinta contiene los comandos Control de cambios y Comentarios nuevos?",
+            "explanation": "Los grupos Control de cambios, Comentarios y Proteger se encuentran en la pestaña Revisar.",
+            "options": [
+                {
+                    "content": "Revisar",
+                    "is_correct": true
+                },
+                {
+                    "content": "Referencias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Correspondencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diseño",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué pestaña de la cinta se encuentra el botón Orientación (vertical u horizontal) de la página?",
+            "explanation": "Orientación, Márgenes, Tamaño y Columnas están en el grupo Configurar página de la pestaña Disposición.",
+            "options": [
+                {
+                    "content": "Diseño",
+                    "is_correct": false
+                },
+                {
+                    "content": "Inicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Insertar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Disposición",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Dónde se encuentra el comando Marca de agua en la cinta de Word?",
+            "explanation": "La marca de agua, el color de página y los bordes de página están en el grupo Fondo de página de la pestaña Diseño.",
+            "options": [
+                {
+                    "content": "Pestaña Insertar, grupo Texto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pestaña Diseño, grupo Fondo de página",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pestaña Disposición, grupo Organizar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pestaña Vista, grupo Mostrar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué combinación de teclas aplica el estilo Título 1 al párrafo seleccionado?",
+            "explanation": "Ctrl+Alt+1, Ctrl+Alt+2 y Ctrl+Alt+3 aplican Título 1, 2 y 3 respectivamente.",
+            "options": [
+                {
+                    "content": "Ctrl+Mayús+1",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl+Alt+1",
+                    "is_correct": true
+                },
+                {
+                    "content": "Alt+Mayús+1",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl+1",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para que Word genere automáticamente una tabla de contenido, los títulos del documento deben tener aplicados:",
+            "explanation": "La tabla de contenido automática se basa en los estilos de título o en los niveles de esquema asignados.",
+            "options": [
+                {
+                    "content": "Estilos de título (Título 1, Título 2…) o niveles de esquema",
+                    "is_correct": true
+                },
+                {
+                    "content": "Negrita y un tamaño de fuente superior a 14 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un salto de sección antes de cada título",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una numeración automática de lista",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si se modifica la definición de un estilo (por ejemplo, Título 2), ¿qué ocurre?",
+            "explanation": "La ventaja de los estilos es que, al modificar su definición, se actualizan todos los elementos que lo utilizan.",
+            "options": [
+                {
+                    "content": "Solo cambia el párrafo donde está el cursor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo cambian los párrafos que se escriban a partir de ese momento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hay que volver a aplicar el estilo manualmente a cada párrafo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cambian todos los párrafos del documento que usan ese estilo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. En Word, los tipos de estilo son:",
+            "explanation": "Word distingue estilos de párrafo, de carácter, vinculados, de tabla y de lista; no existe el estilo de página.",
+            "options": [
+                {
+                    "content": "Párrafo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Carácter",
+                    "is_correct": false
+                },
+                {
+                    "content": "Página",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tabla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atajo de teclado aplica el estilo Normal al texto seleccionado?",
+            "explanation": "Ctrl+Mayús+N aplica el estilo Normal; Ctrl+N, en cambio, aplica negrita en Word en español.",
+            "options": [
+                {
+                    "content": "Ctrl+Mayús+N",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ctrl+N",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl+Alt+N",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alt+Mayús+N",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Entre los tipos de salto de sección de Word se encuentran:",
+            "explanation": "Los saltos de sección son Página siguiente, Continua, Página par y Página impar. El salto de columna es un salto de página distinto.",
+            "options": [
+                {
+                    "content": "Página siguiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Continua",
+                    "is_correct": false
+                },
+                {
+                    "content": "Página impar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Columna",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se necesita que una sola página de un documento largo esté en orientación horizontal y el resto en vertical. ¿Qué hay que hacer?",
+            "explanation": "La orientación es una propiedad de sección, por lo que se pueden combinar orientaciones separando con saltos de sección.",
+            "options": [
+                {
+                    "content": "Insertar saltos de sección y cambiar la orientación solo en la sección deseada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aplicar un estilo de párrafo horizontal a esa página",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar la vista Esquema",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es imposible: la orientación afecta siempre a todo el documento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para que el encabezado de la sección 2 sea distinto al de la sección 1, ¿qué opción debe desactivarse?",
+            "explanation": "Por defecto, el encabezado de cada sección está vinculado al anterior; hay que desactivar Vincular al anterior.",
+            "options": [
+                {
+                    "content": "Primera página diferente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Páginas pares e impares diferentes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mostrar texto del documento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vincular al anterior",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué se utiliza típicamente un salto de sección continuo?",
+            "explanation": "El salto continuo inicia una nueva sección en la misma página, lo que permite, por ejemplo, combinar texto a una y a dos columnas.",
+            "options": [
+                {
+                    "content": "Para empezar la nueva sección siempre en página impar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para cambiar el número de columnas dentro de la misma página",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para reiniciar el documento en una página nueva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para proteger parte del documento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la combinación de correspondencia, ¿cuál de las siguientes NO es un origen de datos habitual?",
+            "explanation": "Los orígenes habituales son Excel, Access, contactos de Outlook o una lista nueva escrita en Word; no una presentación.",
+            "options": [
+                {
+                    "content": "Una hoja de cálculo de Excel",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una base de datos de Access",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los contactos de Outlook",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una presentación de PowerPoint",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Asistente paso a paso para combinar correspondencia de Word consta de:",
+            "explanation": "El asistente guía en 6 pasos: tipo de documento, documento inicial, destinatarios, redacción, vista previa y finalización.",
+            "options": [
+                {
+                    "content": "4 pasos",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 pasos",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 pasos",
+                    "is_correct": true
+                },
+                {
+                    "content": "8 pasos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al finalizar una combinación de correspondencia, ¿qué opción de Finalizar y combinar genera un nuevo documento con todas las cartas combinadas?",
+            "explanation": "Editar documentos individuales crea un documento nuevo con una carta por destinatario, que puede revisarse antes de imprimir.",
+            "options": [
+                {
+                    "content": "Editar documentos individuales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Imprimir documentos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Enviar mensajes de correo electrónico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vista previa de resultados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la pestaña Correspondencia, ¿qué regla permite insertar un texto u otro según el valor de un campo del origen de datos?",
+            "explanation": "La regla Si…Entonces…De lo contrario permite insertar contenido condicional en función del valor de un campo.",
+            "options": [
+                {
+                    "content": "Siguiente registro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Preguntar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Si…Entonces…De lo contrario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Fijar número de palabra",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué botón de la pestaña Correspondencia permite ver los datos reales de cada destinatario en lugar de los nombres de los campos?",
+            "explanation": "Vista previa de resultados sustituye los campos «» por los datos del registro correspondiente.",
+            "options": [
+                {
+                    "content": "Resaltar campos de combinación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vista previa de resultados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Insertar campo combinado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seleccionar destinatarios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al situar el cursor en la última celda de una tabla de Word y pulsar la tecla Tab:",
+            "explanation": "Pulsar Tab en la última celda crea automáticamente una nueva fila al final de la tabla.",
+            "options": [
+                {
+                    "content": "El cursor vuelve a la primera celda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se inserta una tabulación dentro de la celda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se añade una nueva fila al final de la tabla",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se selecciona toda la tabla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para que la fila de encabezado de una tabla se repita al inicio de cada página cuando la tabla ocupa varias, se utiliza:",
+            "explanation": "El comando Repetir filas de encabezado está en la pestaña contextual Disposición de tabla, grupo Datos.",
+            "options": [
+                {
+                    "content": "Repetir filas de encabezado, en Disposición de tabla",
+                    "is_correct": true
+                },
+                {
+                    "content": "Vincular al anterior, en Encabezado y pie de página",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fila de totales, en Diseño de tabla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Salto de página antes, en Párrafo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al seleccionar una tabla en Word aparecen dos pestañas contextuales. ¿Cuáles son?",
+            "explanation": "Las pestañas contextuales son Diseño de tabla (estilos, bordes, sombreado) y Disposición de tabla (filas, columnas, combinar, alinear).",
+            "options": [
+                {
+                    "content": "Formato de tabla y Datos de tabla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diseño de tabla y Disposición de tabla",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diseño y Disposición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Herramientas de tabla y Estilos de tabla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué comando permite transformar un texto separado por tabulaciones o punto y coma en una tabla?",
+            "explanation": "Con el texto seleccionado, Convertir texto en tabla permite elegir el separador (tabulaciones, punto y coma, párrafos…).",
+            "options": [
+                {
+                    "content": "Insertar > Tabla > Hoja de cálculo de Excel",
+                    "is_correct": false
+                },
+                {
+                    "content": "Insertar > Tabla > Tablas rápidas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Disposición > Columnas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Insertar > Tabla > Convertir texto en tabla",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atajo de teclado inserta un salto de página manual en Word?",
+            "explanation": "Ctrl+Intro inserta un salto de página; Mayús+Intro inserta un salto de línea y Ctrl+Mayús+Intro un salto de columna.",
+            "options": [
+                {
+                    "content": "Ctrl+Intro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mayús+Intro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl+Mayús+Intro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alt+Intro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué combinación de teclas copia el formato del texto seleccionado (equivalente a Copiar formato)?",
+            "explanation": "Ctrl+Mayús+C copia el formato y Ctrl+Mayús+V lo pega en otro texto.",
+            "options": [
+                {
+                    "content": "Ctrl+Alt+C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alt+Mayús+C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl+Mayús+C",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ctrl+Mayús+F",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atajo activa o desactiva el Control de cambios en Word?",
+            "explanation": "Ctrl+Mayús+E activa o desactiva el seguimiento de cambios; Ctrl+Alt+M inserta un comentario.",
+            "options": [
+                {
+                    "content": "Ctrl+Alt+M",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl+Mayús+V",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl+Mayús+C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ctrl+Mayús+E",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atajo de teclado alterna el texto seleccionado entre mayúsculas, minúsculas y tipo oración?",
+            "explanation": "Mayús+F3 cambia el uso de mayúsculas y minúsculas del texto seleccionado; F7 abre la revisión ortográfica y F12 Guardar como.",
+            "options": [
+                {
+                    "content": "F7",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayús+F3",
+                    "is_correct": true
+                },
+                {
+                    "content": "F4",
+                    "is_correct": false
+                },
+                {
+                    "content": "F12",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Si se elimina un salto de sección en Word, el texto que lo precede adopta el formato de la sección siguiente.",
+            "explanation": "El formato de sección se almacena en la marca de salto; al borrarla, el texto anterior pasa a tener el formato de la sección que le sigue.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una tabla de Word puede tener como máximo 63 columnas.",
+            "explanation": "El límite de columnas por fila en una tabla de Word es de 63.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Word en español, el atajo Ctrl+N aplica cursiva al texto seleccionado.",
+            "explanation": "Ctrl+N aplica negrita; la cursiva se aplica con Ctrl+K y el subrayado con Ctrl+S.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

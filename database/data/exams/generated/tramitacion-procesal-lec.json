@@ -1,0 +1,782 @@
+{
+    "slug": "tramitacion-procesal-lec",
+    "title": "Tramitación Procesal - juicio ordinario y verbal (LEC)",
+    "description": "Test de Tramitación Procesal sobre juicio ordinario, juicio verbal y recursos de la LEC para repasar antes del examen de Justicia. Preguntas de nivel difícil con los plazos más típicos.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T23:43:51+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 250 de la Ley 1/2000, de Enjuiciamiento Civil, y siempre que no estén incluidas en el ámbito del juicio ordinario por razón de la materia, se decidirán en el juicio verbal las demandas cuya cuantía no exceda de:",
+            "explanation": "El juicio verbal por razón de la cuantía alcanza las demandas que no excedan de 6.000 euros; las que superan esa cifra o tienen interés económico incalculable van por el ordinario.",
+            "options": [
+                {
+                    "content": "3.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "6.000 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "12.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "15.000 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 400 de la LEC, cuando lo que se pida en la demanda pueda fundarse en diferentes hechos o en distintos fundamentos o títulos jurídicos, el actor deberá:",
+            "explanation": "El artículo 400 establece la preclusión de la alegación de hechos y fundamentos jurídicos: lo que pudo invocarse y no se invocó no puede alegarse en un proceso posterior.",
+            "options": [
+                {
+                    "content": "Reservarse los títulos jurídicos que no considere principales para alegarlos en la audiencia previa.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alegar solo uno de ellos y reservarse los demás para un proceso posterior.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aducir en la demanda cuantos resulten conocidos o puedan invocarse al tiempo de interponerla, sin poder reservarlos para un proceso ulterior.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aducir los hechos en la demanda y los fundamentos jurídicos en las conclusiones del juicio.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 410 de la LEC, la litispendencia, con todos sus efectos procesales, se produce:",
+            "explanation": "El artículo 410 la anuda a la interposición de la demanda, condicionada a que luego sea admitida.",
+            "options": [
+                {
+                    "content": "Desde la interposición de la demanda, si después es admitida.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desde que se practica el emplazamiento al demandado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde la presentación del escrito de contestación a la demanda.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde la celebración de la audiencia previa.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con la inalterabilidad del objeto del proceso en el juicio ordinario, señale la respuesta incorrecta:",
+            "explanation": "Contestada la demanda no se admite su ampliación para acumular nuevas acciones; las demás opciones son correctas conforme a los artículos 412, 426 y 286.",
+            "options": [
+                {
+                    "content": "Fijado lo que sea objeto del proceso en la demanda y la contestación, las partes no podrán alterarlo posteriormente.",
+                    "is_correct": false
+                },
+                {
+                    "content": "En la audiencia previa las partes pueden aclarar las alegaciones y rectificar extremos secundarios de sus pretensiones.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los hechos de relevancia ocurridos o conocidos con posterioridad pueden alegarse como hechos nuevos o de nueva noticia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una vez contestada la demanda, el actor puede ampliarla libremente para acumular nuevas acciones.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la acumulación objetiva de acciones en una misma demanda, según la LEC:",
+            "explanation": "El actor puede acumular las acciones que le competan contra el demandado aunque provengan de títulos diferentes, pero no las incompatibles, salvo ejercicio subsidiario.",
+            "options": [
+                {
+                    "content": "Pueden acumularse acciones incompatibles si el actor así lo manifiesta expresamente.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No pueden acumularse acciones incompatibles entre sí, salvo que se ejerciten subsidiariamente.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo pueden acumularse acciones que provengan del mismo título jurídico.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo pueden acumularse acciones cuando todas ellas se tramiten por el mismo tipo de juicio y tengan idéntica cuantía.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes demandas se decide por los trámites del juicio ordinario por razón de la materia, cualquiera que sea su cuantía?",
+            "explanation": "La tutela del derecho al honor, la intimidad y la propia imagen figura entre las materias del artículo 249.1; las otras tres se tramitan por el verbal conforme al artículo 250.1.",
+            "options": [
+                {
+                    "content": "La que pretenda la tutela civil del derecho al honor, a la intimidad y a la propia imagen.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La que reclame las rentas vencidas por el impago del arrendatario de un inmueble.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La que solicite la tutela sumaria de la posesión de una cosa por quien haya sido despojado de ella.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La que pida el desahucio de finca urbana por falta de pago de la renta.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 394.1 de la LEC, en los procesos declarativos las costas de la primera instancia se impondrán:",
+            "explanation": "Rige el criterio del vencimiento objetivo, matizado por las serias dudas de hecho o de derecho razonadas por el tribunal.",
+            "options": [
+                {
+                    "content": "Siempre a la parte demandada que haya perdido el proceso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por mitad a cada parte cuando se estime parcialmente la demanda, en todo caso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la parte que haya visto rechazadas todas sus pretensiones, salvo que el tribunal aprecie, y razone, que el caso presentaba serias dudas de hecho o de derecho.",
+                    "is_correct": true
+                },
+                {
+                    "content": "A la parte que haya visto rechazada la mayoría de sus pretensiones, sin posibilidad de excepciones.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 394.3 de la LEC, cuando se impongan las costas al litigante vencido, este solo estará obligado a pagar de las correspondientes a la defensa de la parte contraria una cantidad total que no exceda, por cada litigante favorecido, de:",
+            "explanation": "El límite es un tercio de la cuantía, y no se aplica si el tribunal declara la temeridad del litigante condenado en costas.",
+            "options": [
+                {
+                    "content": "La mitad de la cuantía del proceso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La cuarta parte de la cuantía del proceso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El diez por ciento de la cuantía del proceso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La tercera parte de la cuantía del proceso.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el demandado se allana a todas las pretensiones antes de contestar a la demanda, según el artículo 395 de la LEC:",
+            "explanation": "El allanamiento anterior a la contestación evita las costas salvo mala fe, que se aprecia, por ejemplo, si hubo requerimiento fehaciente y justificado de pago.",
+            "options": [
+                {
+                    "content": "Se le impondrán siempre las costas por haber dado lugar al proceso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No se le impondrán las costas, salvo que el tribunal aprecie mala fe en él.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se le impondrá la mitad de las costas causadas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No se le impondrán costas en ningún caso, aunque hubiera mediado requerimiento previo de pago.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Admitida la demanda en el juicio ordinario, el Letrado de la Administración de Justicia dará traslado de ella al demandado para que la conteste en el plazo de:",
+            "explanation": "El artículo 404 de la LEC fija un plazo de veinte días para contestar la demanda en el juicio ordinario.",
+            "options": [
+                {
+                    "content": "Veinte días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 406 de la LEC, no se admitirá la reconvención en el juicio ordinario:",
+            "explanation": "La reconvención exige conexión con las pretensiones de la demanda y se excluye si el tribunal no es objetivamente competente o si el juicio adecuado es de otro tipo.",
+            "options": [
+                {
+                    "content": "Cuando el demandado la formule en el mismo escrito de contestación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando su cuantía sea inferior a la de la demanda principal.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando el tribunal carezca de competencia objetiva por razón de la materia o de la cuantía, o deba ventilarse en juicio de diferente tipo o naturaleza.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando la demanda principal se tramite por razón de la materia.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 405 de la LEC, respecto a los hechos aducidos por el actor, el silencio o las respuestas evasivas del demandado en la contestación:",
+            "explanation": "El demandado debe pronunciarse precisamente sobre los hechos; el tribunal puede valorar su silencio o evasivas como admisión tácita de los perjudiciales.",
+            "options": [
+                {
+                    "content": "Se consideran siempre una negativa tácita de los hechos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obligan al tribunal a declarar la rebeldía del demandado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Suponen necesariamente el allanamiento a la demanda.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pueden ser considerados por el tribunal como admisión tácita de los hechos que le sean perjudiciales.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 133 de la LEC, en el cómputo de los plazos señalados por días:",
+            "explanation": "Los plazos por días se cuentan desde el día siguiente a la notificación y no computan los días inhábiles.",
+            "options": [
+                {
+                    "content": "Se excluyen los inhábiles y el plazo se cuenta desde el día siguiente al de la notificación o emplazamiento.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se incluyen los inhábiles y el plazo se cuenta desde el mismo día de la notificación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se excluyen los inhábiles y el plazo se cuenta desde el mismo día de la notificación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se incluyen los inhábiles, pero el plazo no puede vencer en un día inhábil.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 414 de la LEC, en el juicio ordinario la audiencia previa al juicio se convocará para su celebración en el plazo de:",
+            "explanation": "La audiencia previa se convoca en el plazo de veinte días desde la contestación, la contestación a la reconvención o el vencimiento del plazo para contestar.",
+            "options": [
+                {
+                    "content": "Diez días desde la contestación a la demanda.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días desde la contestación a la demanda o, en su caso, a la reconvención, o desde la expiración del plazo para contestar.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Treinta días desde la admisión de la demanda.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes desde la contestación a la demanda.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a las finalidades de la audiencia previa del juicio ordinario, señale la respuesta incorrecta:",
+            "explanation": "La práctica de la prueba corresponde al juicio; en la audiencia previa solo se propone y se admite.",
+            "options": [
+                {
+                    "content": "Intentar un acuerdo o transacción entre las partes que ponga fin al proceso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolver las cuestiones procesales que pudieran obstar a la prosecución del proceso y a una sentencia sobre el fondo.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Practicar las pruebas testificales y periciales propuestas por las partes.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Fijar con precisión el objeto del proceso y los hechos controvertidos, y proponer y admitir la prueba.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si al proponer la prueba en la audiencia previa el tribunal considera que las pruebas propuestas pueden resultar insuficientes para esclarecer los hechos controvertidos, según el artículo 429 de la LEC:",
+            "explanation": "El tribunal no practica prueba de oficio por esta vía; advierte a las partes de la insuficiencia probatoria para que decidan si completan su proposición.",
+            "options": [
+                {
+                    "content": "Dictará sentencia desestimatoria por falta de prueba.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acordará de oficio la práctica de la prueba que estime necesaria, sin oír a las partes.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ordenará al Letrado de la Administración de Justicia que requiera a las partes para ampliar la prueba en diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo pondrá de manifiesto a las partes indicando el hecho o hechos afectados y podrá señalar la prueba cuya práctica considere conveniente.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si en la audiencia previa las partes solo discrepan sobre cuestiones jurídicas y no hay hechos controvertidos, según el artículo 428 de la LEC el tribunal:",
+            "explanation": "Cuando solo se discute el derecho aplicable, se evita el juicio y se dicta sentencia en veinte días desde la audiencia.",
+            "options": [
+                {
+                    "content": "Celebrará igualmente el juicio con alegaciones orales de las partes.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dará por terminado el acto y dictará sentencia dentro de los veinte días siguientes a la terminación de la audiencia.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dará por terminado el acto y dictará sentencia en el plazo de diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Concederá a las partes un plazo de cinco días para presentar conclusiones escritas y después dictará sentencia en treinta días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 435 de la LEC, la regla general para acordar diligencias finales en el juicio ordinario es que el tribunal puede acordarlas:",
+            "explanation": "El artículo 435.1 dispone que solo a instancia de parte puede el tribunal acordar diligencias finales, mediante auto; de oficio solo en supuestos excepcionales.",
+            "options": [
+                {
+                    "content": "Solo a instancia de parte y mediante auto.",
+                    "is_correct": true
+                },
+                {
+                    "content": "De oficio y mediante providencia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "A instancia de parte o de oficio, indistintamente, mediante decreto.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo a instancia del Ministerio Fiscal y mediante diligencia de ordenación.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 217 de la LEC, corresponde al demandado y al actor reconvenido la carga de probar:",
+            "explanation": "El actor prueba los hechos constitutivos; el demandado, los impeditivos, extintivos o excluyentes.",
+            "options": [
+                {
+                    "content": "La certeza de los hechos de los que se desprenda el efecto jurídico de las pretensiones de la demanda.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que ha cumplido sus obligaciones procesales de buena fe.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los hechos que, conforme a las normas aplicables, impidan, extingan o enerven la eficacia jurídica de los hechos constitutivos.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente los hechos negativos que hubiera alegado en la contestación.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 434 de la LEC, terminado el juicio ordinario, el tribunal dictará sentencia dentro de los:",
+            "explanation": "En el ordinario la sentencia se dicta en veinte días desde la terminación del juicio; en el verbal el plazo es de diez.",
+            "options": [
+                {
+                    "content": "Cinco días siguientes.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días siguientes.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días siguientes.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días siguientes.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el juicio verbal, admitida la demanda sucinta, el Letrado de la Administración de Justicia dará traslado al demandado para que la conteste por escrito en el plazo de:",
+            "explanation": "En el juicio verbal la contestación escrita se presenta en diez días, frente a los veinte del ordinario.",
+            "options": [
+                {
+                    "content": "Cinco días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinte días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la demanda de desahucio por falta de pago, según el artículo 440.3 de la LEC, el Letrado de la Administración de Justicia requerirá al demandado para que en el plazo de diez días:",
+            "explanation": "El requerimiento ofrece tres opciones: desalojar, pagar (enervando la acción) o comparecer alegando sucintamente las razones para no pagar.",
+            "options": [
+                {
+                    "content": "Desaloje el inmueble, pague al actor o comparezca y alegue sucintamente las razones de la negativa al pago.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desaloje el inmueble, sin otra alternativa posible.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consigne judicialmente el triple de las rentas adeudadas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conteste a la demanda por escrito con firma de abogado y procurador, sin posibilidad de pago.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 442 de la LEC, si el demandante no comparece a la vista del juicio verbal y el demandado no alega interés legítimo en que el proceso continúe para que se dicte sentencia sobre el fondo:",
+            "explanation": "La incomparecencia del actor sin interés del demandado en continuar produce desistimiento, sobreseimiento y condena en costas, con posible indemnización de daños acreditados.",
+            "options": [
+                {
+                    "content": "Se declarará la rebeldía del demandante y se continuará el juicio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se suspenderá la vista por una sola vez y se señalará nueva fecha en diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se le tendrá por desistido de la demanda, se sobreseerá el proceso y se le condenará en costas.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se dictará sentencia estimatoria por admisión de los hechos de la contestación.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 447 de la LEC, el tribunal dictará sentencia en el juicio verbal dentro de los:",
+            "explanation": "La sentencia del juicio verbal se dicta en diez días desde su terminación.",
+            "options": [
+                {
+                    "content": "Cinco días siguientes a la terminación del juicio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días siguientes a la terminación del juicio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días siguientes a la terminación del juicio.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días siguientes a la terminación del juicio.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según los artículos 23 y 31 de la LEC, la intervención de procurador y abogado no es preceptiva, con carácter general, en los juicios verbales cuya cuantía no exceda de:",
+            "explanation": "Para cuantías de hasta 2.000 euros en juicio verbal los litigantes pueden comparecer por sí mismos, con las excepciones legales.",
+            "options": [
+                {
+                    "content": "600 euros.",
+                    "is_correct": false
+                },
+                {
+                    "content": "2.000 euros.",
+                    "is_correct": true
+                },
+                {
+                    "content": "3.000 euros.",
+                    "is_correct": false
+                },
+                {
+                    "content": "6.000 euros.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LEC, el recurso de reposición contra providencias y autos no definitivos se interpondrá, ante el tribunal que dictó la resolución recurrida, en el plazo de:",
+            "explanation": "La reposición se interpone en cinco días desde la notificación de la resolución, con expresión de la infracción cometida.",
+            "options": [
+                {
+                    "content": "Cinco días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 458 de la LEC, el recurso de apelación contra una sentencia se interpondrá ante el tribunal que haya dictado la resolución apelada, en el plazo de:",
+            "explanation": "El recurso de apelación se interpone por escrito ante el tribunal a quo en el plazo de veinte días desde el siguiente a la notificación.",
+            "options": [
+                {
+                    "content": "Cinco días desde su notificación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días desde su notificación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días desde su notificación.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Treinta días desde su notificación.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Interpuesto el recurso de apelación, según el artículo 461 de la LEC, se dará traslado del escrito de interposición a las demás partes para que, en el plazo de diez días, puedan:",
+            "explanation": "Las demás partes disponen de diez días para oponerse al recurso o impugnar la resolución en lo que les resulte desfavorable.",
+            "options": [
+                {
+                    "content": "Solo allanarse al recurso, sin poder oponerse.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solicitar únicamente la ejecución provisional de la sentencia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Presentar solo alegaciones orales en la vista de la Audiencia Provincial.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Presentar escrito de oposición al recurso o, en su caso, de impugnación de la resolución apelada.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 449 de la LEC, en los juicios que lleven aparejado el lanzamiento por falta de pago de rentas, no se admitirá al demandado el recurso de apelación si al interponerlo:",
+            "explanation": "El artículo 449.1 exige al arrendatario demandado acreditar estar al corriente de las rentas para poder recurrir.",
+            "options": [
+                {
+                    "content": "No ha acreditado haber abonado las costas de la primera instancia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No manifiesta, acreditándolo por escrito, tener satisfechas las rentas vencidas y las que con arreglo al contrato debe pagar adelantadas.",
+                    "is_correct": true
+                },
+                {
+                    "content": "No ha consignado el importe íntegro de la cuantía reclamada más un veinte por ciento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No ha obtenido previamente la autorización del Letrado de la Administración de Justicia.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 460.2 de la LEC, en la segunda instancia podrán practicarse las pruebas siguientes, salvo una:",
+            "explanation": "La prueba en apelación es tasada: solo se admiten los supuestos del artículo 460.2, no una libre reapertura probatoria.",
+            "options": [
+                {
+                    "content": "Las que hubieran sido indebidamente denegadas en la primera instancia, si se formuló protesta.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las propuestas y admitidas en primera instancia que no se practicaron por causas no imputables al que las propuso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las relativas a hechos de relevancia ocurridos después del comienzo del plazo para dictar sentencia en primera instancia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier prueba que la parte apelante decida proponer libremente, aunque pudo proponerla en primera instancia.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 459 de la LEC, el recurso de apelación fundado en infracción de normas o garantías procesales que haya causado indefensión exige que:",
+            "explanation": "Se requiere haber denunciado la infracción en la primera instancia y haber pedido su subsanación cuando fuera posible.",
+            "options": [
+                {
+                    "content": "El recurrente haya denunciado oportunamente la infracción en la instancia, si hubo oportunidad procesal para ello.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La infracción sea apreciada de oficio por el Letrado de la Administración de Justicia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se interponga previamente recurso extraordinario por infracción procesal.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La infracción afecte al orden público procesal, y solo entonces.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En el juicio verbal, si no comparece el demandado debidamente citado a la vista, se procederá sin necesidad de declarar su rebeldía.",
+            "explanation": "Así lo establece el artículo 442.2 de la LEC: la vista sigue adelante sin declarar la rebeldía.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Cuando el demandado se allana a las pretensiones del actor, el tribunal dicta siempre sentencia condenatoria de acuerdo con lo pedido, sin excepción alguna.",
+            "explanation": "El artículo 21 de la LEC exceptúa los allanamientos en fraude de ley, contrarios al interés general o perjudiciales para tercero.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las sentencias dictadas en juicios verbales sobre tutela sumaria de la tenencia o de la posesión no producen efectos de cosa juzgada.",
+            "explanation": "Es un proceso sumario: lo decidido no impide que se discuta después la cuestión de fondo en un juicio ordinario posterior.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Contra las sentencias dictadas en apelación por las Audiencias Provinciales cabe siempre recurso de casación, sin necesidad de que concurra ninguno de los supuestos del artículo 477.2 de la LEC.",
+            "explanation": "La casación solo procede en los supuestos tasados del artículo 477.2, como la tutela de derechos fundamentales, la cuantía o el interés casacional.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}
