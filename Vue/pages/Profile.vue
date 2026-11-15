@@ -153,6 +153,53 @@
         </div>
       </section>
 
+      <!-- ═══ Privacidad (solo perfil propio) ═══ -->
+      <section v-if="profile.is_own_profile" class="pf__privacy panel" aria-labelledby="pf-privacy">
+        <h2 id="pf-privacy" class="pf__privacy-title">Tus datos</h2>
+        <p class="pf__privacy-text">
+          Descarga una copia de todo lo que guardamos sobre ti o elimina tu cuenta.
+          Más información en la <router-link to="/privacy">Política de Privacidad</router-link>.
+        </p>
+        <div class="pf__privacy-actions">
+          <button type="button" class="btn btn--secondary" :disabled="exporting" @click="exportData">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>{{ exporting ? 'Preparando…' : 'Descargar mis datos' }}
+          </button>
+          <button type="button" class="btn btn--danger" @click="openDeleteAccount">
+            <i class="fa-solid fa-trash" aria-hidden="true"></i>Eliminar mi cuenta
+          </button>
+        </div>
+      </section>
+
+      <BaseModal v-model="confirmDeleteAccount" title="¿Eliminar tu cuenta?" max-width="460px">
+        <form class="pf__delete" @submit.prevent="deleteAccount">
+          <p class="pf__modal-text">
+            Se borrarán tus datos personales, tu foto, tus intentos y tus estadísticas. No se puede deshacer.
+          </p>
+          <label class="pf__delete-check">
+            <input v-model="deleteForm.deleteTests" type="checkbox" />
+            <span>
+              Borrar también mis tests publicados.
+              <small>Si no lo marcas, seguirán disponibles como «Usuario eliminado».</small>
+            </span>
+          </label>
+          <label class="pf__delete-label" for="pf-delete-pass">Confirma con tu contraseña</label>
+          <input
+            id="pf-delete-pass"
+            v-model="deleteForm.password"
+            type="password"
+            autocomplete="current-password"
+            class="pf__delete-input"
+          />
+          <p v-if="deleteError" class="pf__delete-error" role="alert">{{ deleteError }}</p>
+        </form>
+        <template #footer>
+          <button type="button" class="btn btn--secondary" @click="confirmDeleteAccount = false">Cancelar</button>
+          <button type="button" class="btn btn--danger" :disabled="deletingAccount" @click="deleteAccount">
+            {{ deletingAccount ? 'Eliminando…' : 'Eliminar cuenta' }}
+          </button>
+        </template>
+      </BaseModal>
+
       <BaseModal v-model="confirmDeleteAvatar" title="¿Quitar tu foto de perfil?" max-width="420px">
         <p class="pf__modal-text">Volverás a ver la imagen por defecto. Puedes subir otra cuando quieras.</p>
         <template #footer>
@@ -166,7 +213,7 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import api from '../api/axios';
 import BaseLoader from '../components/base/BaseLoader.vue';
 import BaseModal from '../components/base/BaseModal.vue';
@@ -178,6 +225,7 @@ const DEFAULT_AVATAR_URL = '/images/defaultpfp.svg';
 const DEFAULT_STATS = { tests_created: 0, tests_completed: 0, tests_passed: 0, average_score: 0, current_streak: 0 };
 
 const route = useRoute();
+const router = useRouter();
 const authStore = useAuthStore();
 const toast = useToast();
 
@@ -199,11 +247,60 @@ const passRate = computed(() => {
   return s.tests_completed ? Math.round((s.tests_passed / s.tests_completed) * 100) : 0;
 });
 
+// El historial de intentos es privado: solo aparece en el perfil propio.
 const tabs = computed(() => [
   { key: 'tests', label: 'Tests creados', count: profile.value?.created_tests?.length ?? 0 },
-  { key: 'completed', label: 'Completados', count: profile.value?.completed_tests?.length ?? 0 },
+  ...(profile.value?.is_own_profile
+    ? [{ key: 'completed', label: 'Completados', count: profile.value?.completed_tests?.length ?? 0 }]
+    : []),
   { key: 'activity', label: 'Actividad', count: null },
 ]);
+
+// ─── Privacidad: exportar / eliminar cuenta (RGPD arts. 15, 17 y 20) ──────────
+const exporting = ref(false);
+const confirmDeleteAccount = ref(false);
+const deleteForm = ref({ password: '', deleteTests: false });
+const deleteError = ref('');
+const deletingAccount = ref(false);
+
+const exportData = async () => {
+  exporting.value = true;
+  try {
+    await authStore.exportData();
+    toast.success('Descarga iniciada: testmaster-mis-datos.json');
+  } catch {
+    toast.error('No se han podido exportar tus datos. Inténtalo de nuevo.');
+  } finally {
+    exporting.value = false;
+  }
+};
+
+const openDeleteAccount = () => {
+  deleteForm.value = { password: '', deleteTests: false };
+  deleteError.value = '';
+  confirmDeleteAccount.value = true;
+};
+
+const deleteAccount = async () => {
+  deleteError.value = '';
+  if (!deleteForm.value.password) {
+    deleteError.value = 'Escribe tu contraseña para confirmar.';
+    return;
+  }
+  deletingAccount.value = true;
+  try {
+    await authStore.deleteAccount(deleteForm.value.password, deleteForm.value.deleteTests);
+    confirmDeleteAccount.value = false;
+    toast.success('Tu cuenta se ha eliminado.');
+    router.push('/');
+  } catch (err) {
+    deleteError.value = err.response?.data?.errors?.password?.[0]
+      || err.response?.data?.message
+      || 'No se ha podido eliminar la cuenta.';
+  } finally {
+    deletingAccount.value = false;
+  }
+};
 
 // ─── Utilidades ──────────────────────────────────────────────────────────────
 const formatDate = (d) =>
@@ -228,7 +325,6 @@ const activityLink = (a) => {
 const syncStoredUserAvatar = (avatar) => {
   if (authStore.user && authStore.user.id === profile.value?.user?.id) {
     authStore.user = { ...authStore.user, avatar };
-    localStorage.setItem('user', JSON.stringify(authStore.user));
   }
 };
 
@@ -638,6 +734,77 @@ watch(
 
 .pf__modal-text {
   color: var(--text-body);
+  margin: 0;
+}
+
+.pf__privacy {
+  margin-top: 32px;
+  padding: 20px 24px;
+}
+
+.pf__privacy-title {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.pf__privacy-text {
+  color: var(--muted);
+  font-size: var(--fs-small);
+  margin: 0 0 14px;
+}
+
+.pf__privacy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pf__delete {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pf__delete-check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--text-body);
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+
+.pf__delete-check input {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.pf__delete-check small {
+  display: block;
+  color: var(--muted);
+  font-size: var(--fs-meta);
+}
+
+.pf__delete-label {
+  font-size: var(--fs-small);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.pf__delete-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  background: var(--raised);
+  color: var(--text);
+  font: inherit;
+}
+
+.pf__delete-error {
+  color: var(--negative-ink);
+  font-size: var(--fs-small);
   margin: 0;
 }
 

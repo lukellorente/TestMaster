@@ -21,6 +21,8 @@ class User extends Authenticatable
         'role',
         'email_verified_at',
         'last_login',
+        'privacy_accepted_at',
+        'privacy_policy_version',
     ];
 
     protected $hidden = [
@@ -33,6 +35,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'last_login' => 'datetime',
+            'privacy_accepted_at' => 'datetime',
         ];
     }
 

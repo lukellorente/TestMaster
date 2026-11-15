@@ -53,6 +53,13 @@ class ProfileController extends Controller
             ->get();
 
         // Recent activity
+        $isOwnProfile = auth('sanctum')->check() && auth('sanctum')->id() === $user->id;
+
+        // Minimización (RGPD art. 5.1.c): el historial de intentos solo lo ve su dueño.
+        if (! $isOwnProfile) {
+            $completedTests = collect();
+        }
+
         $createdActivity = Test::where('user_id', $user->id)
             ->where('is_public', true)
             ->where('status', 'published')
@@ -60,7 +67,7 @@ class ProfileController extends Controller
             ->get()
             ->map(fn($t) => ['type' => 'test', 'title' => $t->title, 'date' => $t->created_at->toISOString(), 'id' => $t->id]);
 
-        $attemptActivity = TestAttempt::where('user_id', $user->id)
+        $attemptActivity = ! $isOwnProfile ? collect() : TestAttempt::where('user_id', $user->id)
             ->where('is_completed', true)
             ->whereHas('test', fn($q) => $q->where('is_public', true))
             ->with('test:id,title')
@@ -73,8 +80,6 @@ class ProfileController extends Controller
             ->take(30)
             ->values();
 
-        $isOwnProfile = auth('sanctum')->check() && auth('sanctum')->id() === $user->id;
-
         return response()->json([
             'user' => [
                 'id' => $user->id,
@@ -82,9 +87,9 @@ class ProfileController extends Controller
                 'email' => $isOwnProfile ? $user->email : null,
                 'avatar' => $user->avatar,
                 'bio' => $user->bio,
-                'role' => $user->role,
+                'role' => $isOwnProfile ? $user->role : null,
                 'created_at' => $user->created_at,
-                'last_login' => $user->last_login,
+                'last_login' => $isOwnProfile ? $user->last_login : null,
             ],
             'stats' => $stats,
             'created_tests' => $createdTests,
@@ -129,8 +134,21 @@ class ProfileController extends Controller
 
         try {
             // Guardar nueva imagen
+            // Nunca usar la extensión enviada por el cliente: un PNG válido llamado "x.html"/"x.svg"
+            // pasa la validación (que mira el contenido) y se serviría como HTML desde nuestro
+            // dominio bajo /storage → XSS almacenado.
             $file = $request->file('avatar');
-            $filename = 'avatar_' . $user->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+            $extension = match ($file->getMimeType()) {
+                'image/jpeg' => 'jpg',
+                'image/png' => 'png',
+                'image/gif' => 'gif',
+                'image/webp' => 'webp',
+                default => null,
+            };
+            if ($extension === null) {
+                return response()->json(['message' => 'Formato de imagen no permitido.'], 422);
+            }
+            $filename = \Illuminate\Support\Str::random(40) . '.' . $extension;
             $path = $file->storeAs('avatars', $filename, 'public');
         } catch (\Throwable $e) {
             Log::error('Error uploading avatar', [

@@ -16,35 +16,35 @@ import Contact from '../pages/Contact.vue';
 import NotFound from '../pages/NotFound.vue';
 
 const routes = [
-    { path: '/', name: 'home', component: Home, meta: { redesigned: true } },
-    { path: '/login', name: 'login', component: Login, meta: { redesigned: true } },
-    { path: '/register', name: 'register', component: Register, meta: { redesigned: true } },
-    { path: '/test/:id', name: 'view-test', component: ViewTest, meta: { redesigned: true } },
+    { path: '/', name: 'home', component: Home },
+    { path: '/login', name: 'login', component: Login },
+    { path: '/register', name: 'register', component: Register },
+    { path: '/test/:id', name: 'view-test', component: ViewTest },
     {
         path: '/test/:id/take',
         name: 'take-test',
         component: TakeTest,
-        meta: { requiresAuth: true, redesigned: true, hideChrome: true },
+        meta: { requiresAuth: true, hideChrome: true },
     },
     {
         path: '/results/:attemptId',
         name: 'results',
         component: Results,
-        meta: { requiresAuth: true, redesigned: true },
+        meta: { requiresAuth: true },
     },
     {
         path: '/create-test',
         name: 'create-test',
         component: CreateTest,
-        meta: { requiresAuth: true, redesigned: true },
+        meta: { requiresAuth: true },
     },
     {
         path: '/test/:id/edit',
         name: 'edit-test',
         component: CreateTest,
-        meta: { requiresAuth: true, redesigned: true },
+        meta: { requiresAuth: true },
     },
-    { path: '/profile/:id', name: 'profile', component: Profile, meta: { redesigned: true } },
+    { path: '/profile/:id', name: 'profile', component: Profile },
     { path: '/help', name: 'help', component: Help },
     { path: '/privacy', name: 'privacy', component: Privacy }, 
     { path: '/terms', name: 'terms', component: Terms },
@@ -57,8 +57,9 @@ const router = createRouter({
     routes,
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
     const authStore = useAuthStore();
+    await authStore.init();
     if (to.meta.requiresAuth && !authStore.isLoggedIn) {
         next({ name: 'login', query: { redirect: to.fullPath } });
     } else {

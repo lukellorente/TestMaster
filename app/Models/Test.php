@@ -17,6 +17,8 @@ class Test extends Model
         'attempts_count', 'average_score', 'published_at',
     ];
 
+    protected $hidden = ['password'];
+
     protected function casts(): array
     {
         return [

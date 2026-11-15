@@ -235,8 +235,6 @@ class AttemptController extends Controller
                 'passed' => $passed,
                 'started_at' => date('Y-m-d H:i:s', $request->started_at),
                 'completed_at' => now(),
-                'ip_address' => $request->ip(),
-                'user_agent' => $request->userAgent(),
             ]);
 
             // Save responses

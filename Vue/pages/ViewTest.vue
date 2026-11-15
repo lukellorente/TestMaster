@@ -30,6 +30,7 @@
                 <template v-if="test.user">
                   Creado por <router-link :to="`/profile/${test.user.id}`">{{ test.user.name }}</router-link> ·
                 </template>
+                <template v-else>Creado por Usuario eliminado · </template>
                 {{ formatDate(test.created_at) }}
               </span>
             </div>

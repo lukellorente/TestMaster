@@ -13,6 +13,7 @@
         <UserAvatar :user="test.user" size="small" />
         <span>{{ test.user.name }}</span>
       </span>
+      <span v-else class="ccard__author">Usuario eliminado</span>
     </div>
   </router-link>
 </template>

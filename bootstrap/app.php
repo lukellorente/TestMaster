@@ -12,7 +12,13 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // La app solo es accesible a través de Caddy (red interna de Docker).
         $middleware->trustProxies('*');
+
+        // Autenticación SPA de Sanctum: sesión en cookie httpOnly + protección CSRF.
+        $middleware->statefulApi();
+
+        $middleware->throttleApi('api');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

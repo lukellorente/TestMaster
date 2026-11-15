@@ -26,8 +26,6 @@ function apply(value) {
     theme.value = value;
     isDark.value = value === 'dark';
     document.documentElement.dataset.theme = value;
-    // Las páginas antiguas aún dependen de esta clase
-    document.body.classList.toggle('dark-mode', isDark.value);
 }
 
 let listening = false;

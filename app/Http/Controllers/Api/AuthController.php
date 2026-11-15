@@ -8,45 +8,58 @@ use App\Models\UserPoint;
 use App\Models\UserStat;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
 
+/**
+ * Autenticación SPA con Sanctum: la sesión vive en una cookie httpOnly
+ * (no accesible desde JavaScript) y las peticiones mutantes llevan token CSRF.
+ */
 class AuthController extends Controller
 {
-    /**
-     * Register a new user
-     */
+    /** Versión vigente de la Política de Privacidad / Términos. Súbela al cambiar los textos legales. */
+    public const PRIVACY_POLICY_VERSION = '2026-11-15';
+
     public function register(Request $request): JsonResponse
     {
         $request->validate([
             'name' => 'required|string|max:100',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:6|confirmed',
+            'email' => 'required|email|max:255|unique:users,email',
+            'password' => ['required', 'string', 'confirmed', Password::min(8)],
+            // Casilla obligatoria: ≥14 años (LOPDGDD art. 7) + aceptación de Política y Términos.
+            'accept_terms' => 'accepted',
+        ], [
+            'accept_terms.accepted' => 'Debes confirmar que tienes al menos 14 años y aceptar la Política de Privacidad y los Términos.',
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password_hash' => Hash::make($request->password),
-            'email_verified_at' => now(),
-        ]);
+        $user = DB::transaction(function () use ($request) {
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password_hash' => Hash::make($request->password),
+                'email_verified_at' => now(),
+                'privacy_accepted_at' => now(),
+                'privacy_policy_version' => self::PRIVACY_POLICY_VERSION,
+            ]);
 
-        // Create initial stats & points
-        UserStat::create(['user_id' => $user->id]);
-        UserPoint::create(['user_id' => $user->id]);
+            UserStat::create(['user_id' => $user->id]);
+            UserPoint::create(['user_id' => $user->id]);
 
-        $token = $user->createToken('auth-token')->plainTextToken;
+            return $user;
+        });
+
+        Auth::guard('web')->login($user);
+        $request->session()->regenerate();
 
         return response()->json([
             'user' => $this->formatUser($user),
-            'token' => $token,
             'message' => 'Cuenta creada exitosamente.',
         ], 201);
     }
 
-    /**
-     * Login
-     */
     public function login(Request $request): JsonResponse
     {
         $request->validate([
@@ -56,36 +69,32 @@ class AuthController extends Controller
 
         $user = User::where('email', $request->email)->first();
 
-        if (!$user || !Hash::check($request->password, $user->password_hash)) {
+        if (! $user || ! Hash::check($request->password, $user->password_hash)) {
             throw ValidationException::withMessages([
                 'email' => ['Email o contraseña incorrectos.'],
             ]);
         }
 
-        // Update last login
-        $user->update(['last_login' => now()]);
+        Auth::guard('web')->login($user);
+        // Evita fijación de sesión.
+        $request->session()->regenerate();
 
-        $token = $user->createToken('auth-token')->plainTextToken;
+        $user->update(['last_login' => now()]);
 
         return response()->json([
             'user' => $this->formatUser($user),
-            'token' => $token,
         ]);
     }
 
-    /**
-     * Logout
-     */
     public function logout(Request $request): JsonResponse
     {
-        $request->user()->currentAccessToken()->delete();
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
         return response()->json(['message' => 'Sesión cerrada correctamente.']);
     }
 
-    /**
-     * Get authenticated user
-     */
     public function me(Request $request): JsonResponse
     {
         $user = $request->user();
@@ -96,19 +105,13 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-     * Reset password
-     */
     public function resetPassword(Request $request): JsonResponse
     {
         $user = $request->user();
-        if (! $user) {
-            return response()->json(['message' => 'Unauthenticated.'], 401);
-        }
 
         $request->validate([
             'current_password' => 'required|string',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => ['required', 'string', 'confirmed', Password::min(8)],
         ]);
 
         if (! Hash::check($request->current_password, $user->password_hash)) {
@@ -121,7 +124,12 @@ class AuthController extends Controller
             'password_hash' => Hash::make($request->password),
         ]);
 
-        // Revoke all existing tokens to force re-authentication on other devices.
+        // Cierra el resto de sesiones y revoca cualquier token restante.
+        $request->session()->regenerate();
+        DB::table('sessions')
+            ->where('user_id', $user->id)
+            ->where('id', '!=', $request->session()->getId())
+            ->delete();
         $user->tokens()->delete();
 
         return response()->json([

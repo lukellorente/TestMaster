@@ -91,7 +91,8 @@ class TestController extends Controller
             default => $query->orderBy('created_at', 'desc'),
         };
 
-        $tests = $query->paginate($request->get('per_page', 20));
+        $perPage = min(max((int) $request->get('per_page', 20), 1), 50);
+        $tests = $query->paginate($perPage);
 
         return response()->json($tests);
     }
@@ -559,7 +560,8 @@ class TestController extends Controller
             $questionsQuery->orderBy('order_index');
         }
 
-        $questions = $questionsQuery->get();
+        // La explicación solo se muestra en resultados (puede revelar la respuesta correcta).
+        $questions = $questionsQuery->get()->makeHidden(['explanation']);
 
         foreach ($questions as $question) {
             if (in_array($question->type, ['multiple_choice', 'true_false'])) {

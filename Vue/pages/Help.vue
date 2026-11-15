@@ -1,209 +1,140 @@
 <template>
-  <div class="help-page">
-
-    <!-- ═══════════════════════════════════════════════════
-         HERO
-    ═══════════════════════════════════════════════════ -->
-    <section class="help-hero">
-      <div class="help-hero-inner">
-        <div class="help-hero-icon">
-          <i class="fa-solid fa-circle-question"></i>
-        </div>
-        <h1 class="help-hero-title">Centro de Ayuda</h1>
-        <p class="help-hero-sub">
-          Encuentra respuestas a tus preguntas y aprende a sacar el máximo partido a TestMaster.
-        </p>
-        <div class="help-search-wrap">
-          <i class="fa-solid fa-magnifying-glass help-search-icon"></i>
-          <input
-            v-model="searchQuery"
-            type="text"
-            class="help-search-input"
-            placeholder="Buscar en la ayuda..."
-            @input="filterFAQs"
-          />
-          <button v-if="searchQuery" class="help-search-clear" @click="clearSearch">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
+  <div class="page-wrap hp">
+    <header class="hp__head">
+      <h1 class="hp__title">Centro de ayuda</h1>
+      <p class="hp__intro">Respuestas rápidas sobre tu cuenta, los tests y los resultados.</p>
+      <div class="hp__search" role="search">
+        <i class="fa-solid fa-magnifying-glass hp__search-icon" aria-hidden="true"></i>
+        <label for="help-search" class="sr-only">Buscar en la ayuda</label>
+        <input
+          id="help-search"
+          v-model="searchQuery"
+          type="search"
+          class="hp__search-input"
+          placeholder="Por ejemplo: tiempo límite, foto de perfil…"
+          @input="onSearch"
+        />
+        <button v-if="searchQuery" type="button" class="icon-btn hp__search-clear" aria-label="Borrar búsqueda" @click="clearSearch">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
       </div>
-    </section>
+    </header>
 
-    <!-- ═══════════════════════════════════════════════════
-         CATEGORÍAS RÁPIDAS
-    ═══════════════════════════════════════════════════ -->
-    <section class="quick-cats">
-      <button
-        v-for="cat in categories"
-        :key="cat.id"
-        :class="['qcat-card', { active: activeCategory === cat.id }]"
-        @click="setCategory(cat.id)"
-      >
-        <div class="qcat-icon">
-          <i :class="cat.icon"></i>
-        </div>
-        <span class="qcat-label">{{ cat.label }}</span>
-      </button>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════
-         LAYOUT PRINCIPAL
-    ═══════════════════════════════════════════════════ -->
-    <div class="help-layout">
-
-      <!-- SIDEBAR DE CATEGORÍAS -->
-      <aside class="help-sidebar">
-        <div class="sidebar-card">
-          <p class="sidebar-eyebrow">Categorías</p>
-          <nav class="sidebar-nav">
-            <button
-              v-for="cat in categories"
-              :key="cat.id"
-              :class="['sidebar-item', { active: activeCategory === cat.id }]"
-              @click="setCategory(cat.id)"
-            >
-              <i :class="cat.icon"></i>
-              <span>{{ cat.label }}</span>
-              <span class="sidebar-count">{{ getCategoryCount(cat.id) }}</span>
-            </button>
-          </nav>
+    <div class="hp__layout">
+      <div class="hp__main">
+        <div class="chips hp__chips" role="group" aria-label="Filtrar por tema">
+          <button
+            v-for="cat in categories"
+            :key="cat.id"
+            type="button"
+            class="chip"
+            :aria-pressed="String(activeCategory === cat.id)"
+            @click="setCategory(cat.id)"
+          >{{ cat.label }} <span class="hp__count tabular">{{ categoryCount(cat.id) }}</span></button>
         </div>
 
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fa-solid fa-headset"></i>
+        <p class="sr-only" aria-live="polite">{{ resultsAnnouncement }}</p>
+
+        <div v-if="!filteredFAQs.length" class="hp__empty panel">
+          <p class="hp__empty-title">No hay respuestas para «{{ searchQuery }}»</p>
+          <p class="hp__empty-text">Prueba con otras palabras o escríbenos y te ayudamos.</p>
+          <div class="hp__empty-actions">
+            <button type="button" class="btn btn--secondary" @click="clearSearch">Borrar búsqueda</button>
+            <router-link to="/contact" class="btn">Contactar</router-link>
           </div>
-          <p class="contact-title">¿No encuentras lo que buscas?</p>
-          <p class="contact-sub">Nuestro equipo está disponible para ayudarte.</p>
-          <a href="mailto:soporte@testmaster.app" class="contact-btn">
-            <i class="fa-solid fa-envelope"></i>
-            Contactar soporte
-          </a>
-        </div>
-      </aside>
-
-      <!-- CONTENIDO PRINCIPAL -->
-      <div class="help-main">
-
-        <!-- Sin resultados -->
-        <div v-if="filteredFAQs.length === 0" class="empty-help">
-          <i class="fa-solid fa-magnifying-glass empty-help-icon"></i>
-          <p class="empty-help-title">Sin resultados</p>
-          <p class="empty-help-sub">No se encontraron artículos para "<strong>{{ searchQuery }}</strong>".</p>
-          <button class="empty-help-btn" @click="clearSearch">Limpiar búsqueda</button>
         </div>
 
-        <!-- Grupos de FAQs -->
-        <template v-else>
-          <div
-            v-for="group in groupedFAQs"
-            :key="group.categoryId"
-            class="faq-group"
-          >
-            <div class="faq-group-header">
-              <div class="faq-group-icon">
-                <i :class="getCategoryIcon(group.categoryId)"></i>
-              </div>
-              <h2 class="faq-group-title">{{ getCategoryLabel(group.categoryId) }}</h2>
-              <span class="faq-group-badge">{{ group.items.length }}</span>
-            </div>
-
-            <div class="faq-list">
-              <div
-                v-for="faq in group.items"
-                :key="faq.id"
-                :class="['faq-item', { open: openFAQ === faq.id }]"
-              >
-                <button class="faq-question" @click="toggleFAQ(faq.id)">
+        <section v-for="group in groupedFAQs" :key="group.id" class="hp__group" :aria-labelledby="`hg-${group.id}`">
+          <h2 :id="`hg-${group.id}`" class="hp__h2">{{ group.label }}</h2>
+          <div class="hp__faqs">
+            <div v-for="faq in group.items" :key="faq.id" class="hp__faq" :class="{ 'is-open': openFAQ === faq.id }">
+              <h3 class="hp__q">
+                <button
+                  :id="`fq-${faq.id}`"
+                  type="button"
+                  class="hp__q-btn"
+                  :aria-expanded="String(openFAQ === faq.id)"
+                  :aria-controls="`fa-${faq.id}`"
+                  @click="toggleFAQ(faq.id)"
+                >
                   <span>{{ faq.question }}</span>
-                  <i :class="['fa-solid', openFAQ === faq.id ? 'fa-chevron-up' : 'fa-chevron-down', 'faq-chevron']"></i>
+                  <i class="fa-solid fa-chevron-down hp__chev" aria-hidden="true"></i>
                 </button>
-                <div v-show="openFAQ === faq.id" class="faq-answer">
-                  <p v-for="(para, i) in faq.answer" :key="i">{{ para }}</p>
-                  <div v-if="faq.tip" class="faq-tip">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <span>{{ faq.tip }}</span>
-                  </div>
-                </div>
+              </h3>
+              <div v-show="openFAQ === faq.id" :id="`fa-${faq.id}`" class="hp__a" role="region" :aria-labelledby="`fq-${faq.id}`">
+                <p v-for="(para, i) in faq.answer" :key="i">{{ para }}</p>
+                <ul v-if="faq.list" class="hp__a-list">
+                  <li v-for="item in faq.list" :key="item">{{ item }}</li>
+                </ul>
+                <p v-if="faq.tip" class="hp__tip">{{ faq.tip }}</p>
+                <router-link v-if="faq.link" :to="faq.link.to" class="hp__a-link">{{ faq.link.label }}</router-link>
               </div>
             </div>
           </div>
-        </template>
-
+        </section>
       </div>
+
+      <aside class="hp__side">
+        <section class="panel hp__contact" aria-labelledby="h-contact">
+          <h2 id="h-contact" class="hp__h3">¿No encuentras la respuesta?</h2>
+          <p>Escríbenos: respondemos en menos de 24 horas laborables.</p>
+          <router-link to="/contact" class="btn">Contactar con soporte</router-link>
+        </section>
+      </aside>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════
-         GUÍAS RÁPIDAS
-    ═══════════════════════════════════════════════════ -->
-    <section class="guides-section">
-      <h2 class="guides-title">Guías de inicio rápido</h2>
-      <div class="guides-grid">
-        <div
-          v-for="guide in guides"
-          :key="guide.id"
-          class="guide-card"
-        >
-          <div :class="['guide-badge', `guide-badge--${guide.color}`]">
-            <i :class="guide.icon"></i>
-          </div>
-          <div class="guide-body">
-            <p class="guide-label">{{ guide.title }}</p>
-            <p class="guide-desc">{{ guide.description }}</p>
-          </div>
-          <div class="guide-steps">
-            <div
-              v-for="(step, idx) in guide.steps"
-              :key="idx"
-              class="guide-step"
-            >
-              <span class="guide-step-num">{{ idx + 1 }}</span>
-              <span class="guide-step-text">{{ step }}</span>
-            </div>
-          </div>
+    <section class="hp__guides" aria-labelledby="h-guides">
+      <h2 id="h-guides" class="hp__h2">Primeros pasos</h2>
+      <div class="hp__guides-grid">
+        <div v-for="guide in guides" :key="guide.id" class="hp__guide">
+          <h3 class="hp__h3">{{ guide.title }}</h3>
+          <p class="hp__guide-desc">{{ guide.description }}</p>
+          <ol class="hp__steps">
+            <li v-for="step in guide.steps" :key="step">{{ step }}</li>
+          </ol>
+          <router-link :to="guide.cta.to" class="btn btn--secondary hp__guide-cta">{{ guide.cta.label }}</router-link>
         </div>
       </div>
     </section>
-
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
+import { plural } from '../utils/tests';
 
-// ─── Estado ──────────────────────────────────────────────────────────────────
-const searchQuery   = ref('');
+const searchQuery = ref('');
 const activeCategory = ref('all');
-const openFAQ       = ref(null);
+const openFAQ = ref(null);
 
-// ─── Categorías ───────────────────────────────────────────────────────────────
 const categories = [
-  { id: 'all',      label: 'Todo',            icon: 'fa-solid fa-border-all' },
-  { id: 'account',  label: 'Mi cuenta',       icon: 'fa-solid fa-circle-user' },
-  { id: 'tests',    label: 'Tests',           icon: 'fa-solid fa-file-lines' },
-  { id: 'results',  label: 'Resultados',      icon: 'fa-solid fa-chart-bar' },
-  { id: 'security', label: 'Seguridad',       icon: 'fa-solid fa-shield-halved' },
+  { id: 'all', label: 'Todo' },
+  { id: 'account', label: 'Mi cuenta' },
+  { id: 'tests', label: 'Crear tests' },
+  { id: 'taking', label: 'Hacer tests' },
+  { id: 'results', label: 'Resultados' },
+  { id: 'security', label: 'Privacidad y seguridad' },
 ];
 
-// ─── FAQs ────────────────────────────────────────────────────────────────────
 const allFAQs = [
+  // ── Cuenta ──
   {
     id: 1,
     category: 'account',
-    question: '¿Cómo me registro en TestMaster?',
+    question: '¿Cómo me registro?',
     answer: [
-      'Registrarte es gratuito y solo tarda unos segundos. Haz clic en el botón "Registrarse" en la parte superior derecha de la pantalla.',
-      'Puedes crear una cuenta con tu correo electrónico y una contraseña, o usar Google o GitHub para un registro más rápido.',
+      'Pulsa «Crear cuenta» en la parte superior derecha. Solo necesitas un nombre, un correo electrónico y una contraseña de al menos 8 caracteres.',
+      'Registrarte es gratis y te permite hacer tests, guardar tus notas y crear tus propios tests.',
     ],
-    tip: 'Una vez registrado, podrás crear, realizar y guardar tests ilimitados.',
+    link: { to: '/register', label: 'Crear una cuenta' },
   },
   {
     id: 2,
     category: 'account',
     question: '¿Cómo cambio mi foto de perfil?',
     answer: [
-      'Accede a tu perfil haciendo clic en tu nombre en la esquina superior derecha y selecciona "mi panel".',
-      'En tu página de perfil, pasa el cursor sobre tu avatar y haz clic en el icono de cámara que aparece. Se admiten imágenes JPEG, PNG, GIF y WebP de hasta 2 MB.',
+      'Entra en «Mi panel» y pulsa «Cambiar foto» junto a tu nombre. Se admiten imágenes JPG, PNG, GIF y WebP de hasta 2 MB.',
+      'Si quieres volver a la imagen por defecto, pulsa «Quitar foto».',
     ],
   },
   {
@@ -211,229 +142,232 @@ const allFAQs = [
     category: 'account',
     question: '¿Cómo cambio mi contraseña?',
     answer: [
-      'En la actualidad, el cambio de contraseña está disponible desde la sección de ajustes de cuenta. Si has olvidado tu contraseña, usa la opción "¿Olvidaste tu contraseña?" en la pantalla de inicio de sesión.',
+      'Por ahora no se puede cambiar la contraseña desde la web. Escríbenos desde la página de contacto con el correo de tu cuenta y te ayudamos.',
     ],
-    tip: 'Si iniciaste sesión con Google o GitHub no necesitas contraseña.',
+    link: { to: '/contact', label: 'Ir a contacto' },
   },
   {
     id: 4,
     category: 'account',
     question: '¿Puedo tener varias cuentas?',
     answer: [
-      'Cada persona debe tener una única cuenta. El uso de múltiples cuentas para manipular estadísticas o clasificaciones está prohibido por nuestros términos de uso.',
+      'Cada persona debe tener una única cuenta. Usar varias cuentas para manipular estadísticas está prohibido por los términos de uso.',
     ],
   },
   {
     id: 5,
-    category: 'tests',
-    question: '¿Cómo creo un test?',
+    category: 'account',
+    question: '¿Cómo activo el modo oscuro?',
     answer: [
-      'Inicia sesión y haz clic en "crear test" en la barra de navegación. Rellena el título, descripción y configura las opciones del test.',
-      'Puedes añadir tres tipos de preguntas: opción múltiple, verdadero/falso y respuesta corta. Pulsa el botón correspondiente para añadir cada tipo.',
-      'Cuando hayas terminado, elige entre guardar como borrador o publicar directamente.',
-    ],
-    tip: 'Puedes reordenar preguntas en cualquier momento antes de publicar el test.',
-  },
-  {
-    id: 6,
-    category: 'tests',
-    question: '¿Qué significa publicar un test?',
-    answer: [
-      'Un test publicado es visible para todos los usuarios de TestMaster y aparece en la página principal.',
-      'Los borradores solo son visibles para ti y no aparecen en las búsquedas públicas. Puedes convertir un borrador en publicado desde el panel de edición.',
+      'TestMaster usa el mismo tema que tu sistema la primera vez que entras. Puedes cambiarlo con el botón de luna o sol de la barra superior; tu elección se recuerda en ese navegador.',
     ],
   },
-  {
-    id: 7,
-    category: 'tests',
-    question: '¿Puedo editar un test después de publicarlo?',
-    answer: [
-      'Sí. Accede a la página del test y, si eres el creador, verás el botón "Editar test completo" en el panel lateral.',
-      'Ten en cuenta que modificar las preguntas o respuestas correctas puede afectar a los intentos ya registrados.',
-    ],
-  },
-  {
-    id: 8,
-    category: 'tests',
-    question: '¿Cómo elimino un test?',
-    answer: [
-      'Ve a la página del test que quieres eliminar. Si eres el propietario, encontrarás el botón "Eliminar test" en el panel de gestión.',
-      'La eliminación es permanente e irreversible; todos los intentos y resultados asociados también se borrarán.',
-    ],
-    tip: 'Antes de eliminar, considera cambiar el test a "borrador" para ocultarlo temporalmente.',
-  },
-  {
-    id: 9,
-    category: 'tests',
-    question: '¿Qué tipos de preguntas puedo usar?',
-    answer: [
-      'TestMaster admite tres tipos de preguntas:',
-      '· Opción múltiple: el usuario elige una respuesta entre varias opciones (A, B, C, D…).',
-      '· Verdadero/Falso: el usuario indica si un enunciado es verdadero o falso.',
-      '· Respuesta corta: el usuario escribe una respuesta de texto libre que se compara sin distinción de mayúsculas/minúsculas.',
-    ],
-  },
+
+  // ── Crear tests ──
   {
     id: 10,
     category: 'tests',
-    question: '¿Cómo configuro el tiempo límite?',
+    question: '¿Cómo creo un test?',
     answer: [
-      'En la sección "Configuración del test" durante la creación o edición, encontrarás el campo "Tiempo límite (minutos)".',
-      'Introduce el número de minutos o deja el campo en 0 para no establecer límite. Durante el test aparecerá un contador regresivo visible en la esquina.',
+      'Inicia sesión y pulsa «Crear test» en la barra superior. Escribe el título, elige la categoría y la dificultad, y añade tus preguntas.',
+      'Cuando termines, guárdalo como borrador para seguir más tarde o publícalo directamente.',
     ],
+    tip: 'Puedes subir, bajar, duplicar y eliminar preguntas con los botones de cada una.',
+    link: { to: '/create-test', label: 'Crear un test' },
   },
   {
     id: 11,
-    category: 'results',
-    question: '¿Dónde veo mis resultados?',
-    answer: [
-      'Al terminar un test serás redirigido automáticamente a la página de resultados, donde verás tu puntuación, el detalle de cada respuesta y, si el creador lo ha activado, las explicaciones.',
-      'También puedes consultar tu historial de tests completados en tu perfil, dentro de la pestaña "Completados".',
+    category: 'tests',
+    question: '¿Qué tipos de preguntas puedo usar?',
+    answer: ['Hay tres tipos:'],
+    list: [
+      'Opción múltiple: entre 2 y 8 respuestas, con una correcta.',
+      'Verdadero o falso.',
+      'Respuesta corta: se escribe el texto y se compara sin distinguir mayúsculas de minúsculas.',
     ],
   },
   {
     id: 12,
-    category: 'results',
-    question: '¿Cómo se calcula la puntuación?',
+    category: 'tests',
+    question: '¿Cómo pongo un tiempo límite o limito los intentos?',
     answer: [
-      'La puntuación se calcula como el porcentaje de preguntas respondidas correctamente sobre el total. Si las preguntas tienen pesos distintos (puntos personalizados), se usa una media ponderada.',
-      'El creador del test define el porcentaje mínimo para aprobar (por defecto, 70%).',
+      'En el panel «Ajustes» al crear o editar el test, desmarca «Sin límite» y escribe los minutos. Para los intentos, desmarca «Ilimitados» y escribe cuántos tiene cada persona.',
     ],
-    tip: 'Las preguntas sin responder cuentan como incorrectas.',
   },
   {
     id: 13,
-    category: 'results',
-    question: '¿Puedo repetir un test?',
+    category: 'tests',
+    question: '¿Puedo elegir cómo se muestran las preguntas?',
     answer: [
-      'Sí, siempre que el creador lo permita. Cada test tiene un número máximo de intentos configurado (por defecto, ilimitados).',
-      'Si has agotado tus intentos, verás un aviso en la página del test.',
+      'Sí. En «Ajustes», «Presentación de las preguntas» permite elegir entre una pregunta por pantalla (lo recomendado, sobre todo en móvil) o todas en una sola página.',
     ],
   },
   {
     id: 14,
-    category: 'results',
-    question: '¿Por qué no veo las respuestas correctas?',
+    category: 'tests',
+    question: '¿Qué diferencia hay entre borrador y publicado?',
     answer: [
-      'Que se muestren o no las respuestas correctas y las explicaciones es una decisión del creador del test.',
-      'Si el creador ha desactivado esta opción, solo verás si cada respuesta fue correcta o incorrecta, pero no cuál era la respuesta correcta.',
+      'Un test publicado aparece en el catálogo y cualquiera puede hacerlo. Un borrador solo lo ves tú.',
+      'Puedes pasar un test de uno a otro editándolo y pulsando «Guardar borrador» o «Guardar y publicar».',
     ],
   },
   {
     id: 15,
+    category: 'tests',
+    question: '¿Puedo editar o eliminar un test publicado?',
+    answer: [
+      'Sí. En la página del test, si eres quien lo creó, verás «Editar test» y «Eliminar test» en el panel lateral.',
+      'Eliminar es definitivo: también se borran todos los intentos y resultados del test. Si solo quieres ocultarlo, guárdalo como borrador.',
+    ],
+  },
+
+  // ── Hacer tests ──
+  {
+    id: 20,
+    category: 'taking',
+    question: '¿Cómo funciona un test?',
+    answer: [
+      'Responde a tu ritmo y muévete entre preguntas con «Anterior» y «Siguiente», con las flechas del teclado o con los números que aparecen bajo cada pregunta. La barra superior muestra cuántas llevas respondidas y el tiempo que queda.',
+      'Antes de enviar verás un resumen con las preguntas que te quedan sin responder.',
+    ],
+  },
+  {
+    id: 21,
+    category: 'taking',
+    question: '¿Qué pasa si se acaba el tiempo?',
+    answer: [
+      'Te avisamos cuando quedan 2 minutos. Al llegar a cero, tus respuestas se envían automáticamente.',
+    ],
+  },
+  {
+    id: 22,
+    category: 'taking',
+    question: '¿Qué pasa si salgo a mitad de un test?',
+    answer: [
+      'Te pediremos confirmación. Si sales, tus respuestas se pierden y no cuenta como intento.',
+    ],
+  },
+
+  // ── Resultados ──
+  {
+    id: 30,
+    category: 'results',
+    question: '¿Dónde veo mis resultados?',
+    answer: [
+      'Al enviar un test verás tu nota, una comparación con la media del test y el detalle de cada respuesta.',
+      'Tu historial completo está en «Mi panel», en la pestaña «Completados».',
+    ],
+  },
+  {
+    id: 31,
+    category: 'results',
+    question: '¿Cómo se calcula la nota?',
+    answer: [
+      'Es el porcentaje de preguntas acertadas. Si el autor ha dado más puntos a algunas preguntas, se usa una media ponderada.',
+      'Cada test tiene su propia nota para aprobar, que verás en la página del test antes de empezar.',
+    ],
+    tip: 'Las preguntas sin responder cuentan como fallos.',
+  },
+  {
+    id: 32,
+    category: 'results',
+    question: '¿Puedo repetir un test?',
+    answer: [
+      'Sí, si el autor lo permite. En la página del test y en tus resultados verás cuántos intentos te quedan.',
+    ],
+  },
+  {
+    id: 33,
+    category: 'results',
+    question: '¿Por qué no veo las respuestas correctas?',
+    answer: [
+      'Mostrar las respuestas correctas y las explicaciones es una decisión del autor del test. Si lo ha desactivado, solo verás si acertaste o fallaste cada pregunta.',
+    ],
+  },
+
+  // ── Seguridad ──
+  {
+    id: 40,
     category: 'security',
     question: '¿Cómo protege TestMaster mis datos?',
     answer: [
-      'Todas las comunicaciones entre tu navegador y nuestros servidores se realizan mediante HTTPS cifrado.',
-      'Las contraseñas se almacenan de forma segura usando algoritmos de hash irreversibles. Nunca guardamos tu contraseña en texto plano.',
+      'Las comunicaciones van cifradas por HTTPS y las contraseñas se guardan con un hash irreversible; nunca en texto plano.',
     ],
+    link: { to: '/privacy', label: 'Leer la política de privacidad' },
   },
   {
-    id: 16,
-    category: 'security',
-    question: '¿Qué datos recopila TestMaster?',
-    answer: [
-      'Recopilamos la información que proporcionas al registrarte (nombre, correo electrónico), los tests que creas y los resultados de los intentos que realizas.',
-      'Consulta nuestra política de privacidad para una descripción completa del tratamiento de datos.',
-    ],
-  },
-  {
-    id: 17,
+    id: 41,
     category: 'security',
     question: '¿Cómo cierro sesión?',
     answer: [
-      'Haz clic en "salir" en la barra de navegación. Tu sesión se cerrará de forma segura y serás redirigido a la página de inicio.',
-      'Para mayor seguridad, cierra siempre sesión cuando uses un dispositivo compartido.',
+      'Pulsa el botón de salida de la barra superior (en móvil, abre el menú y elige «Cerrar sesión»). Hazlo siempre que uses un dispositivo compartido.',
     ],
   },
 ];
 
-// ─── Guías de inicio rápido ───────────────────────────────────────────────────
 const guides = [
   {
     id: 1,
-    title: 'Realizar tu primer test',
-    description: 'Empieza a aprender respondiendo tests de la comunidad.',
-    icon: 'fa-solid fa-play',
-    color: 'blue',
-    steps: [
-      'Explora los tests en la página principal',
-      'Haz clic en el test que te interese',
-      'Pulsa "Empezar test" en el panel lateral',
-      'Responde las preguntas y envía',
-    ],
+    title: 'Hacer tu primer test',
+    description: 'Elige un tema y pon a prueba lo que sabes.',
+    steps: ['Busca un test o filtra por categoría', 'Revisa la duración y la nota para aprobar', 'Pulsa «Empezar test» y responde', 'Repasa tus fallos en los resultados'],
+    cta: { to: '/', label: 'Explorar tests' },
   },
   {
     id: 2,
-    title: 'Crear y publicar un test',
-    description: 'Comparte tu conocimiento con la comunidad.',
-    icon: 'fa-solid fa-pen-to-square',
-    color: 'purple',
-    steps: [
-      'Inicia sesión y pulsa "crear test"',
-      'Añade título, descripción y categoría',
-      'Crea tus preguntas y respuestas',
-      'Configura opciones y publica',
-    ],
+    title: 'Crear un test',
+    description: 'Comparte lo que sabes con tu clase o tu equipo.',
+    steps: ['Pulsa «Crear test»', 'Escribe el título y elige la categoría', 'Añade las preguntas y marca las respuestas correctas', 'Ajusta tiempo e intentos, y publica'],
+    cta: { to: '/create-test', label: 'Crear un test' },
   },
   {
     id: 3,
-    title: 'Revisar tu progreso',
-    description: 'Consulta tu historial y estadísticas en tu perfil.',
-    icon: 'fa-solid fa-chart-line',
-    color: 'green',
-    steps: [
-      'Accede a "mi panel" desde el menú',
-      'Revisa la pestaña "Completados"',
-      'Analiza tus estadísticas globales',
-      'Identifica áreas de mejora',
-    ],
+    title: 'Seguir tu progreso',
+    description: 'Mira cómo evolucionan tus notas.',
+    steps: ['Entra en «Mi panel»', 'Abre la pestaña «Completados»', 'Pulsa un intento para ver el detalle', 'Repite los tests que quieras mejorar'],
+    cta: { to: '/', label: 'Ir al catálogo' },
   },
 ];
 
-// ─── Lógica de filtrado ───────────────────────────────────────────────────────
+// ─── Filtrado ────────────────────────────────────────────────────────────────
+const normalize = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
 const filteredFAQs = computed(() => {
   let items = allFAQs;
-  if (activeCategory.value !== 'all') {
-    items = items.filter(f => f.category === activeCategory.value);
-  }
-  if (searchQuery.value.trim()) {
-    const q = searchQuery.value.toLowerCase();
-    items = items.filter(f =>
-      f.question.toLowerCase().includes(q) ||
-      f.answer.some(a => a.toLowerCase().includes(q))
+  if (activeCategory.value !== 'all') items = items.filter((f) => f.category === activeCategory.value);
+  const q = normalize(searchQuery.value.trim());
+  if (q) {
+    items = items.filter((f) =>
+      [f.question, ...f.answer, ...(f.list || []), f.tip || ''].some((t) => normalize(t).includes(q))
     );
   }
   return items;
 });
 
-const groupedFAQs = computed(() => {
-  const map = {};
-  for (const faq of filteredFAQs.value) {
-    if (!map[faq.category]) map[faq.category] = [];
-    map[faq.category].push(faq);
-  }
-  return Object.entries(map).map(([categoryId, items]) => ({ categoryId, items }));
-});
+const groupedFAQs = computed(() =>
+  categories
+    .filter((c) => c.id !== 'all')
+    .map((c) => ({ ...c, items: filteredFAQs.value.filter((f) => f.category === c.id) }))
+    .filter((g) => g.items.length)
+);
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-const getCategoryCount = (id) => {
-  if (id === 'all') return allFAQs.length;
-  return allFAQs.filter(f => f.category === id).length;
-};
+const categoryCount = (id) => (id === 'all' ? allFAQs.length : allFAQs.filter((f) => f.category === id).length);
 
-const getCategoryIcon  = (id) => categories.find(c => c.id === id)?.icon || '';
-const getCategoryLabel = (id) => categories.find(c => c.id === id)?.label || id;
+const resultsAnnouncement = computed(() =>
+  searchQuery.value ? plural(filteredFAQs.value.length, 'respuesta encontrada', 'respuestas encontradas') : ''
+);
 
-// ─── Acciones ─────────────────────────────────────────────────────────────────
+// ─── Acciones ────────────────────────────────────────────────────────────────
 const setCategory = (id) => {
   activeCategory.value = id;
   openFAQ.value = null;
 };
 
-const filterFAQs = () => {
+const onSearch = () => {
   openFAQ.value = null;
   if (searchQuery.value) activeCategory.value = 'all';
+  // Con un único resultado, se abre directamente
+  if (filteredFAQs.value.length === 1) openFAQ.value = filteredFAQs.value[0].id;
 };
 
 const clearSearch = () => {
@@ -447,737 +381,312 @@ const toggleFAQ = (id) => {
 </script>
 
 <style scoped>
-/* ── Página ──────────────────────────────────────────────────────────────── */
-.help-page {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.hp {
+  padding-top: 48px;
 }
 
-/* ── Hero ────────────────────────────────────────────────────────────────── */
-.help-hero {
+.hp__head {
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+.hp__title {
+  font-size: 2.25rem;
+  letter-spacing: -0.025em;
+  margin: 0 0 8px;
+}
+
+.hp__intro {
+  font-size: var(--fs-lead);
+  color: var(--text-body);
+  margin: 0 0 24px;
+}
+
+.hp__search {
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  margin-top: -2.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 3.5rem 1.5rem 3rem;
 }
 
-.help-hero-inner {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.help-hero-icon {
-  font-size: 2.5rem;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 0.75rem;
-}
-
-.help-hero-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 0.5rem;
-}
-
-.help-hero-sub {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.82);
-  margin-bottom: 1.75rem;
-  line-height: 1.65;
-}
-
-.help-search-wrap {
-  position: relative;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-.help-search-icon {
+.hp__search-icon {
   position: absolute;
-  left: 1rem;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: #a0aec0;
-  font-size: 0.9rem;
-  pointer-events: none;
+  color: var(--muted);
 }
 
-.help-search-input {
+.hp__search-input {
   width: 100%;
-  padding: 0.8rem 2.5rem 0.8rem 2.5rem;
-  border: none;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  font-family: inherit;
-  background: white;
-  color: #2d3748;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-  transition: box-shadow 0.2s;
+  height: 52px;
+  border: 1px solid var(--control);
+  border-radius: var(--radius-card);
+  padding: 0 52px 0 44px;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
 }
 
-.help-search-input:focus {
+.hp__search-input::placeholder {
+  color: var(--muted);
+}
+
+.hp__search-input:focus {
   outline: none;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
-.help-search-clear {
+.hp__search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.hp__search-clear {
   position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #a0aec0;
-  font-size: 0.9rem;
-  padding: 0;
+  right: 6px;
+  top: 6px;
 }
 
-.help-search-clear:hover { color: #4a5568; }
-
-/* ── Categorías rápidas ──────────────────────────────────────────────────── */
-.quick-cats {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.qcat-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.25rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: inherit;
-  flex: 1;
-  min-width: 90px;
-}
-
-.qcat-card:hover {
-  border-color: #667eea;
-  box-shadow: 0 2px 8px rgba(102,126,234,0.12);
-}
-
-.qcat-card.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-color: transparent;
-  color: white;
-}
-
-.qcat-icon {
-  font-size: 1.25rem;
-  color: #667eea;
-}
-
-.qcat-card.active .qcat-icon {
-  color: rgba(255,255,255,0.9);
-}
-
-.qcat-label {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #4a5568;
-  white-space: nowrap;
-}
-
-.qcat-card.active .qcat-label {
-  color: white;
-}
-
-/* ── Layout ──────────────────────────────────────────────────────────────── */
-.help-layout {
+.hp__layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 48px;
   align-items: start;
 }
 
-/* ── Sidebar ─────────────────────────────────────────────────────────────── */
-.help-sidebar {
+.hp__main {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  position: static;
-  top: 80px;
-}
-
-.sidebar-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 1.25rem;
-}
-
-.sidebar-eyebrow {
-  font-size: 11px;
-  font-weight: 600;
-  color: #a0aec0;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: 0.75rem;
-}
-
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 0.75rem;
-  border-radius: 8px;
-  border: none;
-  background: transparent;
-  font-family: inherit;
-  font-size: 13px;
-  color: #718096;
-  cursor: pointer;
-  transition: all 0.15s;
-  width: 100%;
-  text-align: left;
-}
-
-.sidebar-item i {
-  font-size: 12px;
-  width: 16px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.sidebar-item span {
-  flex: 1;
-}
-
-.sidebar-item:hover {
-  background: #f8f9fa;
-  color: #2d3748;
-}
-
-.sidebar-item.active {
-  background: #ebf0ff;
-  color: #667eea;
-  font-weight: 500;
-}
-
-.sidebar-item.active i {
-  color: #667eea;
-}
-
-.sidebar-count {
-  font-size: 11px;
-  background: rgba(0,0,0,0.06);
-  padding: 1px 6px;
-  border-radius: 20px;
-  flex-shrink: 0 !important;
-  font-weight: 500;
-}
-
-.sidebar-item.active .sidebar-count {
-  background: rgba(102,126,234,0.15);
-  color: #667eea;
-}
-
-.contact-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 1.25rem;
-  text-align: center;
-}
-
-.contact-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  margin: 0 auto 0.75rem;
-}
-
-.contact-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: #2d3748;
-  margin-bottom: 0.35rem;
-  line-height: 1.4;
-}
-
-.contact-sub {
-  font-size: 12px;
-  color: #a0aec0;
-  margin-bottom: 0.9rem;
-  line-height: 1.5;
-}
-
-.contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white !important;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.contact-btn:hover {
-  box-shadow: 0 4px 12px rgba(102,126,234,0.35);
-  transform: translateY(-1px);
-}
-
-/* ── Contenido principal ─────────────────────────────────────────────────── */
-.help-main {
+  gap: 32px;
   min-width: 0;
+}
+
+.hp__chips {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-/* ── Estado vacío ────────────────────────────────────────────────────────── */
-.empty-help {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 3.5rem 1.5rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
+.hp__count {
+  color: inherit;
+  opacity: 0.65;
+  font-size: 0.8em;
+  margin-left: 2px;
 }
 
-.empty-help-icon {
-  font-size: 2.5rem;
-  color: #cbd5e0;
-  margin-bottom: 0.25rem;
+.hp__h2 {
+  font-size: var(--fs-section);
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 
-.empty-help-title {
+.hp__h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: #4a5568;
+  margin: 0;
 }
 
-.empty-help-sub {
-  font-size: 0.9rem;
-  color: #a0aec0;
+.hp__faq {
+  border-top: 1px solid var(--rule);
 }
 
-.empty-help-sub strong { color: #718096; }
+.hp__faq:last-child {
+  border-bottom: 1px solid var(--rule);
+}
 
-.empty-help-btn {
-  margin-top: 0.5rem;
-  padding: 8px 20px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  font-size: 13px;
+.hp__q {
+  margin: 0;
+  font-size: 1rem;
   font-weight: 500;
-  border: none;
+}
+
+.hp__q-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
   cursor: pointer;
-  font-family: inherit;
-  transition: all 0.2s;
 }
 
-.empty-help-btn:hover {
-  box-shadow: 0 4px 12px rgba(102,126,234,0.35);
+.hp__q-btn:hover {
+  color: var(--accent);
 }
 
-/* ── Grupos FAQ ──────────────────────────────────────────────────────────── */
-.faq-group {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.faq-group-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1.1rem 1.5rem;
-  border-bottom: 1px solid #f7fafc;
-}
-
-.faq-group-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: #ebf0ff;
-  color: #667eea;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
+.hp__chev {
+  color: var(--muted);
+  font-size: 0.8rem;
+  transition: transform 0.2s;
   flex-shrink: 0;
 }
 
-.faq-group-title {
-  font-size: 14px;
+.is-open .hp__chev {
+  transform: rotate(180deg);
+}
+
+.hp__a {
+  padding: 0 32px 18px 0;
+  color: var(--text-body);
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hp__a p {
+  margin: 0;
+}
+
+.hp__a-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hp__tip {
+  font-size: var(--fs-small);
+  background: var(--info-bg);
+  color: var(--info-ink);
+  border-radius: var(--radius-card);
+  padding: 10px 14px;
+}
+
+.hp__a-link {
+  font-weight: 500;
+  font-size: var(--fs-small);
+  align-self: flex-start;
+}
+
+.hp__empty {
+  padding: 40px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hp__empty-title {
   font-weight: 600;
-  color: #2d3748;
+  margin: 0;
+}
+
+.hp__empty-text {
+  color: var(--text-body);
+  margin: 0 0 8px;
+}
+
+.hp__empty-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.hp__side {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+}
+
+.hp__contact {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hp__contact p {
+  color: var(--text-body);
+  font-size: var(--fs-small);
+  margin: 0 0 4px;
+}
+
+.hp__guides {
+  margin-top: 96px;
+}
+
+.hp__guides .hp__h2 {
+  margin-bottom: 16px;
+}
+
+.hp__guides-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.hp__guide {
+  background: var(--raised);
+  border-radius: var(--radius-panel);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hp__guide-desc {
+  color: var(--text-body);
+  font-size: var(--fs-small);
+  margin: 0;
+}
+
+.hp__steps {
+  margin: 8px 0 12px;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: var(--fs-small);
+  color: var(--text-body);
   flex: 1;
 }
 
-.faq-group-badge {
-  font-size: 11px;
-  background: #f0f0ff;
-  color: #667eea;
-  padding: 2px 8px;
-  border-radius: 20px;
-  font-weight: 500;
+.hp__steps li::marker {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
 }
 
-/* ── Items FAQ ───────────────────────────────────────────────────────────── */
-.faq-list {
-  display: flex;
-  flex-direction: column;
+.hp__guide-cta {
+  align-self: flex-start;
 }
 
-.faq-item {
-  border-bottom: 1px solid #f7fafc;
-}
-
-.faq-item:last-child {
-  border-bottom: none;
-}
-
-.faq-question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  padding: 1rem 1.5rem;
-  background: transparent;
-  border: none;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
-  color: #2d3748;
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.15s;
-}
-
-.faq-question:hover {
-  background: #f8f9fa;
-}
-
-.faq-item.open .faq-question {
-  background: #f8f9fa;
-  color: #667eea;
-}
-
-.faq-chevron {
-  font-size: 11px;
-  color: #a0aec0;
-  flex-shrink: 0;
-  transition: transform 0.2s;
-}
-
-.faq-item.open .faq-chevron {
-  color: #667eea;
-}
-
-.faq-answer {
-  padding: 0 1.5rem 1.25rem;
-  border-top: 1px solid #f7fafc;
-  background: #fcfcfd;
-}
-
-.faq-answer p {
-  font-size: 14px;
-  color: #718096;
-  line-height: 1.7;
-  margin-top: 0.85rem;
-}
-
-.faq-tip {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  margin-top: 0.9rem;
-  padding: 0.75rem 1rem;
-  background: #fffbeb;
-  border-radius: 8px;
-  border-left: 3px solid #f59e0b;
-}
-
-.faq-tip i {
-  color: #f59e0b;
-  font-size: 13px;
-  margin-top: 2px;
-  flex-shrink: 0;
-}
-
-.faq-tip span {
-  font-size: 13px;
-  color: #92400e;
-  line-height: 1.55;
-}
-
-/* ── Guías rápidas ───────────────────────────────────────────────────────── */
-.guides-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.guides-title {
-  font-size: 11px;
-  font-weight: 600;
-  color: #a0aec0;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-}
-
-.guides-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.guide-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.guide-badge {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.guide-badge--blue   { background: #ebf0ff; color: #4c5fd5; }
-.guide-badge--purple { background: #f3e8ff; color: #7c3aed; }
-.guide-badge--green  { background: #d1fae5; color: #059669; }
-
-.guide-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #2d3748;
-  margin-bottom: 0.2rem;
-}
-
-.guide-desc {
-  font-size: 12px;
-  color: #a0aec0;
-  line-height: 1.5;
-}
-
-.guide-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding-top: 0.25rem;
-  border-top: 1px solid #f7fafc;
-}
-
-.guide-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-}
-
-.guide-step-num {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  font-size: 10px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.guide-step-text {
-  font-size: 12.5px;
-  color: #718096;
-  line-height: 1.55;
-}
-
-/* ── Dark mode ───────────────────────────────────────────────────────────── */
-body.dark-mode .qcat-card,
-body.dark-mode .sidebar-card,
-body.dark-mode .contact-card,
-body.dark-mode .faq-group,
-body.dark-mode .empty-help,
-body.dark-mode .guide-card {
-  background: var(--tm-surface) !important;
-  border-color: var(--tm-border) !important;
-}
-
-body.dark-mode .qcat-label,
-body.dark-mode .sidebar-item,
-body.dark-mode .faq-question,
-body.dark-mode .faq-group-title,
-body.dark-mode .guide-label,
-body.dark-mode .contact-title,
-body.dark-mode .empty-help-title {
-  color: var(--tm-text) !important;
-}
-
-body.dark-mode .help-search-input {
-  background: var(--tm-surface) !important;
-  color: var(--tm-text) !important;
-}
-
-body.dark-mode .help-search-input::placeholder {
-  color: var(--tm-muted) !important;
-}
-
-body.dark-mode .help-search-icon {
-  color: var(--tm-muted);
-}
-
-body.dark-mode .contact-sub,
-body.dark-mode .empty-help-sub,
-body.dark-mode .faq-answer p,
-body.dark-mode .guide-desc,
-body.dark-mode .guide-step-text,
-body.dark-mode .sidebar-eyebrow,
-body.dark-mode .faq-group-badge {
-  color: var(--tm-muted) !important;
-}
-
-body.dark-mode .sidebar-item:hover,
-body.dark-mode .faq-question:hover,
-body.dark-mode .faq-item.open .faq-question {
-  background: var(--tm-hover) !important;
-}
-
-body.dark-mode .sidebar-item.active {
-  background: rgba(102, 126, 234, 0.15) !important;
-  color: #a78bfa !important;
-}
-
-body.dark-mode .faq-group-icon {
-  background: rgba(102, 126, 234, 0.15) !important;
-}
-
-body.dark-mode .faq-group-badge {
-  background: rgba(102, 126, 234, 0.12) !important;
-  color: #a78bfa !important;
-}
-
-body.dark-mode .faq-group-header,
-body.dark-mode .faq-item,
-body.dark-mode .guide-steps {
-  border-color: var(--tm-border) !important;
-}
-
-body.dark-mode .faq-answer {
-  background: var(--tm-bg) !important;
-  border-top-color: var(--tm-border) !important;
-}
-
-body.dark-mode .faq-tip {
-  background: rgba(245, 158, 11, 0.1) !important;
-  border-left-color: #d97706 !important;
-}
-
-body.dark-mode .faq-tip span {
-  color: #fcd34d !important;
-}
-
-body.dark-mode .guide-badge--blue   { background: rgba(76,95,213,0.15) !important; }
-body.dark-mode .guide-badge--purple { background: rgba(124,58,237,0.15) !important; }
-body.dark-mode .guide-badge--green  { background: rgba(5,150,105,0.15) !important; }
-
-body.dark-mode .qcat-icon { color: #a78bfa; }
-
-body.dark-mode .qcat-card.active {
-  color: white !important;
-}
-
-body.dark-mode .qcat-card.active .qcat-icon,
-body.dark-mode .qcat-card.active .qcat-label {
-  color: white !important;
-}
-
-/* ── Responsive ──────────────────────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .help-layout {
-    grid-template-columns: 1fr;
+@media (max-width: 960px) {
+  .hp__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
   }
 
-  .help-sidebar {
+  .hp__side {
     position: static;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
   }
 
-  .guides-grid {
-    grid-template-columns: 1fr;
+  .hp__guides-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  .help-hero {
-    padding: 2.5rem 1rem 2.25rem;
+  .hp {
+    padding-top: 32px;
   }
 
-  .help-hero-title {
-    font-size: 1.6rem;
+  .hp__title {
+    font-size: 1.75rem;
   }
 
-  .quick-cats {
-    gap: 0.5rem;
+  .hp__chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
   }
 
-  .qcat-card {
-    padding: 0.75rem 0.5rem;
-    min-width: 70px;
-  }
-
-  .help-sidebar {
-    grid-template-columns: 1fr;
-  }
-
-  .faq-question {
-    padding: 0.875rem 1rem;
-  }
-
-  .faq-answer {
-    padding: 0 1rem 1rem;
+  .hp__guides {
+    margin-top: 64px;
   }
 }
 </style>
