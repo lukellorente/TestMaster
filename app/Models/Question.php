@@ -11,7 +11,17 @@ class Question extends Model
     protected $fillable = [
         'test_id', 'type', 'content', 'explanation', 'points',
         'order_index', 'image_url', 'audio_url', 'video_url', 'time_limit',
+        'numeric_answer', 'numeric_tolerance',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'points' => 'integer',
+            'numeric_answer' => 'float',
+            'numeric_tolerance' => 'float',
+        ];
+    }
 
     public function test(): BelongsTo
     {
@@ -25,12 +35,12 @@ class Question extends Model
 
     public function blanks(): HasMany
     {
-        return $this->hasMany(QuestionBlank::class);
+        return $this->hasMany(QuestionBlank::class)->orderBy('blank_index');
     }
 
     public function orderItems(): HasMany
     {
-        return $this->hasMany(QuestionOrderItem::class);
+        return $this->hasMany(QuestionOrderItem::class)->orderBy('correct_order');
     }
 
     public function responses(): HasMany

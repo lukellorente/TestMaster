@@ -2,7 +2,6 @@
   <div class="form-group">
     <label v-if="label" :for="selectId" class="form-label">
       {{ label }}
-      <span v-if="required" style="color: #ef4444">*</span>
     </label>
     <select
       :id="selectId"
@@ -10,6 +9,7 @@
       :required="required"
       :disabled="disabled"
       class="form-input"
+      :aria-describedby="helpText ? `${selectId}-help` : undefined"
       v-bind="$attrs"
       @change="$emit('update:modelValue', $event.target.value)"
     >
@@ -22,7 +22,7 @@
         {{ option.label }}
       </option>
     </select>
-    <p v-if="helpText" class="help-text">{{ helpText }}</p>
+    <p v-if="helpText" :id="`${selectId}-help`" class="help-text">{{ helpText }}</p>
   </div>
 </template>
 

@@ -1,7 +1,9 @@
-# TestMaster — Documentación Técnica Completa
+# TestMaster — Documentación Técnica
 
-> **Plataforma de gestión de exámenes y cuestionarios en línea.**
-> Stack: Laravel 12 + Vue.js 3 · MySQL 8.4 · Docker (Laravel Sail)
+> **Plataforma de creación, realización y seguimiento de exámenes en línea.**
+> Stack: Laravel 12 + Vue 3 · MySQL 8.4 · Docker (Laravel Sail) · Caddy 2
+>
+> Última actualización: noviembre 2026 · Rama `Redesign`
 
 ---
 
@@ -11,14 +13,22 @@
 2. [Stack Tecnológico](#2-stack-tecnológico)
 3. [Arquitectura del Sistema](#3-arquitectura-del-sistema)
 4. [Instalación y Despliegue](#4-instalación-y-despliegue)
+   - 4.1 [Entorno de desarrollo](#41-entorno-de-desarrollo)
+   - 4.2 [Variables de entorno](#42-variables-de-entorno)
+   - 4.3 [Producción](#43-producción)
+   - 4.4 [Tareas programadas](#44-tareas-programadas)
+   - 4.5 [Comandos útiles](#45-comandos-útiles)
 5. [Base de Datos](#5-base-de-datos)
    - 5.1 [Diagrama de Relaciones (ER)](#51-diagrama-de-relaciones-er)
    - 5.2 [Detalle de Tablas](#52-detalle-de-tablas)
+   - 5.3 [Migraciones](#53-migraciones)
 6. [Backend — Laravel](#6-backend--laravel)
    - 6.1 [Modelos y Relaciones Eloquent](#61-modelos-y-relaciones-eloquent)
    - 6.2 [API REST — Endpoints](#62-api-rest--endpoints)
-   - 6.3 [Autenticación (Sanctum)](#63-autenticación-sanctum)
-   - 6.4 [Controladores en Detalle](#64-controladores-en-detalle)
+   - 6.3 [Autenticación (Sanctum SPA)](#63-autenticación-sanctum-spa)
+   - 6.4 [Middleware y Rate Limiting](#64-middleware-y-rate-limiting)
+   - 6.5 [Controladores en Detalle](#65-controladores-en-detalle)
+   - 6.6 [Capa de Dominio](#66-capa-de-dominio)
 7. [Frontend — Vue.js](#7-frontend--vuejs)
    - 7.1 [Estructura de Archivos](#71-estructura-de-archivos)
    - 7.2 [Router y Navegación](#72-router-y-navegación)
@@ -26,41 +36,47 @@
    - 7.4 [Capa API (Axios)](#74-capa-api-axios)
    - 7.5 [Páginas](#75-páginas)
    - 7.6 [Componentes](#76-componentes)
+   - 7.7 [Tema y Sistema de Diseño](#77-tema-y-sistema-de-diseño)
 8. [Lógica de Negocio](#8-lógica-de-negocio)
-   - 8.1 [Creación de Tests](#81-creación-de-tests)
-   - 8.2 [Corrección Automática de Respuestas](#82-corrección-automática-de-respuestas)
-   - 8.3 [Sistema de Puntuación y Estadísticas](#83-sistema-de-puntuación-y-estadísticas)
-   - 8.4 [Perfiles de Usuario](#84-perfiles-de-usuario)
+   - 8.1 [Creación y Edición de Tests](#81-creación-y-edición-de-tests)
+   - 8.2 [Tipos de Pregunta y Formatos](#82-tipos-de-pregunta-y-formatos)
+   - 8.3 [Corrección y Puntuación](#83-corrección-y-puntuación)
+   - 8.4 [Modo Repaso y Mi Progreso](#84-modo-repaso-y-mi-progreso)
+   - 8.5 [Cómo añadir un tipo de pregunta](#85-cómo-añadir-un-tipo-de-pregunta)
+   - 8.6 [Tests con Contraseña](#86-tests-con-contraseña)
+   - 8.7 [Administración](#87-administración)
 9. [Seeders y Datos de Prueba](#9-seeders-y-datos-de-prueba)
-10. [Funcionalidades Planificadas (No Implementadas)](#10-funcionalidades-planificadas-no-implementadas)
-11. [Notas de Seguridad](#11-notas-de-seguridad)
+10. [Testing](#10-testing)
+11. [Privacidad y RGPD](#11-privacidad-y-rgpd)
+12. [Notas de Seguridad](#12-notas-de-seguridad)
+13. [Funcionalidades Planificadas (No Implementadas)](#13-funcionalidades-planificadas-no-implementadas)
+14. [Historial de Cambios](#14-historial-de-cambios)
 
 ---
 
 ## 1. Visión General del Proyecto
 
-**TestMaster** es una plataforma web completa para la creación, gestión y realización de exámenes/cuestionarios en línea. Está dirigida a instituciones educativas, academias y entornos corporativos.
+**TestMaster** es una plataforma web para crear, compartir y realizar exámenes/cuestionarios en línea, con seguimiento del progreso del alumno. Está dirigida a estudiantes, docentes, academias y entornos corporativos.
 
 ### ¿Qué permite hacer?
 
 | Actor | Acciones |
 |---|---|
-| **Visitante (sin cuenta)** | Ver la lista de tests públicos, ver detalles de un test, ver perfiles de usuarios |
-| **Usuario registrado** | Todo lo anterior + crear tests con preguntas, realizar tests, ver resultados detallados, gestionar su perfil |
-| **Admin** | Rol definido en BD, sin permisos especiales implementados aún |
+| **Visitante (sin cuenta)** | Ver el catálogo de tests públicos y los destacados, buscar/filtrar/ordenar, ver el detalle de un test, ver perfiles públicos, leer ayuda y textos legales |
+| **Usuario registrado** | Todo lo anterior + crear, editar, duplicar preguntas y borrar sus tests; realizar tests; ver resultados detallados; **repasar sus fallos**; consultar **Mi progreso**; gestionar perfil y avatar; cambiar contraseña; **exportar sus datos** y **borrar su cuenta** |
+| **Admin** (`role = admin`) | Todo lo anterior + panel `/admin`: métricas, gestión de tests (estado, destacados, borrado), usuarios (rol, suspensión), categorías y registro de auditoría. Puede ver/editar cualquier test y no necesita la contraseña de los tests protegidos |
 
-### Tipos de preguntas soportados
+### Funcionalidades principales
 
-| Tipo | Implementado en el código | Definido en BD |
-|---|---|---|
-| `multiple_choice` (opción múltiple) | ✅ Frontend + Backend | ✅ |
-| `true_false` (verdadero/falso) | ✅ Frontend + Backend | ✅ |
-| `short_answer` (respuesta corta) | ✅ Frontend + Backend | ✅ |
-| `fill_blank` (rellenar huecos) | ❌ | ✅ |
-| `drag_drop` (arrastrar y soltar) | ❌ | ✅ |
-| `order_items` (ordenar elementos) | ❌ | ✅ |
-| `numeric` (numérica) | ❌ | ✅ |
-| `image_hotspot` (punto en imagen) | ❌ | ✅ |
+- **7 tipos de pregunta** con puntuación parcial y penalización por fallo opcional.
+- **Corrección automática** en el servidor; las soluciones nunca se envían al cliente antes de corregir.
+- **Modo repaso**: rehacer solo las preguntas falladas, sin gastar intentos.
+- **Mi progreso**: racha, calendario de actividad, dominio por categoría e historial.
+- **Tests con contraseña**, modo de presentación paginado o en una sola página.
+- **Panel de administración** con auditoría.
+- **Autenticación SPA** con cookie de sesión httpOnly + CSRF.
+- **Cumplimiento RGPD**: consentimiento versionado, exportación, supresión, minimización y retención.
+- **Tema claro/oscuro** basado en *design tokens*.
 
 ---
 
@@ -68,38 +84,42 @@
 
 | Capa | Tecnología | Versión |
 |---|---|---|
-| **Backend (API)** | PHP + Laravel | PHP 8.2+, Laravel 12 |
-| **Frontend (SPA)** | Vue.js | Vue 3 (Composition API) |
+| **Backend (API)** | PHP + Laravel | PHP 8.2+ (imagen Docker 8.5), Laravel 12 |
+| **Frontend (SPA)** | Vue.js | 3.5 (Composition API, `<script setup>`) |
 | **Router Frontend** | Vue Router | 4.x |
-| **Estado Frontend** | Pinia | 3.x |
-| **Build Tool** | Vite | 7.x |
-| **CSS** | Tailwind CSS + CSS personalizado | Tailwind 4 |
+| **Estado Frontend** | Pinia | 2.x |
+| **Build Tool** | Vite + `laravel-vite-plugin` | Vite 7 |
+| **CSS** | Design tokens propios + Tailwind CSS | Tailwind 4 |
+| **Iconos / Fuente** | Font Awesome Free · Wix Madefor Text (`@fontsource`) | 6.x · 5.x |
 | **HTTP Client** | Axios | 1.x |
-| **Autenticación API** | Laravel Sanctum | 4.x (tokens Bearer) |
-| **Base de Datos** | MySQL | 8.4 |
-| **Containerización** | Docker via Laravel Sail | — |
+| **Autenticación** | Laravel Sanctum (modo SPA, cookie de sesión) | 4.x |
+| **Base de Datos** | MySQL (SQLite admitido en local) | 8.4 |
+| **Contenedores** | Docker vía Laravel Sail | — |
+| **Proxy / HTTPS** | Caddy (solo producción) | 2.x |
+| **Procesos** | Supervisor (PHP + `schedule:work`) | — |
 | **Testing** | PHPUnit | 11.x |
 
 ### Dependencias principales (composer.json)
 
 ```
 laravel/framework    → Framework principal
-laravel/sanctum      → Autenticación por tokens API
-laravel/sail         → Entorno Docker de desarrollo
+laravel/sanctum      → Autenticación SPA
 laravel/tinker       → REPL para depuración
+laravel/sail (dev)   → Entorno Docker
+laravel/pail (dev)   → Visor de logs en tiempo real
+laravel/pint (dev)   → Formateador de código
+phpunit/phpunit (dev)
 ```
 
 ### Dependencias principales (package.json)
 
 ```
-vue                  → Framework frontend
-vue-router           → Enrutamiento SPA
-pinia                → Gestión de estado
-axios                → Cliente HTTP
-vite                 → Bundler/dev server
-@tailwindcss/vite    → Plugin CSS
-@vitejs/plugin-vue   → Plugin Vue para Vite
-laravel-vite-plugin  → Integración Laravel + Vite
+vue, vue-router, pinia         → SPA
+axios                          → Cliente HTTP
+@fortawesome/fontawesome-free  → Iconos
+@fontsource/wix-madefor-text   → Tipografía (auto-alojada, compatible con la CSP)
+vite, @vitejs/plugin-vue, laravel-vite-plugin, @tailwindcss/vite, tailwindcss
+concurrently                   → `composer dev`
 ```
 
 ---
@@ -109,262 +129,235 @@ laravel-vite-plugin  → Integración Laravel + Vite
 ### Patrón general
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    NAVEGADOR (SPA)                       │
-│  ┌──────────┐  ┌──────────┐  ┌────────┐  ┌──────────┐  │
-│  │ Vue Router│  │  Pinia   │  │  Axios │  │Components│  │
-│  │  (rutas) │  │ (estado) │  │ (HTTP) │  │ (UI)     │  │
-│  └────┬─────┘  └────┬─────┘  └───┬────┘  └──────────┘  │
-│       │              │            │                       │
-└───────┼──────────────┼────────────┼───────────────────────┘
-        │              │            │
-        │              │     ┌──────▼──────┐
-        │              │     │  /api/*     │  HTTP requests
-        │              │     └──────┬──────┘
-        │              │            │
-┌───────┼──────────────┼────────────┼───────────────────────┐
-│       │      SERVIDOR LARAVEL     │                       │
-│  ┌────▼─────────────────────┐     │                       │
-│  │   routes/web.php         │     │                       │
-│  │   (catch-all → SPA)      │     │                       │
-│  └──────────────────────────┘     │                       │
-│                              ┌────▼──────────────┐        │
-│                              │  routes/api.php   │        │
-│                              │  (endpoints REST) │        │
-│                              └────┬──────────────┘        │
-│                                   │                       │
-│                ┌──────────────────▼──────────────┐        │
-│                │      CONTROLADORES (Api/)       │        │
-│                │  AuthController                 │        │
-│                │  TestController                 │        │
-│                │  AttemptController               │        │
-│                │  ProfileController               │        │
-│                └──────────────────┬──────────────┘        │
-│                                   │                       │
-│                ┌──────────────────▼──────────────┐        │
-│                │      MODELOS (Eloquent ORM)     │        │
-│                │  User, Test, Question, etc.     │        │
-│                └──────────────────┬──────────────┘        │
-│                                   │                       │
-└───────────────────────────────────┼───────────────────────┘
-                                    │
-                          ┌─────────▼─────────┐
-                          │    MySQL 8.4       │
-                          │  (Docker container)│
-                          └───────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│                         NAVEGADOR (SPA)                          │
+│  ┌───────────┐  ┌────────────┐  ┌──────────────┐  ┌───────────┐  │
+│  │ Vue Router│  │   Pinia    │  │    Axios     │  │Componentes│  │
+│  │ (guards)  │  │ (auth)     │  │ cookie+XSRF  │  │  (UI)     │  │
+│  └───────────┘  └────────────┘  └──────┬───────┘  └───────────┘  │
+└────────────────────────────────────────┼─────────────────────────┘
+                                         │ /api/*  ·  /sanctum/csrf-cookie
+                          ┌──────────────▼──────────────┐
+                          │  Caddy 2 (solo producción)  │  HTTPS, CSP, HSTS…
+                          └──────────────┬──────────────┘
+┌────────────────────────────────────────▼─────────────────────────┐
+│                         LARAVEL 12                               │
+│  routes/web.php  → catch-all → vista app.blade.php (SPA)         │
+│  routes/api.php  → middleware: statefulApi · throttle ·          │
+│                    EnsureAccountActive · auth:sanctum · admin    │
+│                                                                  │
+│  Controladores Api/                                              │
+│    AuthController · AccountController · TestController           │
+│    AttemptController · ProfileController · DashboardController   │
+│    Admin/AdminController · Admin/AdminCategoryController         │
+│                                                                  │
+│  Dominio                                                         │
+│    app/Questions  → QuestionTypes, Types/*, AttemptScorer,       │
+│                     ReviewQueue                                  │
+│    app/Progress   → StudyActivity, CategoryMastery               │
+│    app/Support    → TestAccess                                   │
+│                                                                  │
+│  Modelos Eloquent → User, Test, Question, TestAttempt, …         │
+│  Scheduler        → limpieza de sesiones / tokens (RGPD)         │
+└────────────────────────────────────────┬─────────────────────────┘
+                                         │
+                               ┌─────────▼─────────┐
+                               │     MySQL 8.4     │
+                               └───────────────────┘
 ```
 
 ### Flujo de una petición típica
 
-1. El usuario navega a una URL en el navegador (ej: `/test/5`)
-2. Laravel sirve siempre el mismo archivo Blade (SPA catch-all en `routes/web.php`)
-3. Vue Router toma el control y renderiza el componente correspondiente (`ViewTest.vue`)
-4. El componente hace peticiones a `/api/tests/5` usando Axios
-5. Laravel recibe la petición en `routes/api.php`, la dirige al controlador
-6. El controlador consulta la base de datos mediante Eloquent y devuelve JSON
-7. El componente Vue actualiza la interfaz con los datos recibidos
+1. El usuario navega a una URL (ej.: `/test/5`).
+2. Laravel sirve siempre la misma vista Blade (catch-all en `routes/web.php`).
+3. Antes de montar la ruta, el guard de Vue Router llama a `authStore.init()` (`GET /api/me`) para saber si hay sesión.
+4. Vue Router renderiza `ViewTest.vue`, que pide `GET /api/tests/5` con Axios (la cookie de sesión viaja sola).
+5. Laravel aplica el middleware, el controlador consulta Eloquent y devuelve JSON.
+6. El componente actualiza la interfaz.
 
-### Infraestructura Docker (compose.yaml)
+### Infraestructura Docker
 
-```
-┌─────────────────────────────────────┐
-│           docker compose            │
-│                                     │
-│  ┌────────────────────────────┐     │
-│  │  laravel.test (app)        │     │
-│  │  Imagen: sail-8.5/app      │     │
-│  │  Puerto 80 → HTTP          │     │
-│  │  Puerto 5173 → Vite HMR    │     │
-│  │  Volumen: .:/var/www/html   │     │
-│  └──────────┬─────────────────┘     │
-│             │ depends_on             │
-│  ┌──────────▼─────────────────┐     │
-│  │  mysql (base de datos)     │     │
-│  │  Imagen: mysql:8.4         │     │
-│  │  Puerto 3306               │     │
-│  │  Volumen: sail-mysql       │     │
-│  └────────────────────────────┘     │
-│                                     │
-│  Red: sail (bridge)                 │
-└─────────────────────────────────────┘
-```
+**Desarrollo (`compose.yaml`)**
+
+| Servicio | Imagen | Puertos | Notas |
+|---|---|---|---|
+| `laravel.test` | `sail-8.5/app` | `APP_PORT` (80), `VITE_PORT` (5173) | Volumen `.:/var/www/html`, espera a que MySQL esté *healthy* |
+| `mysql` | `mysql:8.4` | `FORWARD_DB_PORT` (3306) | Volumen `sail-mysql`, healthcheck con `mysqladmin ping` |
+
+**Producción (`compose.prod.yaml`)**
+
+| Servicio | Notas |
+|---|---|
+| `laravel.test` | Sin puertos expuestos: solo accesible a través de Caddy en la red interna `sail` |
+| `mysql` | Sin puertos expuestos |
+| `caddy` | Puertos 80/443, certificado HTTPS automático para `APP_DOMAIN`, cabeceras de seguridad (ver [§12](#12-notas-de-seguridad)) |
+
+El contenedor de la app ejecuta con **Supervisor** dos programas: el servidor PHP y `php artisan schedule:work` (tareas programadas).
 
 ---
 
 ## 4. Instalación y Despliegue
 
-### Requisitos previos
+### 4.1 Entorno de desarrollo
 
-- **Docker** y **Docker Compose** instalados
-- **Node.js** (v18+) y **npm** para el frontend
-- **Git** para clonar el repositorio
-
-### Pasos de instalación
+**Requisitos:** Docker + Docker Compose y Git. (Sin Docker: PHP 8.2+, Composer, Node.js 18+ y MySQL 8 o SQLite.)
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/HiImGhost666/TestMaster_Laravel-Vue.git
-cd TestMaster_Laravel-Vue
+git clone https://github.com/HiImGhost666/TestMaster.git
+cd TestMaster
 
-# 2. Copiar el archivo de entorno
+# 2. Copiar y ajustar el entorno (ver 4.2)
 cp .env.example .env
 
-# 3. Instalar dependencias de PHP (con Sail)
-docker run --rm \
-    -u "$(id -u):$(id -g)" \
-    -v "$(pwd):/var/www/html" \
-    -w /var/www/html \
-    laravelsail/php82-composer:latest \
-    composer install --ignore-platform-reqs
+# 3. Instalar dependencias de PHP
+docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/html" -w /var/www/html \
+    laravelsail/php84-composer:latest composer install --ignore-platform-reqs
 
-# 4. Levantar los contenedores Docker
+# 4. Levantar los contenedores
 ./vendor/bin/sail up -d
 
-# 5. Generar la clave de la aplicación
+# 5. Clave, migraciones, datos de prueba y enlace de storage (avatares)
 ./vendor/bin/sail artisan key:generate
+./vendor/bin/sail artisan migrate --seed
+./vendor/bin/sail artisan storage:link
 
-# 6. Ejecutar las migraciones
-./vendor/bin/sail artisan migrate
-
-# 7. (Opcional) Poblar con datos de prueba
-./vendor/bin/sail artisan db:seed
-
-# 8. Instalar dependencias de Node.js
+# 6. Frontend
 ./vendor/bin/sail npm install
-
-# 9. Compilar el frontend (desarrollo)
-./vendor/bin/sail npm run dev
-
-# 10. Para producción
-./vendor/bin/sail npm run build
+./vendor/bin/sail npm run dev      # desarrollo (HMR)
+./vendor/bin/sail npm run build    # compilación de producción
 ```
 
-### Variables de entorno clave (.env)
-
-| Variable | Descripción | Valor típico |
-|---|---|---|
-| `APP_URL` | URL base de la aplicación | `http://localhost` |
-| `DB_CONNECTION` | Driver de base de datos | `mysql` |
-| `DB_HOST` | Host de MySQL | `mysql` (nombre del servicio Docker) |
-| `DB_PORT` | Puerto de MySQL | `3306` |
-| `DB_DATABASE` | Nombre de la base de datos | `laravel` |
-| `DB_USERNAME` | Usuario de MySQL | `sail` |
-| `DB_PASSWORD` | Contraseña de MySQL | `password` |
-| `APP_PORT` | Puerto HTTP del contenedor | `80` |
-| `VITE_PORT` | Puerto del servidor Vite (HMR) | `5173` |
-
-### Comandos útiles
+**Sin Docker:**
 
 ```bash
-# Acceder al contenedor
-./vendor/bin/sail shell
+composer setup     # install + .env + key:generate + migrate + npm install + npm run build
+php artisan db:seed
+composer dev       # php artisan serve + queue:listen + pail + vite (concurrently)
+```
 
-# Ejecutar tests
-./vendor/bin/sail artisan test
+### 4.2 Variables de entorno
 
-# Limpiar caché
-./vendor/bin/sail artisan cache:clear
-./vendor/bin/sail artisan config:clear
+| Variable | Descripción | Valor típico (dev) |
+|---|---|---|
+| `APP_URL` | URL base | `http://localhost` |
+| `APP_DOMAIN` | Dominio público (producción, lo usa Caddy y se añade a los dominios *stateful* de Sanctum) | `testmaster.ejemplo.com` |
+| `DB_CONNECTION` | Driver (`.env.example` trae `sqlite`; con Sail usar `mysql`) | `mysql` |
+| `DB_HOST` / `DB_PORT` | Host y puerto | `mysql` / `3306` |
+| `DB_DATABASE` / `DB_USERNAME` / `DB_PASSWORD` | Credenciales | `laravel` / `sail` / `password` |
+| `SESSION_DRIVER` | Almacén de sesiones | `database` |
+| `SESSION_LIFETIME` | Duración de la sesión (min) | `120` |
+| `SESSION_ENCRYPT` | Cifrar el contenido de la sesión | `true` |
+| `SESSION_SECURE_COOKIE` | Cookie solo por HTTPS | `false` en dev, **`true` en producción** |
+| `SESSION_HTTP_ONLY` / `SESSION_SAME_SITE` | Cookie inaccesible desde JS / política SameSite | `true` / `lax` |
+| `SANCTUM_STATEFUL_DOMAINS` | Dominios que reciben autenticación por cookie | `localhost,127.0.0.1` |
+| `LOG_STACK` / `LOG_DAILY_DAYS` | Logs diarios y retención | `daily` / `30` |
+| `SEED_ADMIN_PASSWORD` | Contraseña del admin de prueba. Si falta, el seeder genera una aleatoria y la imprime | — |
+| `APP_PORT` / `VITE_PORT` / `FORWARD_DB_PORT` | Puertos de Sail | `80` / `5173` / `3306` |
 
-# Reiniciar la base de datos
-./vendor/bin/sail artisan migrate:fresh --seed
+### 4.3 Producción
 
-# Ver rutas registradas
-./vendor/bin/sail artisan route:list
+1. Configura `.env` con `APP_ENV=production`, `APP_DEBUG=false`, `APP_DOMAIN`, `APP_URL=https://…`, `SESSION_SECURE_COOKIE=true` y las credenciales de MySQL.
+2. Apunta el DNS del dominio al servidor (Caddy obtiene el certificado automáticamente).
+3. Ejecuta:
+
+```bash
+./deploy.sh
+```
+
+`deploy.sh` (pide confirmación):
+
+1. `docker compose -f compose.prod.yaml down`
+2. `docker compose -f compose.prod.yaml up -d --build`
+3. Espera a que MySQL responda a `mysqladmin ping`.
+4. `php artisan optimize:clear`
+5. `php artisan migrate --force`
+6. `npm ci` y `npm run build`
+
+> El script continúa aunque falle un paso (muestra el error y sigue). Revisa la salida.
+
+### 4.4 Tareas programadas
+
+Definidas en `routes/console.php` y ejecutadas por el programa `scheduler` de Supervisor:
+
+| Comando | Frecuencia | Qué hace |
+|---|---|---|
+| `gdpr:prune-sessions` | Cada hora | Borra sesiones caducadas (contienen IP y user-agent) |
+| `gdpr:prune-reset-tokens` | Diaria | Borra tokens de restablecimiento de contraseña de más de 1 día |
+| `sanctum:prune-expired --hours=24` | Diaria | Borra tokens de Sanctum caducados |
+
+Los logs rotan a diario y se conservan `LOG_DAILY_DAYS` (30) días.
+
+### 4.5 Comandos útiles
+
+```bash
+./vendor/bin/sail shell                         # Shell dentro del contenedor
+./vendor/bin/sail artisan test                  # Ejecutar los tests
+./vendor/bin/sail artisan migrate:fresh --seed  # Reiniciar la base de datos
+./vendor/bin/sail artisan route:list --path=api # Ver rutas de la API
+./vendor/bin/sail artisan schedule:list         # Ver tareas programadas
+./vendor/bin/sail artisan optimize:clear        # Limpiar cachés
+./vendor/bin/sail artisan pail                  # Logs en tiempo real
+./vendor/bin/pint                               # Formatear código PHP
 ```
 
 ---
 
 ## 5. Base de Datos
 
-La base de datos se compone de **26 tablas** organizadas en 6 dominios funcionales, definidas en 8 archivos de migración.
-
 ### 5.1 Diagrama de Relaciones (ER)
 
 ```
-┌──────────────┐       ┌──────────────┐       ┌──────────────────┐
-│    users     │       │    tests     │       │   categories     │
-├──────────────┤       ├──────────────┤       ├──────────────────┤
-│ id (PK)      │──┐    │ id (PK)      │──┐    │ id (PK)          │
-│ email        │  │    │ user_id (FK) │  │    │ name             │
-│ password_hash│  │    │ title        │  │    │ slug             │
-│ name         │  │    │ description  │  │    │ parent_id (FK→self)│
-│ avatar       │  │    │ is_public    │  │    │ tests_count      │
-│ bio          │  │    │ time_limit   │  │    └────────┬─────────┘
-│ role         │  │    │ max_attempts │  │             │
-│ last_login   │  │    │ pass_score   │  │    ┌────────▼─────────┐
-└──────┬───────┘  │    │ difficulty   │  │    │ test_categories  │
-       │          │    │ status       │  │    │ (tabla pivote)   │
-       │          │    │ views_count  │  ├───►│ test_id (FK)     │
-       │          │    └──────┬───────┘  │    │ category_id (FK) │
-       │          │           │          │    └──────────────────┘
-       │          │           │          │
-       │ 1:1      │    1:N    │    1:1   │
-       ▼          │           ▼          │
-┌──────────────┐  │  ┌──────────────┐   │   ┌──────────────────┐
-│ user_points  │  │  │  questions   │   │   │   test_stats     │
-├──────────────┤  │  ├──────────────┤   │   ├──────────────────┤
-│ user_id (FK) │  │  │ id (PK)      │   │   │ test_id (FK)     │
-│ points       │  │  │ test_id (FK) │   │   │ views_count      │
-│ level        │  │  │ type         │   │   │ attempts_count   │
-│ experience   │  │  │ content      │   │   │ average_score    │
-│ streak_days  │  │  │ explanation  │   │   │ pass_rate        │
-└──────────────┘  │  │ points       │   │   └──────────────────┘
-                  │  └──────┬───────┘   │
-┌──────────────┐  │         │           │
-│ user_stats   │  │         │ 1:N       │
-├──────────────┤  │         ▼           │
-│ user_id (FK) │  │  ┌──────────────┐   │
-│ tests_created│  │  │question_opts │   │
-│ tests_passed │  │  ├──────────────┤   │
-│ average_score│  │  │ question_id  │   │
-│ current_streak│  │  │ content      │   │
-└──────────────┘  │  │ is_correct   │   │
-                  │  │ order_index  │   │
-                  │  └──────────────┘   │
-                  │                     │
-                  │  N:M                │
-                  ▼                     │
-          ┌──────────────┐              │
-          │test_attempts │              │
-          ├──────────────┤              │
-          │ id (PK)      │              │
-          │ user_id (FK) │◄─────────────┘
-          │ test_id (FK) │
-          │ score        │
-          │ passed       │
-          │ time_spent   │
-          └──────┬───────┘
-                 │ 1:N
-                 ▼
-          ┌──────────────────┐
-          │question_responses│
-          ├──────────────────┤
-          │ attempt_id (FK)  │
-          │ question_id (FK) │
-          │ given_answer     │
-          │ is_correct       │
-          │ points_earned    │
-          └──────────────────┘
+┌────────────────┐       ┌────────────────┐       ┌──────────────────┐
+│     users      │       │     tests      │       │   categories     │
+├────────────────┤       ├────────────────┤       ├──────────────────┤
+│ id (PK)        │──┐    │ id (PK)        │──┐    │ id (PK)          │
+│ email          │  │    │ user_id (FK,   │  │    │ name, slug       │
+│ password_hash  │  │    │   nullable)    │  │    │ icon, color      │
+│ name, avatar   │  │    │ title          │  │    │ parent_id (FK)   │
+│ role           │  │    │ is_public      │  │    │ tests_count      │
+│ privacy_*      │  │    │ is_featured    │  │    └────────┬─────────┘
+│ suspended_at   │  │    │ featured_at    │  │             │
+│ last_login     │  │    │ password (hash)│  │    ┌────────▼─────────┐
+└──────┬─────────┘  │    │ wrong_penalty  │  ├───►│ test_categories  │
+       │            │    │ display_mode   │  │    └──────────────────┘
+       │ 1:1        │    │ status         │  │
+       ▼            │    └──────┬─────────┘  │    ┌──────────────────┐
+┌──────────────┐    │           │ 1:N        └───►│   test_stats     │
+│ user_points  │    │           ▼                 └──────────────────┘
+│ user_stats   │    │    ┌────────────────┐
+└──────────────┘    │    │   questions    │
+                    │    ├────────────────┤
+                    │    │ type (7 tipos) │
+                    │    │ content, points│
+                    │    │ numeric_answer │
+                    │    │ numeric_toler. │
+                    │    └──────┬─────────┘
+                    │           │ 1:N
+                    │           ├──► question_options     (opciones / V-F / respuesta corta)
+                    │           ├──► question_blanks      (fill_blank)
+                    │           ├──► question_order_items (order_items)
+                    │           └──► question_stats
+                    │
+                    │ 1:N
+                    ▼
+            ┌────────────────┐         ┌────────────────────┐
+            │ test_attempts  │  1:N    │ question_responses │
+            ├────────────────┤────────►├────────────────────┤
+            │ user_id, test_id│        │ question_id        │
+            │ mode (exam/    │         │ given_answer (json)│
+            │       review)  │         │ is_correct         │
+            │ score, passed  │         │ points_earned (dec)│
+            │ points_earned  │         │ display_order      │
+            └────────────────┘         └────────────────────┘
 
-     ┌──────────────┐      ┌──────────────┐
-     │   comments   │      │   ratings    │
-     ├──────────────┤      ├──────────────┤
-     │ user_id (FK) │      │ user_id (FK) │
-     │ test_id (FK) │      │ test_id (FK) │
-     │ parent_id    │      │ rating (1-5) │
-     │ content      │      └──────────────┘
-     │ is_edited    │
-     └──────────────┘      ┌──────────────┐
-                           │   follows    │
-     ┌──────────────┐      ├──────────────┤
-     │   groups     │      │ follower_id  │
-     ├──────────────┤      │ following_id │
-     │ owner_id(FK) │      └──────────────┘
-     │ name         │
-     │ join_code    │
-     │ is_private   │
-     └──────────────┘
+┌────────────────────┐    Tablas sin API/UI todavía (ver §13):
+│ admin_audit_logs   │    comments, ratings, follows, groups,
+├────────────────────┤    group_members, group_tests, point_history,
+│ admin_id (FK, null)│    settings, activity_logs, notifications, reports
+│ action, target_*   │
+│ details (json)     │
+└────────────────────┘
 ```
 
 ### 5.2 Detalle de Tablas
@@ -378,43 +371,38 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 | `email` | varchar | unique, not null | Email del usuario |
 | `password_hash` | varchar | not null | Contraseña hasheada (bcrypt) |
 | `name` | varchar(100) | not null | Nombre mostrado |
-| `avatar` | varchar(255) | nullable | URL del avatar |
-| `bio` | text | nullable | Biografía del usuario |
-| `role` | enum | default: 'user' | `user`, `premium`, `educator`, `admin` |
-| `email_verified_at` | timestamp | nullable | Fecha de verificación de email |
-| `created_at` | timestamp | — | Fecha de registro |
-| `updated_at` | timestamp | — | Última actualización |
+| `avatar` | varchar(255) | nullable | Ruta pública del avatar (`/storage/avatars/…`) |
+| `bio` | text | nullable | Biografía |
+| `role` | enum | default: `user` | `user`, `premium`, `educator`, `admin`. Hoy solo `user` y `admin` tienen efecto |
+| `email_verified_at` | timestamp | nullable | Se rellena al registrarse |
+| `privacy_accepted_at` | timestamp | nullable | Cuándo aceptó la Política de Privacidad y los Términos (RGPD art. 7.1) |
+| `privacy_policy_version` | varchar(20) | nullable | Versión aceptada (`AuthController::PRIVACY_POLICY_VERSION`) |
 | `last_login` | timestamp | nullable | Último inicio de sesión |
-| `remember_token` | varchar(100) | nullable | Token "recordar sesión" |
+| `suspended_at` | timestamp | nullable | Si no es nulo, la cuenta está suspendida |
+| `remember_token` | varchar(100) | nullable | — |
+| `created_at` / `updated_at` | timestamp | — | — |
 
 ##### Tabla `user_points`
 | Columna | Tipo | Restricciones | Descripción |
 |---|---|---|---|
-| `id` | bigint (PK) | auto_increment | — |
-| `user_id` | bigint (FK→users) | unique, cascade delete | Relación 1:1 con usuario |
+| `user_id` | bigint (FK→users) | unique, cascade delete | Relación 1:1 |
 | `points` | int | default: 0 | Puntos acumulados |
-| `level` | int | default: 1 | Nivel del usuario |
-| `experience` | int | default: 0 | Experiencia acumulada |
-| `streak_days` | int | default: 0 | Días consecutivos de actividad |
-| `last_activity_date` | date | nullable | Última fecha de actividad |
+| `level` | int | default: 1 | Nivel |
+| `experience` | int | default: 0 | Experiencia |
+| `streak_days` | int | default: 0 | Días consecutivos |
+| `last_activity_date` | date | nullable | Última actividad |
+
+> Tabla creada para la gamificación futura; no se actualiza todavía.
 
 ##### Tabla `user_stats`
 | Columna | Tipo | Restricciones | Descripción |
 |---|---|---|---|
-| `id` | bigint (PK) | auto_increment | — |
-| `user_id` | bigint (FK→users) | unique, cascade delete | Relación 1:1 con usuario |
-| `tests_created` | unsigned int | default: 0 | Tests creados por el usuario |
-| `tests_completed` | unsigned int | default: 0 | Tests completados |
-| `tests_passed` | unsigned int | default: 0 | Tests aprobados |
-| `average_score` | decimal(5,2) | default: 0 | Nota media global |
-| `total_study_time` | unsigned int | default: 0 | Tiempo total de estudio (seg) |
-| `perfect_scores` | unsigned int | default: 0 | Puntuaciones perfectas |
-| `current_streak` | unsigned int | default: 0 | Racha actual (días) |
-| `longest_streak` | unsigned int | default: 0 | Racha más larga |
-| `total_points` | int | default: 0 | Puntos totales |
-| `badges_earned` | unsigned int | default: 0 | Insignias ganadas |
-| `followers_count` | unsigned int | default: 0 | Número de seguidores |
-| `following_count` | unsigned int | default: 0 | Número de seguidos |
+| `user_id` | bigint (FK→users) | unique, cascade delete | Relación 1:1 |
+| `tests_created` | unsigned int | default: 0 | Tests creados |
+| `tests_completed` | unsigned int | default: 0 | Exámenes completados (no cuenta repasos) |
+| `tests_passed` | unsigned int | default: 0 | Exámenes aprobados |
+| `average_score` | decimal(5,2) | default: 0 | Nota media de exámenes |
+| `total_study_time`, `perfect_scores`, `current_streak`, `longest_streak`, `total_points`, `badges_earned`, `followers_count`, `following_count` | unsigned int / int | default: 0 | Reservados. La racha real se calcula al vuelo (ver [§8.4](#84-modo-repaso-y-mi-progreso)) |
 
 ---
 
@@ -424,23 +412,23 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 | Columna | Tipo | Restricciones | Descripción |
 |---|---|---|---|
 | `id` | bigint (PK) | auto_increment | — |
-| `user_id` | bigint (FK→users) | cascade delete, indexed | Creador del test |
-| `title` | varchar(255) | not null | Título del test |
+| `user_id` | bigint (FK→users) | **nullable**, `nullOnDelete`, indexed | Autor. `NULL` = autor eliminado (test anonimizado) |
+| `title` | varchar(255) | not null | Título |
 | `description` | text | nullable | Descripción |
-| `is_public` | boolean | default: true, indexed | Visibilidad pública |
-| `is_featured` | boolean | default: false | Test destacado |
-| `password` | varchar(255) | nullable | Protección por contraseña |
-| `time_limit` | unsigned int | nullable | Límite de tiempo (segundos) |
-| `max_attempts` | int | default: -1 | Intentos máximos (-1 = ilimitados) |
+| `is_public` | boolean | default: true, indexed | Visible en el catálogo |
+| `is_featured` | boolean | default: false | Destacado en la Home (lo gestiona un admin) |
+| `featured_at` | timestamp | nullable | Orden de los destacados (más reciente primero) |
+| `password` | varchar(255) | nullable, oculto en JSON | **Hash** de la contraseña del test. El API expone solo `has_password` |
+| `time_limit` | unsigned int | nullable | Límite de tiempo (segundos; el editor lo envía en minutos) |
+| `max_attempts` | int | default: -1 | Intentos de examen máximos (-1 = ilimitados) |
 | `pass_score` | int | default: 70 | Nota mínima para aprobar (%) |
-| `shuffle_questions` | boolean | default: false | Barajar orden de preguntas |
-| `shuffle_answers` | boolean | default: false | Barajar orden de respuestas |
-| `show_correct_answers` | boolean | default: true | Mostrar respuestas correctas al finalizar |
-| `show_explanations` | boolean | default: true | Mostrar explicaciones |
-| `difficulty` | enum | default: 'medium', indexed | `easy`, `medium`, `hard` |
-| `status` | enum | default: 'draft', indexed | `draft`, `published`, `archived` |
-| `views_count` | unsigned int | default: 0 | Contador de visualizaciones |
-| `attempts_count` | unsigned int | default: 0 | Contador de intentos |
+| `wrong_penalty` | decimal(5,4) | default: 0 | Fracción de los puntos que resta un fallo (0, 0.25, 0.3333, 0.5) |
+| `shuffle_questions` / `shuffle_answers` | boolean | default: false | Barajar preguntas / opciones |
+| `show_correct_answers` / `show_explanations` | boolean | default: true | Qué se muestra en resultados |
+| `display_mode` | enum | default: `paged` | `paged` (una pregunta por pantalla) o `all` (todas en una página) |
+| `difficulty` | enum | default: `medium`, indexed | `easy`, `medium`, `hard` |
+| `status` | enum | default: `draft`, indexed | `draft`, `published`, `archived` |
+| `views_count` / `attempts_count` | unsigned int | default: 0 | Contadores |
 | `average_score` | decimal(5,2) | nullable | Nota media |
 | `published_at` | timestamp | nullable | Fecha de publicación |
 
@@ -448,19 +436,19 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 | Columna | Tipo | Restricciones | Descripción |
 |---|---|---|---|
 | `id` | bigint (PK) | auto_increment | — |
-| `name` | varchar(100) | unique | Nombre de la categoría |
-| `slug` | varchar(100) | unique | Slug URL-friendly |
-| `description` | text | nullable | Descripción |
-| `icon` | varchar(50) | nullable | Clase CSS del ícono (ej: `fa-code`) |
-| `color` | varchar(7) | nullable | Color hex (ej: `#3B82F6`) |
-| `parent_id` | bigint (FK→categories) | nullable, cascade delete | Categoría padre (jerárquica) |
-| `tests_count` | unsigned int | default: 0 | Contador de tests en esta categoría |
+| `name` | varchar(100) | unique | Nombre |
+| `slug` | varchar(100) | unique | Slug generado (`historia`, `historia-2`…) |
+| `description` | text | nullable | Descripción (máx. 500 en el admin) |
+| `icon` | varchar(50) | nullable | Clase Font Awesome validada (`fa-solid fa-code`) |
+| `color` | varchar(7) | nullable | Color hex (`#3B82F6`) |
+| `parent_id` | bigint (FK→categories) | nullable, cascade delete | Categoría padre |
+| `tests_count` | unsigned int | default: 0 | Contador de tests |
 
-##### Tabla `test_categories` (tabla pivote)
-| Columna | Tipo | Restricciones | Descripción |
-|---|---|---|---|
-| `test_id` | bigint (FK→tests) | PK compuesto, cascade delete | — |
-| `category_id` | bigint (FK→categories) | PK compuesto, cascade delete | — |
+##### Tabla `test_categories` (pivote)
+| Columna | Tipo | Restricciones |
+|---|---|---|
+| `test_id` | bigint (FK→tests) | PK compuesta, cascade delete |
+| `category_id` | bigint (FK→categories) | PK compuesta, cascade delete |
 
 ---
 
@@ -471,53 +459,44 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 |---|---|---|---|
 | `id` | bigint (PK) | auto_increment | — |
 | `test_id` | bigint (FK→tests) | cascade delete, indexed | Test al que pertenece |
-| `type` | enum | indexed | `multiple_choice`, `true_false`, `short_answer`, `fill_blank`, `drag_drop`, `order_items`, `numeric`, `image_hotspot` |
-| `content` | text | not null | Texto/enunciado de la pregunta |
-| `explanation` | text | nullable | Explicación de la respuesta correcta |
-| `points` | int | default: 1 | Puntos que vale la pregunta |
+| `type` | enum | indexed | `multiple_choice`, `multiple_select`, `true_false`, `short_answer`, `fill_blank`, `order_items`, `numeric` |
+| `content` | text | not null | Enunciado (en `fill_blank`, los huecos se marcan con `___`) |
+| `explanation` | text | nullable | Explicación de la respuesta |
+| `points` | int | default: 1 | Puntos que vale |
+| `numeric_answer` | decimal(20,6) | nullable | Respuesta de las preguntas `numeric` |
+| `numeric_tolerance` | decimal(20,6) | nullable | Margen aceptado (±) |
 | `order_index` | int | default: 0 | Orden dentro del test |
-| `image_url` | varchar(255) | nullable | Imagen adjunta |
-| `audio_url` | varchar(255) | nullable | Audio adjunto |
-| `video_url` | varchar(255) | nullable | Vídeo adjunto |
-| `time_limit` | unsigned int | nullable | Límite de tiempo individual (seg) |
+| `image_url` / `audio_url` / `video_url` | varchar(255) | nullable | Reservados para multimedia |
+| `time_limit` | unsigned int | nullable | Reservado |
 
 ##### Tabla `question_options`
-| Columna | Tipo | Restricciones | Descripción |
-|---|---|---|---|
-| `id` | bigint (PK) | auto_increment | — |
-| `question_id` | bigint (FK→questions) | cascade delete | Pregunta a la que pertenece |
-| `content` | text | not null | Texto de la opción |
-| `is_correct` | boolean | default: false | Si es la respuesta correcta |
-| `order_index` | int | default: 0 | Orden de aparición |
-| `image_url` | varchar(255) | nullable | Imagen de la opción |
+Usada por `multiple_choice`, `multiple_select`, `true_false` (Verdadero/Falso) y `short_answer` (respuesta aceptada).
 
-##### Tabla `question_blanks` (para tipo fill_blank — no implementado)
-| Columna | Tipo | Restricciones | Descripción |
-|---|---|---|---|
-| `id` | bigint (PK) | auto_increment | — |
-| `question_id` | bigint (FK→questions) | cascade delete | — |
-| `blank_index` | int | — | Índice del hueco |
-| `correct_answers` | json | — | Array de respuestas válidas |
-| `case_sensitive` | boolean | default: false | Si distingue mayúsculas |
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `question_id` | bigint (FK→questions, cascade) | — |
+| `content` | text | Texto de la opción |
+| `is_correct` | boolean | Si es correcta |
+| `order_index` | int | Orden |
+| `image_url` | varchar(255) nullable | Reservado |
 
-##### Tabla `question_order_items` (para tipo order_items — no implementado)
-| Columna | Tipo | Restricciones | Descripción |
-|---|---|---|---|
-| `id` | bigint (PK) | auto_increment | — |
-| `question_id` | bigint (FK→questions) | cascade delete | — |
-| `content` | text | — | Texto del elemento |
-| `correct_order` | int | — | Posición correcta |
+##### Tabla `question_blanks` (`fill_blank`)
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `question_id` | bigint (FK, cascade) | — |
+| `blank_index` | int | Índice del hueco (0…n) |
+| `correct_answers` | json | Respuestas válidas para ese hueco |
+| `case_sensitive` | boolean (default false) | Si distingue mayúsculas |
+
+##### Tabla `question_order_items` (`order_items`)
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `question_id` | bigint (FK, cascade) | — |
+| `content` | text | Texto del elemento |
+| `correct_order` | int | Posición correcta |
 
 ##### Tabla `question_stats`
-| Columna | Tipo | Restricciones | Descripción |
-|---|---|---|---|
-| `id` | bigint (PK) | auto_increment | — |
-| `question_id` | bigint (FK→questions) | unique, cascade delete | 1:1 con pregunta |
-| `times_answered` | unsigned int | default: 0 | Veces respondida |
-| `times_correct` | unsigned int | default: 0 | Veces acertada |
-| `times_incorrect` | unsigned int | default: 0 | Veces fallada |
-| `difficulty_score` | decimal(5,2) | default: 0 | Dificultad calculada |
-| `average_time` | unsigned int | default: 0 | Tiempo medio de respuesta |
+1:1 con la pregunta: `times_answered`, `times_correct`, `times_incorrect`, `difficulty_score`, `average_time`.
 
 ---
 
@@ -527,118 +506,83 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 | Columna | Tipo | Restricciones | Descripción |
 |---|---|---|---|
 | `id` | bigint (PK) | auto_increment | — |
-| `user_id` | bigint (FK→users) | cascade delete, indexed | Usuario que hizo el intento |
-| `test_id` | bigint (FK→tests) | cascade delete, indexed | Test realizado |
-| `score` | decimal(5,2) | default: 0 | Nota obtenida (0-100) |
-| `points_earned` | int | default: 0 | Puntos ganados |
-| `total_points` | int | default: 0 | Puntos totales posibles |
-| `correct_answers` | int | default: 0 | Respuestas correctas |
-| `incorrect_answers` | int | default: 0 | Respuestas incorrectas |
-| `unanswered` | int | default: 0 | Sin responder |
-| `time_spent` | unsigned int | default: 0 | Tiempo empleado (seg) |
-| `is_completed` | boolean | default: false, indexed | Si se completó |
-| `passed` | boolean | default: false | Si aprobó |
-| `started_at` | timestamp | nullable | Hora de inicio |
-| `completed_at` | timestamp | nullable | Hora de finalización |
-| `ip_address` | varchar(45) | nullable | IP del usuario |
-| `user_agent` | text | nullable | Navegador/dispositivo |
+| `user_id` | bigint (FK→users) | cascade delete, indexed | Usuario |
+| `test_id` | bigint (FK→tests) | cascade delete, indexed | Test |
+| `mode` | enum | default: `exam` | `exam` o `review`. Índice `(user_id, test_id, mode)` |
+| `score` | decimal(5,2) | default: 0 | Nota (0–100) |
+| `points_earned` | decimal(8,2) | default: 0 | Puntos obtenidos (admite parciales y penalizaciones) |
+| `total_points` | int | default: 0 | Puntos posibles |
+| `correct_answers` / `incorrect_answers` / `unanswered` | int | default: 0 | Recuento (parciales cuentan como incorrectas) |
+| `time_spent` | unsigned int | default: 0 | Segundos empleados |
+| `is_completed` | boolean | default: false, indexed | — |
+| `passed` | boolean | default: false | `score >= pass_score` |
+| `started_at` / `completed_at` | timestamp | nullable | — |
+| `ip_address` / `user_agent` | varchar / text | nullable | **Ya no se guardan** (minimización RGPD) |
+
+> Los repasos no gastan intentos ni cuentan en medias ni estadísticas: usa el scope `TestAttempt::completedExams()`.
 
 ##### Tabla `question_responses`
-| Columna | Tipo | Restricciones | Descripción |
-|---|---|---|---|
-| `id` | bigint (PK) | auto_increment | — |
-| `attempt_id` | bigint (FK→test_attempts) | cascade delete | Intento al que pertenece |
-| `question_id` | bigint (FK→questions) | cascade delete | Pregunta respondida |
-| `given_answer` | json | nullable | Respuesta dada (formato varía según tipo) |
-| `is_correct` | boolean | default: false | Si fue correcta |
-| `points_earned` | int | default: 0 | Puntos obtenidos |
-| `time_spent` | unsigned int | default: 0 | Tiempo en esta pregunta |
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `attempt_id` | bigint (FK→test_attempts, cascade) | Intento |
+| `question_id` | bigint (FK→questions, cascade) | Pregunta |
+| `given_answer` | json, nullable | Respuesta dada (formato según tipo, ver [§8.2](#82-tipos-de-pregunta-y-formatos)) |
+| `is_correct` | boolean | Solo `true` con 100 % de acierto |
+| `points_earned` | decimal(8,2) | Puntos (pueden ser parciales o negativos por penalización) |
+| `display_order` | int | Posición en la que se mostró la pregunta |
+| `time_spent` | unsigned int | Reservado |
 
 ---
 
-#### Dominio: Comunidad
+#### Dominio: Administración
 
-##### Tabla `test_stats`
-| Columna | Tipo | Restricciones | Descripción |
-|---|---|---|---|
-| `test_id` | bigint (FK→tests) | unique, cascade delete | 1:1 con test |
-| `views_count` | unsigned int | default: 0 | Visualizaciones |
-| `attempts_count` | unsigned int | default: 0 | Intentos totales |
-| `completions_count` | unsigned int | default: 0 | Completados |
-| `average_score` | decimal(5,2) | default: 0 | Nota media |
-| `pass_rate` | decimal(5,2) | default: 0 | Tasa de aprobados |
-| `rating_avg` | decimal(3,2) | default: 0 | Puntuación media (estrellas) |
-| `ratings_count` | unsigned int | default: 0 | Número de valoraciones |
-| `comments_count` | unsigned int | default: 0 | Número de comentarios |
-
-##### Tabla `comments`
+##### Tabla `admin_audit_logs`
 | Columna | Tipo | Descripción |
 |---|---|---|
 | `id` | bigint (PK) | — |
-| `user_id` | bigint (FK→users) | Autor |
-| `test_id` | bigint (FK→tests) | Test comentado |
-| `parent_id` | bigint (FK→comments) | Comentario padre (respuestas anidadas) |
-| `content` | text | Contenido del comentario |
-| `is_edited` | boolean | Si fue editado |
-| `is_hidden` | boolean | Si está oculto (moderación) |
-
-##### Tabla `ratings`
-| Columna | Tipo | Descripción |
-|---|---|---|
-| `user_id` | bigint (FK→users) | Restricción unique con test_id |
-| `test_id` | bigint (FK→tests) | Test valorado |
-| `rating` | tinyint | Puntuación 1-5 |
-
-##### Tabla `follows`
-| Columna | Tipo | Descripción |
-|---|---|---|
-| `follower_id` | bigint (FK→users) | PK compuesto, quien sigue |
-| `following_id` | bigint (FK→users) | PK compuesto, a quien sigue |
+| `admin_id` | bigint (FK→users), nullable, `nullOnDelete` | Quién hizo la acción |
+| `action` | varchar(50) | `test.status`, `test.featured`, `test.unfeatured`, `test.deleted`, `user.role`, `user.suspended`, `user.reactivated`, `category.created`, `category.updated`, `category.deleted` |
+| `target_type` | varchar(30) | `test`, `user`, `category` |
+| `target_id` | unsigned bigint, nullable | Id del objeto afectado |
+| `details` | json, nullable | Cambios (`from`/`to`…). **Sin datos personales** |
+| `created_at` | timestamp | Índice |
 
 ---
 
-#### Dominio: Grupos
+#### Dominio: Comunidad y Grupos (sin API todavía)
 
-##### Tabla `groups`
-| Columna | Tipo | Descripción |
-|---|---|---|
-| `id` | bigint (PK) | — |
-| `owner_id` | bigint (FK→users) | Creador/dueño del grupo |
-| `name` | varchar(100) | Nombre del grupo |
-| `description` | text (nullable) | Descripción |
-| `avatar` | varchar(255) (nullable) | Imagen del grupo |
-| `is_private` | boolean (default: false) | Si es privado |
-| `join_code` | varchar(20) (unique, nullable) | Código de invitación |
-| `max_members` | int (nullable) | Máximo de miembros |
-
-##### Tabla `group_members` (pivote)
-| Columna | Tipo | Descripción |
-|---|---|---|
-| `group_id` | bigint (FK→groups) | unique con user_id |
-| `user_id` | bigint (FK→users) | — |
-| `role` | enum | `owner`, `admin`, `member` |
-
-##### Tabla `group_tests` (pivote)
-| Columna | Tipo | Descripción |
-|---|---|---|
-| `group_id` | bigint (FK→groups) | unique con test_id |
-| `test_id` | bigint (FK→tests) | — |
-| `added_by` | bigint (FK→users) | Quien añadió el test |
-
----
+| Tabla | Columnas clave |
+|---|---|
+| `test_stats` | 1:1 con test: `views_count`, `attempts_count`, `completions_count`, `average_score`, `pass_rate`, `rating_avg`, `ratings_count`, `comments_count` |
+| `comments` | `user_id`, `test_id`, `parent_id` (respuestas anidadas), `content`, `is_edited`, `is_hidden` |
+| `ratings` | `user_id` + `test_id` (unique), `rating` 1–5 |
+| `follows` | `follower_id` + `following_id` (PK compuesta) |
+| `groups` | `owner_id`, `name`, `description`, `avatar`, `is_private`, `join_code` (unique), `max_members` |
+| `group_members` | `group_id` + `user_id` (unique), `role` (`owner`, `admin`, `member`) |
+| `group_tests` | `group_id` + `test_id` (unique), `added_by` |
 
 #### Dominio: Sistema
 
 | Tabla | Descripción |
 |---|---|
-| `point_history` | Registro de transacciones de puntos (razón: test_completed, test_created, perfect_score, streak, badge_earned, other) |
-| `settings` | Configuración clave-valor del sistema (tipo: string, integer, boolean, json) |
-| `activity_logs` | Registro de auditoría (acción: create_test, edit_test, delete_test, attempt_test, login, register, other) |
-| `password_resets` | Tokens de restablecimiento de contraseña con expiración |
-| `password_reset_tokens` | Tabla estándar de Laravel para reset de password |
-| `sessions` | Sesiones de Laravel |
-| `personal_access_tokens` | Tokens de API (Sanctum) |
+| `sessions` | Sesiones de Laravel (**se usan para la autenticación SPA**). Limpieza horaria |
+| `password_reset_tokens` / `password_resets` | Tokens de restablecimiento. Limpieza diaria |
+| `personal_access_tokens` | Tokens de Sanctum (ya no se emiten; se revocaron al migrar a cookie) |
 | `cache` / `cache_locks` | Caché de Laravel |
+| `point_history`, `settings`, `activity_logs`, `notifications`, `reports` | Reservadas (ver [§13](#13-funcionalidades-planificadas-no-implementadas)) |
+
+### 5.3 Migraciones
+
+| Migración | Contenido |
+|---|---|
+| `2024_01_01_000001` … `000007` | Esquema base: usuarios, puntos/estadísticas, tests y categorías, preguntas, intentos, grupos y sistema |
+| `2026_02_13_142657_create_personal_access_tokens_table` | Tokens de Sanctum |
+| `2026_04_08_120000_add_display_order_to_question_responses_table` | Orden en que se mostró cada pregunta |
+| `2026_11_15_120000_add_display_mode_to_tests_table` | `tests.display_mode` (`paged` / `all`) |
+| `2026_11_15_130000_gdpr_compliance` | Consentimiento en `users`, `tests.user_id` nullable con `nullOnDelete`, borrado de IP/user-agent existentes y revocación de los tokens Bearer |
+| `2026_11_16_100000_question_types_and_scoring` | Nuevos tipos (`multiple_select`; se eliminan `drag_drop` e `image_hotspot`), `numeric_answer/tolerance`, `tests.wrong_penalty`, puntos decimales |
+| `2026_11_16_110000_add_mode_to_test_attempts` | `test_attempts.mode` (`exam` / `review`) |
+| `2026_11_16_120000_admin_panel` | `users.suspended_at`, `tests.featured_at`, tabla `admin_audit_logs` |
 
 ---
 
@@ -646,36 +590,30 @@ La base de datos se compone de **26 tablas** organizadas en 6 dominios funcional
 
 ### 6.1 Modelos y Relaciones Eloquent
 
-Se definen **14 modelos** en `app/Models/`. A continuación se detalla cada uno con sus relaciones:
-
 #### User
 
 ```
 User
-├── hasMany → Test (tests creados)
-├── hasMany → TestAttempt (intentos realizados)
-├── hasMany → Comment (comentarios escritos)
-├── hasMany → Rating (valoraciones dadas)
-├── hasOne  → UserPoint (puntos/gamificación)
-├── hasOne  → UserStat (estadísticas agregadas)
-├── belongsToMany → User (followers, via 'follows')
-├── belongsToMany → User (following, via 'follows')
-└── belongsToMany → Group (grupos, via 'group_members')
+├── hasMany → Test, TestAttempt, Comment, Rating
+├── hasOne  → UserPoint (points), UserStat (stats)
+├── belongsToMany → User (followers / following, vía 'follows')
+└── belongsToMany → Group (vía 'group_members')
+
+Métodos: isAdmin(), isSuspended(), getAuthPassword() → password_hash
 ```
 
-**Nota importante:** El modelo `User` sobreescribe `getAuthPassword()` para retornar `$this->password_hash` en lugar del estándar `$this->password`, ya que la columna en la BD se llama `password_hash`.
+> La columna de contraseña se llama `password_hash`, por eso `getAuthPassword()` está sobrescrito.
 
 #### Test
 
 ```
 Test
-├── belongsTo    → User (creador)
-├── hasMany      → Question (preguntas)
-├── hasMany      → TestAttempt (intentos)
-├── hasMany      → Comment (comentarios)
-├── hasMany      → Rating (valoraciones)
-├── belongsToMany → Category (categorías, via 'test_categories')
-└── hasOne       → TestStat (estadísticas)
+├── belongsTo    → User (autor; puede ser null)
+├── hasMany      → Question, TestAttempt, Comment, Rating
+├── belongsToMany → Category (vía 'test_categories')
+└── hasOne       → TestStat
+
+`password` está en $hidden; hasPassword() indica si está protegido.
 ```
 
 #### Question
@@ -683,11 +621,20 @@ Test
 ```
 Question
 ├── belongsTo → Test
-├── hasMany   → QuestionOption (opciones de respuesta)
-├── hasMany   → QuestionBlank (huecos — fill_blank)
-├── hasMany   → QuestionOrderItem (elementos — order_items)
-├── hasMany   → QuestionResponse (respuestas dadas)
-└── hasOne    → QuestionStat (estadísticas)
+├── hasMany   → QuestionOption (options), QuestionBlank (blanks),
+│               QuestionOrderItem (orderItems), QuestionResponse
+└── hasOne    → QuestionStat
+```
+
+#### TestAttempt
+
+```
+TestAttempt
+├── belongsTo → User, Test
+└── hasMany   → QuestionResponse (responses)
+
+Constantes: MODE_EXAM = 'exam', MODE_REVIEW = 'review'
+Scope: completedExams()  → is_completed = true AND mode = 'exam'
 ```
 
 #### Modelos auxiliares
@@ -695,225 +642,200 @@ Question
 | Modelo | Relación principal |
 |---|---|
 | `QuestionOption` | `belongsTo` → Question |
-| `QuestionBlank` | `belongsTo` → Question (casts `correct_answers` como array) |
+| `QuestionBlank` | `belongsTo` → Question (cast `correct_answers` → array) |
 | `QuestionOrderItem` | `belongsTo` → Question |
 | `QuestionStat` | `belongsTo` → Question |
-| `TestAttempt` | `belongsTo` → User, Test · `hasMany` → QuestionResponse |
-| `QuestionResponse` | `belongsTo` → TestAttempt, Question (casts `given_answer` como array) |
-| `Category` | `belongsTo` → Category (parent) · `hasMany` → Category (children) · `belongsToMany` → Test |
-| `Comment` | `belongsTo` → User, Test, Comment (parent) · `hasMany` → Comment (replies) |
-| `Rating` | `belongsTo` → User, Test |
-| `Group` | `belongsTo` → User (owner) · `belongsToMany` → User (members), Test |
-| `UserPoint` | `belongsTo` → User |
-| `UserStat` | `belongsTo` → User |
-| `TestStat` | `belongsTo` → Test |
+| `QuestionResponse` | `belongsTo` → TestAttempt, Question (cast `given_answer` → array) |
+| `Category` | `belongsTo` parent · `hasMany` children · `belongsToMany` Test |
+| `AdminAuditLog` | `belongsTo` → User (admin). Helper estático `record($admin, $action, $type, $id, $details)` |
+| `Comment`, `Rating`, `Group`, `UserPoint`, `UserStat`, `TestStat` | Relaciones definidas, sin API todavía |
 
 ---
 
 ### 6.2 API REST — Endpoints
 
-Todos los endpoints están bajo el prefijo `/api`. La autenticación se gestiona mediante tokens Sanctum (Bearer Token).
+Todos bajo `/api`, con respuestas JSON. La autenticación es por **cookie de sesión** (ver [§6.3](#63-autenticación-sanctum-spa)).
 
-#### Endpoints Públicos (sin autenticación)
-
-| Método | Endpoint | Controlador | Descripción |
-|---|---|---|---|
-| `POST` | `/api/register` | `AuthController@register` | Registrar un nuevo usuario |
-| `POST` | `/api/login` | `AuthController@login` | Iniciar sesión |
-| `POST` | `/api/reset-password` | `AuthController@resetPassword` | Restablecer contraseña |
-| `GET` | `/api/tests` | `TestController@index` | Listar tests públicos/publicados |
-| `GET` | `/api/tests/stats` | `TestController@stats` | Estadísticas globales (homepage) |
-| `GET` | `/api/categories` | `TestController@categories` | Listar todas las categorías |
-| `GET` | `/api/tests/{id}` | `TestController@show` | Ver detalle de un test |
-| `GET` | `/api/profile/{id}` | `ProfileController@show` | Ver perfil de usuario |
-
-#### Endpoints Protegidos (requieren `Authorization: Bearer {token}`)
+#### Públicos
 
 | Método | Endpoint | Controlador | Descripción |
 |---|---|---|---|
-| `POST` | `/api/logout` | `AuthController@logout` | Cerrar sesión (revoca token) |
-| `GET` | `/api/me` | `AuthController@me` | Obtener datos del usuario autenticado |
-| `POST` | `/api/tests` | `TestController@store` | Crear un test con preguntas |
-| `GET` | `/api/tests/{id}/questions` | `TestController@questions` | Obtener preguntas para realizar test |
-| `POST` | `/api/attempts/submit` | `AttemptController@submit` | Enviar intento de test |
-| `GET` | `/api/attempts/{attemptId}/results` | `AttemptController@results` | Ver resultados de un intento |
+| `POST` | `/register` | `AuthController@register` | Registro. `throttle:auth` |
+| `POST` | `/login` | `AuthController@login` | Inicio de sesión. `throttle:auth` |
+| `GET` | `/tests` | `TestController@index` | Catálogo público paginado con filtros |
+| `GET` | `/tests/stats` | `TestController@stats` | Totales para la Home |
+| `GET` | `/tests/featured` | `TestController@featured` | Destacados (públicos y publicados), el más reciente primero |
+| `GET` | `/tests/{id}` | `TestController@show` | Detalle de un test |
+| `GET` | `/categories` | `TestController@categories` | Categorías por nombre |
+| `GET` | `/profile/{id}` | `ProfileController@show` | Perfil público (datos mínimos) |
+
+#### Autenticados (`auth:sanctum`)
+
+| Método | Endpoint | Controlador | Descripción |
+|---|---|---|---|
+| `POST` | `/logout` | `AuthController@logout` | Cierra e invalida la sesión |
+| `GET` | `/me` | `AuthController@me` | Usuario actual |
+| `POST` | `/reset-password` | `AuthController@resetPassword` | Cambio de contraseña (requiere la actual). `throttle:sensitive` |
+| `GET` | `/account/export` | `AccountController@export` | Descarga JSON con todos tus datos. `throttle:sensitive` |
+| `DELETE` | `/account` | `AccountController@destroy` | Borra la cuenta (requiere contraseña). `throttle:sensitive` |
+| `POST` | `/profile/avatar` | `ProfileController@updateAvatar` | Sube avatar (jpeg/png/gif/webp, máx. 2 MB) |
+| `DELETE` | `/profile/avatar` | `ProfileController@deleteAvatar` | Elimina el avatar |
+| `POST` | `/tests` | `TestController@store` | Crea un test con sus preguntas |
+| `GET` | `/tests/{id}/edit` | `TestController@edit` | Datos completos para el editor (autor o admin) |
+| `PUT` | `/tests/{id}` | `TestController@update` | Actualiza test y sincroniza preguntas (autor o admin) |
+| `DELETE` | `/tests/{id}` | `TestController@destroy` | Borra el test (autor o admin) |
+| `GET` | `/tests/{id}/questions` | `TestController@questions` | Preguntas para responder, sin soluciones. `?mode=review` → solo las pendientes, sin límite de tiempo. `423` si está bloqueado |
+| `POST` | `/tests/{id}/unlock` | `TestController@unlock` | Desbloquea un test con contraseña para la sesión. `throttle:unlock` |
+| `POST` | `/attempts/submit` | `AttemptController@submit` | Envía y corrige un intento (`mode`: `exam` / `review`) |
+| `GET` | `/attempts/{attemptId}/results` | `AttemptController@results` | Resultados de un intento propio |
+| `GET` | `/dashboard?tz=Europe/Madrid` | `DashboardController@show` | Mi progreso (ver [§8.4](#84-modo-repaso-y-mi-progreso)) |
+| `GET` | `/dashboard/attempts?page=&mode=` | `DashboardController@attempts` | Historial propio, 15 por página, filtrable por `exam`/`review` |
+
+#### Administración (`auth:sanctum` + `admin`)
+
+| Método | Endpoint | Descripción |
+|---|---|---|
+| `GET` | `/admin/metrics` | Totales de usuarios/tests/intentos y serie diaria de 30 días (intentos y altas) |
+| `GET` | `/admin/tests?search=&…` | Listado paginado de todos los tests |
+| `PATCH` | `/admin/tests/{id}` | `is_featured` y/o `status`. Solo se destacan tests públicos y publicados; despublicar quita el destacado |
+| `DELETE` | `/admin/tests/{id}` | Borra el test y ajusta los contadores del autor |
+| `GET` | `/admin/users?search=&…` | Listado paginado de usuarios |
+| `PATCH` | `/admin/users/{id}` | `role` (`user`/`admin`) y/o `suspended`. No puedes modificarte a ti mismo ni suspender a un admin |
+| `GET` · `POST` | `/admin/categories` | Listar / crear categoría |
+| `PUT` · `DELETE` | `/admin/categories/{id}` | Editar / borrar categoría |
+| `GET` | `/admin/audit` | Registro de acciones de administración |
+
+#### Códigos de error habituales
+
+| Código | Cuándo |
+|---|---|
+| `401` | Sin sesión |
+| `403` | Sin permisos de admin, o cuenta suspendida (`{ "suspended": true }`) |
+| `404` | Test inexistente o no visible para ti |
+| `419` | Token CSRF caducado (Axios lo renueva y reintenta una vez) |
+| `422` | Validación, intentos agotados, sin preguntas pendientes de repasar |
+| `423` | Test protegido con contraseña y no desbloqueado |
+| `429` | Rate limit superado |
 
 #### Ruta web (catch-all)
 
 ```php
-Route::get('/{any?}', fn() => view('app'))->where('any', '.*');
+Route::get('/{any?}', fn () => view('app'))->where('any', '.*');
 ```
 
-Sirve siempre la misma vista Blade que carga la SPA de Vue.js.
+Además, Laravel expone `GET /up` (health check) y Sanctum `GET /sanctum/csrf-cookie`.
 
 ---
 
-### 6.3 Autenticación (Sanctum)
+### 6.3 Autenticación (Sanctum SPA)
 
-El sistema usa **Laravel Sanctum** con tokens Bearer (no cookies de sesión).
-
-#### Flujo de autenticación
+Desde la rama `Redesign`, TestMaster **ya no usa tokens Bearer en `localStorage`**. Usa el modo SPA de Sanctum: la sesión vive en una cookie **httpOnly** (inaccesible desde JavaScript, lo que neutraliza el robo de sesión por XSS) y las peticiones mutantes llevan un token **CSRF**.
 
 ```
-1. REGISTRO / LOGIN
-   Cliente → POST /api/register o /api/login
-   Servidor → Crea token con $user->createToken('auth-token')
-   Servidor → Devuelve { user, token }
+1. CSRF
+   Cliente → GET /sanctum/csrf-cookie
+   Servidor → Set-Cookie: XSRF-TOKEN (legible) + laravel_session (httpOnly)
 
-2. ALMACENAMIENTO
-   Cliente → Guarda 'token' y 'user' en localStorage
+2. LOGIN / REGISTRO
+   Cliente → POST /api/login  (cabecera X-XSRF-TOKEN, la añade Axios)
+   Servidor → Auth::guard('web')->login($user) + session()->regenerate()
+   Servidor → { user }
 
-3. PETICIONES AUTENTICADAS
-   Cliente → Añade header: Authorization: Bearer {token}
-   (gestionado automáticamente por el interceptor de Axios)
+3. PETICIONES
+   El navegador envía la cookie de sesión automáticamente (withCredentials).
+   Middleware 'auth:sanctum' → $request->user()
 
-4. VERIFICACIÓN
-   Servidor → Middleware 'auth:sanctum' valida el token
-   Servidor → Inyecta el usuario autenticado en $request->user()
+4. LOGOUT
+   Servidor → logout + session()->invalidate() + regenerateToken()
 
-5. LOGOUT
-   Cliente → POST /api/logout
-   Servidor → $request->user()->currentAccessToken()->delete()
-   Cliente → Limpia localStorage
-
-6. MANEJO DE 401
-   Si el servidor devuelve 401 (token inválido/expirado):
-   El interceptor de Axios limpia localStorage y redirige a /login
+5. ERRORES
+   401 → el frontend limpia el usuario y redirige a /login?redirect=…
+   419 → se pide una nueva cookie CSRF y se reintenta una vez
+   403 suspended → aviso y cierre de sesión
 ```
 
-#### Campo de contraseña personalizado
-
-La base de datos usa `password_hash` en lugar del estándar `password` de Laravel. Se soluciona con:
-
-```php
-// En app/Models/User.php
-public function getAuthPassword(): string
-{
-    return $this->password_hash;
-}
-```
+Configuración relevante: `bootstrap/app.php` (`statefulApi()`, `trustProxies('*')`), `config/sanctum.php` (dominios *stateful*, incluye `APP_DOMAIN`) y las variables `SESSION_*` de [§4.2](#42-variables-de-entorno).
 
 ---
 
-### 6.4 Controladores en Detalle
+### 6.4 Middleware y Rate Limiting
 
-#### AuthController (`app/Http/Controllers/Api/AuthController.php`)
-
-##### `register(Request $request)` → POST `/api/register`
-
-**Validación:**
-```
-name     → required, string, max:100
-email    → required, email, unique:users
-password → required, string, min:6, confirmed (requiere password_confirmation)
-```
-
-**Proceso:**
-1. Crea el usuario con `password_hash` hasheado (bcrypt)
-2. Crea registros iniciales en `user_stats` y `user_points` (todo a 0)
-3. Genera un token Sanctum
-4. Devuelve `{ user, token, message }` con código **201**
-
-**Respuesta ejemplo:**
-```json
-{
-  "user": {
-    "id": 1,
-    "name": "Juan",
-    "email": "juan@email.com",
-    "avatar": null,
-    "bio": null,
-    "role": "user",
-    "created_at": "2026-02-25T12:00:00Z",
-    "last_login": null
-  },
-  "token": "1|abc123...",
-  "message": "Cuenta creada exitosamente."
-}
-```
-
-##### `login(Request $request)` → POST `/api/login`
-
-**Validación:**
-```
-email    → required, email
-password → required, string
-```
-
-**Proceso:**
-1. Busca el usuario por email
-2. Verifica el hash de la contraseña
-3. Actualiza `last_login`
-4. Genera un token Sanctum
-5. Devuelve `{ user, token }`
-
-**Error 422:** `"Email o contraseña incorrectos."`
-
-##### `logout(Request $request)` → POST `/api/logout` (auth)
-
-Revoca el token actual. Devuelve `{ "message": "Sesión cerrada correctamente." }`
-
-##### `me(Request $request)` → GET `/api/me` (auth)
-
-Carga relaciones `stats` y `points` del usuario autenticado. Devuelve `{ user }`.
-
-##### `resetPassword(Request $request)` → POST `/api/reset-password`
-
-**⚠️ Nota:** Implementación simplificada que actualiza la contraseña directamente con solo el email, sin verificación por token.
-
----
-
-#### TestController (`app/Http/Controllers/Api/TestController.php`)
-
-##### `index(Request $request)` → GET `/api/tests`
-
-Lista tests públicos y publicados con paginación.
-
-**Parámetros de query (opcionales):**
-
-| Parámetro | Tipo | Descripción |
+| Middleware | Dónde | Qué hace |
 |---|---|---|
-| `category_id` | int | Filtrar por categoría |
-| `difficulty` | string | Filtrar por dificultad (`easy`, `medium`, `hard`) |
-| `search` | string | Búsqueda en título y descripción |
-| `sort` | string | Ordenar: `recent` (defecto), `attempts`, `longest`, `shortest` |
-| `per_page` | int | Elementos por página (defecto: 20) |
+| `statefulApi()` | Grupo `api` | Habilita la autenticación por cookie y CSRF de Sanctum |
+| `throttle:api` | Grupo `api` | 120 peticiones/min por usuario o IP |
+| `EnsureAccountActive` | Grupo `api` | Si el usuario está suspendido: cierra la sesión y responde `403` |
+| `auth:sanctum` | Rutas protegidas | Requiere sesión |
+| `admin` (`EnsureAdmin`) | `/api/admin/*` | Requiere `role = admin`, si no `403` |
 
-**Respuesta:** Paginación estándar de Laravel (con `data`, `current_page`, `last_page`, `total`, etc.)
+Limitadores definidos en `AppServiceProvider`:
 
-Cada test incluye:
-- `user` (id, name) — creador
-- `categories` (id, name, icon)
-- `questions_count` — número de preguntas
-- `completed_attempts_count` — intentos completados
+| Nombre | Límite | Clave |
+|---|---|---|
+| `api` | 120/min | usuario o IP |
+| `auth` | 5/min **y** 20/min | email+IP **y** IP |
+| `unlock` | 5/min | usuario (o IP) + test |
+| `sensitive` | 5/min | usuario (o IP) |
 
-##### `stats()` → GET `/api/tests/stats`
+---
 
-**Respuesta:**
-```json
-{
-  "total_tests": 42,
-  "total_users": 150,
-  "total_attempts": 1200
-}
+### 6.5 Controladores en Detalle
+
+#### AuthController
+
+##### `register` → `POST /api/register`
+
+```
+name                  → required, string, max:100
+email                 → required, email, max:255, unique
+password              → required, confirmed, min:8
+password_confirmation → required
+accept_terms          → accepted   (≥ 14 años + Política de Privacidad y Términos)
 ```
 
-##### `show(int $id)` → GET `/api/tests/{id}`
+En una transacción crea el usuario (con `privacy_accepted_at` y `privacy_policy_version`), `user_stats` y `user_points`; inicia sesión y regenera el id de sesión. Respuesta **201** `{ user, message }`.
 
-Muestra un test individual con detalles extendidos.
+##### `login` → `POST /api/login`
 
-**Respuesta adicional:**
-- `avg_score` — nota media de todos los intentos completados
-- `user_attempts` — (solo si autenticado) número de intentos del usuario actual
-- `last_attempt` — (solo si autenticado) datos del último intento (score, completed_at)
+Verifica la contraseña. Si es incorrecta → **422** `"Email o contraseña incorrectos."`. Si es correcta pero la cuenta está suspendida → **403** con `suspended: true` (solo se revela a quien conoce la contraseña). Si todo va bien, inicia sesión, regenera la sesión, actualiza `last_login` y devuelve `{ user }`.
 
-**Efecto lateral:** Incrementa `views_count` del test.
+##### `logout` → `POST /api/logout` · `me` → `GET /api/me`
 
-##### `store(Request $request)` → POST `/api/tests` (auth)
+`logout` invalida la sesión y regenera el token CSRF. `me` devuelve el usuario con `stats` y `points`.
 
-Crea un test completo con todas sus preguntas en una sola transacción.
+##### `resetPassword` → `POST /api/reset-password` (auth)
 
-**Body esperado:**
+Cambio de contraseña con sesión iniciada: requiere `current_password`, `password` y `password_confirmation` (mín. 8). Tras cambiarla regenera la sesión actual, **cierra el resto de sesiones** del usuario y revoca cualquier token.
+
+---
+
+#### AccountController (RGPD)
+
+- **`export`** → `GET /api/account/export`: JSON descargable (`testmaster-mis-datos.json`) con cuenta, consentimiento, estadísticas, puntos, tests creados (con preguntas y opciones) e intentos con respuestas.
+- **`destroy`** → `DELETE /api/account` `{ password, delete_tests? }`: verifica la contraseña y, en una transacción, borra borradores y tests privados, conserva **anonimizados** los tests públicos publicados (salvo `delete_tests: true`), borra el avatar, sesiones, tokens y tokens de reseteo, y elimina el usuario (cascada sobre estadísticas, puntos, intentos y respuestas).
+
+---
+
+#### TestController
+
+##### `index` → `GET /api/tests`
+
+| Parámetro | Descripción |
+|---|---|
+| `category_id` | Filtrar por categoría |
+| `difficulty` | `easy`, `medium`, `hard` |
+| `search` | Búsqueda en título y descripción |
+| `sort` | `recent` (defecto), `attempts`, `longest`, `shortest` |
+| `per_page` | Elementos por página (defecto 20) |
+
+Cada test incluye `user` (id, name), `categories`, `questions_count`, `completed_attempts_count` y `has_password`.
+
+##### `show` → `GET /api/tests/{id}`
+
+Devuelve el test con `avg_score`, `has_password` y, si hay sesión, tus intentos, último intento, historial de notas propio y número de preguntas pendientes de repasar. Incrementa `views_count`. Los tests privados o en borrador solo los ven su autor y los admins.
+
+##### `store` → `POST /api/tests` · `update` → `PUT /api/tests/{id}`
+
 ```json
 {
   "title": "Test de Química",
@@ -923,171 +845,115 @@ Crea un test completo con todas sus preguntas en una sola transacción.
   "time_limit": 30,
   "max_attempts": 3,
   "pass_score": 70,
+  "wrong_penalty": 0.25,
+  "display_mode": "paged",
   "is_public": true,
+  "password": null,
   "shuffle_questions": false,
   "shuffle_answers": false,
   "show_correct_answers": true,
   "show_explanations": true,
   "status": "published",
   "questions": [
-    {
-      "type": "multiple_choice",
-      "content": "¿Cuál es el símbolo del agua?",
-      "explanation": "El agua se compone de 2 hidrógenos y 1 oxígeno",
-      "points": 1,
-      "options": [
-        { "content": "H2O", "is_correct": true, "order_index": 0 },
-        { "content": "CO2", "is_correct": false, "order_index": 1 },
-        { "content": "NaCl", "is_correct": false, "order_index": 2 }
-      ]
-    },
-    {
-      "type": "true_false",
-      "content": "La Tierra es plana",
-      "correct": "false",
-      "points": 1
-    },
-    {
-      "type": "short_answer",
-      "content": "¿Capital de Francia?",
-      "correct_answer": "París",
-      "points": 2
-    }
+    { "type": "multiple_choice", "content": "¿Fórmula del agua?", "points": 1,
+      "options": [ { "content": "H2O", "is_correct": true }, { "content": "CO2", "is_correct": false } ] },
+    { "type": "multiple_select", "content": "Gases nobles", "points": 2,
+      "options": [ { "content": "He", "is_correct": true }, { "content": "Ne", "is_correct": true }, { "content": "O", "is_correct": false } ] },
+    { "type": "true_false", "content": "El agua hierve a 100 ºC a nivel del mar", "correct": "true" },
+    { "type": "short_answer", "content": "Símbolo del sodio", "correct_answer": "Na" },
+    { "type": "fill_blank", "content": "El ___ es el gas más abundante del aire", "case_sensitive": false,
+      "blanks": [ { "answers": ["nitrógeno", "nitrogeno"] } ] },
+    { "type": "order_items", "content": "Ordena de menor a mayor masa", "items": ["H", "He", "Li"] },
+    { "type": "numeric", "content": "pH del agua pura", "numeric_answer": 7, "numeric_tolerance": 0.1 }
   ]
 }
 ```
 
-**Notas:**
-- `time_limit` se recibe en **minutos** y se almacena en **segundos** (× 60)
-- Las preguntas vacías (contenido en blanco) se omiten automáticamente
-- Al publicar, se asigna `published_at`
-- Se crea un registro en `test_stats`
-- Se incrementa `tests_created` en las stats del usuario
+Notas:
+- `time_limit` llega en **minutos** y se guarda en **segundos**.
+- `password`: mín. 4 caracteres, se guarda con hash. En `update`, `null` o vacío la quita; si no se envía, se conserva.
+- Cada tipo valida sus datos (`QuestionType::validate`); el error se devuelve como `422` indicando la pregunta.
+- En `update`, las preguntas se **sincronizan** por `id` (las que no llegan se borran) y las filas auxiliares por posición, conservando los ids a los que apuntan las respuestas antiguas.
 
-##### `questions(int $id)` → GET `/api/tests/{id}/questions` (auth)
+##### `questions` → `GET /api/tests/{id}/questions`
 
-Obtiene las preguntas para realizar el test.
+Devuelve `test` (`id`, `title`, `mode`, `time_limit` — `null` en repaso —, `display_mode`, `shuffle_questions`, `wrong_penalty`) y `questions`. Cada pregunta se construye a mano con lo que el tipo decide mostrar (`forTaking`): **nunca** incluye `is_correct`, la respuesta numérica, los huecos correctos ni la explicación. Respeta `shuffle_questions` y `shuffle_answers` (los elementos de `order_items` siempre se barajan).
 
-**Seguridad:** No envía `is_correct` al cliente para evitar que el usuario vea las respuestas correctas.
+##### `unlock` → `POST /api/tests/{id}/unlock` `{ password }`
 
-**Respeta configuración:**
-- `shuffle_questions` → preguntas en orden aleatorio
-- `shuffle_answers` → opciones en orden aleatorio
-
-**Respuesta:**
-```json
-{
-  "test": {
-    "id": 1,
-    "title": "Test de Química",
-    "time_limit": 1800,
-    "shuffle_questions": false
-  },
-  "questions": [
-    {
-      "id": 1,
-      "type": "multiple_choice",
-      "content": "¿Cuál es el símbolo del agua?",
-      "points": 1,
-      "options": [
-        { "id": 1, "question_id": 1, "content": "H2O", "order_index": 0 },
-        { "id": 2, "question_id": 1, "content": "CO2", "order_index": 1 }
-      ]
-    }
-  ]
-}
-```
-
-##### `categories()` → GET `/api/categories`
-
-Devuelve todas las categorías ordenadas por nombre.
+Si la contraseña es correcta, marca el test como desbloqueado en la sesión (ver [§8.6](#86-tests-con-contraseña)).
 
 ---
 
-#### AttemptController (`app/Http/Controllers/Api/AttemptController.php`)
+#### AttemptController
 
-##### `submit(Request $request)` → POST `/api/attempts/submit` (auth)
+##### `submit` → `POST /api/attempts/submit`
 
-Envía y corrige automáticamente un intento de test.
-
-**Body esperado:**
 ```json
 {
   "test_id": 1,
-  "started_at": 1708876800,
+  "started_at": 1763200000,
+  "mode": "exam",
+  "question_order": [3, 1, 2],
   "answers": {
-    "1": "3",
-    "2": "true",
-    "3": "París"
+    "1": "12",
+    "2": ["15", "16"],
+    "3": "true",
+    "4": "Na",
+    "5": ["nitrógeno"],
+    "6": ["31", "29", "30"],
+    "7": "7,05"
   }
 }
 ```
 
-Donde el key es el `question_id` y el value es:
-- Para `multiple_choice` → `option_id` seleccionado
-- Para `true_false` → `"true"` o `"false"`
-- Para `short_answer` → texto libre
+Proceso:
+1. Comprueba visibilidad (`404`), bloqueo por contraseña (`423`) y que `started_at` sea válido (`422`).
+2. En examen, comprueba `max_attempts` (`422 "Has alcanzado el número máximo de intentos"`). En repaso, solo se corrigen las preguntas pendientes (`422` si no hay ninguna).
+3. Corrige con `AttemptScorer` ([§8.3](#83-corrección-y-puntuación)) y guarda intento y respuestas en una transacción.
+4. Solo en examen: actualiza `user_stats` y `test_stats`.
 
-**Proceso detallado:** Ver sección [8.2 Corrección Automática](#82-corrección-automática-de-respuestas).
+Respuesta: `{ attempt_id, score, passed, mode, message }`.
 
-**Respuesta:**
-```json
-{
-  "attempt_id": 15,
-  "score": 85.5,
-  "passed": true,
-  "message": "¡Aprobado!"
-}
-```
+##### `results` → `GET /api/attempts/{attemptId}/results`
 
-**Error 422:** `"Has alcanzado el número máximo de intentos"` si se excede `max_attempts`.
-
-##### `results(int $attemptId)` → GET `/api/attempts/{attemptId}/results` (auth)
-
-Muestra resultados detallados de un intento (solo del usuario autenticado).
-
-**Respuesta:**
-```json
-{
-  "attempt": {
-    "id": 15,
-    "score": 85.5,
-    "passed": true,
-    "correct_answers": 8,
-    "incorrect_answers": 1,
-    "unanswered": 1,
-    "time_spent": 420,
-    "test": { "id": 1, "title": "Test de Química", "show_correct_answers": true, "show_explanations": true }
-  },
-  "responses": [
-    {
-      "question_id": 1,
-      "given_answer": "3",
-      "is_correct": true,
-      "points_earned": 1,
-      "question": { "id": 1, "content": "...", "type": "multiple_choice", "explanation": "..." },
-      "options": [
-        { "id": 3, "content": "H2O", "is_correct": true },
-        { "id": 4, "content": "CO2", "is_correct": false }
-      ]
-    }
-  ]
-}
-```
+Solo para el dueño del intento. Devuelve:
+- `attempt` con su test.
+- `responses`: por pregunta, `status` (`ok`, `partial`, `bad`, `none`), puntos, `given_answer_label` y, si el test lo permite, `correct_answer_label` y la explicación.
+- `comparison` (solo exámenes): media del test, número de intentos totales, tu mejor nota anterior, número de intento e intentos restantes.
+- `pending_review_count`: preguntas de ese test pendientes de repasar.
 
 ---
 
-#### ProfileController (`app/Http/Controllers/Api/ProfileController.php`)
+#### ProfileController
 
-##### `show(Request $request, int $id)` → GET `/api/profile/{id}`
+- **`show`**: perfil público con datos mínimos (el email solo en tu propio perfil), estadísticas, tests públicos creados, últimos 20 intentos completados en tests públicos y actividad reciente (máx. 30).
+- **`updateAvatar`**: valida imagen real (jpeg/png/gif/webp, máx. 2 MB), **ignora la extensión del cliente** y la deriva del tipo MIME; guarda en `storage/app/public/avatars` y borra el anterior.
+- **`deleteAvatar`**: elimina el archivo y la referencia.
 
-Devuelve el perfil completo de un usuario con 4 secciones de datos:
+#### DashboardController
 
-1. **Datos del usuario** — nombre, avatar, bio, rol, fechas. El email solo se muestra si es el propio perfil.
-2. **Estadísticas** — tests creados, completados, aprobados, nota media, rachas.
-3. **Tests creados** — lista de tests públicos/publicados con conteo de preguntas e intentos.
-4. **Tests completados** — últimos 20 intentos completados en tests públicos.
-5. **Actividad reciente** — unión de tests creados + intentos completados, ordenados por fecha, máx 30 elementos.
+- **`show`** (`?tz=`): `summary` (exámenes, aprobados, nota media, repasos, tiempo de estudio), `activity` (racha y calendario de 182 días), `mastery` (dominio por categoría), `pending_reviews` (tests con fallos pendientes) y `timezone`. Una zona horaria inválida cae a la de la app.
+- **`attempts`** (`?page=&mode=`): historial propio paginado (15).
+
+#### Admin\AdminController y Admin\AdminCategoryController
+
+Ver [§8.7](#87-administración). Toda acción que cambia datos se registra con `AdminAuditLog::record()` dentro de la misma transacción.
+
+---
+
+### 6.6 Capa de Dominio
+
+| Clase | Responsabilidad |
+|---|---|
+| `App\Questions\QuestionType` | Interfaz de un tipo de pregunta: `validate`, `attributes`, `store`, `forTaking`, `grade`, `answerLabel`, `correctLabel` |
+| `App\Questions\QuestionTypes` | Registro tipo → clase, `keys()`, `get()`, `isAnswered()` y `RELATIONS` a precargar (evita N+1) |
+| `App\Questions\Types\*` | Una clase por tipo. `BaseType` (normalización de texto, sincronización por posición) y `OptionsType` (base de los tipos con opciones) |
+| `App\Questions\AttemptScorer` / `AttemptScore` | Corrige un intento completo y devuelve totales y respuestas |
+| `App\Questions\ReviewQueue` | Preguntas pendientes de repasar por usuario y test |
+| `App\Progress\StudyActivity` | Días de estudio, racha actual y más larga en la zona horaria del usuario |
+| `App\Progress\CategoryMastery` | Dominio por categoría según la última respuesta |
+| `App\Support\TestAccess` | `canView`, `canManage`, `isLocked`, `unlock` |
 
 ---
 
@@ -1097,391 +963,241 @@ Devuelve el perfil completo de un usuario con 4 secciones de datos:
 
 ```
 Vue/
-├── App.vue                    ← Componente raíz
-├── api/
-│   └── axios.js               ← Instancia de Axios configurada
+├── App.vue                     ← Raíz: cabecera, pie, <router-view>, toasts
+├── api/axios.js                ← Axios con cookies + XSRF y manejadores 401/419/403
 ├── assets/
-│   ├── styles.css              ← Estilos globales CSS
-│   └── images/                 ← Imágenes estáticas
+│   ├── tokens.css              ← Design tokens (colores, superficies) claro/oscuro
+│   ├── styles.css              ← Estilos globales
+│   └── images/
 ├── components/
-│   ├── AppHeader.vue           ← Cabecera (navegación, búsqueda, tema)
-│   └── AppFooter.vue           ← Pie de página
-├── pages/
-│   ├── Home.vue                ← Página principal (lista de tests)
-│   ├── Login.vue               ← Formulario de inicio de sesión
-│   ├── Register.vue            ← Formulario de registro
-│   ├── ViewTest.vue            ← Detalle de un test
-│   ├── TakeTest.vue            ← Realización del test (examen)
-│   ├── Results.vue             ← Resultados de un intento
-│   ├── CreateTest.vue          ← Creación de un test nuevo
-│   ├── Profile.vue             ← Perfil de usuario
-│   └── NotFound.vue            ← Página 404
-├── router/
-│   └── index.js                ← Definición de rutas Vue Router
-└── stores/
-    └── auth.js                 ← Store de autenticación (Pinia)
+│   ├── AppHeader.vue / AppFooter.vue
+│   ├── base/                   ← BaseAlert, BaseBadge, BaseButton, BaseInput,
+│   │                             BaseLoader, BaseModal, BaseSelect, ToastStack
+│   ├── auth/AuthShell.vue      ← Marco común de login y registro
+│   ├── home/                   ← HomeHero, FeaturedTestCard
+│   ├── test/                   ← CatalogCard, TestPreview
+│   ├── question/AnswerInput.vue← Entrada de respuesta para los 7 tipos
+│   ├── charts/                 ← ScoreChart, ColumnChart, ActivityHeatmap (SVG propio)
+│   ├── admin/                  ← AdminOverview, AdminTests, AdminUsers,
+│   │                             AdminCategories, AdminAudit, AdminPager
+│   ├── legal/LegalDocument.vue ← Plantilla de Privacidad y Términos
+│   └── user/UserAvatar.vue
+├── composables/
+│   ├── useTheme.js             ← Tema claro/oscuro/sistema
+│   └── useToast.js             ← Notificaciones
+├── pages/                      ← Ver 7.5
+├── router/index.js
+├── stores/auth.js
+└── utils/
+    ├── editorDraft.js          ← Borrador local del editor
+    ├── redirect.js             ← Validación del parámetro ?redirect
+    └── tests.js                ← Utilidades de tests (etiquetas, formato…)
 ```
+
+El punto de entrada es `resources/js/app.js` (monta Vue, Pinia y el router, y registra los manejadores de 401 y cuenta suspendida). `public/js/theme.js` aplica el tema antes de pintar para evitar el parpadeo (archivo externo para cumplir la CSP `script-src 'self'`).
 
 ### 7.2 Router y Navegación
 
-Definido en `Vue/router/index.js`. Usa `createWebHistory()` (URLs sin hash).
-
-| Ruta | Componente | Requiere auth | Descripción |
+| Ruta | Componente | Meta | Descripción |
 |---|---|---|---|
-| `/` | `Home` | No | Página principal |
-| `/login` | `Login` | No | Inicio de sesión |
-| `/register` | `Register` | No | Registro |
-| `/test/:id` | `ViewTest` | No | Ver detalles de un test |
-| `/test/:id/take` | `TakeTest` | **Sí** | Realizar el test |
-| `/results/:attemptId` | `Results` | **Sí** | Ver resultados |
-| `/create-test` | `CreateTest` | **Sí** | Crear un test |
-| `/profile/:id` | `Profile` | No | Perfil de usuario |
-| `/:pathMatch(.*)*` | `NotFound` | No | Página 404 |
+| `/` | `Home` | — | Portada y catálogo |
+| `/login` · `/register` | `Login` · `Register` | — | Acceso |
+| `/test/:id` | `ViewTest` | — | Detalle del test |
+| `/test/:id/take` | `TakeTest` | `requiresAuth`, `hideChrome` | Realizar el examen |
+| `/test/:id/review` | `TakeTest` | `requiresAuth`, `hideChrome` | Repasar fallos |
+| `/results/:attemptId` | `Results` | `requiresAuth` | Resultados |
+| `/create-test` | `CreateTest` | `requiresAuth` | Crear test |
+| `/test/:id/edit` | `CreateTest` | `requiresAuth` | Editar test |
+| `/profile/:id` | `Profile` | — | Perfil |
+| `/dashboard` | `Dashboard` | `requiresAuth` | Mi progreso |
+| `/admin` | `Admin` | `requiresAuth`, `requiresAdmin` | Panel de administración |
+| `/help` · `/privacy` · `/terms` · `/contact` | `Help` · `Privacy` · `Terms` · `Contact` | — | Ayuda y legales |
+| `/:pathMatch(.*)*` | `NotFound` | — | 404 |
 
-#### Guard de navegación
-
-Antes de cada navegación, se comprueba si la ruta requiere autenticación (`meta.requiresAuth`). Si el usuario no está logueado, se redirige a `/login`.
+`hideChrome` oculta cabecera y pie para que el examen ocupe toda la pantalla.
 
 ```javascript
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to) => {
     const authStore = useAuthStore();
-    if (to.meta.requiresAuth && !authStore.isLoggedIn) {
-        next({ name: 'login' });
-    } else {
-        next();
-    }
+    await authStore.init();                       // GET /api/me una sola vez
+    if (to.meta.requiresAuth && !authStore.isLoggedIn) → login?redirect=<ruta>
+    else if (to.meta.requiresAdmin && !authStore.isAdmin) → NotFound
 });
 ```
 
+> El guard de admin es solo de UX: el servidor vuelve a comprobarlo en cada petición.
+
 ### 7.3 Store (Pinia)
 
-Un único store `auth` en `Vue/stores/auth.js` gestiona toda la autenticación.
+`Vue/stores/auth.js`. El usuario vive **solo en memoria**; al cargar se borran restos del antiguo sistema (`token`/`user` en `localStorage`).
 
-#### Estado
-
-```javascript
-state: () => ({
-    user: JSON.parse(localStorage.getItem('user') || 'null'),
-    token: localStorage.getItem('token') || null,
-})
-```
-
-Se hidrata desde `localStorage` al cargar la aplicación, manteniendo la sesión entre recargas.
-
-#### Getters
-
-| Getter | Retorna |
+| Estado / getter | Descripción |
 |---|---|
-| `isLoggedIn` | `true` si hay un token (controla toda la UI condicional) |
-| `userId` | ID del usuario |
-| `userName` | Nombre del usuario |
-| `userRole` | Rol del usuario |
-
-#### Acciones
+| `user`, `initialized` | Usuario actual y si ya se consultó `/me` |
+| `isLoggedIn`, `isAdmin`, `userId`, `userName`, `userRole` | Derivados |
 
 | Acción | Descripción |
 |---|---|
-| `login(email, password)` | POST a `/api/login`, guarda auth |
-| `register(name, email, password, password_confirmation)` | POST a `/api/register`, guarda auth |
-| `logout()` | POST a `/api/logout`, limpia estado y localStorage |
-| `fetchUser()` | GET a `/api/me`, actualiza datos del usuario |
-| `setAuth(user, token)` | Guarda usuario y token en estado + localStorage |
-| `clearAuth()` | Borra usuario y token de estado + localStorage |
+| `init()` | Llama a `fetchUser()` una vez |
+| `login(email, password)` | CSRF + `POST /login` |
+| `register(name, email, password, password_confirmation, accept_terms)` | CSRF + `POST /register` |
+| `logout()` | `POST /logout`, borra los borradores locales y el usuario |
+| `fetchUser()` | `GET /me` (sin redirigir si falla) |
+| `exportData()` | Descarga el JSON de `GET /account/export` |
+| `deleteAccount(password, deleteTests)` | `DELETE /account` y limpia los borradores |
 
 ### 7.4 Capa API (Axios)
-
-Configurada en `Vue/api/axios.js`.
 
 ```javascript
 const api = axios.create({
     baseURL: '/api',
-    headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-    },
+    withCredentials: true,      // envía la cookie de sesión
+    withXSRFToken: true,        // reenvía XSRF-TOKEN como X-XSRF-TOKEN
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json',
+               'X-Requested-With': 'XMLHttpRequest' },
 });
 ```
 
-#### Interceptor de peticiones
-
-Añade automáticamente el header `Authorization: Bearer {token}` a todas las peticiones si existe un token en localStorage.
-
-#### Interceptor de respuestas
-
-Si recibe un error **401** (no autorizado):
-1. Borra `token` y `user` de localStorage
-2. Redirige a `/login`
+Interceptor de respuestas:
+- **419** → `getCsrfCookie()` y reintenta la petición una vez.
+- **401** → llama al manejador registrado (limpia el usuario y redirige a login), salvo con `skipAuthRedirect`.
+- **403 + `suspended`** → muestra el aviso y cierra la sesión.
 
 ### 7.5 Páginas
 
-#### Home (`Vue/pages/Home.vue`)
-
-**Funcionalidad principal:** Página de inicio que muestra la lista de tests disponibles.
-
-**Secciones:**
-- Estadísticas globales en la parte superior (total de tests, usuarios, intentos)
-- Barra de filtros: campo de búsqueda, selector de categoría, selector de dificultad
-- Selector de ordenamiento: "Más recientes", "Más vistos", "Más realizados"
-- Tabla de tests con columnas: título, categoría, dificultad (badge), preguntas, intentos, creador
-- Cada fila enlaza a `/test/{id}`
-- Paginación inferior
-
-**API calls:**
-- `GET /api/tests` — lista de tests (con filtros y paginación)
-- `GET /api/tests/stats` — estadísticas globales
-- `GET /api/categories` — lista de categorías para el filtro
-
-#### Login (`Vue/pages/Login.vue`)
-
-Formulario con campos email y contraseña. Muestra errores del servidor bajo el formulario. Enlace a registro y reset de contraseña. Al hacer login exitoso, redirige a `/` (home).
-
-#### Register (`Vue/pages/Register.vue`)
-
-Formulario con nombre, email, contraseña y confirmación de contraseña. Valida que las contraseñas coincidan en el cliente antes de enviar. Al registrarse, redirige a home.
-
-#### ViewTest (`Vue/pages/ViewTest.vue`)
-
-**Muestra información detallada del test:**
-- Título, descripción, creador
-- Categorías (badges)
-- Configuración: dificultad, tiempo límite, nota mínima, intentos máximos
-- Opciones: barajar preguntas, barajar respuestas, mostrar respuestas correctas, mostrar explicaciones
-- Estadísticas: número de preguntas, intentos completados, nota media
-- Si el usuario está autenticado: número de intentos del usuario e información del último intento
-- Botón "Realizar Test" (lleva a `/test/{id}/take`). Si no está autenticado, muestra enlace a login.
-
-#### TakeTest (`Vue/pages/TakeTest.vue`)
-
-**Experiencia de examen completa:**
-- Carga las preguntas del test (sin respuestas correctas)
-- Muestra un temporizador en la esquina superior si el test tiene `time_limit`
-- Renderiza las preguntas según su tipo:
-  - **multiple_choice** → radio buttons con las opciones
-  - **true_false** → radio buttons "Verdadero" / "Falso"
-  - **short_answer** → input de texto libre
-- Botón "Enviar Test" con confirmación (modal de confirmación antes de enviar)
-- Diálogo de confirmación si el usuario intenta abandonar la página (`beforeunload`)
-- Auto-submit cuando el temporizador llega a 0
-- Al enviar, redirige a `/results/{attemptId}`
-
-**Datos enviados:**
-```javascript
-{
-    test_id: this.testId,
-    started_at: this.startedAt,      // timestamp Unix (segundos)
-    answers: { questionId: answer }   // objeto clave-valor
-}
-```
-
-#### Results (`Vue/pages/Results.vue`)
-
-**Muestra los resultados detallados del intento:**
-- Resumen superior: nota (porcentaje), aprobado/suspenso (badge verde/rojo)
-- Estadísticas: correctas, incorrectas, sin responder, tiempo empleado
-- Detalle pregunta por pregunta:
-  - Texto de la pregunta
-  - Respuesta dada (resaltada en verde si correcta, rojo si incorrecta)
-  - Todas las opciones con indicador visual de cuál es la correcta
-  - Explicación de la pregunta (si `show_explanations` está activado)
-- Botón para volver al test o a home
-
-#### CreateTest (`Vue/pages/CreateTest.vue`)
-
-**Formulario completo para crear tests:**
-
-*Sección 1 — Información Básica:*
-- Título (requerido, max 255)
-- Descripción (textarea)
-- Categoría (select dinámico)
-- Dificultad (easy/medium/hard)
-
-*Sección 2 — Configuración:*
-- Tiempo límite (minutos, 0 = sin límite)
-- Intentos máximos (-1 = ilimitados)
-- Nota para aprobar (0-100, slider o input)
-- Toggles: test público, barajar preguntas/respuestas, mostrar respuestas/explicaciones
-
-*Sección 3 — Constructor de Preguntas:*
-- Botones para añadir pregunta: "Opción Múltiple", "Verdadero/Falso", "Respuesta Corta"
-- Cada pregunta tiene:
-  - Selector de tipo (deshabilitado una vez creada)
-  - Campo de contenido
-  - Puntos (input numérico)
-  - Explicación (textarea opcional)
-  - Campos específicos según tipo:
-    - **multiple_choice**: opciones dinámicas (añadir/eliminar), checkbox para marcar correcta
-    - **true_false**: radio "Verdadero" / "Falso"
-    - **short_answer**: campo de respuesta correcta
-  - Botón eliminar pregunta
-
-*Sección 4 — Publicación:*
-- Botón "Guardar como borrador" → status='draft'
-- Botón "Publicar" → status='published'
-
-#### Profile (`Vue/pages/Profile.vue`)
-
-**Perfil de usuario con 4 pestañas:**
-
-| Pestaña | Contenido |
+| Página | Funcionalidad |
 |---|---|
-| **Tests Creados** | Lista de tests públicos del usuario con visualizaciones, preguntas, e intentos |
-| **Actividad Reciente** | Timeline de acciones: tests creados y tests completados, con fechas |
-| **Tests Completados** | Lista de tests realizados con nota obtenida y fecha |
-| **Estadísticas** | Métricas numéricas: tests creados, completados, aprobados, nota media, racha actual. Barra de progreso para tasa de aprobados |
-
-**Datos mostrados del perfil:**
-- Avatar (placeholder si no tiene)
-- Nombre
-- Bio
-- Rol (badge)
-- Miembro desde (fecha)
-- Email (solo visible en perfil propio)
-
-#### NotFound (`Vue/pages/NotFound.vue`)
-
-Página 404 simple con mensaje y enlace a home.
+| **Home** | Hero, tests destacados, catálogo con búsqueda, filtros de categoría/dificultad, orden (recientes, más realizados, más largos, más cortos) y paginación. El estado de los filtros vive en la query de la URL |
+| **Login / Register** | Dentro de `AuthShell`. El registro exige la casilla de edad y aceptación de los textos legales. Tras entrar, vuelve a `?redirect` si es una ruta interna válida |
+| **ViewTest** | Información del test, configuración, estadísticas, gráfica de tus notas (`ScoreChart`), intentos restantes, botón de **repasar fallos** con el número de pendientes y formulario de **desbloqueo** si tiene contraseña. El autor/admin ve accesos a editar y borrar |
+| **TakeTest** | Examen o repaso. Modo paginado (navegación con teclado ←/→) o todo en una página, temporizador con **envío automático** al llegar a 0, aviso `beforeunload` si hay respuestas sin enviar y `AnswerInput` para cada tipo |
+| **Results** | Nota, aprobado/suspenso, desglose por pregunta (correcta / parcial / incorrecta / en blanco), respuesta correcta y explicación si el test lo permite, comparativa con la media y tu mejor intento, y acceso a repasar fallos |
+| **CreateTest** | Editor de creación y edición: datos básicos, configuración (tiempo, intentos, nota de corte, penalización, modo de presentación, contraseña, visibilidad…), constructor de preguntas de los 7 tipos con **reordenación por arrastre** y **duplicado**, **vista previa** (`TestPreview`), borrador automático local y aviso al salir con cambios |
+| **Dashboard** | Mi progreso: tarjetas de resumen, racha, `ActivityHeatmap`, dominio por categoría, tests con fallos pendientes e historial paginado con filtro examen/repaso |
+| **Profile** | Avatar (subir/eliminar), datos, estadísticas, tests creados, completados y actividad. En el perfil propio: cambio de contraseña, **descargar mis datos** y **eliminar cuenta** |
+| **Admin** | Pestañas: Resumen (métricas y `ColumnChart`), Tests, Usuarios, Categorías y Registro. Navegable con teclado |
+| **Help / Contact** | Preguntas frecuentes y contacto |
+| **Privacy / Terms** | Textos legales con `LegalDocument` |
+| **NotFound** | 404 |
 
 ### 7.6 Componentes
 
-#### AppHeader (`Vue/components/AppHeader.vue`)
+| Componente | Uso |
+|---|---|
+| `AppHeader` | Logo, navegación (Explorar, Crear, Mi progreso, Admin si procede), menú de usuario y selector de tema; menú móvil |
+| `AppFooter` | Enlaces a ayuda, contacto y legales |
+| `AnswerInput` | Renderiza la entrada adecuada para cada tipo (radios, checkboxes, V/F, texto, huecos en línea, lista ordenable, número) |
+| `TestPreview` | Previsualiza en el editor cómo verá el alumno el test |
+| `CatalogCard` / `FeaturedTestCard` | Tarjetas del catálogo y de destacados |
+| `ScoreChart`, `ColumnChart`, `ActivityHeatmap` | Gráficas SVG propias, sin librerías externas |
+| `Base*` | Botones, inputs, selects, badges, alertas, modales y loader reutilizables |
+| `ToastStack` + `useToast` | Notificaciones no intrusivas |
 
-Cabecera de la aplicación presente en todas las páginas.
+### 7.7 Tema y Sistema de Diseño
 
-**Elementos:**
-- Logo "TestMaster" (enlace a home)
-- Barra de búsqueda (ejecuta búsqueda redirigiendo a home con query)
-- Botón de cambio de tema (claro/oscuro)
-- Navegación condicional:
-  - **Sin autenticación:** "Iniciar Sesión", "Registrarse"
-  - **Con autenticación:** "Crear Test", "Mi Perfil", "Cerrar Sesión"
+- `Vue/assets/tokens.css` define todas las variables (superficies, texto, bordes, acento, estados). Los componentes **nunca** usan colores literales.
+- El modo oscuro solo redefine esas variables con `<html data-theme="dark">`.
+- `useTheme` guarda la preferencia (`light`, `dark` o la del sistema) en `localStorage` y reacciona a `prefers-color-scheme`.
+- Contraste de texto ≥ 4.5:1 en ambos temas.
 
-#### AppFooter (`Vue/components/AppFooter.vue`)
+### Borrador local del editor
 
-Pie de página con logo, copyright y enlaces placeholder (Sobre Nosotros, Contacto, Privacidad, Términos).
+`utils/editorDraft.js` guarda una copia del editor en `localStorage` con clave `testmaster:draft:<userId>:<testId|new>`, versión y caducidad de 30 días. Se borran todos al cerrar sesión o eliminar la cuenta (no al caducar la sesión, para no perder trabajo). Si el almacenamiento no está disponible, el editor funciona igual sin copia.
 
 ---
 
 ## 8. Lógica de Negocio
 
-### 8.1 Creación de Tests
-
-La creación de un test es una operación **transaccional** que involucra múltiples tablas:
+### 8.1 Creación y Edición de Tests
 
 ```
 DB::transaction
-├── 1. Crear registro en 'tests'
-│   └── time_limit: minutos × 60 → segundos
-│   └── status: 'draft' o 'published'
-│   └── published_at: now() si se publica
-│
-├── 2. Vincular categoría (si se especifica)
-│   └── tests.categories()->attach(category_id)
-│   └── Category::increment('tests_count')
-│
-├── 3. Crear preguntas (iterar array)
-│   ├── Omitir preguntas con contenido vacío
-│   ├── Asignar order_index secuencial
-│   └── Por cada pregunta, según tipo:
-│       │
-│       ├── multiple_choice
-│       │   └── Crear QuestionOption por cada opción
-│       │       (content, is_correct, order_index)
-│       │
-│       ├── true_false
-│       │   └── Crear 2 QuestionOption fijas:
-│       │       "Verdadero" (is_correct según input)
-│       │       "Falso"    (is_correct inverso)
-│       │
-│       └── short_answer
-│           └── Crear 1 QuestionOption con la respuesta correcta
-│               (content=respuesta, is_correct=true)
-│
-├── 4. Crear registro en 'test_stats' (todo a 0)
-│
-└── 5. Incrementar user_stats.tests_created del creador
+├── 1. Validar campos del test y de cada pregunta (QuestionType::validate)
+├── 2. Crear / actualizar 'tests'
+│   ├── time_limit: minutos × 60
+│   ├── password: hash (o se conserva / se quita)
+│   └── published_at: now() al publicar por primera vez
+├── 3. Sincronizar categoría (y contadores tests_count)
+├── 4. Sincronizar preguntas
+│   ├── Por id: actualizar existentes, crear nuevas, borrar las ausentes
+│   ├── order_index secuencial
+│   ├── attributes(): columnas propias del tipo (p. ej. numeric_answer)
+│   └── store(): opciones / huecos / elementos, sincronizados por posición
+└── 5. (Solo al crear) test_stats y user_stats.tests_created
 ```
 
-### 8.2 Corrección Automática de Respuestas
+### 8.2 Tipos de Pregunta y Formatos
 
-Cuando un usuario envía un intento (`POST /api/attempts/submit`), el sistema corrige automáticamente cada respuesta:
+| Tipo | Datos del editor | Lo que recibe el alumno | `answers[id]` | Puntuación |
+|---|---|---|---|---|
+| `multiple_choice` | `options[{content, is_correct}]`, exactamente 1 correcta | opciones sin `is_correct` | id de opción | Todo o nada |
+| `multiple_select` | `options[…]`, ≥ 1 correcta | opciones sin `is_correct` | `[ids]` | (aciertos − errores) / correctas, mín. 0 |
+| `true_false` | `correct: 'true'|'false'` | — | `'true'` / `'false'` | Todo o nada |
+| `short_answer` | `correct_answer` | — | texto | Todo o nada, sin mayúsculas ni espacios sobrantes |
+| `fill_blank` | `___` en el enunciado + `blanks[{answers[]}]`, `case_sensitive` (máx. 20 huecos) | número de huecos | `[texto por hueco]` | huecos acertados / huecos |
+| `order_items` | `items[]` en el orden correcto | elementos barajados con id | `[ids en orden]` | elementos en su sitio / elementos |
+| `numeric` | `numeric_answer`, `numeric_tolerance` | — | número (coma o punto) | Todo o nada dentro de ± tolerancia |
 
-#### Algoritmo de corrección
+### 8.3 Corrección y Puntuación
 
-```
-Para cada pregunta del test:
-│
-├── Si no se proporcionó respuesta (givenAnswer es null):
-│   └── unanswered += 1, is_correct = false, points = 0
-│
-├── multiple_choice:
-│   └── Buscar QuestionOption.id == givenAnswer
-│   └── is_correct = option.is_correct
-│
-├── true_false:
-│   └── Buscar la opción correcta del question (is_correct = true)
-│   └── Mapear la respuesta del usuario:
-│       "true"  → "Verdadero"
-│       "false" → "Falso"
-│   └── Comparar con correctOption.content
-│
-└── short_answer:
-    └── Obtener todas las opciones correctas de la pregunta
-    └── Comparar givenAnswer con cada opción (case-insensitive, trim)
-    └── is_correct si coincide con alguna
-```
-
-#### Cálculo de nota
+`App\Questions\AttemptScorer`:
 
 ```
-score = (pointsEarned / totalPoints) × 100
+Para cada pregunta (en el orden mostrado):
+├── Sin respuesta (QuestionTypes::isAnswered = false)
+│   └── unanswered++, 0 puntos (las preguntas en blanco no penalizan)
+└── Con respuesta
+    ├── ratio = tipo->grade(pregunta, respuesta)   ∈ [0, 1]
+    ├── ratio ≥ 0.9999 → correcta, puntos completos
+    ├── 0 < ratio < 1  → parcial: ratio × puntos (cuenta como incorrecta)
+    └── ratio = 0      → incorrecta: −wrong_penalty × puntos
 
-Donde:
-- totalPoints = suma de question.points de todas las preguntas
-- pointsEarned = suma de question.points de las correctas
-- passed = score >= test.pass_score
+score  = max(0, puntos obtenidos) / puntos totales × 100   (2 decimales)
+passed = score ≥ pass_score
 ```
 
-#### Actualización de estadísticas
+Tras un **examen** se actualizan `user_stats` (`tests_completed`, `tests_passed`, `average_score`) y `test_stats`. Los **repasos** no modifican estadísticas, medias ni intentos gastados.
 
-Tras guardar el intento y las respuestas:
+### 8.4 Modo Repaso y Mi Progreso
 
-```
-UserStat:
-├── tests_completed += 1
-├── tests_passed += 1 (si aprobó)
-└── average_score = promedio de todos los intentos completados del usuario
+**Cola de repaso (`ReviewQueue`)**: para cada pregunta se toma la **última** respuesta del usuario (de examen o de repaso). Si no es 100 % correcta (incorrecta, parcial o en blanco) la pregunta está pendiente; al acertarla una vez sale de la lista. `pendingByTest` solo incluye tests que el usuario aún puede abrir.
 
-TestStat:
-├── attempts_count += 1
-├── completions_count += 1
-└── average_score = promedio de todos los intentos completados del test
-```
+**Racha (`StudyActivity`)**:
+- Cualquier intento terminado cuenta como actividad (también los repasos).
+- Los días se cuentan en la **zona horaria del navegador** (`?tz=`), para que estudiar a las 00:30 no cuente para el día anterior.
+- La racha actual sigue viva durante hoy aunque aún no hayas estudiado (se cuenta desde ayer).
+- Se calcula a partir de los intentos, no se almacena, así nunca se desincroniza.
 
-### 8.3 Sistema de Puntuación y Estadísticas
+**Dominio por categoría (`CategoryMastery`)**: puntos ganados / puntos posibles de las preguntas respondidas, usando la última respuesta a cada una. Las parciales cuentan su parte y las penalizaciones no restan. Se ordena de menor a mayor dominio para señalar lo que más hay que estudiar.
 
-El sistema implementa gamificación a través de:
+### 8.5 Cómo añadir un tipo de pregunta
 
-**Tablas de gamificación (definidas, parcialmente implementadas):**
+1. Crea `app/Questions/Types/MiTipoType.php` que extienda `BaseType` (u `OptionsType` si usa opciones) e implemente `QuestionType`.
+2. Regístralo en `QuestionTypes::MAP`.
+3. Añade el valor al enum `questions.type` con una migración.
+4. Si necesita columnas o tablas propias, añádelas en la migración y en `attributes()` / `store()`.
+5. Frontend: añade la entrada en `components/question/AnswerInput.vue`, el bloque del editor en `pages/CreateTest.vue` y la etiqueta en `utils/tests.js`.
+6. Añade casos a `tests/Feature/QuestionTypesTest.php`, en especial: que `forTaking` **no revela la solución** y la puntuación parcial.
 
-| Concepto | Tabla | Estado |
+### 8.6 Tests con Contraseña
+
+`App\Support\TestAccess`:
+
+- Un test con contraseña aparece en el catálogo (título y descripción), pero para obtener las preguntas o enviar un intento hay que desbloquearlo (`423` si no).
+- `POST /tests/{id}/unlock` guarda en la **sesión** una huella (`sha256` del hash de la contraseña, 16 caracteres). Si el autor cambia la contraseña, la huella deja de coincidir y las sesiones desbloqueadas vuelven a bloquearse.
+- El autor y los admins nunca necesitan la contraseña.
+- Fuerza bruta limitada a 5 intentos/min por usuario y test.
+
+### 8.7 Administración
+
+| Acción | Reglas | Auditoría |
 |---|---|---|
-| Puntos/nivel/experiencia | `user_points` | Tabla creada, no se actualiza en los controladores |
-| Historial de puntos | `point_history` | Tabla creada, no se usa |
-| Rachas (streaks) | `user_stats.current_streak` | Campo existe, no se calcula |
-| Insignias | `user_stats.badges_earned` | Campo existe, no hay lógica |
-| Estadísticas de usuario | `user_stats` | **Implementado parcialmente** (tests_created, tests_completed, tests_passed, average_score) |
-| Estadísticas de test | `test_stats` | **Implementado parcialmente** (attempts_count, completions_count, average_score) |
-| Rankings/leaderboard | — | No implementado |
-
-### 8.4 Perfiles de Usuario
-
-El perfil muestra información pública del usuario:
-
-- **Datos personales:** nombre, avatar, bio, rol, fecha de registro. El email solo es visible por el propietario.
-- **Tests creados:** solo tests públicos y publicados.
-- **Tests completados:** últimos 20 intentos en tests públicos.
-- **Actividad reciente:** combinación de creaciones y completados, máximo 30 items, ordenada por fecha descendente.
-- **Estadísticas:** extraídas de `user_stats`.
+| Cambiar estado de un test | `draft` / `published` / `archived`. Al despublicar se quita el destacado | `test.status` (+ `test.unfeatured`) |
+| Destacar / quitar destacado | Solo tests públicos y publicados; `featured_at` ordena la Home | `test.featured` / `test.unfeatured` |
+| Borrar test | Ajusta contadores del autor y de categorías | `test.deleted` |
+| Cambiar rol | `user` ↔ `admin`. No puedes cambiarte a ti mismo | `user.role` |
+| Suspender / reactivar | No a ti mismo ni a un admin (quítale antes el rol). Suspender cierra todas sus sesiones | `user.suspended` / `user.reactivated` |
+| Categorías | Nombre único, slug único automático, icono validado `fa-(solid|regular|brands) fa-*`, color `#RRGGBB` | `category.created/updated/deleted` |
 
 ---
 
@@ -1489,73 +1205,131 @@ El perfil muestra información pública del usuario:
 
 ### DatabaseSeeder
 
-Crea 2 usuarios de prueba:
-
 | Nombre | Email | Contraseña | Rol |
 |---|---|---|---|
 | Test User | `test@example.com` | `password` | `user` |
-| Admin User | `admin@example.com` | `adminpassword` | `admin` |
+| Admin User | `admin@example.com` | `SEED_ADMIN_PASSWORD` (o aleatoria impresa por consola) | `admin` |
+
+Es idempotente (`updateOrCreate`), así que se puede ejecutar varias veces.
 
 ### QuestionSeeder
 
-Genera un conjunto completo de datos realistas:
+**8 categorías:**
 
-**8 categorías creadas:**
-| Categoría | Slug | Ícono | Color | Subcategoría de |
-|---|---|---|---|---|
-| Programación | programacion | fa-code | #3B82F6 | — |
-| Laravel | laravel | fa-laravel | #FF2D20 | Programación |
-| JavaScript | javascript | fa-js | #F7DF1E | Programación |
-| Ciencias | ciencias | fa-flask | #10B981 | — |
-| Historia | historia | fa-landmark | #8B5CF6 | — |
-| Geografía | geografia | fa-globe | #06B6D4 | — |
-| Bases de Datos | bases-de-datos | fa-database | #F59E0B | Programación |
-| Inglés | ingles | fa-language | #EC4899 | — |
+| Categoría | Slug | Color | Subcategoría de |
+|---|---|---|---|
+| Programación | programacion | #3B82F6 | — |
+| Laravel | laravel | #FF2D20 | Programación |
+| JavaScript | javascript | #F7DF1E | Programación |
+| Bases de Datos | bases-de-datos | #F59E0B | Programación |
+| Ciencias | ciencias | #10B981 | — |
+| Historia | historia | #8B5CF6 | — |
+| Geografía | geografia | #06B6D4 | — |
+| Inglés | ingles | #EC4899 | — |
 
-**8 tests con 87 preguntas totales**, cubriendo los 3 tipos implementados (multiple_choice, true_false, short_answer). Cada test tiene datos realistas como contadores de vistas, intentos y notas medias.
+**10 tests con 80 preguntas** (30 de opción múltiple, 30 de verdadero/falso y 20 de respuesta corta): Laravel, JavaScript, SQL, Historia universal, Geografía, Inglés básico, Ciencia y matemáticas, Cine y series, Deportes y Arte y literatura.
 
----
-
-## 10. Funcionalidades Planificadas (No Implementadas)
-
-Las siguientes tablas y modelos existen en la base de datos pero **no tienen controladores, endpoints ni interfaz de usuario**:
-
-| Funcionalidad | Tablas involucradas | Estado |
-|---|---|---|
-| **Sistema de seguidores** | `follows` | Modelo con relaciones, sin API/UI |
-| **Comentarios en tests** | `comments` | Modelo con relaciones, sin API/UI |
-| **Valoraciones (estrellas)** | `ratings` | Modelo con relaciones, sin API/UI |
-| **Grupos/clases** | `groups`, `group_members`, `group_tests` | Modelo con relaciones, sin API/UI |
-| **Notificaciones** | `notifications` | Tabla creada, sin modelo/API/UI |
-| **Reportes de contenido** | `reports` | Tabla creada, sin modelo/API/UI |
-| **Historial de puntos** | `point_history` | Tabla creada, sin modelo/API/UI |
-| **Sistema de configuración** | `settings` | Tabla creada, sin modelo/API/UI |
-| **Logs de actividad** | `activity_logs` | Tabla creada, sin modelo/API/UI |
-| **5 tipos de pregunta adicionales** | `question_blanks`, `question_order_items` + lógica | Tablas parciales, sin lógica en controladores |
-| **Protección por contraseña de tests** | `tests.password` | Campo en BD, sin verificación en controladores |
-| **Tests destacados** | `tests.is_featured` | Campo en BD, sin lógica |
-| **Multimedia en preguntas** | `questions.image_url/audio_url/video_url` | Campos en BD, sin upload ni presentación |
-| **Gamificación avanzada** | `user_points`, `point_history` | Tablas creadas, sin cálculos |
+> Los nuevos tipos (`multiple_select`, `fill_blank`, `order_items`, `numeric`) no están en el seeder: créalos desde el editor para probarlos.
 
 ---
 
-## 11. Notas de Seguridad
+## 10. Testing
+
+```bash
+./vendor/bin/sail artisan test           # Docker
+composer test                            # sin Docker (config:clear + test)
+php artisan test --filter=ReviewModeTest # una suite concreta
+```
+
+`phpunit.xml` usa la base de datos `testing`, caché y sesiones en memoria (`array`) y `BCRYPT_ROUNDS=4`.
+
+| Suite | Qué comprueba |
+|---|---|
+| `QuestionTypesTest` | Guardado de los 7 tipos e intento perfecto = 100; el payload del alumno no revela la solución; puntuación parcial; penalización solo en fallos totales y nota ≥ 0; las preguntas en blanco no penalizan; numérica con coma y tolerancia; etiquetas en resultados; mensajes de validación; ida y vuelta del editor |
+| `ReviewModeTest` | La cola incluye falladas, parciales y en blanco; una pregunta sale al acertarla; el repaso no gasta intentos ni toca estadísticas; solo corrige pendientes; rechazo sin pendientes; editar un test conserva respuestas e ids de opciones |
+| `DashboardTest` | Requiere login; racha con repasos; racha viva hasta medianoche; días en la zona horaria del usuario; resumen sin repasos; dominio con última respuesta y parciales; pendientes ocultan tests inaccesibles; historial paginado, filtrado y privado |
+| `AdminTest` | Rutas solo para admin; cualquier admin funciona; destacados en la Home con auditoría; borrado ajusta contadores; suspensión bloquea login y cierra sesiones; no auto-bloqueo ni suspender admins; promoción a admin; CRUD de categorías con slugs únicos e iconos seguros; búsqueda y filtros |
+| `TestPasswordTest` | Contraseña con hash y nunca expuesta; bloqueo hasta desbloquear; el autor no la necesita; cambiarla vuelve a bloquear y quitarla desbloquea; rate limiting del desbloqueo |
+| `SecurityGdprTest` | Consentimiento obligatorio y registrado; rate limiting del login; avatar ignora la extensión del cliente; perfil público sin campos privados; las preguntas no filtran explicaciones; exportación de datos propios; borrado de cuenta (anonimizando o borrando tests) |
+
+---
+
+## 11. Privacidad y RGPD
+
+| Principio / derecho | Implementación |
+|---|---|
+| **Consentimiento** (art. 7) | Casilla obligatoria en el registro (≥ 14 años, LOPDGDD art. 7, y aceptación de Política y Términos). Se guarda fecha y versión (`privacy_accepted_at`, `privacy_policy_version`). Sube `AuthController::PRIVACY_POLICY_VERSION` al cambiar los textos |
+| **Acceso y portabilidad** (arts. 15 y 20) | `GET /api/account/export` → JSON con todos tus datos |
+| **Supresión** (art. 17) | `DELETE /api/account`. Los tests públicos publicados se conservan anonimizados ("Usuario eliminado") salvo que elijas borrarlos |
+| **Minimización** (art. 5.1.c) | No se guarda IP ni user-agent por intento; el perfil público muestra datos mínimos |
+| **Limitación del plazo** (art. 5.1.e) | Limpieza programada de sesiones, tokens de reseteo y tokens de Sanctum; logs de 30 días |
+| **Seguridad** (art. 32) | Ver [§12](#12-notas-de-seguridad) |
+| **Auditoría de admins** | `admin_audit_logs` sin datos personales en `details` |
+| **Datos locales** | Borradores del editor por usuario, borrados al cerrar sesión o eliminar la cuenta |
+
+---
+
+## 12. Notas de Seguridad
 
 | Aspecto | Estado | Descripción |
 |---|---|---|
-| **Autenticación** | ✅ Correcta | Sanctum con tokens Bearer, bcrypt para hashing |
-| **Ocultación de respuestas** | ✅ Correcta | `is_correct` se elimina de las opciones enviadas al cliente (`questions` endpoint) |
-| **Autorización de resultados** | ✅ Correcta | Solo el dueño del intento puede ver sus resultados |
-| **Validación de inputs** | ✅ Correcta | Validaciones en todos los controladores con reglas Laravel |
-| **Transacciones** | ✅ Correcta | Operaciones críticas (crear test, enviar intento) usan `DB::transaction` |
-| **Reset de contraseña** | ⚠️ Inseguro | Permite cambiar contraseña solo con email, sin verificación por token |
-| **CORS** | ⚠️ Configurar | Depende de la configuración de Sanctum/CORS |
-| **Rate limiting** | ⚠️ No hay | No se aplica rate limiting a login/register |
-| **Roles de usuario** | ⚠️ Sin uso | Los roles existen (user/premium/educator/admin) pero no hay middleware de permisos |
-| **Inyección SQL** | ✅ Protegido | Eloquent ORM parametriza las consultas automáticamente |
-| **XSS** | ✅ Protegido | Vue.js escapa el contenido por defecto en templates |
+| **Sesión** | ✅ | Cookie httpOnly, cifrada, `SameSite=lax`, `Secure` en producción; regeneración en login (anti fijación) |
+| **CSRF** | ✅ | Token XSRF de Sanctum en todas las peticiones mutantes |
+| **Contraseñas** | ✅ | bcrypt, mínimo 8; el cambio exige la actual y cierra otras sesiones |
+| **Rate limiting** | ✅ | Login/registro, API general, desbloqueo de tests y operaciones sensibles ([§6.4](#64-middleware-y-rate-limiting)) |
+| **Roles** | ✅ | Middleware `admin` en servidor; guard de router solo para UX |
+| **Suspensión** | ✅ | Bloquea login y corta sesiones abiertas en la siguiente petición |
+| **Ocultación de soluciones** | ✅ | `forTaking()` por tipo; probado en tests |
+| **Autorización** | ✅ | `TestAccess` para ver/gestionar; resultados solo del dueño |
+| **Subida de archivos** | ✅ | Validación de imagen, extensión derivada del MIME, Caddy solo sirve imágenes en `/storage` |
+| **Cabeceras HTTP** | ✅ | HSTS, CSP (`default-src 'self'`, sin scripts inline), `X-Frame-Options: DENY`, `nosniff`, Referrer-Policy, Permissions-Policy, COOP; se eliminan `Server` y `X-Powered-By` |
+| **Inyección SQL** | ✅ | Eloquent / query builder parametrizados |
+| **XSS** | ✅ | Vue escapa por defecto; iconos de categoría validados por regex antes de usarse como clase |
+| **Transacciones** | ✅ | Crear/editar tests, intentos, borrado de cuenta y acciones de admin |
+| **Recuperación de contraseña olvidada** | ⚠️ Pendiente | No hay flujo por email; solo cambio con sesión iniciada |
+| **Verificación de email** | ⚠️ Pendiente | `email_verified_at` se rellena al registrarse sin verificación real |
 
 ---
 
-> **Documento generado para el equipo de desarrollo de TestMaster.**
-> Última actualización: Febrero 2026
+## 13. Funcionalidades Planificadas (No Implementadas)
+
+Tablas y modelos que existen pero **sin API ni interfaz**:
+
+| Funcionalidad | Tablas | Estado |
+|---|---|---|
+| Grupos / clases | `groups`, `group_members`, `group_tests` | Modelo con relaciones |
+| Comentarios | `comments` | Modelo con relaciones |
+| Valoraciones | `ratings` | Modelo con relaciones |
+| Seguidores | `follows` | Relaciones en `User` |
+| Gamificación (puntos, niveles, insignias) | `user_points`, `point_history`, campos de `user_stats` | Tablas creadas |
+| Multimedia en preguntas | `questions.image_url/audio_url/video_url` | Columnas sin subida ni presentación |
+| Notificaciones / reportes | `notifications`, `reports` | Tablas creadas |
+| Configuración y logs de actividad | `settings`, `activity_logs` | Tablas creadas |
+| Recuperación de contraseña por email | `password_reset_tokens` | Solo limpieza programada |
+| Roles `premium` / `educator` | `users.role` | Valores del enum sin efecto |
+
+---
+
+## 14. Historial de Cambios
+
+### Rama `Redesign` (noviembre 2026)
+
+| Área | Cambios |
+|---|---|
+| **Rediseño UI** | Nuevo sistema de diseño con *design tokens* y tema oscuro sin colores literales; nuevas Home, catálogo, ViewTest, TakeTest, Results, Profile, Help, Contact y legales; `AuthShell`; toasts; gráficas SVG propias. Eliminados componentes obsoletos (`QuestionCard`, `QuestionMultipleChoice`, `QuestionShortAnswer`, `QuestionTrueFalse`, `CountdownTimer`, `QuestionResult`, `ScoreCircle`, `TestCard`, `TestFilters`, `TestInfo`, `TestStats`, `ActivityFeed`, `StatsCard`) |
+| **Editor** | Edición de tests, arrastrar para reordenar, duplicar preguntas, vista previa, borrador local, modo de presentación, contraseña y penalización |
+| **Tipos de pregunta** | Arquitectura por estrategias (`app/Questions`); nuevos `multiple_select`, `fill_blank`, `order_items`, `numeric`; puntuación parcial y penalización |
+| **Modo repaso** | Repetir solo las preguntas falladas sin gastar intentos (`test_attempts.mode`) |
+| **Mi progreso** | `/dashboard` con resumen, racha en la zona horaria del usuario, calendario, dominio por categoría, pendientes e historial |
+| **Administración** | Panel `/admin`: métricas, tests destacados y estado, usuarios (rol, suspensión), CRUD de categorías y auditoría |
+| **Seguridad** | Paso de tokens Bearer en `localStorage` a sesión en cookie httpOnly + CSRF; rate limiting; cambio de contraseña seguro; cuentas suspendidas; tests con contraseña con hash y bloqueo por sesión; Caddy con HTTPS y cabeceras |
+| **RGPD** | Consentimiento versionado, exportación y borrado de cuenta, anonimización de tests, minimización de IP/user-agent, tareas de retención y textos legales actualizados |
+| **Testing** | Nuevas suites de feature: `QuestionTypesTest`, `ReviewModeTest`, `DashboardTest`, `AdminTest`, `TestPasswordTest`, `SecurityGdprTest` |
+
+### Versión inicial (febrero 2026)
+
+Catálogo, creación de tests con 3 tipos de pregunta (opción múltiple, verdadero/falso, respuesta corta), realización con temporizador, resultados, perfiles y autenticación por token Bearer.
+
+---
+
+> **Documento mantenido por el equipo de desarrollo de TestMaster.**

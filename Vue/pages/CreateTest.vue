@@ -1,186 +1,507 @@
 <template>
-  <main style="max-width: 1000px; margin: 0 auto">
-    <h1 style="font-size: 2rem; margin-bottom: 2rem">{{ isEditMode ? 'Editar Test' : 'Crear Nuevo Test' }}</h1>
+  <div class="page-wrap ct">
+    <nav class="ct__crumbs" aria-label="Ruta">
+      <router-link to="/">Explorar</router-link>
+      <span aria-hidden="true">/</span>
+      <template v-if="isEditMode && form.title">
+        <router-link :to="`/test/${editingTestId}`">{{ form.title }}</router-link>
+        <span aria-hidden="true">/</span>
+      </template>
+      <span aria-current="page">{{ isEditMode ? 'Editar' : 'Crear test' }}</span>
+    </nav>
 
-    <form @submit.prevent="submitTest">
-      <!-- INFORMACIÓN BÁSICA -->
-      <div class="section">
-        <h2 class="section-title"><i class="fa-solid fa-file-lines"></i> Información Básica</h2>
+    <h1 class="ct__title">{{ isEditMode ? 'Editar test' : 'Crear test' }}</h1>
 
-        <div class="form-group">
-          <label class="form-label">Título del Test *</label>
-          <input v-model="form.title" type="text" class="form-input" placeholder="Ej: Test de Química Básica" required maxlength="255" />
-        </div>
+    <!-- Copia local de una sesión anterior que no llegó a guardarse -->
+    <div v-if="pendingDraft" class="ct__draft" role="region" aria-label="Borrador recuperable">
+      <i class="fa-solid fa-clock-rotate-left ct__draft-icon" aria-hidden="true"></i>
+      <div class="ct__draft-text">
+        <strong>Tienes cambios sin guardar del {{ formatDraftDate(pendingDraft.savedAt) }}</strong>
+        <span v-if="draftIsStale">El test se ha modificado desde entonces: si lo recuperas, sustituirá a la versión actual.</span>
+        <span v-else>Se guardaron en este navegador antes de cerrar el editor.</span>
+      </div>
+      <div class="ct__draft-actions">
+        <button type="button" class="btn btn--secondary" @click="discardDraft">Descartar</button>
+        <button type="button" class="btn" @click="restoreDraft">Recuperar</button>
+      </div>
+    </div>
 
-        <div class="form-group">
-          <label class="form-label">Descripción</label>
-          <textarea v-model="form.description" class="form-input" placeholder="Describe brevemente de qué trata el test..." rows="4"></textarea>
-        </div>
+    <BaseLoader v-if="loadingTest" text="Cargando el test…" />
 
-        <div class="grid-2">
-          <BaseSelect
-            v-model="form.category_id"
-            label="Categoría"
-            :options="categories"
-            placeholder="Sin categoría"
+    <div v-else-if="loadError" class="ct__load-error panel" role="alert">
+      <p>{{ loadError }}</p>
+      <router-link to="/" class="btn btn--secondary">Volver al catálogo</router-link>
+    </div>
+
+    <form v-else class="ct__layout" novalidate @submit.prevent>
+      <!-- ═══ Columna principal ═══ -->
+      <div class="ct__main">
+        <section class="ct__panel" aria-labelledby="h-info">
+          <h2 id="h-info" class="ct__h2">Información</h2>
+          <BaseInput
+            v-model="form.title"
+            label="Título"
+            maxlength="255"
+            placeholder="Por ejemplo, Fundamentos de SQL"
+            :error="fieldErrors.title"
+            required
           />
+          <BaseInput
+            v-model="form.description"
+            label="Descripción"
+            type="textarea"
+            rows="3"
+            optional
+            placeholder="Qué temas cubre y para quién es"
+          />
+          <div class="ct__grid2">
+            <BaseSelect v-model="form.category_id" label="Categoría" :options="categories" placeholder="Sin categoría" />
+            <BaseSelect
+              v-model="form.difficulty"
+              label="Dificultad"
+              :options="[
+                { value: 'easy', label: 'Fácil' },
+                { value: 'medium', label: 'Media' },
+                { value: 'hard', label: 'Difícil' },
+              ]"
+            />
+          </div>
+        </section>
+
+        <section class="ct__questions" aria-labelledby="h-questions">
+          <div class="ct__qs-head">
+            <h2 id="h-questions" class="ct__h2">Preguntas</h2>
+            <span class="ct__muted tabular">{{ questions.length }} · {{ plural(totalPoints, 'punto', 'puntos') }}</span>
+          </div>
+
+          <article
+            v-for="(q, qIdx) in questions"
+            :id="`q-${q._key}`"
+            :key="q._key"
+            class="ct__q"
+            :class="{
+              'has-error': questionErrors[q._key],
+              'is-dragging': drag.from === qIdx,
+              'drop-before': drag.over === qIdx && drag.before,
+              'drop-after': drag.over === qIdx && !drag.before,
+            }"
+            :aria-labelledby="`qt-${q._key}`"
+            :draggable="drag.armed === q._key"
+            @dragstart="onDragStart($event, qIdx)"
+            @dragover.prevent="onDragOver($event, qIdx)"
+            @drop.prevent="onDrop"
+            @dragend="resetDrag"
+          >
+            <header class="ct__q-head">
+              <h3 :id="`qt-${q._key}`" class="ct__q-title">
+                Pregunta {{ qIdx + 1 }}<span class="ct__muted"> · {{ questionTypeLabel(q.type) }}</span>
+              </h3>
+              <div class="ct__q-tools">
+                <!-- Asa para arrastrar con el ratón; con teclado se usan las flechas -->
+                <span
+                  v-if="questions.length > 1"
+                  class="icon-btn ct__handle"
+                  title="Arrastrar para reordenar"
+                  aria-hidden="true"
+                  @pointerdown="drag.armed = q._key"
+                  @pointerup="drag.armed = null"
+                >
+                  <i class="fa-solid fa-grip-vertical"></i>
+                </span>
+                <button type="button" class="icon-btn" :disabled="qIdx === 0" :aria-label="`Subir pregunta ${qIdx + 1}`" title="Subir" @click="moveQuestion(qIdx, -1)">
+                  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="icon-btn" :disabled="qIdx === questions.length - 1" :aria-label="`Bajar pregunta ${qIdx + 1}`" title="Bajar" @click="moveQuestion(qIdx, 1)">
+                  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="icon-btn" :aria-label="`Duplicar pregunta ${qIdx + 1}`" title="Duplicar" @click="duplicateQuestion(qIdx)">
+                  <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="icon-btn ct__danger" :aria-label="`Eliminar pregunta ${qIdx + 1}`" title="Eliminar" @click="requestRemove(qIdx)">
+                  <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
+                </button>
+              </div>
+            </header>
+
+            <BaseInput
+              v-model="q.content"
+              :id="`qc-${q._key}`"
+              label="Enunciado"
+              type="textarea"
+              rows="2"
+              :placeholder="q.type === 'fill_blank' ? 'La capital de Francia es ___.' : 'Escribe la pregunta'"
+              :help-text="q.type === 'fill_blank' ? 'Escribe ___ (tres guiones bajos) donde vaya cada hueco.' : ''"
+              :error="questionErrors[q._key]?.content"
+              required
+            />
+
+            <!-- Opción múltiple (una correcta) y selección múltiple (varias) -->
+            <fieldset
+              v-if="q.type === 'multiple_choice' || q.type === 'multiple_select'"
+              class="ct__opts"
+              :aria-describedby="`qo-help-${q._key}`"
+            >
+              <legend class="field-legend">Respuestas</legend>
+              <p :id="`qo-help-${q._key}`" class="help-text ct__opts-help">
+                <template v-if="q.type === 'multiple_choice'">Marca el círculo de la respuesta correcta.</template>
+                <template v-else>Marca todas las correctas. Cada correcta marcada suma y cada incorrecta resta, sin bajar de 0.</template>
+              </p>
+              <div v-for="(opt, oIdx) in q.options" :key="oIdx" class="ct__opt" :class="{ 'is-correct': isOptionCorrect(q, oIdx) }">
+                <input
+                  v-if="q.type === 'multiple_choice'"
+                  v-model="q.correctOption"
+                  type="radio"
+                  class="ct__radio"
+                  :name="`correct_${q._key}`"
+                  :value="oIdx"
+                  :aria-label="`Marcar la opción ${String.fromCharCode(65 + oIdx)} como correcta`"
+                />
+                <input
+                  v-else
+                  v-model="opt.correct"
+                  type="checkbox"
+                  class="ct__radio"
+                  :aria-label="`La opción ${String.fromCharCode(65 + oIdx)} es correcta`"
+                />
+                <label :for="`qo-${q._key}-${oIdx}`" class="sr-only">Opción {{ String.fromCharCode(65 + oIdx) }}</label>
+                <input
+                  :id="`qo-${q._key}-${oIdx}`"
+                  v-model="opt.content"
+                  type="text"
+                  class="form-input ct__opt-input"
+                  :placeholder="`Opción ${String.fromCharCode(65 + oIdx)}`"
+                />
+                <span v-if="isOptionCorrect(q, oIdx)" class="pill pill--easy ct__opt-tag">Correcta</span>
+                <button
+                  v-if="q.options.length > 2"
+                  type="button"
+                  class="icon-btn"
+                  :aria-label="`Quitar la opción ${String.fromCharCode(65 + oIdx)}`"
+                  @click="removeOption(q, oIdx)"
+                >
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p v-if="questionErrors[q._key]?.options" class="error-text">{{ questionErrors[q._key].options }}</p>
+              <button v-if="q.options.length < 8" type="button" class="btn btn--ghost ct__add-opt" @click="q.options.push({ content: '', correct: false })">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>Añadir opción
+              </button>
+            </fieldset>
+
+            <!-- Rellenar huecos -->
+            <fieldset v-else-if="q.type === 'fill_blank'" class="ct__opts" :aria-describedby="`qb-help-${q._key}`">
+              <legend class="field-legend">Respuestas de los huecos</legend>
+              <p :id="`qb-help-${q._key}`" class="help-text ct__opts-help">
+                Si se admiten varias respuestas, sepáralas con una barra: <code>París | Paris</code>
+              </p>
+              <button type="button" class="btn btn--ghost ct__add-opt" @click="insertBlank(q)">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>Insertar hueco en el enunciado
+              </button>
+              <div v-for="(blank, bIdx) in q.blanks" :key="bIdx" class="ct__opt">
+                <label :for="`qb-${q._key}-${bIdx}`" class="ct__blank-n tabular">({{ bIdx + 1 }})</label>
+                <input
+                  :id="`qb-${q._key}-${bIdx}`"
+                  v-model="q.blanks[bIdx]"
+                  type="text"
+                  class="form-input ct__opt-input"
+                  :placeholder="`Respuesta del hueco ${bIdx + 1}`"
+                />
+              </div>
+              <label class="ct__check"><input v-model="q.case_sensitive" type="checkbox" />Distinguir mayúsculas y minúsculas</label>
+              <p v-if="questionErrors[q._key]?.blanks" class="error-text">{{ questionErrors[q._key].blanks }}</p>
+            </fieldset>
+
+            <!-- Ordenar elementos -->
+            <fieldset v-else-if="q.type === 'order_items'" class="ct__opts" :aria-describedby="`qi-help-${q._key}`">
+              <legend class="field-legend">Elementos en el orden correcto</legend>
+              <p :id="`qi-help-${q._key}`" class="help-text ct__opts-help">El alumno los verá desordenados. Cada elemento en su sitio suma su parte.</p>
+              <div v-for="(item, iIdx) in q.items" :key="iIdx" class="ct__opt">
+                <span class="ct__blank-n tabular" aria-hidden="true">{{ iIdx + 1 }}.</span>
+                <label :for="`qi-${q._key}-${iIdx}`" class="sr-only">Elemento {{ iIdx + 1 }}</label>
+                <input
+                  :id="`qi-${q._key}-${iIdx}`"
+                  v-model="item.content"
+                  type="text"
+                  class="form-input ct__opt-input"
+                  :placeholder="`Elemento ${iIdx + 1}`"
+                />
+                <button type="button" class="icon-btn" :disabled="iIdx === 0" :aria-label="`Subir elemento ${iIdx + 1}`" @click="moveItem(q, iIdx, -1)">
+                  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="icon-btn" :disabled="iIdx === q.items.length - 1" :aria-label="`Bajar elemento ${iIdx + 1}`" @click="moveItem(q, iIdx, 1)">
+                  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                </button>
+                <button v-if="q.items.length > 2" type="button" class="icon-btn" :aria-label="`Quitar elemento ${iIdx + 1}`" @click="q.items.splice(iIdx, 1)">
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p v-if="questionErrors[q._key]?.items" class="error-text">{{ questionErrors[q._key].items }}</p>
+              <button v-if="q.items.length < 10" type="button" class="btn btn--ghost ct__add-opt" @click="q.items.push({ content: '' })">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>Añadir elemento
+              </button>
+            </fieldset>
+
+            <!-- Numérica -->
+            <div v-else-if="q.type === 'numeric'" class="ct__grid2 ct__numeric">
+              <BaseInput
+                v-model="q.numeric_answer"
+                :id="`qn-${q._key}`"
+                label="Respuesta correcta"
+                inputmode="decimal"
+                placeholder="3,14"
+                :error="questionErrors[q._key]?.numeric"
+                required
+              />
+              <BaseInput
+                v-model="q.numeric_tolerance"
+                :id="`qt-${q._key}-tol`"
+                label="Margen aceptado (±)"
+                inputmode="decimal"
+                placeholder="0"
+                optional
+                help-text="Con 0,01, de 3,13 a 3,15 cuenta como correcta."
+                :error="questionErrors[q._key]?.tolerance"
+              />
+            </div>
+
+            <!-- Verdadero / falso -->
+            <fieldset v-else-if="q.type === 'true_false'" class="ct__opts">
+              <legend class="field-legend">Respuesta correcta</legend>
+              <div class="ct__tf">
+                <label class="ct__tf-opt" :class="{ 'is-correct': q.correct === 'true' }">
+                  <input v-model="q.correct" type="radio" class="ct__radio" :name="`tf_${q._key}`" value="true" />Verdadero
+                </label>
+                <label class="ct__tf-opt" :class="{ 'is-correct': q.correct === 'false' }">
+                  <input v-model="q.correct" type="radio" class="ct__radio" :name="`tf_${q._key}`" value="false" />Falso
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Respuesta corta -->
+            <BaseInput
+              v-else-if="q.type === 'short_answer'"
+              v-model="q.correct_answer"
+              :id="`qa-${q._key}`"
+              label="Respuesta correcta"
+              help-text="No distingue mayúsculas de minúsculas."
+              :error="questionErrors[q._key]?.answer"
+              required
+            />
+
+            <div class="ct__q-extra">
+              <BaseInput
+                v-model="q.explanation"
+                :id="`qe-${q._key}`"
+                label="Explicación"
+                type="textarea"
+                rows="2"
+                optional
+                help-text="Se muestra al corregir, si activas las explicaciones."
+              />
+              <BaseInput v-model.number="q.points" :id="`qp-${q._key}`" label="Puntos" type="number" min="1" class="ct__points" />
+            </div>
+          </article>
+
+          <div v-if="!questions.length" class="ct__empty panel">Añade la primera pregunta para empezar.</div>
+          <p class="sr-only" aria-live="polite">{{ moveAnnouncement }}</p>
+
+          <div class="ct__add" role="group" aria-label="Añadir pregunta">
+            <span class="ct__muted">Añadir pregunta</span>
+            <button
+              v-for="(meta, type) in QUESTION_TYPES"
+              :key="type"
+              type="button"
+              class="btn btn--secondary"
+              :title="meta.hint"
+              @click="addQuestion(type)"
+            >
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>{{ meta.label }}
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <!-- ═══ Ajustes ═══ -->
+      <aside class="ct__side">
+        <section class="ct__panel" aria-labelledby="h-settings">
+          <h2 id="h-settings" class="ct__h2">Ajustes</h2>
 
           <BaseSelect
-            v-model="form.difficulty"
-            label="Dificultad"
+            v-model="form.display_mode"
+            label="Presentación de las preguntas"
             :options="[
-              { value: 'easy', label: 'Fácil' },
-              { value: 'medium', label: 'Medio' },
-              { value: 'hard', label: 'Difícil' }
+              { value: 'paged', label: 'Una por pantalla' },
+              { value: 'all', label: 'Todas en una página' },
             ]"
+            help-text="«Una por pantalla» funciona mejor en móvil."
           />
-        </div>
-      </div>
 
-      <!-- CONFIGURACIÓN -->
-      <div class="section">
-        <h2 class="section-title"><i class="fa-solid fa-gear"></i> Configuración del Test</h2>
-
-        <div class="grid-2">
-          <div class="form-group">
-            <label class="form-label">Tiempo Límite (minutos)</label>
-            <input v-model.number="form.time_limit" type="number" class="form-input" min="0" placeholder="0 = sin límite" />
-            <p class="help-text">0 = sin límite de tiempo</p>
+          <div class="ct__limit">
+            <BaseInput
+              v-model.number="timeMinutes"
+              label="Tiempo límite (min)"
+              type="number"
+              min="1"
+              :disabled="noTimeLimit"
+            />
+            <label class="ct__check"><input v-model="noTimeLimit" type="checkbox" />Sin límite</label>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Máximo de Intentos</label>
-            <input v-model.number="form.max_attempts" type="number" class="form-input" placeholder="-1 = ilimitado" />
-            <p class="help-text">-1 = intentos ilimitados</p>
+          <div class="ct__limit">
+            <BaseInput
+              v-model.number="attemptsCount"
+              label="Intentos por persona"
+              type="number"
+              min="1"
+              :disabled="unlimitedAttempts"
+            />
+            <label class="ct__check"><input v-model="unlimitedAttempts" type="checkbox" />Ilimitados</label>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Nota Mínima para Aprobar (%)</label>
-            <input v-model.number="form.pass_score" type="number" class="form-input" min="0" max="100" />
+          <BaseInput
+            v-model.number="form.pass_score"
+            label="Nota para aprobar (%)"
+            type="number"
+            min="0"
+            max="100"
+            :error="fieldErrors.pass_score"
+          />
+
+          <BaseSelect
+            v-model="form.wrong_penalty"
+            label="Penalización por fallo"
+            :options="PENALTY_OPTIONS"
+            help-text="Solo restan las respuestas totalmente incorrectas. En blanco no resta y la nota nunca baja de 0."
+          />
+
+          <!-- Contraseña: no se guarda en el borrador local -->
+          <div class="ct__password">
+            <label class="ct__switch">
+              <input v-model="passwordEnabled" type="checkbox" /><span>Proteger con contraseña</span>
+            </label>
+            <template v-if="passwordEnabled">
+              <p v-if="hadPassword && !changingPassword" class="help-text ct__password-note">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                Este test ya tiene contraseña.
+                <button type="button" class="ct__link" @click="changingPassword = true">Cambiarla</button>
+              </p>
+              <BaseInput
+                v-else
+                v-model="passwordValue"
+                label="Contraseña"
+                type="password"
+                autocomplete="new-password"
+                maxlength="100"
+                help-text="Mínimo 4 caracteres. Se pedirá a todos menos a ti."
+                :error="fieldErrors.password"
+              />
+            </template>
           </div>
 
-          <div class="form-group">
-            <label class="checkbox-label"><input type="checkbox" v-model="form.is_public" /> <span>Hacer público</span></label>
+          <div class="ct__switches">
+            <label class="ct__switch"><input v-model="form.is_public" type="checkbox" /><span>Visible en el catálogo</span></label>
+            <label class="ct__switch"><input v-model="form.shuffle_questions" type="checkbox" /><span>Desordenar preguntas</span></label>
+            <label class="ct__switch"><input v-model="form.shuffle_answers" type="checkbox" /><span>Desordenar respuestas</span></label>
+            <label class="ct__switch"><input v-model="form.show_correct_answers" type="checkbox" /><span>Mostrar respuestas correctas al terminar</span></label>
+            <label class="ct__switch"><input v-model="form.show_explanations" type="checkbox" /><span>Mostrar explicaciones al terminar</span></label>
           </div>
-          <div class="form-group">
-            <label class="checkbox-label"><input type="checkbox" v-model="form.shuffle_questions" /> <span>Orden aleatorio de preguntas</span></label>
-          </div>
-          <div class="form-group">
-            <label class="checkbox-label"><input type="checkbox" v-model="form.shuffle_answers" /> <span>Orden aleatorio de respuestas</span></label>
-          </div>
-          <div class="form-group">
-            <label class="checkbox-label"><input type="checkbox" v-model="form.show_correct_answers" /> <span>Mostrar respuestas correctas</span></label>
-          </div>
-          <div class="form-group">
-            <label class="checkbox-label"><input type="checkbox" v-model="form.show_explanations" /> <span>Mostrar explicaciones</span></label>
-          </div>
-        </div>
-      </div>
+        </section>
+      </aside>
 
-      <!-- PREGUNTAS -->
-      <div class="section">
-        <h2 class="section-title"><i class="fa-solid fa-question"></i> Preguntas</h2>
-
-        <div v-for="(q, qIdx) in questions" :key="q._key" class="question-card">
-          <div class="question-header">
-            <span class="question-number">Pregunta {{ qIdx + 1 }}</span>
-            <button type="button" class="btn-remove" @click="removeQuestion(qIdx)">✕ Eliminar</button>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Pregunta *</label>
-            <textarea v-model="q.content" class="form-input" placeholder="Escribe aquí la pregunta..." rows="3" required></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Explicación (opcional)</label>
-            <textarea v-model="q.explanation" class="form-input" placeholder="Explica por qué es correcta la respuesta..." rows="2"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Puntos</label>
-            <input v-model.number="q.points" type="number" class="form-input" min="1" style="width: 100px" />
-          </div>
-
-          <!-- multiple_choice -->
-          <div v-if="q.type === 'multiple_choice'" class="form-group">
-            <label class="form-label">Opciones de Respuesta</label>
-            <div v-for="(opt, oIdx) in q.options" :key="oIdx" class="option-item">
-              <input type="radio" :name="`correct_${q._key}`" :value="oIdx" v-model="q.correctOption" required />
-              <input v-model="opt.content" type="text" class="form-input" :placeholder="`Opción ${oIdx + 1}`" required />
-              <button v-if="q.options.length > 2" type="button" class="btn-remove" style="padding: 0.5rem" @click="q.options.splice(oIdx, 1)">✕</button>
-            </div>
-            <button type="button" class="btn-add-option" @click="q.options.push({ content: '' })">+ Añadir Opción</button>
-            <p class="help-text">Marca la respuesta correcta</p>
-          </div>
-
-          <!-- true_false -->
-          <div v-else-if="q.type === 'true_false'" class="form-group">
-            <label class="form-label">Respuesta Correcta</label>
-            <div style="display: flex; gap: 1rem">
-              <label class="checkbox-label">
-                <input type="radio" :name="`tf_${q._key}`" value="true" v-model="q.correct" />
-                <span><i class="fa-solid fa-check"></i> Verdadero</span>
-              </label>
-              <label class="checkbox-label">
-                <input type="radio" :name="`tf_${q._key}`" value="false" v-model="q.correct" />
-                <span><i class="fa-solid fa-xmark"></i> Falso</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- short_answer -->
-          <div v-else-if="q.type === 'short_answer'" class="form-group">
-            <label class="form-label">Respuesta Correcta *</label>
-            <input v-model="q.correct_answer" type="text" class="form-input" placeholder="Escribe la respuesta correcta" required />
-            <p class="help-text">La respuesta no distingue mayúsculas/minúsculas</p>
+      <!-- ═══ Barra de guardado ═══ -->
+      <div class="ct__bar">
+        <div class="ct__bar-inner">
+          <p v-if="errorSummary" class="ct__bar-error" role="alert">
+            <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>{{ errorSummary }}
+          </p>
+          <span v-else class="ct__muted ct__bar-status">{{ statusText }}</span>
+          <div class="ct__bar-actions">
+            <button type="button" class="btn btn--ghost btn--lg" @click="showPreview = true">
+              <i class="fa-regular fa-eye" aria-hidden="true"></i>Vista previa
+            </button>
+            <button type="button" class="btn btn--secondary btn--lg" :disabled="submitting" @click="submitTest('draft')">
+              Guardar borrador
+            </button>
+            <button type="button" class="btn btn--lg" :disabled="submitting" @click="submitTest('published')">
+              <i v-if="submitting && submitStatus === 'published'" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              {{ isEditMode ? 'Guardar y publicar' : 'Publicar' }}
+            </button>
           </div>
         </div>
-
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-          <BaseButton @click="addQuestion('multiple_choice')">+ Opción Múltiple</BaseButton>
-          <BaseButton variant="success" @click="addQuestion('true_false')">+ Verdadero/Falso</BaseButton>
-          <BaseButton variant="warning" @click="addQuestion('short_answer')">+ Respuesta Corta</BaseButton>
-        </div>
-        <p class="help-text" style="margin-top: 1rem">Añade al menos una pregunta para guardar el test</p>
-      </div>
-
-      <!-- BOTONES DE ACCIÓN -->
-      <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem">
-        <BaseButton type="submit" variant="secondary" :loading="submitting" icon="fa-solid fa-floppy-disk" style="padding: 1rem 2rem" @click="submitStatus = 'draft'">
-          {{ isEditMode ? 'Guardar Cambios (Borrador)' : 'Guardar como Borrador' }}
-        </BaseButton>
-        <BaseButton type="submit" :loading="submitting" icon="fa-solid fa-rocket" style="padding: 1rem 2rem" @click="submitStatus = 'published'">
-          {{ isEditMode ? 'Guardar y Publicar' : 'Publicar Test' }}
-        </BaseButton>
-      </div>
-
-      <div v-if="errors.length" style="margin-top: 1.5rem">
-      <BaseAlert v-for="(e, i) in errors" :key="i" variant="error">
-        {{ e }}
-      </BaseAlert>
       </div>
     </form>
-  </main>
+
+    <TestPreview
+      v-model="showPreview"
+      :form="form"
+      :questions="questions"
+      :time-limit-minutes="noTimeLimit ? 0 : Math.max(1, Number(timeMinutes) || 1)"
+    />
+
+    <BaseModal v-model="showRemove" title="¿Eliminar esta pregunta?" max-width="420px">
+      <p class="ct__modal-text">Se perderá lo que hayas escrito en ella.</p>
+      <template #footer>
+        <button type="button" class="btn btn--secondary" @click="showRemove = false">Cancelar</button>
+        <button type="button" class="btn btn--danger" @click="removeQuestion(removeIdx)">Eliminar</button>
+      </template>
+    </BaseModal>
+
+    <BaseModal v-model="showLeave" title="¿Salir sin guardar?" max-width="420px" @close="cancelLeave">
+      <p class="ct__modal-text">Tienes cambios sin guardar en este test. Si sales, se descartarán.</p>
+      <template #footer>
+        <button type="button" class="btn btn--secondary" @click="cancelLeave">Seguir editando</button>
+        <button type="button" class="btn btn--danger" @click="confirmLeave">Salir sin guardar</button>
+      </template>
+    </BaseModal>
+  </div>
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+import { ref, reactive, computed, watch, nextTick, onMounted, onBeforeUnmount } from 'vue';
+import { useRouter, useRoute, onBeforeRouteLeave } from 'vue-router';
 import api from '../api/axios';
-import BaseButton from '../components/base/BaseButton.vue';
-import BaseAlert from '../components/base/BaseAlert.vue';
+import BaseInput from '../components/base/BaseInput.vue';
 import BaseSelect from '../components/base/BaseSelect.vue';
+import BaseLoader from '../components/base/BaseLoader.vue';
+import BaseModal from '../components/base/BaseModal.vue';
+import { plural, QUESTION_TYPES, PENALTY_OPTIONS, questionTypeLabel, countBlanks } from '../utils/tests';
+import { useToast } from '../composables/useToast';
+import { useAuthStore } from '../stores/auth';
+import TestPreview from '../components/test/TestPreview.vue';
+import { draftKey, readDraft, writeDraft, removeDraft } from '../utils/editorDraft';
 
 const router = useRouter();
 const route = useRoute();
+const toast = useToast();
+const authStore = useAuthStore();
+const showPreview = ref(false);
+
 const categories = ref([]);
 const submitting = ref(false);
 const submitStatus = ref('published');
-const errors = ref([]);
+const loadingTest = ref(false);
+const loadError = ref('');
+const serverErrors = ref([]);
+const fieldErrors = reactive({ title: '', pass_score: '', password: '' });
+
+// Contraseña del test. Nunca se recibe del servidor: solo si existe.
+const passwordEnabled = ref(false);
+const hadPassword = ref(false);
+const changingPassword = ref(false);
+const passwordValue = ref('');
+const settingNewPassword = computed(() => passwordEnabled.value && (!hadPassword.value || changingPassword.value));
+
+/** Qué enviar: undefined = no cambia; null = quitarla; texto = nueva. */
+function passwordPayload() {
+  if (settingNewPassword.value) return passwordValue.value;
+  if (!passwordEnabled.value && hadPassword.value) return null;
+  return undefined;
+}
+const questionErrors = ref({});
 let keyCounter = 0;
+
 const editingTestId = ref(route.params.id ? Number(route.params.id) : null);
-const isEditMode = ref(Boolean(editingTestId.value));
+const isEditMode = computed(() => Boolean(editingTestId.value));
 
 const form = reactive({
   title: '',
@@ -190,41 +511,306 @@ const form = reactive({
   time_limit: 0,
   max_attempts: -1,
   pass_score: 70,
+  wrong_penalty: 0,
   is_public: true,
   shuffle_questions: false,
   shuffle_answers: false,
   show_correct_answers: true,
   show_explanations: true,
+  display_mode: 'paged',
 });
+
+// Tiempo e intentos: casilla «sin límite» en lugar de valores mágicos (0 / -1)
+const timeMinutes = ref(15);
+const noTimeLimit = ref(true);
+const attemptsCount = ref(3);
+const unlimitedAttempts = ref(true);
 
 const questions = ref([]);
 
-function addQuestion(type) {
-  const q = {
-    _key: ++keyCounter,
-    type,
-    content: '',
-    explanation: '',
-    points: 1,
-  };
+const totalPoints = computed(() => questions.value.reduce((s, q) => s + (Number(q.points) || 0), 0));
+
+// ─── Preguntas ───────────────────────────────────────────────────────────────
+const emptyOptions = (n) => Array.from({ length: n }, () => ({ content: '', correct: false }));
+
+function newQuestion(type) {
+  const q = { _key: ++keyCounter, type, content: '', explanation: '', points: 1 };
   if (type === 'multiple_choice') {
-    q.options = [{ content: '' }, { content: '' }, { content: '' }, { content: '' }];
+    q.options = emptyOptions(4);
     q.correctOption = 0;
+  } else if (type === 'multiple_select') {
+    q.options = emptyOptions(4);
   } else if (type === 'true_false') {
     q.correct = 'true';
-  } else if (type === 'short_answer') {
+  } else if (type === 'fill_blank') {
+    q.blanks = [];
+    q.case_sensitive = false;
+  } else if (type === 'order_items') {
+    q.items = [{ content: '' }, { content: '' }, { content: '' }];
+  } else if (type === 'numeric') {
+    q.numeric_answer = '';
+    q.numeric_tolerance = '';
+  } else {
     q.correct_answer = '';
   }
+  return q;
+}
+
+const isOptionCorrect = (q, idx) =>
+  q.type === 'multiple_choice' ? q.correctOption === idx : Boolean(q.options[idx]?.correct);
+
+// ─── Huecos y elementos ──────────────────────────────────────────────────────
+/** Ajusta la lista de respuestas al número de ___ del enunciado, sin perder lo escrito. */
+function syncBlanks(q) {
+  const n = countBlanks(q.content);
+  if (q.blanks.length < n) q.blanks.push(...Array(n - q.blanks.length).fill(''));
+  else if (q.blanks.length > n) q.blanks.splice(n);
+}
+
+watch(questions, (list) => {
+  list.filter((q) => q.type === 'fill_blank').forEach(syncBlanks);
+}, { deep: true });
+
+/** Inserta ___ donde está el cursor del enunciado (o al final). */
+async function insertBlank(q) {
+  const el = document.getElementById(`qc-${q._key}`);
+  const at = el && document.activeElement === el ? el.selectionStart : q.content.length;
+  const before = q.content.slice(0, at);
+  const after = q.content.slice(at);
+  const pad = before && !/\s$/.test(before) ? ' ' : '';
+  q.content = `${before}${pad}___${after && !/^\s/.test(after) ? ' ' : ''}${after}`;
+  await nextTick();
+  el?.focus();
+  const caret = before.length + pad.length + 3;
+  el?.setSelectionRange(caret, caret);
+}
+
+function moveItem(q, idx, dir) {
+  const to = idx + dir;
+  if (to < 0 || to >= q.items.length) return;
+  [q.items[idx], q.items[to]] = [q.items[to], q.items[idx]];
+}
+
+/** "París | Paris" → ['París', 'Paris'] */
+const splitAlternatives = (text) => String(text ?? '').split('|').map((a) => a.trim()).filter(Boolean);
+
+/** Acepta coma decimal: "3,14" → 3.14; devuelve null si no es un número. */
+function parseNumber(text) {
+  const clean = String(text ?? '').trim().replace(/\s/g, '').replace(',', '.');
+  return clean !== '' && Number.isFinite(Number(clean)) ? Number(clean) : null;
+}
+
+async function focusQuestion(q) {
+  await nextTick();
+  document.getElementById(`q-${q._key}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  document.getElementById(`qc-${q._key}`)?.focus({ preventScroll: true });
+}
+
+function addQuestion(type) {
+  const q = newQuestion(type);
   questions.value.push(q);
+  focusQuestion(q);
+}
+
+function duplicateQuestion(idx) {
+  const copy = JSON.parse(JSON.stringify(questions.value[idx]));
+  copy._key = ++keyCounter;
+  delete copy.id; // la copia es una pregunta nueva
+  questions.value.splice(idx + 1, 0, copy);
+  focusQuestion(copy);
+}
+
+const moveAnnouncement = ref('');
+
+function moveQuestion(idx, dir) {
+  const to = idx + dir;
+  if (to < 0 || to >= questions.value.length) return;
+  const list = questions.value;
+  [list[idx], list[to]] = [list[to], list[idx]];
+  moveAnnouncement.value = `Pregunta movida a la posición ${to + 1} de ${list.length}.`;
+}
+
+// ─── Arrastrar y soltar ──────────────────────────────────────────────────────
+// La tarjeta solo es arrastrable mientras se pulsa el asa: así se puede seguir
+// seleccionando texto dentro de los campos.
+const drag = reactive({ armed: null, from: null, over: null, before: true });
+
+function resetDrag() {
+  Object.assign(drag, { armed: null, from: null, over: null, before: true });
+}
+
+function onDragStart(e, idx) {
+  if (drag.armed === null) return e.preventDefault();
+  drag.from = idx;
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', String(idx)); // Firefox no arrastra sin datos
+}
+
+function onDragOver(e, idx) {
+  if (drag.from === null) return;
+  const rect = e.currentTarget.getBoundingClientRect();
+  drag.over = idx;
+  drag.before = e.clientY < rect.top + rect.height / 2;
+}
+
+function onDrop() {
+  const { from, over, before } = drag;
+  resetDrag();
+  if (from === null || over === null) return;
+  let to = before ? over : over + 1;
+  if (from < to) to -= 1;
+  if (to === from) return;
+  const [moved] = questions.value.splice(from, 1);
+  questions.value.splice(to, 0, moved);
+  moveAnnouncement.value = `Pregunta movida a la posición ${to + 1} de ${questions.value.length}.`;
+}
+
+function removeOption(q, oIdx) {
+  q.options.splice(oIdx, 1);
+  if (q.correctOption === oIdx) q.correctOption = 0;
+  else if (q.correctOption > oIdx) q.correctOption -= 1;
+}
+
+const showRemove = ref(false);
+const removeIdx = ref(-1);
+
+function isBlank(q) {
+  return !q.content.trim() && !q.explanation?.trim()
+    && !(q.options || []).some((o) => o.content.trim())
+    && !(q.items || []).some((it) => it.content.trim())
+    && !(q.blanks || []).some((b) => b.trim())
+    && !q.correct_answer?.trim()
+    && !String(q.numeric_answer ?? '').trim();
+}
+
+function requestRemove(idx) {
+  // Una pregunta vacía se borra sin preguntar
+  if (isBlank(questions.value[idx])) return removeQuestion(idx);
+  removeIdx.value = idx;
+  showRemove.value = true;
 }
 
 function removeQuestion(idx) {
-  if (confirm('¿Eliminar esta pregunta?')) {
-    questions.value.splice(idx, 1);
+  showRemove.value = false;
+  if (idx >= 0) questions.value.splice(idx, 1);
+}
+
+// ─── Cambios sin guardar ─────────────────────────────────────────────────────
+const dirty = ref(false);
+let trackChanges = false;
+let saved = false;
+
+watch([form, questions, timeMinutes, noTimeLimit, attemptsCount, unlimitedAttempts, passwordEnabled, passwordValue], () => {
+  if (trackChanges) dirty.value = true;
+}, { deep: true });
+
+const showLeave = ref(false);
+let pendingLeave = null;
+
+onBeforeRouteLeave((to, from, next) => {
+  if (!dirty.value || saved) return next();
+  pendingLeave = next;
+  showLeave.value = true;
+});
+
+const cancelLeave = () => {
+  showLeave.value = false;
+  pendingLeave?.(false);
+  pendingLeave = null;
+};
+
+const confirmLeave = () => {
+  showLeave.value = false;
+  // Salir sin guardar es descartar a propósito: no se ofrece recuperarlo después
+  removeDraft(storageKey.value);
+  const next = pendingLeave;
+  pendingLeave = null;
+  next?.();
+};
+
+// ─── Copia local (autoguardado) ──────────────────────────────────────────────
+const storageKey = computed(() => draftKey(authStore.userId, editingTestId.value));
+const pendingDraft = ref(null);
+const draftSavedAt = ref(null);
+let baseUpdatedAt = null; // versión del test en el servidor al abrir el editor
+let draftTimer = null;
+
+const snapshot = () => ({
+  form: { ...form },
+  timeMinutes: timeMinutes.value,
+  noTimeLimit: noTimeLimit.value,
+  attemptsCount: attemptsCount.value,
+  unlimitedAttempts: unlimitedAttempts.value,
+  questions: JSON.parse(JSON.stringify(questions.value)),
+  baseUpdatedAt,
+});
+
+// Para comparar contenido sin las claves internas de Vue
+const comparable = (snap) => JSON.stringify({
+  ...snap,
+  baseUpdatedAt: undefined,
+  questions: snap.questions.map(({ _key, ...rest }) => rest),
+});
+
+const draftIsStale = computed(() => isEditMode.value && pendingDraft.value?.baseUpdatedAt !== baseUpdatedAt);
+
+const formatDraftDate = (ts) =>
+  new Date(ts).toLocaleString('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+
+function checkForDraft() {
+  const draft = readDraft(storageKey.value);
+  if (draft && comparable(draft) !== comparable(snapshot())) pendingDraft.value = draft;
+  else if (draft) removeDraft(storageKey.value);
+}
+
+function restoreDraft() {
+  const d = pendingDraft.value;
+  pendingDraft.value = null;
+  Object.assign(form, d.form);
+  timeMinutes.value = d.timeMinutes;
+  noTimeLimit.value = d.noTimeLimit;
+  attemptsCount.value = d.attemptsCount;
+  unlimitedAttempts.value = d.unlimitedAttempts;
+  questions.value = d.questions;
+  keyCounter = Math.max(keyCounter, ...d.questions.map((q) => q._key || 0));
+  draftSavedAt.value = d.savedAt;
+  toast.success('Borrador recuperado. Guárdalo para no perderlo.');
+}
+
+function discardDraft() {
+  pendingDraft.value = null;
+  removeDraft(storageKey.value);
+}
+
+// Guarda poco después de cada cambio. Mientras se decide qué hacer con un borrador
+// anterior no se guarda nada, para no pisarlo.
+watch([form, questions, timeMinutes, noTimeLimit, attemptsCount, unlimitedAttempts], () => {
+  if (!trackChanges || saved || pendingDraft.value || !authStore.userId) return;
+  clearTimeout(draftTimer);
+  draftTimer = setTimeout(() => {
+    draftSavedAt.value = writeDraft(storageKey.value, snapshot());
+  }, 800);
+}, { deep: true });
+
+const statusText = computed(() => {
+  if (dirty.value && draftSavedAt.value) {
+    const time = new Date(draftSavedAt.value).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+    return `Sin guardar · copia en este navegador a las ${time}`;
+  }
+  if (dirty.value) return 'Cambios sin guardar';
+  return isEditMode.value ? 'Sin cambios' : '';
+});
+
+function onBeforeUnload(e) {
+  if (dirty.value && !saved) {
+    e.preventDefault();
+    e.returnValue = '';
   }
 }
 
+// ─── Carga ───────────────────────────────────────────────────────────────────
 onMounted(async () => {
+  window.addEventListener('beforeunload', onBeforeUnload);
   try {
     const { data } = await api.get('/categories');
     categories.value = data;
@@ -235,48 +821,71 @@ onMounted(async () => {
   if (isEditMode.value) {
     await loadTestForEdit();
   } else {
-    addQuestion('multiple_choice');
+    questions.value.push(newQuestion('multiple_choice'));
   }
+  await nextTick();
+  if (!loadError.value) checkForDraft();
+  trackChanges = true;
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('beforeunload', onBeforeUnload);
+  clearTimeout(draftTimer);
 });
 
 async function loadTestForEdit() {
-  errors.value = [];
-
+  loadingTest.value = true;
   try {
     const { data } = await api.get(`/tests/${editingTestId.value}/edit`);
     const t = data.test;
+    baseUpdatedAt = t.updated_at ?? null;
 
     form.title = t.title ?? '';
     form.description = t.description ?? '';
-    form.category_id = t.category_id ?? '';
+    form.category_id = t.category_id ?? t.categories?.[0]?.id ?? '';
     form.difficulty = t.difficulty ?? 'medium';
-    form.time_limit = t.time_limit ? Math.round(t.time_limit / 60) : 0;
-    form.max_attempts = t.max_attempts ?? -1;
     form.pass_score = t.pass_score ?? 70;
+    form.wrong_penalty = Number(t.wrong_penalty) || 0;
+    hadPassword.value = Boolean(t.has_password);
+    passwordEnabled.value = hadPassword.value;
     form.is_public = Boolean(t.is_public);
     form.shuffle_questions = Boolean(t.shuffle_questions);
     form.shuffle_answers = Boolean(t.shuffle_answers);
     form.show_correct_answers = Boolean(t.show_correct_answers);
     form.show_explanations = Boolean(t.show_explanations);
+    form.display_mode = t.display_mode === 'all' ? 'all' : 'paged';
 
-    const mappedQuestions = (t.questions ?? []).map((q) => {
+    noTimeLimit.value = !t.time_limit;
+    if (t.time_limit) timeMinutes.value = Math.round(t.time_limit / 60);
+    unlimitedAttempts.value = (t.max_attempts ?? -1) === -1;
+    if (!unlimitedAttempts.value) attemptsCount.value = t.max_attempts;
+
+    questions.value = (t.questions ?? []).map((q) => {
       const mapped = {
         _key: ++keyCounter,
+        // Se conserva el id para actualizar la pregunta sin perder el historial de respuestas
+        id: q.id,
         type: q.type,
         content: q.content ?? '',
         explanation: q.explanation ?? '',
         points: q.points ?? 1,
       };
 
-      if (q.type === 'multiple_choice') {
-        const options = (q.options ?? []).map((opt) => ({ content: opt.content ?? '' }));
-        while (options.length < 2) {
-          options.push({ content: '' });
-        }
-
+      if (q.type === 'multiple_choice' || q.type === 'multiple_select') {
+        const options = (q.options ?? []).map((opt) => ({ content: opt.content ?? '', correct: Boolean(opt.is_correct) }));
+        while (options.length < 2) options.push({ content: '', correct: false });
         mapped.options = options;
-        const correctIdx = (q.options ?? []).findIndex((opt) => Boolean(opt.is_correct));
+        const correctIdx = options.findIndex((opt) => opt.correct);
         mapped.correctOption = correctIdx >= 0 ? correctIdx : 0;
+      } else if (q.type === 'fill_blank') {
+        mapped.blanks = (q.blanks ?? []).map((b) => (b.correct_answers ?? []).join(' | '));
+        mapped.case_sensitive = Boolean(q.blanks?.[0]?.case_sensitive);
+      } else if (q.type === 'order_items') {
+        mapped.items = (q.order_items ?? []).map((it) => ({ content: it.content ?? '' }));
+        while (mapped.items.length < 2) mapped.items.push({ content: '' });
+      } else if (q.type === 'numeric') {
+        mapped.numeric_answer = q.numeric_answer != null ? String(q.numeric_answer).replace('.', ',') : '';
+        mapped.numeric_tolerance = Number(q.numeric_tolerance) ? String(q.numeric_tolerance).replace('.', ',') : '';
       } else if (q.type === 'true_false') {
         const correct = (q.options ?? []).find((opt) => Boolean(opt.is_correct));
         mapped.correct = correct?.content === 'Falso' ? 'false' : 'true';
@@ -284,66 +893,141 @@ async function loadTestForEdit() {
         const correct = (q.options ?? []).find((opt) => Boolean(opt.is_correct));
         mapped.correct_answer = correct?.content ?? '';
       }
-
       return mapped;
     });
 
-    questions.value = mappedQuestions;
-    if (questions.value.length === 0) {
-      addQuestion('multiple_choice');
-    }
+    if (!questions.value.length) questions.value.push(newQuestion('multiple_choice'));
   } catch (err) {
-    if (err.response?.status === 403) {
-      errors.value.push('No tienes permisos para editar este test.');
-    } else if (err.response?.status === 404) {
-      errors.value.push('El test no existe o fue eliminado.');
-    } else {
-      errors.value.push('No se pudo cargar el test para edición.');
-    }
+    if (err.response?.status === 403) loadError.value = 'No tienes permiso para editar este test.';
+    else if (err.response?.status === 404) loadError.value = 'Este test no existe o se ha eliminado.';
+    else loadError.value = 'No se ha podido cargar el test.';
+  } finally {
+    loadingTest.value = false;
   }
 }
 
-async function submitTest() {
-  errors.value = [];
+// ─── Validación ──────────────────────────────────────────────────────────────
+function validate() {
+  fieldErrors.title = form.title.trim() ? '' : 'Ponle un título al test.';
+  const ps = Number(form.pass_score);
+  fieldErrors.pass_score = Number.isFinite(ps) && ps >= 0 && ps <= 100 ? '' : 'Usa un valor entre 0 y 100.';
+  fieldErrors.password = settingNewPassword.value && passwordValue.value.length < 4 ? 'Usa al menos 4 caracteres.' : '';
 
-  if (!form.title.trim()) {
-    errors.value.push('El título es obligatorio.');
+  const qErrors = {};
+  for (const q of questions.value) {
+    const e = {};
+    if (!q.content.trim()) e.content = 'Escribe el enunciado.';
+    if (q.type === 'multiple_choice') {
+      const filled = q.options.filter((o) => o.content.trim());
+      if (filled.length < 2) e.options = 'Escribe al menos dos respuestas.';
+      else if (!q.options[q.correctOption]?.content.trim()) e.options = 'La respuesta marcada como correcta está vacía.';
+    }
+    if (q.type === 'multiple_select') {
+      const filled = q.options.filter((o) => o.content.trim());
+      if (filled.length < 2) e.options = 'Escribe al menos dos respuestas.';
+      else if (!filled.some((o) => o.correct)) e.options = 'Marca al menos una respuesta correcta.';
+    }
+    if (q.type === 'fill_blank') {
+      if (!q.blanks.length) e.blanks = 'Añade al menos un hueco con ___ en el enunciado.';
+      else {
+        const missing = q.blanks.findIndex((b) => !splitAlternatives(b).length);
+        if (missing >= 0) e.blanks = `Escribe la respuesta del hueco ${missing + 1}.`;
+      }
+    }
+    if (q.type === 'order_items' && q.items.filter((it) => it.content.trim()).length < 2) {
+      e.items = 'Escribe al menos dos elementos.';
+    }
+    if (q.type === 'numeric') {
+      if (parseNumber(q.numeric_answer) === null) e.numeric = 'Escribe un número, por ejemplo 3,14.';
+      const tol = String(q.numeric_tolerance ?? '').trim();
+      if (tol && !(parseNumber(tol) >= 0)) e.tolerance = 'Usa 0 o un número positivo.';
+    }
+    if (q.type === 'short_answer' && !q.correct_answer?.trim()) e.answer = 'Escribe la respuesta correcta.';
+    if (Object.keys(e).length) qErrors[q._key] = e;
+  }
+  questionErrors.value = qErrors;
+
+  return !fieldErrors.title && !fieldErrors.pass_score && !fieldErrors.password
+    && !Object.keys(qErrors).length && questions.value.length > 0;
+}
+
+const errorSummary = computed(() => {
+  if (serverErrors.value.length) return serverErrors.value[0];
+  const nQ = Object.keys(questionErrors.value).length;
+  const parts = [];
+  if (fieldErrors.title || fieldErrors.pass_score || fieldErrors.password) parts.push('revisa los datos del test');
+  if (nQ) parts.push(`${plural(nQ, 'pregunta necesita', 'preguntas necesitan')} cambios`);
+  if (!parts.length) return '';
+  const s = parts.join(' y ');
+  return s.charAt(0).toUpperCase() + s.slice(1) + '.';
+});
+
+function scrollToFirstError() {
+  if (fieldErrors.title) {
+    document.querySelector('.ct__main .field input')?.focus();
     return;
   }
-  if (questions.value.length === 0) {
-    errors.value.push('Debes añadir al menos una pregunta.');
+  const first = questions.value.find((q) => questionErrors.value[q._key]);
+  if (first) document.getElementById(`q-${first._key}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Limpia los avisos de una pregunta en cuanto se corrige
+watch(questions, () => {
+  if (Object.keys(questionErrors.value).length) validate();
+}, { deep: true });
+
+// ─── Guardar ─────────────────────────────────────────────────────────────────
+async function submitTest(status) {
+  submitStatus.value = status;
+  serverErrors.value = [];
+  if (!questions.value.length) {
+    serverErrors.value = ['Añade al menos una pregunta.'];
+    return;
+  }
+  if (!validate()) {
+    scrollToFirstError();
     return;
   }
 
-  // Build payload
   const payload = {
     ...form,
-    time_limit: form.time_limit ? form.time_limit : 0,
-    status: submitStatus.value,
+    time_limit: noTimeLimit.value ? 0 : Math.max(1, Number(timeMinutes.value) || 1),
+    max_attempts: unlimitedAttempts.value ? -1 : Math.max(1, Number(attemptsCount.value) || 1),
+    wrong_penalty: Number(form.wrong_penalty) || 0,
+    ...(passwordPayload() !== undefined ? { password: passwordPayload() } : {}),
+    status,
     questions: questions.value.map((q, idx) => {
       const base = {
+        id: q.id ?? null,
         type: q.type,
-        content: q.content,
-        explanation: q.explanation || null,
-        points: q.points,
+        content: q.content.trim(),
+        explanation: q.explanation?.trim() || null,
+        points: Math.max(1, Number(q.points) || 1),
         order_index: idx,
       };
 
-      if (q.type === 'multiple_choice') {
-        base.options = q.options.map((o, oIdx) => ({
-          content: o.content,
-          is_correct: oIdx === q.correctOption,
-          order_index: oIdx,
-        }));
+      if (q.type === 'multiple_choice' || q.type === 'multiple_select') {
+        // Las opciones vacías se descartan, conservando cuáles son correctas
+        const kept = q.options
+          .map((o, i) => ({ content: o.content.trim(), is_correct: isOptionCorrect(q, i) }))
+          .filter((o) => o.content);
+        base.options = kept.map((o, i) => ({ ...o, order_index: i }));
+      } else if (q.type === 'fill_blank') {
+        base.blanks = q.blanks.map((b) => ({ answers: splitAlternatives(b) }));
+        base.case_sensitive = Boolean(q.case_sensitive);
+      } else if (q.type === 'order_items') {
+        base.items = q.items.map((it) => it.content.trim()).filter(Boolean);
+      } else if (q.type === 'numeric') {
+        base.numeric_answer = parseNumber(q.numeric_answer);
+        base.numeric_tolerance = parseNumber(q.numeric_tolerance) ?? 0;
       } else if (q.type === 'true_false') {
         base.options = [
           { content: 'Verdadero', is_correct: q.correct === 'true', order_index: 0 },
           { content: 'Falso', is_correct: q.correct === 'false', order_index: 1 },
         ];
-      } else if (q.type === 'short_answer') {
-        base.correct_answer = q.correct_answer;
+      } else {
+        base.correct_answer = q.correct_answer.trim();
       }
-
       return base;
     }),
   };
@@ -353,13 +1037,15 @@ async function submitTest() {
     const { data } = isEditMode.value
       ? await api.put(`/tests/${editingTestId.value}`, payload)
       : await api.post('/tests', payload);
+    saved = true;
+    dirty.value = false;
+    clearTimeout(draftTimer);
+    removeDraft(storageKey.value);
+    toast.success(status === 'published' ? 'Test publicado.' : 'Borrador guardado.');
     router.push(`/test/${data.test.id}`);
   } catch (err) {
-    if (err.response?.data?.errors) {
-      errors.value = Object.values(err.response.data.errors).flat();
-    } else {
-      errors.value.push(err.response?.data?.message || 'Error al crear el test.');
-    }
+    const errs = err.response?.data?.errors;
+    serverErrors.value = errs ? Object.values(errs).flat() : [err.response?.data?.message || 'No se ha podido guardar el test.'];
   } finally {
     submitting.value = false;
   }
@@ -367,96 +1053,542 @@ async function submitTest() {
 </script>
 
 <style scoped>
-.section {
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  margin-bottom: 2rem;
-  background: white;
+.ct {
+  padding-top: 32px;
 }
-.section-title {
-  font-size: 1.3rem;
+
+.ct__crumbs {
+  display: flex;
+  gap: 8px;
+  font-size: var(--fs-small);
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+
+.ct__crumbs a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.ct__crumbs a:hover {
+  color: var(--text);
+}
+
+.ct__crumbs [aria-current] {
+  color: var(--text);
+}
+
+.ct__title {
+  margin: 16px 0 32px;
+}
+
+.ct__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+.ct__main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 0;
+}
+
+.ct__panel {
+  background: var(--raised);
+  border-radius: var(--radius-panel);
+  padding: 24px;
+}
+
+.ct__panel :deep(.form-input) {
+  background-color: var(--bg);
+}
+
+.ct__h2 {
+  font-size: var(--fs-section);
   font-weight: 600;
-  color: #1a202c;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid #e2e8f0;
+  margin: 0 0 16px;
 }
-.question-card {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 2px solid #e2e8f0;
-  margin-bottom: 1.5rem;
+
+.ct__muted {
+  color: var(--muted);
+  font-size: var(--fs-small);
+  font-weight: 400;
 }
-.question-header {
+
+.ct__grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ct__grid2 :deep(.form-group) {
+  margin-bottom: 0;
+}
+
+/* Preguntas */
+.ct__questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ct__qs-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.ct__qs-head .ct__h2 {
+  margin: 0;
+}
+
+.ct__q {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: 20px 24px 8px;
+  background: var(--bg);
+  scroll-margin-top: 96px;
+}
+
+.ct__q.has-error {
+  border-color: var(--negative);
+}
+
+.ct__q.is-dragging {
+  opacity: 0.4;
+}
+
+.ct__q.drop-before {
+  box-shadow: 0 -3px 0 var(--accent);
+}
+
+.ct__q.drop-after {
+  box-shadow: 0 3px 0 var(--accent);
+}
+
+.ct__handle {
+  cursor: grab;
+  color: var(--muted);
+  touch-action: none;
+}
+
+.ct__handle:active {
+  cursor: grabbing;
+}
+
+/* Borrador recuperable */
+.ct__draft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: -16px 0 24px;
+  padding: 16px 20px;
+  border-radius: var(--radius-panel);
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.ct__draft-icon {
+  color: var(--accent-ink);
+  font-size: 1.25rem;
+}
+
+.ct__draft-text {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--fs-small);
+  color: var(--text-body);
+}
+
+.ct__draft-text strong {
+  color: var(--text);
+}
+
+.ct__draft-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ct__q-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid #e2e8f0;
+  gap: 12px;
+  margin-bottom: 12px;
 }
-.question-number {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+
+.ct__q-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.ct__q-tools {
+  display: flex;
+  gap: 2px;
+}
+
+.ct__q-tools .icon-btn {
+  width: 36px;
+  height: 36px;
+  font-size: 0.9rem;
+}
+
+.ct__q-tools .icon-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  background: transparent;
+}
+
+.ct__danger:hover {
+  color: var(--negative);
+  background: var(--negative-bg);
+}
+
+.field-legend {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  padding: 0;
+}
+
+.ct__opts {
+  border: 0;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.ct__opts-help {
+  margin: -4px 0 4px;
+}
+
+.ct__opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ct__radio {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--positive);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.ct__opt-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.ct__opt.is-correct .ct__opt-input {
+  border-color: var(--positive);
+}
+
+.ct__opt-tag {
+  flex-shrink: 0;
+}
+
+.ct__add-opt {
+  align-self: flex-start;
+}
+
+.ct__blank-n {
+  flex-shrink: 0;
+  min-width: 28px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.ct__opt .icon-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  background: transparent;
+}
+
+.ct__opts code {
+  font-size: 0.85em;
+  padding: 1px 6px;
+  border-radius: var(--radius-control);
+  background: var(--raised);
+}
+
+.ct__numeric :deep(.field) {
+  margin-bottom: 16px;
+}
+
+.ct__tf {
+  display: flex;
+  gap: 8px;
+}
+
+.ct__tf-opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+}
+
+.ct__tf-opt.is-correct {
+  border-color: var(--positive);
+  background: var(--positive-bg);
+  color: var(--positive-ink);
+}
+
+.ct__q-extra {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 96px;
+  gap: 16px;
+}
+
+.ct__empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--text-body);
+}
+
+.ct__add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ct__add .ct__muted {
+  margin-right: 4px;
+}
+
+/* Ajustes */
+.ct__side {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+}
+
+.ct__side :deep(.form-group) {
+  margin-bottom: 16px;
+}
+
+.ct__limit {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.ct__limit .ct__check {
+  margin-bottom: 26px;
+}
+
+.ct__check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-small);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ct__check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.ct__password {
+  border-top: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.ct__password .ct__switch {
+  border-bottom: 0;
+}
+
+.ct__password-note {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.ct__link {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--accent-ink);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ct__switches {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+
+.ct__switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+
+.ct__switch:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Interruptor accesible a partir de un checkbox real */
+.ct__switch input {
+  order: 2;
+  appearance: none;
+  width: 36px;
+  height: 20px;
+  border-radius: var(--radius-pill);
+  background: var(--control);
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.ct__switch input::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s;
+}
+
+.ct__switch input:checked {
+  background: var(--accent);
+}
+
+.ct__switch input:checked::after {
+  transform: translateX(16px);
+}
+
+/* Barra de guardado fija */
+.ct__bar {
+  grid-column: 1 / -1;
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  margin: 0 calc(var(--gutter) * -1);
+  background: var(--bg);
+  border-top: 1px solid var(--rule);
+}
+
+.ct__bar-inner {
+  min-height: 72px;
+  padding: 12px var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ct__bar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ct__bar-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--negative);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  margin: 0;
+}
+
+.ct__load-error {
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ct__load-error p {
+  margin: 0;
   font-weight: 600;
 }
-.btn-remove {
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
+
+.ct__modal-text {
+  color: var(--text-body);
+  margin: 0;
 }
-.btn-remove:hover {
-  background: #dc2626;
+
+@media (max-width: 960px) {
+  .ct__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ct__side {
+    position: static;
+  }
 }
-.option-item {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  margin-bottom: 0.75rem;
+
+@media (hover: none) {
+  /* En pantallas táctiles no hay arrastrar y soltar nativo: se usan las flechas */
+  .ct__handle {
+    display: none;
+  }
 }
-.option-item input[type='text'] {
-  flex: 1;
-}
-.btn-add-option {
-  background: #10b981;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-.btn-add-option:hover {
-  background: #059669;
-}
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-.help-text {
-  font-size: 0.85rem;
-  color: #718096;
-  margin-top: 0.5rem;
-}
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-@media (max-width: 768px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
+
+@media (max-width: 640px) {
+  .ct__grid2,
+  .ct__q-extra {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ct__q {
+    padding: 16px 16px 4px;
+  }
+
+  .ct__q-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ct__opt-tag {
+    display: none;
+  }
+
+  .ct__bar-actions {
+    width: 100%;
+  }
+
+  .ct__bar-actions .btn {
+    flex: 1;
   }
 }
 </style>

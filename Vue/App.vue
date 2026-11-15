@@ -1,42 +1,23 @@
 <template>
-  <div :class="{ 'dark-mode': isDark }">
-    <AppHeader />
-    <main>
-      <router-view />
-    </main>
-    <AppFooter />
-  </div>
+  <AppHeader v-if="!route.meta.hideChrome" />
+  <router-view />
+  <AppFooter />
+  <ToastStack />
 </template>
 
 <script setup>
-import { ref, onMounted, provide } from 'vue';
+import { provide } from 'vue';
+import { useRoute } from 'vue-router';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
-import 'theme-toggles/css/within.min.css';
+import ToastStack from './components/base/ToastStack.vue';
+import { useTheme } from './composables/useTheme';
+import './assets/tokens.css';
 import './assets/styles.css';
 
-
-const isDark = ref(false);
+const route = useRoute();
+const { isDark, toggleTheme } = useTheme();
 
 provide('isDark', isDark);
-provide('toggleTheme', () => {
-  isDark.value = !isDark.value;
-  document.body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
-});
-
-onMounted(() => {
-  const theme = localStorage.getItem('theme');
-  if (theme === 'dark') {
-    isDark.value = true;
-    document.body.classList.add('dark-mode');
-  }
-});
-
-// Provide toggle globally
-window.toggleTheme = () => {
-  isDark.value = !isDark.value;
-  document.body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
-};
+provide('toggleTheme', toggleTheme);
 </script>

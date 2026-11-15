@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,7 +12,7 @@ class TestAttempt extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'user_id', 'test_id', 'score', 'points_earned', 'total_points',
+        'user_id', 'test_id', 'mode', 'score', 'points_earned', 'total_points',
         'correct_answers', 'incorrect_answers', 'unanswered', 'time_spent',
         'is_completed', 'passed', 'started_at', 'completed_at',
         'ip_address', 'user_agent',
@@ -20,11 +21,22 @@ class TestAttempt extends Model
     protected function casts(): array
     {
         return [
+            'points_earned' => 'float',
             'is_completed' => 'boolean',
             'passed' => 'boolean',
             'started_at' => 'datetime',
             'completed_at' => 'datetime',
         ];
+    }
+
+    public const MODE_EXAM = 'exam';
+
+    public const MODE_REVIEW = 'review';
+
+    /** Exámenes terminados: lo único que cuenta para intentos, medias y estadísticas. */
+    public function scopeCompletedExams(Builder $query): Builder
+    {
+        return $query->where('is_completed', true)->where('mode', self::MODE_EXAM);
     }
 
     public function user(): BelongsTo

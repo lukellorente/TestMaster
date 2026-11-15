@@ -1,30 +1,56 @@
 import axios from 'axios';
 
+/*
+ * Autenticación SPA de Sanctum: la sesión viaja en una cookie httpOnly que
+ * JavaScript no puede leer, y axios reenvía la cookie XSRF-TOKEN como cabecera
+ * X-XSRF-TOKEN en cada petición mutante.
+ */
 const api = axios.create({
     baseURL: '/api',
+    withCredentials: true,
+    withXSRFToken: true,
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
     },
 });
 
-// Add auth token to requests
-api.interceptors.request.use((config) => {
-    const token = localStorage.getItem('token');
-    if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-});
+export function getCsrfCookie() {
+    return axios.get('/sanctum/csrf-cookie', { withCredentials: true });
+}
 
-// Handle 401 responses
+let onUnauthenticated = null;
+export function setUnauthenticatedHandler(fn) {
+    onUnauthenticated = fn;
+}
+
+let onSuspended = null;
+export function setSuspendedHandler(fn) {
+    onSuspended = fn;
+}
+
 api.interceptors.response.use(
     (response) => response,
-    (error) => {
-        if (error.response?.status === 401) {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
-            window.location.href = '/login';
+    async (error) => {
+        const status = error.response?.status;
+        const config = error.config || {};
+
+        // 419 = token CSRF caducado: se renueva y se reintenta una vez.
+        if (status === 419 && !config._csrfRetried) {
+            config._csrfRetried = true;
+            await getCsrfCookie();
+            return api(config);
+        }
+
+        if (status === 401 && !config.skipAuthRedirect && onUnauthenticated) {
+            onUnauthenticated();
+        }
+
+        // Cuenta suspendida con la sesión abierta: el servidor ya la ha cerrado.
+        // (En el login el formulario ya muestra el mensaje.)
+        if (status === 403 && error.response?.data?.suspended && onSuspended && config.url !== '/login') {
+            onSuspended(error.response.data.message);
         }
         return Promise.reject(error);
     }

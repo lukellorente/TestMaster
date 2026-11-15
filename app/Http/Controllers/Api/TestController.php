@@ -9,7 +9,13 @@ use App\Models\QuestionOption;
 use App\Models\Category;
 use App\Models\UserStat;
 use App\Models\User;
+use App\Questions\QuestionTypes;
+use App\Questions\ReviewQueue;
+use App\Support\TestAccess;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,33 +23,35 @@ class TestController extends Controller
 {
     private function canViewTest(Test $test): bool
     {
-        if ($test->is_public && $test->status === 'published') {
-            return true;
-        }
-
-        $authUser = auth('sanctum')->user();
-        if (! $authUser) {
-            return false;
-        }
-
-        if ($this->isAdminUser($authUser)) {
-            return true;
-        }
-
-        return (int) $authUser->id === (int) $test->user_id;
-    }
-
-    private function isAdminUser(?User $user): bool
-    {
-        return $user
-            && $user->role === 'admin'
-            && $user->email === 'admin@example.com';
+        return TestAccess::canView($test, auth('sanctum')->user());
     }
 
     private function canManageTest(?User $user, Test $test): bool
     {
-        return $user
-            && ((int) $user->id === (int) $test->user_id || $this->isAdminUser($user));
+        return TestAccess::canManage($test, $user);
+    }
+
+    /** Respuesta para un test con contraseña que aún no se ha desbloqueado en esta sesión. */
+    private function lockedResponse(): JsonResponse
+    {
+        return response()->json([
+            'message' => 'Este test está protegido con contraseña.',
+            'locked' => true,
+        ], 423);
+    }
+
+    /**
+     * Contraseña desde el editor: ausente = no cambia; null o '' = se quita; texto = se pone.
+     */
+    private function passwordFromRequest(Request $request, ?Test $test = null): ?string
+    {
+        if (! $request->has('password')) {
+            return $test?->getAttributes()['password'] ?? null;
+        }
+
+        $plain = (string) $request->input('password', '');
+
+        return $plain === '' ? null : Hash::make($plain);
     }
 
     /**
@@ -56,8 +64,9 @@ class TestController extends Controller
             ->where('status', 'published')
             ->withCount('questions')
             ->withCount(['attempts as completed_attempts_count' => function ($q) {
-                $q->where('is_completed', true);
-            }]);
+                $q->completedExams();
+            }])
+            ->addSelect(DB::raw('(tests.password IS NOT NULL) as has_password'));
 
         // Filter by category
         if ($request->has('category_id')) {
@@ -91,7 +100,27 @@ class TestController extends Controller
             default => $query->orderBy('created_at', 'desc'),
         };
 
-        $tests = $query->paginate($request->get('per_page', 20));
+        $perPage = min(max((int) $request->get('per_page', 20), 1), 50);
+        $tests = $query->paginate($perPage);
+
+        return response()->json($tests);
+    }
+
+    /**
+     * Tests destacados por la administración, el más reciente primero.
+     */
+    public function featured(): JsonResponse
+    {
+        $tests = Test::with(['user:id,name,avatar', 'categories:id,name,icon'])
+            ->where('is_featured', true)
+            ->where('is_public', true)
+            ->where('status', 'published')
+            ->withCount('questions')
+            ->withCount(['attempts as completed_attempts_count' => fn ($q) => $q->completedExams()])
+            ->addSelect(DB::raw('(tests.password IS NOT NULL) as has_password'))
+            ->orderByDesc('featured_at')
+            ->limit(6)
+            ->get();
 
         return response()->json($tests);
     }
@@ -104,7 +133,7 @@ class TestController extends Controller
         $stats = [
             'total_tests' => Test::where('is_public', true)->where('status', 'published')->count(),
             'total_users' => \App\Models\User::count(),
-            'total_attempts' => \App\Models\TestAttempt::where('is_completed', true)->count(),
+            'total_attempts' => \App\Models\TestAttempt::completedExams()->count(),
         ];
 
         return response()->json($stats);
@@ -118,7 +147,7 @@ class TestController extends Controller
         $test = Test::with(['user:id,name,avatar', 'categories:id,name,icon'])
             ->withCount('questions')
             ->withCount(['attempts as completed_attempts_count' => function ($q) {
-                $q->where('is_completed', true);
+                $q->completedExams();
             }])
             ->findOrFail($id);
 
@@ -130,7 +159,7 @@ class TestController extends Controller
 
         // Average score
         $avgScore = $test->attempts()
-            ->where('is_completed', true)
+            ->completedExams()
             ->avg('score');
 
         $data = $test->toArray();
@@ -139,18 +168,38 @@ class TestController extends Controller
         // If user is authenticated, get their attempt info
         $authUser = auth('sanctum')->user();
         $data['can_manage'] = $this->canManageTest($authUser, $test);
+        $data['has_password'] = $test->hasPassword();
+        $data['locked'] = TestAccess::isLocked($test, $authUser, request()->hasSession() ? request()->session() : null);
         if ($authUser) {
             $userId = $authUser->id;
             $data['user_attempts'] = $test->attempts()
                 ->where('user_id', $userId)
-                ->where('is_completed', true)
+                ->completedExams()
                 ->count();
 
             $data['last_attempt'] = $test->attempts()
                 ->where('user_id', $userId)
-                ->where('is_completed', true)
+                ->completedExams()
                 ->orderBy('completed_at', 'desc')
-                ->first(['score', 'completed_at']);
+                ->first(['id', 'score', 'completed_at']);
+
+            $data['pending_review_count'] = app(ReviewQueue::class)->pendingCount($userId, $test->id);
+
+            // Evolución de tus notas en este test (solo exámenes, los 30 últimos en orden cronológico).
+            $data['score_history'] = $test->attempts()
+                ->where('user_id', $userId)
+                ->completedExams()
+                ->orderByDesc('completed_at')
+                ->limit(30)
+                ->get(['id', 'score', 'passed', 'completed_at'])
+                ->reverse()
+                ->values()
+                ->map(fn ($a) => [
+                    'id' => $a->id,
+                    'score' => round((float) $a->score, 1),
+                    'passed' => (bool) $a->passed,
+                    'completed_at' => $a->completed_at?->toIso8601String(),
+                ]);
         }
 
         // Increment views
@@ -182,13 +231,18 @@ class TestController extends Controller
             'shuffle_answers' => 'boolean',
             'show_correct_answers' => 'boolean',
             'show_explanations' => 'boolean',
+            'display_mode' => 'in:paged,all',
             'status' => 'in:draft,published',
             'questions' => 'required|array|min:1',
-            'questions.*.type' => 'required|in:multiple_choice,true_false,short_answer',
+            'wrong_penalty' => 'numeric|min:0|max:1',
+            'password' => 'nullable|string|min:4|max:100',
+            'questions.*.type' => ['required', Rule::in(QuestionTypes::keys())],
             'questions.*.content' => 'required|string',
             'questions.*.explanation' => 'nullable|string',
             'questions.*.points' => 'integer|min:1',
         ]);
+
+        $this->validateQuestions($request->questions);
 
         return DB::transaction(function () use ($request, $user) {
             $timeLimitSeconds = ($request->time_limit ?? 0) > 0
@@ -203,10 +257,13 @@ class TestController extends Controller
                 'time_limit' => $timeLimitSeconds,
                 'max_attempts' => $request->get('max_attempts', -1),
                 'pass_score' => $request->get('pass_score', 70),
+                'wrong_penalty' => (float) $request->get('wrong_penalty', 0),
+                'password' => $this->passwordFromRequest($request),
                 'shuffle_questions' => $request->boolean('shuffle_questions'),
                 'shuffle_answers' => $request->boolean('shuffle_answers'),
                 'show_correct_answers' => $request->boolean('show_correct_answers', true),
                 'show_explanations' => $request->boolean('show_explanations', true),
+                'display_mode' => $request->get('display_mode', 'paged'),
                 'difficulty' => $request->get('difficulty', 'medium'),
                 'status' => $request->get('status', 'draft'),
                 'published_at' => $request->status === 'published' ? now() : null,
@@ -219,61 +276,7 @@ class TestController extends Controller
                     ->increment('tests_count');
             }
 
-            // Create questions
-            $orderIndex = 1;
-            foreach ($request->questions as $qData) {
-                $content = $qData['content'] ?? '';
-                if (is_array($content)) $content = '';
-                if (empty(trim($content))) continue;
-
-                $question = Question::create([
-                    'test_id' => $test->id,
-                    'type' => $qData['type'],
-                    'content' => $content,
-                    'explanation' => $qData['explanation'] ?? null,
-                    'points' => $qData['points'] ?? 1,
-                    'order_index' => $orderIndex++, 
-                ]);
-
-                if ($qData['type'] === 'multiple_choice') {
-                    foreach (($qData['options'] ?? []) as $idx => $opt) {
-                        $optionStr = is_array($opt) ? ($opt['content'] ?? '') : $opt;
-                        if (empty(trim($optionStr))) continue;
-                        QuestionOption::create([
-                            'question_id' => $question->id,
-                            'content' => $optionStr,
-                            'is_correct' => is_array($opt) ? ($opt['is_correct'] ?? false) : false,
-                            'order_index' => is_array($opt) ? ($opt['order_index'] ?? $idx) : $idx,
-                        ]);
-                    }
-                } elseif ($qData['type'] === 'true_false') {
-                    $correct = $qData['correct'] ?? 'true';
-                    QuestionOption::create([
-                        'question_id' => $question->id,
-                        'content' => 'Verdadero',
-                        'is_correct' => $correct === 'true',
-                        'order_index' => 1,
-                    ]);
-                    QuestionOption::create([
-                        'question_id' => $question->id,
-                        'content' => 'Falso',
-                        'is_correct' => $correct === 'false',
-                        'order_index' => 2,
-                    ]);
-                } elseif ($qData['type'] === 'short_answer') {
-                    $correctAnswer = $qData['correct_answer'] ?? '';
-                    if (is_array($correctAnswer)) $correctAnswer = '';
-                    $correctAnswer = trim($correctAnswer);
-                    if (!empty($correctAnswer)) {
-                        QuestionOption::create([
-                            'question_id' => $question->id,
-                            'content' => $correctAnswer,
-                            'is_correct' => true,
-                            'order_index' => 1,
-                        ]);
-                    }
-                }
-            }
+            $this->syncQuestions($test, $request->questions);
 
             // Update user stats
             \App\Models\UserStat::firstOrCreate(['user_id' => $user->id])
@@ -308,6 +311,8 @@ class TestController extends Controller
             'questions.options' => function ($q) {
                 $q->orderBy('order_index');
             },
+            'questions.blanks',
+            'questions.orderItems',
         ])->findOrFail($id);
 
         if (! $this->canManageTest($user, $test)) {
@@ -318,6 +323,7 @@ class TestController extends Controller
 
         $data = $test->toArray();
         $data['category_id'] = $test->categories->first()?->id;
+        $data['has_password'] = $test->hasPassword();
 
         return response()->json([
             'test' => $data,
@@ -355,13 +361,21 @@ class TestController extends Controller
             'shuffle_answers' => 'sometimes|boolean',
             'show_correct_answers' => 'sometimes|boolean',
             'show_explanations' => 'sometimes|boolean',
+            'display_mode' => 'sometimes|in:paged,all',
             'status' => 'sometimes|in:draft,published,archived',
             'questions' => 'sometimes|array|min:1',
-            'questions.*.type' => 'required_with:questions|in:multiple_choice,true_false,short_answer',
+            'wrong_penalty' => 'sometimes|numeric|min:0|max:1',
+            'password' => 'sometimes|nullable|string|min:4|max:100',
+            'questions.*.type' => ['required_with:questions', Rule::in(QuestionTypes::keys())],
             'questions.*.content' => 'required_with:questions|string',
+            'questions.*.id' => 'sometimes|nullable|integer',
             'questions.*.explanation' => 'nullable|string',
             'questions.*.points' => 'sometimes|integer|min:1',
         ]);
+
+        if ($request->has('questions')) {
+            $this->validateQuestions($request->questions);
+        }
 
         return DB::transaction(function () use ($request, $test) {
             $oldStatus = $test->status;
@@ -376,6 +390,8 @@ class TestController extends Controller
                     : $test->time_limit,
                 'max_attempts' => $request->has('max_attempts') ? $request->max_attempts : $test->max_attempts,
                 'pass_score' => $request->has('pass_score') ? $request->pass_score : $test->pass_score,
+                'wrong_penalty' => $request->has('wrong_penalty') ? (float) $request->wrong_penalty : $test->wrong_penalty,
+                'password' => $this->passwordFromRequest($request, $test),
                 'shuffle_questions' => $request->has('shuffle_questions')
                     ? $request->boolean('shuffle_questions')
                     : $test->shuffle_questions,
@@ -388,6 +404,7 @@ class TestController extends Controller
                 'show_explanations' => $request->has('show_explanations')
                     ? $request->boolean('show_explanations')
                     : $test->show_explanations,
+                'display_mode' => $request->has('display_mode') ? $request->display_mode : $test->display_mode,
                 'difficulty' => $request->has('difficulty') ? $request->difficulty : $test->difficulty,
                 'status' => $newStatus,
             ]);
@@ -419,72 +436,7 @@ class TestController extends Controller
             }
 
             if ($request->has('questions')) {
-                Question::where('test_id', $test->id)->delete();
-
-                $orderIndex = 1;
-                foreach ($request->questions as $qData) {
-                    $content = $qData['content'] ?? '';
-                    if (is_array($content)) {
-                        $content = '';
-                    }
-                    if (empty(trim($content))) {
-                        continue;
-                    }
-
-                    $question = Question::create([
-                        'test_id' => $test->id,
-                        'type' => $qData['type'],
-                        'content' => $content,
-                        'explanation' => $qData['explanation'] ?? null,
-                        'points' => $qData['points'] ?? 1,
-                        'order_index' => $orderIndex++,
-                    ]);
-
-                    if ($qData['type'] === 'multiple_choice') {
-                        foreach (($qData['options'] ?? []) as $idx => $opt) {
-                            $optionStr = is_array($opt) ? ($opt['content'] ?? '') : $opt;
-                            if (empty(trim($optionStr))) {
-                                continue;
-                            }
-
-                            QuestionOption::create([
-                                'question_id' => $question->id,
-                                'content' => $optionStr,
-                                'is_correct' => is_array($opt) ? ($opt['is_correct'] ?? false) : false,
-                                'order_index' => is_array($opt) ? ($opt['order_index'] ?? $idx) : $idx,
-                            ]);
-                        }
-                    } elseif ($qData['type'] === 'true_false') {
-                        $correct = $qData['correct'] ?? 'true';
-                        QuestionOption::create([
-                            'question_id' => $question->id,
-                            'content' => 'Verdadero',
-                            'is_correct' => $correct === 'true',
-                            'order_index' => 1,
-                        ]);
-                        QuestionOption::create([
-                            'question_id' => $question->id,
-                            'content' => 'Falso',
-                            'is_correct' => $correct === 'false',
-                            'order_index' => 2,
-                        ]);
-                    } elseif ($qData['type'] === 'short_answer') {
-                        $correctAnswer = $qData['correct_answer'] ?? '';
-                        if (is_array($correctAnswer)) {
-                            $correctAnswer = '';
-                        }
-                        $correctAnswer = trim($correctAnswer);
-
-                        if (! empty($correctAnswer)) {
-                            QuestionOption::create([
-                                'question_id' => $question->id,
-                                'content' => $correctAnswer,
-                                'is_correct' => true,
-                                'order_index' => 1,
-                            ]);
-                        }
-                    }
-                }
+                $this->syncQuestions($test, $request->questions);
             }
 
             $test->load(['questions.options', 'categories']);
@@ -514,30 +466,18 @@ class TestController extends Controller
             ], 403);
         }
 
-        return DB::transaction(function () use ($test, $user) {
-            $categoryIds = $test->categories()->pluck('categories.id')->all();
+        $test->deleteWithCounters();
 
-            if (! empty($categoryIds)) {
-                Category::whereIn('id', $categoryIds)->decrement('tests_count');
-            }
-
-            $test->delete();
-
-            $userStat = UserStat::firstOrCreate(['user_id' => $user->id]);
-            if ($userStat->tests_created > 0) {
-                $userStat->decrement('tests_created');
-            }
-
-            return response()->json([
-                'message' => 'Test eliminado correctamente',
-            ]);
-        });
+        return response()->json([
+            'message' => 'Test eliminado correctamente',
+        ]);
     }
 
     /**
-     * Get test questions for taking the test
+     * Get test questions for taking the test.
+     * Con `?mode=review` devuelve solo las preguntas que el usuario tiene pendientes de repasar.
      */
-    public function questions(int $id): JsonResponse
+    public function questions(Request $request, int $id, ReviewQueue $reviewQueue): JsonResponse
     {
         $test = Test::findOrFail($id);
 
@@ -547,7 +487,17 @@ class TestController extends Controller
             ], 404);
         }
 
-        $questionsQuery = Question::where('test_id', $id);
+        if (TestAccess::isLocked($test, $request->user(), $request->session())) {
+            return $this->lockedResponse();
+        }
+
+        $isReview = $request->query('mode') === 'review';
+
+        $questionsQuery = Question::where('test_id', $id)->with(QuestionTypes::RELATIONS);
+
+        if ($isReview) {
+            $questionsQuery->whereIn('id', $reviewQueue->pendingQuestionIds((int) $request->user()->id, $test->id));
+        }
 
         if ($test->shuffle_questions) {
             $questionsQuery->inRandomOrder();
@@ -555,32 +505,116 @@ class TestController extends Controller
             $questionsQuery->orderBy('order_index');
         }
 
-        $questions = $questionsQuery->get();
-
-        foreach ($questions as $question) {
-            if (in_array($question->type, ['multiple_choice', 'true_false'])) {
-                $optionsQuery = QuestionOption::where('question_id', $question->id);
-                if ($test->shuffle_answers) {
-                    $optionsQuery->inRandomOrder();
-                } else {
-                    $optionsQuery->orderBy('order_index');
-                }
-                // Don't expose is_correct to client
-                $question->options = $optionsQuery->get(['id', 'question_id', 'content', 'order_index', 'image_url']);
-            } else {
-                $question->options = null;
-            }
-        }
+        // Se construye a mano para no filtrar la solución (opciones correctas, respuesta
+        // numérica, explicación...). Cada tipo decide qué datos extra ve el alumno.
+        $questions = $questionsQuery->get()->map(fn (Question $question) => array_merge([
+            'id' => $question->id,
+            'type' => $question->type,
+            'content' => $question->content,
+            'points' => $question->points,
+            'order_index' => $question->order_index,
+            'image_url' => $question->image_url,
+        ], QuestionTypes::get($question->type)->forTaking($question, (bool) $test->shuffle_answers)));
 
         return response()->json([
             'test' => [
                 'id' => $test->id,
                 'title' => $test->title,
-                'time_limit' => $test->time_limit,
+                'mode' => $isReview ? 'review' : 'exam',
+                // El repaso es para estudiar: sin límite de tiempo.
+                'time_limit' => $isReview ? null : $test->time_limit,
+                'display_mode' => $test->display_mode ?? 'paged',
                 'shuffle_questions' => $test->shuffle_questions,
+                'wrong_penalty' => $test->wrong_penalty,
             ],
             'questions' => $questions,
         ]);
+    }
+
+    /**
+     * Desbloquea un test con contraseña para la sesión actual.
+     */
+    public function unlock(Request $request, int $id): JsonResponse
+    {
+        $request->validate(['password' => 'required|string|max:100']);
+
+        $test = Test::findOrFail($id);
+
+        if (! $this->canViewTest($test)) {
+            return response()->json(['message' => 'Test no encontrado.'], 404);
+        }
+
+        if ($test->hasPassword() && ! Hash::check($request->password, $test->getAttributes()['password'])) {
+            throw ValidationException::withMessages(['password' => 'La contraseña no es correcta.']);
+        }
+
+        TestAccess::unlock($test, $request->session());
+
+        return response()->json(['message' => 'Test desbloqueado.', 'locked' => false]);
+    }
+
+    /**
+     * Valida lo específico de cada tipo de pregunta (opciones, huecos, elementos...).
+     *
+     * @throws ValidationException
+     */
+    private function validateQuestions(array $questions): void
+    {
+        $errors = [];
+
+        foreach (array_values($questions) as $index => $data) {
+            if (! is_array($data) || trim((string) ($data['content'] ?? '')) === '') {
+                $errors["questions.{$index}.content"] = 'La pregunta '.($index + 1).' necesita un enunciado.';
+
+                continue;
+            }
+
+            $error = QuestionTypes::get($data['type'])->validate($data);
+            if ($error !== null) {
+                $errors["questions.{$index}"] = 'La pregunta '.($index + 1).' '.$error;
+            }
+        }
+
+        if ($errors) {
+            throw ValidationException::withMessages($errors);
+        }
+    }
+
+    /**
+     * Guarda las preguntas del editor. Las que traen `id` de este test se actualizan
+     * en su sitio en lugar de borrarse y recrearse: así no se pierden las respuestas
+     * de intentos anteriores (historial y repaso de fallos). Las que ya no vienen se borran.
+     */
+    private function syncQuestions(Test $test, array $questions): void
+    {
+        $existing = Question::where('test_id', $test->id)->get()->keyBy('id');
+        $keptIds = [];
+
+        foreach (array_values($questions) as $index => $data) {
+            $type = QuestionTypes::get($data['type']);
+            $attributes = array_merge([
+                'test_id' => $test->id,
+                'type' => $data['type'],
+                'content' => trim($data['content']),
+                'explanation' => $data['explanation'] ?? null,
+                'points' => $data['points'] ?? 1,
+                'order_index' => $index + 1,
+            ], $type->attributes($data));
+
+            $question = $existing->get((int) ($data['id'] ?? 0));
+
+            // Un id ajeno, repetido o con otro tipo se trata como pregunta nueva.
+            if ($question && $question->type === $data['type'] && ! in_array($question->id, $keptIds, true)) {
+                $question->update($attributes);
+            } else {
+                $question = Question::create($attributes);
+            }
+
+            $type->store($question, $data);
+            $keptIds[] = $question->id;
+        }
+
+        Question::where('test_id', $test->id)->whereNotIn('id', $keptIds)->delete();
     }
 
     /**

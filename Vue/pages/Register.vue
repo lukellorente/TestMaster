@@ -1,139 +1,164 @@
 <template>
-  <div class="auth-hero">
-    <div style="max-width: 520px; width: 100%; margin: 0 auto">
-      <div class="glass-card">
-    
-      <h1 style="text-align: center; margin-bottom: 0.25rem; color: #1a202c">Crear Cuenta</h1>
-      <p style="text-align: center; color: #a0aec0; margin-bottom: 1rem">
-        Únete a TestMaster gratis
-      </p>
+  <AuthShell title="Crear cuenta" subtitle="Es gratis. Podrás hacer tests, guardar tus notas y crear los tuyos.">
+    <div v-if="error" class="auth-error" role="alert">{{ error }}</div>
 
-      <!-- Social Login -->
-      <div class="social-login">
-        <button type="button" class="btn-social btn-google">
-          <i class="fa-brands fa-google"></i>
-          Registrarse con Google
-        </button>
-        <button type="button" class="btn-social btn-github">
-          <i class="fa-brands fa-github"></i>
-          Registrarse con GitHub
-        </button>
-      </div>
+    <form novalidate @submit.prevent="handleRegister">
+      <BaseInput
+        v-model="form.name"
+        label="Nombre"
+        autocomplete="name"
+        maxlength="100"
+        :error="fieldErrors.name"
+        required
+        autofocus
+      />
+      <BaseInput
+        v-model="form.email"
+        label="Correo electrónico"
+        type="email"
+        autocomplete="email"
+        placeholder="tu@email.com"
+        :error="fieldErrors.email"
+        required
+      />
+      <BaseInput
+        v-model="form.password"
+        label="Contraseña"
+        type="password"
+        autocomplete="new-password"
+        help-text="Al menos 8 caracteres."
+        :error="fieldErrors.password"
+        required
+      />
+      <BaseInput
+        v-model="form.password_confirmation"
+        label="Repite la contraseña"
+        type="password"
+        autocomplete="new-password"
+        :error="fieldErrors.password_confirmation"
+        required
+      />
+      <label class="auth-consent" :class="{ 'auth-consent--error': fieldErrors.accept_terms }">
+        <input v-model="form.accept_terms" type="checkbox" required />
+        <span>
+          Tengo 14 años o más y he leído la
+          <router-link to="/privacy" target="_blank">Política de Privacidad</router-link>
+          y acepto los <router-link to="/terms" target="_blank">Términos de uso</router-link>.
+        </span>
+      </label>
+      <p v-if="fieldErrors.accept_terms" class="auth-consent__error" role="alert">{{ fieldErrors.accept_terms }}</p>
+      <BaseButton type="submit" size="lg" :loading="submitting" class="auth-submit">
+        {{ submitting ? 'Creando cuenta…' : 'Crear cuenta' }}
+      </BaseButton>
+    </form>
 
-      <div class="auth-divider"><span>o</span></div>
-
-      <BaseAlert v-if="error" variant="error" dismissible @dismiss="error = ''">
-        {{ error }}
-      </BaseAlert>
-      <BaseAlert v-if="success" variant="success">
-        {{ success }}
-      </BaseAlert>
-
-      <form @submit.prevent="handleRegister">
-        <BaseInput
-          v-model="form.name"
-          label="Nombre Completo"
-          type="text"
-          icon="fa-solid fa-user"
-          placeholder="Juan Pérez"
-          required
-          autofocus
-        />
-
-        <BaseInput
-          v-model="form.email"
-          label="Correo Electrónico"
-          type="email"
-          icon="fa-solid fa-envelope"
-          placeholder="tu@email.com"
-          required
-        />
-
-        <BaseInput
-          v-model="form.password"
-          label="Contraseña"
-          type="password"
-          icon="fa-solid fa-lock"
-          placeholder="Mínimo 6 caracteres"
-          help="Mínimo 6 caracteres"
-          required
-        />
-
-        <BaseInput
-          v-model="form.password_confirmation"
-          label="Confirmar Contraseña"
-          type="password"
-          icon="fa-solid fa-lock"
-          placeholder="Repite tu contraseña"
-          required
-        />
-
-        <BaseButton
-          type="submit"
-          :loading="submitting"
-          style="width: 100%; padding: 0.6rem; margin-bottom: 0.75rem"
-        >
-          {{ submitting ? 'Creando...' : 'Crear Cuenta' }}
-        </BaseButton>
-      </form>
-
-      <div style="text-align: center; padding-top: 0.75rem; border-top: 1px solid #e2e8f0">
-        <p style="color: #718096; font-size: 0.85rem">
-          ¿Ya tienes cuenta?
-          <router-link to="/login" style="color: #667eea; font-weight: 600; text-decoration: none">
-            Inicia sesión aquí
-          </router-link>
-        </p>
-      </div>
-      </div>
-    </div>
-  </div>
+    <template #footer>
+      ¿Ya tienes cuenta? <router-link :to="{ path: '/login', query: route.query }">Inicia sesión</router-link>
+    </template>
+  </AuthShell>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, reactive, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
+import AuthShell from '../components/auth/AuthShell.vue';
 import BaseButton from '../components/base/BaseButton.vue';
 import BaseInput from '../components/base/BaseInput.vue';
-import BaseAlert from '../components/base/BaseAlert.vue';
+import { safeRedirect } from '../utils/redirect';
+import { useToast } from '../composables/useToast';
 
 const authStore = useAuthStore();
+const route = useRoute();
 const router = useRouter();
+const toast = useToast();
 
-const form = ref({ name: '', email: '', password: '', password_confirmation: '' });
+const form = reactive({ name: '', email: '', password: '', password_confirmation: '', accept_terms: false });
+const fieldErrors = reactive({ name: '', email: '', password: '', password_confirmation: '', accept_terms: '' });
 const error = ref('');
-const success = ref('');
 const submitting = ref(false);
 
 onMounted(() => {
-  if (authStore.isLoggedIn) {
-    router.push('/');
-  }
+  if (authStore.isLoggedIn) router.replace(safeRedirect(route.query.redirect));
 });
+
+const validate = () => {
+  fieldErrors.name = form.name.trim() ? '' : 'Escribe tu nombre.';
+  fieldErrors.email = !form.email.trim()
+    ? 'Escribe tu correo electrónico.'
+    : !/^\S+@\S+\.\S+$/.test(form.email.trim())
+      ? 'Este correo no parece válido.'
+      : '';
+  fieldErrors.password = form.password.length >= 8 ? '' : 'La contraseña necesita al menos 8 caracteres.';
+  fieldErrors.password_confirmation =
+    form.password_confirmation === form.password ? '' : 'Las contraseñas no coinciden.';
+  fieldErrors.accept_terms = form.accept_terms
+    ? ''
+    : 'Debes confirmar que tienes al menos 14 años y aceptar la Política de Privacidad y los Términos.';
+  return !Object.values(fieldErrors).some(Boolean);
+};
 
 const handleRegister = async () => {
   error.value = '';
-  success.value = '';
+  if (!validate()) return;
   submitting.value = true;
   try {
-    await authStore.register(
-      form.value.name,
-      form.value.email,
-      form.value.password,
-      form.value.password_confirmation
-    );
-    success.value = 'Cuenta creada exitosamente. Redirigiendo...';
-    setTimeout(() => router.push('/'), 1500);
+    await authStore.register(form.name.trim(), form.email.trim(), form.password, form.password_confirmation, form.accept_terms);
+    toast.success(`Cuenta creada. ¡Bienvenido, ${form.name.trim().split(' ')[0]}!`);
+    router.push(safeRedirect(route.query.redirect));
   } catch (err) {
-    const errors = err.response?.data?.errors;
-    if (errors) {
-      error.value = Object.values(errors).flat().join(' ');
+    const errs = err.response?.data?.errors;
+    if (errs) {
+      for (const key of Object.keys(fieldErrors)) fieldErrors[key] = errs[key]?.[0] ?? '';
+      if (!Object.values(fieldErrors).some(Boolean)) error.value = Object.values(errs).flat().join(' ');
     } else {
-      error.value = err.response?.data?.message || 'Error al crear la cuenta.';
+      error.value = err.response?.data?.message || 'No se ha podido crear la cuenta. Inténtalo de nuevo.';
     }
   } finally {
     submitting.value = false;
   }
 };
 </script>
+
+<style scoped>
+.auth-error {
+  background: var(--negative-bg);
+  color: var(--negative-ink);
+  border-radius: var(--radius-card);
+  padding: 12px 14px;
+  font-size: var(--fs-small);
+  margin-bottom: 16px;
+}
+
+.auth-consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: var(--fs-small);
+  line-height: 1.45;
+  margin: 4px 0 8px;
+  cursor: pointer;
+}
+
+.auth-consent input {
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.auth-consent--error {
+  color: var(--negative-ink);
+}
+
+.auth-consent__error {
+  color: var(--negative-ink);
+  font-size: var(--fs-small);
+  margin: 0 0 8px;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 8px;
+}
+</style>

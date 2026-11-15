@@ -60,8 +60,8 @@ const avatarStyle = computed(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background-color: var(--sunk);
+  color: var(--muted);
   font-weight: 600;
   border-radius: 50%;
   flex-shrink: 0;
