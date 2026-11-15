@@ -6,12 +6,19 @@ services:
       args:
         WWWGROUP: '${WWWGROUP:-1000}'
     image: 'sail-8.5/app'
+    # Límites para no quitar recursos a otros servicios del VPS (p. ej. un servidor de Minecraft).
+    # También afectan a npm run build durante el despliegue: tarda algo más, pero sin picos.
+    cpus: '${APP_CPUS:-1.5}'
+    mem_limit: '${APP_MEM_LIMIT:-2g}'
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     environment:
       WWWUSER: '${WWWUSER:-1000}'
       LARAVEL_SAIL: 1
       XDEBUG_MODE: 'off'
+      # Procesos PHP que atienden peticiones en paralelo. Debe ser variable del
+      # contenedor: con la config cacheada (php artisan optimize) Laravel no lee .env.
+      PHP_CLI_SERVER_WORKERS: '${PHP_CLI_SERVER_WORKERS:-2}'
     volumes:
       - '.:/var/www/html'
     networks:
@@ -21,6 +28,8 @@ services:
 
   mysql:
     image: 'mysql:8.4'
+    cpus: '${MYSQL_CPUS:-1}'
+    mem_limit: '${MYSQL_MEM_LIMIT:-1536m}'
     environment:
       MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
       MYSQL_ROOT_HOST: '%'
