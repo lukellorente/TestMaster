@@ -13,12 +13,11 @@
 import LegalDocument from '../components/legal/LegalDocument.vue';
 
 /*
- * ⚠️ RELLENA ANTES DE PUBLICAR: busca los marcadores entre corchetes
- *    [TU NOMBRE], [TU EMAIL], [PROVEEDOR DE HOSTING], [PAÍS DEL SERVIDOR].
+ * Datos del responsable: Luke Llorente (lukemartenllorente@gmail.com). Hosting: VPS Oracle Cloud en España.
  * Si cambias el contenido de forma relevante, actualiza también la fecha de arriba y
  * AuthController::PRIVACY_POLICY_VERSION para que quede constancia de qué versión aceptó cada usuario.
  */
-const CONTACT_EMAIL = '[TU EMAIL]';
+const CONTACT_EMAIL = 'lukemartenllorente@gmail.com';
 
 const summary = {
   title: 'En pocas palabras',
@@ -41,7 +40,7 @@ const sections = [
     color: 'blue',
     title: 'Responsable del tratamiento',
     content: [
-      'TestMaster es un proyecto personal/educativo. El responsable del tratamiento de los datos es <strong>[TU NOMBRE]</strong>, persona física.',
+      'TestMaster es un proyecto personal/educativo. El responsable del tratamiento de los datos es <strong>Luke Llorente</strong>, persona física.',
       `Para cualquier cuestión sobre privacidad puedes escribir a <strong>${CONTACT_EMAIL}</strong>.`,
     ],
     highlight: {
@@ -127,7 +126,7 @@ const sections = [
     table: {
       headers: ['Proveedor', 'Función', 'Ubicación'],
       rows: [
-        ['[PROVEEDOR DE HOSTING]', 'Servidor y base de datos', '[PAÍS DEL SERVIDOR]'],
+        ['Oracle Cloud Infrastructure (servidor virtual Ubuntu)', 'Servidor y base de datos', 'España (UE)'],
       ],
     },
   },

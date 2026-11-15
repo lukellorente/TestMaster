@@ -134,21 +134,21 @@ import { ref, reactive, computed } from 'vue';
 import BaseInput from '../components/base/BaseInput.vue';
 
 const channels = [
-  { id: 'email', title: 'Soporte general', value: '[TU EMAIL]', meta: 'Respuesta en menos de 24 h', href: 'mailto:[TU EMAIL]' },
-  { id: 'legal', title: 'Consultas legales', value: '[TU EMAIL]', meta: 'Términos y condiciones', href: 'mailto:[TU EMAIL]' },
-  { id: 'privacy', title: 'Protección de datos', value: '[TU EMAIL]', meta: 'Derechos RGPD', href: 'mailto:[TU EMAIL]' },
+  { id: 'email', title: 'Soporte general', value: 'lukemartenllorente@gmail.com', meta: 'Respuesta en menos de 24 h', href: 'mailto:lukemartenllorente@gmail.com' },
+  { id: 'legal', title: 'Consultas legales', value: 'lukemartenllorente@gmail.com', meta: 'Términos y condiciones', href: 'mailto:lukemartenllorente@gmail.com' },
+  { id: 'privacy', title: 'Protección de datos', value: 'lukemartenllorente@gmail.com', meta: 'Derechos RGPD', href: 'mailto:lukemartenllorente@gmail.com' },
   { id: 'twitter', title: 'Twitter / X', value: '@TestMasterApp', meta: 'Respuesta rápida', href: 'https://twitter.com/TestMasterApp', external: true },
 ];
 
 // Cada asunto se dirige al buzón que corresponde
 const subjects = [
-  { value: 'soporte', label: 'Soporte técnico', to: '[TU EMAIL]' },
-  { value: 'cuenta', label: 'Mi cuenta', to: '[TU EMAIL]' },
-  { value: 'contenido', label: 'Contenido de un test', to: '[TU EMAIL]' },
-  { value: 'legal', label: 'Legal', to: '[TU EMAIL]' },
-  { value: 'rgpd', label: 'Mis datos (RGPD)', to: '[TU EMAIL]' },
-  { value: 'sugerencia', label: 'Sugerencia', to: '[TU EMAIL]' },
-  { value: 'otro', label: 'Otro', to: '[TU EMAIL]' },
+  { value: 'soporte', label: 'Soporte técnico', to: 'lukemartenllorente@gmail.com' },
+  { value: 'cuenta', label: 'Mi cuenta', to: 'lukemartenllorente@gmail.com' },
+  { value: 'contenido', label: 'Contenido de un test', to: 'lukemartenllorente@gmail.com' },
+  { value: 'legal', label: 'Legal', to: 'lukemartenllorente@gmail.com' },
+  { value: 'rgpd', label: 'Mis datos (RGPD)', to: 'lukemartenllorente@gmail.com' },
+  { value: 'sugerencia', label: 'Sugerencia', to: 'lukemartenllorente@gmail.com' },
+  { value: 'otro', label: 'Otro', to: 'lukemartenllorente@gmail.com' },
 ];
 
 const schedule = [
@@ -176,7 +176,7 @@ const errors = reactive({ subject: '', name: '', email: '', message: '', privacy
 const opened = ref(false);
 
 const currentSubject = computed(() => subjects.find((s) => s.value === form.subject));
-const recipient = computed(() => currentSubject.value?.to ?? '[TU EMAIL]');
+const recipient = computed(() => currentSubject.value?.to ?? 'lukemartenllorente@gmail.com');
 
 const validateField = (field) => {
   if (field === 'name') errors.name = form.name.trim() ? '' : 'Escribe tu nombre.';

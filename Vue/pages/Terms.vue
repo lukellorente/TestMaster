@@ -29,7 +29,7 @@ const footer = {
   title: '¿Tienes dudas legales?',
   text: 'Escríbenos antes de usar el servicio si algo no te queda claro.',
   actions: [
-    { label: 'Escribir a [TU EMAIL]', href: 'mailto:[TU EMAIL]', primary: true },
+    { label: 'Escribir a lukemartenllorente@gmail.com', href: 'mailto:lukemartenllorente@gmail.com', primary: true },
     { label: 'Política de privacidad', to: '/privacy' },
     { label: 'Centro de ayuda', to: '/help' },
   ],
@@ -42,8 +42,8 @@ const sections = [
     color: 'blue',
     title: 'Objeto y ámbito de aplicación',
     content: [
-      'Los presentes Términos y Condiciones (en adelante, "Términos") regulan el acceso y uso de la plataforma TestMaster, accesible en <strong>[TU DOMINIO]</strong> y sus subdominios, así como cualquier aplicación móvil o herramienta asociada (en conjunto, el "Servicio").',
-      'El Servicio es operado por <strong>[TU NOMBRE]</strong> (en adelante, "TestMaster", "nosotros", "el responsable"). Al registrarte o usar el Servicio aceptas estos Términos junto con nuestra <strong>Política de Privacidad</strong>, que forma parte integrante de este acuerdo.',
+      'Los presentes Términos y Condiciones (en adelante, "Términos") regulan el acceso y uso de la plataforma TestMaster, accesible en <strong>testmaster.myddns.me</strong> y sus subdominios, así como cualquier aplicación móvil o herramienta asociada (en conjunto, el "Servicio").',
+      'El Servicio es operado por <strong>Luke Llorente</strong> (en adelante, "TestMaster", "nosotros", "el responsable"). Al registrarte o usar el Servicio aceptas estos Términos junto con nuestra <strong>Política de Privacidad</strong>, que forma parte integrante de este acuerdo.',
     ],
     highlight: {
       type: 'info',
@@ -77,7 +77,7 @@ const sections = [
         title: 'Seguridad de la cuenta',
         icon: 'fa-solid fa-lock',
         content: [
-          'Eres el único responsable de mantener la confidencialidad de tus credenciales y de todas las actividades que se realicen desde tu cuenta. Notifícanos de inmediato a <strong>[TU EMAIL]</strong> si sospechas un acceso no autorizado.',
+          'Eres el único responsable de mantener la confidencialidad de tus credenciales y de todas las actividades que se realicen desde tu cuenta. Notifícanos de inmediato a <strong>lukemartenllorente@gmail.com</strong> si sospechas un acceso no autorizado.',
         ],
       },
     ],
@@ -144,7 +144,7 @@ const sections = [
     color: 'teal',
     title: 'Propiedad intelectual de TestMaster',
     content: [
-      'Todos los elementos que constituyen TestMaster — incluyendo el software, diseño, logotipos, marca, interfaz de usuario, código fuente, base de datos de categorías y cualquier otro material desarrollado por el responsable — son propiedad exclusiva de <strong>[TU NOMBRE]</strong> o de sus licenciantes y están protegidos por las leyes de propiedad intelectual e industrial aplicables.',
+      'Todos los elementos que constituyen TestMaster — incluyendo el software, diseño, logotipos, marca, interfaz de usuario, código fuente, base de datos de categorías y cualquier otro material desarrollado por el responsable — son propiedad exclusiva de <strong>Luke Llorente</strong> o de sus licenciantes y están protegidos por las leyes de propiedad intelectual e industrial aplicables.',
       'Queda expresamente prohibido copiar, modificar, distribuir, vender, licenciar, realizar ingeniería inversa o crear obras derivadas de cualquier parte del Servicio sin autorización escrita previa.',
     ],
     highlight: {
@@ -192,7 +192,7 @@ const sections = [
         title: 'Baja voluntaria',
         icon: 'fa-solid fa-door-open',
         content: [
-          'Puedes cancelar tu cuenta en cualquier momento desde la configuración de tu perfil o contactando con <strong>[TU EMAIL]</strong>. La cancelación conlleva la eliminación definitiva de tus datos en los plazos descritos en la Política de Privacidad.',
+          'Puedes cancelar tu cuenta en cualquier momento desde la configuración de tu perfil o contactando con <strong>lukemartenllorente@gmail.com</strong>. La cancelación conlleva la eliminación definitiva de tus datos en los plazos descritos en la Política de Privacidad.',
         ],
       },
     ],
