@@ -1,0 +1,560 @@
+{
+    "slug": "ce-gobierno-administracion",
+    "title": "Gobierno y Administración (Títulos IV y V CE)",
+    "description": "Test para repasar los Títulos IV y V de la Constitución (arts. 97 a 116): Gobierno, Administración, moción de censura, cuestión de confianza y estados de alarma, excepción y sitio. Me vino bien para preparar el examen de AGE.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:37:07+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 97 de la Constitución Española, el Gobierno ejerce, de acuerdo con la Constitución y las leyes:",
+            "explanation": "El art. 97 CE atribuye al Gobierno la función ejecutiva y la potestad reglamentaria, además de dirigir la política interior y exterior, la Administración civil y militar y la defensa del Estado.",
+            "options": [
+                {
+                    "content": "La potestad legislativa y la función jurisdiccional.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La función ejecutiva y la potestad legislativa delegada.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La función ejecutiva y la potestad reglamentaria.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La función ejecutiva y el control de constitucionalidad de las leyes.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 98 de la Constitución, el Gobierno se compone de:",
+            "explanation": "El art. 98.1 CE incluye expresamente a «los demás miembros que establezca la ley»; los Secretarios de Estado no forman parte del Gobierno.",
+            "options": [
+                {
+                    "content": "El Presidente, los Vicepresidentes en su caso, los Ministros y los demás miembros que establezca la ley.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente, los Vicepresidentes, los Ministros y los Secretarios de Estado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente, los Ministros y los Secretarios de Estado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente, los Vicepresidentes y los Ministros, sin que la ley pueda añadir otros miembros.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el procedimiento de investidura del artículo 99 CE, si el candidato no obtiene la mayoría absoluta en la primera votación, se someterá a nueva votación transcurridas:",
+            "explanation": "El art. 99.3 CE establece que la nueva votación se hará 48 horas después de la anterior y bastará la mayoría simple.",
+            "options": [
+                {
+                    "content": "24 horas desde la anterior.",
+                    "is_correct": false
+                },
+                {
+                    "content": "48 horas desde la anterior.",
+                    "is_correct": true
+                },
+                {
+                    "content": "72 horas desde la anterior.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco días desde la anterior.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si transcurridos dos meses desde la primera votación de investidura ningún candidato hubiera obtenido la confianza del Congreso, el Rey disolverá ambas Cámaras y convocará elecciones con el refrendo del:",
+            "explanation": "Así lo dispone el art. 99.5 CE: el decreto de disolución y convocatoria lo refrenda el Presidente del Congreso.",
+            "options": [
+                {
+                    "content": "Presidente del Gobierno en funciones.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Presidente del Senado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Presidente del Tribunal Constitucional.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Presidente del Congreso de los Diputados.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 100 de la Constitución, los demás miembros del Gobierno serán nombrados y separados por el Rey, a propuesta de:",
+            "explanation": "El art. 100 CE atribuye la propuesta de nombramiento y cese de los Ministros y demás miembros al Presidente del Gobierno.",
+            "options": [
+                {
+                    "content": "El Presidente del Congreso de los Diputados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Gobierno.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Consejo de Ministros.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Cortes Generales.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es causa de cese del Gobierno según el artículo 101 de la Constitución:",
+            "explanation": "El art. 101.1 CE enumera como causas el inicio de nueva legislatura tras elecciones generales, la pérdida de confianza parlamentaria y la dimisión o fallecimiento del Presidente; las elecciones autonómicas no lo son.",
+            "options": [
+                {
+                    "content": "La celebración de elecciones autonómicas.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La celebración de elecciones generales.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La pérdida de la confianza parlamentaria.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La dimisión o el fallecimiento del Presidente.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 102 de la Constitución, la responsabilidad criminal del Presidente y los demás miembros del Gobierno será exigible, en su caso, ante:",
+            "explanation": "El art. 102.1 CE atribuye esta competencia a la Sala de lo Penal del Tribunal Supremo.",
+            "options": [
+                {
+                    "content": "El Pleno del Tribunal Constitucional.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de lo Contencioso-Administrativo de la Audiencia Nacional.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Sala de lo Penal del Tribunal Supremo.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Pleno del Congreso de los Diputados.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La acusación por traición o por cualquier delito contra la seguridad del Estado en el ejercicio de las funciones de un miembro del Gobierno solo podrá ser planteada por iniciativa de:",
+            "explanation": "Lo establece el art. 102.2 CE: iniciativa de una cuarta parte de los miembros del Congreso y aprobación por su mayoría absoluta.",
+            "options": [
+                {
+                    "content": "Una décima parte de los miembros del Congreso y aprobada por mayoría simple.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un tercio de los miembros del Congreso y aprobada por mayoría absoluta.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una quinta parte de los miembros del Senado y aprobada por tres quintos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cuarta parte de los miembros del Congreso y aprobada por mayoría absoluta del mismo.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 102.3 de la Constitución, la prerrogativa real de gracia es aplicable a los supuestos de acusación por traición o delitos contra la seguridad del Estado de los miembros del Gobierno.",
+            "explanation": "El art. 102.3 CE dispone expresamente que la prerrogativa real de gracia no será aplicable a ninguno de los supuestos del propio artículo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale el principio que NO aparece expresamente citado en el artículo 103.1 de la Constitución como principio de actuación de la Administración Pública:",
+            "explanation": "El art. 103.1 CE cita eficacia, jerarquía, descentralización, desconcentración y coordinación, con sometimiento pleno a la ley y al Derecho; la transparencia no figura.",
+            "options": [
+                {
+                    "content": "Eficacia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Transparencia.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desconcentración.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Coordinación.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 103.3 de la Constitución, el acceso a la función pública se regulará de acuerdo con los principios de:",
+            "explanation": "El art. 103.3 CE remite a la ley el estatuto de los funcionarios y el acceso a la función pública conforme a los principios de mérito y capacidad.",
+            "options": [
+                {
+                    "content": "Igualdad y publicidad.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Antigüedad y mérito.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mérito y capacidad.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Capacidad y experiencia.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 105 de la Constitución, la ley regulará el acceso de los ciudadanos a los archivos y registros administrativos, salvo en lo que afecte a:",
+            "explanation": "Son las excepciones previstas en el art. 105.b) CE.",
+            "options": [
+                {
+                    "content": "La seguridad y defensa del Estado, la averiguación de los delitos y la intimidad de las personas.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El orden público, la política exterior y el secreto profesional.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La hacienda pública, la seguridad vial y la protección de datos comerciales.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La seguridad nacional, la política monetaria y los asuntos reservados del Consejo de Ministros.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 106.2 de la Constitución, los particulares, en los términos establecidos por la ley, tendrán derecho a ser indemnizados por toda lesión que sufran en sus bienes y derechos, salvo en los casos de:",
+            "explanation": "El art. 106.2 CE excluye la indemnización en los casos de fuerza mayor, siempre que la lesión sea consecuencia del funcionamiento de los servicios públicos.",
+            "options": [
+                {
+                    "content": "Caso fortuito.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Culpa exclusiva de la víctima.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estado de excepción.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fuerza mayor.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El artículo 107 de la Constitución define como «supremo órgano consultivo del Gobierno» al:",
+            "explanation": "El art. 107 CE configura al Consejo de Estado como supremo órgano consultivo del Gobierno, y remite a una ley orgánica su composición y competencia.",
+            "options": [
+                {
+                    "content": "Consejo General del Poder Judicial.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consejo de Estado.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Consejo Económico y Social.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tribunal de Cuentas.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 108 de la Constitución, el Gobierno responde solidariamente en su gestión política ante:",
+            "explanation": "El art. 108 CE establece la responsabilidad política solidaria del Gobierno ante el Congreso de los Diputados.",
+            "options": [
+                {
+                    "content": "El Congreso de los Diputados.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Senado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Cortes Generales en sesión conjunta.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Estado.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 111 de la Constitución, cada Cámara establecerá en sus sesiones un tiempo mínimo semanal para las preguntas e interpelaciones al Gobierno y a cada uno de sus miembros.",
+            "explanation": "Así lo recoge el art. 111.2 CE, que garantiza ese tiempo mínimo semanal en cada Cámara.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la cuestión de confianza regulada en el artículo 112 de la Constitución, la confianza se entenderá otorgada cuando vote a favor de la misma:",
+            "explanation": "El art. 112 CE exige solo mayoría simple; en cambio, la moción de censura requiere mayoría absoluta.",
+            "options": [
+                {
+                    "content": "La mayoría absoluta de los Diputados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las dos terceras partes de los Diputados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mayoría simple de los Diputados.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las tres quintas partes de los Diputados.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 113 de la Constitución, la moción de censura deberá ser propuesta, al menos, por:",
+            "explanation": "El art. 113.2 CE exige la propuesta de al menos la décima parte de los Diputados, que además debe incluir un candidato a la Presidencia del Gobierno.",
+            "options": [
+                {
+                    "content": "Una quinta parte de los Diputados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cuarta parte de los Diputados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un tercio de los Diputados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una décima parte de los Diputados.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La moción de censura no podrá ser votada hasta que transcurran, desde su presentación:",
+            "explanation": "El art. 113.3 CE fija un plazo de cinco días, durante los dos primeros de los cuales podrán presentarse mociones alternativas.",
+            "options": [
+                {
+                    "content": "Cinco días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 114 de la Constitución, si el Congreso adopta una moción de censura:",
+            "explanation": "Según el art. 114.2 CE, el Rey nombrará Presidente del Gobierno al candidato incluido en la moción aprobada.",
+            "options": [
+                {
+                    "content": "Se someterá el candidato propuesto a una nueva votación a las 48 horas.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Gobierno presentará su dimisión al Rey y el candidato incluido en la moción se entenderá que ha obtenido la confianza de la Cámara a efectos del artículo 99.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Rey abrirá una nueva ronda de consultas con los representantes de los grupos políticos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Rey disolverá las Cortes Generales y convocará elecciones.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 115 de la Constitución, no procederá nueva disolución de las Cámaras por el Presidente del Gobierno antes de que transcurra, desde la anterior:",
+            "explanation": "El art. 115.2 CE establece que no procederá nueva disolución antes de que transcurra un año desde la anterior.",
+            "options": [
+                {
+                    "content": "Seis meses.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un periodo de sesiones.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 116 de la Constitución, el estado de alarma será declarado por el Gobierno mediante decreto acordado en Consejo de Ministros por un plazo máximo de:",
+            "explanation": "El art. 116.2 CE fija un máximo de quince días, y su prórroga requiere autorización del Congreso.",
+            "options": [
+                {
+                    "content": "Ocho días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Treinta días.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sesenta días.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El estado de excepción será declarado por el Gobierno mediante decreto acordado en Consejo de Ministros, previa autorización del Congreso de los Diputados, y su duración máxima inicial será de:",
+            "explanation": "El art. 116.3 CE señala una duración máxima de treinta días, prorrogable por otro plazo igual con los mismos requisitos.",
+            "options": [
+                {
+                    "content": "Quince días, prorrogables por otro plazo igual.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sesenta días, sin posibilidad de prórroga.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Noventa días, prorrogables por otro plazo igual.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días, prorrogables por otro plazo igual.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 116.4 de la Constitución, el estado de sitio será declarado por:",
+            "explanation": "El art. 116.4 CE atribuye la declaración al Congreso por mayoría absoluta, a propuesta exclusiva del Gobierno; el Congreso determina su ámbito, duración y condiciones.",
+            "options": [
+                {
+                    "content": "La mayoría absoluta del Congreso de los Diputados, a propuesta exclusiva del Gobierno.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Gobierno mediante decreto, dando cuenta posteriormente al Congreso.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mayoría simple del Congreso de los Diputados, a propuesta del Gobierno.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Cortes Generales en sesión conjunta, por mayoría de tres quintos.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 116.5 de la Constitución, no podrá procederse a la disolución del Congreso mientras estén declarados algunos de los estados de alarma, excepción o sitio.",
+            "explanation": "El art. 116.5 CE lo prohíbe expresamente; si el Congreso está disuelto o ha expirado su mandato, sus funciones las asume la Diputación Permanente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,453 @@
+{
+    "slug": "ce-titulo-ii-corona",
+    "title": "Constitución - Título II La Corona",
+    "description": "Test para repasar el Título II de la Constitución (La Corona), artículos 56 a 65. Va bien para empezar a preparar el tema de la AGE.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:33:48+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 56 de la Constitución Española, el Rey es el Jefe del Estado y símbolo de:",
+            "explanation": "El artículo 56.1 CE define al Rey como Jefe del Estado, símbolo de su unidad y permanencia.",
+            "options": [
+                {
+                    "content": "Su unidad y permanencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "La soberanía nacional y la igualdad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La independencia y la neutralidad política",
+                    "is_correct": false
+                },
+                {
+                    "content": "La unidad y la autonomía territorial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 56.3 de la Constitución, la persona del Rey de España:",
+            "explanation": "El artículo 56.3 CE establece que la persona del Rey es inviolable y no está sujeta a responsabilidad.",
+            "options": [
+                {
+                    "content": "Es responsable ante las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Está sujeta a responsabilidad penal ante el Tribunal Supremo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es inviolable y no está sujeta a responsabilidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Es inviolable pero responde de los actos no refrendados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 57.1 de la Constitución, la Corona de España es hereditaria en los sucesores de:",
+            "explanation": "El artículo 57.1 CE indica que la Corona es hereditaria en los sucesores de S. M. Don Juan Carlos I de Borbón, legítimo heredero de la dinastía histórica.",
+            "options": [
+                {
+                    "content": "Alfonso XIII de Borbón",
+                    "is_correct": false
+                },
+                {
+                    "content": "S. M. Don Juan Carlos I de Borbón, legítimo heredero de la dinastía histórica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Felipe V de Borbón",
+                    "is_correct": false
+                },
+                {
+                    "content": "Don Juan de Borbón, conde de Barcelona",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué título recibe el heredero de la Corona desde su nacimiento o desde que se produce el hecho que origina el llamamiento, según el artículo 57.2 CE?",
+            "explanation": "El artículo 57.2 CE atribuye al heredero el título de Príncipe de Asturias y los demás vinculados a la sucesión de la Corona.",
+            "options": [
+                {
+                    "content": "Príncipe de Girona",
+                    "is_correct": false
+                },
+                {
+                    "content": "Príncipe de Viana",
+                    "is_correct": false
+                },
+                {
+                    "content": "Infante de España",
+                    "is_correct": false
+                },
+                {
+                    "content": "Príncipe de Asturias",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta correcta sobre el orden de sucesión en la Corona según el artículo 57.1 CE:",
+            "explanation": "El artículo 57.1 CE establece el orden regular de primogenitura y representación, siendo preferida siempre la línea anterior a las posteriores.",
+            "options": [
+                {
+                    "content": "Se rige por primogenitura y representación, y en el mismo grado se prefiere a la persona de más edad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se rige por elección de las Cortes Generales en cada caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se rige por primogenitura y representación, prefiriéndose la línea anterior a las posteriores",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se rige por ultimogenitura, prefiriéndose el hijo menor",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 57.5 de la Constitución, las abdicaciones y renuncias y cualquier duda de hecho o de derecho que ocurra en el orden de sucesión a la Corona se resolverán mediante:",
+            "explanation": "El artículo 57.5 CE remite a una ley orgánica la resolución de abdicaciones, renuncias y dudas sucesorias.",
+            "options": [
+                {
+                    "content": "Real Decreto aprobado en Consejo de Ministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolución del Tribunal Constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Referéndum nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una ley orgánica",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 58 de la Constitución, la Reina consorte o el consorte de la Reina no podrán asumir funciones constitucionales, salvo lo dispuesto para:",
+            "explanation": "El artículo 58 CE excluye las funciones constitucionales del consorte, salvo lo previsto para la Regencia.",
+            "options": [
+                {
+                    "content": "La sanción de las leyes",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Regencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "El mando de las Fuerzas Armadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La representación internacional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 59.1 de la Constitución, cuando el Rey fuere menor de edad, el padre o la madre del Rey y, en su defecto, el pariente mayor de edad más próximo a suceder en la Corona:",
+            "explanation": "El artículo 59.1 CE dispone que entrará a ejercer inmediatamente la Regencia y la ejercerá durante el tiempo de la minoría de edad del Rey.",
+            "options": [
+                {
+                    "content": "Ejercerá la tutela política del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Asumirá la Jefatura del Estado con carácter definitivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entrará a ejercer inmediatamente la Regencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Será designado por el Presidente del Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si no hubiese ninguna persona a quien corresponda la Regencia, según el artículo 59.3 CE, esta será nombrada por las Cortes Generales y se compondrá de:",
+            "explanation": "El artículo 59.3 CE establece que la Regencia nombrada por las Cortes Generales se compondrá de una, tres o cinco personas.",
+            "options": [
+                {
+                    "content": "Dos o cuatro personas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una, tres o cinco personas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una o dos personas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres o cinco personas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta respecto a los requisitos para ser tutor del Rey menor según el artículo 60 CE:",
+            "explanation": "El artículo 60 CE declara el ejercicio de la tutela incompatible con el de todo cargo o representación política.",
+            "options": [
+                {
+                    "content": "Puede ser el designado en testamento por el Rey difunto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe ser mayor de edad y español de nacimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Si no hay designado, lo será el padre o la madre mientras permanezcan viudos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puede acumular el cargo con el de cualquier representación política",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 61.1 de la Constitución, el Rey, al ser proclamado, prestará juramento ante:",
+            "explanation": "El artículo 61.1 CE dispone que el Rey, al ser proclamado ante las Cortes Generales, prestará juramento de desempeñar fielmente sus funciones.",
+            "options": [
+                {
+                    "content": "El Tribunal Constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Cortes Generales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 62 de la Constitución, señale cuál de las siguientes funciones NO corresponde al Rey:",
+            "explanation": "La aprobación de los Presupuestos corresponde a las Cortes Generales, no al Rey, que no la tiene entre las funciones del artículo 62 CE.",
+            "options": [
+                {
+                    "content": "Sancionar y promulgar las leyes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Convocar a referéndum en los casos previstos en la Constitución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aprobar los Presupuestos Generales del Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Convocar y disolver las Cortes Generales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 62.i de la Constitución, el Rey ejerce el derecho de gracia con arreglo a la ley, que no podrá autorizar:",
+            "explanation": "El artículo 62.i CE prohíbe expresamente que la ley autorice indultos generales.",
+            "options": [
+                {
+                    "content": "Indultos particulares",
+                    "is_correct": false
+                },
+                {
+                    "content": "Indultos generales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Indultos parciales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Indultos condicionales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 62 de la Constitución, corresponde al Rey el mando supremo de las Fuerzas Armadas.",
+            "explanation": "Así lo establece el artículo 62.h CE.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 63.3 de la Constitución, al Rey corresponde declarar la guerra y hacer la paz:",
+            "explanation": "El artículo 63.3 CE exige la previa autorización de las Cortes Generales.",
+            "options": [
+                {
+                    "content": "Previa autorización de las Cortes Generales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Previa propuesta del Ministro de Defensa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Previa autorización del Tribunal Constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Libremente, sin necesidad de autorización alguna",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 63.1 de la Constitución, el Rey:",
+            "explanation": "El artículo 63.1 CE establece que el Rey acredita a los embajadores y que los representantes extranjeros están acreditados ante él.",
+            "options": [
+                {
+                    "content": "Nombra a los embajadores sin intervención del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acredita a los embajadores y otros representantes diplomáticos, y los representantes extranjeros en España están acreditados ante él",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo recibe a los embajadores extranjeros, sin acreditar a los españoles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Delega la acreditación en el Ministro de Asuntos Exteriores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 64.1 de la Constitución, los actos del Rey serán refrendados por el Presidente del Gobierno y, en su caso, por:",
+            "explanation": "El artículo 64.1 CE prevé el refrendo por el Presidente del Gobierno y, en su caso, por los Ministros competentes.",
+            "options": [
+                {
+                    "content": "Los Ministros competentes",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Presidente del Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Tribunal Supremo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 64.2 de la Constitución, de los actos del Rey serán responsables:",
+            "explanation": "El artículo 64.2 CE establece que responden de los actos del Rey quienes los refrendan.",
+            "options": [
+                {
+                    "content": "El propio Rey",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las personas que los refrenden",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Jefe de la Casa del Rey",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 65.1 de la Constitución, el Rey recibe de los Presupuestos del Estado una cantidad global para el sostenimiento de su Familia y Casa, y:",
+            "explanation": "El artículo 65.1 CE dispone que el Rey distribuye libremente la cantidad global recibida.",
+            "options": [
+                {
+                    "content": "La distribuye libremente",
+                    "is_correct": true
+                },
+                {
+                    "content": "La distribuye según determine el Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "La distribuye previa aprobación del Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "La justifica ante el Tribunal de Cuentas partida a partida",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 65.2 de la Constitución, el Rey nombra a los miembros civiles y militares de su Casa a propuesta del Presidente del Gobierno.",
+            "explanation": "El artículo 65.2 CE señala que el Rey nombra y releva libremente a los miembros civiles y militares de su Casa.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

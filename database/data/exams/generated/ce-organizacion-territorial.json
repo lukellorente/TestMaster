@@ -1,0 +1,675 @@
+{
+    "slug": "ce-organizacion-territorial",
+    "title": "Organización territorial del Estado (Título VIII)",
+    "description": "Test difícil del Título VIII de la Constitución (arts. 137 a 158) para las oposiciones de la AGE. Lo hice para repasar antes del examen: municipios, provincias, CCAA y reparto de competencias.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:39:58+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 137 de la Constitución Española, el Estado se organiza territorialmente en:",
+            "explanation": "El art. 137 CE enumera municipios, provincias y Comunidades Autónomas, y todas estas entidades gozan de autonomía para la gestión de sus respectivos intereses.",
+            "options": [
+                {
+                    "content": "Municipios, comarcas y Comunidades Autónomas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Municipios, provincias y Comunidades Autónomas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Provincias, islas y Comunidades Autónomas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Municipios, provincias, islas y Comunidades Autónomas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 138 de la Constitución, las diferencias entre los Estatutos de las distintas Comunidades Autónomas:",
+            "explanation": "El art. 138.2 CE prohíbe que las diferencias entre Estatutos supongan privilegios económicos o sociales.",
+            "options": [
+                {
+                    "content": "Podrán implicar privilegios económicos, pero no sociales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrán implicar privilegios sociales, pero no económicos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo podrán implicar privilegios si lo autoriza una ley orgánica",
+                    "is_correct": false
+                },
+                {
+                    "content": "No podrán implicar, en ningún caso, privilegios económicos o sociales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta correcta conforme al artículo 139 de la Constitución:",
+            "explanation": "El art. 139 CE proclama la igualdad de derechos y obligaciones en todo el territorio y prohíbe a cualquier autoridad obstaculizar la libre circulación y establecimiento de personas y bienes.",
+            "options": [
+                {
+                    "content": "Todos los españoles tienen los mismos derechos y obligaciones en cualquier parte del territorio del Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las Comunidades Autónomas pueden limitar la libre circulación de bienes si lo prevé su Estatuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los derechos de los españoles varían según el Estatuto de cada Comunidad Autónoma",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo el Gobierno de la Nación puede adoptar medidas que afecten a la libertad de establecimiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 140 de la Constitución, los Alcaldes serán elegidos:",
+            "explanation": "El art. 140 CE establece que los Concejales son elegidos por sufragio universal, igual, libre, directo y secreto, y los Alcaldes por los Concejales o por los vecinos.",
+            "options": [
+                {
+                    "content": "Por sufragio universal, igual, libre, directo y secreto, en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por la Diputación Provincial correspondiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por los Concejales o por los vecinos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Por el Presidente de la Comunidad Autónoma a propuesta del Pleno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 140 de la Constitución, la ley regulará las condiciones en las que proceda el régimen de concejo abierto.",
+            "explanation": "Así lo dispone el último inciso del art. 140 CE.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 141 de la Constitución, cualquier alteración de los límites provinciales habrá de ser aprobada por:",
+            "explanation": "El art. 141.1 CE exige ley orgánica de las Cortes Generales para alterar límites provinciales.",
+            "options": [
+                {
+                    "content": "Las Cortes Generales mediante ley ordinaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Cortes Generales mediante ley orgánica",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Gobierno mediante real decreto, previo informe de las Diputaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Senado por mayoría absoluta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme al artículo 142 de la Constitución, las Haciendas locales se nutrirán fundamentalmente de:",
+            "explanation": "El art. 142 CE señala tributos propios y participación en los tributos del Estado y de las Comunidades Autónomas.",
+            "options": [
+                {
+                    "content": "Tributos propios y de participación en los del Estado y de las Comunidades Autónomas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Transferencias del Fondo de Compensación Interterritorial exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impuestos cedidos por el Estado y operaciones de crédito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Recargos sobre impuestos estatales y subvenciones finalistas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 143.2 de la Constitución, la iniciativa del proceso autonómico corresponde a todas las Diputaciones interesadas y a las dos terceras partes de los municipios cuya población represente, al menos:",
+            "explanation": "El art. 143.2 CE exige las dos terceras partes de los municipios que representen, al menos, la mayoría del censo electoral de cada provincia o isla.",
+            "options": [
+                {
+                    "content": "Dos tercios del censo electoral de cada provincia o isla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres quintos del censo electoral de cada provincia o isla",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mayoría del censo electoral de cada provincia o isla",
+                    "is_correct": true
+                },
+                {
+                    "content": "La mayoría absoluta de la población de derecho de cada provincia o isla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 143.3 de la Constitución, la iniciativa del proceso autonómico, caso de no prosperar, solamente podrá reiterarse pasados:",
+            "explanation": "El art. 143.3 CE fija cinco años; los seis meses son el plazo para cumplir los requisitos de iniciativa del apartado 2.",
+            "options": [
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 144 de la Constitución, las Cortes Generales, mediante ley orgánica, podrán autorizar la constitución de una Comunidad Autónoma cuando:",
+            "explanation": "Es el supuesto del art. 144.a) CE, por motivos de interés nacional.",
+            "options": [
+                {
+                    "content": "Su ámbito territorial sea superior al de dos provincias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su ámbito territorial no supere el de una provincia y no reúna las condiciones del artículo 143.1",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lo solicite únicamente el Gobierno de la Nación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo apruebe el Senado por tres quintos en referéndum",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 145.1 de la Constitución, respecto a la federación de Comunidades Autónomas:",
+            "explanation": "El art. 145.1 CE dice que en ningún caso se admitirá la federación de Comunidades Autónomas.",
+            "options": [
+                {
+                    "content": "Se admite cuando lo autorizan las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se admite si lo prevén los respectivos Estatutos",
+                    "is_correct": false
+                },
+                {
+                    "content": "En ningún caso se admitirá",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo se admite entre Comunidades limítrofes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 145.2 de la Constitución, salvo los convenios previstos en los Estatutos, los acuerdos de cooperación entre Comunidades Autónomas necesitarán:",
+            "explanation": "El art. 145.2 CE exige autorización de las Cortes Generales para los acuerdos de cooperación no previstos como convenios en los Estatutos.",
+            "options": [
+                {
+                    "content": "La aprobación del Consejo de Ministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "El dictamen del Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ratificación del Tribunal Constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "La autorización de las Cortes Generales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 146 de la Constitución, el proyecto de Estatuto de autonomía será elaborado por una asamblea compuesta por:",
+            "explanation": "Así lo establece el art. 146 CE; el proyecto se eleva a las Cortes Generales para su tramitación como ley.",
+            "options": [
+                {
+                    "content": "Los miembros de la Diputación u órgano interinsular de las provincias afectadas y los Diputados y Senadores elegidos en ellas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los Alcaldes de las provincias afectadas y los Diputados elegidos en ellas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los miembros de las Diputaciones y representantes designados por el Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Presidentes de las Diputaciones y una comisión del Senado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO forma parte del contenido mínimo de los Estatutos de Autonomía según el artículo 147.2 de la Constitución:",
+            "explanation": "El art. 147.2 CE no incluye el régimen electoral de las Cortes Generales, materia estatal.",
+            "options": [
+                {
+                    "content": "La denominación de la Comunidad que mejor corresponda a su identidad histórica",
+                    "is_correct": false
+                },
+                {
+                    "content": "El régimen electoral general aplicable a las Cortes Generales",
+                    "is_correct": true
+                },
+                {
+                    "content": "La denominación, organización y sede de las instituciones autónomas propias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las competencias asumidas y las bases para el traspaso de los servicios correspondientes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 147.3 de la Constitución, la reforma de los Estatutos de Autonomía requerirá, en todo caso:",
+            "explanation": "El art. 147.3 CE remite al procedimiento del propio Estatuto y exige siempre aprobación por las Cortes mediante ley orgánica.",
+            "options": [
+                {
+                    "content": "Referéndum de ámbito estatal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aprobación por el Senado por mayoría absoluta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aprobación por las Cortes Generales mediante ley orgánica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Informe favorable del Tribunal Constitucional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la materia que NO figura entre las competencias que las Comunidades Autónomas podrán asumir según el artículo 148.1 de la Constitución:",
+            "explanation": "La pesca marítima es competencia exclusiva del Estado (art. 149.1.19ª CE); las CCAA pueden asumir la pesca en aguas interiores.",
+            "options": [
+                {
+                    "content": "Ordenación del territorio, urbanismo y vivienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Agricultura y ganadería",
+                    "is_correct": false
+                },
+                {
+                    "content": "Asistencia social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pesca marítima",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 148.2 de la Constitución, transcurridos cinco años y mediante la reforma de sus Estatutos, las Comunidades Autónomas podrán ampliar sucesivamente sus competencias:",
+            "explanation": "El art. 148.2 CE permite la ampliación sucesiva de competencias dentro del marco del art. 149.",
+            "options": [
+                {
+                    "content": "Dentro del marco establecido en el artículo 149",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sin más límite que el interés general apreciado por el Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dentro del marco del artículo 150.2 exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Incluyendo las materias de competencia exclusiva del Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes materias es competencia exclusiva del Estado según el artículo 149.1 de la Constitución?",
+            "explanation": "El régimen aduanero y arancelario y el comercio exterior figuran en el art. 149.1.10ª CE; las otras son materias asumibles por las CCAA (art. 148.1).",
+            "options": [
+                {
+                    "content": "Ferias interiores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ferrocarriles cuyo itinerario se desarrolle íntegramente en el territorio de la Comunidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Régimen aduanero y arancelario; comercio exterior",
+                    "is_correct": true
+                },
+                {
+                    "content": "Museos, bibliotecas y conservatorios de música de interés de la Comunidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la legislación civil, el artículo 149.1.8ª de la Constitución atribuye al Estado la competencia exclusiva:",
+            "explanation": "El art. 149.1.8ª CE salva los derechos civiles forales o especiales; la ejecución autonómica es propia de la legislación laboral.",
+            "options": [
+                {
+                    "content": "Sin perjuicio de la conservación, modificación y desarrollo por las CCAA de los derechos civiles, forales o especiales, allí donde existan",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sin excepción alguna, incluidos los derechos civiles forales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Salvo en materia de contratos, que corresponde a las CCAA",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sin perjuicio de la ejecución por órganos de las Comunidades Autónomas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 149.3 de la Constitución, en relación con el Derecho estatal:",
+            "explanation": "El art. 149.3 CE declara supletorio el Derecho estatal; la prevalencia se limita a lo no atribuido a la competencia exclusiva de las CCAA.",
+            "options": [
+                {
+                    "content": "Es subsidiario del Derecho autonómico únicamente en materias compartidas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prevalece siempre sobre el autonómico, incluso en competencias exclusivas de las CCAA",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es de aplicación directa, sin carácter supletorio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Será, en todo caso, supletorio del Derecho de las Comunidades Autónomas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 150.1 de la Constitución, las Cortes Generales podrán atribuir a las Comunidades Autónomas la facultad de dictar normas legislativas en el marco de los principios, bases y directrices fijados por:",
+            "explanation": "Es la llamada ley marco del art. 150.1 CE, con control de las Cortes Generales sin perjuicio de la competencia de los Tribunales.",
+            "options": [
+                {
+                    "content": "Una ley estatal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un real decreto-ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un acuerdo del Consejo de Ministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una resolución del Tribunal Constitucional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme al artículo 150.2 de la Constitución, el Estado podrá transferir o delegar en las Comunidades Autónomas facultades correspondientes a materias de titularidad estatal mediante:",
+            "explanation": "El art. 150.2 CE exige ley orgánica para la transferencia o delegación de facultades de titularidad estatal susceptibles de ello.",
+            "options": [
+                {
+                    "content": "Ley ordinaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Real decreto del Consejo de Ministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley orgánica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Acuerdo de la Conferencia de Presidentes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 150.3 de la Constitución, la apreciación de la necesidad de dictar leyes de armonización corresponde a las Cortes Generales, por:",
+            "explanation": "El art. 150.3 CE exige mayoría absoluta de cada Cámara y que lo exija el interés general.",
+            "options": [
+                {
+                    "content": "Mayoría simple del Congreso de los Diputados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayoría absoluta de cada Cámara",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres quintos de cada Cámara",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos tercios del Congreso de los Diputados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 151.1 de la Constitución, no será preciso esperar el transcurso del plazo de cinco años cuando la iniciativa sea acordada por las Diputaciones o los órganos interinsulares y por las tres cuartas partes de los municipios que representen, al menos, la mayoría del censo electoral de cada provincia afectada, y además:",
+            "explanation": "El art. 151.1 CE exige ratificación por referéndum con el voto afirmativo de la mayoría absoluta de los electores de cada provincia.",
+            "options": [
+                {
+                    "content": "Sea ratificada por el Senado por mayoría absoluta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sea aprobada por las Cortes Generales por mayoría de tres quintos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sea informada favorablemente por el Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sea ratificada mediante referéndum por la mayoría absoluta de los electores de cada provincia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 152.1 de la Constitución, el Presidente del Consejo de Gobierno de una Comunidad Autónoma de las del procedimiento del art. 151 es:",
+            "explanation": "El art. 152.1 CE prevé elección por la Asamblea de entre sus miembros y nombramiento por el Rey.",
+            "options": [
+                {
+                    "content": "Elegido por la Asamblea de entre sus miembros y nombrado por el Rey",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elegido por sufragio universal directo y nombrado por el Presidente del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Designado por el Gobierno de la Nación y ratificado por la Asamblea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Elegido por la Asamblea, aunque no sea miembro de ella, y nombrado por el Delegado del Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 153 de la Constitución, el control económico y presupuestario de la actividad de los órganos de las Comunidades Autónomas se ejerce por:",
+            "explanation": "El art. 153.d) CE atribuye al Tribunal de Cuentas el control económico y presupuestario.",
+            "options": [
+                {
+                    "content": "El Tribunal Constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tribunal de Cuentas",
+                    "is_correct": true
+                },
+                {
+                    "content": "La jurisdicción contencioso-administrativa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 154 de la Constitución, el Delegado que dirige la Administración del Estado en el territorio de la Comunidad Autónoma es nombrado por el Presidente de la Comunidad Autónoma.",
+            "explanation": "El art. 154 CE dice que el Delegado es nombrado por el Gobierno de la Nación.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para adoptar las medidas del artículo 155 de la Constitución frente a una Comunidad Autónoma que incumpla sus obligaciones, el Gobierno, previo requerimiento a su Presidente no atendido, necesita:",
+            "explanation": "El art. 155.1 CE exige requerimiento previo y aprobación por mayoría absoluta del Senado.",
+            "options": [
+                {
+                    "content": "La aprobación por mayoría simple del Congreso de los Diputados",
+                    "is_correct": false
+                },
+                {
+                    "content": "La aprobación por mayoría absoluta del Senado",
+                    "is_correct": true
+                },
+                {
+                    "content": "La autorización del Tribunal Constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "La aprobación por mayoría absoluta de ambas Cámaras",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 157.2 de la Constitución, las Comunidades Autónomas podrán adoptar medidas tributarias que supongan obstáculo para la libre circulación de mercancías o servicios si se prevé en su Estatuto.",
+            "explanation": "El art. 157.2 CE lo prohíbe en todo caso, igual que las medidas tributarias sobre bienes situados fuera de su territorio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 158.2 de la Constitución, el Fondo de Compensación, constituido para corregir desequilibrios económicos interterritoriales y hacer efectivo el principio de solidaridad, se destina a:",
+            "explanation": "El art. 158.2 CE dice que el Fondo se destina a gastos de inversión y sus recursos los distribuyen las Cortes Generales.",
+            "options": [
+                {
+                    "content": "Gastos corrientes de las Comunidades Autónomas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gastos de personal de los servicios transferidos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Subvenciones a las Corporaciones locales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gastos de inversión",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

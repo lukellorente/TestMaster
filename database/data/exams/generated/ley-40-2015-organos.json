@@ -1,0 +1,675 @@
+{
+    "slug": "ley-40-2015-organos",
+    "title": "Ley 40/2015 Régimen Jurídico: órganos, abstención y recusación",
+    "description": "Test del tema de la Ley 40/2015 para repasar antes del examen de AGE: principios, competencia, delegación, avocación, órganos colegiados, abstención y recusación. Algunas preguntas son de \"señale la incorrecta\", ojo con los plazos.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:51:53+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 3.1 de la Ley 40/2015, las Administraciones Públicas actúan de acuerdo con los principios de eficacia, jerarquía, descentralización, desconcentración y coordinación. ¿Cuál de los siguientes NO figura entre ellos?",
+            "explanation": "El artículo 3.1 recoge la descentralización y la desconcentración, no la centralización.",
+            "options": [
+                {
+                    "content": "Eficacia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Descentralización",
+                    "is_correct": false
+                },
+                {
+                    "content": "Centralización",
+                    "is_correct": true
+                },
+                {
+                    "content": "Coordinación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 8.1 de la Ley 40/2015, la competencia administrativa es:",
+            "explanation": "La competencia es irrenunciable y se ejerce por el órgano que la tiene atribuida como propia, salvo delegación o avocación en los términos legales.",
+            "options": [
+                {
+                    "content": "Renunciable por el titular del órgano si lo motiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Irrenunciable y ejercida por los órganos que la tengan atribuida como propia, salvo delegación o avocación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Transmisible mediante pacto entre órganos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Disponible por el superior jerárquico en todo caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 3.1 de la Ley 40/2015, las Administraciones Públicas sirven con objetividad:",
+            "explanation": "El artículo 3.1 establece que las Administraciones sirven con objetividad los intereses generales, con sometimiento pleno a la Constitución, a la Ley y al Derecho.",
+            "options": [
+                {
+                    "content": "Los intereses del Gobierno de turno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los intereses de los órganos que las dirigen",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los intereses de los ciudadanos interesados en cada procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los intereses generales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 4 de la Ley 40/2015, las Administraciones que establezcan medidas limitativas de derechos o exijan requisitos para una actividad deberán aplicar el principio de proporcionalidad y:",
+            "explanation": "El artículo 4 exige elegir la medida menos restrictiva, motivar su necesidad y justificar su adecuación, sin diferencias de trato discriminatorias.",
+            "options": [
+                {
+                    "content": "Elegir la medida menos restrictiva",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elegir la medida más eficaz con independencia de su carácter restrictivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Someter la medida a información pública durante un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obtener dictamen preceptivo del Consejo de Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5.1 de la Ley 40/2015, tendrán la consideración de órganos administrativos las unidades administrativas a las que se les atribuyan:",
+            "explanation": "Es órgano administrativo la unidad con funciones con efectos jurídicos frente a terceros o con actuación preceptiva.",
+            "options": [
+                {
+                    "content": "Cualesquiera funciones de gestión interna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Funciones de carácter exclusivamente consultivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Funciones con efectos jurídicos frente a terceros, o cuya actuación tenga carácter preceptivo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Funciones de dirección de personal con rango de subdirección general",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, respecto a la creación de órganos administrativos, señale la respuesta correcta:",
+            "explanation": "La Ley prohíbe crear órganos duplicados sin suprimir o restringir la competencia de los ya existentes; además exige determinar integración, dependencia, funciones y créditos.",
+            "options": [
+                {
+                    "content": "Pueden crearse órganos que dupliquen a otros existentes si se dota de créditos suficientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "No pueden crearse órganos que supongan duplicación de otros existentes si no se suprime o restringe debidamente la competencia de estos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Su creación no exige delimitar funciones y competencias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su creación no exige determinar su dependencia jerárquica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 6 de la Ley 40/2015, el incumplimiento de las instrucciones y órdenes de servicio:",
+            "explanation": "El incumplimiento de instrucciones u órdenes de servicio no afecta por sí solo a la validez de los actos, pero puede generar responsabilidad disciplinaria.",
+            "options": [
+                {
+                    "content": "Determina por sí solo la nulidad de los actos dictados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Determina por sí solo la anulabilidad de los actos dictados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impide que el acto produzca efectos hasta su subsanación",
+                    "is_correct": false
+                },
+                {
+                    "content": "No afecta por sí solo a la validez de los actos, sin perjuicio de la responsabilidad disciplinaria",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 8.3 de la Ley 40/2015, la titularidad y el ejercicio de las competencias podrán ser desconcentrados en:",
+            "explanation": "La desconcentración se produce en órganos jerárquicamente dependientes, en los términos que prevean las normas de atribución de competencias.",
+            "options": [
+                {
+                    "content": "Órganos jerárquicamente dependientes de aquellos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Órganos de otras Administraciones Públicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entidades privadas colaboradoras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier órgano de la misma Administración, aunque no sea dependiente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9 de la Ley 40/2015, señale la respuesta INCORRECTA sobre los asuntos que no pueden ser objeto de delegación:",
+            "explanation": "La gestión ordinaria de personal no figura entre las exclusiones del artículo 9.2; sí lo hacen las otras tres.",
+            "options": [
+                {
+                    "content": "Los asuntos que se refieran a las relaciones con las Cortes Generales",
+                    "is_correct": false
+                },
+                {
+                    "content": "La adopción de disposiciones de carácter general",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las materias en que así se determine por norma con rango de ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los asuntos de gestión ordinaria de personal",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9 de la Ley 40/2015, la delegación de competencias:",
+            "explanation": "La delegación es revocable en cualquier momento por el órgano delegante.",
+            "options": [
+                {
+                    "content": "Es irrevocable una vez publicada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo puede revocarse por el órgano superior del delegante",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es revocable en cualquier momento por el órgano que la haya conferido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo puede revocarse cuando concluya el plazo fijado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9 de la Ley 40/2015, las resoluciones administrativas que se adopten por delegación indicarán expresamente esta circunstancia y se considerarán dictadas por:",
+            "explanation": "Las resoluciones adoptadas por delegación se consideran dictadas por el órgano delegante.",
+            "options": [
+                {
+                    "content": "El órgano delegado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El órgano delegante",
+                    "is_correct": true
+                },
+                {
+                    "content": "El superior jerárquico común de ambos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El órgano que la haya publicado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9 de la Ley 40/2015, las delegaciones de competencias y su revocación deberán publicarse en:",
+            "explanation": "Deben publicarse en el boletín oficial de la Administración en que se integre el órgano delegante.",
+            "options": [
+                {
+                    "content": "El tablón de anuncios del órgano delegado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El boletín oficial de la Administración Pública en que se integre el órgano delegante",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo en el Boletín Oficial del Estado en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "No requieren publicación, basta la notificación al delegado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9 de la Ley 40/2015, las competencias que se ejerzan por delegación:",
+            "explanation": "Las competencias delegadas no pueden ser objeto de nueva delegación salvo autorización expresa de una ley.",
+            "options": [
+                {
+                    "content": "Pueden delegarse de nuevo libremente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pueden delegarse de nuevo si lo autoriza el órgano delegante",
+                    "is_correct": false
+                },
+                {
+                    "content": "No pueden delegarse nunca, bajo ninguna circunstancia",
+                    "is_correct": false
+                },
+                {
+                    "content": "No pueden delegarse, salvo autorización expresa de una ley",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10 de la Ley 40/2015, los órganos superiores podrán avocar el conocimiento de asuntos de sus órganos dependientes cuando lo hagan conveniente circunstancias de índole:",
+            "explanation": "El artículo 10 menciona circunstancias técnicas, económicas, sociales, jurídicas o territoriales, mediante acuerdo motivado.",
+            "options": [
+                {
+                    "content": "Técnica, económica, social, jurídica o territorial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Exclusivamente jurídica o económica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Política, económica, social o cultural",
+                    "is_correct": false
+                },
+                {
+                    "content": "Técnica, presupuestaria, laboral o electoral",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10 de la Ley 40/2015, contra el acuerdo de avocación:",
+            "explanation": "El acuerdo de avocación no es recurrible de forma independiente, pero puede impugnarse al recurrir la resolución del procedimiento.",
+            "options": [
+                {
+                    "content": "Cabe recurso de alzada ante el superior del avocante",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cabe recurso potestativo de reposición en un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "No cabe recurso, aunque podrá impugnarse en el que se interponga contra la resolución del procedimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cabe recurso extraordinario de revisión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 40/2015, la delegación de firma no alterará la competencia del órgano delegante y no requerirá su publicación.",
+            "explanation": "Así lo establece la regulación de la delegación de firma: no altera la competencia y no necesita publicarse.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, no cabe delegación de firma en:",
+            "explanation": "La Ley excluye expresamente la delegación de firma en las resoluciones de carácter sancionador.",
+            "options": [
+                {
+                    "content": "Las resoluciones de carácter sancionador",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las resoluciones de trámite",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los certificados de actuaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las comunicaciones internas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, los órganos colegiados podrán constituirse, convocar y celebrar sus sesiones, adoptar acuerdos y remitir actas de forma presencial o a distancia:",
+            "explanation": "La regla general permite la celebración a distancia, salvo que el reglamento interno disponga expresamente lo contrario.",
+            "options": [
+                {
+                    "content": "Solo si lo autoriza el superior jerárquico en cada ocasión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo en situaciones excepcionales de urgencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo si el reglamento interno lo prevé expresamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Salvo que su reglamento interno recoja expresamente lo contrario",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, para la válida constitución de un órgano colegiado, a efectos de sesiones, deliberaciones y toma de acuerdos, se requiere la asistencia del Presidente y el Secretario, o de quienes les suplan, y la de:",
+            "explanation": "Se exige la presencia del Presidente y del Secretario y de, al menos, la mitad de los miembros.",
+            "options": [
+                {
+                    "content": "Un tercio al menos de sus miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mitad al menos de sus miembros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos tercios al menos de sus miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mayoría absoluta más uno de sus miembros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, no podrá ser objeto de deliberación o acuerdo ningún asunto que no figure en el orden del día, salvo que:",
+            "explanation": "La excepción exige presencia de todos los miembros y declaración de urgencia por mayoría.",
+            "options": [
+                {
+                    "content": "Lo proponga el Presidente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estén presentes todos los miembros y se declare la urgencia por el voto favorable de la mayoría",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lo solicite un tercio de los miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo autorice el Secretario por razones de urgencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, los miembros de un órgano colegiado que discrepen del acuerdo mayoritario podrán formular voto particular por escrito en el plazo de:",
+            "explanation": "El voto particular se formula por escrito en el plazo de dos días y se incorpora al texto aprobado.",
+            "options": [
+                {
+                    "content": "Veinticuatro horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos días",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, los miembros de un órgano colegiado que voten en contra o se abstengan en un acuerdo:",
+            "explanation": "Quienes voten en contra o se abstengan quedan exentos de la responsabilidad que pueda derivarse de los acuerdos.",
+            "options": [
+                {
+                    "content": "Quedan exentos de la responsabilidad que pueda derivarse de los acuerdos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Responden solidariamente con los demás miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deben dimitir del órgano",
+                    "is_correct": false
+                },
+                {
+                    "content": "Responden solo si formulan voto particular",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 23 de la Ley 40/2015, las autoridades y el personal en quienes concurra causa de abstención deben comunicarlo a:",
+            "explanation": "Deben abstenerse y comunicarlo a su superior inmediato, que resuelve lo procedente.",
+            "options": [
+                {
+                    "content": "El interesado en el procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Defensor del Pueblo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El superior inmediato, quien resolverá lo procedente",
+                    "is_correct": true
+                },
+                {
+                    "content": "El órgano de inspección de servicios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 23.2 de la Ley 40/2015, es motivo de abstención ser pariente de alguno de los interesados por consanguinidad dentro del:",
+            "explanation": "El parentesco determinante es de consanguinidad dentro del cuarto grado o de afinidad dentro del segundo.",
+            "options": [
+                {
+                    "content": "Segundo grado, y por afinidad dentro del primero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tercer grado, y por afinidad dentro del tercero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuarto grado, y por afinidad dentro del segundo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuarto grado, y por afinidad dentro del cuarto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 23.2 de la Ley 40/2015, es motivo de abstención haber prestado a persona interesada directamente en el asunto servicios profesionales de cualquier tipo en los últimos:",
+            "explanation": "El motivo se refiere a servicios profesionales prestados en los dos últimos años.",
+            "options": [
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 23.4 de la Ley 40/2015, la actuación de autoridades y personal en quienes concurran motivos de abstención implica necesariamente la invalidez de los actos en que hayan intervenido.",
+            "explanation": "El artículo 23.4 dice que no implicará, necesariamente, la invalidez de los actos en que hayan intervenido.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 24 de la Ley 40/2015, la recusación podrá promoverse por los interesados:",
+            "explanation": "La recusación puede plantearse en cualquier momento, por escrito y con expresión de las causas en que se funda.",
+            "options": [
+                {
+                    "content": "En cualquier momento de la tramitación del procedimiento, por escrito expresando la causa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo en el trámite de audiencia, verbalmente o por escrito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo durante el primer mes desde la incoación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo antes de la instrucción del procedimiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 24 de la Ley 40/2015, planteada la recusación, en el día siguiente el recusado manifestará a su superior inmediato:",
+            "explanation": "El recusado debe manifestar al día siguiente a su superior inmediato si concurre o no la causa alegada.",
+            "options": [
+                {
+                    "content": "Si acepta o no la competencia del superior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Si se da o no en él la causa alegada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Qué actuaciones ha practicado hasta ese momento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quién propone como sustituto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 24 de la Ley 40/2015, si el recusado niega la causa de recusación, el superior resolverá en el plazo de:",
+            "explanation": "El superior resuelve en tres días, previos los informes y comprobaciones que considere oportunos.",
+            "options": [
+                {
+                    "content": "Tres días, previos los informes y comprobaciones oportunos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco días, previa audiencia del interesado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días, previo dictamen del órgano consultivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes, previa audiencia de ambos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 24 de la Ley 40/2015, contra las resoluciones adoptadas en materia de abstención y recusación no cabrá recurso en ningún caso, sin perjuicio de alegar la recusación al recurrir el acto que termine el procedimiento.",
+            "explanation": "No cabe recurso autónomo, pero la recusación puede alegarse al recurrir el acto que ponga fin al procedimiento.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

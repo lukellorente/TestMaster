@@ -1,0 +1,1119 @@
+{
+    "slug": "simulacro-administrativo-estado",
+    "title": "Simulacro C1 Administrativo del Estado - primer ejercicio",
+    "description": "Simulacro para preparar el primer ejercicio del C1 de Administrativo del Estado. Mezcla organización del Estado, procedimiento administrativo, personal y presupuestos; tiene su miga, ¡suerte!",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:23:04+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 68 de la Constitución Española, el Congreso de los Diputados se compone de un mínimo y un máximo de:",
+            "explanation": "El artículo 68.1 CE fija un mínimo de 300 y un máximo de 400 diputados.",
+            "options": [
+                {
+                    "content": "250 y 350 diputados",
+                    "is_correct": false
+                },
+                {
+                    "content": "300 y 400 diputados",
+                    "is_correct": true
+                },
+                {
+                    "content": "350 y 450 diputados",
+                    "is_correct": false
+                },
+                {
+                    "content": "300 y 350 diputados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 69 de la Constitución, en cada provincia peninsular se eligen por sufragio universal, libre, igual, directo y secreto:",
+            "explanation": "El artículo 69.2 CE establece que en cada provincia se elegirán cuatro senadores.",
+            "options": [
+                {
+                    "content": "Dos senadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres senadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco senadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro senadores",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 168 de la Constitución, para iniciar el procedimiento de reforma agravada (revisión total o de determinadas partes) se exige que el principio sea aprobado por:",
+            "explanation": "El artículo 168.1 CE exige la aprobación del principio por mayoría de dos tercios de cada Cámara y la disolución inmediata de las Cortes.",
+            "options": [
+                {
+                    "content": "Mayoría de dos tercios de cada Cámara",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mayoría de tres quintos de cada Cámara",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayoría absoluta del Congreso y simple del Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mayoría de tres cuartos del Congreso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 99 de la Constitución, si transcurrido un cierto plazo desde la primera votación de investidura ningún candidato hubiere obtenido la mayoría simple, el Rey disolverá ambas Cámaras. Dicho plazo es de:",
+            "explanation": "El artículo 99.5 CE fija el plazo de dos meses a partir de la primera votación.",
+            "options": [
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 64 de la Constitución, la propuesta y el nombramiento del Presidente del Gobierno serán refrendados por:",
+            "explanation": "El artículo 64.1 CE atribuye este refrendo al Presidente del Congreso.",
+            "options": [
+                {
+                    "content": "El Presidente del Gobierno saliente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Congreso de los Diputados",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Ministro de la Presidencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente del Senado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 101 de la Constitución, el Gobierno cesa tras la celebración de elecciones generales, en los casos de pérdida de la confianza parlamentaria previstos en la Constitución, o por dimisión o fallecimiento de su Presidente.",
+            "explanation": "Es el contenido literal del artículo 101.1 CE.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, de Régimen Jurídico del Sector Público, los Delegados del Gobierno en las comunidades autónomas son nombrados por:",
+            "explanation": "Los Delegados del Gobierno son nombrados por Real Decreto del Consejo de Ministros a propuesta del Presidente del Gobierno.",
+            "options": [
+                {
+                    "content": "Orden del Ministro de Hacienda y Función Pública",
+                    "is_correct": false
+                },
+                {
+                    "content": "Real Decreto del Consejo de Ministros, a propuesta del Ministro de Hacienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolución del Consejo de Ministros, a propuesta del Presidente de la comunidad autónoma",
+                    "is_correct": false
+                },
+                {
+                    "content": "Real Decreto del Consejo de Ministros, a propuesta del Presidente del Gobierno",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme a la Ley Orgánica 3/1981, el Defensor del Pueblo es elegido por las Cortes Generales para un periodo de:",
+            "explanation": "La Ley Orgánica 3/1981 establece un mandato de cinco años.",
+            "options": [
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 136 de la Constitución, el Tribunal de Cuentas, supremo órgano fiscalizador de las cuentas y de la gestión económica del Estado, depende directamente de:",
+            "explanation": "El artículo 136.1 CE dice que el Tribunal de Cuentas depende directamente de las Cortes Generales.",
+            "options": [
+                {
+                    "content": "Las Cortes Generales",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Ministerio de Hacienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "De los doce miembros del Tribunal Constitucional, ¿cuántos son propuestos por el Gobierno según el artículo 159 de la Constitución?",
+            "explanation": "El artículo 159.1 CE: cuatro por el Congreso, cuatro por el Senado, dos por el Gobierno y dos por el CGPJ.",
+            "options": [
+                {
+                    "content": "Cuatro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Uno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, los organismos públicos vinculados o dependientes de la Administración General del Estado se clasifican en:",
+            "explanation": "Los organismos públicos estatales son los organismos autónomos y las entidades públicas empresariales.",
+            "options": [
+                {
+                    "content": "Organismos autónomos y consorcios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entidades públicas empresariales y sociedades mercantiles estatales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Organismos autónomos y entidades públicas empresariales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Agencias estatales y fundaciones públicas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, para la válida constitución de un órgano colegiado, a efectos de deliberaciones y toma de acuerdos, se requiere la presencia del Presidente y del Secretario o de quienes les suplan y la de:",
+            "explanation": "La ley exige presencia de la mitad al menos de los miembros, además del Presidente y el Secretario o sus suplentes.",
+            "options": [
+                {
+                    "content": "Un tercio al menos de sus miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mitad al menos de sus miembros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos tercios al menos de sus miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres quintos al menos de sus miembros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, los convenios que suscriban las Administraciones tendrán, salvo normativa que prevea otra cosa, una duración no superior a cuatro años, y podrán prorrogarse por acuerdo unánime de los firmantes hasta un máximo de:",
+            "explanation": "La Ley 40/2015 permite prórroga unánime de hasta cuatro años adicionales.",
+            "options": [
+                {
+                    "content": "Cuatro años adicionales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos años adicionales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años adicionales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años adicionales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 19/2013, de transparencia, la resolución de una solicitud de acceso a la información pública se notificará en el plazo máximo de un mes desde su recepción por el órgano competente, ampliable por:",
+            "explanation": "El plazo de un mes puede ampliarse por otro mes si el volumen o la complejidad lo justifican.",
+            "options": [
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Otro mes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, cuando las normas reguladoras de los procedimientos no fijen el plazo máximo, este será de:",
+            "explanation": "El plazo máximo supletorio para resolver y notificar es de tres meses.",
+            "options": [
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, el plazo para interponer recurso de alzada es de un mes si el acto fuera expreso y, si no lo fuera, de:",
+            "explanation": "Si el acto es presunto, el plazo es de tres meses contados desde que se produzcan los efectos del silencio.",
+            "options": [
+                {
+                    "content": "Dos meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, el plazo máximo para dictar y notificar la resolución del recurso potestativo de reposición es de:",
+            "explanation": "El artículo 124.2 establece un mes para resolver y notificar el recurso de reposición.",
+            "options": [
+                {
+                    "content": "Un mes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando el recurso extraordinario de revisión se funde en que al dictar el acto se incurrió en error de hecho que resulte de los propios documentos incorporados al expediente, el plazo para interponerlo es de:",
+            "explanation": "Para la causa de error de hecho el plazo es de cuatro años; para las demás, tres meses desde el conocimiento.",
+            "options": [
+                {
+                    "content": "Tres meses desde la notificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año desde la notificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años desde la notificación de la resolución impugnada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos años desde que el acto sea firme",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, la notificación por medios electrónicos se entenderá rechazada cuando hayan transcurrido, desde su puesta a disposición, sin que se acceda a su contenido:",
+            "explanation": "El artículo 43.2 fija diez días naturales para entender rechazada la notificación electrónica.",
+            "options": [
+                {
+                    "content": "Cinco días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días naturales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 39/2015, cuando los plazos se señalen por días, se entiende que son hábiles y que los sábados se computan como días hábiles, quedando excluidos únicamente domingos y festivos.",
+            "explanation": "Los sábados también se excluyen del cómputo, junto con los domingos y los festivos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, ¿qué sentido tiene el silencio administrativo en los procedimientos de responsabilidad patrimonial de las Administraciones Públicas?",
+            "explanation": "Si no se resuelve en plazo, la reclamación se entiende desestimada.",
+            "options": [
+                {
+                    "content": "Estimatorio en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desestimatorio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Estimatorio, salvo que exista informe en contra",
+                    "is_correct": false
+                },
+                {
+                    "content": "Provoca la caducidad del procedimiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes actos NO es nulo de pleno derecho según el artículo 47.1 de la Ley 39/2015:",
+            "explanation": "La infracción ordinaria del ordenamiento jurídico es causa de anulabilidad, no de nulidad de pleno derecho.",
+            "options": [
+                {
+                    "content": "El que incurra en cualquier infracción del ordenamiento jurídico, sin concurrir otra causa",
+                    "is_correct": true
+                },
+                {
+                    "content": "El que lesione derechos y libertades susceptibles de amparo constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "El de contenido imposible",
+                    "is_correct": false
+                },
+                {
+                    "content": "El dictado prescindiendo total y absolutamente del procedimiento legalmente establecido",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para que las Administraciones declaren de oficio la nulidad de los actos administrativos que hayan puesto fin a la vía administrativa, se requiere previo dictamen favorable de:",
+            "explanation": "La revisión de oficio por nulidad exige dictamen favorable del Consejo de Estado u órgano consultivo autonómico.",
+            "options": [
+                {
+                    "content": "La Abogacía del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tribunal de Cuentas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Estado u órgano consultivo equivalente de la comunidad autónoma",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Intervención General",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, el trámite de audiencia a los interesados se concederá por un plazo no inferior a diez días ni superior a:",
+            "explanation": "El plazo de audiencia es de entre diez y quince días.",
+            "options": [
+                {
+                    "content": "Veinte días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": true
+                },
+                {
+                    "content": "Treinta días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 29/1998, reguladora de la jurisdicción contencioso-administrativa, el plazo para interponer recurso contencioso-administrativo es de dos meses si el acto es expreso y, si no lo fuera, de:",
+            "explanation": "Frente a actos presuntos el plazo es de seis meses desde que se produzca el acto presunto.",
+            "options": [
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 14 de la Ley 39/2015, señale el sujeto que NO está obligado necesariamente a relacionarse por medios electrónicos con las Administraciones:",
+            "explanation": "Las personas físicas pueden elegir el medio, salvo que estén en alguno de los supuestos de obligatoriedad.",
+            "options": [
+                {
+                    "content": "Las personas jurídicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las entidades sin personalidad jurídica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las personas físicas no incluidas en otros supuestos del artículo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Quienes representen a un interesado obligado a relacionarse electrónicamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, el derecho a reclamar por responsabilidad patrimonial prescribe, con carácter general, al año de producido el hecho que motive la indemnización o de manifestarse su efecto lesivo. En caso de daños físicos o psíquicos, el plazo se computa desde:",
+            "explanation": "En daños personales el plazo empieza a contar desde la curación o la determinación del alcance de las secuelas.",
+            "options": [
+                {
+                    "content": "La fecha de la reclamación previa",
+                    "is_correct": false
+                },
+                {
+                    "content": "La notificación de la resolución administrativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "El día siguiente al hecho dañoso en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "La curación o la determinación del alcance de las secuelas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 40/2015, salvo que la ley disponga otra cosa, las infracciones leves prescriben a los:",
+            "explanation": "Las infracciones muy graves prescriben a los tres años, las graves a los dos y las leves a los seis meses.",
+            "options": [
+                {
+                    "content": "Seis meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 9/2017, de Contratos del Sector Público, son contratos menores los de valor estimado inferior a:",
+            "explanation": "El artículo 118 LCSP fija 40.000 euros para obras y 15.000 para suministros y servicios.",
+            "options": [
+                {
+                    "content": "50.000 euros en obras y 18.000 en servicios y suministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "30.000 euros en obras y 12.000 en servicios y suministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "40.000 euros en obras y 15.000 en servicios y suministros",
+                    "is_correct": true
+                },
+                {
+                    "content": "60.000 euros en obras y 20.000 en servicios y suministros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 39/2015, en los procedimientos iniciados de oficio en que la Administración ejercite potestades sancionadoras o de intervención susceptibles de producir efectos desfavorables o de gravamen, el vencimiento del plazo máximo sin resolución produce la caducidad.",
+            "explanation": "Es la consecuencia prevista para estos procedimientos iniciados de oficio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 8 del TREBEP, los empleados públicos se clasifican en:",
+            "explanation": "El TREBEP distingue funcionarios de carrera, interinos, personal laboral y personal eventual.",
+            "options": [
+                {
+                    "content": "Funcionarios de carrera, personal laboral, personal estatutario y personal eventual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Funcionarios de carrera, funcionarios interinos, personal laboral y personal eventual",
+                    "is_correct": true
+                },
+                {
+                    "content": "Funcionarios de carrera, funcionarios de empleo, personal laboral y personal directivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Funcionarios de carrera, funcionarios interinos, personal laboral y personal de gabinete",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, los funcionarios públicos tendrán derecho a disfrutar, como mínimo, durante cada año natural, de unas vacaciones retribuidas de:",
+            "explanation": "El TREBEP fija veintidós días hábiles anuales como mínimo.",
+            "options": [
+                {
+                    "content": "Veinte días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes natural",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veintidós días hábiles",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinticinco días hábiles",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, señale cuál NO es causa de pérdida de la condición de funcionario de carrera:",
+            "explanation": "La excedencia es una situación administrativa y no implica pérdida de la condición de funcionario.",
+            "options": [
+                {
+                    "content": "La renuncia a la condición de funcionario",
+                    "is_correct": false
+                },
+                {
+                    "content": "La jubilación total",
+                    "is_correct": false
+                },
+                {
+                    "content": "La pena principal o accesoria de inhabilitación absoluta firme",
+                    "is_correct": false
+                },
+                {
+                    "content": "La declaración en excedencia voluntaria por interés particular",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, la excedencia voluntaria por interés particular puede concederse a los funcionarios de carrera que hayan prestado servicios efectivos en cualquiera de las Administraciones Públicas durante los cinco años inmediatamente anteriores. ¿Qué periodo mínimo exige el TREBEP?",
+            "explanation": "El TREBEP exige un periodo mínimo de cinco años de servicios efectivos inmediatamente anteriores.",
+            "options": [
+                {
+                    "content": "Cinco años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, la sanción de suspensión firme de funciones, cuando se imponga por falta muy grave, no podrá exceder de:",
+            "explanation": "La suspensión firme por falta muy grave tiene un máximo de seis años.",
+            "options": [
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, señale cuál de los siguientes conceptos NO es una retribución complementaria:",
+            "explanation": "Los trienios son retribución básica, junto con el sueldo y las pagas extraordinarias.",
+            "options": [
+                {
+                    "content": "El complemento de destino",
+                    "is_correct": false
+                },
+                {
+                    "content": "El complemento específico",
+                    "is_correct": false
+                },
+                {
+                    "content": "El complemento de productividad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los trienios",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, los sistemas selectivos de los funcionarios de carrera serán los de oposición y concurso-oposición. El sistema de concurso, consistente solo en valorar méritos, solo podrá aplicarse:",
+            "explanation": "El concurso solo puede aplicarse excepcionalmente y en virtud de ley.",
+            "options": [
+                {
+                    "content": "Con carácter ordinario para el grupo C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando así lo decida el órgano de selección",
+                    "is_correct": false
+                },
+                {
+                    "content": "En virtud de ley, con carácter excepcional",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mediante acuerdo de la Mesa General de Negociación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TREBEP, el procedimiento normal de provisión de puestos de trabajo de los funcionarios de carrera es:",
+            "explanation": "El concurso es el procedimiento normal; la libre designación es excepcional.",
+            "options": [
+                {
+                    "content": "El concurso",
+                    "is_correct": true
+                },
+                {
+                    "content": "La libre designación",
+                    "is_correct": false
+                },
+                {
+                    "content": "La comisión de servicios",
+                    "is_correct": false
+                },
+                {
+                    "content": "La adscripción provisional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los funcionarios de carrera de la Administración General del Estado que ingresaron a partir del 1 de enero de 2011 quedan incluidos en el Régimen General de la Seguridad Social.",
+            "explanation": "Desde esa fecha los nuevos funcionarios se integran en el Régimen General en lugar del Régimen de Clases Pasivas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 67 del TREBEP, la jubilación forzosa de los funcionarios se declarará de oficio al cumplir la edad de:",
+            "explanation": "El artículo 67.3 TREBEP fija la jubilación forzosa a los sesenta y cinco años.",
+            "options": [
+                {
+                    "content": "Sesenta años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sesenta y cinco años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sesenta y siete años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Setenta años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 134 de la Constitución, el Gobierno presentará ante el Congreso los Presupuestos Generales del Estado al menos con una antelación a la expiración de los del año anterior de:",
+            "explanation": "El artículo 134.3 CE exige presentarlos al menos tres meses antes.",
+            "options": [
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 134.4 de la Constitución, si la Ley de Presupuestos no se aprueba antes del primer día del ejercicio económico correspondiente:",
+            "explanation": "La Constitución prevé la prórroga automática de los presupuestos anteriores.",
+            "options": [
+                {
+                    "content": "Se considerarán automáticamente prorrogados los presupuestos del ejercicio anterior hasta la aprobación de los nuevos",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Gobierno aprobará unos presupuestos provisionales por decreto-ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se podrán realizar gastos de personal y deuda pública",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se disolverán las Cortes Generales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 134 de la Constitución, los Presupuestos Generales del Estado tendrán carácter plurianual.",
+            "explanation": "El artículo 134.2 CE establece que tendrán carácter anual.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 47/2003, General Presupuestaria, con cargo a los créditos del estado de gastos de cada presupuesto solo podrán contraerse obligaciones derivadas de gastos realizados:",
+            "explanation": "Rige el principio de temporalidad: los gastos deben realizarse en el año natural del ejercicio.",
+            "options": [
+                {
+                    "content": "En los doce meses siguientes a la aprobación del presupuesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "En los dos ejercicios siguientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el año natural del propio ejercicio presupuestario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hasta el 31 de enero del año siguiente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la gestión del gasto público, el acto mediante el cual se acuerda la realización de un gasto por una cuantía cierta o aproximada, reservando la totalidad o parte de un crédito presupuestario, es:",
+            "explanation": "Esa es la definición de la fase de autorización del gasto.",
+            "options": [
+                {
+                    "content": "La disposición o compromiso",
+                    "is_correct": false
+                },
+                {
+                    "content": "La autorización",
+                    "is_correct": true
+                },
+                {
+                    "content": "El reconocimiento de la obligación",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ordenación del pago",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El control interno de la gestión económico-financiera del sector público estatal es ejercido por:",
+            "explanation": "La IGAE ejerce el control interno; el Tribunal de Cuentas realiza el control externo.",
+            "options": [
+                {
+                    "content": "El Tribunal de Cuentas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Dirección General del Presupuesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Tesorería General de la Seguridad Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Intervención General de la Administración del Estado",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando haya de realizarse con cargo al presupuesto un gasto específico y determinado que no pueda demorarse hasta el ejercicio siguiente y para el que no exista crédito, la modificación presupuestaria adecuada es:",
+            "explanation": "El crédito extraordinario se aprueba cuando no existe crédito; el suplemento, cuando es insuficiente.",
+            "options": [
+                {
+                    "content": "El crédito extraordinario",
+                    "is_correct": true
+                },
+                {
+                    "content": "El suplemento de crédito",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ampliación de crédito",
+                    "is_correct": false
+                },
+                {
+                    "content": "La generación de crédito",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 2/2012, de Estabilidad Presupuestaria y Sostenibilidad Financiera, se entiende por estabilidad presupuestaria de las Administraciones Públicas:",
+            "explanation": "La LO 2/2012 define la estabilidad presupuestaria como equilibrio o superávit estructural.",
+            "options": [
+                {
+                    "content": "La capacidad para financiar compromisos de gasto presentes y futuros",
+                    "is_correct": false
+                },
+                {
+                    "content": "La ausencia de déficit público en términos nominales en cada ejercicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "La situación de equilibrio o superávit estructural",
+                    "is_correct": true
+                },
+                {
+                    "content": "El cumplimiento de los plazos de pago a proveedores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 2/2012, el volumen de deuda pública del conjunto de las Administraciones Públicas no podrá superar el siguiente porcentaje del PIB nacional:",
+            "explanation": "La ley fija el límite en el 60 % del PIB, valor de referencia del Tratado de Funcionamiento de la UE.",
+            "options": [
+                {
+                    "content": "El 50 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 60 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 70 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 90 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 134.6 de la Constitución, toda proposición o enmienda que suponga aumento de los créditos o disminución de los ingresos presupuestarios requerirá para su tramitación:",
+            "explanation": "El artículo 134.6 CE exige la conformidad del Gobierno para tramitarlas.",
+            "options": [
+                {
+                    "content": "El informe previo del Tribunal de Cuentas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mayoría absoluta del Congreso",
+                    "is_correct": false
+                },
+                {
+                    "content": "El dictamen del Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La conformidad del Gobierno",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

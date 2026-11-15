@@ -1,0 +1,560 @@
+{
+    "slug": "proteccion-datos-rgpd-lopdgdd",
+    "title": "Protección de datos: RGPD y LO 3/2018",
+    "description": "Test de repaso de protección de datos para el temario de la AGE: principios del RGPD, derechos ARSULIPO, DPD y AEPD. Preguntas tipo oposición para practicar antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:10:50+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5 del Reglamento (UE) 2016/679, ¿qué principio exige que los datos personales sean adecuados, pertinentes y limitados a lo necesario en relación con los fines para los que son tratados?",
+            "explanation": "El principio de minimización de datos exige que solo se traten los datos adecuados, pertinentes y limitados a lo necesario para los fines del tratamiento (art. 5.1.c RGPD).",
+            "options": [
+                {
+                    "content": "Limitación de la finalidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Minimización de datos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Exactitud",
+                    "is_correct": false
+                },
+                {
+                    "content": "Limitación del plazo de conservación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a los principios relativos al tratamiento del artículo 5 del RGPD, señale la respuesta incorrecta:",
+            "explanation": "Los datos deben recogerse con fines determinados, explícitos y legítimos (limitación de la finalidad), por lo que no cabe el tratamiento para fines futuros indeterminados.",
+            "options": [
+                {
+                    "content": "Los datos serán tratados de manera lícita, leal y transparente en relación con el interesado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los datos serán exactos y, si fuera necesario, actualizados.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los datos se mantendrán de forma que se permita la identificación de los interesados durante no más tiempo del necesario para los fines del tratamiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los datos podrán tratarse para cualquier fin futuro sin necesidad de haberlo determinado en el momento de su recogida.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme al principio de responsabilidad proactiva del artículo 5.2 del RGPD, ¿quién es responsable del cumplimiento de los principios del tratamiento y debe ser capaz de demostrarlo?",
+            "explanation": "El artículo 5.2 RGPD atribuye al responsable del tratamiento la responsabilidad de cumplir los principios y la capacidad de demostrarlo.",
+            "options": [
+                {
+                    "content": "El responsable del tratamiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "El encargado del tratamiento en exclusiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "El delegado de protección de datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "La autoridad de control",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una de las condiciones de licitud del tratamiento recogidas en el artículo 6.1 del RGPD:",
+            "explanation": "La conveniencia organizativa no es una base de licitud; las bases son consentimiento, contrato, obligación legal, intereses vitales, misión de interés público e interés legítimo.",
+            "options": [
+                {
+                    "content": "Que el interesado haya dado su consentimiento para uno o varios fines específicos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que el tratamiento sea necesario para proteger intereses vitales del interesado o de otra persona física.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que el tratamiento responda a la mera conveniencia organizativa del responsable, sin otra justificación.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que el tratamiento sea necesario para el cumplimiento de una obligación legal aplicable al responsable.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 6.1 del RGPD, la base de licitud del interés legítimo del responsable no se aplica al tratamiento realizado por:",
+            "explanation": "El RGPD excluye expresamente el interés legítimo como base para los tratamientos que realicen las autoridades públicas en el ejercicio de sus funciones.",
+            "options": [
+                {
+                    "content": "Las pequeñas y medianas empresas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las autoridades públicas en el ejercicio de sus funciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los encargados del tratamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las entidades sin ánimo de lucro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "De acuerdo con la Ley Orgánica 3/2018, ¿a partir de qué edad puede un menor prestar válidamente su consentimiento para el tratamiento de sus datos personales?",
+            "explanation": "La LO 3/2018 fija en 14 años la edad para consentir el tratamiento de datos, haciendo uso de la facultad que el RGPD otorga a los Estados miembros.",
+            "options": [
+                {
+                    "content": "A partir de los 12 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "A partir de los 13 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "A partir de los 14 años",
+                    "is_correct": true
+                },
+                {
+                    "content": "A partir de los 16 años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El RGPD permite que los Estados miembros establezcan por ley una edad inferior a 16 años para el consentimiento del menor en servicios de la sociedad de la información, siempre que no sea inferior a 13 años.",
+            "explanation": "Así lo establece el artículo 8.1 del RGPD: la edad general es 16 años, rebajable por los Estados hasta un mínimo de 13.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 4 del RGPD, el consentimiento del interesado es toda manifestación de voluntad:",
+            "explanation": "El RGPD define el consentimiento como manifestación de voluntad libre, específica, informada e inequívoca mediante una declaración o una clara acción afirmativa.",
+            "options": [
+                {
+                    "content": "Libre, específica, informada e inequívoca",
+                    "is_correct": true
+                },
+                {
+                    "content": "Libre, escrita, genérica y revocable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Expresa, verbal, informada y permanente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Voluntaria, tácita, específica e irrevocable",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 12 del RGPD, el responsable del tratamiento facilitará al interesado información sobre las actuaciones derivadas de una solicitud de ejercicio de derechos, como máximo, en el plazo de:",
+            "explanation": "El plazo general es de un mes a partir de la recepción de la solicitud, prorrogable dos meses más teniendo en cuenta la complejidad y el número de solicitudes.",
+            "options": [
+                {
+                    "content": "Diez días hábiles, sin posibilidad de prórroga",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes, prorrogable otros dos meses en caso necesario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Quince días, prorrogables por otros quince",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses, sin posibilidad de prórroga",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué derecho del interesado le permite recibir los datos personales que ha facilitado a un responsable en un formato estructurado, de uso común y lectura mecánica, y transmitirlos a otro responsable?",
+            "explanation": "El derecho a la portabilidad (art. 20 RGPD) permite recibir y transmitir los datos en formato estructurado, de uso común y lectura mecánica.",
+            "options": [
+                {
+                    "content": "Derecho de acceso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Derecho de limitación del tratamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Derecho de oposición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Derecho a la portabilidad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 17 del RGPD, ¿en cuál de los siguientes supuestos el interesado tiene derecho a obtener la supresión de sus datos?",
+            "explanation": "Las otras tres opciones son excepciones al derecho de supresión; en cambio, la desaparición de la necesidad de los datos respecto a sus fines sí lo justifica.",
+            "options": [
+                {
+                    "content": "Cuando los datos ya no sean necesarios en relación con los fines para los que fueron recogidos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando el tratamiento sea necesario para el cumplimiento de una obligación legal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando el tratamiento sea necesario para ejercer el derecho a la libertad de expresión e información",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando el tratamiento sea necesario para la formulación, el ejercicio o la defensa de reclamaciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el interesado impugna la exactitud de sus datos personales, ¿qué derecho puede ejercer, conforme al artículo 18 del RGPD, mientras el responsable verifica dicha exactitud?",
+            "explanation": "El interesado puede obtener la limitación del tratamiento durante el plazo que permita al responsable verificar la exactitud de los datos.",
+            "options": [
+                {
+                    "content": "Supresión inmediata y definitiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Portabilidad de los datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Limitación del tratamiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Oposición al tratamiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando los datos personales se traten con fines de mercadotecnia directa y el interesado ejerza su derecho de oposición, ¿qué consecuencia prevé el artículo 21 del RGPD?",
+            "explanation": "En mercadotecnia directa la oposición es incondicional: no hay que justificar motivos y los datos dejan de tratarse para ese fin.",
+            "options": [
+                {
+                    "content": "El responsable podrá continuar si acredita motivos legítimos imperiosos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El tratamiento solo cesará pasado un año desde la solicitud",
+                    "is_correct": false
+                },
+                {
+                    "content": "El interesado deberá justificar su situación particular",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los datos personales dejarán de ser tratados para dichos fines",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El interesado puede oponerse, por motivos relacionados con su situación particular, a un tratamiento de sus datos basado en el cumplimiento de una misión realizada en interés público.",
+            "explanation": "El artículo 21.1 del RGPD reconoce este derecho, aunque el responsable puede seguir tratando los datos si acredita motivos legítimos imperiosos que prevalezcan.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme a la Ley Orgánica 3/2018, ¿quiénes podrán dirigirse al responsable para solicitar el acceso a los datos de una persona fallecida y, en su caso, su rectificación o supresión?",
+            "explanation": "La LO 3/2018 legitima a las personas vinculadas por razones familiares o de hecho y a sus herederos, salvo que el fallecido lo hubiese prohibido expresamente.",
+            "options": [
+                {
+                    "content": "Únicamente la Agencia Española de Protección de Datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las personas vinculadas al fallecido por razones familiares o de hecho y sus herederos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cualquier ciudadano que acredite interés legítimo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivamente el notario que hubiera autorizado el testamento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 33 del RGPD, en caso de violación de la seguridad de los datos personales que constituya un riesgo para los derechos y libertades, el responsable la notificará a la autoridad de control, de ser posible, a más tardar:",
+            "explanation": "El plazo del artículo 33 RGPD es de 72 horas desde que el responsable tiene constancia de la violación.",
+            "options": [
+                {
+                    "content": "24 horas después de tener constancia de ella",
+                    "is_correct": false
+                },
+                {
+                    "content": "48 horas después de tener constancia de ella",
+                    "is_correct": false
+                },
+                {
+                    "content": "72 horas después de tener constancia de ella",
+                    "is_correct": true
+                },
+                {
+                    "content": "7 días después de tener constancia de ella",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las infracciones más graves del RGPD, según su artículo 83.5, pueden sancionarse con multas administrativas de hasta:",
+            "explanation": "El artículo 83.5 RGPD prevé multas de hasta 20 millones de euros o el 4 % del volumen de negocio anual global, la de mayor cuantía; el nivel inferior es de 10 millones o el 2 %.",
+            "options": [
+                {
+                    "content": "20 millones de euros o el 4 % del volumen de negocio total anual global, optándose por la cuantía mayor",
+                    "is_correct": true
+                },
+                {
+                    "content": "10 millones de euros o el 2 % del volumen de negocio total anual global",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 millones de euros o el 5 % del volumen de negocio total anual global",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 millones de euros o el 1 % del volumen de negocio total anual global",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 37 del RGPD, el responsable y el encargado del tratamiento designarán un delegado de protección de datos, entre otros supuestos, cuando:",
+            "explanation": "La designación es obligatoria para autoridades y organismos públicos, con la excepción de los tribunales en ejercicio de su función judicial.",
+            "options": [
+                {
+                    "content": "La empresa tenga más de 250 trabajadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se traten únicamente datos de personas físicas mayores de edad",
+                    "is_correct": false
+                },
+                {
+                    "content": "El responsable sea una persona física que trate datos de forma ocasional",
+                    "is_correct": false
+                },
+                {
+                    "content": "El tratamiento lo lleve a cabo una autoridad u organismo público, excepto los tribunales que actúen en ejercicio de su función judicial",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con la posición del delegado de protección de datos (art. 38 RGPD), señale la respuesta incorrecta:",
+            "explanation": "El DPD actúa con independencia: el responsable no puede darle instrucciones sobre el desempeño de sus funciones.",
+            "options": [
+                {
+                    "content": "Puede recibir instrucciones del responsable sobre el modo de desempeñar sus funciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "No será destituido ni sancionado por el responsable por desempeñar sus funciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Rendirá cuentas directamente al más alto nivel jerárquico del responsable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrá desempeñar otras funciones siempre que no den lugar a conflicto de intereses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una función del delegado de protección de datos conforme al artículo 39 del RGPD:",
+            "explanation": "Determinar los fines y medios del tratamiento es lo que define al responsable del tratamiento, no una función del DPD.",
+            "options": [
+                {
+                    "content": "Determinar los fines y los medios del tratamiento de datos personales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Informar y asesorar al responsable o encargado y a los empleados que se ocupen del tratamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Supervisar el cumplimiento de la normativa de protección de datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Actuar como punto de contacto de la autoridad de control",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El encargado del tratamiento es la persona que determina los fines y los medios del tratamiento de datos personales.",
+            "explanation": "Quien determina los fines y medios es el responsable; el encargado trata los datos por cuenta de este (art. 4 RGPD).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 3/2018, cuando los responsables o encargados de los tratamientos sean Administraciones Públicas y cometan una infracción, la Agencia Española de Protección de Datos dictará resolución:",
+            "explanation": "Para las Administraciones Públicas, la LO 3/2018 prevé la sanción de apercibimiento y medidas para corregir la infracción, sin multa.",
+            "options": [
+                {
+                    "content": "Imponiéndoles una multa de hasta 20 millones de euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acordando la suspensión del funcionamiento del órgano durante un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sancionándolas con apercibimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Inhabilitando a los titulares del órgano para cargo público",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La Agencia Española de Protección de Datos, como autoridad administrativa independiente, se relaciona con el Gobierno a través del:",
+            "explanation": "La AEPD actúa con plena independencia y se relaciona con el Gobierno por medio del Ministerio de Justicia.",
+            "options": [
+                {
+                    "content": "Ministerio del Interior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ministerio de Hacienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ministerio para la Transformación Digital",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ministerio de Justicia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 3/2018, el mandato de la Presidencia de la Agencia Española de Protección de Datos tiene una duración de:",
+            "explanation": "El mandato es de cinco años y puede renovarse una sola vez por otro período de igual duración.",
+            "options": [
+                {
+                    "content": "Cuatro años, sin posibilidad de renovación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años, renovable para otro período de igual duración",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis años, sin posibilidad de renovación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años, renovable indefinidamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme a la Ley Orgánica 3/2018, las infracciones consideradas muy graves prescriben a los:",
+            "explanation": "Las infracciones muy graves prescriben a los tres años, las graves a los dos años y las leves al año.",
+            "options": [
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

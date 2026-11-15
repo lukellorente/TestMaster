@@ -1,0 +1,430 @@
+{
+    "slug": "atencion-ciudadano",
+    "title": "Atención al ciudadano, quejas y sugerencias",
+    "description": "Test fácil para repasar atención al ciudadano en la AGE: quejas y sugerencias, información administrativa, oficinas de registro y Cl@ve. Lo hice para el temario de 2026, por si os sirve.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T21:12:02+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "El Real Decreto 951/2005, de 29 de julio, establece:",
+            "explanation": "El RD 951/2005 regula el marco general para la mejora de la calidad en la AGE, que incluye el programa de quejas y sugerencias.",
+            "options": [
+                {
+                    "content": "El régimen disciplinario de los funcionarios de la Administración General del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El marco general para la mejora de la calidad en la Administración General del Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "El procedimiento administrativo común de las Administraciones Públicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El régimen de acceso a la información pública y buen gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es un programa del marco general para la mejora de la calidad del Real Decreto 951/2005:",
+            "explanation": "El marco de calidad contempla programas como las cartas de servicios, las quejas y sugerencias o la evaluación de la satisfacción, pero no la selección de personal.",
+            "options": [
+                {
+                    "content": "Cartas de servicios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quejas y sugerencias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Programa de selección de personal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Evaluación de la satisfacción de los usuarios de los servicios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Real Decreto 951/2005, ¿en qué plazo debe contestarse, como regla general, a una queja o sugerencia?",
+            "explanation": "El Real Decreto 951/2005 establece que la contestación se realizará en el plazo de veinte días hábiles desde su presentación.",
+            "options": [
+                {
+                    "content": "Diez días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días hábiles",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes definiciones corresponde mejor a una sugerencia en el sistema de quejas y sugerencias de la AGE?",
+            "explanation": "La sugerencia es una propuesta de mejora del servicio; la queja, en cambio, expresa insatisfacción por el funcionamiento de este.",
+            "options": [
+                {
+                    "content": "La manifestación de insatisfacción por el retraso o la desatención en un servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "El recurso contra una resolución administrativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "La iniciativa o propuesta para mejorar la calidad de los servicios",
+                    "is_correct": true
+                },
+                {
+                    "content": "La denuncia de una infracción administrativa ante la Inspección",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La presentación de una queja conforme al Real Decreto 951/2005 interrumpe los plazos para interponer recursos administrativos.",
+            "explanation": "Las quejas no tienen la calificación de recurso administrativo ni su presentación paraliza los plazos establecidos en la normativa vigente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las cartas de servicios son documentos que:",
+            "explanation": "La carta de servicios informa sobre los servicios prestados, los derechos de los ciudadanos y los compromisos de calidad asumidos.",
+            "options": [
+                {
+                    "content": "Sustituyen a la resolución de los procedimientos administrativos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Informan a los ciudadanos sobre los servicios que gestiona un órgano y sus compromisos de calidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Regulan las retribuciones del personal de atención al público",
+                    "is_correct": false
+                },
+                {
+                    "content": "Establecen los plazos de prescripción de las infracciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 13 de la Ley 39/2015, quienes se relacionan con las Administraciones Públicas tienen derecho, entre otros, a:",
+            "explanation": "El artículo 13 reconoce el derecho a ser asistido en el uso de medios electrónicos, junto con otros derechos de las personas en su relación con la Administración.",
+            "options": [
+                {
+                    "content": "Ser asistidos en el uso de medios electrónicos en sus relaciones con las Administraciones Públicas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elegir libremente el órgano que resolverá su procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acceder a los expedientes de terceros sin límite alguno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obtener siempre una resolución favorable por silencio administrativo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 53 de la Ley 39/2015, los interesados en un procedimiento administrativo tienen derecho a:",
+            "explanation": "El artículo 53.1.a) reconoce el derecho a conocer, en cualquier momento, el estado de tramitación y a acceder y obtener copia de los documentos.",
+            "options": [
+                {
+                    "content": "Conocer en cualquier momento el estado de la tramitación del procedimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Conocerlo únicamente al finalizar la instrucción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conocerlo solo si han abonado una tasa de información",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conocerlo solo mediante comparecencia personal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué número de teléfono es el del servicio de información administrativa de las Administraciones Públicas de la Administración General del Estado?",
+            "explanation": "El 060 es el servicio de atención e información administrativa general de la AGE; el 112 es el de emergencias.",
+            "options": [
+                {
+                    "content": "012",
+                    "is_correct": false
+                },
+                {
+                    "content": "016",
+                    "is_correct": false
+                },
+                {
+                    "content": "060",
+                    "is_correct": true
+                },
+                {
+                    "content": "112",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Punto de Acceso General electrónico de la Administración General del Estado es un portal que permite:",
+            "explanation": "El Punto de Acceso General facilita a la ciudadanía el acceso a información y servicios públicos, y a su sede electrónica asociada, desde un único punto.",
+            "options": [
+                {
+                    "content": "Acceder a la información y a los servicios y trámites de la Administración desde un único sitio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sustituir a las sedes electrónicas de todos los organismos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolver recursos de alzada de forma automática",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consultar exclusivamente la legislación publicada en el BOE",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 16 de la Ley 39/2015, señale en cuál de los siguientes lugares NO pueden presentarse documentos dirigidos a las Administraciones Públicas:",
+            "explanation": "Las oficinas bancarias no figuran entre los lugares de presentación del artículo 16.4; sí lo hacen el registro electrónico, Correos y las oficinas de asistencia en materia de registros.",
+            "options": [
+                {
+                    "content": "En las oficinas de Correos",
+                    "is_correct": false
+                },
+                {
+                    "content": "En las oficinas de asistencia en materia de registros",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el registro electrónico de la Administración a la que se dirijan",
+                    "is_correct": false
+                },
+                {
+                    "content": "En cualquier oficina bancaria",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando se presenta un documento en papel en una oficina de asistencia en materia de registros, ¿qué debe hacer la Administración?",
+            "explanation": "Los documentos presentados en papel en las oficinas de asistencia en materia de registros se digitalizan y se incorporan al expediente electrónico, devolviéndose los originales al interesado salvo excepciones legales.",
+            "options": [
+                {
+                    "content": "Digitalizarlo y devolver el original al interesado, salvo excepciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Archivarlo exclusivamente en papel",
+                    "is_correct": false
+                },
+                {
+                    "content": "Rechazarlo si no se ha presentado por vía electrónica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Remitirlo por correo ordinario al interesado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 12 de la Ley 39/2015, la asistencia en el uso de medios electrónicos que prestan las Administraciones comprende, especialmente:",
+            "explanation": "El artículo 12.2 enumera como ámbitos de asistencia la identificación y firma electrónica, la presentación de solicitudes por el registro electrónico general y la obtención de copias auténticas.",
+            "options": [
+                {
+                    "content": "La redacción de los recursos administrativos en nombre del interesado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La identificación y firma electrónica, la presentación de solicitudes en el registro electrónico general y la obtención de copias auténticas",
+                    "is_correct": true
+                },
+                {
+                    "content": "La asistencia jurídica gratuita en cualquier procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "La tramitación de todos los procedimientos en lugar del interesado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, cada Administración dispondrá de:",
+            "explanation": "El artículo 16.1 establece que cada Administración dispondrá de un Registro Electrónico General, que puede funcionar también como portal de acceso a los registros de sus organismos.",
+            "options": [
+                {
+                    "content": "Un único registro en papel para todas las Administraciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un Registro Electrónico General, en el que se hará el correspondiente asiento de todo documento presentado o recibido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un registro electrónico solo para las personas jurídicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un registro presencial exclusivamente en las capitales de provincia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los registros electrónicos de las Administraciones Públicas permiten la presentación de documentos:",
+            "explanation": "La Ley 39/2015 prevé que los registros electrónicos permitan la presentación de documentos todos los días del año, durante las 24 horas.",
+            "options": [
+                {
+                    "content": "Solo en horario de oficina de lunes a viernes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todos los días del año durante las veinticuatro horas",
+                    "is_correct": true
+                },
+                {
+                    "content": "De lunes a sábado hasta las 15:00 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo durante los días hábiles, de 9:00 a 20:00 horas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un documento presentado en un registro electrónico en un día inhábil se entiende presentado en el primer día hábil siguiente, salvo que una norma permita expresamente otra cosa.",
+            "explanation": "Así lo establece la Ley 39/2015 para los registros electrónicos: la presentación en día inhábil se entiende hecha el primer día hábil siguiente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es Cl@ve?",
+            "explanation": "Cl@ve es una plataforma común del sector público administrativo estatal para identificarse y firmar electrónicamente, y evita tener que usar claves distintas para cada servicio.",
+            "options": [
+                {
+                    "content": "Un sistema de identificación, autenticación y firma electrónica común para el acceso a los servicios públicos electrónicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un registro de funcionarios de la Administración General del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un servicio de notificaciones en papel por correo certificado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una base de datos de resoluciones judiciales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA sobre el registro de un ciudadano en Cl@ve:",
+            "explanation": "El alta en Cl@ve exige acreditar la identidad, ya sea de forma presencial, con certificado o DNI electrónico, o por videollamada, entre otras vías.",
+            "options": [
+                {
+                    "content": "Puede hacerse con certificado electrónico o DNI electrónico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puede hacerse mediante videollamada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puede hacerse presencialmente en una oficina de registro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puede hacerse sin ninguna comprobación de identidad, por simple correo ordinario",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 14 de la Ley 39/2015, ¿cuál de los siguientes sujetos está obligado en todo caso a relacionarse con las Administraciones Públicas a través de medios electrónicos?",
+            "explanation": "El artículo 14.2 obliga en todo caso a las personas jurídicas, a las entidades sin personalidad jurídica y a otros colectivos, mientras que las personas físicas pueden elegir el medio.",
+            "options": [
+                {
+                    "content": "Las personas físicas que no ejerzan actividad profesional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier persona mayor de 65 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las personas jurídicas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los extranjeros no residentes en España",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

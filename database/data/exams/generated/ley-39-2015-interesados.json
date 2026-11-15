@@ -1,0 +1,560 @@
+{
+    "slug": "ley-39-2015-interesados",
+    "title": "Ley 39/2015 - Interesados en el procedimiento (Título I)",
+    "description": "Test de la Ley 39/2015 sobre capacidad de obrar, interesados, representación, identificación y firma. Lo hice para repasar el tema antes de la oposición de la AGE.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:42:33+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 3 de la Ley 39/2015, señale la respuesta INCORRECTA sobre quién tiene capacidad de obrar ante las Administraciones Públicas:",
+            "explanation": "Los menores solo tienen capacidad de obrar para aquellos derechos e intereses cuya actuación el ordenamiento permite sin asistencia, no para cualquier procedimiento.",
+            "options": [
+                {
+                    "content": "Las personas físicas o jurídicas que ostenten capacidad de obrar con arreglo a las normas civiles.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los menores de edad, para cualquier procedimiento administrativo y sin necesidad de asistencia alguna.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los menores de edad, para el ejercicio y defensa de los derechos e intereses cuya actuación esté permitida por el ordenamiento sin asistencia de quien ejerza la patria potestad, tutela o curatela.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los grupos de afectados, cuando la Ley así lo declare expresamente.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, los grupos de afectados, las uniones y entidades sin personalidad jurídica y los patrimonios independientes o autónomos tienen capacidad de obrar ante las Administraciones Públicas:",
+            "explanation": "El artículo 3 reconoce esta capacidad a dichos entes únicamente cuando una Ley lo declare de forma expresa.",
+            "options": [
+                {
+                    "content": "En todo caso, sin necesidad de previsión legal.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo si están inscritos en un registro público.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo cuando actúen mediante representante legal designado ante notario.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando la Ley así lo declare expresamente.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 4 de la Ley 39/2015, se consideran interesados en el procedimiento administrativo:",
+            "explanation": "El artículo 4.1.a) incluye a quienes promuevan el procedimiento como titulares de derechos o intereses legítimos, individuales o colectivos.",
+            "options": [
+                {
+                    "content": "Quienes lo promuevan como titulares de derechos o intereses legítimos individuales o colectivos.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente quienes lo promuevan como titulares de derechos subjetivos individuales.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo quienes sean destinatarios directos de la resolución final.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier ciudadano, aunque carezca de interés alguno en el asunto.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 4 de la Ley 39/2015, aquellos cuyos intereses legítimos puedan resultar afectados por la resolución y se personen en el procedimiento son interesados siempre que lo hagan:",
+            "explanation": "El artículo 4.1.c) permite personarse mientras no haya recaído resolución definitiva.",
+            "options": [
+                {
+                    "content": "Dentro de los diez días siguientes a la iniciación del procedimiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Antes del trámite de audiencia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "En tanto no haya recaído resolución definitiva.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Antes de la finalización del plazo de alegaciones.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las asociaciones y organizaciones representativas de intereses económicos y sociales serán, según la Ley 39/2015, titulares de:",
+            "explanation": "El artículo 4.2 les atribuye la titularidad de intereses legítimos colectivos en los términos que la Ley reconozca.",
+            "options": [
+                {
+                    "content": "Derechos subjetivos de carácter individual.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Intereses legítimos colectivos, en los términos que la Ley reconozca.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Intereses simples, sin legitimación en el procedimiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Derechos fundamentales de participación en todo caso.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando la condición de interesado derive de una relación jurídica transmisible, según el artículo 4.3 de la Ley 39/2015, el derechohabiente:",
+            "explanation": "La Ley establece que el derechohabiente sucede en la condición de interesado sea cual sea la fase del procedimiento.",
+            "options": [
+                {
+                    "content": "Deberá iniciar un nuevo procedimiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sucederá en tal condición cualquiera que sea el estado del procedimiento.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo sucederá si el procedimiento no ha pasado del trámite de audiencia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Necesitará autorización expresa del órgano instructor.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5 de la Ley 39/2015, los interesados con capacidad de obrar que actúen por medio de representante:",
+            "explanation": "El artículo 5.1 dispone que las actuaciones se entienden con el representante salvo manifestación expresa en contrario.",
+            "options": [
+                {
+                    "content": "Deberán entenderse siempre directamente con la Administración.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verán suspendido el procedimiento hasta que ratifiquen la representación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo podrán hacerlo si el representante es abogado o procurador.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se entenderán con el representante las actuaciones administrativas, salvo manifestación expresa en contrario del interesado.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5 de la Ley 39/2015, ¿para cuál de los siguientes actos se presumirá la representación?",
+            "explanation": "Para formular solicitudes, interponer recursos, desistir o renunciar debe acreditarse la representación; en los actos de mero trámite se presume.",
+            "options": [
+                {
+                    "content": "Interponer recursos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desistir de acciones.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Actos y gestiones de mero trámite.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Renunciar a derechos.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para formular solicitudes, interponer recursos, desistir de acciones o renunciar a derechos en nombre de otra persona, la Ley 39/2015 exige acreditar la representación:",
+            "explanation": "El artículo 5.3 admite cualquier medio válido en derecho que deje constancia fidedigna o la comparecencia personal del interesado.",
+            "options": [
+                {
+                    "content": "Exclusivamente mediante escritura pública notarial.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por cualquier medio válido en derecho que deje constancia fidedigna, o mediante declaración en comparecencia personal del interesado.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo mediante inscripción en el registro electrónico de apoderamientos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediante simple declaración verbal del representante.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5 de la Ley 39/2015, la falta o insuficiente acreditación de la representación no impedirá tener por realizado el acto si se subsana el defecto en el plazo que deberá conceder el órgano administrativo, que es de:",
+            "explanation": "El artículo 5.6 fija un plazo de diez días, ampliable cuando las circunstancias del caso lo requieran.",
+            "options": [
+                {
+                    "content": "Diez días, o un plazo superior cuando las circunstancias del caso lo requieran.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco días improrrogables.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días hábiles.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes, en todo caso.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la representación, según la Ley 39/2015, la Administración:",
+            "explanation": "El artículo 5.5 faculta a la Administración para exigir en cualquier momento la acreditación de la representación.",
+            "options": [
+                {
+                    "content": "No puede cuestionar la representación una vez admitida.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo puede requerir su acreditación al inicio del procedimiento.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrá requerir en cualquier momento la acreditación de la representación.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Debe requerirla de oficio en todos los actos de trámite.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5.4 de la Ley 39/2015, se entenderá acreditada la representación realizada mediante:",
+            "explanation": "El artículo 5.4 recoge el apoderamiento apud acta, presencial o electrónico, y la inscripción en el registro electrónico de apoderamientos.",
+            "options": [
+                {
+                    "content": "Una copia simple del DNI del representante.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Apoderamiento apud acta efectuado por comparecencia personal o electrónica en sede electrónica, o inscripción en el registro electrónico de apoderamientos competente.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un correo electrónico remitido por el representante.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente la firma del representante en el escrito presentado.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, los poderes inscritos en el registro electrónico de apoderamientos tendrán una validez determinada máxima de:",
+            "explanation": "Los poderes inscritos tienen una validez máxima de cinco años desde la inscripción, prorrogable por el poderdante.",
+            "options": [
+                {
+                    "content": "Un año desde la inscripción.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años desde la inscripción.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez años desde la inscripción.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años a contar desde la fecha de inscripción.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9 de la Ley 39/2015, las Administraciones Públicas están obligadas a verificar la identidad de los interesados mediante la comprobación de:",
+            "explanation": "El artículo 9.1 exige verificar nombre y apellidos o denominación o razón social que consten en el DNI o documento equivalente.",
+            "options": [
+                {
+                    "content": "Su nombre y apellidos o denominación o razón social, que consten en el DNI o documento identificativo equivalente.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Su domicilio fiscal y número de afiliación a la Seguridad Social.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su firma manuscrita en un registro previo.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su certificado de empadronamiento.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA sobre los sistemas de identificación electrónica de los interesados admitidos por la Ley 39/2015:",
+            "explanation": "La Ley admite certificados cualificados, clave concertada y cualquier otro sistema que las Administraciones consideren válido; no se limita al DNI electrónico.",
+            "options": [
+                {
+                    "content": "Sistemas basados en certificados electrónicos cualificados de firma electrónica.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sistemas basados en certificados electrónicos cualificados de sello electrónico.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sistemas de clave concertada.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivamente el DNI electrónico, sin admitir otros sistemas.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10 de la Ley 39/2015, los interesados podrán firmar a través de cualquier medio que permita acreditar:",
+            "explanation": "El artículo 10.1 exige que el medio acredite la autenticidad de la voluntad y consentimiento y la integridad e inalterabilidad del documento.",
+            "options": [
+                {
+                    "content": "Solo la identidad del firmante.",
+                    "is_correct": false
+                },
+                {
+                    "content": "La autenticidad de la expresión de su voluntad y consentimiento, así como la integridad e inalterabilidad del documento.",
+                    "is_correct": true
+                },
+                {
+                    "content": "La residencia del firmante y su capacidad económica.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente la fecha y hora de la firma.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando los interesados utilicen un sistema de firma de los previstos en la Ley 39/2015, su identidad:",
+            "explanation": "El artículo 10.3 establece que el uso del sistema de firma acredita la identidad por el propio acto de firmar.",
+            "options": [
+                {
+                    "content": "Deberá acreditarse además con el DNI.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Requerirá una verificación posterior por el órgano instructor.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se presumirá solo si firman ante funcionario.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se entenderá acreditada mediante el propio acto de la firma.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 11 de la Ley 39/2015, ¿para cuál de las siguientes actuaciones podrán las Administraciones Públicas requerir el uso obligatorio de firma?",
+            "explanation": "El artículo 11.2 limita la firma obligatoria a formular solicitudes, presentar declaraciones responsables o comunicaciones, interponer recursos, desistir de acciones y renunciar a derechos.",
+            "options": [
+                {
+                    "content": "Consultar el estado de tramitación de un expediente.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Interponer recursos.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Obtener copia de un documento del expediente.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solicitar cita previa.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con carácter general, según el artículo 11 de la Ley 39/2015, para realizar cualquier actuación en el procedimiento administrativo será suficiente con que los interesados:",
+            "explanation": "El artículo 11.1 establece que basta acreditar previamente la identidad por los medios de identificación previstos.",
+            "options": [
+                {
+                    "content": "Acrediten previamente su identidad a través de cualquiera de los medios de identificación previstos en la Ley.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Firmen con certificado cualificado todos los documentos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se presenten personalmente en una oficina de asistencia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Designen un representante inscrito en el registro de apoderamientos.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si un interesado no dispone de los medios electrónicos necesarios, según el artículo 12 de la Ley 39/2015, su identificación o firma electrónica podrá realizarla un funcionario público, siendo necesario que el interesado:",
+            "explanation": "El artículo 12.2 exige identificación ante el funcionario y consentimiento expreso, con constancia para casos de discrepancia o litigio.",
+            "options": [
+                {
+                    "content": "Presente una solicitud previa por escrito con firma notarial.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se identifique ante el funcionario y preste su consentimiento expreso, del que deberá quedar constancia.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Designe al funcionario como representante legal.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Abone la tasa correspondiente al servicio de asistencia.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para la identificación o firma de interesados por funcionarios públicos, la Ley 39/2015 establece que la Administración General del Estado, las comunidades autónomas y las entidades locales:",
+            "explanation": "El artículo 12 exige un registro u otro sistema equivalente de funcionarios habilitados, actualizado por cada Administración.",
+            "options": [
+                {
+                    "content": "Mantendrán actualizado un registro, u otro sistema equivalente, donde constarán los funcionarios habilitados.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Designarán a cualquier funcionario sin necesidad de habilitación.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo podrán habilitar a funcionarios de carrera del grupo A1.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrán delegar esta función en entidades privadas.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10 de la Ley 39/2015, ¿cuál de los siguientes es un sistema de firma admitido por las Administraciones Públicas?",
+            "explanation": "El artículo 10.2 admite la firma electrónica cualificada y avanzada basada en certificados cualificados, los sellos electrónicos y otros sistemas que la Administración considere válidos.",
+            "options": [
+                {
+                    "content": "La firma manuscrita escaneada sin certificado.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un correo electrónico con el nombre del remitente.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sistemas de firma electrónica cualificada y avanzada basados en certificados electrónicos cualificados de firma electrónica.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una fotografía del documento firmado enviada por mensajería instantánea.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 5 de la Ley 39/2015, las personas físicas con capacidad de obrar y las personas jurídicas, siempre que ello no esté prohibido por Ley, podrán actuar en representación de otras ante las Administraciones Públicas.",
+            "explanation": "Es lo que dispone el artículo 5.2 de la Ley 39/2015.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 39/2015, la falta de acreditación de la representación impide en todo caso tener por realizado el acto de que se trate, sin posibilidad de subsanación.",
+            "explanation": "No lo impide si se aporta la acreditación o se subsana el defecto en el plazo de diez días, o superior si las circunstancias lo requieren.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 39/2015, los poderes inscritos en el registro electrónico de apoderamientos no pueden ser revocados por el poderdante antes de que finalice su plazo de validez.",
+            "explanation": "El poderdante puede revocar o prorrogar el poder en cualquier momento antes de que finalice su plazo de validez.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

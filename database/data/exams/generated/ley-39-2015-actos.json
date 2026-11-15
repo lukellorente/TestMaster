@@ -1,0 +1,675 @@
+{
+    "slug": "ley-39-2015-actos",
+    "title": "Ley 39/2015 Título III: actos administrativos, nulidad y anulabilidad",
+    "description": "Test del Título III de la Ley 39/2015 para el temario de AGE: requisitos, eficacia, notificación, nulidad y anulabilidad de los actos administrativos. Lo hice para repasar antes del examen, espero que os sirva.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-15T20:44:17+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, los actos de las Administraciones Públicas sujetos al Derecho Administrativo se presumirán válidos y producirán efectos:",
+            "explanation": "El artículo 39.1 establece la presunción de validez y la producción de efectos desde la fecha en que se dicta el acto, salvo disposición en contrario.",
+            "options": [
+                {
+                    "content": "Únicamente desde la fecha en que sean notificados al interesado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde la fecha en que se dicten, salvo que en ellos se disponga otra cosa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desde el día siguiente a su publicación en el Boletín Oficial del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde que adquieran firmeza en vía administrativa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la eficacia retroactiva de los actos administrativos, ¿cuál de las siguientes afirmaciones es correcta?",
+            "explanation": "Según el artículo 39.3, la retroactividad exige efectos favorables, que los supuestos de hecho existieran ya en la fecha a la que se retrotrae y que no se lesionen derechos de otras personas.",
+            "options": [
+                {
+                    "content": "Se puede conceder siempre que lo decida el órgano superior jerárquico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo es posible cuando el acto sea de carácter sancionador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es posible si el interesado no se opone expresamente a ella",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puede otorgarse cuando produzcan efectos favorables al interesado, si los supuestos de hecho ya existían y no se lesionan derechos o intereses legítimos de terceros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 40 de la Ley 39/2015, toda notificación deberá ser cursada dentro del plazo máximo de:",
+            "explanation": "El artículo 40.2 fija un plazo de diez días desde la fecha en que se dictó el acto para cursar la notificación.",
+            "options": [
+                {
+                    "content": "Cinco días a partir de la fecha en que el acto haya sido dictado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días a partir de la fecha en que el acto haya sido dictado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez días a partir de la fecha en que el acto haya sido dictado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinte días a partir de la fecha en que el acto haya sido dictado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. La notificación de las resoluciones y actos administrativos deberá contener:",
+            "explanation": "La notificación debe contener el texto íntegro, si es definitivo en vía administrativa y los recursos posibles, pero no los antecedentes completos del expediente.",
+            "options": [
+                {
+                    "content": "Los antecedentes completos del expediente administrativo",
+                    "is_correct": true
+                },
+                {
+                    "content": "El texto íntegro de la resolución",
+                    "is_correct": false
+                },
+                {
+                    "content": "La indicación de si es o no definitivo en la vía administrativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "La expresión de los recursos que procedan, el órgano ante el que presentarlos y el plazo para interponerlos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una notificación que contenga el texto íntegro del acto pero omita alguno de los demás requisitos, surtirá efecto:",
+            "explanation": "Así lo dispone el artículo 40.3 para las notificaciones defectuosas que contengan el texto íntegro del acto.",
+            "options": [
+                {
+                    "content": "Desde la fecha en que se dictó el acto",
+                    "is_correct": false
+                },
+                {
+                    "content": "A partir de la fecha en que el interesado realice actuaciones que supongan el conocimiento del contenido y alcance del acto, o interponga cualquier recurso procedente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una vez transcurridos diez días naturales desde su práctica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nunca, pues la notificación defectuosa carece de toda eficacia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando la notificación por medios electrónicos sea obligatoria o haya sido elegida por el interesado, se entenderá rechazada cuando:",
+            "explanation": "El artículo 43.2 establece que se entiende rechazada transcurridos diez días naturales sin acceder a su contenido.",
+            "options": [
+                {
+                    "content": "Hayan transcurrido tres días hábiles desde su puesta a disposición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hayan transcurrido cinco días naturales desde su puesta a disposición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hayan transcurrido diez días naturales desde su puesta a disposición sin que se acceda a su contenido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hayan transcurrido veinte días hábiles desde su puesta a disposición",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando los interesados sean desconocidos, se ignore el lugar de la notificación o, intentada esta, no se hubiese podido practicar, la notificación se hará por medio de:",
+            "explanation": "El artículo 44 prevé la notificación por anuncio en el «Boletín Oficial del Estado» en los casos de notificación infructuosa.",
+            "options": [
+                {
+                    "content": "Un anuncio publicado en el «Boletín Oficial del Estado»",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un anuncio exclusivamente en el tablón de la oficina instructora",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un edicto en el diario oficial de la provincia del último domicilio conocido, en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una comunicación verbal al representante, si lo hubiera",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En las notificaciones en papel, si nadie pudiera hacerse cargo de la notificación en el domicilio, el intento se repetirá:",
+            "explanation": "El artículo 42.2 prevé un segundo intento, por una sola vez y en hora distinta, dentro de los tres días siguientes.",
+            "options": [
+                {
+                    "content": "Una sola vez y en una hora distinta dentro de los tres días siguientes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos veces, en la misma hora, dentro de los cinco días siguientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una sola vez, en la misma hora, dentro de los diez días siguientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tantas veces como sea necesario hasta que se practique",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 35 de la Ley 39/2015, serán motivados, con sucinta referencia de hechos y fundamentos de derecho:",
+            "explanation": "El artículo 35.1.a) exige motivación para los actos que limiten derechos subjetivos o intereses legítimos, entre otros supuestos.",
+            "options": [
+                {
+                    "content": "Los actos de mero trámite sin efectos sobre terceros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los actos que limiten derechos subjetivos o intereses legítimos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente los actos dictados por la Administración General del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo los actos que pongan fin al procedimiento y sean favorables",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la forma de los actos administrativos, la Ley 39/2015 establece que se producirán por escrito a través de medios electrónicos, a menos que:",
+            "explanation": "El artículo 36.1 prevé la forma escrita por medios electrónicos salvo que la naturaleza del acto exija otra forma más adecuada.",
+            "options": [
+                {
+                    "content": "El interesado solicite lo contrario en cualquier caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "El acto lo dicte un órgano colegiado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su naturaleza exija otra forma más adecuada de expresión y constancia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se trate de actos dictados por entidades locales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el principio de inderogabilidad singular de los reglamentos, las resoluciones administrativas de carácter particular:",
+            "explanation": "El artículo 37.2 prohíbe que las resoluciones particulares vulneren una disposición general, aunque procedan de un órgano igual o superior.",
+            "options": [
+                {
+                    "content": "No podrán vulnerar lo establecido en una disposición de carácter general, aunque procedan de un órgano de igual o superior jerarquía",
+                    "is_correct": true
+                },
+                {
+                    "content": "Podrán vulnerar una disposición general si proceden de un órgano superior jerárquico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrán vulnerar una disposición general si existe razón de urgencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrán vulnerar una disposición general si el interesado lo consiente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En cuál de los siguientes supuestos los actos administrativos serán objeto de publicación?",
+            "explanation": "El artículo 45.1.b) prevé la publicación de los actos de procedimientos selectivos o de concurrencia competitiva.",
+            "options": [
+                {
+                    "content": "Cuando se trate de una resolución dirigida a un único interesado conocido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando el interesado haya renunciado a ser notificado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siempre que se trate de actos de trámite",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando se trate de actos integrantes de un procedimiento selectivo o de concurrencia competitiva de cualquier tipo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el órgano competente aprecia que la notificación por anuncios o la publicación íntegra de un acto lesionaría derechos o intereses legítimos, se limitará a:",
+            "explanation": "El artículo 46 prevé en esos casos la publicación de una somera indicación del contenido y del lugar de comparecencia.",
+            "options": [
+                {
+                    "content": "Omitir la notificación hasta que el interesado lo solicite",
+                    "is_correct": false
+                },
+                {
+                    "content": "Publicar en el diario oficial una somera indicación del contenido del acto y del lugar donde los interesados podrán comparecer",
+                    "is_correct": true
+                },
+                {
+                    "content": "Notificarlo únicamente al órgano superior jerárquico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Archivar el expediente sin más trámite",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 47 de la Ley 39/2015, ¿cuál de los siguientes actos es nulo de pleno derecho?",
+            "explanation": "La incompetencia manifiesta por razón de la materia o del territorio es causa de nulidad (art. 47.1.b); las otras opciones son supuestos de anulabilidad o irregularidades.",
+            "options": [
+                {
+                    "content": "Los que incurran en desviación de poder",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los dictados fuera del plazo establecido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los dictados por órgano manifiestamente incompetente por razón de la materia o del territorio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los que carezcan de algún requisito formal sin causar indefensión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Son actos nulos de pleno derecho:",
+            "explanation": "La infracción del ordenamiento jurídico, incluso la desviación de poder, es causa de anulabilidad (art. 48.1), no de nulidad de pleno derecho.",
+            "options": [
+                {
+                    "content": "Los que incurran en cualquier infracción del ordenamiento jurídico, incluso la desviación de poder",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los que lesionen los derechos y libertades susceptibles de amparo constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los que tengan un contenido imposible",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los que sean constitutivos de infracción penal o se dicten como consecuencia de esta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los actos dictados prescindiendo total y absolutamente del procedimiento legalmente establecido son:",
+            "explanation": "El artículo 47.1.e) declara nulos los actos dictados prescindiendo total y absolutamente del procedimiento legalmente establecido.",
+            "options": [
+                {
+                    "content": "Anulables en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Válidos, pero con eficacia demorada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Meras irregularidades no invalidantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nulos de pleno derecho",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los actos expresos o presuntos contrarios al ordenamiento jurídico por los que se adquieren facultades o derechos cuando se carezca de los requisitos esenciales para su adquisición, son:",
+            "explanation": "Es una causa de nulidad de pleno derecho recogida en el artículo 47.1.f).",
+            "options": [
+                {
+                    "content": "Anulables",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nulos de pleno derecho",
+                    "is_correct": true
+                },
+                {
+                    "content": "Convalidables por el propio órgano que los dictó",
+                    "is_correct": false
+                },
+                {
+                    "content": "Plenamente válidos si ha transcurrido un año",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 47.2 de la Ley 39/2015, serán nulas de pleno derecho las disposiciones administrativas que:",
+            "explanation": "El artículo 47.2 anula las disposiciones que vulneren normas de rango superior, regulen materias reservadas a la ley o establezcan la retroactividad de disposiciones sancionadoras no favorables.",
+            "options": [
+                {
+                    "content": "Desarrollen una ley mediante una norma de rango inferior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Regulen materias que no estén reservadas a la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Establezcan la retroactividad de disposiciones favorables",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vulneren la Constitución, las leyes u otras disposiciones administrativas de rango superior",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 48 de la Ley 39/2015, el defecto de forma determina la anulabilidad del acto:",
+            "explanation": "El artículo 48.2 limita la anulabilidad por defecto de forma a los casos de falta de requisitos indispensables o indefensión.",
+            "options": [
+                {
+                    "content": "Solo cuando el acto carezca de los requisitos formales indispensables para alcanzar su fin o dé lugar a la indefensión de los interesados",
+                    "is_correct": true
+                },
+                {
+                    "content": "En cualquier caso, por mínimo que sea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente cuando afecte a actos sancionadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nunca, pues los defectos de forma son siempre subsanables",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La realización de actuaciones administrativas fuera del tiempo establecido para ellas:",
+            "explanation": "El artículo 48.3 así lo dispone: solo hay anulabilidad si la naturaleza del término o plazo lo impone.",
+            "options": [
+                {
+                    "content": "Determina siempre la nulidad de pleno derecho",
+                    "is_correct": false
+                },
+                {
+                    "content": "Determina siempre la anulabilidad del acto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Carece de cualquier consecuencia jurídica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo implicará la anulabilidad del acto cuando así lo imponga la naturaleza del término o plazo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto al límite de la extensión de la nulidad o anulabilidad, la Ley 39/2015 establece que la nulidad o anulabilidad de un acto:",
+            "explanation": "El artículo 49 limita la extensión: no afecta a los actos sucesivos independientes del viciado.",
+            "options": [
+                {
+                    "content": "Implica siempre la de todos los actos posteriores del procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "No implicará la de los sucesivos en el procedimiento que sean independientes del primero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Implica siempre la de los actos de otros procedimientos conexos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se extiende a los actos anteriores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los actos nulos o anulables que, sin embargo, contengan los elementos constitutivos de otro distinto producirán los efectos de este. Esta figura se denomina:",
+            "explanation": "Es la conversión de actos viciados, regulada en el artículo 50.",
+            "options": [
+                {
+                    "content": "Convalidación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conservación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conversión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Revocación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el principio de conservación de actos y trámites, el órgano que declare la nulidad o anule las actuaciones dispondrá siempre la conservación de:",
+            "explanation": "El artículo 51 impone conservar los actos y trámites cuyo contenido habría sido el mismo sin la infracción.",
+            "options": [
+                {
+                    "content": "Aquellos actos y trámites cuyo contenido se hubiera mantenido igual de no haberse cometido la infracción",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente los actos anteriores al vicio, nunca los posteriores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todos los actos del procedimiento, aunque estén viciados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo los actos favorables a los interesados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el vicio de un acto anulable consistiese en incompetencia no determinante de nulidad, la convalidación podrá realizarla:",
+            "explanation": "El artículo 52.2 atribuye la convalidación al órgano competente si es superior jerárquico del que dictó el acto.",
+            "options": [
+                {
+                    "content": "El propio órgano incompetente que dictó el acto",
+                    "is_correct": false
+                },
+                {
+                    "content": "El interesado mediante escrito de conformidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier órgano de la misma Administración",
+                    "is_correct": false
+                },
+                {
+                    "content": "El órgano competente cuando sea superior jerárquico del que dictó el acto",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el vicio de un acto anulable consistiese en la falta de alguna autorización, el acto podrá ser convalidado:",
+            "explanation": "El artículo 52.3 permite convalidar el acto mediante el otorgamiento de la autorización por el órgano competente.",
+            "options": [
+                {
+                    "content": "Declarando su nulidad y dictando otro nuevo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediante el otorgamiento de la autorización por el órgano competente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Esperando a que transcurra el plazo de recurso",
+                    "is_correct": false
+                },
+                {
+                    "content": "No cabe convalidación en ningún caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 39.2 de la Ley 39/2015, la eficacia de un acto quedará demorada cuando:",
+            "explanation": "El artículo 39.2 recoge estos supuestos de eficacia demorada.",
+            "options": [
+                {
+                    "content": "El interesado lo solicite expresamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se haya interpuesto un recurso contencioso-administrativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Así lo exija el contenido del acto o esté supeditada a su notificación, publicación o aprobación superior",
+                    "is_correct": true
+                },
+                {
+                    "content": "El acto sea desfavorable para el interesado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 41 de la Ley 39/2015, las notificaciones se practicarán:",
+            "explanation": "El artículo 41.1 establece la preferencia por medios electrónicos y su obligatoriedad para los sujetos obligados.",
+            "options": [
+                {
+                    "content": "Preferentemente por medios electrónicos y, en todo caso, cuando el interesado resulte obligado a recibirlas por esta vía",
+                    "is_correct": true
+                },
+                {
+                    "content": "Exclusivamente en papel, salvo que el interesado pida otra vía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivamente por medios electrónicos para todos los interesados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Preferentemente por correo certificado en todo caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los actos administrativos nulos de pleno derecho pueden ser convalidados por la Administración subsanando los vicios de que adolezcan.",
+            "explanation": "La convalidación solo cabe respecto de los actos anulables (art. 52), no de los nulos de pleno derecho.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Cuando el interesado rechace la notificación de una actuación administrativa, se hará constar en el expediente y se tendrá por efectuado el trámite, siguiéndose el procedimiento.",
+            "explanation": "Es lo que dispone la Ley 39/2015 para el rechazo de la notificación: se deja constancia en el expediente y el procedimiento continúa.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 39/2015, las notificaciones electrónicas se practicarán mediante comparecencia en la sede electrónica de la Administración u Organismo actuante, a través de la dirección electrónica habilitada única, o mediante ambos sistemas.",
+            "explanation": "Así lo establece el artículo 43.1 para la práctica de las notificaciones por medios electrónicos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

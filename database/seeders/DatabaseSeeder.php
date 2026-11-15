@@ -53,5 +53,8 @@ class DatabaseSeeder extends Seeder
 
         // Ejecutar el seeder de preguntas y exámenes
         $this->call(QuestionSeeder::class);
+
+        // Biblioteca de tests de oposiciones y FP (database/data/exams/generated)
+        $this->call(ExamLibrarySeeder::class);
     }
 }
