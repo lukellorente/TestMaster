@@ -1,0 +1,675 @@
+{
+    "slug": "correos-productos-servicios",
+    "title": "Correos: productos y servicios postales",
+    "description": "Test fácil para repasar los productos y servicios de Correos antes del examen de oposiciones: cartas, certificados, burofax, notificaciones, servicios financieros y oficinas. Sacado del temario de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:42:46+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 43/2010, del servicio postal universal, ¿qué entidad es el operador designado para prestar el servicio postal universal en España?",
+            "explanation": "La Ley 43/2010 designa a la Sociedad Estatal Correos y Telégrafos, S.A. como operador encargado del servicio postal universal.",
+            "options": [
+                {
+                    "content": "Correos Express",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sociedad Estatal Correos y Telégrafos, S.A.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seur",
+                    "is_correct": false
+                },
+                {
+                    "content": "Agencia Estatal de Correos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes características define a la carta ordinaria?",
+            "explanation": "La carta ordinaria no se registra ni deja constancia de entrega, por lo que es el producto básico y más económico.",
+            "options": [
+                {
+                    "content": "Se entrega siempre con firma del destinatario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Incluye acuse de recibo obligatorio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acredita el contenido del envío",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se deposita en el buzón sin registro ni constancia de entrega",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La carta ordinaria no deja constancia de la entrega firmada por el destinatario.",
+            "explanation": "Solo los envíos certificados o con acuse de recibo dejan constancia de la entrega.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿De qué color son los buzones de Correos en España?",
+            "explanation": "Los buzones de Correos son amarillos, color corporativo de la compañía junto con el azul.",
+            "options": [
+                {
+                    "content": "Amarillo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Rojo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verde",
+                    "is_correct": false
+                },
+                {
+                    "content": "Azul",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué se entiende por franqueo de un envío postal?",
+            "explanation": "El franqueo es el pago anticipado del precio del servicio postal, que se acredita con sellos o con otros medios de franqueo.",
+            "options": [
+                {
+                    "content": "El seguro que cubre la pérdida del envío",
+                    "is_correct": false
+                },
+                {
+                    "content": "La firma del destinatario al recibir el envío",
+                    "is_correct": false
+                },
+                {
+                    "content": "El pago previo del servicio postal, mediante sello, máquina de franquear u otro medio",
+                    "is_correct": true
+                },
+                {
+                    "content": "El aviso que se deja cuando no hay nadie en el domicilio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué organismo supervisa en España el mercado postal?",
+            "explanation": "La CNMC es el organismo regulador y supervisor del sector postal en España.",
+            "options": [
+                {
+                    "content": "La Agencia Tributaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comisión Nacional de los Mercados y la Competencia (CNMC)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Banco de España",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre el servicio postal universal:",
+            "explanation": "El servicio postal universal debe prestarse en todo el territorio nacional, no solo en las capitales de provincia.",
+            "options": [
+                {
+                    "content": "Solo se presta en las capitales de provincia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Debe garantizar la recogida y distribución en todo el territorio nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se presta al menos cinco días a la semana",
+                    "is_correct": false
+                },
+                {
+                    "content": "Incluye envíos de correspondencia y paquetes postales dentro de unos límites de peso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué caracteriza a una carta certificada?",
+            "explanation": "El envío certificado se registra en la admisión y en la entrega, lo que da garantía al remitente.",
+            "options": [
+                {
+                    "content": "No se puede rastrear en ningún momento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo puede enviarse al extranjero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deja constancia del depósito y de la entrega al destinatario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se entrega siempre en menos de 24 horas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es el acuse de recibo en un envío postal?",
+            "explanation": "El acuse de recibo se firma al entregar el envío y se devuelve al remitente como prueba de la entrega.",
+            "options": [
+                {
+                    "content": "Un sello especial de color rojo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un descuento por envío múltiple",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un seguro de pérdida del envío",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un documento que prueba la entrega y que se devuelve al remitente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el cartero no encuentra a nadie al entregar un envío certificado, ¿qué suele hacer?",
+            "explanation": "Ante la ausencia del destinatario se deja un aviso de llegada para recoger el envío en la oficina indicada.",
+            "options": [
+                {
+                    "content": "Deja un aviso de llegada para que el destinatario lo recoja en la oficina",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lo devuelve inmediatamente al remitente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo deja en el buzón sin más",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo destruye pasadas 24 horas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué sirve el servicio de Lista de Correos?",
+            "explanation": "En Lista de Correos el envío se dirige a una oficina y el destinatario lo retira acreditando su identidad.",
+            "options": [
+                {
+                    "content": "Para consultar los precios de los sellos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para recoger en una oficina los envíos dirigidos a una persona, que debe identificarse",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para enviar dinero a otra persona",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para contratar un burofax",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un envío contra reembolso, ¿quién paga el importe de la mercancía al recibirla?",
+            "explanation": "El destinatario abona el importe acordado al recibir el envío y Correos lo hace llegar al remitente.",
+            "options": [
+                {
+                    "content": "El remitente",
+                    "is_correct": false
+                },
+                {
+                    "content": "La oficina de origen",
+                    "is_correct": false
+                },
+                {
+                    "content": "El destinatario",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Agencia Tributaria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué acredita el burofax?",
+            "explanation": "El burofax permite certificar el texto enviado, la fecha y la entrega, por lo que tiene valor como prueba.",
+            "options": [
+                {
+                    "content": "Únicamente que se ha pagado el franqueo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo la identidad del remitente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo que la carta ha salido de la oficina",
+                    "is_correct": false
+                },
+                {
+                    "content": "El contenido del envío, la fecha de envío y su entrega al destinatario",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El burofax no sirve para acreditar el contenido de lo enviado.",
+            "explanation": "Al contrario: su principal ventaja es que certifica el contenido, la fecha y la entrega.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para cuál de las siguientes situaciones es más adecuado un burofax?",
+            "explanation": "Se usa cuando se necesita prueba de lo comunicado, como reclamaciones, requerimientos o resoluciones de contrato.",
+            "options": [
+                {
+                    "content": "Enviar una postal de vacaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comunicar de forma fehaciente una reclamación o un requerimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Enviar publicidad masiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ingresar dinero en una cuenta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Es posible contratar el burofax por internet con Correos?",
+            "explanation": "Correos ofrece burofax online, además de su contratación en oficina.",
+            "options": [
+                {
+                    "content": "Sí, existe un servicio de burofax online",
+                    "is_correct": true
+                },
+                {
+                    "content": "No, solo en oficinas de Madrid",
+                    "is_correct": false
+                },
+                {
+                    "content": "No, solo por teléfono",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sí, pero solo para empresas públicas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ley regula el procedimiento administrativo común de las Administraciones Públicas, incluidas las notificaciones?",
+            "explanation": "La Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas, regula las notificaciones administrativas.",
+            "options": [
+                {
+                    "content": "Ley 40/2015",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley 19/2013",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley 39/2015",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ley 50/1997",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2015, si el interesado no está en el domicilio al practicar una notificación, ¿quién puede hacerse cargo de ella?",
+            "explanation": "La ley admite que se haga cargo cualquier persona que esté en el domicilio y haga constar su identidad.",
+            "options": [
+                {
+                    "content": "Solo el vecino del mismo rellano",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nadie, debe esperarse siempre al interesado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente un familiar de primer grado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier persona que se encuentre en el domicilio y haga constar su identidad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si no se logra practicar una notificación administrativa tras los intentos legales, ¿qué se hace?",
+            "explanation": "Cuando es infructuosa, la notificación se hace mediante anuncio en el BOE.",
+            "options": [
+                {
+                    "content": "Se archiva el procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se publica un anuncio en el Boletín Oficial del Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se llama por teléfono al interesado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se envía una carta ordinaria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 39/2015, una notificación electrónica se entiende rechazada cuando han transcurrido diez días naturales desde su puesta a disposición sin que se acceda a su contenido.",
+            "explanation": "El plazo previsto en la Ley 39/2015 para entender rechazada la notificación electrónica es de diez días naturales.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el primer intento de notificación en el domicilio resulta infructuoso, ¿qué establece la Ley 39/2015?",
+            "explanation": "La ley prevé un segundo intento, en hora distinta, dentro de los tres días siguientes al primero.",
+            "options": [
+                {
+                    "content": "Se repetirá una sola vez, en hora distinta, dentro de los tres días siguientes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se repetirá diez veces seguidas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se repetirá dentro del mes siguiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "No se repetirá nunca",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué consiste el giro postal?",
+            "explanation": "El giro postal es un servicio financiero que permite transferir dinero a un destinatario a través de Correos.",
+            "options": [
+                {
+                    "content": "En el envío de un paquete urgente",
+                    "is_correct": false
+                },
+                {
+                    "content": "En un seguro de transporte",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el envío de dinero de una persona a otra a través de la red postal",
+                    "is_correct": true
+                },
+                {
+                    "content": "En la entrega de cartas certificadas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes NO es un servicio financiero de Correos?",
+            "explanation": "El burofax es un servicio de comunicación con valor probatorio, no un servicio financiero.",
+            "options": [
+                {
+                    "content": "Giro postal nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tarjeta prepago recargable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Envío de dinero a otro país",
+                    "is_correct": false
+                },
+                {
+                    "content": "Burofax",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es un Citypaq?",
+            "explanation": "Citypaq es una red de terminales automáticos de paquetería accesibles con horario amplio.",
+            "options": [
+                {
+                    "content": "Un tipo de sello conmemorativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un terminal de autoservicio para recoger y enviar paquetes a cualquier hora",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un buzón exclusivo para cartas certificadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un vehículo de reparto urbano",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué servicio puede prestar el cartero rural en zonas de población dispersa?",
+            "explanation": "El servicio rural permite acceder a servicios postales básicos sin desplazarse a la oficina.",
+            "options": [
+                {
+                    "content": "Admitir envíos y vender sellos en el propio domicilio del cliente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ninguno, solo reparte cartas ordinarias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tramitar pasaportes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Emitir documentos de identidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué productos se relacionan con la filatelia en las oficinas de Correos?",
+            "explanation": "La filatelia es la afición de coleccionar sellos, y Correos comercializa sellos y productos filatélicos.",
+            "options": [
+                {
+                    "content": "Los envíos contra reembolso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los giros postales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los sellos y otros productos para coleccionistas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las notificaciones administrativas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué consiste el servicio de apartado postal?",
+            "explanation": "El apartado postal es un casillero en la oficina de Correos donde el titular recoge sus envíos.",
+            "options": [
+                {
+                    "content": "Una dirección de la oficina donde la persona o empresa recibe su correspondencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un envío urgente al extranjero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un descuento para cartas masivas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un casillero en una oficina donde el titular recoge su correspondencia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué permite el número de localizador de un envío?",
+            "explanation": "El localizador permite consultar el estado y la trayectoria del envío.",
+            "options": [
+                {
+                    "content": "Cambiar el precio del envío",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seguir la situación del envío en el sistema de seguimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Anular el franqueo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obtener un descuento en sellos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dentro del servicio postal universal, ¿hasta qué peso se incluyen los paquetes postales?",
+            "explanation": "El servicio postal universal incluye paquetes postales de hasta 20 kg.",
+            "options": [
+                {
+                    "content": "5 kg",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 kg",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 kg",
+                    "is_correct": true
+                },
+                {
+                    "content": "50 kg",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿A qué entidad pública pertenece la Sociedad Estatal Correos y Telégrafos, S.A.?",
+            "explanation": "Correos es una sociedad mercantil estatal cuyo capital pertenece al Estado a través de la SEPI.",
+            "options": [
+                {
+                    "content": "A la Sociedad Estatal de Participaciones Industriales (SEPI)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Al Banco de España",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la Comisión Nacional de los Mercados y la Competencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la Tesorería General de la Seguridad Social",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

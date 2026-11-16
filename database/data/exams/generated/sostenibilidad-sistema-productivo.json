@@ -1,0 +1,445 @@
+{
+    "slug": "sostenibilidad-sistema-productivo",
+    "title": "Sostenibilidad aplicada al sistema productivo",
+    "description": "Test de repaso del módulo de sostenibilidad: ODS, economía circular, huella de carbono, RSC y residuos. Me vino bien para preparar el examen de FP de este curso.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:13:14+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué año se aprobó la Agenda 2030 para el Desarrollo Sostenible por la Asamblea General de la ONU?",
+            "explanation": "La Agenda 2030 y sus 17 ODS fueron aprobados por la ONU en 2015; 2030 es el año fijado para alcanzarlos.",
+            "options": [
+                {
+                    "content": "2005",
+                    "is_correct": false
+                },
+                {
+                    "content": "2015",
+                    "is_correct": true
+                },
+                {
+                    "content": "2020",
+                    "is_correct": false
+                },
+                {
+                    "content": "2030",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuántos Objetivos de Desarrollo Sostenible (ODS) tiene la Agenda 2030? Responde con el número.",
+            "explanation": "La Agenda 2030 contiene 17 Objetivos de Desarrollo Sostenible.",
+            "options": [
+                {
+                    "content": "17",
+                    "is_correct": true
+                },
+                {
+                    "content": "diecisiete",
+                    "is_correct": true
+                },
+                {
+                    "content": "17 ODS",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ODS se corresponde con «Acción por el clima»?",
+            "explanation": "El ODS 13 es «Acción por el clima»; el 7 es energía asequible y no contaminante, el 12 producción y consumo responsables y el 15 vida de ecosistemas terrestres.",
+            "options": [
+                {
+                    "content": "ODS 7",
+                    "is_correct": false
+                },
+                {
+                    "content": "ODS 12",
+                    "is_correct": false
+                },
+                {
+                    "content": "ODS 13",
+                    "is_correct": true
+                },
+                {
+                    "content": "ODS 15",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa se propone reducir su consumo de papel y de plástico y fomentar el reciclaje interno. ¿Con qué ODS se relaciona principalmente?",
+            "explanation": "Reducir y reciclar materiales encaja con el ODS 12, de producción y consumo responsables.",
+            "options": [
+                {
+                    "content": "ODS 12: Producción y consumo responsables",
+                    "is_correct": true
+                },
+                {
+                    "content": "ODS 1: Fin de la pobreza",
+                    "is_correct": false
+                },
+                {
+                    "content": "ODS 4: Educación de calidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "ODS 16: Paz, justicia e instituciones sólidas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La economía circular se basa en el modelo lineal de «extraer, fabricar, usar y tirar».",
+            "explanation": "Ese es el modelo de economía lineal; la economía circular busca mantener los productos y materiales en uso el mayor tiempo posible.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes acciones es un ejemplo de economía circular?",
+            "explanation": "Reparar y reutilizar alarga la vida útil de los productos, principio básico de la economía circular.",
+            "options": [
+                {
+                    "content": "Fabricar productos con obsolescencia programada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Enviar todos los residuos al vertedero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reparar y reutilizar equipos en lugar de desecharlos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aumentar el uso de envases de un solo uso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Completa la regla de las tres erres: Reducir, Reutilizar y …",
+            "explanation": "Las 3R son reducir, reutilizar y reciclar.",
+            "options": [
+                {
+                    "content": "Reciclar",
+                    "is_correct": true
+                },
+                {
+                    "content": "reciclar",
+                    "is_correct": true
+                },
+                {
+                    "content": "Reciclaje",
+                    "is_correct": true
+                },
+                {
+                    "content": "el reciclaje",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué mide la huella de carbono de una organización?",
+            "explanation": "La huella de carbono cuantifica las emisiones de gases de efecto invernadero, expresadas en CO₂ equivalente.",
+            "options": [
+                {
+                    "content": "El total de gases de efecto invernadero que emite, expresado en CO₂ equivalente",
+                    "is_correct": true
+                },
+                {
+                    "content": "La superficie de terreno que ocupa",
+                    "is_correct": false
+                },
+                {
+                    "content": "El número de árboles que ha plantado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La cantidad de agua que consume",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué medidas ayudan a reducir la huella de carbono de una empresa (hay varias correctas).",
+            "explanation": "Las energías renovables, la movilidad sostenible y la eficiencia energética reducen emisiones; los otros hábitos las aumentan.",
+            "options": [
+                {
+                    "content": "Utilizar energía de origen renovable",
+                    "is_correct": true
+                },
+                {
+                    "content": "Fomentar el teletrabajo y el transporte compartido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mejorar el aislamiento y la eficiencia energética de los edificios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dejar las máquinas encendidas durante la noche",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aumentar los viajes en avión innecesarios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El dióxido de carbono (CO₂) es uno de los gases de efecto invernadero responsables del cambio climático.",
+            "explanation": "El CO₂ es uno de los principales gases de efecto invernadero de origen humano.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significan las siglas RSC?",
+            "explanation": "RSC significa Responsabilidad Social Corporativa (o empresarial), el compromiso de la empresa con la sociedad y el medio ambiente.",
+            "options": [
+                {
+                    "content": "Registro de Salud Comunitaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Responsabilidad Social Corporativa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Revisión de Seguridad Corporativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Régimen de Subvenciones Comerciales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La RSC se apoya habitualmente en tres dimensiones. ¿Cuáles son?",
+            "explanation": "La RSC integra los aspectos económico, social y ambiental, también llamados triple balance.",
+            "options": [
+                {
+                    "content": "Económica, social y ambiental",
+                    "is_correct": true
+                },
+                {
+                    "content": "Fiscal, laboral y mercantil",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comercial, técnica y financiera",
+                    "is_correct": false
+                },
+                {
+                    "content": "Local, nacional e internacional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa colabora con una ONG local, garantiza la igualdad salarial y publica un informe anual de sostenibilidad. ¿Qué está aplicando?",
+            "explanation": "Son acciones voluntarias con impacto social que forman parte de la RSC.",
+            "options": [
+                {
+                    "content": "Una estrategia de dumping",
+                    "is_correct": false
+                },
+                {
+                    "content": "Políticas de Responsabilidad Social Corporativa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un plan de reducción de plantilla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un proceso de deslocalización",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los residuos peligrosos, como los aceites usados o los disolventes, pueden tirarse al contenedor de basura general.",
+            "explanation": "Los residuos peligrosos requieren una gestión específica a través de gestores autorizados.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un taller de FP, ¿en qué contenedor debe depositarse un envase de plástico vacío y limpio?",
+            "explanation": "En España, el contenedor amarillo recoge envases de plástico, latas y briks.",
+            "options": [
+                {
+                    "content": "Azul",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verde",
+                    "is_correct": false
+                },
+                {
+                    "content": "Amarillo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Marrón",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿De qué color es el contenedor destinado al papel y cartón?",
+            "explanation": "El contenedor azul recoge papel y cartón; el verde es para vidrio.",
+            "options": [
+                {
+                    "content": "Azul",
+                    "is_correct": true
+                },
+                {
+                    "content": "Amarillo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verde",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gris",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la persona o empresa autorizada para recoger, transportar y tratar residuos peligrosos?",
+            "explanation": "Los residuos peligrosos deben entregarse a un gestor autorizado.",
+            "options": [
+                {
+                    "content": "Gestor de residuos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Gestor autorizado",
+                    "is_correct": true
+                },
+                {
+                    "content": "gestor autorizado de residuos",
+                    "is_correct": true
+                },
+                {
+                    "content": "El gestor de residuos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la jerarquía de gestión de residuos, ¿qué opción es la más prioritaria?",
+            "explanation": "La jerarquía prioriza la prevención, seguida de preparación para reutilización, reciclado, otras valorizaciones y, por último, eliminación.",
+            "options": [
+                {
+                    "content": "Eliminación en vertedero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Valorización energética",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prevención",
+                    "is_correct": true
+                },
+                {
+                    "content": "Reciclado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los residuos que se consideran residuos peligrosos en un taller (hay varias correctas).",
+            "explanation": "Aceites usados, baterías y disolventes son peligrosos; el cartón limpio es un residuo no peligroso reciclable.",
+            "options": [
+                {
+                    "content": "Aceite de motor usado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Baterías de plomo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Disolventes y pinturas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cartón de embalaje limpio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ODS trata sobre «Energía asequible y no contaminante»?",
+            "explanation": "El ODS 7 persigue garantizar el acceso a una energía asequible, segura, sostenible y moderna.",
+            "options": [
+                {
+                    "content": "ODS 7",
+                    "is_correct": true
+                },
+                {
+                    "content": "ODS 3",
+                    "is_correct": false
+                },
+                {
+                    "content": "ODS 9",
+                    "is_correct": false
+                },
+                {
+                    "content": "ODS 14",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

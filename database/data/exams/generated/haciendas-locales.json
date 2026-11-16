@@ -1,0 +1,568 @@
+{
+    "slug": "haciendas-locales",
+    "title": "Haciendas Locales: tributos municipales (TRLRHL)",
+    "description": "Test de repaso de tributos locales del TRLRHL (RDL 2/2004) para el temario de Administración Local. Incluye IBI, IAE, IVTM, ICIO, plusvalía, tasas y contribuciones especiales.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:37:21+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 102 del TRLRHL, el tipo de gravamen del Impuesto sobre Construcciones, Instalaciones y Obras (ICIO) fijado por el ayuntamiento no podrá exceder del:",
+            "explanation": "El tipo de gravamen del ICIO lo fija cada ayuntamiento, sin que pueda exceder del 4 %.",
+            "options": [
+                {
+                    "content": "2,5 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "3 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "4 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "5 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TRLRHL, ¿cuál de los siguientes impuestos municipales es de exigencia potestativa para los ayuntamientos?",
+            "explanation": "IBI, IAE e IVTM son de exigencia obligatoria. El ICIO y el impuesto sobre el incremento de valor de los terrenos son potestativos.",
+            "options": [
+                {
+                    "content": "Impuesto sobre Bienes Inmuebles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impuesto sobre Actividades Económicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impuesto sobre Vehículos de Tracción Mecánica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Urbana",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto al tipo de gravamen del IBI de los bienes inmuebles urbanos, el TRLRHL establece que los ayuntamientos lo fijarán dentro de los límites:",
+            "explanation": "El tipo general para bienes urbanos oscila entre el 0,4 % y el 1,10 %. Los rústicos van del 0,3 % al 0,9 % y los de características especiales del 0,4 % al 1,3 %.",
+            "options": [
+                {
+                    "content": "Mínimo 0,3 % y máximo 0,9 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mínimo 0,4 % y máximo 1,10 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mínimo 0,5 % y máximo 1,30 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mínimo 0,4 % y máximo 1,30 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 61 del TRLRHL, el hecho imponible del IBI es la titularidad de determinados derechos sobre los bienes inmuebles. ¿Cuál de ellos prevalece en el orden de prelación sobre los demás?",
+            "explanation": "El orden de prelación es: concesión administrativa, derecho real de superficie, usufructo y propiedad. La concesión excluye a los demás.",
+            "options": [
+                {
+                    "content": "Una concesión administrativa sobre el bien o sobre los servicios públicos a los que se halle afecto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un derecho real de superficie",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un derecho real de usufructo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El derecho de propiedad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuándo se devenga el Impuesto sobre Bienes Inmuebles según el TRLRHL?",
+            "explanation": "El IBI se devenga el primer día del período impositivo, y este coincide con el año natural.",
+            "options": [
+                {
+                    "content": "El 30 de junio de cada año",
+                    "is_correct": false
+                },
+                {
+                    "content": "El día en que se notifica el recibo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El primer día del período impositivo, que coincide con el año natural",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 31 de diciembre de cada año",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a las exenciones del Impuesto sobre Actividades Económicas, señale la respuesta INCORRECTA:",
+            "explanation": "El umbral de exención es de 1.000.000 de euros de importe neto de la cifra de negocios, no de 3.000.000.",
+            "options": [
+                {
+                    "content": "Las personas físicas están exentas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las personas jurídicas con importe neto de la cifra de negocios inferior a 3.000.000 de euros están exentas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los sujetos pasivos que inicien su actividad están exentos durante los dos primeros períodos impositivos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los sujetos pasivos del impuesto de sociedades con importe neto de la cifra de negocios inferior a 1.000.000 de euros están exentos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TRLRHL, el recargo que pueden establecer las diputaciones provinciales sobre las cuotas municipales del IAE no excederá del:",
+            "explanation": "El recargo provincial sobre las cuotas municipales del IAE tiene un máximo del 40 %.",
+            "options": [
+                {
+                    "content": "20 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "40 %",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La formación de la matrícula del Impuesto sobre Actividades Económicas, como parte de la gestión censal, corresponde a:",
+            "explanation": "La gestión censal del IAE (matrícula, altas y bajas) corresponde a la AEAT. La gestión tributaria de la cuota municipal corresponde a los ayuntamientos.",
+            "options": [
+                {
+                    "content": "La Agencia Estatal de Administración Tributaria",
+                    "is_correct": true
+                },
+                {
+                    "content": "El ayuntamiento del municipio",
+                    "is_correct": false
+                },
+                {
+                    "content": "La diputación provincial",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Dirección General del Catastro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los ayuntamientos pueden incrementar las cuotas del Impuesto sobre Vehículos de Tracción Mecánica fijadas en el TRLRHL mediante la aplicación sobre ellas de un coeficiente que no podrá ser superior a:",
+            "explanation": "El coeficiente de incremento de las cuotas del IVTM no puede ser superior a 2.",
+            "options": [
+                {
+                    "content": "1,5",
+                    "is_correct": false
+                },
+                {
+                    "content": "2",
+                    "is_correct": true
+                },
+                {
+                    "content": "2,5",
+                    "is_correct": false
+                },
+                {
+                    "content": "3",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el IVTM, se considera sujeto pasivo a la persona:",
+            "explanation": "Son sujetos pasivos las personas físicas o jurídicas a cuyo nombre conste el vehículo en el permiso de circulación.",
+            "options": [
+                {
+                    "content": "Que figure como propietaria en el Registro Mercantil",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que haya pagado el último recibo del impuesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "A cuyo nombre conste el vehículo en el permiso de circulación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que tenga el domicilio fiscal en el municipio donde se compró el vehículo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el cuadro de tarifas del IVTM del TRLRHL, la cuota mínima de los turismos de menos de 8 caballos fiscales es de:",
+            "explanation": "La cuota para turismos de menos de 8 caballos fiscales es de 12,62 euros, sin perjuicio de los coeficientes que apliquen los ayuntamientos.",
+            "options": [
+                {
+                    "content": "8,50 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "10,00 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "15,00 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "12,62 euros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Conforme al TRLRHL, forma parte de la base imponible del ICIO:",
+            "explanation": "La base imponible es el coste real y efectivo de la obra. Quedan excluidos el IVA, las tasas, los honorarios profesionales y el beneficio empresarial.",
+            "options": [
+                {
+                    "content": "El coste real y efectivo de la construcción, instalación u obra",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Impuesto sobre el Valor Añadido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las tasas por la licencia urbanística",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los honorarios de los profesionales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El devengo del ICIO se produce:",
+            "explanation": "El impuesto se devenga al iniciarse la construcción, instalación u obra, haya o no licencia.",
+            "options": [
+                {
+                    "content": "Cuando se concede la licencia urbanística",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el momento de iniciarse la construcción, instalación u obra, aunque no se haya obtenido la correspondiente licencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando finaliza la obra",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 1 de enero siguiente al inicio de las obras",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las ordenanzas fiscales pueden regular una bonificación en la cuota del ICIO a favor de construcciones, instalaciones u obras declaradas de especial interés o utilidad municipal. ¿Cuál es el porcentaje máximo?",
+            "explanation": "La bonificación potestativa por especial interés o utilidad municipal puede llegar hasta el 95 % de la cuota.",
+            "options": [
+                {
+                    "content": "50 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "75 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "95 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "100 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El tipo de gravamen del impuesto sobre el incremento de valor de los terrenos de naturaleza urbana (plusvalía municipal) no podrá exceder del:",
+            "explanation": "El tipo de gravamen lo fija cada ayuntamiento, sin que pueda exceder del 30 %.",
+            "options": [
+                {
+                    "content": "20 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "25 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "35 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 %",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En las transmisiones por actos inter vivos, el plazo para presentar la autoliquidación de la plusvalía municipal es de:",
+            "explanation": "Para actos inter vivos el plazo es de 30 días hábiles. Para actos mortis causa es de seis meses, prorrogables hasta un año.",
+            "options": [
+                {
+                    "content": "30 días hábiles desde la fecha del devengo",
+                    "is_correct": true
+                },
+                {
+                    "content": "15 días hábiles desde la fecha del devengo",
+                    "is_correct": false
+                },
+                {
+                    "content": "3 meses desde la fecha del devengo",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 meses desde la fecha del devengo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En las transmisiones mortis causa, el plazo de presentación de la autoliquidación de la plusvalía municipal es de:",
+            "explanation": "En las transmisiones por causa de muerte el plazo es de seis meses, prorrogables a solicitud del sujeto pasivo hasta un año.",
+            "options": [
+                {
+                    "content": "Tres meses prorrogables hasta seis",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses prorrogables hasta un año",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un año prorrogable hasta dos",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 días hábiles no prorrogables",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el impuesto sobre el incremento de valor de los terrenos de naturaleza urbana, cuando se trate de transmisiones a título lucrativo, el contribuyente es:",
+            "explanation": "En las transmisiones lucrativas el contribuyente es el adquirente. En las onerosas lo es el transmitente.",
+            "options": [
+                {
+                    "content": "El transmitente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El notario autorizante",
+                    "is_correct": false
+                },
+                {
+                    "content": "El ayuntamiento donde radique el terreno",
+                    "is_correct": false
+                },
+                {
+                    "content": "La persona física o jurídica que adquiere el terreno o a cuyo favor se constituye o transmite el derecho real",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el TRLRHL, no está sujeta a la plusvalía municipal la transmisión de terrenos respecto de los cuales se constate la inexistencia de incremento de valor.",
+            "explanation": "El TRLRHL declara la no sujeción cuando se acredite que no ha habido incremento de valor entre la adquisición y la transmisión.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 24 del TRLRHL, el importe de las tasas por la prestación de un servicio o la realización de una actividad no podrá exceder, en su conjunto, del:",
+            "explanation": "El límite de las tasas por servicios es el coste real o previsible del servicio o actividad, o, si no existe, el valor de la prestación recibida.",
+            "options": [
+                {
+                    "content": "Valor de mercado del servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Doble del coste de la actividad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Coste real o previsible del servicio o actividad de que se trate",
+                    "is_correct": true
+                },
+                {
+                    "content": "Presupuesto del área gestora",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para las tasas por utilización privativa o aprovechamiento especial del dominio público local a favor de empresas explotadoras de servicios de suministros de interés general, la cuantía consiste en el:",
+            "explanation": "Para estas empresas la cuantía es el 1,5 % de los ingresos brutos de facturación obtenidos anualmente en el término municipal.",
+            "options": [
+                {
+                    "content": "3 % de los beneficios de la empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "1,5 % de los ingresos brutos procedentes de la facturación en el término municipal",
+                    "is_correct": true
+                },
+                {
+                    "content": "1,5 % del valor catastral de las instalaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 % de los ingresos brutos de la empresa a escala nacional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a las contribuciones especiales, la suma de las cuotas no podrá exceder del siguiente porcentaje del coste que el ayuntamiento soporte por la obra o servicio:",
+            "explanation": "La base imponible de las contribuciones especiales es, como máximo, el 90 % del coste que soporte la entidad local.",
+            "options": [
+                {
+                    "content": "50 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "75 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "90 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "100 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los acuerdos provisionales de establecimiento o modificación de ordenanzas fiscales se expondrán al público, para que los interesados puedan examinar el expediente y presentar reclamaciones, durante un plazo mínimo de:",
+            "explanation": "El período de exposición pública es de, al menos, treinta días. Si no hay reclamaciones, el acuerdo provisional se eleva a definitivo.",
+            "options": [
+                {
+                    "content": "10 días",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 días",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 días",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 días",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los ayuntamientos están obligados a establecer contribuciones especiales cada vez que ejecutan una obra municipal.",
+            "explanation": "Las contribuciones especiales son un tributo de establecimiento potestativo y exigen un acuerdo concreto de ordenación para cada obra o servicio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el TRLRHL, las viviendas de protección oficial y equiparables disfrutan en el IBI de una bonificación obligatoria en la cuota íntegra de:",
+            "explanation": "Las VPO tienen una bonificación del 50 % durante los tres períodos impositivos siguientes al del otorgamiento de la calificación definitiva.",
+            "options": [
+                {
+                    "content": "El 30 % durante tres períodos impositivos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 50 % durante tres períodos impositivos",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 50 % durante cinco períodos impositivos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 90 % durante tres períodos impositivos",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

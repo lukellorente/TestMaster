@@ -1,0 +1,445 @@
+{
+    "slug": "marketing-digital",
+    "title": "Marketing digital y redes sociales",
+    "description": "Test de repaso de marketing digital para el módulo de FP: SEO, SEM, embudo, KPIs, email marketing, redes sociales y analítica web. Nivel básico, ideal para antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:23:38+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significan las siglas SEO?",
+            "explanation": "SEO es Search Engine Optimization, es decir, optimización para motores de búsqueda.",
+            "options": [
+                {
+                    "content": "Search Engine Optimization",
+                    "is_correct": true
+                },
+                {
+                    "content": "Social Engagement Orientation",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sales Email Operation",
+                    "is_correct": false
+                },
+                {
+                    "content": "Site Execution Output",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estas acciones pertenece al SEO on-page?",
+            "explanation": "El SEO on-page trabaja los elementos de la propia página, como el title, los encabezados y el contenido.",
+            "options": [
+                {
+                    "content": "Comprar anuncios en Google Ads",
+                    "is_correct": false
+                },
+                {
+                    "content": "Optimizar la etiqueta title y los encabezados de una página",
+                    "is_correct": true
+                },
+                {
+                    "content": "Enviar un boletín a los suscriptores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El SEM se basa principalmente en:",
+            "explanation": "El SEM (Search Engine Marketing) se asocia a la publicidad de pago en buscadores, como Google Ads.",
+            "options": [
+                {
+                    "content": "Posicionar de forma orgánica sin pagar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Enviar correos masivos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Analizar el tráfico con informes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Anuncios de pago en buscadores",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una tienda online paga a Google solo cuando un usuario hace clic en su anuncio. ¿Qué modelo de pago es?",
+            "explanation": "En el CPC el anunciante paga cada vez que se hace clic en el anuncio.",
+            "options": [
+                {
+                    "content": "CPC (coste por clic)",
+                    "is_correct": true
+                },
+                {
+                    "content": "CPM (coste por mil impresiones)",
+                    "is_correct": false
+                },
+                {
+                    "content": "CPA fijo mensual",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el embudo de conversión, ¿qué fase corresponde a que el usuario conoce por primera vez la marca?",
+            "explanation": "La parte alta del embudo es la fase de atracción o conocimiento, en la que el usuario descubre la marca.",
+            "options": [
+                {
+                    "content": "Fidelización",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conversión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Atracción o conocimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Decisión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si de 2.000 visitas, 100 compran, ¿cuál es la tasa de conversión?",
+            "explanation": "100 / 2.000 × 100 = 5 %.",
+            "options": [
+                {
+                    "content": "20 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "2 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significa KPI?",
+            "explanation": "KPI es Key Performance Indicator, indicador clave de rendimiento.",
+            "options": [
+                {
+                    "content": "Key Performance Indicator",
+                    "is_correct": true
+                },
+                {
+                    "content": "Keyword Position Index",
+                    "is_correct": false
+                },
+                {
+                    "content": "Knowledge Process Integration",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué mide el CTR de un anuncio?",
+            "explanation": "El CTR (Click Through Rate) es clics dividido entre impresiones, expresado en porcentaje.",
+            "options": [
+                {
+                    "content": "El coste total de la campaña",
+                    "is_correct": false
+                },
+                {
+                    "content": "El porcentaje de clics sobre las impresiones",
+                    "is_correct": true
+                },
+                {
+                    "content": "El número de seguidores ganados",
+                    "is_correct": false
+                },
+                {
+                    "content": "El tiempo medio en la web",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En email marketing, la tasa de apertura indica:",
+            "explanation": "La tasa de apertura relaciona los correos abiertos con los entregados.",
+            "options": [
+                {
+                    "content": "El porcentaje de destinatarios que abren el correo",
+                    "is_correct": true
+                },
+                {
+                    "content": "El porcentaje de correos que no llegan",
+                    "is_correct": false
+                },
+                {
+                    "content": "El porcentaje de usuarios que compran",
+                    "is_correct": false
+                },
+                {
+                    "content": "El número de enlaces del correo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un usuario se da de baja de tu newsletter. ¿Qué debes hacer según la normativa de protección de datos y comunicaciones comerciales?",
+            "explanation": "Si el usuario retira su consentimiento, hay que dejar de enviarle comunicaciones comerciales.",
+            "options": [
+                {
+                    "content": "Seguir enviándole correos un mes más",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dejar de enviarle comunicaciones comerciales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Venderle su dirección a otra empresa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué red social es más adecuada para el marketing B2B y la búsqueda de empleo profesional?",
+            "explanation": "LinkedIn es la red profesional por excelencia y la más usada en B2B.",
+            "options": [
+                {
+                    "content": "LinkedIn",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pinterest",
+                    "is_correct": false
+                },
+                {
+                    "content": "Twitch",
+                    "is_correct": false
+                },
+                {
+                    "content": "Snapchat",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué herramienta gratuita de Google se usa para analizar el tráfico de un sitio web?",
+            "explanation": "Google Analytics permite medir visitas, comportamiento y conversiones de una web.",
+            "options": [
+                {
+                    "content": "Google Maps",
+                    "is_correct": false
+                },
+                {
+                    "content": "Google Analytics",
+                    "is_correct": true
+                },
+                {
+                    "content": "Google Drive",
+                    "is_correct": false
+                },
+                {
+                    "content": "Google Translate",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un usuario entra en una web y se va sin interactuar con ninguna otra página. Este comportamiento se relaciona con:",
+            "explanation": "La tasa de rebote mide las visitas que abandonan el sitio sin interactuar más allá de la primera página.",
+            "options": [
+                {
+                    "content": "La tasa de rebote",
+                    "is_correct": true
+                },
+                {
+                    "content": "El retargeting",
+                    "is_correct": false
+                },
+                {
+                    "content": "El CPM",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El SEO consigue posicionamiento orgánico, por lo que no se paga por cada clic recibido.",
+            "explanation": "El tráfico orgánico no se paga por clic, aunque el SEO requiere tiempo y recursos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las palabras clave (keywords) no tienen ninguna importancia en una estrategia SEO.",
+            "explanation": "Las keywords son la base de la estrategia SEO, porque reflejan lo que buscan los usuarios.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un buen community manager publica siempre el mismo contenido en todas las redes sin adaptarlo al formato de cada una.",
+            "explanation": "Cada red tiene su público y formato, por lo que conviene adaptar el contenido.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la técnica de mostrar anuncios a usuarios que ya visitaron antes tu web? (una palabra)",
+            "explanation": "El retargeting o remarketing impacta de nuevo a usuarios que ya interactuaron con la web.",
+            "options": [
+                {
+                    "content": "retargeting",
+                    "is_correct": true
+                },
+                {
+                    "content": "Retargeting",
+                    "is_correct": true
+                },
+                {
+                    "content": "remarketing",
+                    "is_correct": true
+                },
+                {
+                    "content": "Remarketing",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el texto o botón que invita al usuario a realizar una acción, como «Compra ahora»? Indica las siglas en inglés.",
+            "explanation": "El CTA (Call To Action) es el elemento que invita a realizar una acción concreta.",
+            "options": [
+                {
+                    "content": "CTA",
+                    "is_correct": true
+                },
+                {
+                    "content": "cta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Call to action",
+                    "is_correct": true
+                },
+                {
+                    "content": "Call to Action",
+                    "is_correct": true
+                },
+                {
+                    "content": "call to action",
+                    "is_correct": true
+                },
+                {
+                    "content": "la CTA",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el indicador que mide el porcentaje de visitantes que completan un objetivo, como una compra?",
+            "explanation": "La tasa de conversión es el porcentaje de visitas que realizan la acción deseada.",
+            "options": [
+                {
+                    "content": "Tasa de conversión",
+                    "is_correct": true
+                },
+                {
+                    "content": "tasa de conversión",
+                    "is_correct": true
+                },
+                {
+                    "content": "la tasa de conversión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Conversion rate",
+                    "is_correct": true
+                },
+                {
+                    "content": "conversion rate",
+                    "is_correct": true
+                },
+                {
+                    "content": "CR",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los KPI habituales en marketing digital (hay varias correctas):",
+            "explanation": "CTR, tasa de rebote y CPA miden el rendimiento de las acciones digitales; los otros dos no.",
+            "options": [
+                {
+                    "content": "CTR",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tasa de rebote",
+                    "is_correct": true
+                },
+                {
+                    "content": "Coste por adquisición (CPA)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Número de empleados de la empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tamaño de la oficina",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

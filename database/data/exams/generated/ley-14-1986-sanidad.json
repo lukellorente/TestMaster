@@ -1,0 +1,560 @@
+{
+    "slug": "ley-14-1986-sanidad",
+    "title": "Ley 14/1986 General de Sanidad",
+    "description": "Test de la Ley General de Sanidad para repasar el SNS, las áreas de salud, las competencias y los derechos de los usuarios. Lo hice con el temario de 2026 para practicar antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:02:22+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1 de la Ley 14/1986, General de Sanidad, esta ley tiene por objeto la regulación de las acciones que permitan hacer efectivo el derecho a la protección de la salud reconocido en el artículo:",
+            "explanation": "El artículo 1 de la LGS se remite al artículo 43 y concordantes de la Constitución, que reconoce el derecho a la protección de la salud.",
+            "options": [
+                {
+                    "content": "41 de la Constitución Española",
+                    "is_correct": false
+                },
+                {
+                    "content": "43 de la Constitución Española",
+                    "is_correct": true
+                },
+                {
+                    "content": "49 de la Constitución Española",
+                    "is_correct": false
+                },
+                {
+                    "content": "149 de la Constitución Española",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 3 de la Ley General de Sanidad, los medios y actuaciones del sistema sanitario estarán orientados prioritariamente a:",
+            "explanation": "El artículo 3.1 establece que la orientación prioritaria es la promoción de la salud y la prevención de las enfermedades.",
+            "options": [
+                {
+                    "content": "La curación y la rehabilitación de los pacientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "La investigación biomédica y la docencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "La promoción de la salud y la prevención de las enfermedades",
+                    "is_correct": true
+                },
+                {
+                    "content": "La atención hospitalaria especializada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 7 de la Ley 14/1986, los servicios sanitarios adecuarán su organización y funcionamiento a los principios de:",
+            "explanation": "El artículo 7 cita expresamente los principios de eficacia, celeridad, economía y flexibilidad.",
+            "options": [
+                {
+                    "content": "Eficacia, celeridad, economía y flexibilidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Eficacia, celeridad, economía y transparencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eficiencia, jerarquía, coordinación y flexibilidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Legalidad, celeridad, publicidad y economía",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La Ley General de Sanidad considera actividad fundamental del sistema sanitario la realización de:",
+            "explanation": "El artículo 8 considera actividad fundamental los estudios epidemiológicos, apoyados en un sistema organizado de información sanitaria, vigilancia y acción epidemiológica.",
+            "options": [
+                {
+                    "content": "Los ensayos clínicos con medicamentos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las campañas de vacunación infantil",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las inspecciones de los centros privados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los estudios epidemiológicos necesarios para orientar la prevención de los riesgos para la salud",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 9 de la Ley General de Sanidad, los poderes públicos deberán informar a los usuarios de los servicios del sistema sanitario público de:",
+            "explanation": "El artículo 9 obliga a los poderes públicos a informar a los usuarios de sus derechos y deberes.",
+            "options": [
+                {
+                    "content": "Solo sus derechos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las listas de espera de cada centro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sus derechos y deberes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las retribuciones del personal sanitario",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes es un derecho de los ciudadanos respecto a las Administraciones públicas sanitarias, según el artículo 10 de la Ley 14/1986?",
+            "explanation": "El artículo 10.1 reconoce el derecho al respeto a la personalidad, la dignidad humana y la intimidad, sin discriminación.",
+            "options": [
+                {
+                    "content": "Al respeto a su personalidad, dignidad humana e intimidad, sin discriminación",
+                    "is_correct": true
+                },
+                {
+                    "content": "A recibir gratuitamente todas las prestaciones farmacéuticas en cualquier caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "A ser atendido en el hospital que elija de todo el territorio nacional sin limitación alguna",
+                    "is_correct": false
+                },
+                {
+                    "content": "A rechazar cualquier medida sanitaria aunque suponga un riesgo para la salud pública",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 12 de la Ley General de Sanidad, los poderes públicos orientarán sus políticas de gasto sanitario a corregir desigualdades sanitarias y a garantizar la igualdad de acceso a los servicios sanitarios públicos en todo el territorio español.",
+            "explanation": "Es el contenido del artículo 12 de la LGS.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es un deber de los ciudadanos con las instituciones y organismos del sistema sanitario según el artículo 11 de la Ley 14/1986:",
+            "explanation": "Recibir información sobre los servicios sanitarios es un derecho (art. 10), no un deber. Las otras tres opciones son deberes del artículo 11.",
+            "options": [
+                {
+                    "content": "Cumplir las prescripciones generales de naturaleza sanitaria comunes a toda la población",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuidar las instalaciones y colaborar en el mantenimiento de la habitabilidad de las instituciones sanitarias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Responsabilizarse del uso adecuado de las prestaciones ofrecidas por el sistema sanitario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Recibir información sobre los servicios sanitarios a los que puede acceder",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 18 de la Ley General de Sanidad, la atención primaria integral de la salud incluye, además de las acciones curativas y rehabilitadoras, aquellas que tiendan a:",
+            "explanation": "El artículo 18 incluye en la atención primaria integral las acciones de promoción de la salud y prevención de la enfermedad.",
+            "options": [
+                {
+                    "content": "Planificar la formación de los profesionales sanitarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Promocionar la salud y prevenir la enfermedad del individuo y de la comunidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Gestionar los servicios de sanidad exterior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Autorizar la instalación de centros sanitarios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 20 de la Ley 14/1986, la atención a los problemas de salud mental se realizará sobre la base de:",
+            "explanation": "El artículo 20 apuesta por la plena integración de la salud mental en el sistema sanitario general y la equiparación del enfermo mental a los demás pacientes.",
+            "options": [
+                {
+                    "content": "La creación de una red sanitaria específica y separada del sistema general",
+                    "is_correct": false
+                },
+                {
+                    "content": "La gestión exclusiva por el Estado de los centros psiquiátricos",
+                    "is_correct": false
+                },
+                {
+                    "content": "La plena integración de las actuaciones relativas a la salud mental en el sistema sanitario general",
+                    "is_correct": true
+                },
+                {
+                    "content": "La hospitalización prolongada como medida preferente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 29 de la Ley General de Sanidad, los centros y establecimientos sanitarios, cualquiera que sea su nivel, categoría o titular, precisarán para su instalación y funcionamiento:",
+            "explanation": "El artículo 29.1 exige autorización administrativa previa para todos los centros y establecimientos sanitarios, sea cual sea su titular.",
+            "options": [
+                {
+                    "content": "Autorización administrativa previa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una simple comunicación posterior a la autoridad sanitaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Informe favorable del Consejo Interterritorial del SNS",
+                    "is_correct": false
+                },
+                {
+                    "content": "Autorización solo si son de titularidad privada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley General de Sanidad, las actividades de sanidad exterior corresponden a:",
+            "explanation": "La sanidad exterior (control de riesgos derivados de importación, exportación, tránsito de mercancías y tráfico internacional de viajeros) es competencia del Estado.",
+            "options": [
+                {
+                    "content": "Las Comunidades Autónomas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Ayuntamientos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Diputaciones provinciales",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Administración General del Estado",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley General de Sanidad, las Comunidades Autónomas no pueden ejercer competencias en materia de sanidad, ya que esta es una materia exclusiva del Estado.",
+            "explanation": "El artículo 41 establece que las Comunidades Autónomas ejercen las competencias asumidas en sus Estatutos y los traspasos que se les realicen.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA. Según el artículo 42 de la Ley 14/1986, los Ayuntamientos, sin perjuicio de las competencias de las demás Administraciones públicas, tendrán las siguientes responsabilidades mínimas:",
+            "explanation": "El control sanitario de mercancías y viajeros es sanidad exterior, competencia del Estado, y no una responsabilidad municipal.",
+            "options": [
+                {
+                    "content": "Control sanitario del medio ambiente: contaminación atmosférica, abastecimiento de aguas y residuos urbanos e industriales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Control sanitario de la importación y exportación de mercancías y del tráfico internacional de viajeros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Control sanitario de industrias, actividades y servicios, transportes, ruidos y vibraciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Control sanitario de cementerios y policía sanitaria mortuoria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 44 de la Ley General de Sanidad, el Sistema Nacional de Salud es:",
+            "explanation": "El artículo 44.2 define el SNS como el conjunto de los servicios de salud de la Administración del Estado y de las Comunidades Autónomas.",
+            "options": [
+                {
+                    "content": "El conjunto de los servicios de salud de las Comunidades Autónomas y de las Entidades Locales",
+                    "is_correct": false
+                },
+                {
+                    "content": "El conjunto de los servicios sanitarios públicos y privados existentes en España",
+                    "is_correct": false
+                },
+                {
+                    "content": "El conjunto de los servicios de salud de la Administración del Estado y de los servicios de salud de las Comunidades Autónomas",
+                    "is_correct": true
+                },
+                {
+                    "content": "El conjunto de los centros sanitarios dependientes del Ministerio de Sanidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA respecto a las características fundamentales del Sistema Nacional de Salud según el artículo 46 de la Ley 14/1986:",
+            "explanation": "El SNS se basa en servicios de salud de las Comunidades Autónomas coordinados, no en una gestión exclusivamente centralizada.",
+            "options": [
+                {
+                    "content": "Gestión exclusivamente centralizada por la Administración General del Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Extensión de sus servicios a toda la población",
+                    "is_correct": false
+                },
+                {
+                    "content": "Financiación mediante recursos de las Administraciones públicas, cotizaciones y tasas por la prestación de determinados servicios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prestación de una atención integral de la salud procurando altos niveles de calidad debidamente evaluados y controlados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué órgano, previsto en la Ley General de Sanidad y desarrollado después por la Ley 16/2003, está formado por representantes de las Comunidades Autónomas y de la Administración General del Estado para coordinar el Sistema Nacional de Salud?",
+            "explanation": "El Consejo Interterritorial del SNS es el órgano permanente de coordinación y cooperación entre los servicios de salud y la Administración del Estado.",
+            "options": [
+                {
+                    "content": "La Conferencia de Presidentes",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comisión General de Comunidades Autónomas del Senado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo Interterritorial del Sistema Nacional de Salud",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley General de Sanidad, el Servicio de Salud de cada Comunidad Autónoma, integrado por todos los centros, servicios y establecimientos de la propia Comunidad, Diputaciones, Ayuntamientos y otras Administraciones territoriales intracomunitarias, estará gestionado bajo la responsabilidad de:",
+            "explanation": "La LGS dispone que cada Servicio de Salud se gestiona bajo la responsabilidad de la respectiva Comunidad Autónoma.",
+            "options": [
+                {
+                    "content": "El Ministerio de Sanidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La respectiva Comunidad Autónoma",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Consejo Interterritorial del SNS",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Diputación provincial correspondiente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 90 de la Ley 14/1986, las Administraciones públicas sanitarias podrán establecer conciertos para la prestación de servicios sanitarios con medios ajenos a ellas, teniendo en cuenta con carácter previo:",
+            "explanation": "El artículo 90 exige considerar antes la utilización óptima de los recursos sanitarios propios.",
+            "options": [
+                {
+                    "content": "El informe favorable del Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La preferencia de los centros de mayor tamaño",
+                    "is_correct": false
+                },
+                {
+                    "content": "La utilización óptima de los recursos sanitarios propios",
+                    "is_correct": true
+                },
+                {
+                    "content": "La autorización del Ministerio de Hacienda",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 56 de la Ley General de Sanidad, las demarcaciones denominadas Áreas de Salud son delimitadas y constituidas en su territorio por:",
+            "explanation": "El artículo 56 atribuye a las Comunidades Autónomas la delimitación y constitución de las Áreas de Salud en su territorio.",
+            "options": [
+                {
+                    "content": "Las Comunidades Autónomas",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Ministerio de Sanidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Ayuntamientos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo Interterritorial del SNS",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con carácter general, según el artículo 56 de la Ley 14/1986, las Áreas de Salud extenderán su acción a una población no inferior a 200.000 habitantes ni superior a:",
+            "explanation": "La regla general del artículo 56 es de entre 200.000 y 250.000 habitantes, con posibles excepciones por razones geográficas o demográficas.",
+            "options": [
+                {
+                    "content": "225.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "250.000 habitantes",
+                    "is_correct": true
+                },
+                {
+                    "content": "300.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "500.000 habitantes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes es un órgano de participación del Área de Salud según la Ley General de Sanidad?",
+            "explanation": "El Consejo de Salud de Área es el órgano de participación comunitaria; el Consejo de Dirección y el Gerente son órganos de dirección y gestión.",
+            "options": [
+                {
+                    "content": "El Gerente del Área",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Dirección del Área",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo Interterritorial",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Salud de Área",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley General de Sanidad, las Áreas de Salud son delimitadas por el Ministerio de Sanidad de forma uniforme para todo el territorio del Estado.",
+            "explanation": "Las Áreas de Salud las delimitan y constituyen las Comunidades Autónomas en su territorio, teniendo en cuenta factores geográficos, demográficos, epidemiológicos y otros.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 62 de la Ley 14/1986, la zona de salud es el marco territorial de:",
+            "explanation": "El artículo 62 define la zona de salud como el marco territorial de la atención primaria, donde desarrollan sus actividades los Centros de Salud.",
+            "options": [
+                {
+                    "content": "La atención especializada hospitalaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "La sanidad exterior",
+                    "is_correct": false
+                },
+                {
+                    "content": "La atención primaria de salud",
+                    "is_correct": true
+                },
+                {
+                    "content": "La salud laboral",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley General de Sanidad, las estructuras físicas y funcionales que posibilitarán el desarrollo de una atención primaria de salud coordinada globalmente, integral y permanentemente accesible a la población son:",
+            "explanation": "El artículo 63 define los Centros de Salud con estas características como base de la atención primaria.",
+            "options": [
+                {
+                    "content": "Los Centros de Salud",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los Hospitales generales de Área",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Consejos de Salud de Área",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Servicios de Sanidad Exterior",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

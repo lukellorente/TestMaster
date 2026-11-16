@@ -1,0 +1,429 @@
+{
+    "slug": "comunicacion-empresarial",
+    "title": "Comunicación empresarial y atención al cliente",
+    "description": "Test de repaso para el módulo de comunicación empresarial de FP Administración y Gestión: comunicación oral y escrita, protocolo, reclamaciones y documentos comerciales. Va bien para preparar el examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:16:13+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes elementos NO forma parte del proceso básico de la comunicación?",
+            "explanation": "Los elementos básicos son emisor, receptor, mensaje, código, canal y contexto; el archivo no es uno de ellos.",
+            "options": [
+                {
+                    "content": "Emisor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Receptor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Canal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Archivo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una llamada telefónica a un cliente es un ejemplo de comunicación:",
+            "explanation": "En una llamada telefónica el mensaje se transmite mediante la palabra hablada, por lo que es comunicación oral.",
+            "options": [
+                {
+                    "content": "Oral",
+                    "is_correct": true
+                },
+                {
+                    "content": "Escrita",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivamente no verbal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una barrera habitual en la comunicación oral con un cliente es:",
+            "explanation": "Los tecnicismos dificultan la comprensión del mensaje y son una barrera semántica.",
+            "options": [
+                {
+                    "content": "Escuchar de forma activa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar tecnicismos que el cliente no entiende",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mostrar empatía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hablar con claridad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al atender a un cliente en el mostrador, ¿qué actitud es la más adecuada?",
+            "explanation": "La escucha activa y una actitud amable son la base de una buena atención al cliente.",
+            "options": [
+                {
+                    "content": "Atender el móvil mientras habla el cliente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Interrumpirle para ir más rápido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mirarle, sonreír y escucharle con atención",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué documento comercial se envía para comunicar al cliente el precio y las condiciones de un producto antes de que lo compre?",
+            "explanation": "El presupuesto detalla precio y condiciones de una posible venta antes de que se formalice.",
+            "options": [
+                {
+                    "content": "Presupuesto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Factura",
+                    "is_correct": false
+                },
+                {
+                    "content": "Recibo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Albarán",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El documento que acredita la entrega de la mercancía y que firma el receptor es:",
+            "explanation": "El albarán o nota de entrega justifica la entrega de la mercancía y lo firma quien la recibe.",
+            "options": [
+                {
+                    "content": "El pedido",
+                    "is_correct": false
+                },
+                {
+                    "content": "El albarán",
+                    "is_correct": true
+                },
+                {
+                    "content": "La carta de presentación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El cheque",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una carta comercial, la parte donde se indica la fecha y el lugar se denomina habitualmente:",
+            "explanation": "La datación recoge el lugar y la fecha de redacción de la carta.",
+            "options": [
+                {
+                    "content": "Despedida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Firma",
+                    "is_correct": false
+                },
+                {
+                    "content": "Datación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Postdata",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El protocolo empresarial consiste en:",
+            "explanation": "El protocolo establece normas de cortesía, precedencia y comportamiento en el ámbito profesional.",
+            "options": [
+                {
+                    "content": "Un conjunto de normas de comportamiento y cortesía en actos y relaciones de la empresa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un tipo de contrato mercantil",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un documento contable",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Ante un cliente enfadado que presenta una queja, lo primero que conviene hacer es:",
+            "explanation": "Escuchar sin interrumpir permite entender el problema y rebajar la tensión.",
+            "options": [
+                {
+                    "content": "Discutir sus argumentos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Derivarle sin explicación a otro departamento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ignorarle hasta que se calme",
+                    "is_correct": false
+                },
+                {
+                    "content": "Escucharle con calma sin interrumpirle",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué documento se entrega al consumidor en establecimientos para formular una reclamación?",
+            "explanation": "Las hojas de reclamaciones están a disposición de los consumidores para formalizar sus reclamaciones.",
+            "options": [
+                {
+                    "content": "Hoja de reclamaciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Albarán",
+                    "is_correct": false
+                },
+                {
+                    "content": "Orden de compra",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una comunicación escrita interna que se envía a varios empleados para informarles de un asunto de la empresa es:",
+            "explanation": "La circular es un escrito dirigido a varios destinatarios para comunicar información o instrucciones.",
+            "options": [
+                {
+                    "content": "Una factura",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una circular",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un pagaré",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un recibo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La factura es un documento comercial que justifica una operación de compraventa y refleja el importe e impuestos aplicados.",
+            "explanation": "La factura acredita la operación, detalla los productos, el precio y los impuestos como el IVA.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El lenguaje no verbal (gestos, postura, mirada) no influye en la imagen que se transmite al cliente.",
+            "explanation": "El lenguaje no verbal transmite mucha información y afecta a la percepción que el cliente tiene de la atención recibida.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una queja es la manifestación de insatisfacción de un cliente, y conviene tratarla como una oportunidad para mejorar el servicio.",
+            "explanation": "Gestionar bien las quejas permite corregir fallos y fidelizar al cliente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el documento comercial mediante el cual el cliente solicita al proveedor el suministro de mercancías?",
+            "explanation": "El pedido es el documento con el que el comprador solicita la mercancía al vendedor.",
+            "options": [
+                {
+                    "content": "Pedido",
+                    "is_correct": true
+                },
+                {
+                    "content": "El pedido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nota de pedido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Orden de compra",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hoja de pedido",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué tipo de escucha, basada en prestar atención plena y mostrar interés, se recomienda en la atención al cliente?",
+            "explanation": "La escucha activa implica atender, mostrar interés y confirmar que se ha comprendido el mensaje.",
+            "options": [
+                {
+                    "content": "Escucha activa",
+                    "is_correct": true
+                },
+                {
+                    "content": "La escucha activa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Activa",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Si un cliente entrega una carta de queja y la empresa la registra con fecha y número, ¿qué libro u organismo suele usarse para anotar la entrada de correspondencia? Responde con dos palabras.",
+            "explanation": "La correspondencia recibida se anota en el registro de entrada, con fecha y número de orden.",
+            "options": [
+                {
+                    "content": "Registro de entrada",
+                    "is_correct": true
+                },
+                {
+                    "content": "El registro de entrada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Libro de registro de entrada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Registro de entradas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las respuestas correctas (hay varias): ¿qué datos suele incluir una factura?",
+            "explanation": "La factura incluye numeración, fecha, datos fiscales, descripción de la operación e impuestos.",
+            "options": [
+                {
+                    "content": "Número de factura y fecha",
+                    "is_correct": true
+                },
+                {
+                    "content": "Datos fiscales del emisor y del cliente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desglose del IVA aplicado",
+                    "is_correct": true
+                },
+                {
+                    "content": "La nota personal del cliente sobre el servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "El horario de apertura del local",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un cliente llama porque ha recibido un producto equivocado. ¿Qué respuesta es la más profesional?",
+            "explanation": "Disculparse, mostrar disposición y pedir los datos necesarios es la forma correcta de gestionar la incidencia.",
+            "options": [
+                {
+                    "content": "«Eso no es cosa mía, llame a otro número.»",
+                    "is_correct": false
+                },
+                {
+                    "content": "«Lamento el error. Dígame su número de pedido y lo solucionamos.»",
+                    "is_correct": true
+                },
+                {
+                    "content": "«Seguro que se ha equivocado usted al pedirlo.»",
+                    "is_correct": false
+                },
+                {
+                    "content": "«Vuelva a llamar mañana.»",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una presentación entre dos personas en un acto protocolario, ¿a quién se suele presentar primero?",
+            "explanation": "Por cortesía se presenta a la persona de menor rango a la de mayor rango, mencionando antes el nombre de esta.",
+            "options": [
+                {
+                    "content": "Al de mayor rango o edad se le presenta la otra persona",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siempre al más joven",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al azar",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

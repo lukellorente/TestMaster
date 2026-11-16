@@ -1,0 +1,572 @@
+{
+    "slug": "lmsgi-xml-xsd",
+    "title": "LMSGI - XML, DTD y XSD",
+    "description": "Test del módulo de Lenguajes de Marcas (DAM/DAW) sobre XML bien formado y válido, DTD, XSD y namespaces. Lo hice para repasar antes del examen con el temario de este curso.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:51:46+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significa que un documento XML esté «bien formado»?",
+            "explanation": "Bien formado es cumplir la sintaxis de XML. Cumplir las reglas de un DTD o XSD es lo que hace que sea válido.",
+            "options": [
+                {
+                    "content": "Que cumple las reglas sintácticas generales de XML",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que cumple las reglas de un DTD o un XSD concreto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que no contiene atributos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que tiene declaración XML y comentarios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes fragmentos NO está bien formado?",
+            "explanation": "Las etiquetas están mal anidadas: se cierra a antes que b, y los elementos deben cerrarse en orden inverso al de apertura.",
+            "options": [
+                {
+                    "content": "<a><b/></a>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<a><b></a></b>",
+                    "is_correct": true
+                },
+                {
+                    "content": "<a x=\"1\"><b>texto</b></a>",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un documento XML válido debe estar, además, bien formado.",
+            "explanation": "La validez presupone la buena formación: antes de validar contra un DTD o XSD, el documento debe cumplir la sintaxis XML.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un DTD, ¿qué indica la declaración <!ELEMENT libro (titulo, autor+)>?",
+            "explanation": "La coma indica secuencia ordenada, titulo aparece una vez y el signo + indica una o más repeticiones de autor.",
+            "options": [
+                {
+                    "content": "libro contiene un titulo o uno o más autor",
+                    "is_correct": false
+                },
+                {
+                    "content": "libro contiene cero o más titulo y un autor",
+                    "is_correct": false
+                },
+                {
+                    "content": "libro contiene un titulo seguido de uno o más autor",
+                    "is_correct": true
+                },
+                {
+                    "content": "libro es un elemento vacío",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significa <!ATTLIST libro isbn CDATA #REQUIRED> en un DTD?",
+            "explanation": "CDATA es texto y #REQUIRED obliga a que el atributo aparezca en cada elemento libro.",
+            "options": [
+                {
+                    "content": "El atributo isbn es opcional y de tipo numérico",
+                    "is_correct": false
+                },
+                {
+                    "content": "El atributo isbn tiene un valor fijo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El atributo isbn es un identificador único",
+                    "is_correct": false
+                },
+                {
+                    "content": "El atributo isbn es obligatorio y de tipo texto",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué palabra clave de DTD se utiliza para declarar los atributos de un elemento?",
+            "explanation": "Los atributos se declaran con <!ATTLIST ...>, mientras que los elementos se declaran con <!ELEMENT ...>.",
+            "options": [
+                {
+                    "content": "ATTLIST",
+                    "is_correct": true
+                },
+                {
+                    "content": "<!ATTLIST>",
+                    "is_correct": true
+                },
+                {
+                    "content": "!ATTLIST",
+                    "is_correct": true
+                },
+                {
+                    "content": "attlist",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los DTD se escriben con sintaxis XML, igual que los esquemas XSD.",
+            "explanation": "Los DTD usan una sintaxis propia heredada de SGML; los XSD sí son documentos XML.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es una ventaja clara de XSD frente a DTD?",
+            "explanation": "XSD ofrece tipado de datos, restricciones (facetas) y soporte de namespaces, algo que el DTD apenas permite.",
+            "options": [
+                {
+                    "content": "Permite definir tipos de datos como enteros, fechas o decimales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Es más corto en todos los casos",
+                    "is_correct": false
+                },
+                {
+                    "content": "No necesita elemento raíz",
+                    "is_correct": false
+                },
+                {
+                    "content": "Permite que el XML no esté bien formado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué extensión de archivo se suele usar para los esquemas XML Schema?",
+            "explanation": "Los esquemas XML Schema se guardan habitualmente en archivos con extensión .xsd.",
+            "options": [
+                {
+                    "content": "xsd",
+                    "is_correct": true
+                },
+                {
+                    "content": ".xsd",
+                    "is_correct": true
+                },
+                {
+                    "content": "archivo xsd",
+                    "is_correct": true
+                },
+                {
+                    "content": "extensión xsd",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un XSD, ¿qué indicador obliga a que los hijos aparezcan en un orden determinado?",
+            "explanation": "xs:sequence exige el orden declarado; xs:choice permite solo una de las opciones y xs:all admite cualquier orden.",
+            "options": [
+                {
+                    "content": "xs:choice",
+                    "is_correct": false
+                },
+                {
+                    "content": "xs:all",
+                    "is_correct": false
+                },
+                {
+                    "content": "xs:sequence",
+                    "is_correct": true
+                },
+                {
+                    "content": "xs:group",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado un XSD con <xs:element name=\"persona\"><xs:complexType><xs:sequence><xs:element name=\"nombre\" type=\"xs:string\"/><xs:element name=\"edad\" type=\"xs:integer\"/></xs:sequence></xs:complexType></xs:element>, ¿qué instancia es válida?",
+            "explanation": "Se respeta el orden nombre-edad y edad es un entero; las demás alteran el orden, omiten un elemento o usan un valor no entero.",
+            "options": [
+                {
+                    "content": "<persona><edad>30</edad><nombre>Ana</nombre></persona>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<persona><nombre>Ana</nombre></persona>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<persona><nombre>Ana</nombre><edad>30</edad></persona>",
+                    "is_correct": true
+                },
+                {
+                    "content": "<persona><nombre>Ana</nombre><edad>treinta</edad></persona>",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de XSD debes usar para un elemento que contiene elementos hijos o atributos?",
+            "explanation": "Los elementos con hijos o atributos son de tipo complejo; los tipos simples solo contienen texto sin atributos.",
+            "options": [
+                {
+                    "content": "xs:simpleType",
+                    "is_correct": false
+                },
+                {
+                    "content": "xs:complexType",
+                    "is_correct": true
+                },
+                {
+                    "content": "xs:restriction",
+                    "is_correct": false
+                },
+                {
+                    "content": "xs:list",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado <xs:element name=\"edad\" type=\"xs:integer\"/>, ¿qué contenido es válido?",
+            "explanation": "xs:integer solo admite números enteros, sin decimales ni texto.",
+            "options": [
+                {
+                    "content": "<edad>veinticinco</edad>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<edad>25.5</edad>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<edad>25</edad>",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un XSD, si no se indican minOccurs ni maxOccurs en un elemento, ¿cuántas veces debe aparecer?",
+            "explanation": "El valor por defecto de minOccurs y de maxOccurs es 1.",
+            "options": [
+                {
+                    "content": "Cero o una",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cero o más",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ilimitadas veces, como mínimo una",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exactamente una",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué faceta de XSD restringe un valor de texto mediante una expresión regular?",
+            "explanation": "xs:pattern define una expresión regular que el valor debe cumplir; enumeration, en cambio, lista valores concretos.",
+            "options": [
+                {
+                    "content": "xs:enumeration",
+                    "is_correct": false
+                },
+                {
+                    "content": "xs:length",
+                    "is_correct": false
+                },
+                {
+                    "content": "xs:whiteSpace",
+                    "is_correct": false
+                },
+                {
+                    "content": "xs:pattern",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las reglas que debe cumplir un documento XML para estar bien formado (hay varias correctas):",
+            "explanation": "Raíz única, cierre de etiquetas y atributos entrecomillados son reglas sintácticas. Declarar elementos en un DTD afecta a la validez, y XML no exige mayúsculas.",
+            "options": [
+                {
+                    "content": "Tiene un único elemento raíz",
+                    "is_correct": true
+                },
+                {
+                    "content": "Todas las etiquetas de apertura están cerradas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los valores de los atributos van entre comillas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Todos los elementos están declarados en un DTD",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los nombres de elemento empiezan por mayúscula",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuántos elementos raíz puede tener un documento XML bien formado?",
+            "explanation": "Un documento XML bien formado tiene exactamente un elemento raíz que contiene al resto.",
+            "options": [
+                {
+                    "content": "uno",
+                    "is_correct": true
+                },
+                {
+                    "content": "1",
+                    "is_correct": true
+                },
+                {
+                    "content": "un",
+                    "is_correct": true
+                },
+                {
+                    "content": "solo uno",
+                    "is_correct": true
+                },
+                {
+                    "content": "único",
+                    "is_correct": true
+                },
+                {
+                    "content": "uno solo",
+                    "is_correct": true
+                },
+                {
+                    "content": "un elemento",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace la línea <!DOCTYPE libros SYSTEM \"libros.dtd\"> en un documento XML?",
+            "explanation": "DOCTYPE indica el nombre del elemento raíz y SYSTEM señala el archivo DTD externo con el que se validará.",
+            "options": [
+                {
+                    "content": "Importa un esquema XSD",
+                    "is_correct": false
+                },
+                {
+                    "content": "Declara un namespace llamado libros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Asocia un DTD externo cuyo elemento raíz es libros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Crea una hoja de estilo CSS",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atributo se usa en la instancia XML para asociar un XSD sin namespace de destino?",
+            "explanation": "Se declara xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" y se usa xsi:noNamespaceSchemaLocation para indicar el XSD.",
+            "options": [
+                {
+                    "content": "xsi:noNamespaceSchemaLocation",
+                    "is_correct": true
+                },
+                {
+                    "content": "xs:targetNamespace",
+                    "is_correct": false
+                },
+                {
+                    "content": "xmlns:schema",
+                    "is_correct": false
+                },
+                {
+                    "content": "xsi:dtdLocation",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué sirven principalmente los espacios de nombres (namespaces) en XML?",
+            "explanation": "Los namespaces identifican el vocabulario de cada elemento y permiten mezclar documentos sin colisiones de nombres.",
+            "options": [
+                {
+                    "content": "Para comprimir el documento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para evitar conflictos entre elementos con el mismo nombre de distintos vocabularios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para cifrar los datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para sustituir al elemento raíz",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En <libro xmlns=\"http://ejemplo.com/biblio\"><titulo>XML</titulo></libro>, ¿a qué namespace pertenece titulo?",
+            "explanation": "Un namespace por defecto se aplica al elemento donde se declara y a sus descendientes sin prefijo.",
+            "options": [
+                {
+                    "content": "A ninguno, porque no tiene prefijo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al de XML Schema",
+                    "is_correct": false
+                },
+                {
+                    "content": "A http://ejemplo.com/biblio, por heredar el namespace por defecto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo pertenece el elemento libro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La URI de un namespace debe apuntar obligatoriamente a un recurso web existente.",
+            "explanation": "La URI funciona solo como identificador único del namespace; no tiene por qué ser accesible ni devolver contenido.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes son tipos de datos simples predefinidos de XML Schema? (hay varias correctas)",
+            "explanation": "date, boolean y decimal son tipos predefinidos. sequence y complexType son componentes estructurales del esquema, no tipos de datos.",
+            "options": [
+                {
+                    "content": "xs:date",
+                    "is_correct": true
+                },
+                {
+                    "content": "xs:boolean",
+                    "is_correct": true
+                },
+                {
+                    "content": "xs:decimal",
+                    "is_correct": true
+                },
+                {
+                    "content": "xs:sequence",
+                    "is_correct": false
+                },
+                {
+                    "content": "xs:complexType",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuál es el nombre del elemento raíz de cualquier documento XSD (sin indicar el prefijo)?",
+            "explanation": "Todo esquema XML Schema tiene como raíz el elemento schema, normalmente con prefijo xs o xsd.",
+            "options": [
+                {
+                    "content": "schema",
+                    "is_correct": true
+                },
+                {
+                    "content": "xs:schema",
+                    "is_correct": true
+                },
+                {
+                    "content": "xsd:schema",
+                    "is_correct": true
+                },
+                {
+                    "content": "<xs:schema>",
+                    "is_correct": true
+                },
+                {
+                    "content": "<xsd:schema>",
+                    "is_correct": true
+                },
+                {
+                    "content": "elemento schema",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "XML distingue entre mayúsculas y minúsculas, por lo que <Libro></libro> no está bien formado.",
+            "explanation": "Los nombres de las etiquetas distinguen mayúsculas y minúsculas, por lo que la etiqueta de cierre debe coincidir exactamente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

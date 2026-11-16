@@ -1,0 +1,544 @@
+{
+    "slug": "tcae-higiene-medio-hospitalario",
+    "title": "Higiene del medio hospitalario y limpieza de material",
+    "description": "Test de repaso para el módulo de Sanidad con infecciones nosocomiales, aislamientos, esterilización y residuos. Lo he preparado con los apuntes de este curso, a ver qué tal os sale.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:18:33+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se define una infección nosocomial?",
+            "explanation": "Infección nosocomial es la adquirida en el entorno sanitario que no estaba presente ni incubándose en el momento del ingreso.",
+            "options": [
+                {
+                    "content": "La que el paciente trae del domicilio al ingresar",
+                    "is_correct": false
+                },
+                {
+                    "content": "La que se adquiere durante la estancia o la atención sanitaria y no estaba presente ni en incubación al ingreso",
+                    "is_correct": true
+                },
+                {
+                    "content": "La que solo afecta al personal sanitario",
+                    "is_correct": false
+                },
+                {
+                    "content": "La que se transmite únicamente por vía aérea",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál se considera la medida más eficaz y sencilla para prevenir la transmisión cruzada de infecciones en el hospital?",
+            "explanation": "La higiene de manos es la medida individual más eficaz para cortar la cadena de transmisión de las infecciones asociadas a la asistencia.",
+            "options": [
+                {
+                    "content": "El uso sistemático de antibióticos profilácticos",
+                    "is_correct": false
+                },
+                {
+                    "content": "La higiene de manos",
+                    "is_correct": true
+                },
+                {
+                    "content": "La desinfección diaria del aire con aerosoles",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un paciente ingresa con gripe. ¿Qué tipo de aislamiento corresponde, además de las precauciones estándar?",
+            "explanation": "La gripe se transmite por gotas respiratorias de gran tamaño, por lo que se aplican precauciones de gotas (mascarilla quirúrgica y habitación individual).",
+            "options": [
+                {
+                    "content": "Aislamiento de gotas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aislamiento inverso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aislamiento entérico exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "No requiere ninguna medida adicional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para atender a un paciente con tuberculosis pulmonar bacilífera se debe usar como mínimo:",
+            "explanation": "La tuberculosis requiere aislamiento aéreo, con mascarilla de alta eficacia (FFP2 o superior) y habitación individual con presión negativa si es posible.",
+            "options": [
+                {
+                    "content": "Mascarilla quirúrgica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gorro y calzas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mascarilla de protección respiratoria FFP2",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo guantes de nitrilo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un paciente con diarrea por Clostridioides difficile, ¿por qué se recomienda lavarse las manos con agua y jabón y no solo con solución hidroalcohólica?",
+            "explanation": "Las esporas de C. difficile son resistentes a los preparados alcohólicos; el lavado con agua y jabón las arrastra.",
+            "options": [
+                {
+                    "content": "Porque el jabón es más barato",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque el alcohol daña los guantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque las esporas no se eliminan de forma fiable con el alcohol y sí se arrastran mecánicamente con agua y jabón",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es la limpieza en el contexto del material sanitario?",
+            "explanation": "La limpieza retira la suciedad visible y reduce la carga microbiana; es el paso previo imprescindible a la desinfección o esterilización.",
+            "options": [
+                {
+                    "content": "La eliminación de todos los microorganismos, incluidas las esporas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La destrucción de microorganismos patógenos en superficies inertes",
+                    "is_correct": false
+                },
+                {
+                    "content": "La eliminación de la suciedad y la materia orgánica mediante agua y detergente, con acción mecánica",
+                    "is_correct": true
+                },
+                {
+                    "content": "El empaquetado del material para su almacenamiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la clasificación de Spaulding, el instrumental quirúrgico que penetra en tejidos estériles es material:",
+            "explanation": "El material crítico entra en tejido estéril o en el sistema vascular y debe someterse a esterilización.",
+            "options": [
+                {
+                    "content": "No crítico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Semicrítico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crítico, y requiere esterilización",
+                    "is_correct": true
+                },
+                {
+                    "content": "Crítico, y basta con una limpieza",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un fonendoscopio o un manguito de tensión que solo contactan con piel intacta se clasifican como material:",
+            "explanation": "El material que solo toca piel íntegra es no crítico y requiere limpieza o desinfección de bajo o intermedio nivel.",
+            "options": [
+                {
+                    "content": "No crítico, con limpieza o desinfección de bajo nivel",
+                    "is_correct": true
+                },
+                {
+                    "content": "Crítico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Semicrítico, con desinfección de alto nivel",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el agente esterilizante del autoclave?",
+            "explanation": "El autoclave esteriliza mediante vapor de agua saturado a presión y temperatura elevadas.",
+            "options": [
+                {
+                    "content": "Vapor de agua saturado a presión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aire caliente seco a presión atmosférica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Radiación ultravioleta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Glutaraldehído",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para esterilizar material termosensible que no soporta el calor húmedo, se puede utilizar:",
+            "explanation": "Los métodos a baja temperatura (óxido de etileno, plasma de peróxido de hidrógeno) permiten esterilizar material sensible al calor.",
+            "options": [
+                {
+                    "content": "Autoclave a 134 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lavado con agua caliente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Esterilización a baja temperatura, como óxido de etileno o plasma de peróxido de hidrógeno",
+                    "is_correct": true
+                },
+                {
+                    "content": "Inmersión en alcohol de 70° durante 1 minuto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el orden correcto de los procesos aplicados a un instrumental reutilizable?",
+            "explanation": "La materia orgánica protege a los microorganismos, así que primero se limpia y se seca, después se empaqueta y por último se esteriliza.",
+            "options": [
+                {
+                    "content": "Esterilización, limpieza, empaquetado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desinfección, esterilización, limpieza",
+                    "is_correct": false
+                },
+                {
+                    "content": "Empaquetado, esterilización, limpieza",
+                    "is_correct": false
+                },
+                {
+                    "content": "Limpieza, secado y empaquetado, esterilización",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una enfermera termina de poner una inyección. ¿Qué debe hacer con la aguja usada?",
+            "explanation": "Los objetos cortantes y punzantes se desechan sin manipular en contenedores rígidos específicos para evitar pinchazos accidentales.",
+            "options": [
+                {
+                    "content": "Reencapsularla con las dos manos y tirarla a la bolsa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Depositarla directamente, sin reencapsular, en un contenedor rígido resistente a la punción",
+                    "is_correct": true
+                },
+                {
+                    "content": "Doblarla y tirarla a la basura normal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las precauciones estándar se aplican:",
+            "explanation": "Se basan en considerar que cualquier paciente puede ser fuente de infección, por lo que se aplican siempre.",
+            "options": [
+                {
+                    "content": "Solo a pacientes con infección diagnosticada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo en quirófano",
+                    "is_correct": false
+                },
+                {
+                    "content": "A todos los pacientes, independientemente de su diagnóstico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo a pacientes inmunodeprimidos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El aislamiento inverso o protector está indicado principalmente para:",
+            "explanation": "El aislamiento protector protege al paciente con defensas muy bajas de los microorganismos del entorno.",
+            "options": [
+                {
+                    "content": "Pacientes con tuberculosis",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pacientes gravemente inmunodeprimidos, como los neutropénicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pacientes con sarna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier paciente con fiebre",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un desinfectante de alto nivel se caracteriza por:",
+            "explanation": "La desinfección de alto nivel destruye todos los microorganismos excepto grandes cantidades de esporas; solo la esterilización garantiza su eliminación.",
+            "options": [
+                {
+                    "content": "Eliminar solo bacterias vegetativas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eliminar todos los microorganismos, salvo un gran número de esporas bacterianas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Eliminar de forma garantizada todas las esporas en cualquier condición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Limpiar la suciedad visible",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La desinfección elimina siempre todas las formas de vida microbiana, incluidas las esporas.",
+            "explanation": "Eso es la esterilización; la desinfección destruye microorganismos patógenos, pero no garantiza la eliminación de las esporas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El lavado previo del material con agua y detergente es imprescindible antes de esterilizarlo.",
+            "explanation": "La materia orgánica residual impide que el agente esterilizante alcance a los microorganismos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Si las manos están visiblemente sucias, basta con aplicar solución hidroalcohólica.",
+            "explanation": "Con suciedad visible o contaminación con fluidos se debe realizar lavado con agua y jabón.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un paciente con sarampión requiere precauciones de transmisión aérea.",
+            "explanation": "El virus del sarampión se transmite por partículas aerosolizadas que permanecen en el aire, por lo que se aplica aislamiento aéreo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el proceso que elimina toda forma de vida microbiana, incluidas las esporas?",
+            "explanation": "La esterilización es el único proceso que destruye todos los microorganismos, esporas incluidas.",
+            "options": [
+                {
+                    "content": "esterilización",
+                    "is_correct": true
+                },
+                {
+                    "content": "la esterilización",
+                    "is_correct": true
+                },
+                {
+                    "content": "esterilizacion",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué siglas designan las infecciones adquiridas durante la atención sanitaria (término que engloba a las nosocomiales)?",
+            "explanation": "IRAS (o IAAS) significa infecciones relacionadas (o asociadas) con la asistencia sanitaria.",
+            "options": [
+                {
+                    "content": "IRAS",
+                    "is_correct": true
+                },
+                {
+                    "content": "iras",
+                    "is_correct": true
+                },
+                {
+                    "content": "infecciones relacionadas con la asistencia sanitaria",
+                    "is_correct": true
+                },
+                {
+                    "content": "IAAS",
+                    "is_correct": true
+                },
+                {
+                    "content": "infecciones asociadas a la asistencia sanitaria",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué bacteria esporulada se utiliza habitualmente como indicador biológico del autoclave de vapor?",
+            "explanation": "Las esporas de Geobacillus stearothermophilus (antes Bacillus stearothermophilus) son muy resistentes al vapor y sirven para validar el ciclo.",
+            "options": [
+                {
+                    "content": "Geobacillus stearothermophilus",
+                    "is_correct": true
+                },
+                {
+                    "content": "G. stearothermophilus",
+                    "is_correct": true
+                },
+                {
+                    "content": "Bacillus stearothermophilus",
+                    "is_correct": true
+                },
+                {
+                    "content": "geobacillus",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué tipo de aislamiento se aplica a un paciente con varicela?",
+            "explanation": "La varicela se transmite por vía aérea y por contacto; se aplican precauciones aéreas, además de las de contacto en lesiones.",
+            "options": [
+                {
+                    "content": "aéreo",
+                    "is_correct": true
+                },
+                {
+                    "content": "aislamiento aéreo",
+                    "is_correct": true
+                },
+                {
+                    "content": "por vía aérea",
+                    "is_correct": true
+                },
+                {
+                    "content": "aereo",
+                    "is_correct": true
+                },
+                {
+                    "content": "aéreo y contacto",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Seleccione TODAS las situaciones que corresponden a los 5 momentos de la higiene de manos de la OMS (hay varias correctas):",
+            "explanation": "Los cinco momentos son: antes del contacto, antes de tarea aséptica, tras riesgo de fluidos, tras contacto con el paciente y tras contacto con su entorno.",
+            "options": [
+                {
+                    "content": "Antes del contacto con el paciente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Antes de una tarea limpia o aséptica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Después del riesgo de exposición a fluidos corporales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Al terminar la jornada laboral únicamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Después del contacto con el entorno del paciente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes son medidas incluidas en las precauciones estándar? (hay varias correctas)",
+            "explanation": "Las precauciones estándar incluyen higiene de manos, EPI, manejo seguro de residuos y punzantes, y se aplican a todos los pacientes.",
+            "options": [
+                {
+                    "content": "Uso de equipos de protección individual según el riesgo de exposición",
+                    "is_correct": true
+                },
+                {
+                    "content": "Gestión segura de los residuos y de los objetos punzantes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aplicarlas solo cuando el paciente tiene un diagnóstico infeccioso confirmado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Higiene de manos",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

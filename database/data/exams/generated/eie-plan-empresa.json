@@ -1,0 +1,472 @@
+{
+    "slug": "eie-plan-empresa",
+    "title": "EIE - Empresa e Iniciativa Emprendedora: plan de empresa",
+    "description": "Test de EIE para repasar el plan de empresa antes del examen: entorno, DAFO, marketing mix, formas jurídicas, financiación e impuestos. Temario del módulo de FP actualizado a 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:13:38+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "En un análisis DAFO, ¿qué elementos se consideran factores internos de la empresa?",
+            "explanation": "Las debilidades y fortalezas son internas; las amenazas y oportunidades pertenecen al entorno externo.",
+            "options": [
+                {
+                    "content": "Amenazas y oportunidades",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debilidades y fortalezas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Amenazas y debilidades",
+                    "is_correct": false
+                },
+                {
+                    "content": "Oportunidades y fortalezas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una cafetería observa que el ayuntamiento va a peatonalizar la calle donde se ubica, lo que aumentará el paso de personas. En el DAFO, esto es:",
+            "explanation": "Es un factor externo favorable, es decir, una oportunidad.",
+            "options": [
+                {
+                    "content": "Una fortaleza",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una debilidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una amenaza",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una oportunidad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuáles son las 4 P del marketing mix clásico?",
+            "explanation": "El marketing mix clásico combina producto, precio, plaza (distribución) y promoción.",
+            "options": [
+                {
+                    "content": "Producto, precio, distribución (plaza) y promoción (comunicación)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Producto, personal, proveedores y publicidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Precio, personas, proceso y producción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Planificación, producto, puntos de venta y promoción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa fija el precio de su nuevo producto muy bajo para entrar rápido en el mercado y ganar cuota. ¿Qué estrategia aplica?",
+            "explanation": "El precio de penetración es bajo al inicio para captar mercado rápidamente.",
+            "options": [
+                {
+                    "content": "Precio de penetración",
+                    "is_correct": true
+                },
+                {
+                    "content": "Precio de descremación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Precio de prestigio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Precio psicológico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una sociedad limitada (SL), ¿cómo responden los socios de las deudas sociales?",
+            "explanation": "En la SL la responsabilidad de los socios se limita al capital aportado, salvo supuestos excepcionales.",
+            "options": [
+                {
+                    "content": "Con todo su patrimonio personal de forma ilimitada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo con el patrimonio de la empresa, hasta el capital aportado",
+                    "is_correct": true
+                },
+                {
+                    "content": "De forma solidaria entre ellos con sus bienes personales",
+                    "is_correct": false
+                },
+                {
+                    "content": "No responden de ninguna deuda en ningún caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué forma jurídica es la más habitual para una persona que inicia sola una actividad con trámites sencillos y responsabilidad ilimitada?",
+            "explanation": "El empresario individual responde con todo su patrimonio presente y futuro y tiene trámites sencillos.",
+            "options": [
+                {
+                    "content": "Sociedad anónima",
+                    "is_correct": false
+                },
+                {
+                    "content": "Empresario individual (autónomo)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sociedad cooperativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fundación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una fuente de financiación ajena a largo plazo?",
+            "explanation": "Un préstamo a 5 años es financiación ajena con vencimiento superior a un año.",
+            "options": [
+                {
+                    "content": "Reservas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aportaciones de los socios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Préstamo bancario a 5 años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Descuento comercial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué impuesto grava el beneficio obtenido por las sociedades mercantiles?",
+            "explanation": "El Impuesto sobre Sociedades grava la renta de las sociedades.",
+            "options": [
+                {
+                    "content": "IRPF",
+                    "is_correct": false
+                },
+                {
+                    "content": "IVA",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impuesto sobre Sociedades",
+                    "is_correct": true
+                },
+                {
+                    "content": "Impuesto sobre Bienes Inmuebles",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el análisis del entorno general (PESTEL), la aprobación de una nueva ley laboral se encuadra en el factor:",
+            "explanation": "Las leyes y normativas pertenecen al factor político-legal.",
+            "options": [
+                {
+                    "content": "Económico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tecnológico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Político-legal",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el modelo de las cinco fuerzas de Porter, ¿cuál NO es una de ellas?",
+            "explanation": "La inflación es un factor macroeconómico (PESTEL), no una de las cinco fuerzas de Porter.",
+            "options": [
+                {
+                    "content": "Amenaza de nuevos competidores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Poder de negociación de los clientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Poder de negociación de los proveedores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nivel de inflación del país",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa pide un préstamo de 10.000 € y le cobran un 5 % de interés anual simple. ¿Cuántos intereses paga en un año?",
+            "explanation": "10.000 × 0,05 = 500 €.",
+            "options": [
+                {
+                    "content": "50 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "5.000 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "500 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.000 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un comercio compra mercancías por 1.000 € más IVA al 21 % y las vende por 2.000 € más IVA al 21 %. ¿Cuánto IVA debe ingresar en Hacienda en la liquidación?",
+            "explanation": "IVA repercutido 420 € menos IVA soportado 210 € = 210 €.",
+            "options": [
+                {
+                    "content": "210 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "420 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "630 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.000 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El análisis DAFO sirve únicamente para estudiar la situación interna de la empresa.",
+            "explanation": "El DAFO combina el análisis interno (debilidades y fortalezas) y el externo (amenazas y oportunidades).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En una sociedad colectiva los socios responden de las deudas sociales de forma personal, solidaria e ilimitada.",
+            "explanation": "Es una característica de la sociedad colectiva, a diferencia de las sociedades de capital.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La financiación propia incluye los préstamos bancarios y el leasing.",
+            "explanation": "Los préstamos y el leasing son financiación ajena; la propia son aportaciones de socios y beneficios retenidos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué impuesto indirecto grava el consumo y se repercute en la factura al cliente? (siglas)",
+            "explanation": "El IVA grava el consumo y lo repercute el empresario al cliente en la factura.",
+            "options": [
+                {
+                    "content": "IVA",
+                    "is_correct": true
+                },
+                {
+                    "content": "El IVA",
+                    "is_correct": true
+                },
+                {
+                    "content": "Impuesto sobre el Valor Añadido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Impuesto sobre el Valor Añadido (IVA)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la P del marketing mix que engloba publicidad, promociones y relaciones públicas?",
+            "explanation": "La promoción o comunicación reúne las acciones para dar a conocer el producto e incentivar su compra.",
+            "options": [
+                {
+                    "content": "Promoción",
+                    "is_correct": true
+                },
+                {
+                    "content": "La promoción",
+                    "is_correct": true
+                },
+                {
+                    "content": "Comunicación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Promoción o comunicación",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se denomina el documento que describe el proyecto empresarial, su viabilidad y sus previsiones económicas?",
+            "explanation": "El plan de empresa recoge el análisis, las estrategias y la viabilidad económico-financiera del proyecto.",
+            "options": [
+                {
+                    "content": "Plan de empresa",
+                    "is_correct": true
+                },
+                {
+                    "content": "El plan de empresa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Plan de negocio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Business plan",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las opciones que son fuentes de financiación ajena (hay varias correctas).",
+            "explanation": "Préstamo, crédito de proveedores y leasing proceden de terceros; reservas y ampliaciones de capital son financiación propia.",
+            "options": [
+                {
+                    "content": "Préstamo bancario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Crédito de proveedores",
+                    "is_correct": true
+                },
+                {
+                    "content": "Autofinanciación mediante reservas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ampliación de capital con aportaciones de socios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Leasing",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes son factores del microentorno de una empresa? (hay varias correctas)",
+            "explanation": "El microentorno incluye clientes, proveedores y competidores; la demografía pertenece al macroentorno.",
+            "options": [
+                {
+                    "content": "Clientes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Proveedores",
+                    "is_correct": true
+                },
+                {
+                    "content": "Competidores",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cambios demográficos del país",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué documento contable muestra los ingresos y gastos de un ejercicio y su resultado?",
+            "explanation": "La cuenta de pérdidas y ganancias recoge los ingresos, los gastos y el resultado del ejercicio.",
+            "options": [
+                {
+                    "content": "Balance de situación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuenta de pérdidas y ganancias",
+                    "is_correct": true
+                },
+                {
+                    "content": "Libro de actas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Escritura de constitución",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

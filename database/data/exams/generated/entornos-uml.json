@@ -1,0 +1,449 @@
+{
+    "slug": "entornos-uml",
+    "title": "Entornos de Desarrollo: diagramas UML",
+    "description": "Test de UML para el módulo de Entornos de Desarrollo de DAM/DAW: clases, casos de uso, secuencia, actividad y relaciones. Para repasar antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:52:32+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significa la sigla UML?",
+            "explanation": "UML es el Lenguaje Unificado de Modelado, un estándar para visualizar y documentar sistemas software.",
+            "options": [
+                {
+                    "content": "Unified Modeling Language",
+                    "is_correct": true
+                },
+                {
+                    "content": "Universal Markup Language",
+                    "is_correct": false
+                },
+                {
+                    "content": "Unified Machine Language",
+                    "is_correct": false
+                },
+                {
+                    "content": "User Modeling Layer",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un diagrama de clases, ¿qué símbolo de visibilidad indica un miembro privado?",
+            "explanation": "En UML, «-» es privado, «+» público, «#» protegido y «~» visibilidad de paquete.",
+            "options": [
+                {
+                    "content": "+",
+                    "is_correct": false
+                },
+                {
+                    "content": "-",
+                    "is_correct": true
+                },
+                {
+                    "content": "#",
+                    "is_correct": false
+                },
+                {
+                    "content": "~",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos compartimentos tiene como mínimo habitual una clase en un diagrama de clases completo?",
+            "explanation": "La notación completa de una clase tiene tres compartimentos: nombre, atributos y operaciones.",
+            "options": [
+                {
+                    "content": "Uno: solo el nombre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos: nombre y métodos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres: nombre, atributos y operaciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuatro: nombre, atributos, operaciones y relaciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué relación se representa con una línea continua y un triángulo hueco apuntando a la clase padre?",
+            "explanation": "La herencia o generalización se dibuja con línea continua y punta triangular hueca hacia la superclase.",
+            "options": [
+                {
+                    "content": "Asociación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dependencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Composición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Generalización (herencia)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un «Pedido» contiene «Líneas de pedido» que no pueden existir sin él y se destruyen con él. ¿Qué relación es la más adecuada?",
+            "explanation": "La composición es una relación todo-parte fuerte en la que las partes dependen del ciclo de vida del todo.",
+            "options": [
+                {
+                    "content": "Composición",
+                    "is_correct": true
+                },
+                {
+                    "content": "Agregación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dependencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Realización",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se representa gráficamente la relación de dependencia en UML?",
+            "explanation": "La dependencia usa línea discontinua con flecha abierta; la discontinua con triángulo hueco es la realización.",
+            "options": [
+                {
+                    "content": "Línea continua con rombo relleno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Línea discontinua con flecha abierta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Línea continua con triángulo hueco",
+                    "is_correct": false
+                },
+                {
+                    "content": "Línea discontinua con triángulo hueco",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un diagrama de casos de uso, ¿qué representa un actor?",
+            "explanation": "Un actor es un rol de usuario u otro sistema externo que interactúa con el sistema modelado.",
+            "options": [
+                {
+                    "content": "Una clase del sistema",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un rol externo que interactúa con el sistema",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un método de una clase",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mensaje entre objetos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un diagrama de casos de uso, el caso «Realizar pago» siempre incluye «Validar tarjeta». ¿Qué relación se usa?",
+            "explanation": "«include» indica comportamiento obligatorio reutilizado; «extend» es comportamiento opcional o condicional.",
+            "options": [
+                {
+                    "content": "<<extend>>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<<include>>",
+                    "is_correct": true
+                },
+                {
+                    "content": "Generalización de actores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Agregación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un diagrama de secuencia, ¿qué representa la línea vertical discontinua que baja desde cada participante?",
+            "explanation": "La línea de vida muestra la existencia del objeto durante el tiempo, que fluye de arriba abajo.",
+            "options": [
+                {
+                    "content": "La línea de vida",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una transición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una dependencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un nodo de decisión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un diagrama de actividad, ¿qué elemento se usa para representar una bifurcación condicional del flujo?",
+            "explanation": "El rombo de decisión divide el flujo según condiciones (guardas); las barras sirven para fork/join.",
+            "options": [
+                {
+                    "content": "Barra de sincronización",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nodo inicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Rombo de decisión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Línea de vida",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado el código: class Perro extends Animal { }, ¿qué relación UML representa entre Perro y Animal?",
+            "explanation": "extends implica herencia, que en UML es una generalización de Perro hacia Animal.",
+            "options": [
+                {
+                    "content": "Generalización",
+                    "is_correct": true
+                },
+                {
+                    "content": "Composición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Asociación bidireccional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dependencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la multiplicidad de una asociación, ¿qué significa «0..*»?",
+            "explanation": "«0..*» indica opcionalidad y sin límite superior: cero o más.",
+            "options": [
+                {
+                    "content": "Exactamente cero instancias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cero o más instancias",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una o más instancias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cero o una instancia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un diagrama de secuencia es un diagrama de comportamiento que muestra la interacción entre objetos ordenada en el tiempo.",
+            "explanation": "Muestra el intercambio de mensajes entre participantes siguiendo un orden temporal.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un diagrama de clases, un atributo precedido por «#» tiene visibilidad pública.",
+            "explanation": "«#» indica visibilidad protegida; la pública se representa con «+».",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El diagrama de clases es un diagrama estructural de UML.",
+            "explanation": "Describe la estructura estática del sistema: clases, atributos, operaciones y relaciones.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué estereotipo se usa en casos de uso para una funcionalidad opcional que amplía otro caso de uso?",
+            "explanation": "La relación «extend» añade comportamiento opcional o condicional al caso base.",
+            "options": [
+                {
+                    "content": "extend",
+                    "is_correct": true
+                },
+                {
+                    "content": "<<extend>>",
+                    "is_correct": true
+                },
+                {
+                    "content": "«extend»",
+                    "is_correct": true
+                },
+                {
+                    "content": "extends",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la relación todo-parte débil, representada con un rombo hueco, en la que la parte puede existir sin el todo?",
+            "explanation": "En la agregación las partes tienen vida independiente; la composición usa rombo relleno.",
+            "options": [
+                {
+                    "content": "agregación",
+                    "is_correct": true
+                },
+                {
+                    "content": "la agregación",
+                    "is_correct": true
+                },
+                {
+                    "content": "agregacion",
+                    "is_correct": true
+                },
+                {
+                    "content": "aggregation",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué tipo de diagrama UML usa calles (swimlanes) para repartir acciones entre responsables?",
+            "explanation": "Las calles o particiones son propias de los diagramas de actividad.",
+            "options": [
+                {
+                    "content": "diagrama de actividad",
+                    "is_correct": true
+                },
+                {
+                    "content": "actividad",
+                    "is_correct": true
+                },
+                {
+                    "content": "diagrama de actividades",
+                    "is_correct": true
+                },
+                {
+                    "content": "el diagrama de actividad",
+                    "is_correct": true
+                },
+                {
+                    "content": "actividades",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las opciones correctas (hay varias correctas): ¿cuáles son diagramas de comportamiento en UML?",
+            "explanation": "Casos de uso, secuencia y actividad son de comportamiento; clases y componentes son estructurales.",
+            "options": [
+                {
+                    "content": "Diagrama de casos de uso",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diagrama de secuencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diagrama de actividad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diagrama de clases",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diagrama de componentes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un diagrama de secuencia, ¿cómo se representa normalmente un mensaje de respuesta o retorno?",
+            "explanation": "Los mensajes de retorno se dibujan con línea discontinua hacia quien realizó la llamada.",
+            "options": [
+                {
+                    "content": "Flecha continua con punta rellena",
+                    "is_correct": false
+                },
+                {
+                    "content": "Rombo relleno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Flecha discontinua dirigida al emisor original",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

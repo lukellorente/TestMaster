@@ -1,0 +1,652 @@
+{
+    "slug": "estatuto-marco-55-2003",
+    "title": "Estatuto Marco del personal estatutario (Ley 55/2003)",
+    "description": "Test del Estatuto Marco (Ley 55/2003) para preparar las oposiciones de Sanidad: clasificación, selección, movilidad, jornada y disciplinario. Lo he hecho con mis apuntes del temario de 2026, a ver qué tal os sale.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:12:21+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "La Ley por la que se aprueba el Estatuto Marco del personal estatutario de los servicios de salud es la Ley 55/2003, de:",
+            "explanation": "Es la Ley 55/2003, de 16 de diciembre, del Estatuto Marco del personal estatutario de los servicios de salud.",
+            "options": [
+                {
+                    "content": "15 de diciembre",
+                    "is_correct": false
+                },
+                {
+                    "content": "16 de diciembre",
+                    "is_correct": true
+                },
+                {
+                    "content": "21 de noviembre",
+                    "is_correct": false
+                },
+                {
+                    "content": "28 de mayo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 55/2003, por razón de la función desarrollada, el personal estatutario se clasifica en:",
+            "explanation": "El Estatuto Marco distingue entre personal estatutario sanitario y personal estatutario de gestión y servicios.",
+            "options": [
+                {
+                    "content": "Personal asistencial y personal administrativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Personal facultativo y personal no facultativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Personal sanitario y personal técnico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Personal sanitario y personal de gestión y servicios",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Según la Ley 55/2003, el personal estatutario temporal puede ser:",
+            "explanation": "Los nombramientos temporales son de interinidad, de carácter eventual y de sustitución; no existe la figura «de refuerzo».",
+            "options": [
+                {
+                    "content": "Interino",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eventual",
+                    "is_correct": false
+                },
+                {
+                    "content": "De refuerzo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sustituto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de nombramiento de personal estatutario temporal se expide para el desempeño de una plaza vacante cuando sea necesario atender las correspondientes funciones?",
+            "explanation": "El nombramiento de interinidad se utiliza para cubrir una plaza vacante cuando es necesario atender sus funciones.",
+            "options": [
+                {
+                    "content": "Interinidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Eventual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sustitución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comisión de servicios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El nombramiento de carácter eventual del personal estatutario se expide, entre otros supuestos, cuando se trata de:",
+            "explanation": "El nombramiento eventual atiende servicios determinados de naturaleza temporal, coyuntural o extraordinaria, entre otros supuestos.",
+            "options": [
+                {
+                    "content": "Cubrir una plaza vacante hasta su provisión definitiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sustituir a un titular durante una situación de incapacidad temporal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Realizar un servicio determinado de naturaleza temporal, coyuntural o extraordinaria",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ocupar una plaza de libre designación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El personal estatutario fijo es aquel que, una vez superado el correspondiente proceso selectivo, obtiene un nombramiento para el desempeño con carácter permanente de funciones propias de su categoría.",
+            "explanation": "Así se define al personal estatutario fijo: nombramiento con carácter permanente tras superar el proceso selectivo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es causa de pérdida de la condición de personal estatutario fijo:",
+            "explanation": "La excedencia voluntaria es una situación administrativa en la que se conserva la condición de personal fijo; las otras sí son causas de pérdida.",
+            "options": [
+                {
+                    "content": "La renuncia",
+                    "is_correct": false
+                },
+                {
+                    "content": "La sanción disciplinaria firme de separación del servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "La jubilación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El pase a la situación de excedencia voluntaria por interés particular",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 55/2003, la excedencia por cuidado de hijos tendrá una duración no superior a:",
+            "explanation": "La excedencia para el cuidado de cada hijo tiene una duración máxima de tres años.",
+            "options": [
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los procedimientos de selección del personal estatutario fijo deben garantizar, según la Ley 55/2003, los principios de:",
+            "explanation": "La selección se rige por los principios de igualdad, mérito, capacidad y publicidad.",
+            "options": [
+                {
+                    "content": "Igualdad, mérito, capacidad y publicidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Igualdad, antigüedad, capacidad y transparencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Legalidad, mérito, eficacia y publicidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Igualdad, mérito, jerarquía y celeridad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la selección del personal estatutario fijo, ¿qué sistema selectivo se utiliza únicamente con carácter excepcional?",
+            "explanation": "Con carácter general se emplean la oposición o el concurso-oposición; el concurso solo se usa excepcionalmente.",
+            "options": [
+                {
+                    "content": "Oposición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Concurso-oposición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Concurso",
+                    "is_correct": true
+                },
+                {
+                    "content": "Libre designación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Entre los requisitos generales para participar en los procesos selectivos de personal estatutario fijo se exige tener cumplidos:",
+            "explanation": "Se exige tener cumplidos dieciséis años y no exceder, en su caso, de la edad máxima de jubilación forzosa.",
+            "options": [
+                {
+                    "content": "Dieciocho años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dieciséis años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Catorce años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veintiún años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se denomina el instrumento de planificación global de los recursos humanos de los servicios de salud previsto en el Estatuto Marco?",
+            "explanation": "El Estatuto Marco prevé los planes de ordenación de recursos humanos como instrumento de planificación.",
+            "options": [
+                {
+                    "content": "Plan Integral de Salud",
+                    "is_correct": false
+                },
+                {
+                    "content": "Plan de Ordenación de Recursos Humanos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Plan Estratégico de Personal Sanitario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Plan de Calidad del Sistema Nacional de Salud",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La selección del personal estatutario temporal puede realizarse mediante procedimientos que permitan la máxima agilidad, respetando los principios de igualdad, mérito y capacidad.",
+            "explanation": "Para el personal temporal se admiten procedimientos ágiles, pero siempre con respeto a igualdad, mérito y capacidad.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Entre los requisitos generales para ser personal estatutario fijo NO se encuentra:",
+            "explanation": "Se exige la titulación correspondiente a la categoría, no el título de doctor.",
+            "options": [
+                {
+                    "content": "Poseer la nacionalidad española o la de otro Estado miembro de la Unión Europea, en los términos legales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estar en posesión del título de doctor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Poseer la capacidad funcional necesaria para el desempeño de las funciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "No haber sido separado del servicio mediante expediente disciplinario",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El personal estatutario sanitario de formación profesional comprende:",
+            "explanation": "El personal sanitario de formación profesional se divide en técnicos superiores y técnicos.",
+            "options": [
+                {
+                    "content": "Licenciados y diplomados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Técnicos superiores y técnicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Técnicos y auxiliares",
+                    "is_correct": false
+                },
+                {
+                    "content": "Especialistas y técnicos medios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El procedimiento de movilidad voluntaria del personal estatutario fijo para cambiar de plaza se articula, con carácter general, mediante:",
+            "explanation": "La movilidad voluntaria se realiza principalmente mediante concurso de traslados.",
+            "options": [
+                {
+                    "content": "Libre designación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comisión de servicios forzosa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Concurso de traslados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Reasignación de efectivos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué tipo de puestos se utiliza con carácter general el sistema de libre designación, previa convocatoria pública, en la provisión de plazas del personal estatutario?",
+            "explanation": "La libre designación queda reservada a puestos directivos o de jefatura que determine cada servicio de salud.",
+            "options": [
+                {
+                    "content": "Para todas las plazas de base de cada categoría",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para puestos de carácter directivo y de jefatura, en los términos que establezca cada servicio de salud",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para las plazas de personal temporal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para las plazas de personal de formación profesional exclusivamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El personal estatutario que sea víctima de violencia de género tiene derecho preferente a ocupar otra plaza de su categoría y funciones en otro centro, por razón de su protección.",
+            "explanation": "El Estatuto Marco reconoce movilidad por razón de violencia de género como medida de protección.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 55/2003, la jornada máxima de trabajo no podrá superar, como promedio en cómputo semestral:",
+            "explanation": "La jornada máxima, incluyendo la complementaria, es de 48 horas semanales de promedio en cómputo semestral.",
+            "options": [
+                {
+                    "content": "40 horas semanales",
+                    "is_correct": false
+                },
+                {
+                    "content": "44 horas semanales",
+                    "is_correct": false
+                },
+                {
+                    "content": "48 horas semanales",
+                    "is_correct": true
+                },
+                {
+                    "content": "52 horas semanales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Estatuto Marco establece un descanso mínimo diario de:",
+            "explanation": "El descanso mínimo diario es de doce horas continuadas cada período de veinticuatro horas.",
+            "options": [
+                {
+                    "content": "Ocho horas continuadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez horas continuadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Doce horas continuadas en cada período de veinticuatro horas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Catorce horas continuadas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto al descanso semanal, el Estatuto Marco establece un mínimo de:",
+            "explanation": "El descanso semanal mínimo es de 24 horas ininterrumpidas, que se suman a las 12 horas de descanso diario.",
+            "options": [
+                {
+                    "content": "Treinta y seis horas ininterrumpidas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinticuatro horas ininterrumpidas, que se acumulan al descanso diario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuarenta y ocho horas ininterrumpidas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte horas ininterrumpidas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La jornada complementaria en los servicios de salud es aquella que:",
+            "explanation": "La jornada complementaria se establece para garantizar la continuidad de la atención en los centros.",
+            "options": [
+                {
+                    "content": "Se establece para garantizar la continuidad de la atención en los centros sanitarios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sustituye a la jornada ordinaria en periodo estival",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo realiza el personal de gestión y servicios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se compensa siempre con vacaciones adicionales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Estatuto Marco, el personal tiene derecho a vacaciones anuales retribuidas de duración mínima:",
+            "explanation": "Se reconoce un mínimo de un mes natural o veintidós días hábiles anuales.",
+            "options": [
+                {
+                    "content": "Quince días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes natural o veintidós días hábiles",
+                    "is_correct": true
+                },
+                {
+                    "content": "Treinta y cinco días naturales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué complemento retributivo está destinado a remunerar la atención a los usuarios de los servicios de salud de forma continuada?",
+            "explanation": "El complemento de atención continuada retribuye la atención continuada a los usuarios fuera de la jornada ordinaria.",
+            "options": [
+                {
+                    "content": "Complemento de destino",
+                    "is_correct": false
+                },
+                {
+                    "content": "Complemento de productividad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Complemento específico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Complemento de atención continuada",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una sanción prevista en el régimen disciplinario del personal estatutario:",
+            "explanation": "Las sanciones son separación del servicio, traslado forzoso, suspensión de funciones, demérito y apercibimiento; no existe la multa.",
+            "options": [
+                {
+                    "content": "Multa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Apercibimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Traslado forzoso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Suspensión de funciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué sanción solo puede imponerse por la comisión de faltas muy graves?",
+            "explanation": "La separación del servicio es la sanción reservada a las faltas muy graves.",
+            "options": [
+                {
+                    "content": "Apercibimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Demérito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Separación del servicio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Suspensión de funciones de un día",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el régimen disciplinario del Estatuto Marco, las faltas graves prescriben a los:",
+            "explanation": "Las faltas leves prescriben a los seis meses y las graves a los dos años.",
+            "options": [
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes conductas constituye falta muy grave según la Ley 55/2003?",
+            "explanation": "La discriminación por razón de raza, sexo, religión, opinión u otra condición figura entre las faltas muy graves.",
+            "options": [
+                {
+                    "content": "Un retraso puntual y sin reiteración en la incorporación al puesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Toda actuación que suponga discriminación por razón de raza, sexo, religión u otra condición",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una incorrección ocasional con un compañero, sin trascendencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un descuido leve en el cumplimiento de una tarea sin consecuencias",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el procedimiento disciplinario del personal estatutario, no podrá imponerse sanción por faltas graves o muy graves sino mediante:",
+            "explanation": "Las faltas graves y muy graves requieren expediente disciplinario con garantías para el interesado.",
+            "options": [
+                {
+                    "content": "Resolución directa del superior jerárquico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Informe previo de la Inspección de Servicios sanitarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acuerdo del tribunal de selección",
+                    "is_correct": false
+                },
+                {
+                    "content": "Expediente disciplinario instruido al efecto",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

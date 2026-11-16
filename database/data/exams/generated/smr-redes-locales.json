@@ -1,0 +1,469 @@
+{
+    "slug": "smr-redes-locales",
+    "title": "Redes Locales: cableado estructurado y medios",
+    "description": "Test de repaso de redes locales para ASIR y SMR: cables, T568A/B, fibra, topologías, Wi-Fi 6/7 y cableado estructurado. Ideal para repasar antes del examen del módulo.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:07:52+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la categoría de cable de par trenzado de cobre más baja que permite 10GBASE-T hasta 100 metros?",
+            "explanation": "La Cat6 solo alcanza 10 Gbps en distancias cortas (unos 55 m); la Cat6A (500 MHz) llega a los 100 m.",
+            "options": [
+                {
+                    "content": "Categoría 5e",
+                    "is_correct": false
+                },
+                {
+                    "content": "Categoría 6",
+                    "is_correct": false
+                },
+                {
+                    "content": "Categoría 6A",
+                    "is_correct": true
+                },
+                {
+                    "content": "Categoría 5",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el estándar T568B, ¿qué pines del conector RJ45 ocupa el par verde?",
+            "explanation": "En T568B el orden es blanco/naranja, naranja, blanco/verde, azul, blanco/azul, verde, blanco/marrón, marrón: el verde queda en los pines 3 y 6.",
+            "options": [
+                {
+                    "content": "1 y 2",
+                    "is_correct": false
+                },
+                {
+                    "content": "3 y 6",
+                    "is_correct": true
+                },
+                {
+                    "content": "4 y 5",
+                    "is_correct": false
+                },
+                {
+                    "content": "7 y 8",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un cable cruzado clásico de cobre se construye con un extremo crimpado en T568A y el otro en T568B.",
+            "explanation": "Al combinar ambos estándares se intercambian los pares de transmisión y recepción (pines 1-2 con 3-6).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se denomina el tipo de fibra óptica con núcleo de unos 9 µm que se usa para largas distancias?",
+            "explanation": "La fibra monomodo (por ejemplo OS2, 9/125 µm) propaga un único modo de luz y permite enlaces de muchos kilómetros.",
+            "options": [
+                {
+                    "content": "monomodo",
+                    "is_correct": true
+                },
+                {
+                    "content": "fibra monomodo",
+                    "is_correct": true
+                },
+                {
+                    "content": "la fibra monomodo",
+                    "is_correct": true
+                },
+                {
+                    "content": "single-mode",
+                    "is_correct": true
+                },
+                {
+                    "content": "single mode",
+                    "is_correct": true
+                },
+                {
+                    "content": "singlemode",
+                    "is_correct": true
+                },
+                {
+                    "content": "SMF",
+                    "is_correct": true
+                },
+                {
+                    "content": "OS2",
+                    "is_correct": true
+                },
+                {
+                    "content": "fibra OS2",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué color de cubierta es el habitual en los cables de fibra monomodo OS2?",
+            "explanation": "Según el código de colores habitual, la fibra monomodo se identifica con cubierta amarilla.",
+            "options": [
+                {
+                    "content": "Amarillo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Azul",
+                    "is_correct": false
+                },
+                {
+                    "content": "Rojo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Negro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una oficina con topología en estrella y un switch central, se desconecta el cable de uno de los PC. ¿Qué ocurre?",
+            "explanation": "Cada equipo tiene su enlace propio con el nodo central, así que un fallo de cable solo afecta a ese equipo.",
+            "options": [
+                {
+                    "content": "Toda la red se queda sin servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se cae la mitad de los equipos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los equipos restantes siguen funcionando con normalidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "El switch se bloquea hasta que se reconecte el cable",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En una topología en malla completa de n nodos hacen falta n(n-1)/2 enlaces.",
+            "explanation": "Cada nodo se conecta con todos los demás; por ejemplo, con 5 nodos se necesitan 10 enlaces.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué estándar IEEE corresponde a Wi-Fi 6?",
+            "explanation": "Wi-Fi 6 es 802.11ax; 802.11ac es Wi-Fi 5 y 802.11be es Wi-Fi 7.",
+            "options": [
+                {
+                    "content": "802.11ac",
+                    "is_correct": false
+                },
+                {
+                    "content": "802.11n",
+                    "is_correct": false
+                },
+                {
+                    "content": "802.11be",
+                    "is_correct": false
+                },
+                {
+                    "content": "802.11ax",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué estándar IEEE 802.11 corresponde a Wi-Fi 7? (Escribe solo el estándar, por ejemplo 802.11xx)",
+            "explanation": "Wi-Fi 7 se basa en el estándar IEEE 802.11be, conocido como Extremely High Throughput (EHT).",
+            "options": [
+                {
+                    "content": "802.11be",
+                    "is_correct": true
+                },
+                {
+                    "content": "IEEE 802.11be",
+                    "is_correct": true
+                },
+                {
+                    "content": "11be",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las características propias de Wi-Fi 7 (hay varias correctas):",
+            "explanation": "Wi-Fi 7 añade MLO, canales de 320 MHz y 4096-QAM; opera en 2,4, 5 y 6 GHz.",
+            "options": [
+                {
+                    "content": "Multi-Link Operation (MLO)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Canales de hasta 320 MHz en la banda de 6 GHz",
+                    "is_correct": true
+                },
+                {
+                    "content": "Modulación 4096-QAM",
+                    "is_correct": true
+                },
+                {
+                    "content": "Funciona únicamente en la banda de 2,4 GHz",
+                    "is_correct": false
+                },
+                {
+                    "content": "Modulación máxima de 256-QAM",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué novedad aporta Wi-Fi 6E respecto a Wi-Fi 6?",
+            "explanation": "La «E» significa extended: es Wi-Fi 6 ampliado a la banda de 6 GHz.",
+            "options": [
+                {
+                    "content": "Uso de la banda de 6 GHz",
+                    "is_correct": true
+                },
+                {
+                    "content": "Uso de cable de fibra para el backhaul",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sustitución de OFDMA por CSMA/CD",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En cableado estructurado, ¿cuál es la longitud máxima del enlace permanente del subsistema horizontal con cable de cobre?",
+            "explanation": "El enlace permanente es de 90 m; sumando hasta 10 m de latiguillos, el canal completo llega a 100 m.",
+            "options": [
+                {
+                    "content": "100 m",
+                    "is_correct": false
+                },
+                {
+                    "content": "90 m",
+                    "is_correct": true
+                },
+                {
+                    "content": "55 m",
+                    "is_correct": false
+                },
+                {
+                    "content": "150 m",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué subsistemas forman parte de un cableado estructurado (hay varias correctas):",
+            "explanation": "El cableado estructurado se divide en horizontal, vertical (troncal) y de campus, entre otros; la telefonía móvil no es un subsistema.",
+            "options": [
+                {
+                    "content": "Subsistema horizontal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Subsistema vertical o troncal (backbone)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Subsistema de campus",
+                    "is_correct": true
+                },
+                {
+                    "content": "Subsistema de telefonía móvil 5G",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un cable de par trenzado, la atenuación disminuye al aumentar la frecuencia de la señal.",
+            "explanation": "La atenuación aumenta con la frecuencia, por eso las categorías altas exigen mejores materiales.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué conector de fibra óptica de formato pequeño se utiliza habitualmente en los módulos SFP?",
+            "explanation": "El conector LC, normalmente en versión dúplex, es el habitual en transceptores SFP.",
+            "options": [
+                {
+                    "content": "ST",
+                    "is_correct": false
+                },
+                {
+                    "content": "SC",
+                    "is_correct": false
+                },
+                {
+                    "content": "LC",
+                    "is_correct": true
+                },
+                {
+                    "content": "BNC",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué altura tiene 1U en un armario rack de 19 pulgadas?",
+            "explanation": "1U equivale a 1,75 pulgadas, es decir, 44,45 mm.",
+            "options": [
+                {
+                    "content": "25,4 mm",
+                    "is_correct": false
+                },
+                {
+                    "content": "44,45 mm",
+                    "is_correct": true
+                },
+                {
+                    "content": "88,9 mm",
+                    "is_correct": false
+                },
+                {
+                    "content": "100 mm",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué categoría de cable está especificada para un ancho de banda de 250 MHz?",
+            "explanation": "Cat5e: 100 MHz; Cat6: 250 MHz; Cat6A: 500 MHz; Cat7: 600 MHz.",
+            "options": [
+                {
+                    "content": "Categoría 5e",
+                    "is_correct": false
+                },
+                {
+                    "content": "Categoría 6A",
+                    "is_correct": false
+                },
+                {
+                    "content": "Categoría 7",
+                    "is_correct": false
+                },
+                {
+                    "content": "Categoría 6",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué herramienta se usa para insertar y cortar los hilos de un cable en un panel de parcheo o roseta de tipo IDC?",
+            "explanation": "La herramienta de impacto (punch down) empuja el hilo en el conector IDC y corta el sobrante.",
+            "options": [
+                {
+                    "content": "herramienta de impacto",
+                    "is_correct": true
+                },
+                {
+                    "content": "la herramienta de impacto",
+                    "is_correct": true
+                },
+                {
+                    "content": "punch down",
+                    "is_correct": true
+                },
+                {
+                    "content": "punchdown",
+                    "is_correct": true
+                },
+                {
+                    "content": "herramienta punch down",
+                    "is_correct": true
+                },
+                {
+                    "content": "herramienta de inserción",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué norma internacional ISO/IEC define el cableado genérico para edificios (cableado estructurado)?",
+            "explanation": "ISO/IEC 11801 es la norma internacional de cableado estructurado; en Europa se corresponde con la serie EN 50173.",
+            "options": [
+                {
+                    "content": "ISO/IEC 11801",
+                    "is_correct": true
+                },
+                {
+                    "content": "IEEE 802.3af",
+                    "is_correct": false
+                },
+                {
+                    "content": "IEEE 802.1Q",
+                    "is_correct": false
+                },
+                {
+                    "content": "ISO/IEC 27001",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Debes conectar un puesto a 120 m del switch de planta dentro del mismo edificio. ¿Qué solución es válida?",
+            "explanation": "El cobre está limitado a 100 m de canal (el Cat8 solo a 30 m), mientras que la fibra permite mayores distancias.",
+            "options": [
+                {
+                    "content": "Usar cable Cat8 de cobre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar cable Cat7 de cobre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alargar el trayecto con latiguillos de 30 m",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tender un enlace de fibra óptica con conversores de medios",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

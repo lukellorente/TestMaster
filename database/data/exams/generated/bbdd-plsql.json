@@ -1,0 +1,445 @@
+{
+    "slug": "bbdd-plsql",
+    "title": "BBDD - PL/SQL procedimientos, funciones y triggers",
+    "description": "Test de PL/SQL para repasar antes del examen de Bases de Datos de DAM/DAW: bloques, cursores, excepciones, procedimientos, funciones y triggers (Oracle). Tiene preguntas con código, así que ojo con los detalles.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:50:22+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "En un bloque anónimo de PL/SQL, ¿cuál es la única sección obligatoria?",
+            "explanation": "Un bloque necesita como mínimo BEGIN, al menos una sentencia ejecutable y END; las secciones DECLARE y EXCEPTION son opcionales.",
+            "options": [
+                {
+                    "content": "DECLARE ... BEGIN",
+                    "is_correct": false
+                },
+                {
+                    "content": "BEGIN ... END;",
+                    "is_correct": true
+                },
+                {
+                    "content": "EXCEPTION ... END;",
+                    "is_correct": false
+                },
+                {
+                    "content": "DECLARE ... EXCEPTION",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto al bucle FOR con cursor explícito:\n\nFOR r IN c_emp LOOP\n  DBMS_OUTPUT.PUT_LINE(r.ename);\nEND LOOP;\n\n¿qué afirmación es correcta?",
+            "explanation": "En el FOR de cursor, Oracle abre el cursor, hace los FETCH, declara implícitamente el registro r y cierra el cursor al terminar.",
+            "options": [
+                {
+                    "content": "El cursor se abre, se recorre con FETCH y se cierra de forma implícita",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hay que ejecutar OPEN c_emp antes del bucle y CLOSE c_emp después",
+                    "is_correct": false
+                },
+                {
+                    "content": "La variable r debe declararse antes en la sección DECLARE",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo funciona con cursores que tengan parámetros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se ejecuta SELECT sal INTO v_sal FROM emp WHERE deptno = 10; y el departamento 10 tiene 3 empleados. ¿Qué ocurre?",
+            "explanation": "Un SELECT INTO implícito debe devolver exactamente una fila; si devuelve más de una se lanza TOO_MANY_ROWS.",
+            "options": [
+                {
+                    "content": "Se asigna el primer salario encontrado a v_sal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se lanza NO_DATA_FOUND",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se lanza TOO_MANY_ROWS",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se lanza INVALID_CURSOR",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué construcción permite asociar una excepción definida por el programador con un código de error de Oracle concreto, como el ORA-02292?",
+            "explanation": "PRAGMA EXCEPTION_INIT(nombre_excepcion, -codigo) vincula una excepción declarada con un error Oracle para poder capturarlo por su nombre.",
+            "options": [
+                {
+                    "content": "RAISE_APPLICATION_ERROR",
+                    "is_correct": false
+                },
+                {
+                    "content": "SQLERRM",
+                    "is_correct": false
+                },
+                {
+                    "content": "WHEN OTHERS THEN",
+                    "is_correct": false
+                },
+                {
+                    "content": "PRAGMA EXCEPTION_INIT",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué rango de números admite RAISE_APPLICATION_ERROR para los errores definidos por el usuario?",
+            "explanation": "RAISE_APPLICATION_ERROR solo acepta códigos entre -20000 y -20999.",
+            "options": [
+                {
+                    "content": "De -1 a -999",
+                    "is_correct": false
+                },
+                {
+                    "content": "De -20000 a -20999",
+                    "is_correct": true
+                },
+                {
+                    "content": "De 20000 a 20999",
+                    "is_correct": false
+                },
+                {
+                    "content": "De -99999 a -90000",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la definición de un procedimiento almacenado, si no se indica el modo de un parámetro, ¿cuál se toma por defecto?",
+            "explanation": "El modo por defecto de un parámetro en PL/SQL es IN (solo lectura dentro del subprograma).",
+            "options": [
+                {
+                    "content": "OUT",
+                    "is_correct": false
+                },
+                {
+                    "content": "IN OUT",
+                    "is_correct": false
+                },
+                {
+                    "content": "IN",
+                    "is_correct": true
+                },
+                {
+                    "content": "Da error de compilación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una función almacenada realiza un INSERT en la tabla LOG_AUDIT y se invoca desde una sentencia SELECT. ¿Qué sucede, en general?",
+            "explanation": "Las funciones invocadas desde sentencias SELECT no pueden modificar datos de la base de datos, salvo casos especiales como las transacciones autónomas.",
+            "options": [
+                {
+                    "content": "Oracle lanza un error porque una función llamada desde una consulta no puede ejecutar DML",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se ejecuta correctamente y se hace COMMIT automático",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se ejecuta correctamente, pero el INSERT se deshace al terminar el SELECT",
+                    "is_correct": false
+                },
+                {
+                    "content": "El SELECT ignora el INSERT y devuelve el valor de la función",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se quiere que un trigger BEFORE INSERT FOR EACH ROW ponga el salario a 1000 si llega NULL. ¿Qué sentencia es la correcta dentro del trigger?",
+            "explanation": "En un trigger de fila BEFORE se puede asignar un valor a :NEW.columna antes de que se grabe la fila; un UPDATE sobre la misma tabla provocaría una tabla mutante.",
+            "options": [
+                {
+                    "content": "UPDATE emp SET sal = 1000 WHERE sal IS NULL;",
+                    "is_correct": false
+                },
+                {
+                    "content": ":OLD.sal := 1000;",
+                    "is_correct": false
+                },
+                {
+                    "content": "IF :NEW.sal IS NULL THEN :NEW.sal := 1000; END IF;",
+                    "is_correct": true
+                },
+                {
+                    "content": "IF NEW.sal IS NULL THEN NEW.sal := 1000; END IF;",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un trigger de sentencia (sin FOR EACH ROW) AFTER UPDATE ON emp se asocia a una tabla. Se ejecuta un UPDATE que modifica 5 filas. ¿Cuántas veces se dispara el trigger?",
+            "explanation": "Un trigger de nivel de sentencia se dispara una sola vez por sentencia DML, con independencia del número de filas afectadas.",
+            "options": [
+                {
+                    "content": "5 veces",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 veces",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ninguna, porque necesita FOR EACH ROW",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 vez",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un trigger FOR EACH ROW AFTER UPDATE ON emp ejecuta dentro de su cuerpo un SELECT COUNT(*) FROM emp. ¿Qué problema aparece típicamente?",
+            "explanation": "Un trigger de fila no puede consultar ni modificar la tabla que lo ha disparado mientras está siendo modificada; Oracle lanza el error de tabla mutante.",
+            "options": [
+                {
+                    "content": "Interbloqueo (deadlock) con otra sesión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Error de tabla mutante (ORA-04091)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El trigger se deshabilita solo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ninguno, es una práctica habitual",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la sintaxis correcta para declarar y abrir un cursor con parámetro en PL/SQL?",
+            "explanation": "Los parámetros del cursor se declaran entre paréntesis con su tipo (sin longitud) y se pasan al abrirlo: OPEN c(10).",
+            "options": [
+                {
+                    "content": "CURSOR c(p_dep NUMBER) IS SELECT ename FROM emp WHERE deptno = p_dep;  ...  OPEN c(10);",
+                    "is_correct": true
+                },
+                {
+                    "content": "CURSOR c IS SELECT ename FROM emp WHERE deptno = &p_dep;  ...  OPEN c;",
+                    "is_correct": false
+                },
+                {
+                    "content": "CURSOR c(p_dep) AS SELECT ename FROM emp WHERE deptno = p_dep;  ...  OPEN c(10);",
+                    "is_correct": false
+                },
+                {
+                    "content": "CURSOR c IS SELECT ename FROM emp WHERE deptno = p_dep;  ...  OPEN c USING 10;",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un trigger necesita registrar un log y confirmarlo con COMMIT sin afectar a la transacción que lo disparó. ¿Qué debe usarse?",
+            "explanation": "PRAGMA AUTONOMOUS_TRANSACTION crea una transacción independiente que puede hacer COMMIT o ROLLBACK sin afectar a la principal.",
+            "options": [
+                {
+                    "content": "PRAGMA SERIALLY_REUSABLE",
+                    "is_correct": false
+                },
+                {
+                    "content": "SET TRANSACTION READ ONLY",
+                    "is_correct": false
+                },
+                {
+                    "content": "PRAGMA AUTONOMOUS_TRANSACTION",
+                    "is_correct": true
+                },
+                {
+                    "content": "WHEN OTHERS THEN COMMIT",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una excepción lanzada en la sección DECLARE de un bloque (por ejemplo, al inicializar una variable con un valor demasiado grande) es capturada por el manejador de la sección EXCEPTION de ese mismo bloque.",
+            "explanation": "Las excepciones de la sección declarativa se propagan al bloque exterior; el EXCEPTION del mismo bloque no las captura.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un trigger AFTER INSERT FOR EACH ROW se puede asignar un valor a :NEW.columna para modificar la fila que se está insertando.",
+            "explanation": "Solo los triggers de fila BEFORE pueden modificar los valores de :NEW; en un AFTER Oracle lo rechaza.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Si en una sección EXCEPTION se incluye WHEN OTHERS, este manejador debe ser el último de la lista.",
+            "explanation": "WHEN OTHERS captura todas las excepciones no tratadas anteriormente, por lo que debe colocarse al final.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué atributo del cursor implícito SQL devuelve el número de filas afectadas por la última sentencia DML? (escribe el atributo completo)",
+            "explanation": "SQL%ROWCOUNT devuelve el número de filas afectadas por el último INSERT, UPDATE o DELETE (o recuperadas por un SELECT INTO).",
+            "options": [
+                {
+                    "content": "SQL%ROWCOUNT",
+                    "is_correct": true
+                },
+                {
+                    "content": "%ROWCOUNT",
+                    "is_correct": true
+                },
+                {
+                    "content": "ROWCOUNT",
+                    "is_correct": true
+                },
+                {
+                    "content": "sql%rowcount",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la excepción predefinida de PL/SQL que se lanza al dividir un número entre cero?",
+            "explanation": "ZERO_DIVIDE corresponde al error ORA-01476 y se lanza ante una división entre cero.",
+            "options": [
+                {
+                    "content": "ZERO_DIVIDE",
+                    "is_correct": true
+                },
+                {
+                    "content": "zero_divide",
+                    "is_correct": true
+                },
+                {
+                    "content": "Zero Divide",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué atributo se añade al nombre de una tabla o cursor para declarar una variable de tipo registro con la misma estructura que una fila?",
+            "explanation": "nombre%ROWTYPE crea un registro con un campo por cada columna de la tabla o del cursor.",
+            "options": [
+                {
+                    "content": "%ROWTYPE",
+                    "is_correct": true
+                },
+                {
+                    "content": "ROWTYPE",
+                    "is_correct": true
+                },
+                {
+                    "content": "rowtype",
+                    "is_correct": true
+                },
+                {
+                    "content": "%rowtype",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Sobre los pseudorregistros :OLD y :NEW en triggers de fila de Oracle, ¿qué afirmaciones son correctas? (Hay varias correctas.)",
+            "explanation": "Los valores de :OLD son de solo lectura; :OLD es NULL en inserciones y :NEW es NULL en borrados.",
+            "options": [
+                {
+                    "content": "En un trigger de INSERT, todos los campos de :OLD son NULL",
+                    "is_correct": true
+                },
+                {
+                    "content": "En un trigger de DELETE, todos los campos de :NEW son NULL",
+                    "is_correct": true
+                },
+                {
+                    "content": "En un trigger de UPDATE están disponibles tanto :OLD como :NEW",
+                    "is_correct": true
+                },
+                {
+                    "content": "En un BEFORE UPDATE se puede asignar un valor a :OLD.columna",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes son atributos válidos de un cursor explícito en PL/SQL? (Hay varias correctas.)",
+            "explanation": "Los atributos de cursor son %FOUND, %NOTFOUND, %ISOPEN y %ROWCOUNT; %COUNT y %LENGTH no existen para cursores.",
+            "options": [
+                {
+                    "content": "%ISOPEN",
+                    "is_correct": true
+                },
+                {
+                    "content": "%NOTFOUND",
+                    "is_correct": true
+                },
+                {
+                    "content": "%ROWCOUNT",
+                    "is_correct": true
+                },
+                {
+                    "content": "%COUNT",
+                    "is_correct": false
+                },
+                {
+                    "content": "%LENGTH",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

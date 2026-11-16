@@ -1,0 +1,481 @@
+{
+    "slug": "gestion-financiera",
+    "title": "Gestión Financiera - préstamos, leasing y descuento",
+    "description": "Test de repaso de FP de Administración y Gestión sobre financiación: interés, TAE, préstamos, leasing, renting, factoring y descuento. Va bien para preparar el examen del módulo de Gestión Financiera.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:15:49+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Se deposita un capital de 10.000 € al 5 % anual de interés simple durante 3 años. ¿Qué intereses se generan?",
+            "explanation": "En interés simple I = C · i · t = 10.000 · 0,05 · 3 = 1.500 €. Los 1.576,25 € corresponderían a interés compuesto.",
+            "options": [
+                {
+                    "content": "1.576,25 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.500 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.550 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.200 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se invierten 5.000 € al 4 % anual en régimen de interés compuesto durante 2 años. ¿Cuál es el capital final?",
+            "explanation": "Cf = 5.000 · (1,04)² = 5.000 · 1,0816 = 5.408 €.",
+            "options": [
+                {
+                    "content": "5.400 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "5.416 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "5.408 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "5.800 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un préstamo tiene un tipo nominal del 12 % anual con capitalización mensual. ¿Cuál es aproximadamente su TAE, sin considerar comisiones?",
+            "explanation": "TAE = (1 + 0,12/12)^12 − 1 = 1,01^12 − 1 ≈ 12,68 %. El 12,36 % correspondería a capitalización semestral.",
+            "options": [
+                {
+                    "content": "12,00 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "13,00 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "12,36 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "12,68 %",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La TAE de una operación financiera incorpora, además del tipo de interés nominal, la frecuencia de los pagos y las comisiones y gastos computables.",
+            "explanation": "La TAE expresa el coste o rendimiento efectivo anual teniendo en cuenta la periodicidad de los pagos y los gastos y comisiones que la normativa obliga a incluir.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un cuadro de amortización de un préstamo, ¿cómo se calculan los intereses de cada período?",
+            "explanation": "Los intereses de cada período son el capital pendiente al comienzo del período multiplicado por el tipo de interés del período.",
+            "options": [
+                {
+                    "content": "Sobre el capital inicial del préstamo durante todo el plazo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sobre el capital pendiente de amortizar al inicio del período",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sobre la cuota total del período anterior",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un préstamo de 10.000 € al 6 % anual se amortiza por el sistema francés con 3 cuotas anuales. ¿Qué cantidad de capital se amortiza aproximadamente en la primera cuota?",
+            "explanation": "La cuota es ≈ 3.741,10 € y los intereses del primer año son 600 €, así que se amortizan 3.741,10 − 600 = 3.141,10 €.",
+            "options": [
+                {
+                    "content": "3.741,10 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "3.333,33 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "600,00 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "3.141,10 €",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un préstamo de 12.000 € se amortiza en 4 años por el sistema lineal (cuota de amortización constante) al 5 % anual, con cuotas anuales. ¿Cuál es la segunda cuota total?",
+            "explanation": "Se amortizan 3.000 € cada año. En el año 2 quedan 9.000 € pendientes, con intereses de 450 €, y la cuota es 3.450 €.",
+            "options": [
+                {
+                    "content": "3.600 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "3.300 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "3.000 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "3.450 €",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué sistema de amortización de préstamos se caracteriza por tener cuotas totales constantes, con intereses decrecientes y amortización creciente?",
+            "explanation": "Es el sistema francés: la cuota total es constante y, al disminuir los intereses, aumenta la parte de capital amortizado.",
+            "options": [
+                {
+                    "content": "francés",
+                    "is_correct": true
+                },
+                {
+                    "content": "sistema francés",
+                    "is_correct": true
+                },
+                {
+                    "content": "método francés",
+                    "is_correct": true
+                },
+                {
+                    "content": "el sistema francés",
+                    "is_correct": true
+                },
+                {
+                    "content": "frances",
+                    "is_correct": true
+                },
+                {
+                    "content": "sistema frances",
+                    "is_correct": true
+                },
+                {
+                    "content": "amortización francesa",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es una característica propia del leasing financiero?",
+            "explanation": "El leasing incluye una opción de compra al final del contrato, que el arrendatario puede ejercer, o no. El mantenimiento incluido es típico del renting.",
+            "options": [
+                {
+                    "content": "La cuota incluye siempre el mantenimiento y el seguro del bien",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al finalizar el contrato el arrendatario puede ejercer una opción de compra",
+                    "is_correct": true
+                },
+                {
+                    "content": "No existe ninguna opción al terminar el contrato",
+                    "is_correct": false
+                },
+                {
+                    "content": "El arrendatario no puede usar el bien hasta pagar la última cuota",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En el renting, el arrendatario está obligado a comprar el bien al finalizar el contrato.",
+            "explanation": "El renting es un alquiler de uso, con servicios como mantenimiento y seguro, y no obliga a adquirir el bien: normalmente se devuelve o se renueva.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una operación de factoring sin recurso, ¿quién asume el riesgo de insolvencia del deudor?",
+            "explanation": "En el factoring sin recurso, la entidad de factoring asume el riesgo de impago por insolvencia del deudor. En el factoring con recurso lo conserva el cedente.",
+            "options": [
+                {
+                    "content": "La empresa cedente que vendió a crédito",
+                    "is_correct": false
+                },
+                {
+                    "content": "El deudor, que responde con sus bienes personales",
+                    "is_correct": false
+                },
+                {
+                    "content": "La entidad de factoring",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Una letra de cambio de nominal 5.000 € se descuenta 90 días antes de su vencimiento a un tipo de descuento del 8 % anual (año comercial de 360 días, sin comisiones). ¿Cuál es el efectivo recibido en euros?",
+            "explanation": "Descuento = 5.000 · 0,08 · 90/360 = 100 €; efectivo = 5.000 − 100 = 4.900 €.",
+            "options": [
+                {
+                    "content": "4.900",
+                    "is_correct": true
+                },
+                {
+                    "content": "4900",
+                    "is_correct": true
+                },
+                {
+                    "content": "4.900 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "4900 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "4.900 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "4900 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "4.900€",
+                    "is_correct": true
+                },
+                {
+                    "content": "4900€",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las funciones o servicios que puede ofrecer el factoring (hay varias correctas).",
+            "explanation": "El factoring se basa en ceder créditos comerciales para obtener anticipo, gestión de cobro y, en su caso, cobertura de insolvencia. La opción de compra es propia del leasing.",
+            "options": [
+                {
+                    "content": "Anticipo de fondos sobre las facturas cedidas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Gestión del cobro de los clientes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cobertura del riesgo de insolvencia en el factoring sin recurso",
+                    "is_correct": true
+                },
+                {
+                    "content": "Opción de compra sobre un bien al final del contrato",
+                    "is_correct": false
+                },
+                {
+                    "content": "Concesión de un préstamo con garantía hipotecaria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué opciones son sistemas de amortización de préstamos (hay varias correctas).",
+            "explanation": "El francés, el lineal y el americano (intereses periódicos y devolución del capital al final) son sistemas de amortización. El descuento comercial es una operación de anticipo y la TAE es una medida de coste.",
+            "options": [
+                {
+                    "content": "Sistema francés",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sistema lineal o de amortización constante",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sistema americano",
+                    "is_correct": true
+                },
+                {
+                    "content": "Descuento comercial",
+                    "is_correct": false
+                },
+                {
+                    "content": "TAE",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En el interés simple, los intereses generados en cada período se suman al capital y producen nuevos intereses en los períodos siguientes.",
+            "explanation": "Eso ocurre en el interés compuesto. En el interés simple los intereses no se capitalizan y se calculan siempre sobre el capital inicial.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es aproximadamente el tipo de interés mensual equivalente a un tipo efectivo anual del 12 %?",
+            "explanation": "i12 = (1,12)^(1/12) − 1 ≈ 0,0095, es decir, ≈ 0,95 % mensual. No es 1 %, que daría una TAE del 12,68 %.",
+            "options": [
+                {
+                    "content": "1,00 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,90 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "1,12 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,95 %",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Por qué el coste efectivo real de un descuento comercial es superior al tipo de descuento aplicado?",
+            "explanation": "El descuento se calcula sobre el nominal, pero el dinero realmente anticipado es el efectivo, que es menor. Por eso la rentabilidad para el banco, y el coste para la empresa, es mayor que el tipo de descuento.",
+            "options": [
+                {
+                    "content": "Porque el tipo se aplica sobre el nominal, pero la empresa recibe menos que el nominal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Porque el interés se calcula siempre en régimen compuesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque el banco cobra intereses sobre el efectivo ya devuelto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque el descuento solo se aplica a letras vencidas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa cede facturas por 20.000 € a una entidad de factoring que anticipa el 80 % del importe. ¿Cuánto recibe de forma inmediata, sin descontar comisiones ni intereses?",
+            "explanation": "El anticipo es 20.000 · 0,80 = 16.000 €. El resto se abona al cobrar la factura, descontados los costes.",
+            "options": [
+                {
+                    "content": "4.000 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "16.000 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "18.000 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "20.000 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa necesita varios vehículos comerciales durante 4 años. Quiere una cuota única que incluya mantenimiento y seguro, y no asumir el riesgo de obsolescencia ni comprarlos. ¿Qué fórmula le conviene más?",
+            "explanation": "El renting es un alquiler de bienes a medio o largo plazo que suele incluir mantenimiento y seguro en la cuota, sin obligación de compra.",
+            "options": [
+                {
+                    "content": "Descuento comercial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Factoring con recurso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Renting",
+                    "is_correct": true
+                },
+                {
+                    "content": "Préstamo con sistema americano",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "En una operación de factoring, ¿cómo se llama la entidad que adquiere o gestiona los créditos comerciales cedidos por la empresa?",
+            "explanation": "La entidad que presta el servicio de factoring recibe el nombre de factor o empresa de factoring.",
+            "options": [
+                {
+                    "content": "factor",
+                    "is_correct": true
+                },
+                {
+                    "content": "el factor",
+                    "is_correct": true
+                },
+                {
+                    "content": "empresa de factoring",
+                    "is_correct": true
+                },
+                {
+                    "content": "entidad de factoring",
+                    "is_correct": true
+                },
+                {
+                    "content": "la empresa de factoring",
+                    "is_correct": true
+                },
+                {
+                    "content": "sociedad de factoring",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

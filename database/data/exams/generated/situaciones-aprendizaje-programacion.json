@@ -1,0 +1,453 @@
+{
+    "slug": "situaciones-aprendizaje-programacion",
+    "title": "Programación didáctica y situaciones de aprendizaje",
+    "description": "Test para repasar el currículo LOMLOE de cara a la programación didáctica: competencias clave, perfil de salida, saberes básicos, criterios de evaluación y situaciones de aprendizaje. Me ha venido bien para el temario de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:31:33+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el marco curricular establecido por la LOMLOE, ¿cuántas competencias clave se incluyen en el Perfil de salida del alumnado?",
+            "explanation": "El Perfil de salida de la LOMLOE contempla ocho competencias clave. Las siete competencias corresponden al marco anterior de la LOMCE.",
+            "options": [
+                {
+                    "content": "Seis",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siete",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ocho",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una competencia clave del Perfil de salida según la LOMLOE:",
+            "explanation": "La «competencia social y cívica» pertenece al marco anterior; en la LOMLOE aparece la «competencia ciudadana».",
+            "options": [
+                {
+                    "content": "Competencia social y cívica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Competencia plurilingüe",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia ciudadana",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia emprendedora",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el marco de la LOMLOE, ¿cuál es la función principal del Perfil de salida del alumnado?",
+            "explanation": "El Perfil de salida concreta los principios y fines del sistema educativo y fundamenta las decisiones curriculares y la evaluación del desarrollo competencial.",
+            "options": [
+                {
+                    "content": "Establecer el horario lectivo mínimo de cada área o materia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servir de referente para las decisiones curriculares y para valorar el desarrollo competencial del alumnado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Fijar el número de pruebas externas que debe superar el alumnado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Regular la organización de los departamentos didácticos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El actual marco de competencias clave del sistema educativo español se inspira en:",
+            "explanation": "La LOMLOE adapta el marco europeo de la Recomendación del Consejo de 2018, que sustituyó a la de 2006.",
+            "options": [
+                {
+                    "content": "La Declaración de Bolonia de 1999",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Estrategia Europa 2020",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Recomendación del Parlamento Europeo y del Consejo de 18 de diciembre de 2006",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Recomendación del Consejo de la Unión Europea de 22 de mayo de 2018 relativa a las competencias clave para el aprendizaje permanente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué elemento curricular actúa como conexión entre el Perfil de salida, los saberes básicos de las áreas o materias y los criterios de evaluación?",
+            "explanation": "Las competencias específicas son el elemento de conexión entre el Perfil de salida, los saberes básicos y los criterios de evaluación.",
+            "options": [
+                {
+                    "content": "Los objetivos de etapa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las orientaciones metodológicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las competencias específicas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los instrumentos de evaluación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes definiciones corresponde a los saberes básicos?",
+            "explanation": "Los saberes básicos son los contenidos de cada área o materia (conocimientos, destrezas y actitudes) necesarios para adquirir las competencias específicas. Las demás opciones definen otros elementos.",
+            "options": [
+                {
+                    "content": "Conocimientos, destrezas y actitudes que constituyen los contenidos propios de un área o materia y cuyo aprendizaje es necesario para adquirir las competencias específicas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Referentes que indican los niveles de desempeño esperados en las situaciones a las que se refieren las competencias específicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desempeños que el alumnado debe poder desplegar en actividades cuyo abordaje requiere los saberes de cada área",
+                    "is_correct": false
+                },
+                {
+                    "content": "Situaciones y actividades que implican el despliegue de actuaciones asociadas a las competencias clave",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los criterios de evaluación se definen en la normativa curricular vigente como:",
+            "explanation": "Los criterios de evaluación están vinculados a las competencias específicas e indican el nivel de desempeño esperado.",
+            "options": [
+                {
+                    "content": "Los desempeños que el alumnado debe desplegar en cada área",
+                    "is_correct": false
+                },
+                {
+                    "content": "El conjunto de conocimientos, destrezas y actitudes de cada materia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las actividades y tareas diseñadas por el docente para el aula",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los referentes que indican los niveles de desempeño esperados en las situaciones o actividades a las que se refieren las competencias específicas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El Perfil de salida del alumnado identifica las competencias clave que se espera que el alumnado haya adquirido al finalizar Bachillerato.",
+            "explanation": "Es falso: el Perfil de salida se refiere al término de la enseñanza básica, no al de Bachillerato.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la afirmación INCORRECTA sobre las situaciones de aprendizaje:",
+            "explanation": "Las situaciones de aprendizaje deben estar contextualizadas y ser significativas; la memorización descontextualizada es contraria al enfoque competencial.",
+            "options": [
+                {
+                    "content": "Implican el despliegue de actuaciones asociadas a competencias clave y específicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deben diseñarse de forma descontextualizada, para centrarse solo en la memorización de saberes básicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Deben plantear retos o problemas que resulten significativos para el alumnado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conviene diseñarlas aplicando los principios del Diseño Universal para el Aprendizaje",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOMLOE, la evaluación de diagnóstico de las competencias del alumnado se realiza en:",
+            "explanation": "La evaluación de diagnóstico se realiza al finalizar el segundo ciclo de Primaria (4.º) y en 2.º de ESO. Tiene carácter formativo y orientador.",
+            "options": [
+                {
+                    "content": "2.º de Educación Primaria y 1.º de ESO",
+                    "is_correct": false
+                },
+                {
+                    "content": "3.º de Educación Primaria y 3.º de ESO",
+                    "is_correct": false
+                },
+                {
+                    "content": "4.º de Educación Primaria y 2.º de ESO",
+                    "is_correct": true
+                },
+                {
+                    "content": "6.º de Educación Primaria y 4.º de ESO",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOMLOE, la evaluación del proceso de aprendizaje del alumnado de Educación Primaria será:",
+            "explanation": "En Primaria la evaluación es global, continua y formativa, y tiene en cuenta el grado de desarrollo de las competencias clave.",
+            "options": [
+                {
+                    "content": "Global, continua y formativa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Continua, sumativa y selectiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Final, global y orientadora",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diagnóstica, puntual y cualitativa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuáles son los términos con los que se expresan las calificaciones de las materias en la ESO?",
+            "explanation": "En la ESO se califica con Insuficiente (IN), Suficiente (SU), Bien (BI), Notable (NT) y Sobresaliente (SB).",
+            "options": [
+                {
+                    "content": "Suspenso, Aprobado, Notable, Sobresaliente y Matrícula de Honor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Insuficiente, Suficiente, Bien, Notable y Excelente",
+                    "is_correct": false
+                },
+                {
+                    "content": "No alcanzado, En proceso, Alcanzado y Destacado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Insuficiente, Suficiente, Bien, Notable y Sobresaliente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Diseño Universal para el Aprendizaje (DUA), que debe tenerse en cuenta al diseñar situaciones de aprendizaje, se articula en torno a tres principios. ¿Cuáles son?",
+            "explanation": "El DUA propone ofrecer múltiples formas de implicación (el porqué), de representación (el qué) y de acción y expresión (el cómo) del aprendizaje.",
+            "options": [
+                {
+                    "content": "Múltiples formas de evaluación, de agrupamiento y de temporalización",
+                    "is_correct": false
+                },
+                {
+                    "content": "Múltiples formas de implicación, de representación y de acción y expresión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Múltiples formas de planificación, de refuerzo y de calificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Múltiples formas de organización, de recursos y de coordinación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La evaluación del grado de adquisición de las competencias puede apoyarse en instrumentos variados, como rúbricas, listas de cotejo o portfolios, y no solo en pruebas escritas.",
+            "explanation": "Es verdadero: la evaluación competencial requiere técnicas e instrumentos diversos y adaptados a los criterios de evaluación.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la denominación exacta de la competencia clave del Perfil de salida que agrupa los ámbitos matemático y científico-tecnológico?",
+            "explanation": "La LOMLOE habla de «competencia matemática y competencia en ciencia, tecnología e ingeniería» (STEM). La primera opción corresponde al marco anterior.",
+            "options": [
+                {
+                    "content": "Competencia matemática y competencias básicas en ciencia y tecnología",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia científico-matemática",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia matemática y competencia en ciencia, tecnología e ingeniería (STEM)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Competencia tecnológica y de ingeniería",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuáles son las áreas de la Educación Infantil establecidas en el currículo derivado de la LOMLOE?",
+            "explanation": "Las áreas actuales de Infantil son las tres de la primera opción. La segunda opción corresponde al currículo anterior a la LOMLOE.",
+            "options": [
+                {
+                    "content": "Crecimiento en armonía; Descubrimiento y exploración del entorno; Comunicación y representación de la realidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Conocimiento de sí mismo y autonomía personal; Conocimiento del entorno; Lenguajes: comunicación y representación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desarrollo personal; Conocimiento del medio; Lenguajes y expresión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Identidad y autonomía; Exploración del medio; Comunicación y creatividad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué competencia clave se integra el «aprender a aprender» en el Perfil de salida de la LOMLOE?",
+            "explanation": "El «aprender a aprender» está en la competencia personal, social y de aprender a aprender (CPSAA).",
+            "options": [
+                {
+                    "content": "Competencia ciudadana",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia emprendedora",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia plurilingüe",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia personal, social y de aprender a aprender",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la ESO, ¿cuáles son los referentes para evaluar el grado de desarrollo de las competencias clave y de los objetivos de la etapa?",
+            "explanation": "La evaluación se basa en las competencias específicas a través de sus criterios de evaluación. Los estándares de aprendizaje evaluables pertenecen al marco anterior.",
+            "options": [
+                {
+                    "content": "Exclusivamente los saberes básicos de cada materia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las competencias específicas, a través de los criterios de evaluación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los estándares de aprendizaje evaluables",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los contenidos mínimos fijados por cada centro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los descriptores operativos de las competencias clave del Perfil de salida son:",
+            "explanation": "Los descriptores operativos orientan el nivel de desempeño de cada competencia clave y sirven de referencia para concretar las competencias específicas.",
+            "options": [
+                {
+                    "content": "Los instrumentos con los que el profesorado califica al alumnado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los saberes básicos comunes a todas las áreas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El marco referencial a partir del cual se concretan las competencias específicas de cada área o materia",
+                    "is_correct": true
+                },
+                {
+                    "content": "El listado de actividades que componen una situación de aprendizaje",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el modelo de niveles de concreción curricular, las programaciones didácticas se enmarcan en:",
+            "explanation": "Las programaciones didácticas concretan el currículo en el centro (segundo nivel). Las situaciones de aprendizaje se desarrollan después en la programación de aula.",
+            "options": [
+                {
+                    "content": "El segundo nivel, el del centro educativo, en el marco de su proyecto educativo",
+                    "is_correct": true
+                },
+                {
+                    "content": "El primer nivel, correspondiente a la Administración educativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "El nivel estatal, mediante las enseñanzas mínimas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El tercer nivel exclusivamente, el de las adaptaciones individuales",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

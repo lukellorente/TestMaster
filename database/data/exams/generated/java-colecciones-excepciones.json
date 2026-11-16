@@ -1,0 +1,508 @@
+{
+    "slug": "java-colecciones-excepciones",
+    "title": "Java: colecciones, genéricos y excepciones",
+    "description": "Test de repaso de Java para DAM/DAW: colecciones, genéricos y excepciones. Lo hice con los apuntes del módulo de Programación, a ver qué tal os sale.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:47:33+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes interfaces de colecciones NO admite elementos duplicados?",
+            "explanation": "Set modela un conjunto matemático y no permite elementos duplicados según equals().",
+            "options": [
+                {
+                    "content": "List",
+                    "is_correct": false
+                },
+                {
+                    "content": "Set",
+                    "is_correct": true
+                },
+                {
+                    "content": "Queue",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Necesitas acceder muy a menudo a los elementos de una lista por su índice. ¿Qué implementación es la más adecuada?",
+            "explanation": "ArrayList se basa en un array y ofrece acceso por índice en tiempo constante; en LinkedList hay que recorrer los nodos.",
+            "options": [
+                {
+                    "content": "LinkedList",
+                    "is_correct": false
+                },
+                {
+                    "content": "ArrayDeque",
+                    "is_correct": false
+                },
+                {
+                    "content": "ArrayList",
+                    "is_correct": true
+                },
+                {
+                    "content": "TreeSet",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué implementación de Map recorre sus entradas en el mismo orden en que se insertaron?",
+            "explanation": "LinkedHashMap mantiene una lista enlazada con el orden de inserción; HashMap no garantiza orden y TreeMap ordena por clave.",
+            "options": [
+                {
+                    "content": "HashMap",
+                    "is_correct": false
+                },
+                {
+                    "content": "TreeMap",
+                    "is_correct": false
+                },
+                {
+                    "content": "LinkedHashMap",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si añades los números 5, 1, 3 y 1 a un TreeSet<Integer> y lo recorres con un for-each, ¿qué obtienes?",
+            "explanation": "TreeSet no admite duplicados y mantiene los elementos ordenados según su orden natural.",
+            "options": [
+                {
+                    "content": "5, 1, 3, 1",
+                    "is_correct": false
+                },
+                {
+                    "content": "5, 1, 3",
+                    "is_correct": false
+                },
+                {
+                    "content": "1, 3, 5",
+                    "is_correct": true
+                },
+                {
+                    "content": "1, 1, 3, 5",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado el código:\n\nList<String> lista = new ArrayList<>(List.of(\"a\", \"b\", \"c\"));\nfor (String s : lista) {\n    if (s.equals(\"a\")) lista.remove(s);\n}\n\n¿Qué ocurre al ejecutarlo?",
+            "explanation": "Modificar la lista estructuralmente durante el for-each hace que el iterador detecte el cambio en la siguiente llamada a next() y lance ConcurrentModificationException.",
+            "options": [
+                {
+                    "content": "Se lanza ConcurrentModificationException",
+                    "is_correct": true
+                },
+                {
+                    "content": "Termina sin errores y la lista queda [b, c]",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se lanza IndexOutOfBoundsException",
+                    "is_correct": false
+                },
+                {
+                    "content": "No compila",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la forma segura de eliminar un elemento de una colección mientras se recorre con un Iterator?",
+            "explanation": "Iterator.remove() elimina el último elemento devuelto por next() manteniendo coherente el estado interno del iterador.",
+            "options": [
+                {
+                    "content": "Llamar a lista.remove(elemento) dentro del bucle",
+                    "is_correct": false
+                },
+                {
+                    "content": "Llamar a iterator.remove()",
+                    "is_correct": true
+                },
+                {
+                    "content": "Llamar a iterator.next() dos veces",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ocurre al compilar la línea siguiente?\n\nList<int> numeros = new ArrayList<>();",
+            "explanation": "Los parámetros de tipo deben ser tipos referencia; para enteros hay que usar la clase envoltorio Integer.",
+            "options": [
+                {
+                    "content": "Compila y crea una lista de enteros primitivos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lanza una excepción en tiempo de ejecución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Compila con una advertencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Error de compilación, porque los genéricos no admiten tipos primitivos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado List<? extends Number> l = new ArrayList<Integer>();, ¿cuál de estas sentencias NO compila?",
+            "explanation": "Con un comodín extends no se puede añadir (salvo null), porque el compilador no conoce el tipo concreto de la lista.",
+            "options": [
+                {
+                    "content": "Number n = l.get(0);",
+                    "is_correct": false
+                },
+                {
+                    "content": "int tam = l.size();",
+                    "is_correct": false
+                },
+                {
+                    "content": "l.add(Integer.valueOf(1));",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se llama el mecanismo por el que el compilador elimina la información de los tipos genéricos y esta no está disponible en tiempo de ejecución?",
+            "explanation": "Java implementa los genéricos mediante borrado de tipos, por lo que en ejecución List<String> y List<Integer> son la misma clase.",
+            "options": [
+                {
+                    "content": "Borrado de tipos (type erasure)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Autoboxing",
+                    "is_correct": false
+                },
+                {
+                    "content": "Inferencia de tipos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reificación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué imprime este método al llamarlo?\n\nstatic void m() {\n    try {\n        System.out.print(\"A\");\n        return;\n    } finally {\n        System.out.print(\"B\");\n    }\n}",
+            "explanation": "El bloque finally se ejecuta aunque el try termine con return, así que se imprime A y después B.",
+            "options": [
+                {
+                    "content": "A",
+                    "is_correct": false
+                },
+                {
+                    "content": "B",
+                    "is_correct": false
+                },
+                {
+                    "content": "AB",
+                    "is_correct": true
+                },
+                {
+                    "content": "BA",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un try-with-resources, si el cuerpo del try lanza una excepción y además close() del recurso lanza otra, ¿qué sucede?",
+            "explanation": "La excepción principal es la del cuerpo; la de close() se añade como suprimida y se obtiene con getSuppressed().",
+            "options": [
+                {
+                    "content": "Se propaga la excepción de close() y se pierde la del cuerpo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se propaga la excepción del cuerpo y la de close() queda como suprimida",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se ignoran ambas excepciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes excepciones es checked?",
+            "explanation": "IOException hereda de Exception sin ser RuntimeException, por lo que el compilador obliga a capturarla o declararla.",
+            "options": [
+                {
+                    "content": "NullPointerException",
+                    "is_correct": false
+                },
+                {
+                    "content": "IllegalArgumentException",
+                    "is_correct": false
+                },
+                {
+                    "content": "ArithmeticException",
+                    "is_correct": false
+                },
+                {
+                    "content": "IOException",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se escribe un try con dos bloques catch: primero catch (Exception e) y después catch (IOException e). ¿Qué sucede?",
+            "explanation": "Los catch deben ordenarse de lo más específico a lo más general; IOException ya queda cubierta por Exception.",
+            "options": [
+                {
+                    "content": "Compila y siempre se ejecuta el primer catch",
+                    "is_correct": false
+                },
+                {
+                    "content": "Compila y se ejecuta el catch más específico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Error de compilación, porque el segundo catch es inalcanzable",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado Map<String,Integer> m = new HashMap<>(); m.put(\"a\", 1); Integer r = m.put(\"a\", 2);, ¿qué valor tiene r?",
+            "explanation": "put() sustituye el valor de una clave existente y devuelve el valor anterior, que era 1.",
+            "options": [
+                {
+                    "content": "2",
+                    "is_correct": false
+                },
+                {
+                    "content": "null",
+                    "is_correct": false
+                },
+                {
+                    "content": "1",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se lanza una excepción por clave duplicada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para que los objetos de una clase propia funcionen correctamente como elementos de un HashSet, ¿qué métodos conviene sobrescribir?",
+            "explanation": "HashSet usa hashCode() para localizar el cubo y equals() para comparar, y ambos deben ser coherentes entre sí.",
+            "options": [
+                {
+                    "content": "toString() y compareTo()",
+                    "is_correct": false
+                },
+                {
+                    "content": "equals() y hashCode()",
+                    "is_correct": true
+                },
+                {
+                    "content": "clone() y finalize()",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "HashMap permite almacenar una clave null.",
+            "explanation": "HashMap admite una única clave null y varios valores null, a diferencia de Hashtable.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un bloque finally se ejecuta siempre, incluso si dentro del try se invoca System.exit(0).",
+            "explanation": "System.exit(0) termina la JVM, por lo que el bloque finally no llega a ejecutarse.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La llamada List.of(1, 2, 3).add(4) lanza UnsupportedOperationException.",
+            "explanation": "List.of devuelve una lista inmutable y cualquier operación de modificación lanza UnsupportedOperationException.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un try-with-resources con varios recursos, estos se cierran en el orden inverso al de su declaración.",
+            "explanation": "Los recursos se cierran en orden inverso al de su creación, igual que una pila.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué palabra reservada se usa en la firma de un método para indicar que puede lanzar una excepción checked?",
+            "explanation": "La cláusula throws en la declaración del método avisa de las excepciones que puede propagar.",
+            "options": [
+                {
+                    "content": "throws",
+                    "is_correct": true
+                },
+                {
+                    "content": "la palabra throws",
+                    "is_correct": true
+                },
+                {
+                    "content": "palabra reservada throws",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué interfaz de java.lang deben implementar los recursos usados en un try-with-resources?",
+            "explanation": "El recurso debe implementar AutoCloseable (o su subinterfaz Closeable) para que se invoque close() automáticamente.",
+            "options": [
+                {
+                    "content": "AutoCloseable",
+                    "is_correct": true
+                },
+                {
+                    "content": "java.lang.AutoCloseable",
+                    "is_correct": true
+                },
+                {
+                    "content": "interfaz AutoCloseable",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué método de Iterator indica si quedan más elementos por recorrer?",
+            "explanation": "hasNext() devuelve true si la iteración tiene más elementos y next() devuelve el siguiente.",
+            "options": [
+                {
+                    "content": "hasNext",
+                    "is_correct": true
+                },
+                {
+                    "content": "hasNext()",
+                    "is_correct": true
+                },
+                {
+                    "content": "el método hasNext",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué método de la interfaz Map devuelve un valor por defecto cuando la clave no existe?",
+            "explanation": "map.getOrDefault(clave, valorPorDefecto) devuelve el valor asociado o el valor por defecto si no hay entrada.",
+            "options": [
+                {
+                    "content": "getOrDefault",
+                    "is_correct": true
+                },
+                {
+                    "content": "getOrDefault()",
+                    "is_correct": true
+                },
+                {
+                    "content": "el método getOrDefault",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las implementaciones de la interfaz List (hay varias correctas).",
+            "explanation": "ArrayList y LinkedList implementan List; HashSet implementa Set y TreeMap implementa Map.",
+            "options": [
+                {
+                    "content": "ArrayList",
+                    "is_correct": true
+                },
+                {
+                    "content": "HashSet",
+                    "is_correct": false
+                },
+                {
+                    "content": "LinkedList",
+                    "is_correct": true
+                },
+                {
+                    "content": "TreeMap",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Qué afirmaciones sobre los genéricos en Java son correctas? (hay varias correctas)",
+            "explanation": "Los genéricos aportan seguridad de tipos y eliminan casts, pero no admiten primitivos ni la creación directa de arrays de tipo genérico.",
+            "options": [
+                {
+                    "content": "Permiten detectar errores de tipo en tiempo de compilación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Evitan tener que hacer casts explícitos al obtener elementos de una colección",
+                    "is_correct": true
+                },
+                {
+                    "content": "Permiten crear un array genérico directamente con new T[10]",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pueden parametrizarse directamente con tipos primitivos como int",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,797 @@
+{
+    "slug": "ley-7-1985-bases-regimen-local",
+    "title": "Ley 7/1985 Bases del Régimen Local",
+    "description": "Test de repaso de la Ley 7/1985 (LBRL) para el temario de Administración Local: municipio, provincia, órganos de gobierno, competencias y municipios de gran población. Lo he hecho con el texto vigente en 2026, a ver qué tal os sale.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:35:51+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 11.2 de la Ley 7/1985, de Bases del Régimen Local, son elementos del municipio:",
+            "explanation": "El artículo 11.2 LBRL establece que los elementos del municipio son el territorio, la población y la organización.",
+            "options": [
+                {
+                    "content": "El territorio, la población y la hacienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "El territorio, la población y la organización",
+                    "is_correct": true
+                },
+                {
+                    "content": "La población, la organización y el patrimonio",
+                    "is_correct": false
+                },
+                {
+                    "content": "El territorio, los vecinos y el Pleno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 3 de la LBRL, ¿cuál de las siguientes entidades NO es una entidad local territorial?",
+            "explanation": "Son entidades locales territoriales el municipio, la provincia y la isla (art. 3.1). Las mancomunidades gozan de la condición de entidad local, pero no son territoriales (art. 3.2).",
+            "options": [
+                {
+                    "content": "El municipio",
+                    "is_correct": false
+                },
+                {
+                    "content": "La provincia",
+                    "is_correct": false
+                },
+                {
+                    "content": "La isla en los archipiélagos balear y canario",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mancomunidad de municipios",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una potestad de los municipios y provincias reconocida en el artículo 4.1 de la LBRL:",
+            "explanation": "Las entidades locales no tienen potestad legislativa, que corresponde al Estado y a las Comunidades Autónomas. Las demás sí figuran en el artículo 4.1 LBRL.",
+            "options": [
+                {
+                    "content": "La potestad legislativa",
+                    "is_correct": true
+                },
+                {
+                    "content": "La potestad reglamentaria y de autoorganización",
+                    "is_correct": false
+                },
+                {
+                    "content": "La potestad expropiatoria",
+                    "is_correct": false
+                },
+                {
+                    "content": "La potestad de investigación, deslinde y recuperación de oficio de sus bienes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LBRL, quien viva en varios municipios deberá inscribirse en el Padrón:",
+            "explanation": "La LBRL obliga a inscribirse en el Padrón del municipio en el que se resida habitualmente y, si se vive en varios, en el que se habite más tiempo al año.",
+            "options": [
+                {
+                    "content": "Del municipio donde tenga su primera vivienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Del municipio donde trabaje",
+                    "is_correct": false
+                },
+                {
+                    "content": "Del municipio en el que habite durante más tiempo al año",
+                    "is_correct": true
+                },
+                {
+                    "content": "De cualquiera de ellos, a su elección",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El Pleno del Ayuntamiento está integrado por todos los concejales y es presidido por el Alcalde.",
+            "explanation": "Así lo establece el artículo 22 LBRL: el Pleno lo integran todos los concejales y lo preside el Alcalde.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 13 de la LBRL, la creación de nuevos municipios solo podrá realizarse sobre la base de núcleos de población territorialmente diferenciados de, al menos:",
+            "explanation": "El artículo 13.2 LBRL exige núcleos de al menos 5.000 habitantes y que los municipios resultantes tengan recursos suficientes y no disminuya la calidad de los servicios.",
+            "options": [
+                {
+                    "content": "2.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "10.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "5.000 habitantes",
+                    "is_correct": true
+                },
+                {
+                    "content": "20.000 habitantes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 29 de la LBRL, funcionan necesariamente en régimen de concejo abierto los municipios con menos de:",
+            "explanation": "El concejo abierto se aplica a municipios de menos de 100 habitantes que tradicionalmente cuenten con este régimen, y a otros en que lo aconsejen su localización geográfica u otras circunstancias.",
+            "options": [
+                {
+                    "content": "50 habitantes y que tradicionalmente lo tengan",
+                    "is_correct": false
+                },
+                {
+                    "content": "100 habitantes y que tradicionalmente cuenten con este régimen",
+                    "is_correct": true
+                },
+                {
+                    "content": "250 habitantes, sin más requisitos",
+                    "is_correct": false
+                },
+                {
+                    "content": "500 habitantes y que lo decida el Pleno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 20 de la LBRL, la Junta de Gobierno Local existe necesariamente en los municipios con población superior a:",
+            "explanation": "En los municipios de más de 5.000 habitantes existe Junta de Gobierno Local; en los menores solo si lo dispone su reglamento orgánico o lo acuerda el Pleno.",
+            "options": [
+                {
+                    "content": "2.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "10.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "20.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "5.000 habitantes",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 21.3 de la LBRL, ¿cuál de las siguientes atribuciones del Alcalde NO puede delegar?",
+            "explanation": "El artículo 21.3 LBRL excluye de la delegación, entre otras, la convocatoria y presidencia de las sesiones del Pleno y de la Junta de Gobierno Local.",
+            "options": [
+                {
+                    "content": "El otorgamiento de licencias, salvo que las leyes sectoriales lo atribuyan a otro órgano",
+                    "is_correct": false
+                },
+                {
+                    "content": "Convocar y presidir las sesiones del Pleno y de la Junta de Gobierno Local",
+                    "is_correct": true
+                },
+                {
+                    "content": "La contratación cuando su importe no supere el 10 % de los recursos ordinarios del presupuesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "La aprobación de los proyectos de obras y servicios cuando sea competente para su contratación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LBRL, corresponde al Pleno del Ayuntamiento:",
+            "explanation": "El control y la fiscalización de los órganos de gobierno es una atribución del Pleno (art. 22 LBRL). Las otras son atribuciones del Alcalde.",
+            "options": [
+                {
+                    "content": "Dictar bandos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Convocar las sesiones del Pleno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejercer la jefatura superior de todo el personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "El control y la fiscalización de los órganos de gobierno",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los municipios de régimen común, el número de concejales miembros de la Junta de Gobierno Local no podrá ser superior a:",
+            "explanation": "El artículo 23.1 LBRL dispone que la Junta de Gobierno Local se integra por el Alcalde y un número de concejales no superior al tercio del número legal, nombrados y separados libremente por aquel.",
+            "options": [
+                {
+                    "content": "Un tercio del número legal de concejales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un cuarto del número legal de concejales",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mitad del número legal de concejales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos tercios del número legal de concejales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LBRL, los Tenientes de Alcalde son:",
+            "explanation": "El artículo 23.3 LBRL atribuye al Alcalde la libre designación y cese de los Tenientes de Alcalde entre los miembros de la Junta de Gobierno Local o, si no existe, entre los concejales.",
+            "options": [
+                {
+                    "content": "Elegidos por el Pleno por mayoría absoluta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los tres concejales de la lista más votada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Designados por el Alcalde entre funcionarios de carrera del Ayuntamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Libremente designados y cesados por el Alcalde entre los miembros de la Junta de Gobierno Local y, donde no exista, entre los concejales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 46.2.a de la LBRL, la periodicidad de las sesiones ordinarias del Pleno no puede exceder, en los municipios de 5.001 a 20.000 habitantes, de:",
+            "explanation": "Mensual en los de más de 20.000 habitantes, cada dos meses en los de 5.001 a 20.000 y cada tres meses en los de hasta 5.000.",
+            "options": [
+                {
+                    "content": "Un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 46.2.c de la LBRL, para la válida constitución del Pleno se requiere la asistencia de:",
+            "explanation": "Se exige un tercio del número legal de miembros, nunca menos de tres, y en todo caso la asistencia del Presidente y del Secretario o de quienes los sustituyan.",
+            "options": [
+                {
+                    "content": "La mitad más uno de sus miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un tercio del número legal de miembros, que nunca podrá ser inferior a cinco",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cuarta parte del número legal de miembros, que nunca podrá ser inferior a tres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un tercio del número legal de miembros, que nunca podrá ser inferior a tres",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las sesiones de la Junta de Gobierno Local de un municipio de régimen común son públicas.",
+            "explanation": "El artículo 70.1 LBRL declara públicas las sesiones del Pleno, pero no las de la Junta de Gobierno Local.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 47.2 de la LBRL, requiere el voto favorable de la mayoría absoluta del número legal de miembros de la Corporación:",
+            "explanation": "El reglamento orgánico requiere mayoría absoluta del número legal de miembros; ordenanzas fiscales, presupuesto y cuenta general se adoptan por mayoría simple.",
+            "options": [
+                {
+                    "content": "La aprobación de ordenanzas fiscales",
+                    "is_correct": false
+                },
+                {
+                    "content": "La aprobación del presupuesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "La aprobación y modificación del reglamento orgánico propio de la Corporación",
+                    "is_correct": true
+                },
+                {
+                    "content": "La aprobación de la cuenta general",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 70 bis de la LBRL, en un municipio de 25.000 habitantes, la iniciativa popular para presentar propuestas de acuerdos o proyectos de reglamentos debe ir suscrita al menos por el siguiente porcentaje de vecinos con derecho a sufragio activo:",
+            "explanation": "El porcentaje es del 20 % hasta 5.000 habitantes, del 15 % de 5.001 a 20.000 y del 10 % a partir de 20.001 habitantes.",
+            "options": [
+                {
+                    "content": "10 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "5 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 26.1 de la LBRL, ¿cuál de los siguientes servicios deben prestar los municipios con población superior a 20.000 habitantes pero no se exige a los de 5.001 a 20.000?",
+            "explanation": "Parque público, biblioteca pública y tratamiento de residuos se exigen desde los 5.000 habitantes. Los municipios de más de 20.000 deben prestar además protección civil, prevención y extinción de incendios e instalaciones deportivas.",
+            "options": [
+                {
+                    "content": "Parque público",
+                    "is_correct": false
+                },
+                {
+                    "content": "Biblioteca pública",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prevención y extinción de incendios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tratamiento de residuos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 26.2 de la LBRL, los municipios con población inferior a 20.000 habitantes podrán solicitar la dispensa de la obligación de prestar los servicios mínimos a:",
+            "explanation": "La dispensa se solicita a la Comunidad Autónoma cuando, por sus características peculiares, sea de imposible o muy difícil cumplimiento prestar el servicio.",
+            "options": [
+                {
+                    "content": "La Diputación Provincial",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comunidad Autónoma respectiva",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Ministerio de Hacienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Delegación del Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 7 de la LBRL, las competencias propias de los municipios solo podrán ser determinadas por:",
+            "explanation": "El artículo 7.2 LBRL reserva a la ley la determinación de las competencias propias, que se ejercen en régimen de autonomía y bajo la propia responsabilidad.",
+            "options": [
+                {
+                    "content": "Ley",
+                    "is_correct": true
+                },
+                {
+                    "content": "Reglamento del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Convenio entre Administraciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acuerdo del Pleno del Ayuntamiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para que las entidades locales ejerzan competencias distintas de las propias y de las atribuidas por delegación, el artículo 7.4 de la LBRL exige:",
+            "explanation": "Se exigen informes vinculantes sobre la inexistencia de duplicidades y sobre la sostenibilidad financiera de las nuevas competencias.",
+            "options": [
+                {
+                    "content": "Autorización del Consejo de Ministros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Informe del Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aprobación por mayoría absoluta del Pleno, sin más trámites",
+                    "is_correct": false
+                },
+                {
+                    "content": "Informes previos y vinculantes de la Administración competente por razón de la materia y de la que tenga atribuida la tutela financiera",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 27 de la LBRL, la delegación de competencias del Estado o de las Comunidades Autónomas en los municipios deberá tener una duración que no podrá ser inferior a:",
+            "explanation": "El artículo 27 LBRL exige que la delegación determine su alcance, contenido, condiciones y duración, que no podrá ser inferior a cinco años.",
+            "options": [
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El municipio ejercerá en todo caso competencias propias, en los términos de la legislación del Estado y de las Comunidades Autónomas, en materia de:",
+            "explanation": "Los cementerios y actividades funerarias figuran entre las materias del artículo 25.2 LBRL. Las demás son competencias exclusivas del Estado.",
+            "options": [
+                {
+                    "content": "Defensa nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cementerios y actividades funerarias",
+                    "is_correct": true
+                },
+                {
+                    "content": "Legislación mercantil",
+                    "is_correct": false
+                },
+                {
+                    "content": "Régimen económico de la Seguridad Social",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 31.1 de la LBRL, el gobierno y la administración autónoma de la provincia corresponden a:",
+            "explanation": "La provincia es una entidad local con personalidad jurídica propia cuyo gobierno y administración autónoma corresponde a la Diputación u otras Corporaciones representativas.",
+            "options": [
+                {
+                    "content": "La Subdelegación del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Gobierno de la Comunidad Autónoma",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Diputación Provincial u otras Corporaciones de carácter representativo",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Asamblea de Alcaldes de la provincia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es un órgano de la Diputación Provincial según el artículo 32.1 de la LBRL:",
+            "explanation": "Son órganos de la Diputación el Presidente, los Vicepresidentes, la Junta de Gobierno y el Pleno. La Junta de Alcaldes no figura entre ellos.",
+            "options": [
+                {
+                    "content": "El Presidente",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Junta de Alcaldes",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Junta de Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Pleno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La provincia es una entidad local que carece de personalidad jurídica propia.",
+            "explanation": "El artículo 31.1 LBRL define la provincia como entidad local con personalidad jurídica propia, determinada por la agrupación de municipios.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Entre las competencias propias de la Diputación Provincial, el artículo 36.1 de la LBRL incluye la prestación de los servicios de administración electrónica y la contratación centralizada en los municipios con población inferior a:",
+            "explanation": "El artículo 36.1 LBRL atribuye a la Diputación la administración electrónica y la contratación centralizada en municipios de menos de 20.000 habitantes.",
+            "options": [
+                {
+                    "content": "1.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "5.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "50.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "20.000 habitantes",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 36.2.a de la LBRL, en la elaboración del plan provincial de cooperación a las obras y servicios de competencia municipal deben participar:",
+            "explanation": "El plan provincial se aprueba anualmente por la Diputación y en su elaboración deben participar los municipios de la provincia.",
+            "options": [
+                {
+                    "content": "Los municipios de la provincia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente los municipios de menos de 5.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Delegación del Gobierno en la Comunidad Autónoma",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comunidad Autónoma, de forma exclusiva",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 121.1 de la LBRL, se rigen por el régimen de municipios de gran población los municipios capitales de provincia cuya población sea superior a:",
+            "explanation": "El artículo 121.1 LBRL incluye a los municipios de más de 250.000 habitantes y a las capitales de provincia con más de 175.000.",
+            "options": [
+                {
+                    "content": "100.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "150.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "250.000 habitantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "175.000 habitantes",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los municipios cuya población supere los 250.000 habitantes se rigen por el régimen de organización de los municipios de gran población.",
+            "explanation": "Es el primer supuesto del artículo 121.1 LBRL, que no depende de ninguna decisión adicional.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para que un municipio de más de 75.000 habitantes con circunstancias económicas, sociales, históricas o culturales especiales se rija por el Título X de la LBRL, es preciso que así lo decida:",
+            "explanation": "Según el artículo 121.2 LBRL, en los supuestos de capitales y de municipios de más de 75.000 habitantes con circunstancias especiales decide la Asamblea Legislativa, a iniciativa del Ayuntamiento.",
+            "options": [
+                {
+                    "content": "El Consejo de Ministros, a propuesta de la Diputación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Pleno del Ayuntamiento por mayoría simple, sin más trámites",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Asamblea Legislativa de la Comunidad Autónoma, a iniciativa del respectivo Ayuntamiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Congreso de los Diputados mediante ley orgánica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los municipios de gran población, el Alcalde puede nombrar miembros de la Junta de Gobierno Local a personas que no ostenten la condición de concejal, siempre que su número no supere:",
+            "explanation": "El artículo 126.2 LBRL permite nombrar miembros no concejales hasta un tercio de los miembros de la Junta de Gobierno Local, excluido el Alcalde.",
+            "options": [
+                {
+                    "content": "Un tercio de sus miembros, excluido el Alcalde",
+                    "is_correct": true
+                },
+                {
+                    "content": "La mitad de sus miembros, excluido el Alcalde",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos tercios de sus miembros, incluido el Alcalde",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un cuarto de sus miembros, incluido el Alcalde",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En los municipios de gran población corresponde a la Junta de Gobierno Local la aprobación del proyecto de presupuesto, y al Pleno su aprobación definitiva.",
+            "explanation": "La Junta de Gobierno Local aprueba el proyecto de presupuesto (art. 127 LBRL) y el Pleno aprueba el presupuesto.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los municipios de gran población, los titulares de los órganos directivos serán designados, con carácter general, entre funcionarios de carrera del Estado, de las Comunidades Autónomas o de las entidades locales, pertenecientes al subgrupo:",
+            "explanation": "El artículo 130 LBRL exige funcionarios de carrera del subgrupo A1, salvo que el reglamento orgánico permita, en supuestos excepcionales, que no tengan la condición de funcionario.",
+            "options": [
+                {
+                    "content": "A2",
+                    "is_correct": false
+                },
+                {
+                    "content": "C1",
+                    "is_correct": false
+                },
+                {
+                    "content": "A1",
+                    "is_correct": true
+                },
+                {
+                    "content": "B",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué órgano existe obligatoriamente en los municipios de gran población para la defensa de los derechos de los vecinos ante la Administración municipal?",
+            "explanation": "El Título X de la LBRL crea la Comisión Especial de Sugerencias y Reclamaciones para defender los derechos de los vecinos ante la Administración municipal.",
+            "options": [
+                {
+                    "content": "La Comisión Especial de Sugerencias y Reclamaciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Comisión Especial de Cuentas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Junta de Portavoces",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comisión de Gobierno Abierto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 61 de la LBRL, la disolución de los órganos de las Corporaciones locales por gestión gravemente dañosa para los intereses generales que suponga incumplimiento de sus obligaciones constitucionales corresponde a:",
+            "explanation": "El artículo 61 LBRL atribuye la disolución al Consejo de Ministros mediante Real Decreto, con conocimiento del Consejo de Gobierno autonómico y audiencia de la entidad afectada.",
+            "options": [
+                {
+                    "content": "El Presidente del Gobierno, mediante orden ministerial",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Delegado del Gobierno en la Comunidad Autónoma",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tribunal Constitucional, a instancia del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Ministros, mediante Real Decreto y con audiencia del Ayuntamiento interesado",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

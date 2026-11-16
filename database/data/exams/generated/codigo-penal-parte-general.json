@@ -1,0 +1,782 @@
+{
+    "slug": "codigo-penal-parte-general",
+    "title": "Código Penal parte general (Policía Nacional Escala Básica)",
+    "description": "Test difícil de la parte general del Código Penal para preparar la oposición a Policía Nacional (Escala Básica). Trae delito, tentativa, autoría, eximentes, atenuantes y agravantes.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:22:53+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10 del Código Penal, son delitos las acciones y omisiones:",
+            "explanation": "El artículo 10 define el delito como acción u omisión dolosa o imprudente penada por la ley.",
+            "options": [
+                {
+                    "content": "Dolosas penadas por la ley y las imprudentes en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dolosas o imprudentes penadas por la ley",
+                    "is_correct": true
+                },
+                {
+                    "content": "Típicas y antijurídicas previstas en cualquier norma con rango de ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dolosas o imprudentes castigadas con pena grave",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5 del Código Penal, no hay pena sin:",
+            "explanation": "El artículo 5 recoge el principio de culpabilidad: no hay pena sin dolo o imprudencia.",
+            "options": [
+                {
+                    "content": "Resultado lesivo efectivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dolo directo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Peligrosidad criminal del sujeto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dolo o imprudencia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 12 del Código Penal, las acciones u omisiones imprudentes se castigarán:",
+            "explanation": "La imprudencia solo es punible en los casos expresamente previstos por la ley (sistema de numerus clausus).",
+            "options": [
+                {
+                    "content": "Cuando expresamente lo disponga la ley",
+                    "is_correct": true
+                },
+                {
+                    "content": "En todo caso, con la pena inferior en grado a la del delito doloso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo cuando causen la muerte o lesiones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando infrinjan un deber objetivo de cuidado grave",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 33 del Código Penal, ¿cuál de las siguientes penas es menos grave?",
+            "explanation": "Entre las penas menos graves figura la prisión de tres meses hasta cinco años; la de más de cinco años y la permanente revisable son graves.",
+            "options": [
+                {
+                    "content": "La prisión de más de cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "La prisión de seis meses a tres años exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "La prisión de tres meses hasta cinco años",
+                    "is_correct": true
+                },
+                {
+                    "content": "La prisión permanente revisable",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando la pena, por su extensión, pueda incluirse a la vez entre las graves y las menos graves, el delito se considerará, según el artículo 13 del Código Penal:",
+            "explanation": "En caso de concurrencia entre pena grave y menos grave, el delito se considera grave en todo caso.",
+            "options": [
+                {
+                    "content": "Menos grave, por aplicación del principio favor rei",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grave en todo caso",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lo que decida el juez o tribunal motivadamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Leve",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la comisión por omisión (art. 11 CP), señale la respuesta INCORRECTA. Los delitos que consistan en la producción de un resultado solo se entenderán cometidos por omisión cuando la no evitación equivalga a su causación y:",
+            "explanation": "El artículo 11 exige obligación legal o contractual o actuación precedente generadora de riesgo; la obligación meramente moral no basta.",
+            "options": [
+                {
+                    "content": "Exista una específica obligación legal de actuar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exista una específica obligación contractual de actuar",
+                    "is_correct": false
+                },
+                {
+                    "content": "El omitente haya creado una ocasión de riesgo mediante una acción u omisión precedente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exista una mera obligación moral o social de actuar",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 14.1 del Código Penal, el error vencible sobre un hecho constitutivo de la infracción penal:",
+            "explanation": "El error invencible excluye la responsabilidad; el vencible determina que se castigue, en su caso, como imprudente.",
+            "options": [
+                {
+                    "content": "Excluye siempre la responsabilidad criminal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se castiga como doloso con la atenuante analógica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conlleva la pena inferior en uno o dos grados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hace que la infracción sea castigada, en su caso, como imprudente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 14.3 del Código Penal, el error vencible sobre la ilicitud del hecho constitutivo de la infracción:",
+            "explanation": "El error de prohibición invencible excluye la responsabilidad; si es vencible, se aplica la pena inferior en uno o dos grados.",
+            "options": [
+                {
+                    "content": "Se castiga con la pena inferior en uno o dos grados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se castiga como imprudencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Excluye la responsabilidad criminal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se castiga con la pena inferior en un solo grado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 16.1 del Código Penal, hay tentativa cuando el sujeto practica todos o parte de los actos que objetivamente deberían producir el resultado y este no se produce por:",
+            "explanation": "La no producción del resultado debe deberse a causas ajenas a la voluntad del autor; si depende de él, se trata de desistimiento.",
+            "options": [
+                {
+                    "content": "Su arrepentimiento voluntario posterior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un error sobre el objeto del delito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Causas independientes de la voluntad del autor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Causas dependientes de la voluntad del autor",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 62 del Código Penal, a los autores de tentativa de delito se les impondrá la pena inferior en uno o dos grados a la señalada por la ley para el delito consumado, atendiendo:",
+            "explanation": "El artículo 62 fija como criterios el peligro inherente al intento y el grado de ejecución alcanzado.",
+            "options": [
+                {
+                    "content": "Al peligro inherente al intento y al grado de ejecución alcanzado",
+                    "is_correct": true
+                },
+                {
+                    "content": "A la gravedad del resultado que se pretendía y a los antecedentes del autor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivamente al número de actos de ejecución realizados",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la existencia o no de circunstancias modificativas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 17 del Código Penal, ¿en qué consiste la conspiración?",
+            "explanation": "La segunda opción define la proposición, la tercera la tentativa y la cuarta la provocación; la conspiración exige concierto y resolución de ejecutar.",
+            "options": [
+                {
+                    "content": "En que quien ha resuelto cometer un delito invita a otras personas a participar",
+                    "is_correct": false
+                },
+                {
+                    "content": "En practicar parte de los actos de ejecución sin llegar a consumar el delito",
+                    "is_correct": false
+                },
+                {
+                    "content": "En que dos o más personas se conciertan para ejecutar un delito y resuelven ejecutarlo",
+                    "is_correct": true
+                },
+                {
+                    "content": "En incitar directamente a una concurrencia de personas a cometer un delito",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA. Según el artículo 28 del Código Penal, también serán considerados autores:",
+            "explanation": "Cooperar con actos anteriores o simultáneos no necesarios es complicidad (art. 29), no autoría.",
+            "options": [
+                {
+                    "content": "Quienes inducen directamente a otro u otros a ejecutar el hecho",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quienes cooperan a su ejecución con un acto sin el cual no se habría efectuado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quienes cooperan con actos anteriores o simultáneos no necesarios para el hecho",
+                    "is_correct": true
+                },
+                {
+                    "content": "Quienes realizan el hecho por medio de otro del que se sirven como instrumento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 63 del Código Penal, a los cómplices de un delito consumado o intentado se les impondrá:",
+            "explanation": "El artículo 63 establece para los cómplices la pena inferior en grado a la señalada para los autores.",
+            "options": [
+                {
+                    "content": "La misma pena que a los autores, en su mitad inferior",
+                    "is_correct": false
+                },
+                {
+                    "content": "La pena inferior en uno o dos grados a la de los autores",
+                    "is_correct": false
+                },
+                {
+                    "content": "La pena inferior en grado a la fijada por la ley para los autores",
+                    "is_correct": true
+                },
+                {
+                    "content": "La misma pena que a los autores, salvo en los delitos graves",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 65.1 del Código Penal, las circunstancias agravantes o atenuantes que consistan en cualquier causa de naturaleza personal:",
+            "explanation": "Las circunstancias personales son incomunicables; las materiales (ejecución o medios) se aplican a quienes las conocieron (art. 65.2).",
+            "options": [
+                {
+                    "content": "Agravarán o atenuarán la responsabilidad de todos los partícipes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se aplican al autor material",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se aplican a quienes tuvieron conocimiento de ellas al cooperar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Agravarán o atenuarán la responsabilidad solo de aquellos en quienes concurran",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 19 del Código Penal, los menores de:",
+            "explanation": "Los menores de 18 años se rigen por la ley de responsabilidad penal del menor, no por el Código Penal.",
+            "options": [
+                {
+                    "content": "Dieciocho años no serán responsables criminalmente con arreglo a este Código",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dieciséis años no serán responsables criminalmente con arreglo a este Código",
+                    "is_correct": false
+                },
+                {
+                    "content": "Catorce años no serán responsables criminalmente con arreglo a este Código",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dieciocho años serán responsables solo en delitos graves",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 20.1 del Código Penal, la eximente por anomalía o alteración psíquica no se aplicará cuando el trastorno mental transitorio:",
+            "explanation": "No se considera exento el trastorno provocado para delinquir o cuya comisión se hubiera previsto o debido prever.",
+            "options": [
+                {
+                    "content": "Haya durado menos de veinticuatro horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "No haya sido diagnosticado con anterioridad a los hechos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Haya sido provocado por el sujeto con el propósito de cometer el delito o hubiera previsto o debido prever su comisión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Haya afectado solo a la capacidad de actuar conforme a la comprensión de la ilicitud",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 20.2 del Código Penal, está exento de responsabilidad criminal quien se halle en estado de intoxicación plena por alcohol, drogas u otras sustancias, siempre que:",
+            "explanation": "La intoxicación plena exime si no fue buscada para delinquir ni se previó o debió prever la comisión del delito.",
+            "options": [
+                {
+                    "content": "Sea la primera vez que las consume",
+                    "is_correct": false
+                },
+                {
+                    "content": "El consumo se haya producido en un ámbito privado",
+                    "is_correct": false
+                },
+                {
+                    "content": "No haya sido buscada con el propósito de cometer el delito ni se hubiese previsto o debido prever su comisión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un informe forense acredite una adicción grave previa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA sobre los requisitos de la legítima defensa (art. 20.4 CP):",
+            "explanation": "El Código Penal no exige la huida previa; los requisitos son agresión ilegítima, necesidad racional del medio y falta de provocación suficiente.",
+            "options": [
+                {
+                    "content": "Agresión ilegítima",
+                    "is_correct": false
+                },
+                {
+                    "content": "Necesidad racional del medio empleado para impedirla o repelerla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falta de provocación suficiente por parte del defensor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que el defensor haya agotado previamente la posibilidad de huir",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA sobre el estado de necesidad como eximente (art. 20.5 CP):",
+            "explanation": "La ley exige que el mal causado no sea mayor que el evitado, es decir, admite que sea igual; no que sea siempre inferior.",
+            "options": [
+                {
+                    "content": "Que el mal causado sea siempre inferior al que se trata de evitar",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que la situación de necesidad no haya sido provocada intencionadamente por el sujeto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que el necesitado no tenga, por su oficio o cargo, obligación de sacrificarse",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que el mal causado no sea mayor que el que se trate de evitar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes circunstancias es una causa de exención de la responsabilidad criminal según el artículo 20 del Código Penal?",
+            "explanation": "El miedo insuperable es eximente (art. 20.6); las demás opciones son atenuantes del artículo 21.",
+            "options": [
+                {
+                    "content": "Obrar por obcecación o arrebato",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obrar impulsado por miedo insuperable",
+                    "is_correct": true
+                },
+                {
+                    "content": "Confesar la infracción antes de conocer que el procedimiento se dirige contra uno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reparar el daño antes del juicio oral",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un agente de policía, en una detención legal, emplea la fuerza estrictamente necesaria y causa una lesión leve al detenido que se resiste. ¿Qué circunstancia del artículo 20 del Código Penal puede ser aplicable?",
+            "explanation": "El uso proporcionado de la fuerza en el ejercicio del cargo se ampara en la eximente de cumplimiento de un deber (art. 20.7).",
+            "options": [
+                {
+                    "content": "Estado de necesidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Miedo insuperable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Intoxicación plena",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cumplimiento de un deber o ejercicio legítimo de un derecho, oficio o cargo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 68 del Código Penal, en los casos de eximentes incompletas del artículo 21.1, los jueces o tribunales podrán imponer:",
+            "explanation": "Para las eximentes incompletas el juez puede rebajar la pena en uno o dos grados, atendiendo a las circunstancias y a la eximente.",
+            "options": [
+                {
+                    "content": "La pena inferior en uno o dos grados a la señalada por la ley, motivándolo en sentencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "La pena inferior en un solo grado en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "La pena en su mitad inferior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una medida de seguridad sustitutiva de forma obligatoria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 21 del Código Penal, es circunstancia atenuante la de actuar el culpable a causa de su:",
+            "explanation": "El artículo 21.2 exige grave adicción a las sustancias del 20.2, con relación causal con el delito.",
+            "options": [
+                {
+                    "content": "Adicción leve a bebidas alcohólicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grave adicción a bebidas alcohólicas, drogas tóxicas, estupefacientes u otras sustancias del artículo 20.2",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mera ingesta de alcohol en el momento de los hechos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Enfermedad física grave que limite su movilidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 21.4 del Código Penal, es atenuante la de haber confesado la infracción a las autoridades:",
+            "explanation": "La confesión solo atenúa si se hace antes de que el culpable conozca que el procedimiento se dirige contra él.",
+            "options": [
+                {
+                    "content": "Antes del acto del juicio oral",
+                    "is_correct": false
+                },
+                {
+                    "content": "En cualquier momento del procedimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Antes de que se dicte sentencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Antes de conocer que el procedimiento judicial se dirige contra él",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 21.5 del Código Penal, es atenuante haber procedido el culpable a reparar el daño ocasionado a la víctima, o disminuir sus efectos:",
+            "explanation": "La reparación puede hacerse en cualquier momento del procedimiento, pero antes del juicio oral.",
+            "options": [
+                {
+                    "content": "Antes de conocer que el procedimiento se dirige contra él",
+                    "is_correct": false
+                },
+                {
+                    "content": "En cualquier momento del procedimiento y con anterioridad a la celebración del acto del juicio oral",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hasta que se dicte sentencia firme",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente durante la fase de instrucción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 22.1 del Código Penal, hay alevosía cuando el culpable comete cualquiera de los delitos:",
+            "explanation": "La alevosía se limita a los delitos contra las personas; aumentar el sufrimiento es ensañamiento.",
+            "options": [
+                {
+                    "content": "Contra las personas empleando medios, modos o formas que aseguren la ejecución sin riesgo procedente de la defensa del ofendido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contra el patrimonio, aprovechando la confianza de la víctima",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contra las personas, aumentando deliberadamente el sufrimiento de la víctima",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contra la libertad, cuando actúa en grupo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 22 del Código Penal, ¿qué agravante concurre cuando se aumenta deliberada e inhumanamente el sufrimiento de la víctima, causándole padecimientos innecesarios para la ejecución del delito?",
+            "explanation": "Es la definición legal del ensañamiento (art. 22.5).",
+            "options": [
+                {
+                    "content": "Abuso de superioridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alevosía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Abuso de confianza",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ensañamiento",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 22.8 del Código Penal, hay reincidencia cuando, al delinquir, el culpable ya hubiera sido condenado ejecutoriamente por un delito:",
+            "explanation": "La reincidencia exige condena ejecutoria por delito del mismo título y de la misma naturaleza; no se computan los antecedentes cancelados.",
+            "options": [
+                {
+                    "content": "De cualquier título del Código, aunque sea de distinta naturaleza",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comprendido en el mismo título del Código, siempre que sea de la misma naturaleza",
+                    "is_correct": true
+                },
+                {
+                    "content": "Grave, aunque sea de distinto título",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comprendido en el mismo capítulo, aunque los antecedentes estén cancelados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes circunstancias NO es una agravante del artículo 22 del Código Penal:",
+            "explanation": "La obcecación o el arrebato es una atenuante (art. 21.3), no una agravante.",
+            "options": [
+                {
+                    "content": "Ejecutar el hecho mediante precio, recompensa o promesa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obrar con abuso de confianza",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obrar por obcecación, arrebato u otro estado pasional de entidad semejante",
+                    "is_correct": true
+                },
+                {
+                    "content": "Obrar con abuso de superioridad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un funcionario utiliza su condición pública para cometer el delito. ¿Qué agravante del artículo 22 del Código Penal se prevé específicamente para este supuesto?",
+            "explanation": "El artículo 22.7 recoge la agravante de prevalerse del carácter público del culpable.",
+            "options": [
+                {
+                    "content": "Disfraz",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prevalerse del carácter público que tenga el culpable",
+                    "is_correct": true
+                },
+                {
+                    "content": "Obrar con abuso de confianza",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reincidencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 66.1.1.ª del Código Penal, cuando concurra solo una circunstancia atenuante, los jueces o tribunales aplicarán la pena:",
+            "explanation": "Con una sola atenuante y sin agravantes, la pena se impone en la mitad inferior.",
+            "options": [
+                {
+                    "content": "En la mitad superior de la establecida por la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Inferior en un grado a la señalada por la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "En su extensión mínima",
+                    "is_correct": false
+                },
+                {
+                    "content": "En la mitad inferior de la que fije la ley para el delito",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La conspiración y la proposición para delinquir son punibles en todo caso, con independencia del delito de que se trate.",
+            "explanation": "Según el artículo 17.3, solo se castigan en los casos especialmente previstos por la ley.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 16.2 del Código Penal, quien desiste voluntariamente evitando la consumación queda exento de responsabilidad por el delito intentado, sin perjuicio de responder por los actos ya ejecutados si constituyen otro delito.",
+            "explanation": "Es el desistimiento activo: exime del delito intentado, pero no de otros delitos ya realizados.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El tiempo del delito se determina por el momento en que el sujeto ejecuta la acción u omite el acto debido, sin que importe el momento en que se produce el resultado.",
+            "explanation": "Es la regla del artículo 7 del Código Penal sobre el tiempo del delito.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La circunstancia mixta de parentesco del artículo 23 del Código Penal solo puede operar como agravante.",
+            "explanation": "Según su naturaleza, motivos y efectos del delito, el parentesco puede atenuar o agravar la responsabilidad.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

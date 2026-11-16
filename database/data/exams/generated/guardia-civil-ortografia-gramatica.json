@@ -1,0 +1,587 @@
+{
+    "slug": "guardia-civil-ortografia-gramatica",
+    "title": "Guardia Civil - ortografía y gramática",
+    "description": "Test de repaso de ortografía y gramática para la prueba de la Guardia Civil. Lo he hecho con ejercicios básicos de tildes, b/v, g/j, h, palabras juntas o separadas y categorías gramaticales.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:24:07+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras es aguda y lleva tilde?",
+            "explanation": "«Camión» tiene el acento en la última sílaba y termina en -n, por lo que lleva tilde. Las otras son llanas.",
+            "options": [
+                {
+                    "content": "Árbol",
+                    "is_correct": false
+                },
+                {
+                    "content": "Camión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lápiz",
+                    "is_correct": false
+                },
+                {
+                    "content": "Azúcar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras es esdrújula?",
+            "explanation": "«Teléfono» tiene el acento en la antepenúltima sílaba (te-LÉ-fo-no); las esdrújulas siempre llevan tilde.",
+            "options": [
+                {
+                    "content": "Cárcel",
+                    "is_correct": false
+                },
+                {
+                    "content": "Canción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Teléfono",
+                    "is_correct": true
+                },
+                {
+                    "content": "Difícil",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la palabra que está escrita incorrectamente en cuanto a la acentuación:",
+            "explanation": "«Lápiz» es llana y termina en -z, así que lleva tilde en la primera sílaba: lápiz.",
+            "options": [
+                {
+                    "content": "Jamás",
+                    "is_correct": false
+                },
+                {
+                    "content": "También",
+                    "is_correct": false
+                },
+                {
+                    "content": "Árbol",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lapíz",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En cuál de las siguientes oraciones está bien empleada la tilde diacrítica?",
+            "explanation": "«Té» (infusión) lleva tilde para distinguirse del pronombre «te». En las demás deberían ser «el», «tu» y «sé».",
+            "options": [
+                {
+                    "content": "Dame él libro que está sobre la mesa.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tú libro está sobre la mesa.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mi hermano no sé si vendrá.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Te invito a un té esta tarde.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras contiene un hiato y lleva tilde?",
+            "explanation": "En «país» la vocal cerrada tónica (í) va junto a una abierta (a), lo que forma un hiato que se marca con tilde.",
+            "options": [
+                {
+                    "content": "Aire",
+                    "is_correct": false
+                },
+                {
+                    "content": "Baile",
+                    "is_correct": false
+                },
+                {
+                    "content": "País",
+                    "is_correct": true
+                },
+                {
+                    "content": "Causa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué oración está correctamente escrita?",
+            "explanation": "Los interrogativos y exclamativos son tónicos y llevan tilde, también en interrogativas indirectas: «dónde», «quién», «cuánto», «qué».",
+            "options": [
+                {
+                    "content": "¿Quien ha llamado?",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dime que quieres.",
+                    "is_correct": false
+                },
+                {
+                    "content": "¿Cuanto cuesta?",
+                    "is_correct": false
+                },
+                {
+                    "content": "No sé dónde vive.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la palabra correctamente escrita:",
+            "explanation": "La palabra correcta es «envidia», con v.",
+            "options": [
+                {
+                    "content": "Embidia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Envidia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Enbidia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Imbidia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hembidia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes verbos se escribe con v?",
+            "explanation": "Los verbos acabados en -bir se escriben con b, salvo «hervir», «servir» y «vivir».",
+            "options": [
+                {
+                    "content": "Escribir",
+                    "is_correct": false
+                },
+                {
+                    "content": "Recibir",
+                    "is_correct": false
+                },
+                {
+                    "content": "Subir",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hervir",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la forma correcta del pretérito imperfecto del verbo «caminar»?",
+            "explanation": "El pretérito imperfecto de los verbos de la primera conjugación se forma con -aba, con b.",
+            "options": [
+                {
+                    "content": "Caminava",
+                    "is_correct": false
+                },
+                {
+                    "content": "Caminába",
+                    "is_correct": false
+                },
+                {
+                    "content": "Caminaba",
+                    "is_correct": true
+                },
+                {
+                    "content": "Caminavan",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras se escribe con j?",
+            "explanation": "«Viaje» se escribe con j, ya que los sustantivos acabados en -aje llevan j.",
+            "options": [
+                {
+                    "content": "Gente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ágil",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gigante",
+                    "is_correct": false
+                },
+                {
+                    "content": "Viaje",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras se escribe con g?",
+            "explanation": "«Ingeniero» se escribe con g, como las palabras que empiezan por «ingen-». Las otras se escriben con j.",
+            "options": [
+                {
+                    "content": "Mejilla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ingeniero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tejido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Viaje",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras lleva diéresis?",
+            "explanation": "La diéresis se usa en «güe» y «güi» cuando la u se pronuncia, como en «pingüino».",
+            "options": [
+                {
+                    "content": "Guerra",
+                    "is_correct": false
+                },
+                {
+                    "content": "Guitarra",
+                    "is_correct": false
+                },
+                {
+                    "content": "Águila",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pingüino",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes oraciones es correcta?",
+            "explanation": "«Echar de menos» se escribe sin h (verbo echar). «Hecho» con h es el participio de «hacer».",
+            "options": [
+                {
+                    "content": "Yo hecho de menos a mi familia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Echo de menos a mi familia.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ya he echo el informe.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hecho la basura al contenedor.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes oraciones está bien escrita?",
+            "explanation": "«Sino» es una conjunción adversativa que se usa tras una negación para contraponer; «si no» es condicional negativa.",
+            "options": [
+                {
+                    "content": "No quiero café, si no té.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Si no vienes, me iré sino.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sino estudias, suspenderás.",
+                    "is_correct": false
+                },
+                {
+                    "content": "No quiero café, sino té.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la forma correcta de este adverbio?",
+            "explanation": "«Además» se escribe en una sola palabra y con tilde, pues es una palabra llana terminada en -s.",
+            "options": [
+                {
+                    "content": "A demás",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ademas",
+                    "is_correct": false
+                },
+                {
+                    "content": "A de más",
+                    "is_correct": false
+                },
+                {
+                    "content": "Además",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la oración incorrecta desde el punto de vista gramatical:",
+            "explanation": "«Haber» con sentido de existencia es impersonal y no concuerda con el complemento: debería decirse «Había muchos testigos».",
+            "options": [
+                {
+                    "content": "Había mucha gente en la calle.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hubo varios heridos.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Habían muchos testigos.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hay pruebas suficientes.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la oración «El agente redactó rápidamente el informe», ¿qué categoría gramatical tiene «rápidamente»?",
+            "explanation": "«Rápidamente» es un adverbio de modo que modifica al verbo «redactó».",
+            "options": [
+                {
+                    "content": "Adjetivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sustantivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Preposición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adverbio",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la oración «Los agentes vigilan la frontera», la palabra «los» es:",
+            "explanation": "«Los» acompaña al sustantivo «agentes» y es un artículo determinado masculino plural.",
+            "options": [
+                {
+                    "content": "Un pronombre personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un artículo determinado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un adjetivo calificativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una preposición",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras es una preposición?",
+            "explanation": "«Hacia» es una preposición. «Aunque» y «pero» son conjunciones, y «mientras» es adverbio o conjunción.",
+            "options": [
+                {
+                    "content": "Aunque",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mientras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hacia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras es una conjunción?",
+            "explanation": "«Pero» es una conjunción adversativa. «Sobre» es preposición, «cada» determinante y «allí» adverbio.",
+            "options": [
+                {
+                    "content": "Pero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sobre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Allí",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras es un verbo en infinitivo?",
+            "explanation": "«Vigilar» es la forma de infinitivo, terminada en -ar. «Vigilado» es participio.",
+            "options": [
+                {
+                    "content": "Vigilante",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vigilancia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vigilado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vigilar",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes palabras es un adjetivo?",
+            "explanation": "«Valiente» califica a un sustantivo. «Valor» y «valentía» son sustantivos y «valientemente» es adverbio.",
+            "options": [
+                {
+                    "content": "Valor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Valentía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Valiente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Valientemente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la oración «Ella entregó el documento», ¿qué categoría gramatical tiene la palabra «ella»?",
+            "explanation": "«Ella» sustituye a un nombre y funciona como sujeto, por lo que es un pronombre personal.",
+            "options": [
+                {
+                    "content": "Pronombre personal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Artículo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adverbio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conjunción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las palabras agudas llevan tilde cuando terminan en vocal, en -n o en -s.",
+            "explanation": "Es la regla general de acentuación: «café», «camión» y «además» son agudas con tilde.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la ortografía actual de la RAE, el adverbio «solo» debe llevar siempre tilde para distinguirlo del adjetivo.",
+            "explanation": "Desde 2010 la RAE recomienda escribir «solo» sin tilde en todos los casos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la ortografía vigente, la palabra «guion» se escribe con tilde.",
+            "explanation": "«Guion» se considera monosílaba a efectos ortográficos, por lo que no lleva tilde.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

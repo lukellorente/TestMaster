@@ -1,0 +1,414 @@
+{
+    "slug": "acceso-datos-jdbc-jpa",
+    "title": "Acceso a Datos: JDBC y JPA/Hibernate",
+    "description": "Test de repaso del módulo de Acceso a Datos (DAM/DAW) sobre JDBC y JPA/Hibernate, con teoría y casos prácticos. Me ha servido para preparar el examen de este curso 2026-27.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:57:32+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué llamada permite obtener una conexión a una base de datos mediante JDBC?",
+            "explanation": "DriverManager.getConnection recibe la URL JDBC, el usuario y la contraseña y devuelve un objeto Connection.",
+            "options": [
+                {
+                    "content": "Connection.open(url, usuario, clave)",
+                    "is_correct": false
+                },
+                {
+                    "content": "DriverManager.getConnection(url, usuario, clave)",
+                    "is_correct": true
+                },
+                {
+                    "content": "new Statement(url, usuario, clave)",
+                    "is_correct": false
+                },
+                {
+                    "content": "ResultSet.connect(url, usuario, clave)",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la principal ventaja de usar PreparedStatement frente a Statement con concatenación de cadenas?",
+            "explanation": "Los parámetros con ? se envían como valores y no como parte del código SQL, lo que previene la inyección SQL.",
+            "options": [
+                {
+                    "content": "Evita la inyección SQL al tratar los parámetros como datos, además de poder precompilarse",
+                    "is_correct": true
+                },
+                {
+                    "content": "Permite ejecutar consultas sin necesidad de abrir una conexión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Devuelve siempre un ResultSet actualizable",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al recorrer un ResultSet con el bucle while (rs.______) { ... }, ¿qué método se usa para avanzar a la siguiente fila?",
+            "explanation": "ResultSet.next() desplaza el cursor a la siguiente fila y devuelve false cuando ya no quedan más.",
+            "options": [
+                {
+                    "content": "hasNext()",
+                    "is_correct": false
+                },
+                {
+                    "content": "moveNext()",
+                    "is_correct": false
+                },
+                {
+                    "content": "next()",
+                    "is_correct": true
+                },
+                {
+                    "content": "nextRow()",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Has desactivado el autocommit y una de las sentencias de la transacción falla. ¿Qué método de Connection debes invocar para deshacer los cambios pendientes?",
+            "explanation": "Connection.rollback() deshace todos los cambios realizados desde el último commit o rollback.",
+            "options": [
+                {
+                    "content": "undo()",
+                    "is_correct": false
+                },
+                {
+                    "content": "close()",
+                    "is_correct": false
+                },
+                {
+                    "content": "abort()",
+                    "is_correct": false
+                },
+                {
+                    "content": "rollback()",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado el código ps.setString(1, \"Ana\"); ps.setInt(2, 30); ¿qué indican los números 1 y 2?",
+            "explanation": "Los índices de los parámetros de un PreparedStatement empiezan en 1 y siguen el orden de aparición de los ? en la sentencia.",
+            "options": [
+                {
+                    "content": "La posición del parámetro ? en la sentencia, empezando por 1",
+                    "is_correct": false
+                },
+                {
+                    "content": "La posición del parámetro ? en la sentencia, empezando por 1 y contando de izquierda a derecha",
+                    "is_correct": true
+                },
+                {
+                    "content": "El número de filas que se van a modificar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve el método executeUpdate() de un PreparedStatement al ejecutar un UPDATE?",
+            "explanation": "executeUpdate devuelve el número de filas afectadas en sentencias INSERT, UPDATE y DELETE.",
+            "options": [
+                {
+                    "content": "Un ResultSet con las filas modificadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un boolean que indica si hubo error",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un int con el número de filas afectadas",
+                    "is_correct": true
+                },
+                {
+                    "content": "void",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene @GeneratedValue(strategy = GenerationType.IDENTITY) sobre una clave primaria?",
+            "explanation": "IDENTITY hace que sea la base de datos, con una columna autoincremental, quien genere el valor de la clave.",
+            "options": [
+                {
+                    "content": "La clave se genera delegando en una columna autoincremental de la base de datos",
+                    "is_correct": true
+                },
+                {
+                    "content": "La clave se asigna siempre a mano antes de persistir",
+                    "is_correct": false
+                },
+                {
+                    "content": "La clave se calcula a partir del hash del objeto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la clase Cliente aparece @OneToMany(mappedBy = \"cliente\") List<Pedido> pedidos. ¿Qué significa mappedBy?",
+            "explanation": "mappedBy indica el lado no propietario de la relación bidireccional; la clave foránea está en la tabla de Pedido.",
+            "options": [
+                {
+                    "content": "Que Cliente es el propietario de la clave foránea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que la relación es de uno a uno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que la lista se carga siempre de forma anticipada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que es el lado inverso y la relación se gestiona desde el atributo cliente de Pedido",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una consulta JPQL correcta?",
+            "explanation": "JPQL trabaja con entidades y sus atributos, y admite parámetros con nombre mediante la sintaxis :nombre.",
+            "options": [
+                {
+                    "content": "SELECT * FROM empleados WHERE salario > 1500",
+                    "is_correct": false
+                },
+                {
+                    "content": "SELECT e FROM Empleado e WHERE e.salario > :min",
+                    "is_correct": true
+                },
+                {
+                    "content": "FROM TABLE empleados SELECT salario > 1500",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tras ejecutar em.persist(nuevoProducto) dentro de una transacción, ¿en qué estado queda la entidad?",
+            "explanation": "persist convierte una entidad nueva en gestionada por el contexto de persistencia.",
+            "options": [
+                {
+                    "content": "Transitoria (new)",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desligada (detached)",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gestionada (managed)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Eliminada (removed)",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el tipo de carga (fetch) por defecto de una relación @OneToMany en JPA?",
+            "explanation": "Las relaciones de colección como @OneToMany y @ManyToMany son LAZY por defecto.",
+            "options": [
+                {
+                    "content": "LAZY (carga perezosa)",
+                    "is_correct": true
+                },
+                {
+                    "content": "EAGER (carga anticipada)",
+                    "is_correct": false
+                },
+                {
+                    "content": "IMMEDIATE",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En JDBC, por defecto una conexión recién obtenida tiene el autocommit activado, de modo que cada sentencia se confirma automáticamente.",
+            "explanation": "Por defecto Connection está en modo autocommit; hay que llamar a setAutoCommit(false) para agrupar sentencias en una transacción.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las consultas JPQL se escriben sobre las tablas y columnas físicas de la base de datos.",
+            "explanation": "JPQL se escribe sobre entidades y sus atributos, y el proveedor JPA lo traduce a SQL.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un atributo de una entidad anotado con @Transient se guarda en una columna de la tabla igual que los demás.",
+            "explanation": "@Transient excluye el atributo del mapeo, por lo que no se persiste.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué método de Connection, con el argumento false, desactiva el modo autocommit para iniciar una transacción manual? (escribe el nombre del método)",
+            "explanation": "setAutoCommit(false) permite agrupar varias sentencias hasta que se llame a commit() o rollback().",
+            "options": [
+                {
+                    "content": "setAutoCommit",
+                    "is_correct": true
+                },
+                {
+                    "content": "setAutoCommit(false)",
+                    "is_correct": true
+                },
+                {
+                    "content": "setAutoCommit (false)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Connection.setAutoCommit",
+                    "is_correct": true
+                },
+                {
+                    "content": "conn.setAutoCommit(false)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué anotación de JPA marca el atributo que es la clave primaria de una entidad?",
+            "explanation": "@Id identifica el atributo que actúa como clave primaria de la entidad.",
+            "options": [
+                {
+                    "content": "@Id",
+                    "is_correct": true
+                },
+                {
+                    "content": "Id",
+                    "is_correct": true
+                },
+                {
+                    "content": "la anotación @Id",
+                    "is_correct": true
+                },
+                {
+                    "content": "anotación @Id",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué significan las siglas ORM, en inglés o en español?",
+            "explanation": "ORM (Object-Relational Mapping) es la técnica que relaciona objetos del modelo con tablas de una base de datos relacional.",
+            "options": [
+                {
+                    "content": "Object-Relational Mapping",
+                    "is_correct": true
+                },
+                {
+                    "content": "Object Relational Mapping",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mapeo objeto-relacional",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mapeo objeto relacional",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mapeo Objeto-Relacional",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los recursos JDBC que se pueden cerrar automáticamente con try-with-resources (hay varias correctas).",
+            "explanation": "Connection, PreparedStatement y ResultSet implementan AutoCloseable; DriverManager es una clase con métodos estáticos que no se cierra.",
+            "options": [
+                {
+                    "content": "Connection",
+                    "is_correct": true
+                },
+                {
+                    "content": "PreparedStatement",
+                    "is_correct": true
+                },
+                {
+                    "content": "ResultSet",
+                    "is_correct": true
+                },
+                {
+                    "content": "DriverManager",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes anotaciones JPA sirven para mapear relaciones entre entidades? (hay varias correctas)",
+            "explanation": "@ManyToOne, @OneToMany y @ManyToMany definen relaciones, mientras que @Column y @Id mapean atributos simples.",
+            "options": [
+                {
+                    "content": "@ManyToOne",
+                    "is_correct": true
+                },
+                {
+                    "content": "@Column",
+                    "is_correct": false
+                },
+                {
+                    "content": "@ManyToMany",
+                    "is_correct": true
+                },
+                {
+                    "content": "@Id",
+                    "is_correct": false
+                },
+                {
+                    "content": "@OneToMany",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

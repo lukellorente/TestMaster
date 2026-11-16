@@ -1,0 +1,422 @@
+{
+    "slug": "ipe-1",
+    "title": "Itinerario Personal para la Empleabilidad I",
+    "description": "Test de repaso del módulo de Itinerario Personal para la Empleabilidad I (FP). Entran autoconocimiento, equipos, conflictos, derechos laborales básicos y PRL.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:11:57+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es el autoconocimiento en el ámbito de la orientación profesional?",
+            "explanation": "El autoconocimiento consiste en identificar las propias capacidades, intereses, valores y limitaciones para tomar decisiones profesionales.",
+            "options": [
+                {
+                    "content": "Conocer las ofertas de empleo del mercado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Identificar las propias aptitudes, intereses, valores y limitaciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Memorizar el convenio colectivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Saber cuánto cobra un compañero",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una persona disfruta ayudando a otros y trabajando en equipo, y quiere orientar su carrera según eso. ¿Qué aspecto del autoconocimiento está utilizando?",
+            "explanation": "Lo que le gusta y le motiva son sus intereses, que junto con las aptitudes y valores guían la elección profesional.",
+            "options": [
+                {
+                    "content": "Sus intereses y motivaciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Su salario bruto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su tipo de contrato",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es un itinerario formativo-profesional?",
+            "explanation": "Es el camino planificado de formación y experiencias que una persona sigue para alcanzar su objetivo profesional.",
+            "options": [
+                {
+                    "content": "Un tipo de contrato temporal",
+                    "is_correct": false
+                },
+                {
+                    "content": "El recorrido que traza una persona hasta su meta laboral",
+                    "is_correct": false
+                },
+                {
+                    "content": "El conjunto planificado de estudios y experiencias para alcanzar un objetivo profesional",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una lista de empresas que han despedido personal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un itinerario formativo personal puede revisarse y modificarse a lo largo del tiempo según cambien los intereses y las circunstancias.",
+            "explanation": "El itinerario no es rígido: se adapta a la evolución de la persona y del mercado laboral.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estas es una característica de un verdadero equipo de trabajo, frente a un simple grupo?",
+            "explanation": "En un equipo hay objetivos comunes, complementariedad de roles y responsabilidad compartida.",
+            "options": [
+                {
+                    "content": "Cada miembro trabaja por su cuenta sin coordinarse",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todos tienen exactamente la misma función",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los miembros comparten un objetivo común y sus funciones se complementan",
+                    "is_correct": true
+                },
+                {
+                    "content": "No existe comunicación entre sus miembros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las ventajas del trabajo en equipo (hay varias correctas):",
+            "explanation": "El equipo favorece la diversidad de ideas, el reparto de tareas y el aprendizaje mutuo; no elimina la necesidad de coordinación.",
+            "options": [
+                {
+                    "content": "Se aportan puntos de vista diversos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se reparte la carga de trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desaparece cualquier desacuerdo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se facilita el aprendizaje entre compañeros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la habilidad de ponerse en el lugar del otro y comprender sus sentimientos, clave para trabajar en equipo?",
+            "explanation": "La empatía es la capacidad de comprender las emociones y perspectivas de los demás.",
+            "options": [
+                {
+                    "content": "empatía",
+                    "is_correct": true
+                },
+                {
+                    "content": "la empatía",
+                    "is_correct": true
+                },
+                {
+                    "content": "Empatia",
+                    "is_correct": true
+                },
+                {
+                    "content": "empatia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dos compañeros discuten por el reparto de tareas. ¿Qué actitud ayuda más a resolver el conflicto?",
+            "explanation": "El diálogo y la escucha activa permiten buscar una solución aceptable para ambos.",
+            "options": [
+                {
+                    "content": "Ignorar el problema hasta que desaparezca",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dialogar escuchando activamente a ambas partes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Imponer la propia opinión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quejarse a otros compañeros sin hablar con los implicados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los conflictos en un equipo de trabajo siempre son negativos y no pueden aportar nada positivo.",
+            "explanation": "Bien gestionados, los conflictos pueden mejorar la comunicación y generar soluciones nuevas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué estrategia de resolución de conflictos consiste en que una tercera persona imparcial ayude a las partes a llegar a un acuerdo sin imponerlo?",
+            "explanation": "La mediación cuenta con un tercero neutral que facilita el acuerdo, pero no decide por las partes.",
+            "options": [
+                {
+                    "content": "Evitación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Imposición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sanción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué norma regula en España los derechos y deberes básicos de las personas trabajadoras por cuenta ajena?",
+            "explanation": "El Estatuto de los Trabajadores es la norma básica de la relación laboral individual.",
+            "options": [
+                {
+                    "content": "El Código Penal",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Ley de Enjuiciamiento Civil",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Estatuto de los Trabajadores",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Ley de Tráfico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el documento donde se recoge el salario, el concepto de cada pago y las deducciones que se aplican cada mes?",
+            "explanation": "La nómina (recibo de salarios) detalla devengos y deducciones.",
+            "options": [
+                {
+                    "content": "nómina",
+                    "is_correct": true
+                },
+                {
+                    "content": "la nómina",
+                    "is_correct": true
+                },
+                {
+                    "content": "nomina",
+                    "is_correct": true
+                },
+                {
+                    "content": "la nomina",
+                    "is_correct": true
+                },
+                {
+                    "content": "recibo de salarios",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El contrato de trabajo puede celebrarse por escrito o de palabra, aunque ciertos contratos deben formalizarse obligatoriamente por escrito.",
+            "explanation": "Como regla general puede ser verbal o escrito, pero algunas modalidades (por ejemplo, formación en alternancia o a tiempo parcial) exigen forma escrita.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significan las siglas PRL?",
+            "explanation": "PRL es Prevención de Riesgos Laborales, regulada por la Ley 31/1995.",
+            "options": [
+                {
+                    "content": "Protocolo de Relaciones Laborales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Plan de Retribución Laboral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Programa de Registro Laboral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prevención de Riesgos Laborales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una oficina, un trabajador pasa ocho horas al día sentado con la pantalla demasiado baja y empieza a tener dolor de cuello. ¿A qué tipo de riesgo corresponde principalmente?",
+            "explanation": "Las malas posturas y el diseño inadecuado del puesto provocan riesgos ergonómicos.",
+            "options": [
+                {
+                    "content": "Riesgo químico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Riesgo ergonómico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Riesgo biológico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se denomina el daño que sufre la persona trabajadora con ocasión o por consecuencia del trabajo que ejecuta, por ejemplo una caída en el almacén?",
+            "explanation": "Es el accidente de trabajo, que supone una lesión corporal derivada de la actividad laboral.",
+            "options": [
+                {
+                    "content": "accidente de trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "accidente laboral",
+                    "is_correct": true
+                },
+                {
+                    "content": "un accidente de trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "el accidente de trabajo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes son medidas de protección individual (EPI)? Hay varias correctas.",
+            "explanation": "Casco y guantes son equipos de protección individual; una señal de salida o la ventilación general son medidas colectivas o de señalización.",
+            "options": [
+                {
+                    "content": "Casco de seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Guantes de protección",
+                    "is_correct": true
+                },
+                {
+                    "content": "Señal de salida de emergencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gafas de protección",
+                    "is_correct": true
+                },
+                {
+                    "content": "Barandilla instalada en una plataforma",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una señal de seguridad, ¿qué significado tiene el color rojo con forma circular y una banda diagonal?",
+            "explanation": "Las señales de prohibición son circulares, con borde rojo y banda diagonal.",
+            "options": [
+                {
+                    "content": "Obligación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Advertencia de peligro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Información de salvamento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prohibición",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Ves que un compañero ha sufrido un accidente y está inconsciente. ¿Qué secuencia básica de actuación es la correcta?",
+            "explanation": "La secuencia PAS (proteger, avisar, socorrer) es la pauta básica ante un accidente.",
+            "options": [
+                {
+                    "content": "Socorrer, olvidar y marcharse",
+                    "is_correct": false
+                },
+                {
+                    "content": "Proteger, avisar y socorrer",
+                    "is_correct": true
+                },
+                {
+                    "content": "Esperar a que alguien más actúe",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mover a la víctima rápidamente sin valorar nada",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,568 @@
+{
+    "slug": "sad-seguridad",
+    "title": "SAD - seguridad, cortafuegos y VPN",
+    "description": "Test de SAD para repasar el examen de seguridad: tríada CIA, malware, iptables/nftables, DMZ, VPN, RAID, copias y alta disponibilidad. Lo he hecho con los apuntes de 2º de ASIR, a ver qué nota sacáis.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:04:40+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Un ataque de denegación de servicio distribuido (DDoS) que deja inaccesible un servidor web afecta principalmente a la propiedad de:",
+            "explanation": "Un DDoS satura el servicio y evita que los usuarios legítimos accedan a él, lo que compromete la disponibilidad.",
+            "options": [
+                {
+                    "content": "Confidencialidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Integridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Disponibilidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "No repudio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué mecanismo se utiliza habitualmente para comprobar la integridad de un fichero descargado?",
+            "explanation": "Al comparar el hash calculado con el publicado por el autor se detecta cualquier modificación del fichero.",
+            "options": [
+                {
+                    "content": "Cifrado simétrico con AES",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una función hash como SHA-256",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un cortafuegos con estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una VPN de acceso remoto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se llama el malware que cifra los ficheros del usuario y exige un pago para recuperarlos?",
+            "explanation": "El ransomware secuestra la información mediante cifrado y pide un rescate a cambio de la clave.",
+            "options": [
+                {
+                    "content": "Ransomware",
+                    "is_correct": true
+                },
+                {
+                    "content": "Spyware",
+                    "is_correct": false
+                },
+                {
+                    "content": "Rootkit",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adware",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué distingue a un gusano (worm) de un virus informático clásico?",
+            "explanation": "Los gusanos son autónomos y se replican aprovechando vulnerabilidades o servicios de red, mientras que el virus se adjunta a otros ficheros.",
+            "options": [
+                {
+                    "content": "El gusano siempre necesita la ejecución manual del usuario",
+                    "is_correct": false
+                },
+                {
+                    "content": "El gusano solo afecta a dispositivos móviles",
+                    "is_correct": false
+                },
+                {
+                    "content": "El gusano únicamente muestra publicidad no deseada",
+                    "is_correct": false
+                },
+                {
+                    "content": "El gusano se propaga por la red por sí mismo, sin necesidad de infectar un fichero anfitrión",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la tabla filter de iptables, ¿qué cadena procesa los paquetes cuyo destino es el propio equipo?",
+            "explanation": "INPUT trata el tráfico entrante dirigido al propio host; FORWARD es para el tráfico en tránsito y OUTPUT para el generado localmente.",
+            "options": [
+                {
+                    "content": "FORWARD",
+                    "is_correct": false
+                },
+                {
+                    "content": "OUTPUT",
+                    "is_correct": false
+                },
+                {
+                    "content": "INPUT",
+                    "is_correct": true
+                },
+                {
+                    "content": "PREROUTING",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene el comando «iptables -P INPUT DROP»?",
+            "explanation": "La opción -P fija la política por defecto de una cadena, que se aplica a los paquetes que no coinciden con ninguna regla.",
+            "options": [
+                {
+                    "content": "Añade al final de INPUT una regla que descarta todo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Establece la política por defecto de la cadena INPUT en descartar",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elimina la cadena INPUT",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vacía todas las reglas de la cadena INPUT",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué comando de nftables muestra todo el conjunto de reglas cargado actualmente?",
+            "explanation": "«nft list ruleset» lista todas las tablas, cadenas y reglas activas.",
+            "options": [
+                {
+                    "content": "nft list ruleset",
+                    "is_correct": true
+                },
+                {
+                    "content": "nft show all",
+                    "is_correct": false
+                },
+                {
+                    "content": "nft status",
+                    "is_correct": false
+                },
+                {
+                    "content": "nft dump rules",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es una de las ventajas de nftables frente a iptables?",
+            "explanation": "nftables ofrece un único framework y una sintaxis común, además de conjuntos y mapas para simplificar las reglas.",
+            "options": [
+                {
+                    "content": "Solo funciona con IPv6",
+                    "is_correct": false
+                },
+                {
+                    "content": "No permite definir conjuntos de direcciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Requiere una herramienta distinta para cada protocolo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Unifica en una sola herramienta la funcionalidad de iptables, ip6tables, arptables y ebtables",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una arquitectura con DMZ, ¿qué equipos se ubican normalmente en ella?",
+            "explanation": "La DMZ aloja servicios públicos aislados de la red interna para limitar el impacto si alguno resulta comprometido.",
+            "options": [
+                {
+                    "content": "Los puestos de trabajo de los empleados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los servidores que deben ser accesibles desde Internet, como el servidor web",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente la base de datos interna con datos de clientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los equipos de copia de seguridad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un servidor web situado en la DMZ ha sido comprometido. ¿Qué regla del cortafuegos habría limitado más el daño sobre la red interna?",
+            "explanation": "Impedir que la DMZ inicie conexiones hacia la LAN evita que un atacante use el servidor comprometido como trampolín.",
+            "options": [
+                {
+                    "content": "Permitir todo el tráfico de la DMZ hacia la LAN",
+                    "is_correct": false
+                },
+                {
+                    "content": "Permitir el acceso desde Internet al puerto 443 de la DMZ",
+                    "is_correct": false
+                },
+                {
+                    "content": "Denegar las conexiones iniciadas desde la DMZ hacia la LAN",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desactivar el registro de logs en el cortafuegos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué solución VPN utiliza por defecto el puerto UDP 1194?",
+            "explanation": "OpenVPN usa por defecto el puerto 1194, normalmente sobre UDP, aunque puede configurarse otro.",
+            "options": [
+                {
+                    "content": "IPsec con IKE",
+                    "is_correct": false
+                },
+                {
+                    "content": "OpenVPN",
+                    "is_correct": true
+                },
+                {
+                    "content": "SSH",
+                    "is_correct": false
+                },
+                {
+                    "content": "HTTPS",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa quiere conectar de forma permanente la red de su sede central con la de una sucursal a través de Internet. ¿Qué tipo de VPN es el adecuado?",
+            "explanation": "La VPN sitio a sitio enlaza dos redes completas mediante un túnel entre sus pasarelas, sin que los usuarios tengan que conectarse manualmente.",
+            "options": [
+                {
+                    "content": "VPN de acceso remoto (road warrior)",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una DMZ",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un balanceador de carga",
+                    "is_correct": false
+                },
+                {
+                    "content": "VPN sitio a sitio (site-to-site)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la capacidad útil de un RAID 5 formado por 4 discos de 1 TB cada uno?",
+            "explanation": "En RAID 5 se dedica al equivalente de un disco a la paridad, por lo que la capacidad es (n-1) × tamaño = 3 TB.",
+            "options": [
+                {
+                    "content": "3 TB",
+                    "is_correct": true
+                },
+                {
+                    "content": "4 TB",
+                    "is_correct": false
+                },
+                {
+                    "content": "2 TB",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 TB",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de copia de seguridad almacena únicamente los datos modificados desde la última copia completa?",
+            "explanation": "La copia diferencial guarda los cambios acumulados desde la última completa, mientras que la incremental los guarda desde la última copia de cualquier tipo.",
+            "options": [
+                {
+                    "content": "Incremental",
+                    "is_correct": false
+                },
+                {
+                    "content": "Completa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diferencial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Espejo del sistema",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un clúster de alta disponibilidad activo-pasivo, ¿qué sucede cuando falla el nodo activo?",
+            "explanation": "El mecanismo de failover hace que el nodo de reserva tome el control del servicio de forma automática, reduciendo el tiempo de inactividad.",
+            "options": [
+                {
+                    "content": "El servicio se detiene hasta que un administrador lo reinicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "El nodo pasivo asume el servicio (failover)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se reparte la carga entre todos los clientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se restauran los datos desde la última copia completa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La regla 3-2-1 de copias de seguridad recomienda tener 3 copias de los datos, en 2 tipos de soporte distintos y 1 de ellas fuera de las instalaciones.",
+            "explanation": "Es la pauta habitual para reducir el riesgo de pérdida de datos por fallo de hardware, desastre local o ransomware.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un troyano se caracteriza por replicarse automáticamente por la red sin intervención del usuario.",
+            "explanation": "Esa es la característica de un gusano; el troyano se hace pasar por software legítimo y no se replica por sí mismo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En iptables, las reglas de una cadena se evalúan en orden y, cuando un paquete coincide con una regla con acción terminal como ACCEPT o DROP, no se siguen evaluando las siguientes.",
+            "explanation": "Por eso el orden de las reglas es fundamental: la primera coincidencia con target terminal decide el destino del paquete.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un sistema RAID 1 sustituye por completo la necesidad de hacer copias de seguridad.",
+            "explanation": "El RAID protege frente al fallo de un disco, pero no frente a borrados accidentales, corrupción, ransomware o desastres.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué nivel de RAID realiza un espejo (mirroring) de los datos en dos discos? (Escribe el nombre del nivel)",
+            "explanation": "RAID 1 duplica los datos en dos o más discos, tolerando el fallo de todos menos uno.",
+            "options": [
+                {
+                    "content": "RAID 1",
+                    "is_correct": true
+                },
+                {
+                    "content": "RAID1",
+                    "is_correct": true
+                },
+                {
+                    "content": "raid 1",
+                    "is_correct": true
+                },
+                {
+                    "content": "1",
+                    "is_correct": true
+                },
+                {
+                    "content": "nivel 1",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la tabla de iptables que contiene las cadenas PREROUTING y POSTROUTING utilizadas para hacer NAT?",
+            "explanation": "La tabla nat se emplea para traducir direcciones, por ejemplo con MASQUERADE en POSTROUTING.",
+            "options": [
+                {
+                    "content": "nat",
+                    "is_correct": true
+                },
+                {
+                    "content": "tabla nat",
+                    "is_correct": true
+                },
+                {
+                    "content": "NAT",
+                    "is_correct": true
+                },
+                {
+                    "content": "la tabla nat",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué propiedad de la tríada CIA garantiza que la información solo sea accesible para las personas autorizadas?",
+            "explanation": "La confidencialidad evita la divulgación de información a quienes no tienen permiso para verla.",
+            "options": [
+                {
+                    "content": "Confidencialidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "la confidencialidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Confidentiality",
+                    "is_correct": true
+                },
+                {
+                    "content": "C",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se denomina la técnica de alta disponibilidad que reparte las peticiones entre varios servidores para evitar sobrecargas y puntos únicos de fallo?",
+            "explanation": "El balanceo de carga distribuye el tráfico entre varios nodos y permite seguir dando servicio si alguno cae.",
+            "options": [
+                {
+                    "content": "Balanceo de carga",
+                    "is_correct": true
+                },
+                {
+                    "content": "el balanceo de carga",
+                    "is_correct": true
+                },
+                {
+                    "content": "Load balancing",
+                    "is_correct": true
+                },
+                {
+                    "content": "Balanceador de carga",
+                    "is_correct": true
+                },
+                {
+                    "content": "balanceo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes medidas contribuyen a mejorar la disponibilidad de un servicio? (Hay varias respuestas correctas)",
+            "explanation": "RAID redundante, SAI y clústeres reducen las interrupciones del servicio; el cifrado y la firma digital protegen confidencialidad e integridad/autenticidad.",
+            "options": [
+                {
+                    "content": "Usar RAID 1 en los discos del servidor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Instalar un SAI (sistema de alimentación ininterrumpida)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Montar un clúster de alta disponibilidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cifrar el disco con LUKS",
+                    "is_correct": false
+                },
+                {
+                    "content": "Firmar digitalmente los documentos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes son destinos (targets) válidos de una regla de iptables? (Hay varias respuestas correctas)",
+            "explanation": "ACCEPT, DROP y REJECT son targets estándar de iptables; ALLOW y DENY no existen en esta herramienta.",
+            "options": [
+                {
+                    "content": "ACCEPT",
+                    "is_correct": true
+                },
+                {
+                    "content": "DROP",
+                    "is_correct": true
+                },
+                {
+                    "content": "REJECT",
+                    "is_correct": true
+                },
+                {
+                    "content": "ALLOW",
+                    "is_correct": false
+                },
+                {
+                    "content": "DENY",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

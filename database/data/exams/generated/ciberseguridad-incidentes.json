@@ -1,0 +1,445 @@
+{
+    "slug": "ciberseguridad-incidentes",
+    "title": "Ciberseguridad: incidentes y normativa (curso especialización)",
+    "description": "Test del curso de especialización de ciberseguridad con preguntas de incidentes, SIEM, ENS, NIS2 y forense. Lo hice para repasar antes del examen, algunas son bastante puñeteras.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:08:39+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el ciclo de vida de respuesta a incidentes del NIST (SP 800-61), ¿en qué fase se realiza la reunión de «lecciones aprendidas»?",
+            "explanation": "Las lecciones aprendidas y la mejora de procedimientos corresponden a la fase de actividad posterior al incidente, que cierra el ciclo.",
+            "options": [
+                {
+                    "content": "Preparación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Actividad posterior al incidente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contención, erradicación y recuperación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Detección y análisis",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un SIEM, ¿qué función cumple principalmente una regla de correlación?",
+            "explanation": "La correlación une eventos de varias fuentes en una ventana temporal para generar alertas, por ejemplo muchos fallos de login seguidos de un acceso correcto.",
+            "options": [
+                {
+                    "content": "Relacionar eventos de distintas fuentes para detectar patrones que individualmente pasarían desapercibidos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cifrar los logs antes de enviarlos al colector",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bloquear directamente el tráfico en el cortafuegos perimetral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comprimir los registros para ahorrar espacio de almacenamiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la diferencia principal entre un IOC (indicador de compromiso) y un IOA (indicador de ataque)?",
+            "explanation": "Los IOC son artefactos observables de un compromiso, mientras que los IOA detectan comportamientos o técnicas del atacante mientras se desarrollan.",
+            "options": [
+                {
+                    "content": "El IOC es siempre una vulnerabilidad y el IOA siempre un exploit",
+                    "is_correct": false
+                },
+                {
+                    "content": "El IOC solo se usa en Windows y el IOA solo en Linux",
+                    "is_correct": false
+                },
+                {
+                    "content": "El IOC es una evidencia de que ya ha habido compromiso (hash, IP, dominio), mientras que el IOA se centra en el comportamiento y la intención del atacante en curso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿A qué colectivo ofrece principalmente sus servicios de respuesta a incidentes el INCIBE-CERT?",
+            "explanation": "INCIBE-CERT es el CSIRT de referencia para ciudadanos y entidades privadas, mientras que el CCN-CERT se centra en el sector público y empresas de interés estratégico.",
+            "options": [
+                {
+                    "content": "Exclusivamente a los organismos de la Administración General del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente a sistemas clasificados del Ministerio de Defensa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo a empresas con más de 250 empleados",
+                    "is_correct": false
+                },
+                {
+                    "content": "A ciudadanos, empresas y entidades de derecho privado, además de operadores esenciales y de infraestructuras críticas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Directiva NIS2 (UE) 2022/2555, ¿en qué plazo debe enviarse la alerta temprana de un incidente significativo al CSIRT o autoridad competente?",
+            "explanation": "NIS2 exige alerta temprana en 24 horas, notificación del incidente en 72 horas e informe final en un mes.",
+            "options": [
+                {
+                    "content": "En 72 horas desde que se tiene conocimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "En 24 horas desde que se tiene conocimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "En 7 días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "En un mes desde que se tiene conocimiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la adquisición de evidencias, ¿cuál es el orden correcto de volatilidad, de más a menos volátil?",
+            "explanation": "Se recoge primero lo que antes se pierde: registros y caché, luego RAM y estado de red, y después el almacenamiento persistente.",
+            "options": [
+                {
+                    "content": "Registros y caché de CPU, memoria RAM, estado de la red y procesos, disco duro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Disco duro, memoria RAM, estado de la red, registros de CPU",
+                    "is_correct": false
+                },
+                {
+                    "content": "Memoria RAM, disco duro, copias de seguridad, registros de CPU",
+                    "is_correct": false
+                },
+                {
+                    "content": "Copias de seguridad, disco duro, memoria RAM, registros de CPU",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un SIEM muestra cientos de líneas como «Failed password for root from 203.0.113.5 port 22 ssh2» en pocos minutos, seguidas de «Accepted password for root from 203.0.113.5». ¿Qué hipótesis es más razonable?",
+            "explanation": "Muchos fallos seguidos de un acceso correcto desde la misma IP indican fuerza bruta exitosa, por lo que hay que tratarlo como incidente de compromiso.",
+            "options": [
+                {
+                    "content": "Una actualización automática del servidor SSH",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un escaneo de vulnerabilidades pasivo sin autenticación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un ataque de fuerza bruta contra SSH que ha tenido éxito",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un fallo de sincronización NTP",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un equipo está infectado por ransomware, pero el análisis forense posterior requerirá la memoria RAM. ¿Cuál es la mejor acción de contención inicial?",
+            "explanation": "Aislar el equipo evita la propagación y mantenerlo encendido permite capturar la RAM, que contiene evidencias volátiles.",
+            "options": [
+                {
+                    "content": "Formatear el equipo y reinstalar el sistema",
+                    "is_correct": false
+                },
+                {
+                    "content": "Apagarlo desenchufándolo de la corriente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejecutar un antivirus que borre automáticamente los ficheros sospechosos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aislarlo de la red sin apagarlo y capturar la memoria",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué norma regula actualmente el Esquema Nacional de Seguridad (ENS) en España?",
+            "explanation": "El Real Decreto 311/2022 regula el ENS y derogó el Real Decreto 3/2010. El RDL 12/2018 transpuso la Directiva NIS original.",
+            "options": [
+                {
+                    "content": "Real Decreto 3/2010, de 8 de enero, que sigue vigente sin modificaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Real Decreto 311/2022, de 3 de mayo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Real Decreto-ley 12/2018, de 7 de septiembre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley Orgánica 3/2018, de 5 de diciembre",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el objetivo principal de la cadena de custodia en un análisis forense?",
+            "explanation": "La cadena de custodia registra quién tuvo la evidencia, cuándo y cómo, para preservar su integridad y su validez como prueba.",
+            "options": [
+                {
+                    "content": "Acelerar la recuperación del servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reducir el tamaño de la imagen forense",
+                    "is_correct": false
+                },
+                {
+                    "content": "Garantizar y documentar que la evidencia no ha sido alterada desde su obtención hasta su presentación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cifrar las evidencias con la clave del analista",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué describe el marco MITRE ATT&CK?",
+            "explanation": "MITRE ATT&CK es una base de conocimiento de tácticas, técnicas y procedimientos de adversarios, útil para detección y threat hunting.",
+            "options": [
+                {
+                    "content": "Tácticas y técnicas utilizadas por los atacantes, basadas en observaciones reales",
+                    "is_correct": true
+                },
+                {
+                    "content": "El catálogo oficial de medidas de seguridad del ENS",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los plazos de notificación de incidentes en la Unión Europea",
+                    "is_correct": false
+                },
+                {
+                    "content": "El formato estándar de los logs de un SIEM",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un SIEM, ¿qué es un falso positivo?",
+            "explanation": "Un falso positivo es una alerta sobre actividad legítima; el ataque real no detectado sería un falso negativo.",
+            "options": [
+                {
+                    "content": "Un ataque real que no genera ninguna alerta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una alerta generada por actividad legítima que ha sido interpretada como maliciosa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un evento cuya marca de tiempo es incorrecta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un log cifrado que no se puede leer",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El CCN-CERT es la capacidad de respuesta a incidentes del Centro Criptológico Nacional y no depende de INCIBE.",
+            "explanation": "El CCN-CERT forma parte del Centro Criptológico Nacional (CNI), mientras que INCIBE-CERT depende de INCIBE.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El ENS es de aplicación al sector público y también a los sistemas de información de entidades privadas que prestan servicios a las administraciones públicas.",
+            "explanation": "El Real Decreto 311/2022 alcanza al sector público y a los proveedores del sector privado que prestan servicios o soluciones a las entidades públicas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un análisis forense, lo más recomendable es trabajar directamente sobre el disco original para no perder información.",
+            "explanation": "Se debe trabajar sobre una copia forense verificada con hash, usando un bloqueador de escritura para no alterar la evidencia original.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué categoría de seguridad del ENS es la más exigente (BÁSICA, MEDIA o ...)?",
+            "explanation": "El ENS define los niveles BÁSICO, MEDIO y ALTO, y las categorías de los sistemas son BÁSICA, MEDIA y ALTA.",
+            "options": [
+                {
+                    "content": "ALTA",
+                    "is_correct": true
+                },
+                {
+                    "content": "Alta",
+                    "is_correct": true
+                },
+                {
+                    "content": "categoría ALTA",
+                    "is_correct": true
+                },
+                {
+                    "content": "nivel alto",
+                    "is_correct": true
+                },
+                {
+                    "content": "ALTO",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Linux calcula el hash SHA-256 de un fichero, como una imagen forense?",
+            "explanation": "sha256sum calcula el resumen SHA-256, que permite verificar la integridad de la imagen respecto al original.",
+            "options": [
+                {
+                    "content": "sha256sum",
+                    "is_correct": true
+                },
+                {
+                    "content": "sha256sum fichero",
+                    "is_correct": true
+                },
+                {
+                    "content": "sha256sum imagen.dd",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué ID de evento de seguridad de Windows corresponde a un inicio de sesión fallido?",
+            "explanation": "El evento 4625 se registra cuando una cuenta no consigue iniciar sesión, y es clave para detectar fuerza bruta.",
+            "options": [
+                {
+                    "content": "4625",
+                    "is_correct": true
+                },
+                {
+                    "content": "Evento 4625",
+                    "is_correct": true
+                },
+                {
+                    "content": "ID 4625",
+                    "is_correct": true
+                },
+                {
+                    "content": "Event ID 4625",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los IOC (indicadores de compromiso) útiles para buscar en un SIEM. Hay varias respuestas correctas.",
+            "explanation": "Hashes, IPs y dominios maliciosos son artefactos observables de compromiso; las políticas internas y los nombres de personal no lo son.",
+            "options": [
+                {
+                    "content": "Hash SHA-256 de un malware conocido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dirección IP de un servidor de mando y control",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dominio usado en una campaña de phishing",
+                    "is_correct": true
+                },
+                {
+                    "content": "Política de caducidad de contraseñas de la empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nombre del responsable de seguridad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué buenas prácticas de adquisición forense son correctas. Hay varias respuestas correctas.",
+            "explanation": "El bloqueador, la verificación por hash y la cadena de custodia preservan la validez de la evidencia; montar el original en escritura la altera.",
+            "options": [
+                {
+                    "content": "Usar un bloqueador de escritura al clonar un disco",
+                    "is_correct": true
+                },
+                {
+                    "content": "Calcular el hash de la imagen y del original para verificar la integridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Documentar la cadena de custodia de cada evidencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Analizar directamente el disco original montado en lectura y escritura",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

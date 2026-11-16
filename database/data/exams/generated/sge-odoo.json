@@ -1,0 +1,421 @@
+{
+    "slug": "sge-odoo",
+    "title": "Sistemas de Gestión Empresarial - ERP y Odoo",
+    "description": "Test de SGE para repasar ERP, CRM y desarrollo de módulos en Odoo (modelos, vistas y ORM). Me ha servido para preparar el examen de DAM/DAW de este curso.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:59:31+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la principal característica de un sistema ERP?",
+            "explanation": "Un ERP (Enterprise Resource Planning) unifica en un único sistema y una base de datos común áreas como ventas, compras, inventario y contabilidad.",
+            "options": [
+                {
+                    "content": "Gestiona únicamente la relación con los clientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Integra en una única base de datos los procesos de las distintas áreas de la empresa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sirve solo para diseñar páginas web corporativas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es un sistema operativo para servidores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el objetivo principal de un sistema CRM?",
+            "explanation": "CRM (Customer Relationship Management) se centra en contactos, oportunidades, seguimiento comercial y fidelización de clientes.",
+            "options": [
+                {
+                    "content": "Gestionar las nóminas de los empleados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Controlar el stock del almacén",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gestionar y analizar la relación con clientes y oportunidades de venta",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué sistema gestor de bases de datos utiliza Odoo?",
+            "explanation": "Odoo está desarrollado en Python y utiliza PostgreSQL como único SGBD soportado.",
+            "options": [
+                {
+                    "content": "PostgreSQL",
+                    "is_correct": true
+                },
+                {
+                    "content": "MongoDB",
+                    "is_correct": false
+                },
+                {
+                    "content": "Oracle Database exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "SQLite",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué sirve el archivo __manifest__.py de un módulo de Odoo?",
+            "explanation": "El manifiesto es un diccionario Python con claves como name, version, depends y data que describe el módulo.",
+            "options": [
+                {
+                    "content": "Contiene los datos de la base de datos del módulo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Define el servidor web que ejecuta Odoo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Almacena las copias de seguridad del módulo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Declara los metadatos del módulo: nombre, versión, dependencias y archivos de datos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el siguiente fragmento, ¿qué indica el atributo _name?\n\nclass Libro(models.Model):\n    _name = 'biblioteca.libro'\n    _description = 'Libro'",
+            "explanation": "_name identifica el modelo en el ORM y la tabla se crea sustituyendo los puntos por guiones bajos.",
+            "options": [
+                {
+                    "content": "El nombre de la clase Python en el servidor",
+                    "is_correct": false
+                },
+                {
+                    "content": "El nombre técnico del modelo, a partir del cual se crea la tabla biblioteca_libro",
+                    "is_correct": true
+                },
+                {
+                    "content": "El título que se muestra en el menú",
+                    "is_correct": false
+                },
+                {
+                    "content": "El nombre del archivo XML de la vista",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de campo se usa para que muchos libros apunten a un único autor?",
+            "explanation": "Many2one crea una columna con la clave foránea hacia el registro relacionado, de modo que muchos registros pueden apuntar a uno.",
+            "options": [
+                {
+                    "content": "One2many",
+                    "is_correct": false
+                },
+                {
+                    "content": "Many2many",
+                    "is_correct": false
+                },
+                {
+                    "content": "Selection",
+                    "is_correct": false
+                },
+                {
+                    "content": "Many2one",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de vista muestra los registros como tarjetas, típicamente agrupadas en columnas por etapa?",
+            "explanation": "La vista kanban presenta tarjetas agrupadas en columnas, como las etapas de una oportunidad en CRM.",
+            "options": [
+                {
+                    "content": "Form",
+                    "is_correct": false
+                },
+                {
+                    "content": "Kanban",
+                    "is_correct": true
+                },
+                {
+                    "content": "Graph",
+                    "is_correct": false
+                },
+                {
+                    "content": "Search",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado un recordset llamado partner, ¿qué hace esta instrucción?\n\npartner.write({'phone': '600123456'})",
+            "explanation": "write recibe un diccionario con los valores a modificar y los guarda en los registros del recordset.",
+            "options": [
+                {
+                    "content": "Actualiza el campo phone del registro en la base de datos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Crea un nuevo contacto con ese teléfono",
+                    "is_correct": false
+                },
+                {
+                    "content": "Elimina el campo phone del modelo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Busca contactos con ese teléfono",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve la siguiente llamada?\n\nself.env['res.partner'].search([('country_id.code', '=', 'ES')])",
+            "explanation": "search recibe un dominio (lista de tuplas) y devuelve un recordset del modelo con los registros que lo cumplen.",
+            "options": [
+                {
+                    "content": "Una lista de diccionarios en formato JSON",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un único número entero con el total",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un recordset con los contactos cuyo país tiene código ES",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una cadena SQL",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué se utiliza el decorador @api.depends en un modelo?",
+            "explanation": "@api.depends se aplica al método compute de un campo calculado y lista los campos que, al modificarse, provocan su recálculo.",
+            "options": [
+                {
+                    "content": "Para indicar de qué campos depende un campo calculado y recalcularlo cuando cambien",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para declarar qué módulos necesita el manifiesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para impedir que un usuario borre registros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para definir un menú dependiente de otro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una clase define solo _inherit = 'res.partner' (sin _name) y añade un campo. ¿Qué ocurre?",
+            "explanation": "Con _inherit sin _name se aplica herencia por extensión: se modifica el propio modelo, añadiendo campos o métodos.",
+            "options": [
+                {
+                    "content": "Se crea un modelo nuevo con una tabla distinta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se produce un error porque falta _name",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se elimina el modelo res.partner original",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se amplía el modelo res.partner existente con el nuevo campo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Has modificado el código Python de un módulo ya instalado llamado biblioteca. ¿Qué opción de arranque permite actualizarlo?",
+            "explanation": "La opción -u (--update) actualiza el módulo indicado; -i sirve para instalarlo.",
+            "options": [
+                {
+                    "content": "./odoo-bin -i biblioteca",
+                    "is_correct": false
+                },
+                {
+                    "content": "./odoo-bin -u biblioteca",
+                    "is_correct": true
+                },
+                {
+                    "content": "./odoo-bin --stop biblioteca",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El ORM de Odoo permite crear, leer, modificar y borrar registros mediante objetos Python sin escribir SQL directamente.",
+            "explanation": "El ORM abstrae la base de datos: los modelos son clases Python y las operaciones CRUD se hacen con métodos como create, search, write y unlink.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Odoo, las vistas se definen mediante registros XML del modelo ir.ui.view.",
+            "explanation": "Las vistas se declaran normalmente en archivos XML dentro de un registro de ir.ui.view, que se carga desde la clave data del manifiesto.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un campo One2many crea una columna propia con clave foránea en la tabla del modelo donde se declara.",
+            "explanation": "One2many es el inverso de un Many2one y no tiene columna propia: la clave foránea está en la tabla del modelo relacionado.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué subcomando de odoo-bin genera la estructura básica de un módulo nuevo?",
+            "explanation": "odoo-bin scaffold <nombre> <directorio> crea las carpetas y archivos básicos de un módulo.",
+            "options": [
+                {
+                    "content": "scaffold",
+                    "is_correct": true
+                },
+                {
+                    "content": "odoo-bin scaffold",
+                    "is_correct": true
+                },
+                {
+                    "content": "./odoo-bin scaffold",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuál es el nombre técnico del modelo de Odoo que almacena los contactos (clientes y proveedores)?",
+            "explanation": "res.partner es el modelo de contactos y empresas, usado por ventas, compras, CRM y contabilidad.",
+            "options": [
+                {
+                    "content": "res.partner",
+                    "is_correct": true
+                },
+                {
+                    "content": "res_partner",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué decorador de la API de Odoo se usa para validar condiciones sobre campos y lanzar un ValidationError al guardar?",
+            "explanation": "@api.constrains('campo') ejecuta el método al crear o modificar el campo y permite lanzar ValidationError si no se cumple la restricción.",
+            "options": [
+                {
+                    "content": "@api.constrains",
+                    "is_correct": true
+                },
+                {
+                    "content": "api.constrains",
+                    "is_correct": true
+                },
+                {
+                    "content": "constrains",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los tipos de campo que existen en el ORM de Odoo (hay varias respuestas correctas).",
+            "explanation": "Char, Many2many y Boolean son tipos de campo de Odoo; Varchar es un tipo SQL, no un campo del ORM.",
+            "options": [
+                {
+                    "content": "fields.Char",
+                    "is_correct": true
+                },
+                {
+                    "content": "fields.Many2many",
+                    "is_correct": true
+                },
+                {
+                    "content": "fields.Boolean",
+                    "is_correct": true
+                },
+                {
+                    "content": "fields.Varchar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles son ventajas habituales de implantar un ERP? (varias respuestas correctas)",
+            "explanation": "El ERP centraliza datos y da trazabilidad, pero requiere formación y suele exigir parametrización o adaptación de procesos.",
+            "options": [
+                {
+                    "content": "Evita duplicar datos al centralizar la información",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mejora la trazabilidad de los procesos entre departamentos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elimina la necesidad de formar a los usuarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Garantiza que no haya que adaptar los procesos de la empresa",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

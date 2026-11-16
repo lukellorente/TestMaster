@@ -1,0 +1,449 @@
+{
+    "slug": "gestion-rrhh",
+    "title": "Recursos humanos y responsabilidad social corporativa",
+    "description": "Test de repaso del módulo de RRHH y RSC: reclutamiento, selección, formación, evaluación del desempeño, planes de igualdad y responsabilidad social. Me ha servido para preparar el examen de FP.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:16:40+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se denomina el proceso de atraer a candidatos potenciales y suficientes para cubrir un puesto vacante?",
+            "explanation": "El reclutamiento consiste en atraer candidatos; la selección es la fase posterior en la que se elige entre ellos.",
+            "options": [
+                {
+                    "content": "Selección de personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reclutamiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Onboarding",
+                    "is_correct": false
+                },
+                {
+                    "content": "Promoción interna",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa cubre una vacante ofreciéndola primero a sus propios trabajadores. ¿Qué tipo de reclutamiento utiliza?",
+            "explanation": "El reclutamiento interno busca candidatos entre la plantilla actual, por ejemplo mediante promoción o traslado.",
+            "options": [
+                {
+                    "content": "Reclutamiento externo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reclutamiento mediante ETT",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reclutamiento interno",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué documento describe las funciones, responsabilidades y requisitos de un puesto de trabajo?",
+            "explanation": "La descripción del puesto recoge tareas, responsabilidades y requisitos, y es la base para reclutar y seleccionar.",
+            "options": [
+                {
+                    "content": "Organigrama",
+                    "is_correct": false
+                },
+                {
+                    "content": "Currículum vitae",
+                    "is_correct": false
+                },
+                {
+                    "content": "Convenio colectivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Descripción del puesto de trabajo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una entrevista de selección, el entrevistador plantea: «Cuénteme una situación en la que resolvió un conflicto con un compañero y qué hizo exactamente». ¿Qué tipo de entrevista es?",
+            "explanation": "La entrevista por competencias pide ejemplos de conductas pasadas para predecir el comportamiento futuro.",
+            "options": [
+                {
+                    "content": "Entrevista por competencias o conductual",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entrevista libre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entrevista de salida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entrevista de estrés",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué etapa del proceso de selección sigue normalmente a la elección del candidato final?",
+            "explanation": "Tras elegir al candidato se formaliza el contrato y se realiza el plan de acogida o incorporación.",
+            "options": [
+                {
+                    "content": "Recepción de currículos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contratación y acogida del nuevo trabajador",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elaboración del perfil del puesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Evaluación del desempeño anual",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa detecta que sus comerciales no dominan el nuevo CRM y organiza un curso. ¿Qué fase previa del plan de formación ha realizado?",
+            "explanation": "El plan de formación parte de detectar las carencias entre las competencias actuales y las necesarias.",
+            "options": [
+                {
+                    "content": "Evaluación de resultados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Detección de necesidades formativas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Selección de personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Despido objetivo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el método de evaluación del desempeño en el que opinan el superior, los compañeros, los subordinados y el propio trabajador?",
+            "explanation": "La evaluación de 360 grados recoge valoraciones de varias fuentes alrededor del trabajador.",
+            "options": [
+                {
+                    "content": "Evaluación por objetivos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Evaluación de 360 grados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Escala gráfica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Observación directa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la dirección por objetivos (DPO), ¿qué se evalúa principalmente?",
+            "explanation": "La DPO fija objetivos medibles de común acuerdo y valora su consecución.",
+            "options": [
+                {
+                    "content": "La antigüedad del trabajador",
+                    "is_correct": false
+                },
+                {
+                    "content": "El grado de cumplimiento de metas previamente acordadas",
+                    "is_correct": true
+                },
+                {
+                    "content": "La personalidad del empleado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El nivel de estudios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué norma regula en España la obligación de elaborar planes de igualdad y la igualdad retributiva en las empresas, tras su desarrollo reglamentario de 2020?",
+            "explanation": "El RD 901/2020 regula los planes de igualdad y el RD 902/2020 la igualdad retributiva entre mujeres y hombres.",
+            "options": [
+                {
+                    "content": "Real Decreto 901/2020 y Real Decreto 902/2020",
+                    "is_correct": true
+                },
+                {
+                    "content": "Real Decreto 1/2000 de transparencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley 31/1995 de Prevención de Riesgos Laborales únicamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley 7/1985 de Bases de Régimen Local",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la normativa vigente en España, ¿a partir de cuántas personas trabajadoras están obligadas las empresas a elaborar un plan de igualdad?",
+            "explanation": "Desde marzo de 2022 la obligación alcanza a las empresas de 50 o más personas trabajadoras.",
+            "options": [
+                {
+                    "content": "250",
+                    "is_correct": false
+                },
+                {
+                    "content": "100",
+                    "is_correct": false
+                },
+                {
+                    "content": "50",
+                    "is_correct": true
+                },
+                {
+                    "content": "30",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué enfoque de la RSC considera a los grupos afectados por la actividad de la empresa, como empleados, clientes, proveedores y comunidad?",
+            "explanation": "Los stakeholders son todos los grupos con interés en la empresa o afectados por ella.",
+            "options": [
+                {
+                    "content": "Teoría de los stakeholders o grupos de interés",
+                    "is_correct": true
+                },
+                {
+                    "content": "Teoría del accionista exclusivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Modelo taylorista",
+                    "is_correct": false
+                },
+                {
+                    "content": "Análisis DAFO",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El concepto de «triple cuenta de resultados» en RSC se refiere a las dimensiones:",
+            "explanation": "La triple cuenta de resultados mide el desempeño económico, social y medioambiental de la empresa.",
+            "options": [
+                {
+                    "content": "Fiscal, mercantil y laboral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Económica, social y ambiental",
+                    "is_correct": true
+                },
+                {
+                    "content": "Comercial, financiera y productiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Local, nacional e internacional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa publica cada año una memoria que informa de su desempeño económico, social y ambiental. ¿Qué herramienta de RSC es?",
+            "explanation": "El informe de sostenibilidad comunica de forma transparente los impactos de la empresa y suele seguir estándares como GRI.",
+            "options": [
+                {
+                    "content": "Informe de sostenibilidad o memoria de RSC",
+                    "is_correct": true
+                },
+                {
+                    "content": "Libro de visitas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Balance de sumas y saldos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acta de la junta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La selección de personal es la fase en la que se atrae al mayor número posible de candidatos hacia la empresa.",
+            "explanation": "Eso es el reclutamiento; la selección consiste en elegir al candidato más adecuado entre los reclutados.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un plan de igualdad debe incluir un diagnóstico previo de la situación de la empresa negociado con la representación legal de las personas trabajadoras.",
+            "explanation": "El plan parte de un diagnóstico negociado en la comisión negociadora, seguido de medidas, calendario y seguimiento.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La responsabilidad social corporativa implica cumplir únicamente lo que exige la ley.",
+            "explanation": "La RSC es una integración voluntaria de preocupaciones sociales y ambientales que va más allá del mero cumplimiento legal.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el programa de acogida que facilita la integración de un nuevo empleado en la empresa? (término inglés)",
+            "explanation": "El onboarding es el proceso de acogida e integración del nuevo trabajador.",
+            "options": [
+                {
+                    "content": "onboarding",
+                    "is_correct": true
+                },
+                {
+                    "content": "Onboarding",
+                    "is_correct": true
+                },
+                {
+                    "content": "plan de onboarding",
+                    "is_correct": true
+                },
+                {
+                    "content": "proceso de onboarding",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué siglas tiene la responsabilidad social corporativa?",
+            "explanation": "RSC (o RSE, responsabilidad social empresarial) designa el compromiso voluntario de la empresa con la sociedad y el medioambiente.",
+            "options": [
+                {
+                    "content": "RSC",
+                    "is_correct": true
+                },
+                {
+                    "content": "RSE",
+                    "is_correct": true
+                },
+                {
+                    "content": "responsabilidad social corporativa",
+                    "is_correct": true
+                },
+                {
+                    "content": "la RSC",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Un caso práctico: tras la evaluación del desempeño, un trabajador recibe una charla donde se le comunican sus fortalezas y puntos de mejora. ¿Cómo se llama esta práctica?",
+            "explanation": "El feedback o retroalimentación comunica al trabajador los resultados de su evaluación para mejorar su desempeño.",
+            "options": [
+                {
+                    "content": "feedback",
+                    "is_correct": true
+                },
+                {
+                    "content": "el feedback",
+                    "is_correct": true
+                },
+                {
+                    "content": "retroalimentación",
+                    "is_correct": true
+                },
+                {
+                    "content": "entrevista de feedback",
+                    "is_correct": true
+                },
+                {
+                    "content": "entrevista de evaluación",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Señala las medidas que pueden formar parte de un plan de igualdad (hay varias correctas):",
+            "explanation": "Selección objetiva, protocolo de acoso y conciliación son materias habituales del plan; las otras dos opciones contradicen la igualdad.",
+            "options": [
+                {
+                    "content": "Procesos de selección con criterios objetivos y neutros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Protocolo contra el acoso sexual y por razón de sexo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Medidas de conciliación de la vida personal, familiar y laboral",
+                    "is_correct": true
+                },
+                {
+                    "content": "Priorizar la contratación de hombres en puestos directivos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eliminar las auditorías retributivas",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

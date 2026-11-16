@@ -1,0 +1,629 @@
+{
+    "slug": "trafico-seguridad-vial",
+    "title": "Seguridad vial: RDL 6/2015 y Reglamento General de Circulación",
+    "description": "Test de seguridad vial para el temario de Policía Nacional y Guardia Civil: texto refundido de la Ley de Tráfico y Reglamento General de Circulación. Lo hice para repasar velocidades, alcohol, puntos y sanciones antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:25:30+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el Reglamento General de Circulación, ¿cuál es el límite genérico de velocidad en vías urbanas de plataforma única de calzada y acera?",
+            "explanation": "En las vías urbanas con plataforma única de calzada y acera el límite genérico es de 20 km/h.",
+            "options": [
+                {
+                    "content": "10 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 km/h",
+                    "is_correct": true
+                },
+                {
+                    "content": "30 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "40 km/h",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Reglamento General de Circulación, ¿cuál es el límite genérico de velocidad en vías urbanas que dispongan de un único carril por sentido de circulación?",
+            "explanation": "Desde la reforma de 2021 el límite genérico en vías urbanas de un carril por sentido es de 30 km/h; el de 50 km/h queda para las de dos o más carriles por sentido.",
+            "options": [
+                {
+                    "content": "20 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "40 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 km/h",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la velocidad máxima genérica para un turismo en autopistas y autovías?",
+            "explanation": "En autopistas y autovías el límite genérico para turismos y motocicletas es de 120 km/h.",
+            "options": [
+                {
+                    "content": "100 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "110 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "120 km/h",
+                    "is_correct": true
+                },
+                {
+                    "content": "130 km/h",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la velocidad máxima genérica para un turismo en una carretera convencional con carriles de anchura inferior a la de una vía rápida y sin arcén pavimentado de al menos 1,50 metros?",
+            "explanation": "En carreteras convencionales el límite genérico para turismos es de 90 km/h; se eleva a 100 km/h solo en las que tienen arcén pavimentado de al menos 1,50 m.",
+            "options": [
+                {
+                    "content": "90 km/h",
+                    "is_correct": true
+                },
+                {
+                    "content": "80 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "100 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "70 km/h",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un turismo que circula con remolque por una autopista, ¿a qué velocidad máxima genérica puede hacerlo?",
+            "explanation": "Los turismos que arrastran remolque están limitados genéricamente a 90 km/h en autopistas y autovías.",
+            "options": [
+                {
+                    "content": "120 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "100 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "80 km/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "90 km/h",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Reglamento General de Circulación, ¿cuál es la tasa máxima de alcohol en aire espirado permitida con carácter general a los conductores de turismos?",
+            "explanation": "La tasa general es de 0,25 mg/l en aire espirado, equivalente a 0,5 g/l en sangre.",
+            "options": [
+                {
+                    "content": "0,15 mg/l",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,50 mg/l",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,60 mg/l",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,25 mg/l",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la tasa máxima de alcohol en aire espirado permitida a los conductores profesionales?",
+            "explanation": "Para profesionales y noveles la tasa es de 0,15 mg/l en aire espirado (0,3 g/l en sangre).",
+            "options": [
+                {
+                    "content": "0,15 mg/l",
+                    "is_correct": true
+                },
+                {
+                    "content": "0,10 mg/l",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,25 mg/l",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,20 mg/l",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "A efectos de la tasa de alcohol reducida, se consideran conductores noveles quienes lleven menos de un determinado tiempo desde la obtención del permiso. ¿Cuál es ese plazo?",
+            "explanation": "El Reglamento General de Circulación aplica la tasa reducida durante los dos años siguientes a la obtención del permiso.",
+            "options": [
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En las pruebas de detección alcohólica por aire espirado, si el resultado es positivo, ¿qué diferencia temporal mínima debe haber entre la primera y la segunda prueba?",
+            "explanation": "Entre la primera y la segunda prueba de contraste debe haber un intervalo mínimo de 10 minutos.",
+            "options": [
+                {
+                    "content": "Cinco minutos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince minutos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diez minutos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Treinta minutos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la conducción con presencia de drogas en el organismo, señale la respuesta correcta:",
+            "explanation": "La ley prohíbe conducir con presencia de drogas en el organismo, sin tasas mínimas, con la excepción de sustancias tomadas bajo prescripción médica y con fin terapéutico.",
+            "options": [
+                {
+                    "content": "Solo está prohibida si se superan unas tasas reglamentarias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Está prohibida si hay presencia de drogas en el organismo, salvo sustancias utilizadas bajo prescripción facultativa y con finalidad terapéutica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo está prohibida cuando se detecten signos evidentes de intoxicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo está prohibida a los conductores profesionales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el crédito inicial de puntos de un permiso o licencia de conducción de un conductor que no sea novel, según el texto refundido de la Ley sobre Tráfico?",
+            "explanation": "El titular de un permiso o licencia de conducción dispone de un crédito inicial de 12 puntos.",
+            "options": [
+                {
+                    "content": "8 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "12 puntos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el máximo de puntos que puede llegar a acumular un conductor por no haber sido sancionado con pérdida de puntos durante un tiempo determinado?",
+            "explanation": "El saldo puede incrementarse por buen comportamiento hasta un máximo de 15 puntos.",
+            "options": [
+                {
+                    "content": "14 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "16 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 puntos",
+                    "is_correct": true
+                },
+                {
+                    "content": "18 puntos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el baremo de puntos, ¿cuántos puntos se pierden por conducir utilizando manualmente dispositivos de telefonía móvil?",
+            "explanation": "Tras la reforma de 2021, el uso manual del teléfono móvil durante la conducción conlleva la pérdida de 6 puntos.",
+            "options": [
+                {
+                    "content": "3 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "4 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "2 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 puntos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos puntos se pierden por conducir con una tasa de alcohol superior a 0,50 mg/l en aire espirado?",
+            "explanation": "Superar 0,50 mg/l en aire espirado supone la pérdida de 6 puntos; entre 0,25 y 0,50 mg/l son 4 puntos.",
+            "options": [
+                {
+                    "content": "6 puntos",
+                    "is_correct": true
+                },
+                {
+                    "content": "4 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "3 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "8 puntos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el máximo de puntos que se puede recuperar mediante la realización de un curso de sensibilización y reeducación vial?",
+            "explanation": "El curso permite recuperar hasta 6 puntos, con las limitaciones de frecuencia que fija la ley.",
+            "options": [
+                {
+                    "content": "4 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "3 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "8 puntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 puntos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el texto refundido de la Ley sobre Tráfico, ¿cuál es el plazo de prescripción de las infracciones graves?",
+            "explanation": "Las infracciones graves y muy graves prescriben a los seis meses; las leves, a los tres.",
+            "options": [
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el texto refundido de la Ley sobre Tráfico, las infracciones leves prescriben:",
+            "explanation": "El plazo de prescripción de las infracciones leves es de tres meses.",
+            "options": [
+                {
+                    "content": "A los tres meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "A los seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al año",
+                    "is_correct": false
+                },
+                {
+                    "content": "A los dos meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si el denunciado paga la multa voluntariamente dentro del plazo previsto, ¿qué reducción se aplica sobre la cuantía de la sanción, y en qué plazo?",
+            "explanation": "El pago voluntario en los 20 días naturales siguientes a la notificación de la denuncia da derecho a una reducción del 50 %.",
+            "options": [
+                {
+                    "content": "30 % dentro de los 10 días naturales siguientes a la notificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 % dentro de los 20 días naturales siguientes a la notificación",
+                    "is_correct": true
+                },
+                {
+                    "content": "40 % dentro de los 15 días hábiles siguientes a la notificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 % dentro de los 30 días hábiles siguientes a la notificación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Código Penal, ¿a partir de qué tasa de alcohol en aire espirado se comete delito contra la seguridad vial por el solo hecho de conducir, con independencia de la afectación a la conducción?",
+            "explanation": "El artículo 379.2 del Código Penal castiga conducir con una tasa superior a 0,60 mg/l en aire espirado o 1,2 g/l en sangre.",
+            "options": [
+                {
+                    "content": "0,50 mg/l",
+                    "is_correct": false
+                },
+                {
+                    "content": "0,40 mg/l",
+                    "is_correct": false
+                },
+                {
+                    "content": "1,00 mg/l",
+                    "is_correct": false
+                },
+                {
+                    "content": "Más de 0,60 mg/l",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Código Penal, constituye delito conducir a una velocidad superior en la cuantía que se indica al límite permitido. Señale la respuesta correcta:",
+            "explanation": "El artículo 379.1 del Código Penal castiga superar en 60 km/h el límite en vía urbana o en 80 km/h en vía interurbana.",
+            "options": [
+                {
+                    "content": "60 km/h en vía urbana o 80 km/h en vía interurbana",
+                    "is_correct": true
+                },
+                {
+                    "content": "40 km/h en vía urbana o 60 km/h en vía interurbana",
+                    "is_correct": false
+                },
+                {
+                    "content": "80 km/h en vía urbana o 100 km/h en vía interurbana",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 km/h en vía urbana o 70 km/h en vía interurbana",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una intersección de circulación giratoria (glorieta), ¿quién tiene la prioridad de paso según el Reglamento General de Circulación?",
+            "explanation": "Con carácter general, tienen preferencia los vehículos que ya circulan por la calzada anular sobre los que pretenden acceder.",
+            "options": [
+                {
+                    "content": "Los vehículos que acceden a la glorieta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los vehículos que circulan por la glorieta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siempre el vehículo que circule por la derecha del que accede",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los vehículos de mayor tamaño",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Ante una luz amarilla fija en un semáforo para vehículos, el conductor debe:",
+            "explanation": "La luz amarilla fija obliga a parar, salvo que no pueda hacerse con seguridad suficiente.",
+            "options": [
+                {
+                    "content": "Acelerar para cruzar antes de que se ponga en rojo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Continuar siempre, pues equivale a la luz verde",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reducir la velocidad y cruzar con precaución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Detenerse, salvo que, al encenderse, el vehículo esté tan cerca que no pueda parar en condiciones de seguridad suficientes",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al adelantar a ciclistas en una carretera convencional, ¿qué distancia lateral mínima debe guardarse?",
+            "explanation": "El Reglamento General de Circulación exige dejar un margen lateral mínimo de 1,5 metros al adelantar a ciclistas, lo que permite ocupar parte del carril contrario si es preciso.",
+            "options": [
+                {
+                    "content": "1 metro",
+                    "is_correct": false
+                },
+                {
+                    "content": "2 metros",
+                    "is_correct": false
+                },
+                {
+                    "content": "1,5 metros",
+                    "is_correct": true
+                },
+                {
+                    "content": "0,5 metros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Reglamento General de Circulación, los menores de qué estatura deben utilizar, con carácter general, un sistema de retención infantil homologado adaptado a su talla y peso?",
+            "explanation": "Los menores de estatura igual o inferior a 135 cm deben usar un sistema de retención infantil homologado.",
+            "options": [
+                {
+                    "content": "Hasta 120 cm",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hasta 150 cm",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hasta 135 cm",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hasta 140 cm",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El uso del cinturón de seguridad es obligatorio también en vías urbanas, salvo en los supuestos de exención previstos reglamentariamente.",
+            "explanation": "La obligación de utilizar el cinturón rige en vías urbanas e interurbanas, con las excepciones establecidas en el Reglamento General de Circulación.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las tasas de alcohol establecidas en el Reglamento General de Circulación son también aplicables a los conductores de bicicletas.",
+            "explanation": "Las tasas rigen para todos los conductores de vehículos, y las bicicletas son vehículos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Conducir con presencia de drogas en el organismo es una infracción que no conlleva pérdida de puntos.",
+            "explanation": "Conducir con presencia de drogas es infracción muy grave y conlleva la pérdida de 6 puntos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta correcta. El texto refundido de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial fue aprobado por:",
+            "explanation": "El texto refundido se aprobó por el Real Decreto Legislativo 6/2015, de 30 de octubre; el Reglamento General de Circulación es el Real Decreto 1428/2003.",
+            "options": [
+                {
+                    "content": "Real Decreto 1428/2003, de 21 de noviembre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley Orgánica 6/2015, de 30 de octubre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Real Decreto Legislativo 6/2015, de 30 de octubre",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ley 18/2021, de 20 de diciembre",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

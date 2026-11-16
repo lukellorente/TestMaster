@@ -1,0 +1,421 @@
+{
+    "slug": "ingles-profesional-it",
+    "title": "Inglés profesional (GS) - vocabulario técnico IT",
+    "description": "Test de repaso de inglés técnico para el módulo de Inglés de Grado Superior (informática). Incluye vocabulario IT, false friends, emails formales y gramática básica.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:13:58+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "What does the word \"software\" refer to?",
+            "explanation": "Software means programs and data; the physical parts are hardware.",
+            "options": [
+                {
+                    "content": "The physical parts of a computer",
+                    "is_correct": false
+                },
+                {
+                    "content": "The programs and data that run on a computer",
+                    "is_correct": true
+                },
+                {
+                    "content": "The cables connecting a network",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Which word means «cortafuegos» in computer security?",
+            "explanation": "A firewall filters network traffic and is the English term for «cortafuegos».",
+            "options": [
+                {
+                    "content": "Firewall",
+                    "is_correct": true
+                },
+                {
+                    "content": "Backup",
+                    "is_correct": false
+                },
+                {
+                    "content": "Router",
+                    "is_correct": false
+                },
+                {
+                    "content": "Firmware",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "The Spanish word «actualmente» is a false friend. Which is its correct English translation?",
+            "explanation": "«Actualmente» is «currently»; «actually» means «en realidad».",
+            "options": [
+                {
+                    "content": "Actually",
+                    "is_correct": false
+                },
+                {
+                    "content": "Currently",
+                    "is_correct": true
+                },
+                {
+                    "content": "Finally",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exactly",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Which of these is the most appropriate way to start a formal email to someone whose name you do not know?",
+            "explanation": "\"Dear Sir or Madam\" is the standard formal greeting when the recipient is unknown.",
+            "options": [
+                {
+                    "content": "Hey guys,",
+                    "is_correct": false
+                },
+                {
+                    "content": "Yo!",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dear Sir or Madam,",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Choose the correct sentence.",
+            "explanation": "\"Server\" is singular, so it takes \"is\".",
+            "options": [
+                {
+                    "content": "The server are down.",
+                    "is_correct": false
+                },
+                {
+                    "content": "The server is down.",
+                    "is_correct": true
+                },
+                {
+                    "content": "The server be down.",
+                    "is_correct": false
+                },
+                {
+                    "content": "The server am down.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Which is the correct way to end a formal email when you started it with \"Dear Mr Smith,\"?",
+            "explanation": "\"Yours sincerely\" is used in formal emails when you know the recipient's name.",
+            "options": [
+                {
+                    "content": "See ya,",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bye bye,",
+                    "is_correct": false
+                },
+                {
+                    "content": "Yours sincerely,",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cheers mate,",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "In the sentence \"I attached the report to this email\", what does \"attached\" mean in Spanish?",
+            "explanation": "\"To attach\" means «adjuntar»; it is not related to «atacar».",
+            "options": [
+                {
+                    "content": "Atacado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adjunté",
+                    "is_correct": true
+                },
+                {
+                    "content": "Atendí",
+                    "is_correct": false
+                },
+                {
+                    "content": "Archivé",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Which device stores data permanently, even when the computer is switched off?",
+            "explanation": "A hard drive (or SSD) is non-volatile storage, unlike RAM, which loses its content without power.",
+            "options": [
+                {
+                    "content": "RAM",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hard drive",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cache",
+                    "is_correct": false
+                },
+                {
+                    "content": "Monitor",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Complete: \"We ___ a new database last week.\"",
+            "explanation": "The past simple of regular verbs ends in -ed, and \"last week\" requires the past.",
+            "options": [
+                {
+                    "content": "install",
+                    "is_correct": false
+                },
+                {
+                    "content": "installed",
+                    "is_correct": true
+                },
+                {
+                    "content": "will installed",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "What does the phrase \"to log in\" mean?",
+            "explanation": "\"Log in\" means «iniciar sesión»; the opposite is \"log out\".",
+            "options": [
+                {
+                    "content": "To enter a system using your username and password",
+                    "is_correct": true
+                },
+                {
+                    "content": "To delete a file",
+                    "is_correct": false
+                },
+                {
+                    "content": "To turn off the computer",
+                    "is_correct": false
+                },
+                {
+                    "content": "To print a document",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Which word is a false friend of the Spanish «librería» (bookshop)?",
+            "explanation": "\"Library\" means «biblioteca», not «librería». In programming, though, a \"library\" is a collection of reusable code.",
+            "options": [
+                {
+                    "content": "Bookshop",
+                    "is_correct": false
+                },
+                {
+                    "content": "Library",
+                    "is_correct": true
+                },
+                {
+                    "content": "Bookstore",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Which sentence is correct in the present continuous?",
+            "explanation": "The present continuous is formed with am/is/are + verb in -ing.",
+            "options": [
+                {
+                    "content": "She is configure the router.",
+                    "is_correct": false
+                },
+                {
+                    "content": "She configuring the router.",
+                    "is_correct": false
+                },
+                {
+                    "content": "She is configuring the router.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "\"Hardware\" refers to the programs installed on a computer.",
+            "explanation": "Hardware is the physical part of a computer; programs are software.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "The word \"embarrassed\" means «embarazada» in Spanish.",
+            "explanation": "\"Embarrassed\" means «avergonzado»; «embarazada» is \"pregnant\".",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "In a formal email, it is appropriate to write \"I look forward to hearing from you\" before the closing.",
+            "explanation": "It is a very common polite formula in formal correspondence.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "What English word means «contraseña»?",
+            "explanation": "A password is the secret word used to log in to an account.",
+            "options": [
+                {
+                    "content": "password",
+                    "is_correct": true
+                },
+                {
+                    "content": "Password",
+                    "is_correct": true
+                },
+                {
+                    "content": "the password",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "What is the English term for «copia de seguridad»?",
+            "explanation": "A backup is a copy of data kept to restore it in case of loss.",
+            "options": [
+                {
+                    "content": "backup",
+                    "is_correct": true
+                },
+                {
+                    "content": "Backup",
+                    "is_correct": true
+                },
+                {
+                    "content": "back-up",
+                    "is_correct": true
+                },
+                {
+                    "content": "back up",
+                    "is_correct": true
+                },
+                {
+                    "content": "a backup",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Complete the formal email phrase: \"Please find ___ the document you requested.\" (one word)",
+            "explanation": "\"Please find attached\" is a standard formula to introduce an attachment.",
+            "options": [
+                {
+                    "content": "attached",
+                    "is_correct": true
+                },
+                {
+                    "content": "Attached",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Select ALL the words that are related to computer networks (there are several correct answers).",
+            "explanation": "Routers, switches and bandwidth belong to networking; a keyboard is an input device and a spreadsheet is an application.",
+            "options": [
+                {
+                    "content": "Router",
+                    "is_correct": true
+                },
+                {
+                    "content": "Switch",
+                    "is_correct": true
+                },
+                {
+                    "content": "Bandwidth",
+                    "is_correct": true
+                },
+                {
+                    "content": "Keyboard",
+                    "is_correct": false
+                },
+                {
+                    "content": "Spreadsheet",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Which of these is the best subject line for a formal email asking for technical support?",
+            "explanation": "A good subject line is clear, specific and polite.",
+            "options": [
+                {
+                    "content": "Request for technical support: printer not working",
+                    "is_correct": true
+                },
+                {
+                    "content": "HELP!!!",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hi",
+                    "is_correct": false
+                },
+                {
+                    "content": "Problem lol",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

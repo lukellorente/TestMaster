@@ -1,0 +1,441 @@
+{
+    "slug": "java-ficheros",
+    "title": "Programación - ficheros y streams en Java",
+    "description": "Test de repaso de ficheros, streams, serialización y API Stream en Java para el módulo de Programación de DAM/DAW. Me sirvió para preparar el examen, espero que os ayude.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:48:06+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué clase de java.io se utiliza habitualmente para leer un fichero de texto línea a línea con el método readLine()?",
+            "explanation": "BufferedReader envuelve a un Reader (por ejemplo FileReader) y ofrece readLine() para leer líneas completas.",
+            "options": [
+                {
+                    "content": "FileInputStream",
+                    "is_correct": false
+                },
+                {
+                    "content": "BufferedReader",
+                    "is_correct": true
+                },
+                {
+                    "content": "DataInputStream",
+                    "is_correct": false
+                },
+                {
+                    "content": "PrintWriter",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la superclase abstracta de todos los flujos de entrada de bytes en java.io?",
+            "explanation": "InputStream es la clase abstracta base de los flujos de bytes de entrada; Reader es la base de los flujos de caracteres.",
+            "options": [
+                {
+                    "content": "Reader",
+                    "is_correct": false
+                },
+                {
+                    "content": "InputStreamReader",
+                    "is_correct": false
+                },
+                {
+                    "content": "InputStream",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para poder declarar un recurso en un bloque try-with-resources, su clase debe implementar:",
+            "explanation": "try-with-resources exige que el recurso implemente java.lang.AutoCloseable; Closeable ya lo extiende.",
+            "options": [
+                {
+                    "content": "Serializable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Closeable o AutoCloseable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comparable",
+                    "is_correct": false
+                },
+                {
+                    "content": "AutoCloseable (directamente o a través de Closeable)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve el método Files.readAllLines(Path)?",
+            "explanation": "readAllLines carga todo el fichero en memoria y devuelve una List<String>, una por línea.",
+            "options": [
+                {
+                    "content": "Un String con todo el contenido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un Stream<String> perezoso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un array de bytes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un List<String> con las líneas del fichero",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué clase actúa de puente entre un flujo de bytes y un flujo de caracteres permitiendo indicar el juego de caracteres?",
+            "explanation": "InputStreamReader convierte bytes en caracteres usando el Charset indicado, por ejemplo StandardCharsets.UTF_8.",
+            "options": [
+                {
+                    "content": "InputStreamReader",
+                    "is_correct": true
+                },
+                {
+                    "content": "BufferedInputStream",
+                    "is_correct": false
+                },
+                {
+                    "content": "ObjectInputStream",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una clase Usuario implementa Serializable y tiene el atributo «private transient String clave;». ¿Qué ocurre con ese atributo al serializar un objeto?",
+            "explanation": "Los campos transient se excluyen de la serialización por defecto y al deserializar toman el valor por defecto de su tipo (null para referencias).",
+            "options": [
+                {
+                    "content": "Se guarda cifrado",
+                    "is_correct": false
+                },
+                {
+                    "content": "No se guarda y al deserializar vale null",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se lanza NotSerializableException",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se guarda igual que el resto de atributos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene crear el flujo con «new FileWriter(\"log.txt\", true)»?",
+            "explanation": "El segundo parámetro booleano es append: si es true, se escribe al final del contenido existente.",
+            "options": [
+                {
+                    "content": "Abre el fichero en modo lectura",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sobrescribe el fichero si existe",
+                    "is_correct": false
+                },
+                {
+                    "content": "Añade el texto al final del fichero sin borrar su contenido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lanza una excepción si el fichero existe",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué mostrará este código?\n\nList<Integer> r = Stream.of(1,2,3,4,5,6)\n    .filter(n -> n % 2 == 0)\n    .map(n -> n * n)\n    .collect(Collectors.toList());\nSystem.out.println(r);",
+            "explanation": "filter deja 2, 4 y 6, y map los eleva al cuadrado: 4, 16 y 36.",
+            "options": [
+                {
+                    "content": "[1, 9, 25]",
+                    "is_correct": false
+                },
+                {
+                    "content": "[2, 4, 6]",
+                    "is_correct": false
+                },
+                {
+                    "content": "[4, 16, 36]",
+                    "is_correct": true
+                },
+                {
+                    "content": "[1, 4, 9, 16, 25, 36]",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado «Path p = Paths.get(\"/datos/informes/enero.txt\");», ¿qué devuelve p.getFileName()?",
+            "explanation": "getFileName() devuelve un Path con el último elemento de la ruta, es decir, enero.txt; getParent() daría /datos/informes.",
+            "options": [
+                {
+                    "content": "/datos/informes",
+                    "is_correct": false
+                },
+                {
+                    "content": "enero.txt",
+                    "is_correct": true
+                },
+                {
+                    "content": "/datos/informes/enero.txt",
+                    "is_correct": false
+                },
+                {
+                    "content": "informes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estas operaciones de Stream es intermedia (devuelve otro Stream y es perezosa)?",
+            "explanation": "sorted es intermedia; forEach, count y collect son operaciones terminales que disparan el procesamiento.",
+            "options": [
+                {
+                    "content": "forEach",
+                    "is_correct": false
+                },
+                {
+                    "content": "count",
+                    "is_correct": false
+                },
+                {
+                    "content": "collect",
+                    "is_correct": false
+                },
+                {
+                    "content": "sorted",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si se ejecuta Files.copy(origen, destino) y el fichero destino ya existe, sin indicar ninguna opción, ¿qué ocurre?",
+            "explanation": "Por defecto Files.copy falla si el destino existe; para sobrescribir hay que pasar StandardCopyOption.REPLACE_EXISTING.",
+            "options": [
+                {
+                    "content": "Se lanza FileAlreadyExistsException",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se sobrescribe el destino",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se añade el contenido al final del destino",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se intenta escribir con ObjectOutputStream.writeObject() un objeto cuya clase no implementa Serializable. ¿Qué sucede?",
+            "explanation": "Solo pueden serializarse objetos de clases que implementan Serializable; en caso contrario se lanza java.io.NotSerializableException.",
+            "options": [
+                {
+                    "content": "Se escribe solo la parte de los atributos públicos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se lanza NotSerializableException",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se escribe el objeto con todos los atributos a null",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se lanza FileNotFoundException",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un Stream de Java puede reutilizarse para ejecutar una segunda operación terminal después de haber ejecutado una primera.",
+            "explanation": "Un stream solo se puede consumir una vez; reutilizarlo lanza IllegalStateException.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los atributos static de una clase no se incluyen en la serialización por defecto de sus objetos.",
+            "explanation": "Los campos static pertenecen a la clase y no al estado del objeto, por lo que no se serializan.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Files.delete(path) lanza NoSuchFileException si el fichero indicado no existe, mientras que Files.deleteIfExists(path) devuelve false.",
+            "explanation": "delete exige que el fichero exista; deleteIfExists devuelve un boolean indicando si se ha borrado.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué interfaz marcadora de java.io debe implementar una clase para que sus objetos puedan serializarse?",
+            "explanation": "La interfaz java.io.Serializable no tiene métodos y marca a la clase como serializable.",
+            "options": [
+                {
+                    "content": "Serializable",
+                    "is_correct": true
+                },
+                {
+                    "content": "java.io.Serializable",
+                    "is_correct": true
+                },
+                {
+                    "content": "la interfaz Serializable",
+                    "is_correct": true
+                },
+                {
+                    "content": "interfaz Serializable",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué método estático de la clase Files (desde Java 11) lee todo el contenido de un fichero de texto y lo devuelve como un único String?",
+            "explanation": "Files.readString(Path) se incorporó en Java 11 y devuelve el contenido completo como String.",
+            "options": [
+                {
+                    "content": "readString",
+                    "is_correct": true
+                },
+                {
+                    "content": "Files.readString",
+                    "is_correct": true
+                },
+                {
+                    "content": "readString()",
+                    "is_correct": true
+                },
+                {
+                    "content": "Files.readString()",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué operación terminal de Stream devuelve el número de elementos del flujo como un long?",
+            "explanation": "count() es una operación terminal que devuelve la cantidad de elementos del stream como long.",
+            "options": [
+                {
+                    "content": "count",
+                    "is_correct": true
+                },
+                {
+                    "content": "count()",
+                    "is_correct": true
+                },
+                {
+                    "content": "Stream.count()",
+                    "is_correct": true
+                },
+                {
+                    "content": "el método count",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las operaciones de la API Stream que son intermedias (hay varias respuestas correctas).",
+            "explanation": "filter, map y sorted devuelven un Stream y son perezosas; forEach y collect son terminales.",
+            "options": [
+                {
+                    "content": "filter",
+                    "is_correct": true
+                },
+                {
+                    "content": "map",
+                    "is_correct": true
+                },
+                {
+                    "content": "forEach",
+                    "is_correct": false
+                },
+                {
+                    "content": "collect",
+                    "is_correct": false
+                },
+                {
+                    "content": "sorted",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes tipos pertenecen al paquete java.nio.file? (hay varias respuestas correctas)",
+            "explanation": "Path, Files y StandardOpenOption están en java.nio.file; FileReader y ObjectOutputStream pertenecen a java.io.",
+            "options": [
+                {
+                    "content": "Path",
+                    "is_correct": true
+                },
+                {
+                    "content": "Files",
+                    "is_correct": true
+                },
+                {
+                    "content": "FileReader",
+                    "is_correct": false
+                },
+                {
+                    "content": "StandardOpenOption",
+                    "is_correct": true
+                },
+                {
+                    "content": "ObjectOutputStream",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

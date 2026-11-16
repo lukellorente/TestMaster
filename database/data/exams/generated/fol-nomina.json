@@ -1,0 +1,465 @@
+{
+    "slug": "fol-nomina",
+    "title": "FOL Tema 5: la nómina",
+    "description": "Test del tema 5 de FOL sobre la nómina para repasar antes del examen: recibo de salarios, devengos, bases de cotización, deducciones y SMI. Revisado con la normativa de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:10:36+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuáles son las partes principales de un recibo individual de salarios?",
+            "explanation": "El recibo recoge los datos identificativos, los devengos, las deducciones (con las bases de cotización) y el líquido total a percibir.",
+            "options": [
+                {
+                    "content": "Solo el salario base y el líquido a percibir",
+                    "is_correct": false
+                },
+                {
+                    "content": "Encabezamiento (datos de empresa y trabajador), devengos, deducciones y líquido a percibir",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contrato, finiquito y convenio colectivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Datos de la empresa, horario y vacaciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes conceptos es una percepción salarial?",
+            "explanation": "El salario base es la retribución fija por unidad de tiempo u obra. Los demás conceptos son percepciones no salariales.",
+            "options": [
+                {
+                    "content": "El salario base",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las indemnizaciones por traslado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los suplidos por gastos pagados por el trabajador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las prestaciones e indemnizaciones de la Seguridad Social",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Estatuto de los Trabajadores, ¿cuántas gratificaciones extraordinarias tiene derecho a percibir el trabajador al año como mínimo?",
+            "explanation": "Se tiene derecho a dos gratificaciones extraordinarias al año: una con motivo de Navidad y otra en el mes que fije el convenio o el pacto. Pueden prorratearse.",
+            "options": [
+                {
+                    "content": "Ninguna, dependen siempre de la voluntad de la empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un trabajador cobra: salario base 1.300 €, plus de convenio 200 €, prorrata de pagas extras 250 € y dietas exentas de cotización 60 €. ¿Cuál es su base de cotización por contingencias comunes?",
+            "explanation": "Se suman los conceptos salariales, incluida la prorrata de pagas extras (1.300 + 200 + 250 = 1.750 €). Las dietas exentas no entran en la base.",
+            "options": [
+                {
+                    "content": "1.500 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.810 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.750 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.550 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con una base de cotización por contingencias comunes de 2.000 € y un tipo del 4,70 % a cargo del trabajador, ¿qué aportación se le descuenta en la nómina?",
+            "explanation": "2.000 × 0,047 = 94 €. Es la aportación del trabajador por contingencias comunes.",
+            "options": [
+                {
+                    "content": "9,40 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "94,00 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "31,00 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "188,00 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La retención a cuenta del IRPF que aparece en la nómina:",
+            "explanation": "El porcentaje depende de la situación personal y familiar y de las retribuciones previstas. La empresa lo retiene y lo ingresa en la Agencia Tributaria.",
+            "options": [
+                {
+                    "content": "Es una cotización a la Seguridad Social que paga la empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es un porcentaje fijo igual para todos los trabajadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se aplica a las pagas extraordinarias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es un porcentaje variable que se aplica sobre el devengo sujeto y que la empresa ingresa en Hacienda",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se calcula el líquido total a percibir?",
+            "explanation": "El líquido es lo que cobra realmente el trabajador: devengos menos deducciones.",
+            "options": [
+                {
+                    "content": "Total devengado menos total a deducir",
+                    "is_correct": true
+                },
+                {
+                    "content": "Total devengado más total a deducir",
+                    "is_correct": false
+                },
+                {
+                    "content": "Base de cotización menos salario base",
+                    "is_correct": false
+                },
+                {
+                    "content": "Total a deducir menos las cuotas de la empresa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con la cuota de Seguridad Social que corresponde al trabajador, ¿quién la ingresa en la Tesorería General de la Seguridad Social?",
+            "explanation": "La empresa es la responsable del ingreso de la totalidad de las cuotas, descontando de la nómina la aportación del trabajador.",
+            "options": [
+                {
+                    "content": "El trabajador, mensualmente y por su cuenta",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Agencia Tributaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "La empresa, que retiene la parte del trabajador y la ingresa junto con la suya",
+                    "is_correct": true
+                },
+                {
+                    "content": "El SEPE",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Quién fija el salario mínimo interprofesional (SMI)?",
+            "explanation": "El SMI lo fija el Gobierno cada año tras consultar a las organizaciones sindicales y empresariales más representativas, según el Estatuto de los Trabajadores.",
+            "options": [
+                {
+                    "content": "Cada convenio colectivo de forma independiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Gobierno, previa consulta con los sindicatos y las asociaciones empresariales más representativas",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Seguridad Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las comunidades autónomas, cada una para su territorio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El plus de nocturnidad que cobra un vigilante que trabaja de noche es un complemento salarial:",
+            "explanation": "La nocturnidad, la toxicidad o la penosidad dependen de las condiciones del puesto, por lo que son complementos de puesto de trabajo.",
+            "options": [
+                {
+                    "content": "Personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "De calidad o cantidad de trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "De vencimiento periódico superior al mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "De puesto de trabajo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empleada cobra 21.000 € brutos anuales en 14 pagas. Si se prorratean las pagas extras, ¿cuánto cobra cada mes bruto (12 mensualidades)?",
+            "explanation": "Con la prorrata se reparte el total anual entre 12 meses: 21.000 / 12 = 1.750 €. Con 14 pagas serían 1.500 €.",
+            "options": [
+                {
+                    "content": "1.750 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.500 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.400 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "2.100 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué limitaciones tienen las bases de cotización a la Seguridad Social?",
+            "explanation": "Cada año se fijan un tope máximo y unas bases mínimas, que dependen del grupo de cotización de la categoría profesional.",
+            "options": [
+                {
+                    "content": "No tienen ninguna limitación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo tienen un tope mínimo igual al SMI",
+                    "is_correct": false
+                },
+                {
+                    "content": "Están sujetas a un tope máximo y a unas bases mínimas según el grupo de cotización",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo tienen un tope máximo común a todos los grupos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El salario mínimo interprofesional es inembargable.",
+            "explanation": "El Estatuto de los Trabajadores establece que el SMI es inembargable. Solo se pueden embargar las cuantías que lo superen, según la escala legal.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La cotización a la Seguridad Social a cargo de la empresa aparece como una deducción en la nómina del trabajador.",
+            "explanation": "La aportación de la empresa no se descuenta al trabajador. Suele figurar solo como información, en el apartado de aportación empresarial.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las deducciones de un recibo de salarios incluyen las aportaciones del trabajador a la Seguridad Social y la retención del IRPF.",
+            "explanation": "Son las dos deducciones principales de la nómina, junto con otras posibles, como anticipos o embargos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el apartado del recibo de salarios donde se recogen todas las percepciones del trabajador, salariales y no salariales?",
+            "explanation": "El apartado de devengos reúne las percepciones salariales y las no salariales del periodo de liquidación.",
+            "options": [
+                {
+                    "content": "Devengos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los devengos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Total devengado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Devengo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿En qué ley se regula el salario mínimo interprofesional, además de en su real decreto anual? (Indica el nombre o las siglas)",
+            "explanation": "El Estatuto de los Trabajadores regula el SMI en su artículo 27, y cada año el Gobierno lo fija por real decreto.",
+            "options": [
+                {
+                    "content": "Estatuto de los Trabajadores",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Estatuto de los Trabajadores",
+                    "is_correct": true
+                },
+                {
+                    "content": "ET",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ley del Estatuto de los Trabajadores",
+                    "is_correct": true
+                },
+                {
+                    "content": "TRLET",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se denomina la cantidad final que cobra el trabajador una vez restadas las deducciones?",
+            "explanation": "El líquido total a percibir es la diferencia entre el total devengado y el total de deducciones.",
+            "options": [
+                {
+                    "content": "Líquido a percibir",
+                    "is_correct": true
+                },
+                {
+                    "content": "Líquido total a percibir",
+                    "is_correct": true
+                },
+                {
+                    "content": "Líquido",
+                    "is_correct": true
+                },
+                {
+                    "content": "El líquido a percibir",
+                    "is_correct": true
+                },
+                {
+                    "content": "Salario neto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Neto",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes conceptos son percepciones NO salariales? (Hay varias correctas)",
+            "explanation": "Las indemnizaciones por traslado, los suplidos y las dietas son compensaciones de gastos, no salario. El plus de antigüedad y el salario base sí son salariales.",
+            "options": [
+                {
+                    "content": "Las indemnizaciones por traslado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los suplidos",
+                    "is_correct": true
+                },
+                {
+                    "content": "El plus de antigüedad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las dietas de viaje dentro de los límites exentos",
+                    "is_correct": true
+                },
+                {
+                    "content": "El salario base",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Qué conceptos figuran como deducciones del trabajador en la nómina? (Hay varias correctas)",
+            "explanation": "El trabajador soporta sus aportaciones a la Seguridad Social y la retención del IRPF. La cotización por accidentes de trabajo es de la empresa y la prorrata de pagas es un devengo.",
+            "options": [
+                {
+                    "content": "Aportación por contingencias comunes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cotización de la empresa por accidentes de trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aportación por desempleo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Retención a cuenta del IRPF",
+                    "is_correct": true
+                },
+                {
+                    "content": "Prorrata de pagas extras",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

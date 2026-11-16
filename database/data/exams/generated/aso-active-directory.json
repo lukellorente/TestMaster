@@ -1,0 +1,528 @@
+{
+    "slug": "aso-active-directory",
+    "title": "ASO: Active Directory y GPO",
+    "description": "Test de repaso de ASO sobre Active Directory, GPO, LDAP y Samba para el módulo de ASIR. Lo he preparado para practicar antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:03:06+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el límite de seguridad máximo en Active Directory?",
+            "explanation": "El bosque es el límite de seguridad de AD: define la frontera de la configuración, el esquema y la administración.",
+            "options": [
+                {
+                    "content": "La unidad organizativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "El bosque",
+                    "is_correct": true
+                },
+                {
+                    "content": "El sitio",
+                    "is_correct": false
+                },
+                {
+                    "content": "El grupo global",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué puerto TCP/UDP usa por defecto LDAP sin cifrar?",
+            "explanation": "LDAP usa el puerto 389; LDAPS usa el 636.",
+            "options": [
+                {
+                    "content": "636",
+                    "is_correct": false
+                },
+                {
+                    "content": "389",
+                    "is_correct": true
+                },
+                {
+                    "content": "445",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un administrador quiere delegar el control para restablecer contraseñas a un grupo de soporte solo sobre los usuarios de un departamento. ¿Cuál es la mejor estructura?",
+            "explanation": "Las UO permiten delegar la administración de forma granular sin conceder permisos excesivos.",
+            "options": [
+                {
+                    "content": "Crear una UO para el departamento y delegar el control sobre ella",
+                    "is_correct": true
+                },
+                {
+                    "content": "Crear un dominio nuevo para el departamento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Añadir al grupo de soporte a Administradores del dominio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crear un bosque nuevo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las GPO se pueden aplicar directamente a un grupo de seguridad como si fuera un contenedor, vinculándolas al grupo.",
+            "explanation": "Las GPO se vinculan a sitios, dominios o UO, no a grupos; con el filtrado de seguridad se puede limitar su aplicación a un grupo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué orden se procesan las directivas de grupo (de la primera a la última)?",
+            "explanation": "El orden es LSDOU: local, sitio, dominio y UO; la última aplicada prevalece en caso de conflicto.",
+            "options": [
+                {
+                    "content": "Dominio, sitio, UO, local",
+                    "is_correct": false
+                },
+                {
+                    "content": "UO, dominio, sitio, local",
+                    "is_correct": false
+                },
+                {
+                    "content": "Local, sitio, dominio, UO",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sitio, local, UO, dominio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando fuerza la actualización inmediata de las directivas de grupo en un cliente Windows?",
+            "explanation": "gpupdate /force reaplica todas las directivas, hayan cambiado o no.",
+            "options": [
+                {
+                    "content": "gpupdate /force",
+                    "is_correct": true
+                },
+                {
+                    "content": "gpupdate",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ámbito de grupo puede contener cuentas de cualquier dominio del bosque y recibir permisos en cualquier dominio del bosque?",
+            "explanation": "Los grupos universales admiten miembros de todo el bosque y se replican en el catálogo global.",
+            "options": [
+                {
+                    "content": "Local de dominio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Universal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Global",
+                    "is_correct": false
+                },
+                {
+                    "content": "Local del equipo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los roles FSMO que existen a nivel de bosque (hay varias correctas):",
+            "explanation": "Maestro de esquema y de nombres de dominio son únicos por bosque; los otros tres son únicos por dominio.",
+            "options": [
+                {
+                    "content": "Maestro de esquema",
+                    "is_correct": true
+                },
+                {
+                    "content": "Maestro de nombres de dominio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Emulador PDC",
+                    "is_correct": false
+                },
+                {
+                    "content": "Maestro de infraestructura",
+                    "is_correct": false
+                },
+                {
+                    "content": "Maestro RID",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué herramienta gráfica se usa para crear y editar GPO en un dominio?",
+            "explanation": "La consola GPMC (gpmc.msc) permite crear, vincular y modelar GPO.",
+            "options": [
+                {
+                    "content": "Administración de directivas de grupo (GPMC)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Administrador de tareas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Visor de eventos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Windows muestra las GPO aplicadas a un usuario y equipo?",
+            "explanation": "gpresult muestra el conjunto resultante de directivas aplicadas; /r da el resumen.",
+            "options": [
+                {
+                    "content": "gpresult",
+                    "is_correct": true
+                },
+                {
+                    "content": "gpresult /r",
+                    "is_correct": true
+                },
+                {
+                    "content": "gpresult /R",
+                    "is_correct": true
+                },
+                {
+                    "content": "gpresult /h",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el DN «CN=Ana Ruiz,OU=Ventas,DC=empresa,DC=local», ¿qué representa OU=Ventas?",
+            "explanation": "OU indica la unidad organizativa que contiene al objeto; DC=empresa,DC=local es el dominio.",
+            "options": [
+                {
+                    "content": "El dominio",
+                    "is_correct": false
+                },
+                {
+                    "content": "El grupo al que pertenece Ana",
+                    "is_correct": false
+                },
+                {
+                    "content": "El contenedor (unidad organizativa) donde está el objeto",
+                    "is_correct": true
+                },
+                {
+                    "content": "El servidor LDAP",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una relación de confianza transitiva entre dominios de un mismo bosque se crea automáticamente.",
+            "explanation": "Entre dominios del mismo bosque existen confianzas bidireccionales y transitivas creadas automáticamente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué servicio DNS resulta imprescindible para que los clientes localicen los controladores de dominio de AD?",
+            "explanation": "Los clientes localizan los DC mediante registros SRV registrados por el servicio Netlogon.",
+            "options": [
+                {
+                    "content": "Registros SRV",
+                    "is_correct": true
+                },
+                {
+                    "content": "Registros MX",
+                    "is_correct": false
+                },
+                {
+                    "content": "Registros PTR únicamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Registros TXT",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué comando de PowerShell crea una UO llamada Ventas en el dominio empresa.local?",
+            "explanation": "New-ADOrganizationalUnit crea unidades organizativas indicando su ruta con -Path.",
+            "options": [
+                {
+                    "content": "New-ADUser -Name Ventas",
+                    "is_correct": false
+                },
+                {
+                    "content": "New-ADOrganizationalUnit -Name Ventas -Path \"DC=empresa,DC=local\"",
+                    "is_correct": true
+                },
+                {
+                    "content": "New-ADGroup -Name Ventas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Add-ADOU Ventas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la carpeta compartida de un controlador de dominio que replica los scripts de inicio de sesión y las plantillas de GPO?",
+            "explanation": "SYSVOL almacena la parte de archivos de las GPO y los scripts, y se replica entre controladores.",
+            "options": [
+                {
+                    "content": "SYSVOL",
+                    "is_correct": true
+                },
+                {
+                    "content": "sysvol",
+                    "is_correct": true
+                },
+                {
+                    "content": "carpeta SYSVOL",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué opción de una GPO impide que las GPO de nivel inferior sobrescriban sus valores?",
+            "explanation": "Una GPO marcada como exigida se aplica aunque haya bloqueo de herencia en niveles inferiores.",
+            "options": [
+                {
+                    "content": "Bloquear herencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exigido (Enforced)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Filtrado WMI",
+                    "is_correct": false
+                },
+                {
+                    "content": "Procesamiento de bucle invertido",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué elementos pueden configurarse mediante GPO (hay varias correctas):",
+            "explanation": "Las GPO gestionan seguridad, redirección de carpetas y scripts, pero no modifican el esquema de AD.",
+            "options": [
+                {
+                    "content": "Directivas de contraseñas del dominio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Redirección de carpetas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Scripts de inicio de sesión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Creación del esquema de AD",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué paquete/servicio de Samba 4 permite que un servidor Linux actúe como controlador de dominio de Active Directory?",
+            "explanation": "En Samba 4 el servicio samba-ad-dc ofrece las funciones de controlador de dominio compatible con AD.",
+            "options": [
+                {
+                    "content": "smbd con rol de servidor independiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "samba-ad-dc",
+                    "is_correct": true
+                },
+                {
+                    "content": "nmbd únicamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué herramienta de línea de comandos se usa en Samba 4 para aprovisionar un dominio (por ejemplo, «domain provision»)?",
+            "explanation": "samba-tool domain provision crea un nuevo dominio AD en Samba 4.",
+            "options": [
+                {
+                    "content": "samba-tool",
+                    "is_correct": true
+                },
+                {
+                    "content": "samba tool",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué protocolo de autenticación usa AD por defecto para autenticar usuarios de dominio?",
+            "explanation": "Active Directory usa Kerberos como protocolo por defecto, con NTLM como alternativa.",
+            "options": [
+                {
+                    "content": "Kerberos",
+                    "is_correct": true
+                },
+                {
+                    "content": "RADIUS",
+                    "is_correct": false
+                },
+                {
+                    "content": "TACACS+",
+                    "is_correct": false
+                },
+                {
+                    "content": "CHAP",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El catálogo global contiene una réplica parcial de los objetos de todos los dominios del bosque.",
+            "explanation": "El catálogo global almacena un subconjunto de atributos de todos los objetos del bosque y agiliza las búsquedas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con el comando ldapsearch -x -H ldap://dc1 -b \"dc=empresa,dc=local\" \"(uid=ana)\", ¿qué indica la opción -b?",
+            "explanation": "-b establece el base DN desde el que comienza la búsqueda; -x indica autenticación simple.",
+            "options": [
+                {
+                    "content": "El usuario de enlace",
+                    "is_correct": false
+                },
+                {
+                    "content": "El DN base de la búsqueda",
+                    "is_correct": true
+                },
+                {
+                    "content": "El atributo devuelto",
+                    "is_correct": false
+                },
+                {
+                    "content": "El puerto del servidor",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un equipo Windows no puede unirse al dominio y el error indica que no se encuentra el controlador. ¿Qué primera comprobación es más adecuada?",
+            "explanation": "La localización del DC depende del DNS; un DNS erróneo es la causa más habitual.",
+            "options": [
+                {
+                    "content": "Reinstalar el cliente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verificar que el DNS del cliente apunta al DNS del dominio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cambiar el nivel funcional del bosque",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crear una nueva GPO",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué estrategia recomienda Microsoft para asignar permisos sobre una carpeta compartida usando grupos (modelo AGDLP)?",
+            "explanation": "AGDLP: Accounts, Global, Domain Local, Permissions; simplifica la administración de permisos.",
+            "options": [
+                {
+                    "content": "Cuentas en grupos globales, estos en grupos locales de dominio y permisos al grupo local",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuentas directamente con permisos en la carpeta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grupos universales con permisos a cada usuario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todos los usuarios en el grupo Administradores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué puerto usa LDAP sobre SSL (LDAPS) por defecto?",
+            "explanation": "LDAPS escucha por defecto en el puerto 636.",
+            "options": [
+                {
+                    "content": "636",
+                    "is_correct": true
+                },
+                {
+                    "content": "puerto 636",
+                    "is_correct": true
+                },
+                {
+                    "content": "TCP 636",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,656 @@
+{
+    "slug": "celador-funciones",
+    "title": "Celador: funciones y movilización de pacientes",
+    "description": "Test fácil para repasar las funciones del celador y la movilización de pacientes: quirófano, UCI, mortuorio y urgencias. Ideal para practicar antes del examen de oposiciones.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:14:45+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una función propia del celador?",
+            "explanation": "El celador es personal de gestión y servicios que realiza traslados de pacientes, documentación y material; no desempeña funciones asistenciales sanitarias como medicar o curar.",
+            "options": [
+                {
+                    "content": "Administrar medicación por vía intravenosa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Trasladar enfermos, documentación y material dentro del centro sanitario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Realizar curas de heridas quirúrgicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Interpretar pruebas diagnósticas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre las funciones del celador:",
+            "explanation": "La prescripción de tratamientos es competencia del personal facultativo, nunca del celador.",
+            "options": [
+                {
+                    "content": "Ayudar a movilizar a pacientes que no pueden hacerlo por sí mismos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Colaborar con el personal sanitario cuando se le requiera",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vigilar las puertas y accesos de su zona de trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prescribir el tratamiento a los pacientes encamados",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El celador pertenece al grupo de personal:",
+            "explanation": "El celador forma parte del personal de gestión y servicios de las instituciones sanitarias.",
+            "options": [
+                {
+                    "content": "Facultativo sanitario",
+                    "is_correct": false
+                },
+                {
+                    "content": "De enfermería",
+                    "is_correct": false
+                },
+                {
+                    "content": "De gestión y servicios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Técnico superior sanitario",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para trasladar a un paciente en camilla, lo más adecuado es:",
+            "explanation": "Habitualmente se traslada con los pies por delante, con barandillas subidas y a velocidad prudente para garantizar la seguridad del paciente.",
+            "options": [
+                {
+                    "content": "Moverlo siempre con la cabeza hacia delante en el sentido de la marcha",
+                    "is_correct": false
+                },
+                {
+                    "content": "Trasladarlo con los pies por delante, salvo en el ascensor si procede, cuidando su seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dejarlo sin barandillas para mayor comodidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Empujar la camilla a la máxima velocidad posible",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Antes de mover a un paciente encamado, el celador debe:",
+            "explanation": "Informar al paciente y pedir su colaboración es una norma básica en cualquier movilización.",
+            "options": [
+                {
+                    "content": "Explicarle lo que se va a hacer y pedir su colaboración si es posible",
+                    "is_correct": true
+                },
+                {
+                    "content": "Moverlo sin avisar para no alterarlo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Esperar a que firme un consentimiento escrito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Retirarle siempre la medicación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para evitar lesiones lumbares al levantar peso, el celador debe:",
+            "explanation": "La correcta mecánica corporal exige espalda recta, piernas flexionadas y carga pegada al cuerpo.",
+            "options": [
+                {
+                    "content": "Flexionar la espalda manteniendo las rodillas rectas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mantener la espalda recta, flexionar las rodillas y acercar la carga al cuerpo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Girar el tronco mientras levanta la carga",
+                    "is_correct": false
+                },
+                {
+                    "content": "Levantar la carga con los brazos totalmente extendidos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué posición se usa habitualmente para trasladar a un paciente inconsciente que respira y no tiene sospecha de lesión medular?",
+            "explanation": "La posición lateral de seguridad mantiene la vía aérea libre en pacientes inconscientes que respiran.",
+            "options": [
+                {
+                    "content": "Sentado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Decúbito prono",
+                    "is_correct": false
+                },
+                {
+                    "content": "Posición lateral de seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Trendelenburg invertida",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En caso de sospecha de lesión medular, el celador debe:",
+            "explanation": "Ante sospecha de lesión medular se moviliza en bloque y alineado para no agravar la lesión.",
+            "options": [
+                {
+                    "content": "Sentar al paciente rápidamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Girarlo bruscamente para explorarlo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hacerlo caminar para comprobar su movilidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mover al paciente en bloque, manteniendo alineados cabeza, cuello y tronco",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una posición anatómica en la que el paciente está tumbado boca arriba?",
+            "explanation": "En decúbito supino el paciente está tumbado sobre la espalda, boca arriba.",
+            "options": [
+                {
+                    "content": "Decúbito supino",
+                    "is_correct": true
+                },
+                {
+                    "content": "Decúbito prono",
+                    "is_correct": false
+                },
+                {
+                    "content": "Decúbito lateral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Genupectoral",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la posición de decúbito prono, el paciente está:",
+            "explanation": "Decúbito prono significa tumbado boca abajo.",
+            "options": [
+                {
+                    "content": "Tumbado boca arriba",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tumbado boca abajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tumbado de lado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sentado con las piernas elevadas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la posición de Fowler el paciente se encuentra:",
+            "explanation": "En Fowler el cabecero de la cama se eleva y el paciente queda semisentado.",
+            "options": [
+                {
+                    "content": "Con la cabeza más baja que los pies",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tumbado boca abajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Semisentado, con el cabecero elevado",
+                    "is_correct": true
+                },
+                {
+                    "content": "De rodillas con el pecho apoyado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la zona de quirófano, el celador debe respetar especialmente:",
+            "explanation": "En el área quirúrgica es obligatorio cumplir las normas de asepsia y usar vestimenta específica.",
+            "options": [
+                {
+                    "content": "Las normas de asepsia y la vestimenta adecuada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entrar con la ropa de calle",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mantener las puertas siempre abiertas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tocar el instrumental estéril para ordenarlo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al trasladar a un paciente desde la planta al quirófano, el celador debe comprobar que:",
+            "explanation": "El paciente debe ir acompañado de su documentación clínica; además se retiran joyas y prótesis según el protocolo.",
+            "options": [
+                {
+                    "content": "El paciente lleva su historia clínica y la documentación necesaria",
+                    "is_correct": true
+                },
+                {
+                    "content": "El paciente lleva puestas todas sus joyas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El paciente conserva las prótesis dentales en la boca",
+                    "is_correct": false
+                },
+                {
+                    "content": "El paciente ha comido recientemente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es indiferente la documentación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tras una intervención, el celador colabora en:",
+            "explanation": "El celador colabora en el traslado del paciente tras la cirugía, sin realizar actos sanitarios.",
+            "options": [
+                {
+                    "content": "El traslado del paciente a la sala de reanimación o despertar",
+                    "is_correct": true
+                },
+                {
+                    "content": "La realización de la anestesia",
+                    "is_correct": false
+                },
+                {
+                    "content": "La suturas de la herida",
+                    "is_correct": false
+                },
+                {
+                    "content": "La interpretación del informe anatomopatológico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el área quirúrgica, el paso entre zonas (sucia, limpia y estéril) debe hacerse:",
+            "explanation": "Los circuitos y normas del bloque quirúrgico evitan la contaminación.",
+            "options": [
+                {
+                    "content": "Sin ninguna restricción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siguiendo los circuitos establecidos y las normas de higiene",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo por la puerta principal con ropa de calle",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sin cambiar calzado ni gorro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La UCI es la unidad destinada a:",
+            "explanation": "UCI significa Unidad de Cuidados Intensivos, para pacientes críticos potencialmente recuperables.",
+            "options": [
+                {
+                    "content": "Pacientes con patologías leves que no requieren vigilancia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consultas externas programadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pacientes críticos que requieren vigilancia y cuidados continuos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Rehabilitación ambulatoria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al trasladar a un paciente de UCI conectado a monitor y respirador, el celador debe:",
+            "explanation": "El traslado de pacientes críticos lo dirige el personal sanitario; el celador colabora cuidando vías, cables y tubos.",
+            "options": [
+                {
+                    "content": "Desconectar todos los equipos para facilitar el traslado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Colaborar bajo la supervisión del personal sanitario, cuidando vías y dispositivos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Manipular él mismo los parámetros del respirador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Trasladarlo sin acompañamiento sanitario",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a las visitas en la UCI, el celador debe:",
+            "explanation": "El acceso a la UCI está regulado para proteger a los pacientes, y el celador colabora en su cumplimiento.",
+            "options": [
+                {
+                    "content": "Permitir el acceso libre de cualquier persona",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cumplir y hacer cumplir las normas de acceso establecidas en la unidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cobrar una tasa de entrada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Facilitar el acceso solo con ropa de calle sin ninguna protección",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el servicio de urgencias, la prioridad en la atención se establece mediante:",
+            "explanation": "El triaje clasifica a los pacientes según gravedad y urgencia.",
+            "options": [
+                {
+                    "content": "El orden de llegada exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El triaje, según la gravedad del paciente",
+                    "is_correct": true
+                },
+                {
+                    "content": "La edad del paciente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El sorteo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En urgencias, ante la llegada de una ambulancia con un paciente grave, el celador debe:",
+            "explanation": "En urgencias el celador colabora con rapidez en el traslado del paciente al área indicada.",
+            "options": [
+                {
+                    "content": "Esperar a que el paciente baje por sí mismo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ir a su descanso y esperar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ayudar de inmediato en el traslado del paciente al área de atención",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pedir la documentación en administración antes de moverlo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a los pacientes agitados o agresivos en urgencias, el celador puede:",
+            "explanation": "La contención se indica por el personal sanitario, y el celador colabora siguiendo sus instrucciones.",
+            "options": [
+                {
+                    "content": "Colaborar en su contención solo siguiendo las indicaciones del personal sanitario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Decidir por sí solo aplicar una contención mecánica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Administrar un sedante",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ignorar la situación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una de las funciones del celador en el mortuorio es:",
+            "explanation": "El celador traslada el cadáver siguiendo el protocolo; la certificación y la autopsia corresponden a médicos.",
+            "options": [
+                {
+                    "content": "Realizar la autopsia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Certificar la defunción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Trasladar el cadáver al mortuorio con el debido respeto y la documentación correspondiente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entregar el cadáver a cualquier persona que lo solicite",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Antes de trasladar un cadáver al mortuorio, este debe estar:",
+            "explanation": "El cadáver debe estar identificado y preparado según el protocolo, preservando la dignidad y la intimidad.",
+            "options": [
+                {
+                    "content": "Identificado y preparado por el personal sanitario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sin identificación para preservar su intimidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cubierto con la ropa de cama usada",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la vista de otros pacientes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el traslado de un cadáver dentro del hospital, lo adecuado es:",
+            "explanation": "Se debe actuar con discreción y respeto, usando circuitos que eviten el contacto con otros pacientes y familiares.",
+            "options": [
+                {
+                    "content": "Hacerlo con discreción y evitando zonas con presencia de pacientes y familiares",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cruzar la sala de espera para ir más rápido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar una camilla sin cubrir",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dejarlo en el pasillo hasta que alguien lo recoja",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para mover a un paciente de la cama a la camilla, la técnica más segura cuando no colabora es:",
+            "explanation": "Se emplean sábana de arrastre o tabla de transferencia con varios profesionales para proteger al paciente y al personal.",
+            "options": [
+                {
+                    "content": "Tirar de sus brazos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar una sábana o dispositivo de transferencia con ayuda de varias personas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cargarlo a hombros una sola persona",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dejar que se arrastre solo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Antes de desplazar una silla de ruedas con un paciente, el celador debe:",
+            "explanation": "Para moverla se liberan los frenos, y los pies deben ir apoyados en los reposapiés para evitar lesiones; los frenos se ponen al detenerse.",
+            "options": [
+                {
+                    "content": "Quitar los frenos y subir los reposapiés",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comprobar que los frenos están quitados para el desplazamiento y que los pies del paciente están apoyados en los reposapiés",
+                    "is_correct": true
+                },
+                {
+                    "content": "Inclinar a la persona hacia delante",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mover la silla sin avisar al paciente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El celador puede administrar medicación a los pacientes si el médico no está presente.",
+            "explanation": "La administración de medicación es una función sanitaria que no corresponde al celador.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El celador debe respetar la confidencialidad de los datos de los pacientes a los que tenga acceso por su trabajo.",
+            "explanation": "Todo el personal de los centros sanitarios está obligado a guardar secreto sobre la información de los pacientes.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Al movilizar a un paciente, el celador debe utilizar los frenos de camas y camillas para evitar desplazamientos accidentales.",
+            "explanation": "Frenar camas y camillas durante la transferencia es una medida básica de seguridad.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

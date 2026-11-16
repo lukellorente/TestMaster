@@ -1,0 +1,528 @@
+{
+    "slug": "sri-dns-dhcp-web",
+    "title": "SRI - DNS, DHCP y servidores web",
+    "description": "Test de repaso de SRI sobre DNS, DHCP, HTTP, FTP y correo para el módulo de ASIR/SMR. Me ha venido genial para preparar el examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:02:37+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de registro DNS asocia un nombre de host con una dirección IPv4?",
+            "explanation": "El registro A resuelve un nombre a una IPv4; AAAA lo hace para IPv6.",
+            "options": [
+                {
+                    "content": "A",
+                    "is_correct": true
+                },
+                {
+                    "content": "AAAA",
+                    "is_correct": false
+                },
+                {
+                    "content": "CNAME",
+                    "is_correct": false
+                },
+                {
+                    "content": "PTR",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué registro DNS indica los servidores de correo responsables de un dominio?",
+            "explanation": "El registro MX (Mail Exchanger) indica los servidores de correo del dominio, con una prioridad.",
+            "options": [
+                {
+                    "content": "NS",
+                    "is_correct": false
+                },
+                {
+                    "content": "TXT",
+                    "is_correct": false
+                },
+                {
+                    "content": "MX",
+                    "is_correct": true
+                },
+                {
+                    "content": "SOA",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué registro se utiliza en una zona de resolución inversa?",
+            "explanation": "El registro PTR asocia una dirección IP con un nombre, y se define en zonas como in-addr.arpa.",
+            "options": [
+                {
+                    "content": "CNAME",
+                    "is_correct": false
+                },
+                {
+                    "content": "SRV",
+                    "is_correct": false
+                },
+                {
+                    "content": "A",
+                    "is_correct": false
+                },
+                {
+                    "content": "PTR",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una zona DNS, ¿qué registro define el servidor primario, el número de serie y los tiempos de refresco de la zona?",
+            "explanation": "El registro SOA (Start of Authority) contiene el servidor primario, el contacto, el serial y los temporizadores de la zona.",
+            "options": [
+                {
+                    "content": "SOA",
+                    "is_correct": true
+                },
+                {
+                    "content": "NS",
+                    "is_correct": false
+                },
+                {
+                    "content": "MX",
+                    "is_correct": false
+                },
+                {
+                    "content": "CNAME",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué puerto y protocolo usa por defecto una consulta DNS normal?",
+            "explanation": "Las consultas DNS habituales usan UDP 53; TCP 53 se usa en transferencias de zona o respuestas grandes.",
+            "options": [
+                {
+                    "content": "TCP 53 siempre",
+                    "is_correct": false
+                },
+                {
+                    "content": "UDP 53",
+                    "is_correct": true
+                },
+                {
+                    "content": "UDP 67",
+                    "is_correct": false
+                },
+                {
+                    "content": "TCP 853 siempre",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un servidor DNS que, al recibir una consulta, pregunta a los servidores raíz, TLD y autoritativos hasta obtener la respuesta realiza una resolución...",
+            "explanation": "El resolutor recursivo hace todo el recorrido por la jerarquía DNS en nombre del cliente.",
+            "options": [
+                {
+                    "content": "inversa",
+                    "is_correct": false
+                },
+                {
+                    "content": "estática",
+                    "is_correct": false
+                },
+                {
+                    "content": "recursiva",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué comando de Linux permite consultar el registro MX del dominio ejemplo.es?",
+            "explanation": "dig seguido del nombre y el tipo de registro consulta ese tipo concreto.",
+            "options": [
+                {
+                    "content": "dig ejemplo.es MX",
+                    "is_correct": true
+                },
+                {
+                    "content": "ping -t MX ejemplo.es",
+                    "is_correct": false
+                },
+                {
+                    "content": "ip route ejemplo.es MX",
+                    "is_correct": false
+                },
+                {
+                    "content": "netstat -mx ejemplo.es",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el proceso DORA de DHCP, ¿cuál es el orden correcto de los mensajes?",
+            "explanation": "DORA: Discover, Offer, Request, Acknowledge.",
+            "options": [
+                {
+                    "content": "Discover, Request, Offer, Acknowledge",
+                    "is_correct": false
+                },
+                {
+                    "content": "Offer, Discover, Acknowledge, Request",
+                    "is_correct": false
+                },
+                {
+                    "content": "Discover, Offer, Request, Acknowledge",
+                    "is_correct": true
+                },
+                {
+                    "content": "Request, Discover, Offer, Acknowledge",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué puertos UDP utilizan el servidor y el cliente DHCP en IPv4?",
+            "explanation": "El servidor DHCP escucha en UDP 67 y el cliente en UDP 68.",
+            "options": [
+                {
+                    "content": "Servidor 68, cliente 67",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servidor 53, cliente 67",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servidor 67, cliente 68",
+                    "is_correct": true
+                },
+                {
+                    "content": "Servidor 69, cliente 68",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un cliente DHCP envía el mensaje DHCPDISCOVER. ¿A qué dirección de destino lo envía?",
+            "explanation": "El cliente aún no tiene IP ni conoce al servidor, por lo que usa broadcast, con origen 0.0.0.0.",
+            "options": [
+                {
+                    "content": "Broadcast 255.255.255.255",
+                    "is_correct": true
+                },
+                {
+                    "content": "Al gateway por unicast",
+                    "is_correct": false
+                },
+                {
+                    "content": "A 127.0.0.1",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un servidor ISC DHCP, ¿qué configuración permite asignar siempre la misma IP a un equipo concreto?",
+            "explanation": "Una reserva (host con hardware ethernet y fixed-address) vincula la MAC a una IP fija.",
+            "options": [
+                {
+                    "content": "Una exclusión de rango",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una reserva por dirección MAC",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un registro PTR",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un relé DHCP",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué función tiene un agente de retransmisión (DHCP relay)?",
+            "explanation": "El relay reenvía los broadcasts DHCP como unicast a un servidor situado en otra red.",
+            "options": [
+                {
+                    "content": "Cifrar las concesiones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolver nombres de dominio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reenviar peticiones DHCP entre subredes distintas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Asignar direcciones IP estáticas a los routers",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué código de estado HTTP indica que el recurso solicitado no existe?",
+            "explanation": "404 Not Found indica que el recurso no se encuentra en el servidor.",
+            "options": [
+                {
+                    "content": "403",
+                    "is_correct": false
+                },
+                {
+                    "content": "500",
+                    "is_correct": false
+                },
+                {
+                    "content": "301",
+                    "is_correct": false
+                },
+                {
+                    "content": "404",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Apache, ¿qué directiva define los sitios virtuales basados en nombre?",
+            "explanation": "El bloque VirtualHost junto con ServerName permite alojar varios sitios en una misma IP y puerto.",
+            "options": [
+                {
+                    "content": "<VirtualHost>",
+                    "is_correct": true
+                },
+                {
+                    "content": "<Directory>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<Files>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<IfModule>",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el modo activo de FTP, ¿desde qué puerto del servidor se inicia por defecto la conexión de datos?",
+            "explanation": "En modo activo el servidor abre la conexión de datos desde el puerto 20 hacia el cliente.",
+            "options": [
+                {
+                    "content": "21",
+                    "is_correct": false
+                },
+                {
+                    "content": "20",
+                    "is_correct": true
+                },
+                {
+                    "content": "22",
+                    "is_correct": false
+                },
+                {
+                    "content": "25",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué protocolo se emplea para enviar correo desde un cliente a un servidor y entre servidores?",
+            "explanation": "SMTP se encarga del envío y transferencia de correo; POP3 e IMAP son para su recepción.",
+            "options": [
+                {
+                    "content": "IMAP",
+                    "is_correct": false
+                },
+                {
+                    "content": "POP3",
+                    "is_correct": false
+                },
+                {
+                    "content": "SMTP",
+                    "is_correct": true
+                },
+                {
+                    "content": "SNMP",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El protocolo POP3, en su uso habitual, descarga los mensajes al cliente, mientras que IMAP mantiene los mensajes en el servidor.",
+            "explanation": "IMAP gestiona los buzones en el servidor y permite sincronizar varios dispositivos; POP3 suele descargar y borrar.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un registro CNAME puede apuntar directamente a una dirección IP.",
+            "explanation": "Un CNAME apunta a otro nombre (alias), no a una IP; para eso se usa un registro A o AAAA.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La transferencia de zona entre un servidor DNS primario y uno secundario suele realizarse por TCP.",
+            "explanation": "Las transferencias de zona (AXFR/IXFR) usan TCP puerto 53.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Windows muestra la concesión DHCP actual (IP, servidor DHCP, caducidad) de las interfaces de red?",
+            "explanation": "ipconfig /all muestra, entre otros datos, el servidor DHCP y las fechas de obtención y caducidad de la concesión.",
+            "options": [
+                {
+                    "content": "ipconfig /all",
+                    "is_correct": true
+                },
+                {
+                    "content": "ipconfig/all",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué puerto TCP usa por defecto HTTPS?",
+            "explanation": "HTTPS usa el puerto 443 por defecto, mientras que HTTP usa el 80.",
+            "options": [
+                {
+                    "content": "443",
+                    "is_correct": true
+                },
+                {
+                    "content": "TCP 443",
+                    "is_correct": true
+                },
+                {
+                    "content": "puerto 443",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Linux, en el paquete bind9-utils, comprueba la sintaxis de un archivo de zona? (escribe solo el nombre del comando)",
+            "explanation": "named-checkzone verifica la sintaxis y coherencia de un archivo de zona de BIND.",
+            "options": [
+                {
+                    "content": "named-checkzone",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las afirmaciones correctas sobre DNS (hay varias correctas).",
+            "explanation": "Los servidores raíz solo delegan hacia los TLD; el resto de afirmaciones son correctas.",
+            "options": [
+                {
+                    "content": "El registro NS indica los servidores de nombres autoritativos de una zona.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El TTL indica durante cuánto tiempo puede almacenarse una respuesta en caché.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los servidores raíz almacenan todos los registros A de Internet.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una zona inversa IPv4 se define bajo in-addr.arpa.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Qué mensajes del proceso DORA de DHCP envía el servidor? (hay varias correctas)",
+            "explanation": "El cliente envía Discover y Request; el servidor responde con Offer y Acknowledge.",
+            "options": [
+                {
+                    "content": "DHCPDISCOVER",
+                    "is_correct": false
+                },
+                {
+                    "content": "DHCPOFFER",
+                    "is_correct": true
+                },
+                {
+                    "content": "DHCPREQUEST",
+                    "is_correct": false
+                },
+                {
+                    "content": "DHCPACK",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un usuario puede conectarse por FTP, pero el listado de directorios falla en modo pasivo tras un cortafuegos. ¿Cuál es la causa más probable?",
+            "explanation": "En modo pasivo los datos van por puertos altos que el servidor anuncia, por lo que hay que permitir ese rango.",
+            "options": [
+                {
+                    "content": "El puerto 80 está cerrado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El rango de puertos pasivos del servidor no está permitido en el cortafuegos",
+                    "is_correct": true
+                },
+                {
+                    "content": "El registro MX es incorrecto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falta una reserva DHCP",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

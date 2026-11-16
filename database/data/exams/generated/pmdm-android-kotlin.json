@@ -1,0 +1,421 @@
+{
+    "slug": "pmdm-android-kotlin",
+    "title": "PMDM - Android con Kotlin y Jetpack Compose",
+    "description": "Test para repasar Android con Kotlin y Jetpack Compose del módulo de PMDM: Activity, Compose, ViewModel, navegación, permisos y Room. Me ha servido para preparar el examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:57:56+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué método del ciclo de vida de una Activity se llama cuando esta pasa a ser visible para el usuario pero todavía no tiene el foco de interacción?",
+            "explanation": "onStart() se invoca cuando la Activity se hace visible; onResume() llega después, cuando ya está en primer plano e interactúa con el usuario.",
+            "options": [
+                {
+                    "content": "onCreate()",
+                    "is_correct": false
+                },
+                {
+                    "content": "onStart()",
+                    "is_correct": true
+                },
+                {
+                    "content": "onResume()",
+                    "is_correct": false
+                },
+                {
+                    "content": "onDestroy()",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al rotar el dispositivo sin configuración especial, ¿qué ocurre por defecto con la Activity?",
+            "explanation": "Un cambio de configuración como la rotación recrea la Activity, por lo que el estado debe conservarse, por ejemplo con ViewModel.",
+            "options": [
+                {
+                    "content": "Se destruye y se vuelve a crear",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo se llama a onResume()",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se mantiene sin cambios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Jetpack Compose, ¿qué anotación debe llevar una función para declarar un componente de interfaz?",
+            "explanation": "@Composable marca las funciones que describen la UI en Compose.",
+            "options": [
+                {
+                    "content": "@Composable",
+                    "is_correct": true
+                },
+                {
+                    "content": "@Preview",
+                    "is_correct": false
+                },
+                {
+                    "content": "@Inject",
+                    "is_correct": false
+                },
+                {
+                    "content": "@Entity",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué función de Compose permite que un valor sobreviva a una recomposición guardándolo en memoria?",
+            "explanation": "remember conserva el objeto entre recomposiciones y mutableStateOf provoca la recomposición cuando cambia su valor.",
+            "options": [
+                {
+                    "content": "val x = 0",
+                    "is_correct": false
+                },
+                {
+                    "content": "launch { }",
+                    "is_correct": false
+                },
+                {
+                    "content": "remember { mutableStateOf(0) }",
+                    "is_correct": true
+                },
+                {
+                    "content": "setContent { }",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la principal ventaja de usar un ViewModel?",
+            "explanation": "El ViewModel sobrevive a la recreación de la Activity por cambios de configuración y aloja la lógica de presentación.",
+            "options": [
+                {
+                    "content": "Dibujar la interfaz más rápido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conservar el estado de la UI ante cambios de configuración",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sustituir a la base de datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gestionar los permisos del sistema",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué función se usa en Compose para obtener un ViewModel en un composable (con la dependencia lifecycle-viewmodel-compose)?",
+            "explanation": "viewModel() devuelve la instancia del ViewModel asociada al propietario actual (Activity o destino de navegación).",
+            "options": [
+                {
+                    "content": "viewModel()",
+                    "is_correct": true
+                },
+                {
+                    "content": "remember()",
+                    "is_correct": false
+                },
+                {
+                    "content": "getSystemService()",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Navigation Compose, ¿qué componente controla la navegación entre pantallas?",
+            "explanation": "NavHostController, obtenido con rememberNavController(), se usa para navegar entre los destinos del NavHost.",
+            "options": [
+                {
+                    "content": "Intent",
+                    "is_correct": false
+                },
+                {
+                    "content": "NavHostController",
+                    "is_correct": true
+                },
+                {
+                    "content": "FragmentManager",
+                    "is_correct": false
+                },
+                {
+                    "content": "RoomDatabase",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué anotación de Room indica que una interfaz contiene los métodos de acceso a datos?",
+            "explanation": "@Dao marca la interfaz o clase abstracta con las operaciones de acceso a la base de datos.",
+            "options": [
+                {
+                    "content": "@Entity",
+                    "is_correct": false
+                },
+                {
+                    "content": "@Database",
+                    "is_correct": false
+                },
+                {
+                    "content": "@Dao",
+                    "is_correct": true
+                },
+                {
+                    "content": "@Query",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Room, ¿qué ocurre si se ejecuta una consulta sobre el hilo principal sin permitirlo explícitamente?",
+            "explanation": "Room prohíbe por defecto el acceso a la base de datos en el hilo principal para evitar bloquear la UI.",
+            "options": [
+                {
+                    "content": "Se ejecuta con normalidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lanza una excepción",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se pone en cola automáticamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve un método @Query de un DAO que retorna Flow<List<Usuario>>?",
+            "explanation": "Room emite un nuevo valor en el Flow cada vez que cambian las tablas observadas.",
+            "options": [
+                {
+                    "content": "Una lista única en el momento de la llamada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un flujo que emite de nuevo cuando cambian los datos de la tabla",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un objeto Cursor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siempre null",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Dónde deben declararse los permisos peligrosos para poder solicitarlos en tiempo de ejecución?",
+            "explanation": "Todo permiso debe declararse con uses-permission en el manifiesto, además de solicitarse en ejecución si es peligroso.",
+            "options": [
+                {
+                    "content": "En build.gradle.kts",
+                    "is_correct": false
+                },
+                {
+                    "content": "En AndroidManifest.xml",
+                    "is_correct": true
+                },
+                {
+                    "content": "En strings.xml",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué contrato se usa con rememberLauncherForActivityResult para pedir un único permiso en tiempo de ejecución?",
+            "explanation": "RequestPermission() solicita un permiso y devuelve un Boolean indicando si fue concedido.",
+            "options": [
+                {
+                    "content": "ActivityResultContracts.RequestPermission()",
+                    "is_correct": true
+                },
+                {
+                    "content": "ActivityResultContracts.TakePicture()",
+                    "is_correct": false
+                },
+                {
+                    "content": "ActivityResultContracts.GetContent()",
+                    "is_correct": false
+                },
+                {
+                    "content": "ActivityResultContracts.StartActivityForResult()",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Compose, la recomposición es el proceso por el que se vuelven a ejecutar los composables afectados cuando cambia el estado que leen.",
+            "explanation": "Compose observa los estados leídos y recompone solo las partes de la UI que dependen de ellos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Se puede guardar una referencia a la Activity dentro de un ViewModel sin ningún riesgo, ya que ambos tienen el mismo ciclo de vida.",
+            "explanation": "El ViewModel sobrevive a la Activity en las recreaciones, así que retener su referencia provoca fugas de memoria.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "onPause() es el método que se llama cuando la Activity pierde el foco pero puede seguir siendo parcialmente visible.",
+            "explanation": "onPause() se invoca al perder el foco, por ejemplo con un diálogo o en modo multiventana.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué anotación de Room se pone sobre una clase de datos para que represente una tabla de la base de datos?",
+            "explanation": "@Entity convierte la clase en una tabla de Room.",
+            "options": [
+                {
+                    "content": "@Entity",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entity",
+                    "is_correct": true
+                },
+                {
+                    "content": "anotación Entity",
+                    "is_correct": true
+                },
+                {
+                    "content": "la anotación @Entity",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué función de Compose crea y recuerda el controlador de navegación en un composable?",
+            "explanation": "rememberNavController() devuelve un NavHostController que sobrevive a las recomposiciones.",
+            "options": [
+                {
+                    "content": "rememberNavController",
+                    "is_correct": true
+                },
+                {
+                    "content": "rememberNavController()",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué palabra clave de Kotlin marca una función de un DAO de Room para poder llamarla desde una corrutina sin bloquear el hilo?",
+            "explanation": "Las funciones suspend de un DAO se ejecutan fuera del hilo principal y se llaman desde corrutinas.",
+            "options": [
+                {
+                    "content": "suspend",
+                    "is_correct": true
+                },
+                {
+                    "content": "palabra suspend",
+                    "is_correct": true
+                },
+                {
+                    "content": "la palabra suspend",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las afirmaciones correctas sobre Room (hay varias correctas).",
+            "explanation": "Room usa un procesador de anotaciones (KSP o kapt) para generar el código del DAO y es totalmente compatible con Kotlin.",
+            "options": [
+                {
+                    "content": "Una @Database lista las entidades que contiene",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una @Entity puede tener una clave primaria con @PrimaryKey",
+                    "is_correct": true
+                },
+                {
+                    "content": "Room genera la implementación del DAO en tiempo de compilación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Room solo funciona con Java, no con Kotlin",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un DAO debe ser siempre una clase final con constructor",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes métodos pertenecen al ciclo de vida de una Activity? (hay varias correctas)",
+            "explanation": "onStop(), onRestart() y onDestroy() son callbacks de Activity; onRecompose() no existe.",
+            "options": [
+                {
+                    "content": "onStop()",
+                    "is_correct": true
+                },
+                {
+                    "content": "onRestart()",
+                    "is_correct": true
+                },
+                {
+                    "content": "onRecompose()",
+                    "is_correct": false
+                },
+                {
+                    "content": "onDestroy()",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,469 @@
+{
+    "slug": "educacion-infantil-desarrollo",
+    "title": "Educación Infantil - desarrollo cognitivo y motor",
+    "description": "Test de repaso de Educación Infantil para el módulo de Desarrollo cognitivo y motor del ciclo de Servicios socioculturales. Incluye Piaget, Vygotsky, motricidad y juego.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:21:03+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según Piaget, ¿cuál es el orden correcto de las etapas del desarrollo cognitivo?",
+            "explanation": "Las cuatro etapas de Piaget se suceden siempre en este orden: sensoriomotora, preoperacional, operaciones concretas y operaciones formales.",
+            "options": [
+                {
+                    "content": "Preoperacional, sensoriomotora, operaciones concretas, operaciones formales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sensoriomotora, preoperacional, operaciones concretas, operaciones formales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sensoriomotora, operaciones concretas, preoperacional, operaciones formales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sensoriomotora, preoperacional, operaciones formales, operaciones concretas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un bebé de 10 meses busca el sonajero que su educadora ha tapado con una manta. ¿Qué logro cognitivo demuestra?",
+            "explanation": "La permanencia del objeto, es decir, saber que existe aunque no se vea, se consolida a lo largo de la etapa sensoriomotora.",
+            "options": [
+                {
+                    "content": "Conservación de la cantidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Egocentrismo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Permanencia del objeto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pensamiento hipotético-deductivo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una niña de 9 años ordena un conjunto de varillas de la más corta a la más larga sin necesidad de probar todas las combinaciones. ¿En qué etapa de Piaget se encuentra?",
+            "explanation": "La seriación y la clasificación lógicas con objetos manipulables son propias de la etapa de operaciones concretas (aprox. 7-11 años).",
+            "options": [
+                {
+                    "content": "Operaciones concretas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sensoriomotora",
+                    "is_correct": false
+                },
+                {
+                    "content": "Preoperacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Operaciones formales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la teoría de Vygotsky, la zona de desarrollo próximo es la distancia entre…",
+            "explanation": "La ZDP separa el nivel de desarrollo real (lo que hace solo) del potencial (lo que logra con ayuda).",
+            "options": [
+                {
+                    "content": "lo que el niño hace solo y lo que hace con la ayuda de un adulto o un compañero más capaz",
+                    "is_correct": true
+                },
+                {
+                    "content": "la edad cronológica y la edad mental del niño",
+                    "is_correct": false
+                },
+                {
+                    "content": "el juego individual y el juego cooperativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "la motricidad gruesa y la motricidad fina",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una educadora ofrece ayudas al niño para montar un puzle y las va retirando poco a poco según él gana autonomía. ¿Cómo se llama esta estrategia?",
+            "explanation": "El andamiaje consiste en ajustar y retirar progresivamente la ayuda dentro de la zona de desarrollo próximo.",
+            "options": [
+                {
+                    "content": "Refuerzo negativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Extinción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acomodación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Andamiaje",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un niño de 5 años afirma que hay más agua en un vaso alto y estrecho que en uno bajo y ancho, aunque ha visto que se trasvasaba la misma cantidad. ¿Qué limitación refleja?",
+            "explanation": "En la etapa preoperacional el niño se centra en un solo aspecto perceptivo (la altura) y no conserva la cantidad.",
+            "options": [
+                {
+                    "content": "Falta de conservación, propia de la etapa preoperacional",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falta de permanencia del objeto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Déficit de motricidad fina",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dominio del pensamiento reversible",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un niño que llama «guau» a todos los animales de cuatro patas está utilizando principalmente el mecanismo de…",
+            "explanation": "Asimilar es incorporar la información nueva a los esquemas que ya se tienen; la acomodación modificaría el esquema.",
+            "options": [
+                {
+                    "content": "acomodación",
+                    "is_correct": false
+                },
+                {
+                    "content": "asimilación",
+                    "is_correct": true
+                },
+                {
+                    "content": "equilibración mayéutica",
+                    "is_correct": false
+                },
+                {
+                    "content": "imitación diferida",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué actividad ejercita principalmente la motricidad fina en un aula de 3 a 4 años?",
+            "explanation": "Ensartar exige coordinación óculo-manual y control de manos y dedos, es decir, motricidad fina.",
+            "options": [
+                {
+                    "content": "Trepar por una espaldera",
+                    "is_correct": false
+                },
+                {
+                    "content": "Saltar a pies juntos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ensartar cuentas grandes en un cordón",
+                    "is_correct": true
+                },
+                {
+                    "content": "Correr en un circuito de psicomotricidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La ley céfalo-caudal del desarrollo motor establece que el control del cuerpo progresa…",
+            "explanation": "Primero se controla la cabeza y el cuello, después el tronco y por último las piernas.",
+            "options": [
+                {
+                    "content": "de las extremidades hacia el tronco",
+                    "is_correct": false
+                },
+                {
+                    "content": "de los movimientos finos a los gruesos",
+                    "is_correct": false
+                },
+                {
+                    "content": "de lo voluntario a lo reflejo",
+                    "is_correct": false
+                },
+                {
+                    "content": "de la cabeza hacia los pies",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una niña de 3 años usa una escoba como si fuera un caballo y «cabalga» por la clase. ¿Qué tipo de juego es?",
+            "explanation": "En el juego simbólico se atribuye a un objeto un significado distinto del real («hacer como si»).",
+            "options": [
+                {
+                    "content": "Juego de reglas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Juego de ejercicio sensoriomotor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Juego de construcción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Juego simbólico",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dos niños de 2 años juegan con sus coches en el mismo rincón, cada uno a lo suyo y sin interactuar. Según la clasificación de Parten, es juego…",
+            "explanation": "En el juego paralelo los niños comparten espacio y materiales, pero sin interacción real entre ellos.",
+            "options": [
+                {
+                    "content": "cooperativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "solitario",
+                    "is_correct": false
+                },
+                {
+                    "content": "paralelo",
+                    "is_correct": true
+                },
+                {
+                    "content": "asociativo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para Vygotsky, el lenguaje que un niño se dirige a sí mismo mientras resuelve una tarea («ahora este, luego este») sirve sobre todo para…",
+            "explanation": "Vygotsky interpreta el habla privada como una herramienta del pensamiento que ayuda a autorregular la acción.",
+            "options": [
+                {
+                    "content": "molestar al grupo",
+                    "is_correct": false
+                },
+                {
+                    "content": "regular y planificar su propia conducta",
+                    "is_correct": true
+                },
+                {
+                    "content": "sustituir al pensamiento lógico",
+                    "is_correct": false
+                },
+                {
+                    "content": "demostrar egocentrismo irreversible",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Para Vygotsky, el desarrollo cognitivo es un proceso que depende en gran medida de la interacción social y de la cultura.",
+            "explanation": "Su enfoque sociocultural sostiene que las funciones psicológicas superiores se originan en la interacción con otras personas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En el desarrollo infantil típico, la motricidad fina se alcanza antes que la gruesa.",
+            "explanation": "Siguiendo las leyes céfalo-caudal y próximo-distal, el control global del cuerpo (motricidad gruesa) precede al control fino de manos y dedos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El juego de reglas se desarrolla sobre todo a partir de los 6-7 años, cuando el niño puede comprender y respetar normas compartidas.",
+            "explanation": "Piaget lo sitúa en la etapa de operaciones concretas, cuando el niño ya coordina puntos de vista.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la primera etapa del desarrollo cognitivo según Piaget (de 0 a 2 años aproximadamente)?",
+            "explanation": "La etapa sensoriomotora abarca desde el nacimiento hasta los 2 años aproximadamente, y en ella el conocimiento se construye mediante sentidos y movimiento.",
+            "options": [
+                {
+                    "content": "sensoriomotora",
+                    "is_correct": true
+                },
+                {
+                    "content": "etapa sensoriomotora",
+                    "is_correct": true
+                },
+                {
+                    "content": "sensorio-motora",
+                    "is_correct": true
+                },
+                {
+                    "content": "sensoriomotriz",
+                    "is_correct": true
+                },
+                {
+                    "content": "etapa sensoriomotriz",
+                    "is_correct": true
+                },
+                {
+                    "content": "periodo sensoriomotor",
+                    "is_correct": true
+                },
+                {
+                    "content": "etapa sensorio-motora",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué psicólogo ruso formuló el concepto de zona de desarrollo próximo?",
+            "explanation": "La zona de desarrollo próximo es una aportación central de Lev Vygotsky.",
+            "options": [
+                {
+                    "content": "Vygotsky",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lev Vygotsky",
+                    "is_correct": true
+                },
+                {
+                    "content": "Vigotsky",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lev Vigotsky",
+                    "is_correct": true
+                },
+                {
+                    "content": "Vygotski",
+                    "is_correct": true
+                },
+                {
+                    "content": "Vigotski",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se denomina la motricidad que implica los pequeños grupos musculares de manos y dedos, como al recortar o abrochar botones?",
+            "explanation": "La motricidad fina requiere precisión y coordinación óculo-manual en movimientos pequeños.",
+            "options": [
+                {
+                    "content": "motricidad fina",
+                    "is_correct": true
+                },
+                {
+                    "content": "la motricidad fina",
+                    "is_correct": true
+                },
+                {
+                    "content": "fina",
+                    "is_correct": true
+                },
+                {
+                    "content": "psicomotricidad fina",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las actividades que trabajan principalmente la motricidad gruesa (hay varias correctas).",
+            "explanation": "Correr, trepar y saltar implican grandes grupos musculares; recortar y abrochar son tareas de motricidad fina.",
+            "options": [
+                {
+                    "content": "Correr esquivando obstáculos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Trepar por unas espalderas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Recortar con tijeras de punta redonda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Saltar a la pata coja",
+                    "is_correct": true
+                },
+                {
+                    "content": "Abrochar botones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las características propias de la etapa preoperacional de Piaget (hay varias correctas).",
+            "explanation": "El egocentrismo, el animismo y la centración son típicos de los 2-7 años; el razonamiento hipotético-deductivo pertenece a las operaciones formales.",
+            "options": [
+                {
+                    "content": "Egocentrismo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Animismo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Razonamiento hipotético-deductivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Centración en un solo aspecto de la situación",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

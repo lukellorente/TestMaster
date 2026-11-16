@@ -1,0 +1,647 @@
+{
+    "slug": "sistemas-informaticos-linux",
+    "title": "Sistemas Informáticos - comandos Linux",
+    "description": "Test de Sistemas Informáticos para DAM/DAW con comandos básicos de Linux: permisos, usuarios, procesos, redirecciones y paquetes. Me ha servido para repasar antes del examen del módulo.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:54:13+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué comando muestra la ruta absoluta del directorio de trabajo actual?",
+            "explanation": "pwd (print working directory) imprime la ruta absoluta del directorio en el que se encuentra el usuario.",
+            "options": [
+                {
+                    "content": "whoami",
+                    "is_correct": false
+                },
+                {
+                    "content": "pwd",
+                    "is_correct": true
+                },
+                {
+                    "content": "ls -d",
+                    "is_correct": false
+                },
+                {
+                    "content": "cd .",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace el comando «cd -» en bash?",
+            "explanation": "«cd -» cambia al directorio anterior (almacenado en la variable OLDPWD).",
+            "options": [
+                {
+                    "content": "Sube al directorio padre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Va al directorio personal del usuario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Va a la raíz del sistema",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vuelve al directorio en el que estabas antes",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué muestra el comando «ls -la»?",
+            "explanation": "-l usa el formato largo (permisos, propietario, tamaño, fecha) y -a incluye los ficheros que empiezan por punto.",
+            "options": [
+                {
+                    "content": "Solo los ficheros ocultos, sin detalles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un listado en formato largo incluyendo los ficheros ocultos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo los directorios en orden alfabético",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué comando busca todos los ficheros con extensión .txt dentro de /home?",
+            "explanation": "find recorre el árbol de directorios y -name filtra por el patrón del nombre del fichero.",
+            "options": [
+                {
+                    "content": "ls /home -txt",
+                    "is_correct": false
+                },
+                {
+                    "content": "grep .txt /home",
+                    "is_correct": false
+                },
+                {
+                    "content": "locate /home --txt",
+                    "is_correct": false
+                },
+                {
+                    "content": "find /home -name \"*.txt\"",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué permisos simbólicos equivalen a «chmod 754 fichero»?",
+            "explanation": "7 = rwx (propietario), 5 = r-x (grupo) y 4 = r-- (otros).",
+            "options": [
+                {
+                    "content": "rwxr-xr--",
+                    "is_correct": true
+                },
+                {
+                    "content": "rwxrw-r--",
+                    "is_correct": false
+                },
+                {
+                    "content": "rwxr-xr-x",
+                    "is_correct": false
+                },
+                {
+                    "content": "rw-r-xr--",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Quieres que solo el propietario pueda leer y escribir un fichero, y que el grupo solo pueda leerlo. Otros no deben tener acceso. ¿Qué comando usas?",
+            "explanation": "640 equivale a rw-r-----: lectura y escritura para el propietario, solo lectura para el grupo y nada para otros.",
+            "options": [
+                {
+                    "content": "chmod 664 fichero",
+                    "is_correct": false
+                },
+                {
+                    "content": "chmod 460 fichero",
+                    "is_correct": false
+                },
+                {
+                    "content": "chmod 640 fichero",
+                    "is_correct": true
+                },
+                {
+                    "content": "chmod 600 fichero",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene «chmod u+x script.sh»?",
+            "explanation": "u designa al propietario (user) y +x añade el permiso de ejecución solo para él.",
+            "options": [
+                {
+                    "content": "Da permiso de ejecución al propietario del fichero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Da permiso de ejecución a todos los usuarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quita el permiso de ejecución al propietario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cambia el propietario del fichero a x",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace el comando «sudo chown ana:dam informe.txt»?",
+            "explanation": "En chown la sintaxis es usuario:grupo, así que ana pasa a ser propietaria y dam el grupo del fichero.",
+            "options": [
+                {
+                    "content": "Da a ana permisos de lectura sobre el fichero y lo mueve a dam",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cambia el grupo a ana y el propietario a dam",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cambia el propietario a ana y el grupo a dam",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué sirve la opción -m en «useradd -m -s /bin/bash pepe»?",
+            "explanation": "-m crea el directorio home (/home/pepe) si no existe; -s indica el intérprete de comandos.",
+            "options": [
+                {
+                    "content": "Asignar a pepe permisos de administrador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crear el directorio personal del usuario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Establecer la contraseña de pepe",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bloquear la cuenta tras crearla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué fichero se almacenan los hashes de las contraseñas de los usuarios en un Linux actual?",
+            "explanation": "/etc/shadow guarda los hashes y solo es legible por root; /etc/passwd contiene los datos generales de las cuentas.",
+            "options": [
+                {
+                    "content": "/etc/passwd",
+                    "is_correct": false
+                },
+                {
+                    "content": "/etc/group",
+                    "is_correct": false
+                },
+                {
+                    "content": "/etc/shadow",
+                    "is_correct": true
+                },
+                {
+                    "content": "/etc/sudoers",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué comando añade al usuario pepe al grupo sudo sin eliminarlo de sus otros grupos secundarios?",
+            "explanation": "-a (append) junto con -G añade el grupo a los existentes; sin -a, -G sustituiría la lista de grupos secundarios.",
+            "options": [
+                {
+                    "content": "usermod -G sudo pepe",
+                    "is_correct": false
+                },
+                {
+                    "content": "usermod -aG sudo pepe",
+                    "is_correct": true
+                },
+                {
+                    "content": "groupadd sudo pepe",
+                    "is_correct": false
+                },
+                {
+                    "content": "chgrp sudo pepe",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué muestra el comando «ps aux»?",
+            "explanation": "ps aux lista todos los procesos del sistema indicando usuario, PID, %CPU, %MEM y comando.",
+            "options": [
+                {
+                    "content": "Solo los procesos del usuario actual en la terminal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los servicios que arrancan al iniciar el sistema",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los procesos activos de todos los usuarios, con su usuario y consumo",
+                    "is_correct": true
+                },
+                {
+                    "content": "El uso de disco de cada proceso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace «kill -9 1234»?",
+            "explanation": "La señal 9 es SIGKILL: el kernel termina el proceso sin que este pueda ignorarla ni capturarla.",
+            "options": [
+                {
+                    "content": "Pausa el proceso 1234 durante 9 segundos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Envía SIGTERM al proceso 1234",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reduce la prioridad del proceso 1234",
+                    "is_correct": false
+                },
+                {
+                    "content": "Envía SIGKILL al proceso 1234, que lo termina de forma forzosa",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si ejecutas dos veces «ls > lista.txt», ¿qué ocurre con lista.txt?",
+            "explanation": "El operador > trunca el fichero antes de escribir; para añadir al final habría que usar >>.",
+            "options": [
+                {
+                    "content": "Contiene el resultado de la última ejecución, ya que > sobrescribe",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contiene el resultado de ambas ejecuciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Da error porque el fichero ya existe",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace el comando «find / -name core 2> errores.log»?",
+            "explanation": "El descriptor 2 es la salida de error estándar, por lo que 2> redirige solo los errores al fichero.",
+            "options": [
+                {
+                    "content": "Guarda en errores.log la salida estándar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Guarda en errores.log solo los mensajes de error (stderr)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Guarda en errores.log la entrada estándar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Envía los errores a la pantalla y los resultados al fichero",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué obtiene el comando «cat access.log | grep ERROR | wc -l»?",
+            "explanation": "grep filtra las líneas con ERROR y wc -l cuenta las líneas que recibe por la tubería.",
+            "options": [
+                {
+                    "content": "El número de líneas de access.log que contienen ERROR",
+                    "is_correct": true
+                },
+                {
+                    "content": "El número de palabras de access.log",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las líneas de access.log que no contienen ERROR",
+                    "is_correct": false
+                },
+                {
+                    "content": "El tamaño en bytes de access.log",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Debian/Ubuntu, ¿para qué sirve «sudo apt update»?",
+            "explanation": "apt update solo descarga la lista de paquetes y versiones disponibles; la actualización real se hace con apt upgrade.",
+            "options": [
+                {
+                    "content": "Actualiza todos los paquetes instalados a su última versión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Actualiza el kernel y reinicia el equipo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Elimina los paquetes que ya no se necesitan",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sincroniza el índice de paquetes con los repositorios",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué diferencia hay entre «apt remove» y «apt purge»?",
+            "explanation": "remove desinstala el paquete conservando su configuración en /etc; purge borra también esos ficheros.",
+            "options": [
+                {
+                    "content": "purge elimina también los ficheros de configuración del paquete",
+                    "is_correct": true
+                },
+                {
+                    "content": "remove borra también los datos de los usuarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "purge solo funciona con paquetes .rpm",
+                    "is_correct": false
+                },
+                {
+                    "content": "No hay ninguna diferencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El comando «cd ..» te lleva al directorio padre del directorio actual.",
+            "explanation": "«..» representa el directorio superior en la jerarquía.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Aplicar «chmod 777» es la forma recomendada de resolver cualquier problema de permisos, porque da acceso total de forma segura.",
+            "explanation": "777 da lectura, escritura y ejecución a todos los usuarios, lo que supone un riesgo de seguridad y va contra el principio de mínimo privilegio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El operador >> añade la salida al final del fichero sin borrar su contenido anterior.",
+            "explanation": "A diferencia de >, que sobrescribe, >> abre el fichero en modo añadir (append).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Al escribir un comando seguido de & al final, este se ejecuta en segundo plano.",
+            "explanation": "El carácter & lanza el proceso en background y devuelve el control de la terminal al usuario.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Debian, un usuario normal puede instalar paquetes con «apt install» sin necesidad de usar sudo ni ser root.",
+            "explanation": "Instalar paquetes modifica el sistema, por lo que requiere privilegios de administrador (root o sudo).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando muestra el contenido de un directorio en formato largo, con permisos, propietario y tamaño? (Escribe el comando con su opción)",
+            "explanation": "ls -l muestra el listado en formato largo con permisos, propietario, grupo, tamaño y fecha.",
+            "options": [
+                {
+                    "content": "ls -l",
+                    "is_correct": true
+                },
+                {
+                    "content": "ls -la",
+                    "is_correct": true
+                },
+                {
+                    "content": "ls -al",
+                    "is_correct": true
+                },
+                {
+                    "content": "ls -lh",
+                    "is_correct": true
+                },
+                {
+                    "content": "ll",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué valor octal corresponde a los permisos rwxr-x---?",
+            "explanation": "rwx = 7, r-x = 5 y --- = 0, por lo que el valor es 750.",
+            "options": [
+                {
+                    "content": "750",
+                    "is_correct": true
+                },
+                {
+                    "content": "chmod 750",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando se usa para cambiar la contraseña del usuario ana?",
+            "explanation": "passwd seguido del nombre de usuario permite a root establecer una nueva contraseña para esa cuenta.",
+            "options": [
+                {
+                    "content": "passwd ana",
+                    "is_correct": true
+                },
+                {
+                    "content": "sudo passwd ana",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuál es la señal que envía por defecto el comando kill si no se especifica ninguna?",
+            "explanation": "kill envía por defecto SIGTERM (señal 15), que solicita al proceso que termine de forma ordenada.",
+            "options": [
+                {
+                    "content": "SIGTERM",
+                    "is_correct": true
+                },
+                {
+                    "content": "TERM",
+                    "is_correct": true
+                },
+                {
+                    "content": "15",
+                    "is_correct": true
+                },
+                {
+                    "content": "señal 15",
+                    "is_correct": true
+                },
+                {
+                    "content": "sigterm",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Qué comandos permiten consultar los procesos en ejecución? (Hay varias respuestas correctas)",
+            "explanation": "ps y top muestran procesos y pgrep devuelve los PID que coinciden con un patrón; chmod y pwd no tienen relación con procesos.",
+            "options": [
+                {
+                    "content": "ps",
+                    "is_correct": true
+                },
+                {
+                    "content": "top",
+                    "is_correct": true
+                },
+                {
+                    "content": "chmod",
+                    "is_correct": false
+                },
+                {
+                    "content": "pgrep",
+                    "is_correct": true
+                },
+                {
+                    "content": "pwd",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de estos comandos redirigen la salida estándar a un fichero? (Hay varias respuestas correctas)",
+            "explanation": "> y >> envían la salida estándar a un fichero (sobrescribiendo o añadiendo); | conecta con otro comando y < redirige la entrada.",
+            "options": [
+                {
+                    "content": "ls > salida.txt",
+                    "is_correct": true
+                },
+                {
+                    "content": "ls | salida.txt",
+                    "is_correct": false
+                },
+                {
+                    "content": "ls >> salida.txt",
+                    "is_correct": true
+                },
+                {
+                    "content": "ls < salida.txt",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Qué comandos son propios de distribuciones basadas en Debian/Ubuntu? (Hay varias respuestas correctas)",
+            "explanation": "apt, apt-get y dpkg pertenecen al ecosistema Debian; dnf y rpm son propios de Fedora/Red Hat.",
+            "options": [
+                {
+                    "content": "apt install nginx",
+                    "is_correct": true
+                },
+                {
+                    "content": "dnf install nginx",
+                    "is_correct": false
+                },
+                {
+                    "content": "dpkg -i paquete.deb",
+                    "is_correct": true
+                },
+                {
+                    "content": "rpm -ivh paquete.rpm",
+                    "is_correct": false
+                },
+                {
+                    "content": "apt-get update",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

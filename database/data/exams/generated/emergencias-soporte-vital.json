@@ -1,0 +1,449 @@
+{
+    "slug": "emergencias-soporte-vital",
+    "title": "Emergencias sanitarias: soporte vital básico",
+    "description": "Preguntas de soporte vital básico para repasar antes del examen del módulo de Emergencias Sanitarias, siguiendo las guías del ERC. Incluye RCP, DEA, atragantamiento y posición lateral de seguridad.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:20:22+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el ERC, ¿cómo se reconoce una parada cardiaca en un adulto?",
+            "explanation": "El reconocimiento se basa en que la víctima no responde y no respira normalmente; no se pierde tiempo buscando pulso ni otros signos.",
+            "options": [
+                {
+                    "content": "Palidez y sudoración intensa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Persona que no responde y no respira o no lo hace con normalidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ausencia de pulso radial comprobada durante 30 segundos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pupilas dilatadas y piel fría",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la profundidad recomendada de las compresiones torácicas en un adulto?",
+            "explanation": "El ERC recomienda comprimir el tórax del adulto entre 5 y 6 cm, permitiendo que se expanda por completo tras cada compresión.",
+            "options": [
+                {
+                    "content": "2-3 cm",
+                    "is_correct": false
+                },
+                {
+                    "content": "Unos 4 cm",
+                    "is_correct": false
+                },
+                {
+                    "content": "5-6 cm",
+                    "is_correct": true
+                },
+                {
+                    "content": "Más de 7 cm",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la frecuencia recomendada de compresiones torácicas durante la RCP?",
+            "explanation": "La frecuencia recomendada es de 100 a 120 compresiones por minuto.",
+            "options": [
+                {
+                    "content": "100-120 por minuto",
+                    "is_correct": true
+                },
+                {
+                    "content": "60-80 por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "80-100 por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Más de 140 por minuto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la RCP de un adulto realizada por una persona entrenada, ¿qué relación compresiones:ventilaciones se utiliza?",
+            "explanation": "En adultos se alternan 30 compresiones con 2 ventilaciones de rescate.",
+            "options": [
+                {
+                    "content": "15:2",
+                    "is_correct": false
+                },
+                {
+                    "content": "5:1",
+                    "is_correct": false
+                },
+                {
+                    "content": "15:1",
+                    "is_correct": false
+                },
+                {
+                    "content": "30:2",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Dónde se colocan los parches de un DEA en un adulto?",
+            "explanation": "La posición estándar es anterolateral: un parche bajo la clavícula derecha y otro en la región lateral del tórax izquierdo.",
+            "options": [
+                {
+                    "content": "Ambos en el centro del tórax, uno sobre otro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Uno bajo la clavícula derecha y otro en la axila izquierda (línea axilar media)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Uno en el abdomen y otro en el cuello",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ambos en la espalda",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Durante el análisis del ritmo por el DEA, ¿qué debe hacer el reanimador?",
+            "explanation": "Tocar a la víctima durante el análisis puede provocar artefactos y falsear el resultado, por lo que nadie debe tocarla.",
+            "options": [
+                {
+                    "content": "Continuar con las compresiones para no perder tiempo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ventilar a la víctima con insuflaciones profundas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Asegurarse de que nadie toca a la víctima",
+                    "is_correct": true
+                },
+                {
+                    "content": "Retirar los parches y volver a colocarlos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un adulto consciente presenta una obstrucción grave de la vía aérea: no puede hablar ni toser y se lleva las manos al cuello. ¿Qué se aplica primero?",
+            "explanation": "En la obstrucción grave con la víctima consciente se dan hasta 5 golpes interescapulares y, si no basta, 5 compresiones abdominales, alternándolos.",
+            "options": [
+                {
+                    "content": "5 golpes en la espalda",
+                    "is_correct": true
+                },
+                {
+                    "content": "5 compresiones torácicas con la víctima tumbada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una ventilación boca a boca",
+                    "is_correct": false
+                },
+                {
+                    "content": "Barrido digital a ciegas de la boca",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una persona con obstrucción grave de la vía aérea pierde la consciencia. ¿Cuál es la actuación correcta?",
+            "explanation": "Si la víctima queda inconsciente se inicia la RCP, ya que las compresiones también pueden ayudar a desobstruir la vía aérea.",
+            "options": [
+                {
+                    "content": "Seguir con golpes en la espalda hasta que expulse el objeto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Colocarla en posición lateral de seguridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Esperar a la ambulancia vigilando su respiración",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tumbarla, pedir ayuda e iniciar la RCP con compresiones torácicas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una persona está inconsciente pero respira normalmente. ¿Qué respuesta describe la actuación adecuada?",
+            "explanation": "Si respira con normalidad se avisa a emergencias y se vigila continuamente su respiración, pasando a RCP si deja de respirar normalmente.",
+            "options": [
+                {
+                    "content": "Iniciar compresiones torácicas inmediatamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Colocarla sentada para que respire mejor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Llamar al 112 y vigilar su respiración continuamente, sin dejarla sola",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aplicar el DEA de forma inmediata",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un lactante sufre una obstrucción grave de la vía aérea y está consciente. ¿Qué maniobras se aplican?",
+            "explanation": "En menores de un año no se hacen compresiones abdominales; se alternan 5 golpes interescapulares y 5 compresiones torácicas.",
+            "options": [
+                {
+                    "content": "Compresiones abdominales (Heimlich)",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo ventilaciones boca a boca y nariz",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 golpes en la espalda y 5 compresiones torácicas, alternados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sacudir al lactante sujetándolo por los pies",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué situación está indicada la posición lateral de seguridad?",
+            "explanation": "Se utiliza para mantener la vía aérea permeable y reducir el riesgo de aspiración en quien está inconsciente pero respira con normalidad.",
+            "options": [
+                {
+                    "content": "Persona inconsciente que respira con normalidad y no tiene sospecha de otra indicación de RCP",
+                    "is_correct": true
+                },
+                {
+                    "content": "Persona en parada cardiorrespiratoria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Persona consciente con dolor torácico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Persona con obstrucción grave de la vía aérea",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Encuentras a un hombre tendido en el suelo que no responde a la voz ni al estímulo y no respira con normalidad. Tras pedir ayuda, ¿qué haces?",
+            "explanation": "Ante una parada cardiaca se activa el sistema de emergencias y se inician cuanto antes las compresiones, solicitando también un DEA.",
+            "options": [
+                {
+                    "content": "Le elevas las piernas y esperas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Le das agua con azúcar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo colocas en posición lateral de seguridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Llamas al 112 (o haces que lo llamen) y comienzas las compresiones torácicas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un DEA descargará una descarga eléctrica si detecta asistolia.",
+            "explanation": "La asistolia no es un ritmo desfibrilable; el DEA solo recomienda descarga en fibrilación ventricular y taquicardia ventricular sin pulso.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Tras administrar una descarga con el DEA, hay que reanudar inmediatamente la RCP empezando por las compresiones torácicas.",
+            "explanation": "Después de la descarga se reanuda la RCP sin demora y sin comprobar pulso, hasta que el DEA vuelva a analizar el ritmo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un adulto consciente con obstrucción grave, se deben realizar compresiones abdominales antes que los golpes en la espalda.",
+            "explanation": "La secuencia correcta empieza con 5 golpes interescapulares y después, si persiste, 5 compresiones abdominales.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué número de teléfono de emergencias único se utiliza en España y en toda la Unión Europea?",
+            "explanation": "El 112 es el número único europeo de emergencias.",
+            "options": [
+                {
+                    "content": "112",
+                    "is_correct": true
+                },
+                {
+                    "content": "el 112",
+                    "is_correct": true
+                },
+                {
+                    "content": "teléfono 112",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué significan las siglas DEA? (nombre completo)",
+            "explanation": "DEA es la sigla de desfibrilador externo automatizado, dispositivo que analiza el ritmo y guía la descarga.",
+            "options": [
+                {
+                    "content": "desfibrilador externo automatizado",
+                    "is_correct": true
+                },
+                {
+                    "content": "desfibrilador externo automático",
+                    "is_correct": true
+                },
+                {
+                    "content": "desfibrilador automático externo",
+                    "is_correct": true
+                },
+                {
+                    "content": "el desfibrilador externo automatizado",
+                    "is_correct": true
+                },
+                {
+                    "content": "desfibrilador externo semiautomático",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se denomina la maniobra de compresiones abdominales utilizada en la obstrucción grave de la vía aérea en adultos?",
+            "explanation": "La maniobra de Heimlich consiste en compresiones abdominales en sentido hacia dentro y arriba.",
+            "options": [
+                {
+                    "content": "Heimlich",
+                    "is_correct": true
+                },
+                {
+                    "content": "maniobra de Heimlich",
+                    "is_correct": true
+                },
+                {
+                    "content": "la maniobra de Heimlich",
+                    "is_correct": true
+                },
+                {
+                    "content": "compresiones abdominales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los eslabones de la cadena de supervivencia (hay varias respuestas correctas).",
+            "explanation": "La cadena incluye reconocimiento y alerta, RCP y desfibrilación precoces y cuidados posresucitación; la intubación por testigos no forma parte.",
+            "options": [
+                {
+                    "content": "Reconocimiento precoz y llamada a emergencias",
+                    "is_correct": true
+                },
+                {
+                    "content": "RCP precoz",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desfibrilación precoz",
+                    "is_correct": true
+                },
+                {
+                    "content": "Intubación orotraqueal realizada por testigos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuidados posresucitación",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Al usar un DEA, ¿qué acciones son correctas? (hay varias respuestas correctas)",
+            "explanation": "El DEA debe usarse lo antes posible, con el tórax seco y sin que nadie toque a la víctima durante el análisis y la descarga.",
+            "options": [
+                {
+                    "content": "Encenderlo en cuanto esté disponible y seguir sus instrucciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Secar el tórax si está mojado antes de poner los parches",
+                    "is_correct": true
+                },
+                {
+                    "content": "Esperar a que llegue la ambulancia para encenderlo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Asegurarse de que nadie toca a la víctima antes de pulsar el botón de descarga",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

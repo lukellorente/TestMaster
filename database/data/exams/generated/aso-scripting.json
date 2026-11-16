@@ -1,0 +1,429 @@
+{
+    "slug": "aso-scripting",
+    "title": "ASO - scripting con PowerShell y Bash",
+    "description": "Test de repaso de scripting para ASO (ASIR/SMR): variables, condicionales, bucles, cmdlets, tuberías, cron y Programador de tareas. Lo hice para preparar el examen del módulo, espero que os sirva.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:03:50+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la forma correcta de asignar el texto «Ana» a una variable en PowerShell?",
+            "explanation": "En PowerShell todas las variables se identifican con el prefijo $ y se asignan con el operador =.",
+            "options": [
+                {
+                    "content": "nombre = \"Ana\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "$nombre = \"Ana\"",
+                    "is_correct": true
+                },
+                {
+                    "content": "var nombre = \"Ana\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "set $nombre \"Ana\"",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Bash, ¿qué línea asigna correctamente el valor 30 a la variable edad?",
+            "explanation": "En Bash la asignación se escribe sin espacios alrededor del signo = y sin $ en el nombre al asignar.",
+            "options": [
+                {
+                    "content": "edad = 30",
+                    "is_correct": false
+                },
+                {
+                    "content": "$edad=30",
+                    "is_correct": false
+                },
+                {
+                    "content": "edad=30",
+                    "is_correct": true
+                },
+                {
+                    "content": "let edad : 30",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué operador de PowerShell se usa para comprobar que dos valores son distintos?",
+            "explanation": "PowerShell usa operadores con guion como -eq, -ne, -gt o -lt; -ne significa «not equal».",
+            "options": [
+                {
+                    "content": "-ne",
+                    "is_correct": true
+                },
+                {
+                    "content": "!==",
+                    "is_correct": false
+                },
+                {
+                    "content": "<>",
+                    "is_correct": false
+                },
+                {
+                    "content": "-neq",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Bash, ¿con qué palabra se cierra una estructura condicional que empieza con if?",
+            "explanation": "La estructura if de Bash termina con fi (if al revés); done se reserva para los bucles.",
+            "options": [
+                {
+                    "content": "end",
+                    "is_correct": false
+                },
+                {
+                    "content": "endif",
+                    "is_correct": false
+                },
+                {
+                    "content": "done",
+                    "is_correct": false
+                },
+                {
+                    "content": "fi",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué mostrará en PowerShell la instrucción 1..5 | ForEach-Object { $_ * 2 }?",
+            "explanation": "ForEach-Object recorre los números del 1 al 5 y $_ representa el elemento actual, que se multiplica por 2.",
+            "options": [
+                {
+                    "content": "Un error, porque falta Write-Host",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 2 3 4 5",
+                    "is_correct": false
+                },
+                {
+                    "content": "10",
+                    "is_correct": false
+                },
+                {
+                    "content": "2 4 6 8 10, cada número en una línea",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué estructura de nombre siguen los cmdlets de PowerShell?",
+            "explanation": "Los cmdlets siguen el patrón Verbo-Sustantivo con verbos aprobados como Get, Set, New o Remove.",
+            "options": [
+                {
+                    "content": "Verbo-Sustantivo, como Get-Service",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sustantivo-Verbo, como Service-Get",
+                    "is_correct": false
+                },
+                {
+                    "content": "verbo_sustantivo en minúsculas, como get_service",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo un verbo, como Listar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué diferencia fundamental tiene la tubería (|) de PowerShell respecto a la de Bash?",
+            "explanation": "En PowerShell la tubería transmite objetos con propiedades y métodos, mientras que en Bash se transmite texto.",
+            "options": [
+                {
+                    "content": "Solo se puede usar con cmd.exe",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pasa objetos .NET entre comandos, no solo texto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Guarda la salida en un archivo temporal antes de pasarla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo permite encadenar dos comandos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace el comando Get-Process | Where-Object { $_.CPU -gt 100 }?",
+            "explanation": "Where-Object filtra los objetos recibidos por la tubería y deja pasar los que cumplen la condición.",
+            "options": [
+                {
+                    "content": "Finaliza los procesos que usan más de 100 MB",
+                    "is_correct": false
+                },
+                {
+                    "content": "Muestra los 100 primeros procesos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Muestra solo los procesos cuya propiedad CPU es mayor que 100",
+                    "is_correct": true
+                },
+                {
+                    "content": "Asigna el valor 100 a la CPU de cada proceso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un crontab aparece la línea: 30 2 * * 1-5 /opt/backup.sh. ¿Cuándo se ejecuta el script?",
+            "explanation": "Los campos son minuto, hora, día del mes, mes y día de la semana; 1-5 en el último campo equivale a lunes-viernes.",
+            "options": [
+                {
+                    "content": "Cada 30 minutos entre las 2 y las 5",
+                    "is_correct": false
+                },
+                {
+                    "content": "A las 02:30 de lunes a viernes",
+                    "is_correct": true
+                },
+                {
+                    "content": "A las 02:30 los días 1 al 5 de cada mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "A las 02:30 solo en fin de semana",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué cmdlet de PowerShell sirve para crear y registrar una tarea en el Programador de tareas de Windows?",
+            "explanation": "Register-ScheduledTask registra una tarea programada, normalmente junto con New-ScheduledTaskAction y New-ScheduledTaskTrigger.",
+            "options": [
+                {
+                    "content": "Add-Cron",
+                    "is_correct": false
+                },
+                {
+                    "content": "Start-Schedule",
+                    "is_correct": false
+                },
+                {
+                    "content": "Register-ScheduledTask",
+                    "is_correct": true
+                },
+                {
+                    "content": "Set-Timer",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene ejecutar crontab -r en Linux?",
+            "explanation": "La opción -r (remove) borra el crontab completo del usuario; conviene usarla con cuidado.",
+            "options": [
+                {
+                    "content": "Recarga el servicio cron",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lista las tareas del usuario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejecuta todas las tareas de inmediato",
+                    "is_correct": false
+                },
+                {
+                    "content": "Elimina el crontab del usuario actual",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Bash, ¿qué comprueba la condición [ -f /etc/passwd ]?",
+            "explanation": "El operador -f de test es verdadero si la ruta existe y es un fichero regular; -d es para directorios.",
+            "options": [
+                {
+                    "content": "Que /etc/passwd es un directorio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que /etc/passwd tiene permiso de ejecución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que /etc/passwd está vacío",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que /etc/passwd existe y es un fichero regular",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En PowerShell, $Nombre y $nombre hacen referencia a la misma variable.",
+            "explanation": "PowerShell no distingue entre mayúsculas y minúsculas en los nombres de variables.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Bash, el comando echo '$HOME' muestra la ruta del directorio personal del usuario.",
+            "explanation": "Las comillas simples impiden la expansión de variables, así que se imprime literalmente $HOME.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El demonio cron estándar ejecuta automáticamente, al encender el equipo, las tareas que se perdieron mientras estaba apagado.",
+            "explanation": "Cron solo lanza las tareas si el equipo está encendido a la hora indicada; para recuperar tareas perdidas se usa anacron.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué variable especial de Bash almacena el código de salida del último comando ejecutado? (escríbela con su símbolo)",
+            "explanation": "$? vale 0 si el último comando terminó correctamente y distinto de 0 si hubo error.",
+            "options": [
+                {
+                    "content": "$?",
+                    "is_correct": true
+                },
+                {
+                    "content": "?",
+                    "is_correct": true
+                },
+                {
+                    "content": "echo $?",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Escribe el comando que abre el editor para modificar el crontab del usuario actual.",
+            "explanation": "crontab -e edita el crontab del usuario que lo ejecuta.",
+            "options": [
+                {
+                    "content": "crontab -e",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando clásico de consola (CMD) permite crear, consultar y eliminar tareas programadas en Windows?",
+            "explanation": "schtasks.exe es la herramienta de línea de comandos del Programador de tareas, con opciones como /create, /query y /delete.",
+            "options": [
+                {
+                    "content": "schtasks",
+                    "is_correct": true
+                },
+                {
+                    "content": "schtasks.exe",
+                    "is_correct": true
+                },
+                {
+                    "content": "SCHTASKS",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los nombres que corresponden a cmdlets válidos de PowerShell (hay varias correctas).",
+            "explanation": "Get-Service, Stop-Process y Remove-Item existen de forma nativa; List-Files y Delete-Folder no son cmdlets estándar.",
+            "options": [
+                {
+                    "content": "Get-Service",
+                    "is_correct": true
+                },
+                {
+                    "content": "Stop-Process",
+                    "is_correct": true
+                },
+                {
+                    "content": "List-Files",
+                    "is_correct": false
+                },
+                {
+                    "content": "Remove-Item",
+                    "is_correct": true
+                },
+                {
+                    "content": "Delete-Folder",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes son operadores válidos para comparar números dentro de [ ] en Bash? (hay varias correctas)",
+            "explanation": "Bash usa -eq, -ne, -lt, -le, -gt y -ge para comparar enteros; -gte no existe.",
+            "options": [
+                {
+                    "content": "-eq",
+                    "is_correct": true
+                },
+                {
+                    "content": "-lt",
+                    "is_correct": true
+                },
+                {
+                    "content": "-gte",
+                    "is_correct": false
+                },
+                {
+                    "content": "-ge",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,425 @@
+{
+    "slug": "cocina-appcc",
+    "title": "Cocina: seguridad e higiene alimentaria (APPCC)",
+    "description": "Test de repaso de cocina para el módulo de seguridad e higiene alimentaria: APPCC, alérgenos, temperaturas y contaminación cruzada. Ideal para preparar el examen de FP.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:23:16+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos principios básicos tiene el sistema APPCC?",
+            "explanation": "El sistema APPCC (Codex Alimentarius) se basa en 7 principios, desde el análisis de peligros hasta la documentación y el registro.",
+            "options": [
+                {
+                    "content": "5",
+                    "is_correct": false
+                },
+                {
+                    "content": "7",
+                    "is_correct": true
+                },
+                {
+                    "content": "9",
+                    "is_correct": false
+                },
+                {
+                    "content": "12",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el primer principio del APPCC?",
+            "explanation": "El primer principio consiste en identificar y evaluar los peligros y las medidas preventivas antes de definir el resto del sistema.",
+            "options": [
+                {
+                    "content": "Establecer los límites críticos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verificar el sistema",
+                    "is_correct": false
+                },
+                {
+                    "content": "Realizar un análisis de peligros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Establecer un sistema de documentación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el APPCC, ¿qué es un punto de control crítico (PCC)?",
+            "explanation": "Un PCC es una fase del proceso donde un control es imprescindible para garantizar la seguridad del alimento.",
+            "options": [
+                {
+                    "content": "Una fase en la que se puede aplicar un control esencial para prevenir, eliminar o reducir un peligro a un nivel aceptable",
+                    "is_correct": true
+                },
+                {
+                    "content": "El lugar de la cocina donde se guardan los registros",
+                    "is_correct": false
+                },
+                {
+                    "content": "La inspección anual realizada por la autoridad sanitaria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Caso: al medir la temperatura del centro de unas pechugas de pollo, el cocinero ve que no alcanza el límite crítico y las deja más tiempo en el horno. ¿A qué principio del APPCC corresponde esta actuación?",
+            "explanation": "Cuando la vigilancia detecta que se supera un límite crítico, se aplican medidas correctoras, como continuar la cocción.",
+            "options": [
+                {
+                    "content": "Verificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Establecimiento de medidas correctoras",
+                    "is_correct": true
+                },
+                {
+                    "content": "Análisis de peligros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Documentación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Entre qué temperaturas se sitúa la llamada «zona de peligro», donde los microorganismos se multiplican con mayor rapidez?",
+            "explanation": "Entre aproximadamente 5 °C y 65 °C la proliferación bacteriana es máxima, por lo que hay que reducir el tiempo que los alimentos pasan en ese intervalo.",
+            "options": [
+                {
+                    "content": "Entre -18 °C y 0 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre 0 °C y 5 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre 65 °C y 100 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre 5 °C y 65 °C",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿A qué temperatura debe mantenerse un alimento congelado?",
+            "explanation": "La conservación de congelados requiere -18 °C o menos de forma continua.",
+            "options": [
+                {
+                    "content": "-5 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "0 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "-18 °C o inferior",
+                    "is_correct": true
+                },
+                {
+                    "content": "-2 °C",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Caso: en una cocina se corta pollo crudo y después, sin lavar, se usa la misma tabla para picar lechuga para una ensalada. ¿Qué debería haberse hecho?",
+            "explanation": "Para evitar la contaminación cruzada hay que separar crudos y listos para consumir, o limpiar y desinfectar el material entre usos.",
+            "options": [
+                {
+                    "content": "Limpiar la tabla solo con un paño seco",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar tablas y utensilios distintos, o lavarlos y desinfectarlos entre ambos usos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aclarar la lechuga con más agua después de cortarla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuándo debe lavarse las manos un manipulador de alimentos?",
+            "explanation": "El lavado de manos es obligatorio tras cualquier actividad que pueda contaminarlas y antes de tocar alimentos que no se van a cocinar.",
+            "options": [
+                {
+                    "content": "Solo al comenzar la jornada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo cuando se vean sucias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siempre después de tocar la basura o alimentos crudos y antes de manipular alimentos listos para consumir",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo al terminar la jornada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes es uno de los 14 alérgenos de declaración obligatoria?",
+            "explanation": "El apio y sus derivados figuran en la lista de alérgenos del Reglamento (UE) 1169/2011; fresa, tomate y ajo no.",
+            "options": [
+                {
+                    "content": "Fresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tomate",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Apio",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la forma más segura de descongelar un alimento?",
+            "explanation": "Descongelar en refrigeración mantiene el alimento fuera de la zona de peligro y evita la proliferación bacteriana.",
+            "options": [
+                {
+                    "content": "En la cámara o el frigorífico",
+                    "is_correct": true
+                },
+                {
+                    "content": "A temperatura ambiente sobre la encimera",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bajo agua caliente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Junto a una fuente de calor",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un trozo de cristal o una astilla de madera hallados en un plato son un peligro de tipo…",
+            "explanation": "Los cuerpos extraños como cristales, astillas o metales son peligros físicos.",
+            "options": [
+                {
+                    "content": "Biológico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Químico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Físico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Alergénico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el APPCC, el «límite crítico» es…",
+            "explanation": "El límite crítico es el criterio (temperatura, tiempo, pH…) que marca si un PCC está bajo control o no.",
+            "options": [
+                {
+                    "content": "El número máximo de platos que se pueden servir",
+                    "is_correct": false
+                },
+                {
+                    "content": "El valor que separa lo aceptable de lo inaceptable en un PCC",
+                    "is_correct": true
+                },
+                {
+                    "content": "El tiempo máximo de la jornada laboral",
+                    "is_correct": false
+                },
+                {
+                    "content": "La fecha de caducidad de un producto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los registros y la documentación forman parte de los 7 principios del APPCC.",
+            "explanation": "El séptimo principio es establecer un sistema de documentación y registro adecuado para demostrar que el sistema funciona.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los huevos no están incluidos entre los 14 alérgenos de declaración obligatoria.",
+            "explanation": "Los huevos y sus productos sí figuran en la lista de los 14 alérgenos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Si un alimento tiene buen aspecto y buen olor, se puede asegurar que es seguro para el consumo.",
+            "explanation": "Muchos patógenos no alteran el aspecto, el olor ni el sabor del alimento.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el paso de microorganismos de un alimento crudo a otro listo para consumir mediante manos, utensilios o superficies?",
+            "explanation": "Es la transferencia de peligros de un alimento o superficie contaminados a otro que no lo estaba.",
+            "options": [
+                {
+                    "content": "contaminación cruzada",
+                    "is_correct": true
+                },
+                {
+                    "content": "la contaminación cruzada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contaminación cruzada",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuántos alérgenos de declaración obligatoria establece la normativa europea? (indica el número)",
+            "explanation": "El Reglamento (UE) 1169/2011 establece 14 grupos de alérgenos de declaración obligatoria.",
+            "options": [
+                {
+                    "content": "14",
+                    "is_correct": true
+                },
+                {
+                    "content": "catorce",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el principio del APPCC que consiste en comprobar que el sistema funciona correctamente?",
+            "explanation": "La verificación confirma mediante auditorías, análisis y revisiones que el plan APPCC es eficaz.",
+            "options": [
+                {
+                    "content": "verificación",
+                    "is_correct": true
+                },
+                {
+                    "content": "la verificación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Verificación",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los alérgenos de declaración obligatoria (hay varias correctas).",
+            "explanation": "Crustáceos, altramuces y sésamo están entre los 14 alérgenos; el arroz y la patata no.",
+            "options": [
+                {
+                    "content": "Crustáceos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Altramuces",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sésamo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Arroz",
+                    "is_correct": false
+                },
+                {
+                    "content": "Patata",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Qué medidas ayudan a evitar la contaminación cruzada? Hay varias correctas.",
+            "explanation": "Separar utensilios, colocar los crudos abajo y lavarse las manos reduce el riesgo; reutilizar utensilios sin limpiarlos lo aumenta.",
+            "options": [
+                {
+                    "content": "Usar tablas de corte de distinto color según el tipo de alimento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Almacenar los alimentos crudos en la parte inferior del frigorífico, debajo de los cocinados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lavarse las manos entre tareas con alimentos crudos y cocinados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usar el mismo cuchillo para carne cruda y para fruta sin lavarlo",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

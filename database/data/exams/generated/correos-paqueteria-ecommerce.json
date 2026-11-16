@@ -1,0 +1,583 @@
+{
+    "slug": "correos-paqueteria-ecommerce",
+    "title": "Correos: paquetería y e-commerce",
+    "description": "Test de repaso sobre la paquetería de Correos y sus soluciones para tiendas online, con preguntas tipo oposición. Me ha venido genial para el tema de productos de paquetería del temario de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:44:06+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes características corresponde al producto Paq Ligero de Correos?",
+            "explanation": "Paq Ligero está pensado para paquetes pequeños y ligeros, habituales en el e-commerce, que pueden entregarse en el buzón del destinatario.",
+            "options": [
+                {
+                    "content": "Paquete de gran volumen para mercancía paletizada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Envío de paquete pequeño y de poco peso, pensado para mercancía que cabe en un buzón",
+                    "is_correct": true
+                },
+                {
+                    "content": "Servicio exclusivo para entregas antes de las 10:00 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servicio reservado únicamente a envíos internacionales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el peso máximo de un envío Paq Ligero?",
+            "explanation": "Paq Ligero admite envíos de hasta 2 kg, lo que permite su entrega en buzón.",
+            "options": [
+                {
+                    "content": "500 gramos",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 kilogramo",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 kilogramos",
+                    "is_correct": false
+                },
+                {
+                    "content": "2 kilogramos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la diferencia entre Paq Premium y Paq Estándar, ¿cuál de las siguientes afirmaciones es correcta?",
+            "explanation": "Premium es el producto de entrega más rápida de la gama, mientras que Estándar ofrece una alternativa más económica con un plazo algo superior.",
+            "options": [
+                {
+                    "content": "Paq Premium es el servicio de paquetería más rápido y con más prestaciones; Paq Estándar es la opción más económica con plazo algo mayor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Paq Estándar es siempre más rápido que Paq Premium",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ambos productos tienen exactamente el mismo plazo y el mismo precio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Paq Premium solo existe para envíos dentro de una misma provincia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre Paq Estándar:",
+            "explanation": "La entrega más rápida de la gama corresponde a Paq Premium, no a Paq Estándar.",
+            "options": [
+                {
+                    "content": "Es una alternativa económica para envíos de paquetería",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su plazo de entrega es algo superior al de Paq Premium",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es el producto de paquetería de entrega más rápida de la gama",
+                    "is_correct": true
+                },
+                {
+                    "content": "Permite hacer seguimiento del envío",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es un Citypaq?",
+            "explanation": "Los Citypaq son terminales automáticos de autoservicio situados en lugares de gran afluencia, que permiten gestionar paquetes de forma autónoma.",
+            "options": [
+                {
+                    "content": "Un vehículo eléctrico de reparto urbano",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un seguro adicional para paquetes de alto valor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una tarifa especial para envíos dentro de la misma ciudad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un terminal de autoservicio para recoger y enviar paquetes sin depender del horario de una oficina",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre el uso de un Citypaq:",
+            "explanation": "El Citypaq es de autoservicio: el destinatario lo recoge por sí mismo mediante un código, sin intervención de personal.",
+            "options": [
+                {
+                    "content": "Se ubica en lugares de tránsito como centros comerciales o estaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "El destinatario recoge el paquete con un código de recogida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Evita que el destinatario dependa de estar en casa durante la entrega",
+                    "is_correct": false
+                },
+                {
+                    "content": "Requiere que un empleado de Correos entregue el paquete en mano al destinatario",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué relación tiene Correos Express con el Grupo Correos?",
+            "explanation": "Correos Express forma parte del Grupo Correos y se especializa en paquetería urgente y servicios de transporte exprés.",
+            "options": [
+                {
+                    "content": "Es la filial del Grupo Correos especializada en paquetería urgente y express",
+                    "is_correct": true
+                },
+                {
+                    "content": "Es una empresa competidora sin ninguna vinculación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es un organismo regulador de los servicios postales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es una oficina virtual para consultar tarifas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Correos Express, ¿qué garantiza el servicio Paq 10?",
+            "explanation": "El nombre del servicio Paq 10 hace referencia a la entrega antes de las 10:00 horas del día laborable siguiente.",
+            "options": [
+                {
+                    "content": "Entrega antes de las 14:00 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entrega antes de las 10:00 horas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entrega antes de las 20:00 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entrega en un plazo de 72 horas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué plazo de entrega caracteriza al servicio Paq 24 de Correos Express?",
+            "explanation": "Paq 24 es el servicio exprés de entrega en 24 horas, al día laborable siguiente, sin franja horaria concreta garantizada.",
+            "options": [
+                {
+                    "content": "Entrega en una semana",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entrega en el mismo día de la admisión en cualquier destino",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entrega solo en sábado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entrega en 24 horas, es decir, al día laborable siguiente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ofrecen los módulos o plugins de Correos para tiendas online?",
+            "explanation": "Los plugins conectan la tienda online con los servicios de Correos para gestionar envíos y etiquetas desde el propio panel de pedidos.",
+            "options": [
+                {
+                    "content": "Integrar el envío en la gestión de pedidos de la tienda, por ejemplo generando etiquetas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diseñar el logotipo de la tienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sustituir la pasarela de pago de la tienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gestionar la contabilidad del comercio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es Correos Market?",
+            "explanation": "Correos Market es el marketplace online de Correos, orientado a que pymes y comercios vendan sus productos.",
+            "options": [
+                {
+                    "content": "Una red de supermercados dentro de las oficinas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un servicio de pago aplazado para envíos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un marketplace de Correos donde los comercios pueden vender sus productos online",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una aplicación para comprar sellos de colección",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el ámbito del e-commerce, ¿en qué consiste un servicio logístico de fulfillment?",
+            "explanation": "El fulfillment externaliza la logística: almacenaje, preparación de pedidos (picking y packing) y envío.",
+            "options": [
+                {
+                    "content": "Solo en recoger paquetes en el domicilio del vendedor",
+                    "is_correct": false
+                },
+                {
+                    "content": "En almacenar los productos del vendedor, preparar los pedidos y enviarlos al cliente",
+                    "is_correct": true
+                },
+                {
+                    "content": "En reclamar impagos a los compradores",
+                    "is_correct": false
+                },
+                {
+                    "content": "En imprimir catálogos publicitarios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué sirve una solución de gestión de devoluciones para tiendas online?",
+            "explanation": "Las soluciones de devoluciones simplifican el retorno de mercancía del comprador al vendedor y permiten seguir el envío.",
+            "options": [
+                {
+                    "content": "Para anular de forma automática todos los pedidos de la tienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para evitar que los clientes puedan reclamar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para facilitar que el cliente devuelva un producto al comercio de forma sencilla y con seguimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para cambiar el destinatario de los envíos ya entregados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un envío contra reembolso, ¿quién abona el importe de la mercancía en el momento de la entrega?",
+            "explanation": "En el contra reembolso el destinatario paga al recibir el envío y Correos transfiere después ese importe al remitente.",
+            "options": [
+                {
+                    "content": "El remitente, antes de la admisión",
+                    "is_correct": false
+                },
+                {
+                    "content": "El destinatario, que paga al recibir el paquete",
+                    "is_correct": true
+                },
+                {
+                    "content": "La plataforma de pago de la tienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "El repartidor, de su propio bolsillo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para un envío de paquetería a un país fuera de la Unión Europea, ¿qué documentación aduanera suele acompañar al envío?",
+            "explanation": "Los envíos a terceros países requieren declaración aduanera; los formularios CN22 y CN23 son los utilizados en el ámbito postal.",
+            "options": [
+                {
+                    "content": "Una declaración de aduanas, como la CN22 o la CN23",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un certificado de empadronamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una licencia de apertura del comercio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un certificado de penales del remitente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 43/2010, del servicio postal universal, ¿hasta qué peso se incluyen los paquetes postales dentro de la obligación de admisión del servicio postal universal?",
+            "explanation": "La Ley 43/2010 incluye en el servicio postal universal los paquetes postales de hasta 20 kg de peso.",
+            "options": [
+                {
+                    "content": "2 kg",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 kg",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 kg",
+                    "is_correct": true
+                },
+                {
+                    "content": "50 kg",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué permite el seguimiento online de un envío de paquetería de Correos?",
+            "explanation": "Con el código de seguimiento, remitente y destinatario pueden consultar en cada momento el estado del envío.",
+            "options": [
+                {
+                    "content": "Modificar el contenido del paquete una vez admitido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consultar el estado del envío mediante su código de seguimiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Conocer los datos bancarios del remitente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eliminar el envío del sistema logístico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si no es posible entregar un paquete en el domicilio por ausencia del destinatario, ¿qué suele hacer Correos?",
+            "explanation": "Tras un intento fallido se deja aviso al destinatario y el paquete queda a su disposición para recogerlo en la oficina o punto indicado.",
+            "options": [
+                {
+                    "content": "Devolverlo de inmediato al remitente sin aviso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Destruirlo tras el primer intento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dejarlo sin aviso en el portal del edificio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dejar un aviso y mantener el envío disponible para su recogida en la oficina indicada",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el ámbito del e-commerce, ¿qué ventaja aporta el preregistro de envíos?",
+            "explanation": "El preregistro adelanta la grabación de los datos y la etiqueta, por lo que la admisión del envío es más rápida.",
+            "options": [
+                {
+                    "content": "Permite preparar etiquetas y datos del envío con antelación, agilizando su admisión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elimina la necesidad de embalar los paquetes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Convierte cualquier envío en gratuito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impide hacer seguimiento posterior del envío",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes plataformas de comercio electrónico dispone de integración con Correos mediante módulo o plugin?",
+            "explanation": "Correos ofrece módulos para plataformas de tiendas online muy extendidas, entre ellas WooCommerce y PrestaShop.",
+            "options": [
+                {
+                    "content": "Microsoft Excel",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adobe Photoshop",
+                    "is_correct": false
+                },
+                {
+                    "content": "WooCommerce",
+                    "is_correct": true
+                },
+                {
+                    "content": "AutoCAD",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Por qué los envíos de e-commerce entre la península y Canarias, Ceuta o Melilla requieren declaración aduanera?",
+            "explanation": "Estos territorios están fuera del territorio aduanero y del ámbito del IVA de la UE, por lo que los envíos llevan declaración de aduanas.",
+            "options": [
+                {
+                    "content": "Porque esos territorios tienen un régimen aduanero y fiscal distinto del de la península",
+                    "is_correct": true
+                },
+                {
+                    "content": "Porque no pertenecen a España",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque solo admiten paquetes de menos de 1 kg",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque Correos no opera en ellos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ventaja ofrece Citypaq a un comercio online y a sus clientes?",
+            "explanation": "Citypaq da al cliente la opción de recoger el paquete cuando le convenga, reduciendo los fallos de entrega por ausencia.",
+            "options": [
+                {
+                    "content": "Eliminar por completo el coste del transporte",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ofrecer una entrega alternativa al domicilio, útil cuando el cliente no puede estar en casa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cambiar el destinatario del paquete tras la entrega",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sustituir la necesidad de etiquetar los envíos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes soluciones está pensada específicamente para quien vende por internet?",
+            "explanation": "Correos ofrece al comercio online integraciones con plataformas, un marketplace propio y servicios logísticos específicos.",
+            "options": [
+                {
+                    "content": "El giro postal internacional exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "La notificación administrativa de multas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El sellado de documentos oficiales en ventanilla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los plugins de integración, el marketplace Correos Market y la logística para e-commerce",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El servicio Paq 14 de Correos Express garantiza la entrega antes de las 14:00 horas del día laborable siguiente.",
+            "explanation": "El número del producto indica la franja horaria de entrega: Paq 14 se entrega antes de las 14:00 horas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 43/2010, la Sociedad Estatal Correos y Telégrafos fue designada operador del servicio postal universal por un periodo de 15 años.",
+            "explanation": "La Ley 43/2010 designó a Correos como operador del servicio postal universal durante 15 años desde su entrada en vigor.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los plugins de Correos para tiendas online obligan al comercio a preparar a mano cada etiqueta fuera de la plataforma de venta.",
+            "explanation": "Precisamente su finalidad es integrar el envío en la plataforma de venta y automatizar tareas como la generación de etiquetas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

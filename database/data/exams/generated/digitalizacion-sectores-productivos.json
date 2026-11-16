@@ -1,0 +1,437 @@
+{
+    "slug": "digitalizacion-sectores-productivos",
+    "title": "Digitalización aplicada a los sectores productivos",
+    "description": "Test de repaso del módulo de digitalización aplicada a los sectores productivos (FP). Cubre Industria 4.0, IoT, cloud, big data, IA, gemelos digitales y ciberseguridad.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:12:50+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué se conoce habitualmente como «Industria 4.0»?",
+            "explanation": "La Industria 4.0 integra tecnologías digitales (IoT, cloud, IA, big data) en la producción para crear fábricas inteligentes y conectadas.",
+            "options": [
+                {
+                    "content": "La primera revolución industrial basada en la máquina de vapor",
+                    "is_correct": false
+                },
+                {
+                    "content": "La cuarta revolución industrial, basada en la digitalización y la conexión de los procesos productivos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un modelo de producción exclusivamente manual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una norma que regula el horario laboral en las fábricas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significan las siglas IoT?",
+            "explanation": "IoT es Internet of Things: objetos físicos con sensores y conexión a red que intercambian datos.",
+            "options": [
+                {
+                    "content": "Internet of Things (Internet de las cosas)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Integrated Operating Table",
+                    "is_correct": false
+                },
+                {
+                    "content": "Internal Office Technology",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una granja instala sensores de humedad en el suelo que envían datos por red a una aplicación para decidir cuándo regar. ¿Qué tecnología se está aplicando principalmente?",
+            "explanation": "Sensores conectados que envían datos de forma automática son un caso típico de IoT aplicado a la agricultura de precisión.",
+            "options": [
+                {
+                    "content": "Realidad virtual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impresión 3D",
+                    "is_correct": false
+                },
+                {
+                    "content": "Internet de las cosas (IoT)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Blockchain",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una ventaja típica de la computación en la nube (cloud)?",
+            "explanation": "La elasticidad y el pago por uso son características básicas del cloud computing.",
+            "options": [
+                {
+                    "content": "Escalar recursos según la demanda y pagar por uso",
+                    "is_correct": true
+                },
+                {
+                    "content": "No necesitar conexión a Internet nunca",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eliminar por completo cualquier riesgo de seguridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obligar a comprar servidores propios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa alquila una plataforma en la nube para desarrollar y desplegar sus aplicaciones sin gestionar los servidores. ¿Qué modelo de servicio es?",
+            "explanation": "PaaS (Platform as a Service) ofrece una plataforma para desarrollar y desplegar aplicaciones sin administrar la infraestructura.",
+            "options": [
+                {
+                    "content": "SaaS",
+                    "is_correct": false
+                },
+                {
+                    "content": "IaaS",
+                    "is_correct": false
+                },
+                {
+                    "content": "PaaS",
+                    "is_correct": true
+                },
+                {
+                    "content": "DaaS",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estas «V» NO se asocia clásicamente al big data?",
+            "explanation": "Las V clásicas son volumen, velocidad y variedad (a las que se suman veracidad y valor); vibración no es una de ellas.",
+            "options": [
+                {
+                    "content": "Volumen",
+                    "is_correct": false
+                },
+                {
+                    "content": "Velocidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Variedad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vibración",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una cadena de supermercados analiza millones de tickets de compra para predecir qué productos se agotarán. ¿Qué tecnología emplea?",
+            "explanation": "Procesar grandes volúmenes de datos para extraer patrones y predicciones es el objetivo del big data.",
+            "options": [
+                {
+                    "content": "Análisis de big data",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cortafuegos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Domótica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Firma electrónica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es el aprendizaje automático (machine learning)?",
+            "explanation": "El machine learning permite a los sistemas mejorar y detectar patrones a partir de datos sin programar cada regla.",
+            "options": [
+                {
+                    "content": "Programar manualmente cada regla que debe seguir una máquina",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una rama de la IA en la que los sistemas aprenden a partir de datos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un tipo de memoria RAM",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es un gemelo digital?",
+            "explanation": "Un gemelo digital es un modelo virtual que refleja el comportamiento del elemento físico, normalmente con datos de sensores.",
+            "options": [
+                {
+                    "content": "Una copia de seguridad de una base de datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos servidores idénticos en la misma sala",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una réplica virtual de un objeto, máquina o proceso físico alimentada con datos reales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un antivirus duplicado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una fábrica usa un gemelo digital de una línea de producción. ¿Para qué le resulta más útil?",
+            "explanation": "Permite simular escenarios y hacer mantenimiento predictivo sin interrumpir el proceso real.",
+            "options": [
+                {
+                    "content": "Para simular cambios y anticipar fallos sin parar la línea real",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para sustituir a todos los trabajadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para aumentar el consumo eléctrico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para evitar usar sensores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un correo falso que imita a tu banco para que introduzcas tus claves en una web fraudulenta es un ataque de tipo:",
+            "explanation": "El phishing suplanta a una entidad de confianza mediante ingeniería social para robar credenciales.",
+            "options": [
+                {
+                    "content": "Phishing",
+                    "is_correct": true
+                },
+                {
+                    "content": "Denegación de servicio físico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Overclocking",
+                    "is_correct": false
+                },
+                {
+                    "content": "Formateo lógico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué medida refuerza más la seguridad de una cuenta de acceso a la plataforma de la empresa?",
+            "explanation": "La autenticación multifactor exige otro factor además de la contraseña y reduce el riesgo si esta se filtra.",
+            "options": [
+                {
+                    "content": "Usar la misma contraseña en todos los servicios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Activar la autenticación multifactor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Compartir la contraseña con el equipo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Anotar la clave en una nota adhesiva en el monitor",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La inteligencia artificial puede utilizarse en la industria para el mantenimiento predictivo de maquinaria.",
+            "explanation": "La IA analiza datos de sensores para anticipar averías antes de que se produzcan.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Al almacenar datos en la nube, la empresa deja de tener cualquier responsabilidad sobre su seguridad.",
+            "explanation": "La seguridad es una responsabilidad compartida entre el proveedor y el cliente, que debe gestionar accesos y configuración.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Hacer copias de seguridad periódicas es una medida útil frente a ataques de ransomware.",
+            "explanation": "Con copias de seguridad aisladas se pueden restaurar los datos cifrados sin pagar el rescate.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el tipo de software malicioso que cifra los archivos de la víctima y exige un rescate económico?",
+            "explanation": "El ransomware cifra la información y pide un pago para devolver el acceso.",
+            "options": [
+                {
+                    "content": "ransomware",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ransomware",
+                    "is_correct": true
+                },
+                {
+                    "content": "el ransomware",
+                    "is_correct": true
+                },
+                {
+                    "content": "secuestro de datos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué siglas designan el modelo de nube en el que se ofrece directamente una aplicación lista para usar, como un correo web (Software as a Service)?",
+            "explanation": "SaaS ofrece software completo a través de Internet, sin instalación ni gestión de la infraestructura por parte del usuario.",
+            "options": [
+                {
+                    "content": "SaaS",
+                    "is_correct": true
+                },
+                {
+                    "content": "saas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Software as a Service",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué dispositivo o software de red filtra el tráfico entrante y saliente según reglas de seguridad?",
+            "explanation": "El cortafuegos (firewall) permite o bloquea conexiones según las reglas definidas.",
+            "options": [
+                {
+                    "content": "cortafuegos",
+                    "is_correct": true
+                },
+                {
+                    "content": "el cortafuegos",
+                    "is_correct": true
+                },
+                {
+                    "content": "firewall",
+                    "is_correct": true
+                },
+                {
+                    "content": "el firewall",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las tecnologías que se asocian a la Industria 4.0 (hay varias correctas):",
+            "explanation": "IoT, gemelos digitales y cloud son habilitadores clave de la Industria 4.0; el telégrafo y la máquina de escribir no lo son.",
+            "options": [
+                {
+                    "content": "Internet de las cosas (IoT)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Gemelos digitales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Computación en la nube",
+                    "is_correct": true
+                },
+                {
+                    "content": "Telégrafo de hilos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Máquina de escribir mecánica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes son buenas prácticas de ciberseguridad? (hay varias correctas)",
+            "explanation": "Actualizar y usar contraseñas robustas reduce riesgos; abrir adjuntos desconocidos o desactivar el antivirus los aumenta.",
+            "options": [
+                {
+                    "content": "Mantener el software actualizado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usar contraseñas robustas y únicas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Abrir adjuntos de remitentes desconocidos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desactivar el antivirus para ir más rápido",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}
