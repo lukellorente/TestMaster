@@ -1,0 +1,560 @@
+{
+    "slug": "fol-prl",
+    "title": "FOL: prevención de riesgos laborales",
+    "description": "Test de FOL para repasar la prevención de riesgos laborales antes del examen: riesgo, daño, EPI, señalización y primeros auxilios. Nivel fácil, ideal para empezar a estudiar el tema.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:11:32+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley de Prevención de Riesgos Laborales, ¿cómo se define el «riesgo laboral»?",
+            "explanation": "La LPRL define el riesgo laboral como la posibilidad de que un trabajador sufra un determinado daño derivado del trabajo.",
+            "options": [
+                {
+                    "content": "La posibilidad de que un trabajador sufra un determinado daño derivado del trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cualquier enfermedad que sufra el trabajador fuera del trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El daño que ya se ha producido en el puesto de trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La sanción impuesta a la empresa por un accidente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué son los «daños derivados del trabajo»?",
+            "explanation": "Los daños son las enfermedades, patologías o lesiones sufridas con motivo u ocasión del trabajo.",
+            "options": [
+                {
+                    "content": "Las condiciones que pueden provocar un accidente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las enfermedades, patologías o lesiones sufridas con motivo u ocasión del trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los equipos que protegen al trabajador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las normas de seguridad de la empresa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un trabajador de un almacén se tropieza con unas cajas dejadas en el pasillo y se rompe un tobillo. ¿Qué tipo de factor de riesgo ha influido principalmente?",
+            "explanation": "El desorden y los obstáculos en los pasillos son un factor de riesgo de las condiciones de seguridad.",
+            "options": [
+                {
+                    "content": "Condiciones de seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Agentes biológicos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Carga mental",
+                    "is_correct": false
+                },
+                {
+                    "content": "Agentes químicos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El ruido, las vibraciones y la iluminación inadecuada pertenecen a los factores de riesgo relacionados con:",
+            "explanation": "Ruido, vibraciones, iluminación y temperatura son contaminantes físicos del ambiente de trabajo.",
+            "options": [
+                {
+                    "content": "La organización del trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las condiciones de seguridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "El medio ambiente físico de trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los agentes biológicos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes es un factor de riesgo de tipo organizativo o psicosocial?",
+            "explanation": "El ritmo, la jornada y la relación con compañeros son factores psicosociales y organizativos.",
+            "options": [
+                {
+                    "content": "Un suelo resbaladizo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un cable pelado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las jornadas excesivas y el ritmo de trabajo elevado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un vapor tóxico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significa la sigla EPI?",
+            "explanation": "EPI es Equipo de Protección Individual, destinado a ser llevado por el trabajador para protegerle de riesgos.",
+            "options": [
+                {
+                    "content": "Equipo de Protección Individual",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elemento de Prevención Interna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Equipo de Prevención Industrial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estudio de Prevención Informatizado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un soldador debe protegerse los ojos de las radiaciones y las chispas. ¿Qué EPI es el adecuado?",
+            "explanation": "La pantalla o careta de soldadura protege ojos y cara de radiaciones, chispas y proyecciones.",
+            "options": [
+                {
+                    "content": "Tapones auditivos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pantalla facial de soldadura",
+                    "is_correct": true
+                },
+                {
+                    "content": "Guantes de látex",
+                    "is_correct": false
+                },
+                {
+                    "content": "Casco de obra",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el orden de prioridad en prevención, ¿cuándo deben usarse los EPI?",
+            "explanation": "La protección colectiva tiene prioridad sobre la individual, que se usa cuando aquella no basta.",
+            "options": [
+                {
+                    "content": "Siempre antes que la protección colectiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando los riesgos no se pueden evitar o limitar suficientemente con medidas colectivas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo cuando el trabajador lo pida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nunca, porque están prohibidos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué forma y color tienen las señales de prohibición?",
+            "explanation": "Las señales de prohibición son circulares, con pictograma negro sobre fondo blanco, borde y banda rojos.",
+            "options": [
+                {
+                    "content": "Triangular, fondo amarillo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuadrada, fondo verde",
+                    "is_correct": false
+                },
+                {
+                    "content": "Redonda, borde rojo y banda diagonal roja sobre fondo blanco",
+                    "is_correct": true
+                },
+                {
+                    "content": "Redonda, fondo azul",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una señal triangular con borde negro y fondo amarillo es una señal de:",
+            "explanation": "Las señales de advertencia son triangulares, amarillas y con borde negro.",
+            "options": [
+                {
+                    "content": "Obligación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Advertencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Salvamento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prohibición",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las señales de salvamento o socorro (salidas de emergencia, botiquín) son de color:",
+            "explanation": "Las señales de salvamento y socorro son rectangulares o cuadradas con fondo verde.",
+            "options": [
+                {
+                    "content": "Azul",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verde",
+                    "is_correct": true
+                },
+                {
+                    "content": "Rojo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Amarillo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una señal redonda de fondo azul con un casco blanco indica:",
+            "explanation": "Las señales de obligación son redondas, azules, con pictograma blanco.",
+            "options": [
+                {
+                    "content": "Peligro de caída de objetos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prohibido entrar con casco",
+                    "is_correct": false
+                },
+                {
+                    "content": "Obligatoriedad de llevar casco de protección",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ubicación del casco de emergencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Encuentras a un compañero inconsciente tras una descarga eléctrica. ¿Qué es lo primero que debes hacer según la conducta PAS?",
+            "explanation": "La P de PAS es proteger: hay que eliminar el peligro antes de actuar para no convertirse en otra víctima.",
+            "options": [
+                {
+                    "content": "Moverlo rápidamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Darle de beber agua",
+                    "is_correct": false
+                },
+                {
+                    "content": "Proteger a la víctima y a ti mismo, cortando antes la corriente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Esperar sin hacer nada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la conducta PAS, ¿qué teléfono de emergencias se utiliza en España para avisar (la «A»)?",
+            "explanation": "El 112 es el número único europeo de emergencias, disponible en España.",
+            "options": [
+                {
+                    "content": "112",
+                    "is_correct": true
+                },
+                {
+                    "content": "010",
+                    "is_correct": false
+                },
+                {
+                    "content": "091 únicamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "900 100 000",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una persona se ha quemado levemente la mano con agua caliente. ¿Qué primera actuación es correcta?",
+            "explanation": "Se debe enfriar la zona con agua fría durante varios minutos y no aplicar remedios caseros.",
+            "options": [
+                {
+                    "content": "Aplicar pasta de dientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Enfriar la quemadura con agua fría abundante",
+                    "is_correct": true
+                },
+                {
+                    "content": "Reventar las ampollas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aplicar aceite",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El riesgo laboral y el daño derivado del trabajo son lo mismo.",
+            "explanation": "El riesgo es la posibilidad de sufrir un daño; el daño es la lesión o enfermedad ya producida.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los EPI deben llevar el marcado CE para garantizar que cumplen los requisitos de seguridad.",
+            "explanation": "Los EPI comercializados en la UE deben llevar el marcado CE que acredita su conformidad.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Ante un accidente, en la conducta PAS lo primero es socorrer a la víctima sin valorar el entorno.",
+            "explanation": "Lo primero es proteger, y para ello hay que valorar el entorno y evitar nuevos riesgos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los EPI eliminan el riesgo en su origen.",
+            "explanation": "Los EPI no eliminan el riesgo, solo reducen sus consecuencias sobre el trabajador.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué significan las siglas PAS en primeros auxilios? Escribe las tres palabras en orden.",
+            "explanation": "PAS es la conducta básica de actuación: Proteger, Avisar y Socorrer.",
+            "options": [
+                {
+                    "content": "Proteger, avisar, socorrer",
+                    "is_correct": true
+                },
+                {
+                    "content": "Proteger avisar socorrer",
+                    "is_correct": true
+                },
+                {
+                    "content": "proteger-avisar-socorrer",
+                    "is_correct": true
+                },
+                {
+                    "content": "Proteger, Avisar y Socorrer",
+                    "is_correct": true
+                },
+                {
+                    "content": "Proteger Avisar Socorrer",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué color tienen las señales de obligación?",
+            "explanation": "Las señales de obligación son redondas, con fondo azul y pictograma blanco.",
+            "options": [
+                {
+                    "content": "Azul",
+                    "is_correct": true
+                },
+                {
+                    "content": "El azul",
+                    "is_correct": true
+                },
+                {
+                    "content": "Color azul",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué EPI protege la cabeza frente a golpes y caída de objetos?",
+            "explanation": "El casco protege la cabeza frente a golpes e impactos de objetos.",
+            "options": [
+                {
+                    "content": "Casco",
+                    "is_correct": true
+                },
+                {
+                    "content": "El casco",
+                    "is_correct": true
+                },
+                {
+                    "content": "Casco de protección",
+                    "is_correct": true
+                },
+                {
+                    "content": "Casco de seguridad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el factor de riesgo que agrupa los virus, bacterias y hongos presentes en el trabajo?",
+            "explanation": "Virus, bacterias, hongos y parásitos son contaminantes o agentes biológicos.",
+            "options": [
+                {
+                    "content": "Agentes biológicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Riesgo biológico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Biológico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contaminantes biológicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los agentes biológicos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los elementos que son EPI (hay varias respuestas correctas).",
+            "explanation": "Guantes, gafas y calzado de seguridad se llevan puestos; barandillas y extintores son protección colectiva o equipos de emergencia.",
+            "options": [
+                {
+                    "content": "Guantes de protección",
+                    "is_correct": true
+                },
+                {
+                    "content": "Gafas de seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Barandilla de una plataforma",
+                    "is_correct": false
+                },
+                {
+                    "content": "Calzado de seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Extintor de pared",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué señales tienen color de fondo o borde rojo (hay varias respuestas correctas).",
+            "explanation": "Las señales de prohibición y las de material contra incendios usan el rojo; obligación es azul y salvamento es verde.",
+            "options": [
+                {
+                    "content": "Prohibición",
+                    "is_correct": true
+                },
+                {
+                    "content": "Equipos de lucha contra incendios",
+                    "is_correct": true
+                },
+                {
+                    "content": "Obligación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Salvamento",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

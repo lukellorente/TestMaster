@@ -1,0 +1,536 @@
+{
+    "slug": "psp-hilos-sockets",
+    "title": "PSP: procesos, hilos y sockets en Java",
+    "description": "Test de PSP para repasar antes del examen de DAM/DAW: procesos, hilos, sincronización, sockets y un poco de cripto en Java. Está sacado de mis apuntes de este curso, ¡a ver si aprobáis!",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:58:52+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene llamar a pb.redirectErrorStream(true) sobre un ProcessBuilder?",
+            "explanation": "Con redirectErrorStream(true) el flujo de error se fusiona con el de salida estándar del subproceso, por lo que basta con leer getInputStream().",
+            "options": [
+                {
+                    "content": "Descarta por completo la salida de error del proceso hijo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mezcla la salida de error con la salida estándar, de modo que ambas se leen desde getInputStream()",
+                    "is_correct": true
+                },
+                {
+                    "content": "Redirige la entrada estándar del proceso hijo a un fichero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hace que el proceso hijo termine si escribe algo por stderr",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un proceso hijo lanzado con ProcessBuilder escribe muchísimo texto por su salida estándar. El proceso padre llama a p.waitFor() sin haber leído nunca p.getInputStream(). ¿Qué puede ocurrir?",
+            "explanation": "Si nadie consume la salida del subproceso, el búfer del sistema se llena, el hijo se bloquea al escribir y waitFor() no vuelve nunca (interbloqueo).",
+            "options": [
+                {
+                    "content": "El padre se queda bloqueado porque el búfer de la tubería se llena y el hijo no puede terminar",
+                    "is_correct": true
+                },
+                {
+                    "content": "waitFor() lanza automáticamente una IOException",
+                    "is_correct": false
+                },
+                {
+                    "content": "Java descarta el exceso de salida sin ningún problema",
+                    "is_correct": false
+                },
+                {
+                    "content": "El hijo pasa a ser un proceso demonio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué sirve el método inheritIO() de ProcessBuilder?",
+            "explanation": "inheritIO() redirige los flujos estándar del subproceso a los del proceso Java que lo lanza, por lo que la salida aparece directamente en la consola del padre.",
+            "options": [
+                {
+                    "content": "Para que el proceso hijo herede las variables de entorno del padre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para que el hijo herede la prioridad de hilos del padre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para que la entrada, salida y error estándar del hijo sean los del proceso Java actual",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué mostrará por pantalla este código?\n\nThread t = new Thread(() -> System.out.println(Thread.currentThread().getName()));\nt.run();",
+            "explanation": "Llamar a run() directamente ejecuta el código como una llamada normal en el hilo actual (main); solo start() crea un hilo nuevo.",
+            "options": [
+                {
+                    "content": "Thread-0",
+                    "is_correct": false
+                },
+                {
+                    "content": "main",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nada, porque el hilo nunca llega a arrancar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lanza IllegalThreadStateException",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ocurre si se invoca start() dos veces sobre el mismo objeto Thread?",
+            "explanation": "Un objeto Thread solo puede arrancarse una vez; un segundo start() lanza IllegalThreadStateException.",
+            "options": [
+                {
+                    "content": "Se crea un segundo hilo que ejecuta run() en paralelo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La segunda llamada se ignora silenciosamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se lanza IllegalThreadStateException",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se lanza InterruptedException",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Sobre qué monitor se sincroniza un método declarado como «public static synchronized void incrementar()» de la clase Contador?",
+            "explanation": "Un método estático synchronized adquiere el cerrojo intrínseco del objeto Class de su clase.",
+            "options": [
+                {
+                    "content": "Sobre la instancia this que lo invoca",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sobre el objeto Contador.class",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sobre el hilo que lo ejecuta",
+                    "is_correct": false
+                },
+                {
+                    "content": "No usa ningún monitor, pues los métodos estáticos no se sincronizan",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el patrón productor-consumidor con wait/notify, ¿por qué se recomienda comprobar la condición dentro de un while y no de un if?",
+            "explanation": "Tras despertar, la condición puede no cumplirse (despertares espurios u otro hilo la ha cambiado), así que hay que reevaluarla en un bucle.",
+            "options": [
+                {
+                    "content": "Porque wait() solo funciona dentro de bucles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque el while evita tener que usar synchronized",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque así el hilo consume menos CPU mientras espera",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque un hilo puede despertarse sin que la condición se cumpla (despertar espurio o condición cambiada) y debe volver a comprobarla",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Varios hilos están esperando con wait() sobre el mismo objeto. ¿Qué hace una llamada a notify() sobre ese objeto?",
+            "explanation": "notify() despierta a un solo hilo cualquiera de los que esperan en el monitor; para despertarlos a todos hay que usar notifyAll().",
+            "options": [
+                {
+                    "content": "Despierta a todos los hilos en espera",
+                    "is_correct": false
+                },
+                {
+                    "content": "Despierta a un único hilo en espera, sin garantía de cuál",
+                    "is_correct": true
+                },
+                {
+                    "content": "Despierta siempre al hilo que lleva más tiempo esperando, según la especificación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se crea ExecutorService ex = Executors.newFixedThreadPool(3); y se envían 8 tareas largas con submit(). ¿Cuántas tareas se ejecutan como máximo a la vez?",
+            "explanation": "Un pool fijo de 3 hilos ejecuta como máximo 3 tareas simultáneas; las demás quedan en la cola hasta que un hilo se libere.",
+            "options": [
+                {
+                    "content": "8",
+                    "is_correct": false
+                },
+                {
+                    "content": "1",
+                    "is_correct": false
+                },
+                {
+                    "content": "3, y el resto esperan en cola",
+                    "is_correct": true
+                },
+                {
+                    "content": "4",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la diferencia entre shutdown() y shutdownNow() en un ExecutorService?",
+            "explanation": "shutdown() inicia un cierre ordenado; shutdownNow() intenta parar las tareas en ejecución mediante interrupciones y devuelve la lista de tareas que no llegaron a empezar.",
+            "options": [
+                {
+                    "content": "shutdown() deja terminar las tareas ya enviadas pero no admite nuevas; shutdownNow() intenta detener las activas y devuelve las pendientes",
+                    "is_correct": true
+                },
+                {
+                    "content": "shutdown() interrumpe todas las tareas y shutdownNow() espera a que acaben",
+                    "is_correct": false
+                },
+                {
+                    "content": "No hay ninguna diferencia, son sinónimos",
+                    "is_correct": false
+                },
+                {
+                    "content": "shutdownNow() bloquea el hilo llamante hasta que el pool termina",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una tarea Callable enviada con submit() lanza una excepción durante su ejecución. ¿Cuándo y cómo se manifiesta al llamante?",
+            "explanation": "Future.get() envuelve la excepción de la tarea en una ExecutionException, accesible mediante getCause().",
+            "options": [
+                {
+                    "content": "Inmediatamente al hacer submit(), con la excepción original",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al llamar a future.get(), que lanza ExecutionException con la causa original",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nunca, porque el pool la captura y la descarta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al llamar a shutdown(), que lanza la excepción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estas afirmaciones sobre UDP en Java es correcta?",
+            "explanation": "UDP no es orientado a conexión ni fiable: los datagramas pueden perderse, duplicarse o llegar desordenados.",
+            "options": [
+                {
+                    "content": "DatagramSocket exige establecer una conexión previa con accept()",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cada DatagramPacket es independiente y no se garantiza ni su entrega ni su orden",
+                    "is_correct": true
+                },
+                {
+                    "content": "UDP garantiza la retransmisión automática de los paquetes perdidos",
+                    "is_correct": false
+                },
+                {
+                    "content": "UDP usa ServerSocket para recibir los datagramas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al arrancar un servidor con new ServerSocket(8080) se produce java.net.BindException: Address already in use. ¿Cuál es la causa más probable?",
+            "explanation": "BindException con «Address already in use» indica que el puerto ya está ocupado por otro proceso (o por otra instancia del mismo servidor).",
+            "options": [
+                {
+                    "content": "El cliente ha cerrado la conexión antes de tiempo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Otro proceso ya está escuchando en el puerto 8080",
+                    "is_correct": true
+                },
+                {
+                    "content": "El puerto 8080 está reservado al sistema y exige permisos de administrador",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tras ejecutar socket.setSoTimeout(3000), el cliente llama a in.read() y el servidor no envía nada. ¿Qué ocurre pasados 3 segundos?",
+            "explanation": "Con SO_TIMEOUT, una lectura bloqueante lanza SocketTimeoutException al expirar, pero el socket no se cierra.",
+            "options": [
+                {
+                    "content": "read() devuelve -1",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se cierra el socket automáticamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se lanza SocketTimeoutException y el socket sigue siendo utilizable",
+                    "is_correct": true
+                },
+                {
+                    "content": "read() devuelve 0 y continúa el programa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para almacenar contraseñas de usuarios en una base de datos, ¿qué opción es la más adecuada?",
+            "explanation": "Un hash lento con salt dificulta los ataques de fuerza bruta y de tablas precalculadas; Base64 no protege y MD5 sin salt es débil.",
+            "options": [
+                {
+                    "content": "Cifrarlas con AES usando una clave guardada en el mismo código",
+                    "is_correct": false
+                },
+                {
+                    "content": "Guardarlas codificadas en Base64",
+                    "is_correct": false
+                },
+                {
+                    "content": "Guardar un hash lento con salt aleatorio (por ejemplo PBKDF2 o bcrypt)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Guardar su hash MD5 sin salt",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Cuando un hilo llama a wait() libera el monitor del objeto, mientras que Thread.sleep() dentro de un bloque synchronized no lo libera.",
+            "explanation": "wait() suelta el cerrojo mientras espera; sleep() solo duerme el hilo y mantiene los monitores que ya posee.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Se puede llamar a setDaemon(true) sobre un hilo después de haber invocado su método start().",
+            "explanation": "setDaemon() solo puede llamarse antes de start(); si no, lanza IllegalThreadStateException.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Con UDP, los datagramas siempre llegan al receptor en el mismo orden en que se enviaron.",
+            "explanation": "UDP no garantiza orden ni entrega; eso lo ofrece TCP.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "ProcessBuilder.start() lanza una IOException si el programa indicado no se puede ejecutar, por ejemplo por no existir.",
+            "explanation": "Si el ejecutable no se encuentra o no puede lanzarse, start() lanza IOException.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué método de Thread usa un hilo para esperar a que otro hilo termine su ejecución?",
+            "explanation": "join() bloquea al hilo llamante hasta que el hilo sobre el que se invoca finaliza.",
+            "options": [
+                {
+                    "content": "join",
+                    "is_correct": true
+                },
+                {
+                    "content": "join()",
+                    "is_correct": true
+                },
+                {
+                    "content": "Thread.join",
+                    "is_correct": true
+                },
+                {
+                    "content": "Thread.join()",
+                    "is_correct": true
+                },
+                {
+                    "content": "t.join()",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué método de ServerSocket bloquea al servidor hasta que un cliente se conecta y devuelve un objeto Socket?",
+            "explanation": "accept() espera una conexión entrante y devuelve el Socket que se comunica con ese cliente.",
+            "options": [
+                {
+                    "content": "accept",
+                    "is_correct": true
+                },
+                {
+                    "content": "accept()",
+                    "is_correct": true
+                },
+                {
+                    "content": "ServerSocket.accept",
+                    "is_correct": true
+                },
+                {
+                    "content": "ServerSocket.accept()",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la clase de java.security que se usa para calcular un resumen hash como SHA-256?",
+            "explanation": "MessageDigest.getInstance(\"SHA-256\") devuelve el objeto que calcula el resumen de los datos.",
+            "options": [
+                {
+                    "content": "MessageDigest",
+                    "is_correct": true
+                },
+                {
+                    "content": "java.security.MessageDigest",
+                    "is_correct": true
+                },
+                {
+                    "content": "la clase MessageDigest",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué excepción se lanza si un hilo llama a wait() sobre un objeto cuyo monitor no posee (fuera de synchronized)?",
+            "explanation": "wait(), notify() y notifyAll() exigen tener el monitor del objeto; si no, se lanza IllegalMonitorStateException.",
+            "options": [
+                {
+                    "content": "IllegalMonitorStateException",
+                    "is_correct": true
+                },
+                {
+                    "content": "java.lang.IllegalMonitorStateException",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las formas correctas de proteger un contador compartido entre varios hilos frente a condiciones de carrera (hay varias correctas):",
+            "explanation": "volatile garantiza visibilidad pero no atomicidad: contador++ sigue siendo lectura-modificación-escritura y puede perder incrementos.",
+            "options": [
+                {
+                    "content": "Declarar el método incrementar() como synchronized",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usar un AtomicInteger con incrementAndGet()",
+                    "is_correct": true
+                },
+                {
+                    "content": "Declarar el contador como volatile int y usar contador++",
+                    "is_correct": false
+                },
+                {
+                    "content": "Proteger la operación con un ReentrantLock (lock/unlock en finally)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué afirmaciones sobre criptografía en Java son verdaderas (hay varias correctas):",
+            "explanation": "AES es simétrico, RSA asimétrico y la firma se genera con la clave privada; los hashes son funciones unidireccionales y Base64 es solo una codificación, no cifrado.",
+            "options": [
+                {
+                    "content": "AES es un algoritmo de cifrado simétrico",
+                    "is_correct": true
+                },
+                {
+                    "content": "RSA es un algoritmo asimétrico que usa un par de claves pública y privada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un hash SHA-256 se puede invertir para recuperar el mensaje original",
+                    "is_correct": false
+                },
+                {
+                    "content": "En una firma digital, el firmante usa su clave privada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Base64 es un método de cifrado seguro",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

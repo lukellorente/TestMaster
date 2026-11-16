@@ -1,0 +1,560 @@
+{
+    "slug": "prevencion-riesgos-ley-31-1995",
+    "title": "Prevención de riesgos laborales - Ley 31/1995",
+    "description": "Test fácil de la Ley 31/1995 de Prevención de Riesgos Laborales para repasar antes del examen de Administración Local. Incluye derechos y obligaciones, servicios de prevención, delegados de prevención y comité de seguridad y salud.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:41:17+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 14 de la Ley 31/1995, de Prevención de Riesgos Laborales, los trabajadores tienen derecho a:",
+            "explanation": "El artículo 14.1 reconoce el derecho de los trabajadores a una protección eficaz en materia de seguridad y salud en el trabajo.",
+            "options": [
+                {
+                    "content": "Una indemnización fija por cada riesgo evaluado en su puesto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una protección eficaz en materia de seguridad y salud en el trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elegir libremente el servicio de prevención de la empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Paralizar en cualquier momento la actividad de la empresa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 31/1995, el coste de las medidas relativas a la seguridad y la salud en el trabajo:",
+            "explanation": "La Ley establece que el coste de las medidas de seguridad y salud no debe recaer en modo alguno sobre los trabajadores.",
+            "options": [
+                {
+                    "content": "Recaerá sobre los trabajadores en proporción a su salario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se repartirá al 50 % entre empresario y trabajadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Recaerá sobre los trabajadores cuando así lo decida el empresario",
+                    "is_correct": false
+                },
+                {
+                    "content": "No deberá recaer en modo alguno sobre los trabajadores",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Entre los principios de la acción preventiva del artículo 15 de la Ley 31/1995, el primero que debe aplicar el empresario es:",
+            "explanation": "El artículo 15.1 enumera como primer principio de la acción preventiva «evitar los riesgos».",
+            "options": [
+                {
+                    "content": "Evitar los riesgos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sancionar a los trabajadores que incumplan las normas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contratar un servicio de prevención ajeno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adoptar únicamente medidas de protección individual",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Según el artículo 29 de la Ley 31/1995, corresponde a cada trabajador velar por su seguridad y salud, y en particular:",
+            "explanation": "Los trabajadores tienen la obligación de no poner fuera de funcionamiento y de utilizar correctamente los dispositivos de seguridad existentes.",
+            "options": [
+                {
+                    "content": "Usar adecuadamente las máquinas, aparatos y herramientas con las que desarrolle su actividad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Informar de inmediato a su superior sobre cualquier situación que entrañe un riesgo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Poner fuera de funcionamiento los dispositivos de seguridad cuando dificulten su trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cooperar con el empresario para garantizar condiciones de trabajo seguras",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En caso de riesgo grave e inminente para su seguridad y salud, los trabajadores tienen derecho a:",
+            "explanation": "El artículo 21 reconoce a los trabajadores el derecho a interrumpir su actividad y abandonar el lugar de trabajo ante un riesgo grave e inminente.",
+            "options": [
+                {
+                    "content": "Continuar trabajando hasta recibir autorización escrita de la Inspección de Trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Interrumpir su actividad solo si el comité de empresa lo aprueba por mayoría",
+                    "is_correct": false
+                },
+                {
+                    "content": "Interrumpir su actividad y abandonar el lugar de trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Exigir una compensación económica antes de abandonar el puesto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La Ley 31/1995 no es de aplicación al personal funcionario y estatutario al servicio de las Administraciones Públicas.",
+            "explanation": "Falso. La Ley es aplicable también al personal con relación administrativa o estatutaria al servicio de las Administraciones Públicas, con las adaptaciones previstas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 19 de la Ley 31/1995, la formación en materia preventiva que debe recibir cada trabajador:",
+            "explanation": "La formación debe ser teórica y práctica, suficiente y adecuada, impartida dentro de la jornada o con descuento de tiempo, sin coste para el trabajador.",
+            "options": [
+                {
+                    "content": "Debe impartirse dentro de la jornada de trabajo o con el descuento de tiempo correspondiente, y su coste no recae en el trabajador",
+                    "is_correct": true
+                },
+                {
+                    "content": "Debe realizarse siempre fuera de la jornada laboral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo es obligatoria para los trabajadores con contrato indefinido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puede ser costeada por el trabajador si la empresa tiene menos de 50 empleados",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la evaluación de riesgos del artículo 16 de la Ley 31/1995, ¿cuándo debe realizarse?",
+            "explanation": "La evaluación inicial debe actualizarse cuando cambien las condiciones de trabajo y revisarse si se detectan daños para la salud.",
+            "options": [
+                {
+                    "content": "Una sola vez, cuando se inicia la actividad de la empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente después de que ocurra un accidente grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cada diez años en todo caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Con carácter inicial y volver a evaluarla cuando cambien las condiciones de trabajo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Como regla general, la vigilancia periódica del estado de salud de los trabajadores solo puede llevarse a cabo cuando el trabajador presta su consentimiento, salvo excepciones previstas en la Ley.",
+            "explanation": "Verdadero. El artículo 22 establece el carácter voluntario de la vigilancia de la salud, con excepciones tasadas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 23 de la Ley 31/1995, el empresario debe conservar a disposición de la autoridad laboral la relación de accidentes de trabajo y enfermedades profesionales que hayan causado al trabajador una incapacidad laboral superior a:",
+            "explanation": "El artículo 23.1 se refiere a los accidentes y enfermedades que causen una incapacidad laboral superior a un día de trabajo.",
+            "options": [
+                {
+                    "content": "Siete días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un día de trabajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Treinta días",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando los resultados de la evaluación revelen un riesgo para la seguridad o salud de una trabajadora embarazada, el empresario debe adoptar en primer lugar medidas para:",
+            "explanation": "El artículo 26 prevé primero la adaptación de las condiciones o del tiempo de trabajo y, si no es posible, el cambio de puesto.",
+            "options": [
+                {
+                    "content": "Adaptar las condiciones o el tiempo de trabajo de la trabajadora",
+                    "is_correct": true
+                },
+                {
+                    "content": "Extinguir su contrato de trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reducir su salario durante el embarazo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mantenerla en su puesto sin ningún cambio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 24 de la Ley 31/1995, cuando en un mismo centro de trabajo desarrollen actividades trabajadores de dos o más empresas, estas deberán:",
+            "explanation": "El artículo 24 regula la coordinación de actividades empresariales y establece el deber de cooperación entre las empresas concurrentes.",
+            "options": [
+                {
+                    "content": "Actuar de forma independiente sin intercambiar información",
+                    "is_correct": false
+                },
+                {
+                    "content": "Designar a la empresa de menor tamaño como responsable de la prevención",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solicitar la autorización previa del comité de cada empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cooperar en la aplicación de la normativa sobre prevención de riesgos laborales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una modalidad de organización de los recursos para las actividades preventivas:",
+            "explanation": "Las modalidades son asunción por el empresario, designación de trabajadores, servicio propio y servicio ajeno; el Comité no es una de ellas.",
+            "options": [
+                {
+                    "content": "Designación de uno o varios trabajadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Delegación de la prevención en el Comité de Seguridad y Salud",
+                    "is_correct": true
+                },
+                {
+                    "content": "Constitución de un servicio de prevención propio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Concierto con un servicio de prevención ajeno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Reglamento de los Servicios de Prevención (Real Decreto 39/1997), el empresario deberá constituir un servicio de prevención propio, con carácter general, cuando la empresa tenga:",
+            "explanation": "El servicio de prevención propio es obligatorio en empresas de más de 500 trabajadores, además de otros supuestos específicos.",
+            "options": [
+                {
+                    "content": "Más de 50 trabajadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Más de 100 trabajadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Más de 500 trabajadores",
+                    "is_correct": true
+                },
+                {
+                    "content": "Más de 1.000 trabajadores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 31 de la Ley 31/1995, se entiende por servicio de prevención:",
+            "explanation": "El artículo 31.2 define el servicio de prevención como el conjunto de medios humanos y materiales para garantizar una adecuada protección de la seguridad y salud.",
+            "options": [
+                {
+                    "content": "El órgano paritario de participación de los trabajadores en la empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "El conjunto de medios humanos y materiales necesarios para realizar las actividades preventivas",
+                    "is_correct": true
+                },
+                {
+                    "content": "El conjunto de delegados de personal de una empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "La unidad de la Inspección de Trabajo encargada de las sanciones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 35 de la Ley 31/1995, los Delegados de Prevención son:",
+            "explanation": "Los Delegados de Prevención son los representantes de los trabajadores con funciones específicas, designados por y entre los representantes del personal.",
+            "options": [
+                {
+                    "content": "Designados por y entre los representantes del personal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Designados libremente por el empresario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Designados por la Inspección de Trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Designados por el servicio de prevención ajeno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una empresa de entre 50 y 100 trabajadores, ¿cuántos Delegados de Prevención corresponden según la escala del artículo 35 de la Ley 31/1995?",
+            "explanation": "La escala del artículo 35.2 asigna 2 Delegados de Prevención a las empresas de 50 a 100 trabajadores.",
+            "options": [
+                {
+                    "content": "Uno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En las empresas de hasta 30 trabajadores, el Delegado de Prevención será:",
+            "explanation": "En empresas de hasta 30 trabajadores, el Delegado de Personal ejerce las funciones de Delegado de Prevención.",
+            "options": [
+                {
+                    "content": "Un trabajador designado por el empresario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un técnico del servicio de prevención ajeno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Delegado de Personal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un miembro de la Inspección de Trabajo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Son competencias de los Delegados de Prevención:",
+            "explanation": "Los Delegados colaboran, son consultados y vigilan el cumplimiento, pero no tienen potestad sancionadora, que corresponde a la Administración.",
+            "options": [
+                {
+                    "content": "Colaborar con la dirección de la empresa en la mejora de la acción preventiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ser consultados por el empresario antes de la adopción de decisiones en materia preventiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acompañar a los inspectores en las visitas y verificaciones en los centros de trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Imponer sanciones económicas al empresario por incumplimientos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El tiempo utilizado por los Delegados de Prevención para asistir a las reuniones del Comité de Seguridad y Salud se considera:",
+            "explanation": "El artículo 37 considera tiempo de trabajo efectivo, sin imputarlo al crédito horario, el de las reuniones del Comité de Seguridad y Salud.",
+            "options": [
+                {
+                    "content": "Tiempo no retribuido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tiempo de trabajo efectivo, sin imputación al crédito de horas mensuales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tiempo que se descuenta siempre del crédito de horas mensuales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tiempo que debe recuperarse fuera de la jornada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 38 de la Ley 31/1995, el Comité de Seguridad y Salud es un órgano:",
+            "explanation": "El Comité es un órgano paritario y colegiado de participación para la consulta regular y periódica en materia de prevención.",
+            "options": [
+                {
+                    "content": "Paritario y colegiado de participación destinado a la consulta regular y periódica de las actuaciones de la empresa en materia de prevención",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dependiente de la Inspección de Trabajo y Seguridad Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Formado únicamente por representantes del empresario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Unipersonal, presidido por el técnico de prevención",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué empresas o centros de trabajo debe constituirse el Comité de Seguridad y Salud?",
+            "explanation": "El artículo 38.2 obliga a constituir el Comité en las empresas o centros de trabajo que cuenten con 50 o más trabajadores.",
+            "options": [
+                {
+                    "content": "En todas, con independencia del número de trabajadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "En los que cuenten con 10 o más trabajadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "En los que cuenten con 50 o más trabajadores",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo en los que cuenten con más de 250 trabajadores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Comité de Seguridad y Salud se reunirá, como mínimo, con la siguiente periodicidad:",
+            "explanation": "El Comité se reunirá trimestralmente y siempre que lo solicite alguna de sus representaciones.",
+            "options": [
+                {
+                    "content": "Mensualmente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Trimestralmente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Semestralmente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Anualmente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En las reuniones del Comité de Seguridad y Salud pueden participar, con voz pero sin voto:",
+            "explanation": "El artículo 38.2 permite la participación, con voz pero sin voto, de los delegados sindicales y de los responsables técnicos de la prevención ajenos al Comité.",
+            "options": [
+                {
+                    "content": "Los trabajadores que lo soliciten por escrito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los inspectores de trabajo de forma permanente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los representantes de la Administración local",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los delegados sindicales y los responsables técnicos de la prevención en la empresa",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Entre las competencias del Comité de Seguridad y Salud está promover iniciativas sobre métodos y procedimientos para la efectiva prevención de los riesgos.",
+            "explanation": "Verdadero. El artículo 39 atribuye al Comité la facultad de promover iniciativas sobre métodos y procedimientos para la efectiva prevención de riesgos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

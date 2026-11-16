@@ -1,0 +1,528 @@
+{
+    "slug": "entornos-git-junit",
+    "title": "ED - Git, pruebas y JUnit 5",
+    "description": "Test de Entornos de Desarrollo para repasar antes del examen: Git, tipos de pruebas, caja blanca y negra, complejidad ciclomática y JUnit 5. Lo he hecho con los apuntes de DAM/DAW de este curso.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:53:25+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué comando inicializa un repositorio Git nuevo en el directorio actual?",
+            "explanation": "git init crea el subdirectorio oculto .git y deja el directorio listo para ser versionado.",
+            "options": [
+                {
+                    "content": "git start",
+                    "is_correct": false
+                },
+                {
+                    "content": "git init",
+                    "is_correct": true
+                },
+                {
+                    "content": "git create",
+                    "is_correct": false
+                },
+                {
+                    "content": "git new",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace el comando git add Main.java?",
+            "explanation": "git add mueve los cambios al área de preparación; el commit se hace después con git commit y la subida con git push.",
+            "options": [
+                {
+                    "content": "Añade los cambios de Main.java al área de preparación (staging) para el próximo commit",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sube Main.java al repositorio remoto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crea un commit con Main.java",
+                    "is_correct": false
+                },
+                {
+                    "content": "Descarga Main.java desde el repositorio remoto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El comando git pull equivale, por defecto, a ejecutar git fetch seguido de una integración (merge) de los cambios descargados en la rama actual.",
+            "explanation": "git pull descarga los cambios del remoto (fetch) y los integra en la rama actual; por defecto con merge, aunque puede configurarse con rebase.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tras un git merge aparece en un archivo el siguiente fragmento:\n<<<<<<< HEAD\nint x = 1;\n=======\nint x = 2;\n>>>>>>> feature\n¿Qué representa el bloque entre <<<<<<< HEAD y =======?",
+            "explanation": "En un conflicto, lo que hay entre <<<<<<< HEAD y ======= es el contenido de la rama actual; lo siguiente, hasta >>>>>>>, es el de la rama que se fusiona.",
+            "options": [
+                {
+                    "content": "La versión de la rama feature",
+                    "is_correct": false
+                },
+                {
+                    "content": "La versión del commit ancestro común",
+                    "is_correct": false
+                },
+                {
+                    "content": "La versión de la rama en la que estamos situados (la actual)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace el comando git switch -c login?",
+            "explanation": "La opción -c (create) de git switch crea la rama y se mueve a ella; equivale a git checkout -b login.",
+            "options": [
+                {
+                    "content": "Elimina la rama login",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cambia a la rama login, que ya debe existir",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fusiona la rama login en la actual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crea la rama login y cambia a ella",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué situación git merge realiza una fusión de tipo fast-forward?",
+            "explanation": "Si la historia no ha divergido, Git simplemente avanza el puntero de la rama destino sin crear un commit de fusión.",
+            "options": [
+                {
+                    "content": "Cuando hay conflictos entre ambas ramas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando la rama destino no ha recibido commits nuevos desde que se creó la otra rama",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando se usa siempre la opción --force",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando las dos ramas han modificado el mismo archivo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace git rebase main estando en la rama feature?",
+            "explanation": "rebase traslada los commits de la rama actual sobre una nueva base, creando commits nuevos y dando una historia lineal.",
+            "options": [
+                {
+                    "content": "Reaplica los commits de feature sobre la punta de main, reescribiendo su historia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Borra la rama main",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crea un commit de fusión que une main y feature sin cambiar commits",
+                    "is_correct": false
+                },
+                {
+                    "content": "Copia main dentro de feature sin modificar ningún commit",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la recomendación habitual respecto a git rebase?",
+            "explanation": "Como rebase crea commits nuevos, hacerlo sobre historia pública obliga a los demás a reconciliar historias divergentes.",
+            "options": [
+                {
+                    "content": "Usarlo siempre sobre ramas compartidas para mantener el historial limpio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usarlo solo en repositorios sin remoto",
+                    "is_correct": false
+                },
+                {
+                    "content": "No reescribir con rebase commits que ya se han publicado y que otras personas pueden haber usado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usarlo únicamente después de git reset --hard",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las pruebas unitarias se caracterizan por:",
+            "explanation": "Una prueba unitaria comprueba una unidad concreta de forma independiente del resto del sistema.",
+            "options": [
+                {
+                    "content": "Validar el sistema completo con los usuarios finales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comprobar la comunicación entre varios módulos ya integrados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Medir el rendimiento bajo gran carga de usuarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verificar de forma aislada la unidad más pequeña de código, como un método o una clase",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una vez probados por separado los módulos de una aplicación, ¿qué tipo de prueba comprueba que funcionan correctamente al combinarlos?",
+            "explanation": "Las pruebas de integración verifican la interacción y las interfaces entre módulos o componentes.",
+            "options": [
+                {
+                    "content": "Pruebas unitarias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pruebas de integración",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pruebas de regresión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pruebas de humo exclusivamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una técnica de pruebas de caja negra?",
+            "explanation": "El análisis de valores límite se basa en las especificaciones de entrada y salida, sin conocer el código; las demás son de caja blanca.",
+            "options": [
+                {
+                    "content": "Cobertura de sentencias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cobertura de decisiones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Análisis de valores límite",
+                    "is_correct": true
+                },
+                {
+                    "content": "Prueba del camino básico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En las pruebas de caja blanca, una cobertura de sentencias del 100 % significa que:",
+            "explanation": "La cobertura de sentencias solo garantiza que todas las instrucciones se ejecutan; no asegura ausencia de errores ni cubre todas las ramas.",
+            "options": [
+                {
+                    "content": "Cada instrucción del código se ha ejecutado al menos una vez",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cada decisión se ha evaluado como verdadera y como falsa",
+                    "is_correct": false
+                },
+                {
+                    "content": "El programa no tiene ningún error",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se han probado todas las combinaciones posibles de entradas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La complejidad ciclomática de un método indica:",
+            "explanation": "V(G) es una métrica de McCabe que da el número de caminos independientes, es decir, un mínimo de casos de prueba para recorrerlos.",
+            "options": [
+                {
+                    "content": "El tiempo de ejecución del método",
+                    "is_correct": false
+                },
+                {
+                    "content": "El número de líneas de código del método",
+                    "is_correct": false
+                },
+                {
+                    "content": "La cantidad de variables que declara el método",
+                    "is_correct": false
+                },
+                {
+                    "content": "El número de caminos linealmente independientes del grafo de flujo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En JUnit 5, ¿qué anotación marca un método que se ejecuta antes de cada método de prueba?",
+            "explanation": "@BeforeEach sustituye al @Before de JUnit 4 y se ejecuta antes de cada @Test; @BeforeAll se ejecuta una sola vez.",
+            "options": [
+                {
+                    "content": "@Before",
+                    "is_correct": false
+                },
+                {
+                    "content": "@BeforeAll",
+                    "is_correct": false
+                },
+                {
+                    "content": "@BeforeEach",
+                    "is_correct": true
+                },
+                {
+                    "content": "@Setup",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se quiere comprobar en JUnit 5 que calc.dividir(1, 0) lanza una ArithmeticException. ¿Qué aserción se usa?",
+            "explanation": "assertThrows recibe el tipo de excepción esperado y un Executable que debe lanzarla.",
+            "options": [
+                {
+                    "content": "assertThrows(ArithmeticException.class, () -> calc.dividir(1, 0))",
+                    "is_correct": true
+                },
+                {
+                    "content": "assertEquals(ArithmeticException.class, calc.dividir(1, 0))",
+                    "is_correct": false
+                },
+                {
+                    "content": "assertNull(calc.dividir(1, 0))",
+                    "is_correct": false
+                },
+                {
+                    "content": "assertTrue(calc.dividir(1, 0))",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En JUnit 5, ¿qué anotación permite ejecutar el mismo test con distintos valores de entrada (junto con una fuente como @ValueSource)?",
+            "explanation": "@ParameterizedTest ejecuta el test una vez por cada conjunto de argumentos que proporciona la fuente indicada.",
+            "options": [
+                {
+                    "content": "@RepeatedTest",
+                    "is_correct": false
+                },
+                {
+                    "content": "@ParameterizedTest",
+                    "is_correct": true
+                },
+                {
+                    "content": "@TestFactory",
+                    "is_correct": false
+                },
+                {
+                    "content": "@MultiTest",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las pruebas de caja negra requieren conocer el código fuente del programa para diseñar los casos de prueba.",
+            "explanation": "En caja negra solo se conocen las entradas y salidas esperadas según la especificación; conocer el código es propio de la caja blanca.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En JUnit 5, por defecto, los métodos anotados con @BeforeAll deben ser estáticos.",
+            "explanation": "Con el ciclo de vida por defecto (una instancia por método) @BeforeAll debe ser static, salvo que se use @TestInstance(Lifecycle.PER_CLASS).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El comando git reset --hard no elimina los cambios sin confirmar del directorio de trabajo.",
+            "explanation": "git reset --hard restablece el índice y el directorio de trabajo al commit indicado, descartando los cambios no confirmados.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Git muestra el estado del directorio de trabajo y del área de preparación?",
+            "explanation": "git status indica qué archivos están modificados, preparados o sin seguimiento.",
+            "options": [
+                {
+                    "content": "git status",
+                    "is_correct": true
+                },
+                {
+                    "content": "status",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Git copia un repositorio remoto a tu equipo, con todo su historial?",
+            "explanation": "git clone <url> crea una copia local completa del repositorio remoto y configura el remoto origin.",
+            "options": [
+                {
+                    "content": "git clone",
+                    "is_correct": true
+                },
+                {
+                    "content": "clone",
+                    "is_correct": true
+                },
+                {
+                    "content": "git clone url",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué anotación de JUnit 5 se usa para desactivar temporalmente un test o una clase de test?",
+            "explanation": "@Disabled hace que el test no se ejecute y aparezca como omitido en el informe.",
+            "options": [
+                {
+                    "content": "@Disabled",
+                    "is_correct": true
+                },
+                {
+                    "content": "Disabled",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Un método contiene un único if y un único while, sin más estructuras de decisión ni operadores condicionales. ¿Cuál es su complejidad ciclomática?",
+            "explanation": "V(G) = número de nodos de decisión + 1 = 2 + 1 = 3.",
+            "options": [
+                {
+                    "content": "3",
+                    "is_correct": true
+                },
+                {
+                    "content": "tres",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las técnicas de pruebas de caja negra (hay varias correctas).",
+            "explanation": "Partición de equivalencia, valores límite y tablas de decisión se basan en la especificación; la cobertura de decisiones y el camino básico son de caja blanca.",
+            "options": [
+                {
+                    "content": "Partición de equivalencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cobertura de decisiones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Análisis de valores límite",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tablas de decisión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Prueba del camino básico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de estos comandos de Git solo consultan información sin modificar el historial ni los archivos? (Hay varias correctas).",
+            "explanation": "git log, git diff y git status solo muestran información; git reset --hard y git commit modifican el estado del repositorio.",
+            "options": [
+                {
+                    "content": "git log",
+                    "is_correct": true
+                },
+                {
+                    "content": "git diff",
+                    "is_correct": true
+                },
+                {
+                    "content": "git reset --hard",
+                    "is_correct": false
+                },
+                {
+                    "content": "git status",
+                    "is_correct": true
+                },
+                {
+                    "content": "git commit",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

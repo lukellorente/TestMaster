@@ -1,0 +1,430 @@
+{
+    "slug": "derechos-humanos-guardia-civil",
+    "title": "Derechos Humanos (temario Guardia Civil)",
+    "description": "Test de Derechos Humanos del temario de Guardia Civil: Declaración Universal de 1948, Convenio Europeo y sistema de protección. Muy útil para repasar antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:26:34+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "La Declaración Universal de Derechos Humanos fue proclamada por la Asamblea General de las Naciones Unidas el:",
+            "explanation": "La Declaración Universal se adoptó el 10 de diciembre de 1948 en el Palacio de Chaillot de París mediante la Resolución 217 A (III).",
+            "options": [
+                {
+                    "content": "10 de diciembre de 1948, en Nueva York",
+                    "is_correct": false
+                },
+                {
+                    "content": "4 de noviembre de 1950, en Roma",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 de diciembre de 1948, en París",
+                    "is_correct": true
+                },
+                {
+                    "content": "24 de octubre de 1945, en San Francisco",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la naturaleza jurídica de la Declaración Universal de Derechos Humanos de 1948, señale la respuesta correcta:",
+            "explanation": "La Declaración es una resolución de la Asamblea General y no un tratado; su fuerza deriva de su autoridad moral y de su influencia en normas posteriores.",
+            "options": [
+                {
+                    "content": "Es una resolución de la Asamblea General de la ONU que no constituye en sí misma un tratado vinculante",
+                    "is_correct": true
+                },
+                {
+                    "content": "Es un tratado internacional vinculante ratificado por todos los Estados miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es una resolución del Consejo de Seguridad de obligado cumplimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es un protocolo adicional al Convenio Europeo de Derechos Humanos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La Declaración Universal de Derechos Humanos consta de un preámbulo y de:",
+            "explanation": "La Declaración se compone de un preámbulo y 30 artículos.",
+            "options": [
+                {
+                    "content": "25 artículos",
+                    "is_correct": false
+                },
+                {
+                    "content": "28 artículos",
+                    "is_correct": false
+                },
+                {
+                    "content": "35 artículos",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 artículos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1 de la Declaración Universal de Derechos Humanos:",
+            "explanation": "El artículo 1 proclama que todos los seres humanos nacen libres e iguales en dignidad y derechos. El derecho a la vida figura en el artículo 3.",
+            "options": [
+                {
+                    "content": "Todo individuo tiene derecho a la vida, a la libertad y a la seguridad de su persona",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todos los seres humanos nacen libres e iguales en dignidad y derechos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nadie estará sometido a esclavitud ni a servidumbre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Toda persona tiene derecho a una nacionalidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El artículo 11 de la Declaración Universal de Derechos Humanos reconoce el principio de:",
+            "explanation": "El artículo 11 recoge la presunción de inocencia y el principio de legalidad penal e irretroactividad.",
+            "options": [
+                {
+                    "content": "Presunción de inocencia de toda persona acusada de un delito hasta que se pruebe su culpabilidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Libertad de circulación y de residencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prohibición de la tortura y de los tratos crueles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Derecho de asilo frente a la persecución",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 10.2 de la Constitución Española, las normas relativas a los derechos fundamentales y a las libertades se interpretarán de conformidad con:",
+            "explanation": "El artículo 10.2 CE establece este criterio interpretativo, que incluye la Declaración Universal y los tratados ratificados por España.",
+            "options": [
+                {
+                    "content": "La Declaración Universal de Derechos Humanos y los tratados y acuerdos internacionales sobre las mismas materias ratificados por España",
+                    "is_correct": true
+                },
+                {
+                    "content": "Exclusivamente la jurisprudencia del Tribunal Supremo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las resoluciones del Consejo de Seguridad de la ONU",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente el Convenio Europeo de Derechos Humanos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Convenio Europeo para la Protección de los Derechos Humanos y de las Libertades Fundamentales fue elaborado en el marco de:",
+            "explanation": "El Convenio se firmó en Roma el 4 de noviembre de 1950 en el seno del Consejo de Europa y entró en vigor en 1953.",
+            "options": [
+                {
+                    "content": "La Unión Europea, y firmado en Maastricht en 1992",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Europa, y firmado en Roma el 4 de noviembre de 1950",
+                    "is_correct": true
+                },
+                {
+                    "content": "La ONU, y firmado en Ginebra en 1948",
+                    "is_correct": false
+                },
+                {
+                    "content": "La OSCE, y firmado en Helsinki en 1975",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con el artículo 3 del Convenio Europeo de Derechos Humanos (prohibición de la tortura), señale la respuesta correcta:",
+            "explanation": "El artículo 3 tiene carácter absoluto y, según el artículo 15, no admite derogación ni siquiera en situaciones de emergencia.",
+            "options": [
+                {
+                    "content": "Admite excepciones cuando se trate de investigar delitos de terrorismo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo prohíbe la tortura física y no los tratos degradantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puede derogarse en caso de guerra o de otro peligro público",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prohíbe la tortura y los tratos inhumanos o degradantes en términos absolutos, sin excepción posible",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué Protocolo adicional al Convenio Europeo de Derechos Humanos abolió la pena de muerte en todas las circunstancias, incluso en tiempo de guerra?",
+            "explanation": "El Protocolo n.º 6 abolió la pena de muerte en tiempo de paz y el n.º 13 la abolió en todas las circunstancias.",
+            "options": [
+                {
+                    "content": "El Protocolo n.º 4",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Protocolo n.º 6",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Protocolo n.º 13",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Protocolo n.º 16",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5.3 del Convenio Europeo de Derechos Humanos, toda persona detenida preventivamente debe ser:",
+            "explanation": "El artículo 5.3 exige que el detenido sea conducido sin dilación ante un juez, y tiene derecho a ser juzgado en un plazo razonable o a ser puesto en libertad durante el procedimiento.",
+            "options": [
+                {
+                    "content": "Puesta en libertad transcurridas 24 horas si no hay cargos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conducida sin dilación ante un juez u otra autoridad habilitada por la ley para ejercer funciones judiciales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Presentada ante el Ministerio Fiscal en un plazo máximo de 72 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Informada por el Tribunal Europeo de Derechos Humanos de las causas de su detención",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El artículo 6 del Convenio Europeo de Derechos Humanos reconoce el derecho a que la causa de toda persona sea oída:",
+            "explanation": "El artículo 6 garantiza el derecho a un proceso equitativo ante un tribunal independiente e imparcial establecido por la ley y en un plazo razonable.",
+            "options": [
+                {
+                    "content": "Siempre a puerta cerrada para proteger su intimidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivamente por un tribunal internacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "En un plazo máximo de seis meses desde la acusación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Equitativa y públicamente, dentro de un plazo razonable, por un tribunal independiente e imparcial",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El artículo 8 del Convenio Europeo de Derechos Humanos protege el derecho al respeto de:",
+            "explanation": "El artículo 8 protege la vida privada y familiar, el domicilio y la correspondencia. Las otras libertades se recogen en los artículos 9, 10 y 11.",
+            "options": [
+                {
+                    "content": "La vida privada y familiar, el domicilio y la correspondencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "La libertad de reunión y de asociación",
+                    "is_correct": false
+                },
+                {
+                    "content": "La libertad de pensamiento, de conciencia y de religión",
+                    "is_correct": false
+                },
+                {
+                    "content": "La libertad de expresión y de información",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 15 del Convenio Europeo de Derechos Humanos, en caso de guerra u otro peligro público que amenace la vida de la nación, ¿cuál de los siguientes artículos NO puede ser objeto de derogación?",
+            "explanation": "El artículo 15.2 impide derogar el artículo 2 (salvo muertes por actos lícitos de guerra), el 3, el 4.1 y el 7.",
+            "options": [
+                {
+                    "content": "El artículo 5, derecho a la libertad y a la seguridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "El artículo 8, derecho al respeto de la vida privada y familiar",
+                    "is_correct": false
+                },
+                {
+                    "content": "El artículo 3, prohibición de la tortura",
+                    "is_correct": true
+                },
+                {
+                    "content": "El artículo 11, libertad de reunión y de asociación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En cuanto a la composición del Tribunal Europeo de Derechos Humanos, con sede en Estrasburgo:",
+            "explanation": "Hay un juez por cada Estado parte, elegido por la Asamblea Parlamentaria del Consejo de Europa.",
+            "options": [
+                {
+                    "content": "Está formado por 15 jueces designados por el Consejo de la Unión Europea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuenta con un número de jueces igual al de Estados parte en el Convenio, elegidos por la Asamblea Parlamentaria del Consejo de Europa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lo integran jueces elegidos por la Asamblea General de la ONU",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lo integran únicamente jueces de los Estados fundadores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tras la reforma operada por el Protocolo n.º 15, el plazo para presentar una demanda ante el Tribunal Europeo de Derechos Humanos, una vez agotados los recursos internos, es de:",
+            "explanation": "El artículo 35 del Convenio, modificado por el Protocolo n.º 15 (en vigor desde 2022), fija un plazo de cuatro meses desde la decisión interna definitiva.",
+            "options": [
+                {
+                    "content": "Dos meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro meses",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué órgano del Consejo de Europa supervisa la ejecución de las sentencias definitivas del Tribunal Europeo de Derechos Humanos?",
+            "explanation": "Según el artículo 46 del Convenio, las sentencias definitivas son obligatorias para los Estados y su ejecución la vigila el Comité de Ministros.",
+            "options": [
+                {
+                    "content": "El Comité de Ministros",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Asamblea Parlamentaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Comisario para los Derechos Humanos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Tribunal de Justicia de la Unión Europea",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Consejo de Derechos Humanos de las Naciones Unidas, creado en 2006, tiene su sede en:",
+            "explanation": "El Consejo de Derechos Humanos, que sustituyó a la Comisión de Derechos Humanos, se reúne en Ginebra y tiene 47 miembros elegidos por la Asamblea General.",
+            "options": [
+                {
+                    "content": "Nueva York y está formado por 47 Estados miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ginebra y está formado por 47 Estados miembros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ginebra y está formado por 57 Estados miembros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estrasburgo y está formado por 47 Estados miembros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El Tribunal Europeo de Derechos Humanos puede anular directamente las sentencias dictadas por los tribunales nacionales de los Estados parte.",
+            "explanation": "El Tribunal declara si ha habido violación del Convenio y puede conceder una satisfacción equitativa, pero no anula directamente las resoluciones internas; el Estado debe adoptar las medidas necesarias para ejecutar la sentencia.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Desde la entrada en vigor del Tratado de Lisboa, la Carta de los Derechos Fundamentales de la Unión Europea tiene el mismo valor jurídico que los Tratados.",
+            "explanation": "El artículo 6.1 del Tratado de la Unión Europea reconoce a la Carta el mismo valor jurídico que los Tratados desde la entrada en vigor del Tratado de Lisboa en 2009.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

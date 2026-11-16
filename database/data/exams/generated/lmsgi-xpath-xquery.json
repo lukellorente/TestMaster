@@ -1,0 +1,437 @@
+{
+    "slug": "lmsgi-xpath-xquery",
+    "title": "XPath y XQuery repaso examen",
+    "description": "Test de repaso de XPath y XQuery para el examen de DAM/DAW: ejes, predicados, funciones y expresiones FLWOR. Nivel difícil, para ir practicando antes de la prueba.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:52:11+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Dado el documento <libros><libro id=\"1\"><titulo>A</titulo></libro><libro id=\"2\"><titulo>B</titulo></libro></libros>, ¿qué devuelve la expresión XPath /libros/libro[last()]/@id?",
+            "explanation": "last() selecciona el último libro dentro de su padre y /@id devuelve su atributo, es decir, el de valor 2.",
+            "options": [
+                {
+                    "content": "El atributo id con valor 1",
+                    "is_correct": false
+                },
+                {
+                    "content": "El atributo id con valor 2",
+                    "is_correct": true
+                },
+                {
+                    "content": "El elemento libro completo cuyo id es 2",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los dos atributos id",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué selecciona la expresión //libro/following-sibling::libro[1]?",
+            "explanation": "El eje following-sibling recorre los hermanos posteriores y el predicado [1] se queda con el más cercano a cada nodo de contexto.",
+            "options": [
+                {
+                    "content": "Todos los libros que aparecen después en el documento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para cada libro, el primer hermano libro que le sigue",
+                    "is_correct": true
+                },
+                {
+                    "content": "El primer libro del documento",
+                    "is_correct": false
+                },
+                {
+                    "content": "El hermano anterior de cada libro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la diferencia entre //libro[1] y (//libro)[1]?",
+            "explanation": "El predicado se aplica al paso //libro por cada padre, mientras que los paréntesis aplican la posición sobre el conjunto completo de nodos.",
+            "options": [
+                {
+                    "content": "Ninguna, devuelven lo mismo",
+                    "is_correct": false
+                },
+                {
+                    "content": "//libro[1] devuelve el primer libro de cada padre; (//libro)[1] devuelve solo el primero del documento",
+                    "is_correct": true
+                },
+                {
+                    "content": "//libro[1] devuelve solo el primero del documento; (//libro)[1] el primero de cada padre",
+                    "is_correct": false
+                },
+                {
+                    "content": "(//libro)[1] produce un error de sintaxis",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve count(//libro[precio > 20])?",
+            "explanation": "count() recibe un conjunto de nodos filtrado por el predicado y devuelve cuántos nodos contiene.",
+            "options": [
+                {
+                    "content": "La suma de los precios mayores que 20",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los nodos libro con precio mayor que 20",
+                    "is_correct": false
+                },
+                {
+                    "content": "El número de libros cuyo precio es mayor que 20",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un valor booleano",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué eje de XPath selecciona al nodo de contexto y a todos sus descendientes?",
+            "explanation": "descendant-or-self incluye el propio nodo de contexto además de todos sus descendientes; es el eje que usa la abreviatura //.",
+            "options": [
+                {
+                    "content": "descendant",
+                    "is_correct": false
+                },
+                {
+                    "content": "descendant-or-self",
+                    "is_correct": true
+                },
+                {
+                    "content": "child",
+                    "is_correct": false
+                },
+                {
+                    "content": "following",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En XQuery, ¿qué cláusula FLWOR se usa para filtrar las tuplas generadas por for?",
+            "explanation": "where filtra las tuplas del flujo antes de ordenarlas o de evaluar return.",
+            "options": [
+                {
+                    "content": "order by",
+                    "is_correct": false
+                },
+                {
+                    "content": "return",
+                    "is_correct": false
+                },
+                {
+                    "content": "where",
+                    "is_correct": true
+                },
+                {
+                    "content": "let",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué resultado produce la consulta: for $i in (1,2,3) let $x := $i * 2 where $x > 2 return $x ?",
+            "explanation": "Los valores de $x son 2, 4 y 6; where descarta el 2 porque no es mayor que 2, y quedan 4 y 6.",
+            "options": [
+                {
+                    "content": "2 4 6",
+                    "is_correct": false
+                },
+                {
+                    "content": "4 6",
+                    "is_correct": true
+                },
+                {
+                    "content": "6",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 2 3",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace la expresión XPath //libro[not(@oculto)]?",
+            "explanation": "not() niega la existencia del nodo atributo @oculto, así que solo pasan los libros que carecen de él.",
+            "options": [
+                {
+                    "content": "Selecciona los libros con atributo oculto vacío",
+                    "is_correct": false
+                },
+                {
+                    "content": "Selecciona los libros que no tienen el atributo oculto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Selecciona los libros cuyo hijo oculto no existe",
+                    "is_correct": false
+                },
+                {
+                    "content": "Produce un error porque not no es una función",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve la expresión XPath substring-before('2026-11-16','-')?",
+            "explanation": "substring-before devuelve la parte de la cadena anterior a la primera aparición del separador, es decir, 2026.",
+            "options": [
+                {
+                    "content": "2026",
+                    "is_correct": true
+                },
+                {
+                    "content": "11-16",
+                    "is_correct": false
+                },
+                {
+                    "content": "2026-11",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cadena vacía",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué diferencia hay entre los operadores = y eq en XQuery?",
+            "explanation": "La comparación general = es existencial sobre secuencias, mientras que eq es una comparación de valores que exige operandos singulares.",
+            "options": [
+                {
+                    "content": "= es una comparación general entre secuencias y eq compara valores individuales",
+                    "is_correct": true
+                },
+                {
+                    "content": "= compara cadenas y eq compara números",
+                    "is_correct": false
+                },
+                {
+                    "content": "No hay diferencia, son sinónimos",
+                    "is_correct": false
+                },
+                {
+                    "content": "eq solo se usa en XPath 1.0",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En XPath, la expresión //libro/titulo/text() devuelve nodos de tipo elemento.",
+            "explanation": "text() devuelve nodos de texto, no elementos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El eje ancestor-or-self incluye al propio nodo de contexto además de sus antecesores.",
+            "explanation": "Como indica su nombre, ancestor-or-self devuelve los antecesores y también el nodo de contexto.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En una consulta FLWOR, la cláusula let itera sobre cada elemento de una secuencia generando una tupla por elemento.",
+            "explanation": "Quien itera es for; let enlaza la variable con la secuencia completa en una única tupla.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué abreviatura de XPath equivale al eje parent::node()?",
+            "explanation": "La abreviatura .. selecciona el nodo padre del nodo de contexto.",
+            "options": [
+                {
+                    "content": "..",
+                    "is_correct": true
+                },
+                {
+                    "content": "dos puntos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos puntos seguidos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué función de XPath devuelve el número de caracteres de una cadena?",
+            "explanation": "string-length() devuelve la longitud en caracteres de la cadena recibida o del valor del nodo de contexto.",
+            "options": [
+                {
+                    "content": "string-length",
+                    "is_correct": true
+                },
+                {
+                    "content": "string-length()",
+                    "is_correct": true
+                },
+                {
+                    "content": "la función string-length",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué función de XQuery se usa para abrir un documento XML desde una consulta, por ejemplo doc(\"libros.xml\")? Indica solo el nombre de la función.",
+            "explanation": "fn:doc carga el documento cuya URI se pasa como argumento y devuelve su nodo documento.",
+            "options": [
+                {
+                    "content": "doc",
+                    "is_correct": true
+                },
+                {
+                    "content": "doc()",
+                    "is_correct": true
+                },
+                {
+                    "content": "fn:doc",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona TODAS las expresiones XPath que devuelven los mismos nodos que //libro[@id='7'] (hay varias correctas).",
+            "explanation": "// equivale a /descendant-or-self::node()/ y @ es la abreviatura de attribute::; las otras dos devuelven otros nodos o solo hijos de la raíz.",
+            "options": [
+                {
+                    "content": "/descendant-or-self::node()/child::libro[attribute::id='7']",
+                    "is_correct": true
+                },
+                {
+                    "content": "//libro[attribute::id='7']",
+                    "is_correct": true
+                },
+                {
+                    "content": "/libro[@id='7']",
+                    "is_correct": false
+                },
+                {
+                    "content": "//libro/@id[.='7']",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes cláusulas forman parte de una expresión FLWOR de XQuery 1.0? (hay varias correctas)",
+            "explanation": "FLWOR significa for, let, where, order by y return; select y from pertenecen a SQL.",
+            "options": [
+                {
+                    "content": "for",
+                    "is_correct": true
+                },
+                {
+                    "content": "let",
+                    "is_correct": true
+                },
+                {
+                    "content": "order by",
+                    "is_correct": true
+                },
+                {
+                    "content": "select",
+                    "is_correct": false
+                },
+                {
+                    "content": "from",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se quiere obtener los títulos ordenados de mayor a menor precio. ¿Qué consulta es correcta?",
+            "explanation": "La sintaxis válida es order by seguido de la expresión y descending, y debe ir antes de return.",
+            "options": [
+                {
+                    "content": "for $l in //libro order by $l/precio descending return $l/titulo",
+                    "is_correct": true
+                },
+                {
+                    "content": "for $l in //libro sort $l/precio desc return $l/titulo",
+                    "is_correct": false
+                },
+                {
+                    "content": "for $l in //libro return $l/titulo order by $l/precio descending",
+                    "is_correct": false
+                },
+                {
+                    "content": "for $l in //libro order $l/precio descending return $l/titulo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En XQuery, ¿qué produce <lista>{ for $l in //libro return <t>{$l/titulo/text()}</t> }</lista>?",
+            "explanation": "Las llaves dentro de un constructor de elementos evalúan la expresión, y el for genera un elemento t por cada libro.",
+            "options": [
+                {
+                    "content": "Una cadena con las llaves literales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un elemento lista con un elemento t por cada libro, con el texto de su título",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un error, porque no se puede usar FLWOR dentro de un constructor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un único elemento t con todos los títulos",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

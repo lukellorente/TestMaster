@@ -1,0 +1,528 @@
+{
+    "slug": "smr-montaje-mantenimiento",
+    "title": "SMR Montaje y Mantenimiento de Equipos",
+    "description": "Test de repaso de Montaje y Mantenimiento de Equipos de SMR: montaje, BIOS/UEFI, POST, averías, mantenimiento y prevención de riesgos. Nivel fácil, ideal para antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:06:15+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significan las siglas POST en el arranque de un ordenador?",
+            "explanation": "POST es la autoprueba de encendido (Power-On Self-Test) que comprueba el hardware básico antes de cargar el sistema operativo.",
+            "options": [
+                {
+                    "content": "Power-On Self-Test",
+                    "is_correct": true
+                },
+                {
+                    "content": "Primary Operating System Test",
+                    "is_correct": false
+                },
+                {
+                    "content": "Processor Output Signal Table",
+                    "is_correct": false
+                },
+                {
+                    "content": "Program Over System Transfer",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Antes de atornillar la placa base a la caja, ¿qué conviene instalar previamente sobre ella?",
+            "explanation": "Montar CPU y RAM con la placa fuera de la caja es más cómodo y evita forzar componentes en un espacio reducido.",
+            "options": [
+                {
+                    "content": "El monitor y el teclado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La CPU y los módulos de memoria RAM",
+                    "is_correct": true
+                },
+                {
+                    "content": "La impresora",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué sirven los pitidos (beep codes) que emite un equipo al arrancar?",
+            "explanation": "Cuando el POST detecta un fallo y no hay vídeo disponible, la placa lo comunica mediante códigos de pitidos según el fabricante.",
+            "options": [
+                {
+                    "content": "Para avisar de que hay actualizaciones de Windows",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para indicar que el usuario ha pulsado una tecla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para medir la temperatura de la CPU",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para informar del resultado del POST, por ejemplo de un error de hardware",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué característica de seguridad incorpora UEFI y no la BIOS tradicional?",
+            "explanation": "Secure Boot comprueba que el gestor de arranque está firmado y evita cargar software no autorizado.",
+            "options": [
+                {
+                    "content": "Secure Boot",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pitidos de error",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pila CR2032",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ranuras PCI",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué sirve la pila de botón (normalmente CR2032) de la placa base?",
+            "explanation": "La pila alimenta el reloj de tiempo real y la memoria CMOS donde se guarda la configuración.",
+            "options": [
+                {
+                    "content": "Alimentar el disco duro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mantener la hora y la configuración de la BIOS/UEFI con el equipo apagado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aumentar la velocidad de la CPU",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la función de la pasta térmica entre la CPU y el disipador?",
+            "explanation": "Las superficies metálicas tienen microirregularidades con aire, que conduce mal el calor; la pasta térmica las rellena.",
+            "options": [
+                {
+                    "content": "Pegar el disipador de forma permanente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aislar eléctricamente la CPU",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mejorar la transmisión del calor al rellenar las imperfecciones de las superficies",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lubricar el ventilador",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué se utiliza una pulsera antiestática al manipular componentes?",
+            "explanation": "Una descarga electrostática (ESD) puede dañar circuitos integrados; la pulsera conecta al técnico a tierra.",
+            "options": [
+                {
+                    "content": "Para descargar la electricidad estática del cuerpo y evitar dañar los componentes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para alimentar la placa base",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para medir la tensión de la fuente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un equipo no enciende y no gira ningún ventilador ni se ve ningún LED. ¿Qué es lo primero que deberías comprobar?",
+            "explanation": "En diagnóstico se empieza por las causas más simples y baratas, como la falta de alimentación eléctrica.",
+            "options": [
+                {
+                    "content": "Reinstalar el sistema operativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cambiar la tarjeta gráfica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Actualizar la BIOS",
+                    "is_correct": false
+                },
+                {
+                    "content": "El cable de alimentación, la toma de corriente y el interruptor de la fuente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estas tareas es de mantenimiento preventivo?",
+            "explanation": "El mantenimiento preventivo se realiza antes de que haya avería; la limpieza periódica evita el sobrecalentamiento.",
+            "options": [
+                {
+                    "content": "Sustituir una fuente de alimentación que ha dejado de funcionar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Limpiar el polvo del interior con aire comprimido de forma periódica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Recuperar los datos de un disco averiado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ley es la norma básica en España en materia de prevención de riesgos laborales?",
+            "explanation": "La Ley 31/1995 regula los derechos y deberes en seguridad y salud de trabajadores y empresarios.",
+            "options": [
+                {
+                    "content": "Ley 31/1995, de Prevención de Riesgos Laborales",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ley 39/2015, del Procedimiento Administrativo Común",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley Orgánica 3/2018, de Protección de Datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley 19/2013, de Transparencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la ergonomía del puesto con pantalla, ¿dónde debe situarse la parte superior de la pantalla?",
+            "explanation": "Así se evita flexionar o extender en exceso el cuello y se previene la fatiga visual y cervical.",
+            "options": [
+                {
+                    "content": "Muy por encima de la cabeza",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la altura de los ojos o ligeramente por debajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "A la altura del pecho",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de extintor es adecuado para un incendio en equipos eléctricos o informáticos?",
+            "explanation": "El CO2 no es conductor ni deja residuos, por lo que es apropiado para fuego en instalaciones eléctricas.",
+            "options": [
+                {
+                    "content": "De agua a chorro",
+                    "is_correct": false
+                },
+                {
+                    "content": "De espuma",
+                    "is_correct": false
+                },
+                {
+                    "content": "De dióxido de carbono (CO2)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ninguno, hay que esperar a que se apague",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué impide insertar por error un módulo DDR5 en una ranura DDR4?",
+            "explanation": "Cada generación de memoria tiene la muesca en una posición diferente para evitar insertarla en una ranura incompatible.",
+            "options": [
+                {
+                    "content": "La muesca está en una posición distinta",
+                    "is_correct": true
+                },
+                {
+                    "content": "El color del módulo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El tamaño del disipador",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Dónde se cambia el orden de los dispositivos de arranque de un equipo?",
+            "explanation": "La secuencia de arranque (boot order) es un parámetro de la configuración del firmware BIOS/UEFI.",
+            "options": [
+                {
+                    "content": "En el Administrador de tareas",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el menú Inicio de Windows",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el apartado Boot de la BIOS/UEFI",
+                    "is_correct": true
+                },
+                {
+                    "content": "En el panel de la impresora",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al encender aparece «No bootable device». ¿Cuál es una causa probable?",
+            "explanation": "El mensaje indica que el firmware no ha encontrado ningún dispositivo con un sistema arrancable.",
+            "options": [
+                {
+                    "content": "El ratón está desconectado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El monitor tiene poco brillo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El disco no tiene sistema operativo o el orden de arranque es incorrecto",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Es seguro manipular el interior de un equipo de sobremesa con el cable de alimentación conectado si se tiene cuidado.",
+            "explanation": "Siempre hay que desconectar el equipo de la red eléctrica antes de abrirlo para evitar descargas y daños.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El POST se ejecuta antes de que se cargue el sistema operativo.",
+            "explanation": "El firmware realiza el POST nada más encender y, si todo va bien, pasa el control al cargador del sistema operativo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Cuanta más pasta térmica se aplique sobre la CPU, mejor se refrigera.",
+            "explanation": "Basta una capa fina; el exceso empeora la transferencia de calor y puede ensuciar el zócalo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El firmware de la placa base (BIOS/UEFI) se almacena en una memoria no volátil, por lo que no se pierde al apagar el equipo.",
+            "explanation": "Se guarda en un chip de memoria flash, que conserva su contenido sin alimentación.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Con qué siglas se conoce la descarga de electricidad estática que puede dañar componentes electrónicos?",
+            "explanation": "ESD (ElectroStatic Discharge) es la descarga electrostática, causa habitual de daños en componentes.",
+            "options": [
+                {
+                    "content": "ESD",
+                    "is_correct": true
+                },
+                {
+                    "content": "Descarga electrostática",
+                    "is_correct": true
+                },
+                {
+                    "content": "Electrostatic Discharge",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué tipo de mantenimiento se realiza para evitar que se produzcan averías antes de que ocurran?",
+            "explanation": "El mantenimiento preventivo consiste en revisiones y limpiezas periódicas para anticiparse a los fallos.",
+            "options": [
+                {
+                    "content": "Preventivo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mantenimiento preventivo",
+                    "is_correct": true
+                },
+                {
+                    "content": "El preventivo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué instrumento de medida se usa para comprobar las tensiones que entrega una fuente de alimentación?",
+            "explanation": "El polímetro (multímetro) permite medir tensión, intensidad y continuidad.",
+            "options": [
+                {
+                    "content": "Polímetro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Multímetro",
+                    "is_correct": true
+                },
+                {
+                    "content": "El polímetro",
+                    "is_correct": true
+                },
+                {
+                    "content": "El multímetro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Téster",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tester",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué esquema de particiones, asociado habitualmente a UEFI, permite discos de más de 2 TB y se contrapone a MBR?",
+            "explanation": "GPT (GUID Partition Table) es el esquema moderno de particiones que usa UEFI y supera los límites de MBR.",
+            "options": [
+                {
+                    "content": "GPT",
+                    "is_correct": true
+                },
+                {
+                    "content": "GUID Partition Table",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tabla de particiones GUID",
+                    "is_correct": true
+                },
+                {
+                    "content": "El GPT",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las medidas correctas antes de abrir un equipo para repararlo (hay varias correctas).",
+            "explanation": "Abrir una fuente es peligroso porque sus condensadores pueden conservar carga incluso desconectada; el resto son medidas básicas de seguridad.",
+            "options": [
+                {
+                    "content": "Desconectar el cable de alimentación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usar pulsera antiestática",
+                    "is_correct": true
+                },
+                {
+                    "content": "Trabajar sobre una superficie ordenada y seca",
+                    "is_correct": true
+                },
+                {
+                    "content": "Abrir la fuente de alimentación para revisarla por dentro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de estos dispositivos pueden usarse como dispositivo de arranque en una BIOS/UEFI? (hay varias correctas)",
+            "explanation": "El firmware puede arrancar desde almacenamiento USB, discos internos o por red mediante PXE; monitor y altavoces no contienen sistemas arrancables.",
+            "options": [
+                {
+                    "content": "Una memoria USB",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un SSD interno",
+                    "is_correct": true
+                },
+                {
+                    "content": "La red (PXE)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El monitor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los altavoces",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

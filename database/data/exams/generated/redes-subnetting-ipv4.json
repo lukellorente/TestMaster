@@ -1,0 +1,357 @@
+{
+    "slug": "redes-subnetting-ipv4",
+    "title": "Subnetting IPv4 y VLSM - ejercicios",
+    "description": "Ejercicios de subnetting y VLSM para ASIR/SMR: máscaras, CIDR, red, broadcast, hosts y reparto de direcciones. Hacedlos con papel y boli, que en el examen no hay calculadora de subredes.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:00:45+00:00",
+    "questions": [
+        {
+            "type": "short_answer",
+            "content": "Escribe la máscara de subred en notación decimal equivalente a /27.",
+            "explanation": "/27 son 27 bits a 1: 255.255.255 y 3 bits en el último octeto (11100000 = 224).",
+            "options": [
+                {
+                    "content": "255.255.255.224",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuál es la dirección de broadcast de la red a la que pertenece el host 192.168.10.77/26?",
+            "explanation": "Con /26 los bloques son de 64 direcciones; 77 está en el bloque 64-127, cuyo broadcast es la .127.",
+            "options": [
+                {
+                    "content": "192.168.10.127",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes direcciones es una IP válida para asignar a un host de la red 192.168.5.64/26?",
+            "explanation": "La red 192.168.5.64/26 abarca de la .64 (red) a la .127 (broadcast); la .100 está en el rango de hosts y la .128 pertenece a otra subred.",
+            "options": [
+                {
+                    "content": "192.168.5.64",
+                    "is_correct": false
+                },
+                {
+                    "content": "192.168.5.100",
+                    "is_correct": true
+                },
+                {
+                    "content": "192.168.5.127",
+                    "is_correct": false
+                },
+                {
+                    "content": "192.168.5.128",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Indica la dirección de red del host 172.16.45.200/20.",
+            "explanation": "Con /20 el bloque en el tercer octeto es de 16: 45 cae en el bloque 32-47, así que la red es 172.16.32.0.",
+            "options": [
+                {
+                    "content": "172.16.32.0",
+                    "is_correct": true
+                },
+                {
+                    "content": "172.16.32.0/20",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estas máscaras NO es válida como máscara de subred?",
+            "explanation": "250 en binario es 11111010, con ceros intercalados entre unos; una máscara debe ser unos contiguos seguidos de ceros.",
+            "options": [
+                {
+                    "content": "255.255.254.0",
+                    "is_correct": false
+                },
+                {
+                    "content": "255.255.240.0",
+                    "is_correct": false
+                },
+                {
+                    "content": "255.255.255.192",
+                    "is_correct": false
+                },
+                {
+                    "content": "255.255.255.250",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuántos hosts utilizables admite una red /22?",
+            "explanation": "Quedan 10 bits de host: 2^10 - 2 = 1022 direcciones utilizables.",
+            "options": [
+                {
+                    "content": "1022",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.022",
+                    "is_correct": true
+                },
+                {
+                    "content": "1022 hosts",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué prefijo CIDR mínimo (el que dé una red más pequeña) hay que usar para alojar 500 hosts en una sola subred?",
+            "explanation": "Se necesitan 9 bits de host (2^9 - 2 = 510 ≥ 500), por lo que el prefijo es 32 - 9 = /23.",
+            "options": [
+                {
+                    "content": "/23",
+                    "is_correct": true
+                },
+                {
+                    "content": "23",
+                    "is_correct": true
+                },
+                {
+                    "content": "/23 (255.255.254.0)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un diseño VLSM, ¿por qué se asignan primero las subredes de mayor tamaño?",
+            "explanation": "Empezar por las más grandes mantiene las direcciones alineadas a su tamaño de bloque y evita fragmentar el espacio.",
+            "options": [
+                {
+                    "content": "Porque así cada subred queda alineada en su frontera y se evitan solapamientos y huecos inutilizables",
+                    "is_correct": true
+                },
+                {
+                    "content": "Porque los routers solo aceptan subredes grandes al principio de la tabla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque las subredes pequeñas no admiten máscaras de longitud variable",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque así se necesita menos broadcast en la red",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuál es la última dirección IP utilizable para un host en la red 10.4.8.0/21?",
+            "explanation": "Con /21 el bloque del tercer octeto es de 8 (8-15); el broadcast es 10.4.15.255, y la última utilizable, la .254.",
+            "options": [
+                {
+                    "content": "10.4.15.254",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los hosts 10.0.0.120/25 y 10.0.0.130/25 están conectados al mismo switch sin VLAN. ¿Pueden comunicarse directamente sin pasar por un router?",
+            "explanation": "Con /25 la .120 está en 10.0.0.0/25 (0-127) y la .130 en 10.0.0.128/25 (128-255), por lo que necesitan un router.",
+            "options": [
+                {
+                    "content": "Sí, porque ambos pertenecen a la red 10.0.0.0/24",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sí, porque difieren en menos de 16 direcciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "No, porque pertenecen a subredes distintas (10.0.0.0/25 y 10.0.0.128/25)",
+                    "is_correct": true
+                },
+                {
+                    "content": "No, porque la .120 es la dirección de broadcast",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Escribe la máscara wildcard (máscara inversa) de una red /19.",
+            "explanation": "La máscara /19 es 255.255.224.0; su inversa es 0.0.31.255.",
+            "options": [
+                {
+                    "content": "0.0.31.255",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué subred contiene al host 172.20.100.5?",
+            "explanation": "Con /20 los bloques del tercer octeto son de 16: el 100 está en 96-111, es decir, 172.20.96.0/20.",
+            "options": [
+                {
+                    "content": "172.20.64.0/20",
+                    "is_correct": false
+                },
+                {
+                    "content": "172.20.112.0/20",
+                    "is_correct": false
+                },
+                {
+                    "content": "172.20.100.128/25",
+                    "is_correct": false
+                },
+                {
+                    "content": "172.20.96.0/20",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Expresa en notación CIDR la máscara 255.255.255.248.",
+            "explanation": "248 = 11111000, es decir, 5 bits en el último octeto: 24 + 5 = /29.",
+            "options": [
+                {
+                    "content": "/29",
+                    "is_correct": true
+                },
+                {
+                    "content": "29",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la dirección de broadcast de la red 192.168.0.0/23?",
+            "explanation": "Un /23 abarca dos redes /24 consecutivas (192.168.0.0 a 192.168.1.255); el broadcast es la última dirección.",
+            "options": [
+                {
+                    "content": "192.168.1.255",
+                    "is_correct": true
+                },
+                {
+                    "content": "192.168.0.255",
+                    "is_correct": false
+                },
+                {
+                    "content": "192.168.1.254",
+                    "is_correct": false
+                },
+                {
+                    "content": "192.168.0.254",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Con VLSM sobre 192.168.1.0/24 se asigna primero una subred de 100 hosts y a continuación otra de 50 hosts. ¿Cuál es la dirección de red de la subred de 50 hosts?",
+            "explanation": "100 hosts requieren un /25 (192.168.1.0-127); los 50 hosts requieren un /26, que empieza en la .128.",
+            "options": [
+                {
+                    "content": "192.168.1.128",
+                    "is_correct": true
+                },
+                {
+                    "content": "192.168.1.128/26",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuántas subredes /20 se pueden obtener a partir de la red 172.16.0.0/16?",
+            "explanation": "Se toman 4 bits de subred (de /16 a /20): 2^4 = 16 subredes.",
+            "options": [
+                {
+                    "content": "16",
+                    "is_correct": true
+                },
+                {
+                    "content": "16 subredes",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se quiere dividir 192.168.10.0/24 en 6 subredes del mismo tamaño usando la máscara más larga posible que lo permita sin sobrar subredes de más. ¿Qué máscara hay que aplicar?",
+            "explanation": "Para 6 subredes hacen falta 3 bits (2^3 = 8 ≥ 6), lo que da /27 = 255.255.255.224, con 30 hosts por subred.",
+            "options": [
+                {
+                    "content": "255.255.255.192",
+                    "is_correct": false
+                },
+                {
+                    "content": "255.255.255.240",
+                    "is_correct": false
+                },
+                {
+                    "content": "255.255.255.224",
+                    "is_correct": true
+                },
+                {
+                    "content": "255.255.255.128",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Resume en un solo bloque CIDR las redes 192.168.4.0/24, 192.168.5.0/24, 192.168.6.0/24 y 192.168.7.0/24.",
+            "explanation": "Las cuatro redes son consecutivas y alineadas (4-7), por lo que se agrupan con 2 bits menos de prefijo: 192.168.4.0/22.",
+            "options": [
+                {
+                    "content": "192.168.4.0/22",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El bloque privado 172.16.0.0/12 (RFC 1918) abarca desde 172.16.0.0 hasta:",
+            "explanation": "Con /12 el segundo octeto tiene bloque de 16: va de 16 a 31, así que termina en 172.31.255.255.",
+            "options": [
+                {
+                    "content": "172.16.255.255",
+                    "is_correct": false
+                },
+                {
+                    "content": "172.32.255.255",
+                    "is_correct": false
+                },
+                {
+                    "content": "172.255.255.255",
+                    "is_correct": false
+                },
+                {
+                    "content": "172.31.255.255",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "En 192.168.1.0/24 con VLSM se asignan en orden subredes para 100, 50 y 20 hosts. ¿Cuál es la dirección de broadcast de la subred de 20 hosts?",
+            "explanation": "Las subredes son 192.168.1.0/25, 192.168.1.128/26 y 192.168.1.192/27; el /27 termina en la .223.",
+            "options": [
+                {
+                    "content": "192.168.1.223",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

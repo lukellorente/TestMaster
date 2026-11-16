@@ -1,0 +1,449 @@
+{
+    "slug": "ipe-2",
+    "title": "IPE II - emprendimiento y búsqueda activa de empleo",
+    "description": "Test de IPE II para repasar antes del examen: búsqueda de empleo, CV, entrevista, idea de negocio y trámites para montar una empresa. Espero que os sirva.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:12:24+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se denomina el conjunto de ofertas de trabajo que no se publican y que se cubren mediante contactos personales y profesionales?",
+            "explanation": "El mercado oculto agrupa las vacantes no publicitadas, que se cubren por recomendación, red de contactos o autocandidatura.",
+            "options": [
+                {
+                    "content": "Mercado de trabajo oculto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mercado de trabajo sumergido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mercado de trabajo protegido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mercado de trabajo estacional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Envías tu currículum a una empresa que no ha publicado ninguna oferta, para ofrecerte por si necesitan personal. ¿Qué nombre recibe esta práctica?",
+            "explanation": "La autocandidatura consiste en presentarse espontáneamente a una empresa sin que exista una oferta publicada.",
+            "options": [
+                {
+                    "content": "Candidatura a una oferta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Autocandidatura",
+                    "is_correct": true
+                },
+                {
+                    "content": "Prueba de selección",
+                    "is_correct": false
+                },
+                {
+                    "content": "Intermediación laboral",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el tipo de currículum que ordena la formación y la experiencia empezando por lo más reciente?",
+            "explanation": "El currículum cronológico inverso presenta primero los datos más recientes y es el formato más habitual.",
+            "options": [
+                {
+                    "content": "Cronológico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Funcional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cronológico inverso",
+                    "is_correct": true
+                },
+                {
+                    "content": "Alfabético",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una carta de presentación, ¿cuál es su finalidad principal?",
+            "explanation": "La carta acompaña al CV, expone el interés por el puesto y destaca los puntos más relevantes del perfil.",
+            "options": [
+                {
+                    "content": "Repetir todos los datos del currículum",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sustituir al currículum",
+                    "is_correct": false
+                },
+                {
+                    "content": "Acreditar la titulación mediante copias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Despertar el interés de la empresa y motivar la lectura del currículum",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una entrevista de trabajo te preguntan: «¿Cuáles son tus puntos débiles?». ¿Cuál es la mejor estrategia?",
+            "explanation": "Mostrar autocrítica y capacidad de mejora transmite honestidad y madurez profesional.",
+            "options": [
+                {
+                    "content": "Decir que no tienes ninguno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mencionar una debilidad real y explicar cómo trabajas para mejorarla",
+                    "is_correct": true
+                },
+                {
+                    "content": "Negarte a contestar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Enumerar todos tus defectos con detalle",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué técnica sirve para analizar las Debilidades, Amenazas, Fortalezas y Oportunidades de una idea de negocio?",
+            "explanation": "El DAFO (o FODA) combina el análisis interno (debilidades y fortalezas) y externo (amenazas y oportunidades).",
+            "options": [
+                {
+                    "content": "Análisis PEST",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diagrama de Gantt",
+                    "is_correct": false
+                },
+                {
+                    "content": "Análisis DAFO",
+                    "is_correct": true
+                },
+                {
+                    "content": "Método Delphi",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se llama el documento que describe de forma detallada un proyecto empresarial: producto, mercado, recursos y viabilidad económica?",
+            "explanation": "El plan de empresa (o plan de negocio) recoge el análisis y la planificación necesarios para valorar la viabilidad del proyecto.",
+            "options": [
+                {
+                    "content": "Plan de empresa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Libro de actas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Escritura de apoderamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Balance de situación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una persona quiere emprender sola, respondiendo con todo su patrimonio presente y futuro de las deudas del negocio. ¿Qué forma jurídica es?",
+            "explanation": "El empresario individual tiene responsabilidad personal e ilimitada, salvo la posibilidad de proteger la vivienda habitual como empresario de responsabilidad limitada, según la normativa vigente.",
+            "options": [
+                {
+                    "content": "Sociedad anónima",
+                    "is_correct": false
+                },
+                {
+                    "content": "Empresario individual (autónomo)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sociedad limitada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sociedad cooperativa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una sociedad de responsabilidad limitada, ¿cómo responden los socios de las deudas sociales?",
+            "explanation": "En la SL el capital está dividido en participaciones y los socios responden únicamente hasta el importe de lo aportado.",
+            "options": [
+                {
+                    "content": "Con todo su patrimonio personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo con el patrimonio de uno de ellos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Con el capital que han aportado a la sociedad",
+                    "is_correct": true
+                },
+                {
+                    "content": "No responden ni siquiera con lo aportado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué trámite otorga personalidad jurídica a una sociedad mercantil como la SL?",
+            "explanation": "Las sociedades de capital adquieren personalidad jurídica con la inscripción de la escritura de constitución en el Registro Mercantil.",
+            "options": [
+                {
+                    "content": "La solicitud del NIF provisional",
+                    "is_correct": false
+                },
+                {
+                    "content": "El alta en el IAE",
+                    "is_correct": false
+                },
+                {
+                    "content": "La inscripción en el Registro Mercantil",
+                    "is_correct": true
+                },
+                {
+                    "content": "La licencia de apertura",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué documento se solicita en el Registro Mercantil Central para comprobar que no existe otra sociedad con el mismo nombre?",
+            "explanation": "La certificación negativa de denominación acredita que el nombre elegido no está ya registrado.",
+            "options": [
+                {
+                    "content": "Certificado de denominación social negativa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Certificado de antecedentes penales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Certificado de empadronamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Certificado de eficiencia energética",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Ante quién se formaliza la escritura pública de constitución de una sociedad limitada?",
+            "explanation": "La constitución de una sociedad de capital exige escritura pública otorgada ante notario.",
+            "options": [
+                {
+                    "content": "Ante un registrador de la propiedad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ante un notario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ante la Inspección de Trabajo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ante el ayuntamiento",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un autónomo va a iniciar su actividad. ¿En qué modelo de la Agencia Tributaria comunica el alta en el censo de empresarios, profesionales y retenedores?",
+            "explanation": "La declaración censal de alta se presenta mediante el modelo 036 o, de forma simplificada, el 037.",
+            "options": [
+                {
+                    "content": "Modelo 036 o 037",
+                    "is_correct": true
+                },
+                {
+                    "content": "Modelo 303",
+                    "is_correct": false
+                },
+                {
+                    "content": "Modelo 100",
+                    "is_correct": false
+                },
+                {
+                    "content": "Modelo 347",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En una entrevista de trabajo conviene informarse previamente sobre la empresa y el puesto al que se opta.",
+            "explanation": "Conocer la empresa demuestra interés y permite responder y preguntar con criterio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un currículum es obligatorio incluir el estado civil y la religión del candidato.",
+            "explanation": "No es obligatorio y son datos que no deben influir en la selección; conviene incluir solo información relevante para el puesto.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una idea de negocio debe validarse con un estudio de mercado antes de invertir en ella.",
+            "explanation": "El estudio de mercado permite comprobar si existe demanda y reducir el riesgo de la inversión.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué siglas tiene el sistema de la Administración que permite iniciar los trámites de constitución de una empresa en un único punto, a través de los Puntos de Atención al Emprendedor?",
+            "explanation": "CIRCE (Centro de Información y Red de Creación de Empresas) tramita telemáticamente la creación de empresas mediante el documento único electrónico (DUE).",
+            "options": [
+                {
+                    "content": "CIRCE",
+                    "is_correct": true
+                },
+                {
+                    "content": "circe",
+                    "is_correct": true
+                },
+                {
+                    "content": "Centro de Información y Red de Creación de Empresas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el régimen de la Seguridad Social en el que se da de alta quien trabaja por cuenta propia?",
+            "explanation": "Los trabajadores por cuenta propia se encuadran en el Régimen Especial de Trabajadores Autónomos (RETA).",
+            "options": [
+                {
+                    "content": "RETA",
+                    "is_correct": true
+                },
+                {
+                    "content": "Régimen Especial de Trabajadores Autónomos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Régimen de Trabajadores Autónomos",
+                    "is_correct": true
+                },
+                {
+                    "content": "el RETA",
+                    "is_correct": true
+                },
+                {
+                    "content": "Autónomos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las acciones adecuadas para una entrevista de trabajo (hay varias correctas).",
+            "explanation": "La puntualidad, la imagen y la preparación son positivas; criticar a antiguos empleadores o distraerse con el móvil perjudican al candidato.",
+            "options": [
+                {
+                    "content": "Llegar con puntualidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuidar la imagen y el lenguaje no verbal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hablar mal de tu anterior empresa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Preparar preguntas sobre el puesto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mirar constantemente el móvil",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes son formas jurídicas societarias? Hay varias respuestas correctas.",
+            "explanation": "SL, SA y cooperativa son formas societarias; la comunidad de vecinos no es una forma jurídica empresarial.",
+            "options": [
+                {
+                    "content": "Sociedad limitada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sociedad anónima",
+                    "is_correct": true
+                },
+                {
+                    "content": "Comunidad de vecinos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sociedad cooperativa",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

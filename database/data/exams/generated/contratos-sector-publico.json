@@ -1,0 +1,782 @@
+{
+    "slug": "contratos-sector-publico",
+    "title": "Ley 9/2017 Contratos del Sector Público",
+    "description": "Test de la Ley 9/2017 de Contratos del Sector Público para el temario de Administración Local: tipos de contrato, umbrales, procedimientos, contratos menores y garantías. Muy útil para repasar antes del examen, ojo con las cifras que son trampa.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:40:01+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 118 de la Ley 9/2017, de Contratos del Sector Público, son contratos menores los contratos de obras de valor estimado inferior a:",
+            "explanation": "El artículo 118 LCSP fija el límite de los contratos menores de obras en un valor estimado inferior a 40.000 euros.",
+            "options": [
+                {
+                    "content": "30.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "50.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "40.000 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "60.000 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 118 de la LCSP, son contratos menores los de suministro o de servicios cuyo valor estimado sea inferior a:",
+            "explanation": "El umbral de los contratos menores de suministro y servicios es inferior a 15.000 euros (art. 118 LCSP).",
+            "options": [
+                {
+                    "content": "15.000 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "18.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "12.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "20.000 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En relación con la duración de los contratos menores, la LCSP establece que:",
+            "explanation": "El artículo 29.8 LCSP establece que los contratos menores no pueden durar más de un año ni ser objeto de prórroga.",
+            "options": [
+                {
+                    "content": "No podrán durar más de dos años, con posibilidad de una prórroga de un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Podrán durar hasta seis meses, prorrogables por otros seis",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su duración la fija libremente el órgano de contratación en el expediente",
+                    "is_correct": false
+                },
+                {
+                    "content": "No podrán tener una duración superior a un año ni ser objeto de prórroga",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta en relación con los contratos menores según la LCSP:",
+            "explanation": "La LCSP no impone con carácter general la solicitud de tres ofertas en los contratos menores. Las demás afirmaciones sí se recogen en los artículos 118 y 131 LCSP.",
+            "options": [
+                {
+                    "content": "El expediente exige un informe del órgano de contratación que motive la necesidad del contrato",
+                    "is_correct": false
+                },
+                {
+                    "content": "La LCSP exige solicitar siempre, como mínimo, tres ofertas a empresas distintas",
+                    "is_correct": true
+                },
+                {
+                    "content": "No se puede fraccionar el objeto del contrato para evitar los umbrales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pueden adjudicarse directamente a cualquier empresario con capacidad de obrar y la habilitación profesional necesaria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LCSP, el órgano de contratación debe publicar la información relativa a los contratos menores, al menos, con periodicidad:",
+            "explanation": "El artículo 63.4 LCSP exige la publicación, al menos trimestralmente, de la información de los contratos menores celebrados.",
+            "options": [
+                {
+                    "content": "Mensual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Trimestral",
+                    "is_correct": true
+                },
+                {
+                    "content": "Semestral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Anual",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 118.2 de la LCSP, el órgano de contratación debe comprobar que el contratista no ha suscrito más contratos menores que, individual o conjuntamente, superen los importes máximos de los contratos menores.",
+            "explanation": "Es una de las cautelas del artículo 118.2 LCSP para evitar el fraccionamiento y la elusión de los umbrales.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 106 de la LCSP, cuando excepcionalmente se exija garantía provisional, esta no podrá ser superior a:",
+            "explanation": "La garantía provisional, de carácter excepcional y motivado, no puede exceder del 3 % del presupuesto base de licitación, IVA excluido (art. 106 LCSP).",
+            "options": [
+                {
+                    "content": "El 1 % del presupuesto base de licitación, IVA excluido",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 5 % del presupuesto base de licitación, IVA incluido",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 3 % del presupuesto base de licitación, IVA excluido",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 2 % del valor estimado del contrato",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La garantía definitiva que debe constituir el licitador propuesto como adjudicatario asciende, con carácter general, al:",
+            "explanation": "El artículo 107 LCSP fija la garantía definitiva en el 5 % del precio final ofertado, excluido el IVA.",
+            "options": [
+                {
+                    "content": "5 % del precio final ofertado, excluido el IVA",
+                    "is_correct": true
+                },
+                {
+                    "content": "5 % del precio final ofertado, incluido el IVA",
+                    "is_correct": false
+                },
+                {
+                    "content": "3 % del precio final ofertado, excluido el IVA",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 % del presupuesto base de licitación, excluido el IVA",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En casos especiales, el órgano de contratación puede exigir en el pliego, además de la garantía definitiva, una garantía complementaria de hasta un:",
+            "explanation": "El artículo 107.2 LCSP permite una garantía complementaria de hasta un 5 % del precio del contrato, con un total máximo del 10 %.",
+            "options": [
+                {
+                    "content": "2 % del precio del contrato, con un total máximo del 7 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "3 % del precio del contrato, con un total máximo del 8 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 % del precio del contrato, con un total máximo del 15 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 % del precio del contrato, sin que la garantía total supere el 10 %",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 108 de la LCSP, señale qué forma de constituir la garantía NO está prevista:",
+            "explanation": "El artículo 108.1 LCSP prevé efectivo o valores, aval y seguro de caución, pero no la hipoteca de bienes inmuebles.",
+            "options": [
+                {
+                    "content": "En efectivo o en valores de deuda pública",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediante aval prestado por banco o sociedad de garantía recíproca autorizados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediante hipoteca sobre bienes inmuebles del licitador",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mediante contrato de seguro de caución con entidad aseguradora autorizada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un contrato sujeto a regulación armonizada licitado por procedimiento abierto, el plazo mínimo de presentación de proposiciones es de:",
+            "explanation": "En contratos sujetos a regulación armonizada, el artículo 156.3 LCSP fija un plazo mínimo de 35 días desde el envío del anuncio al Diario Oficial de la Unión Europea.",
+            "options": [
+                {
+                    "content": "30 días naturales desde el envío del anuncio al DOUE",
+                    "is_correct": false
+                },
+                {
+                    "content": "35 días naturales desde el envío del anuncio al DOUE",
+                    "is_correct": true
+                },
+                {
+                    "content": "40 días naturales desde el envío del anuncio al DOUE",
+                    "is_correct": false
+                },
+                {
+                    "content": "52 días naturales desde la publicación en el perfil del contratante",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el procedimiento restringido, el órgano de contratación fijará un número mínimo de candidatos a los que invitar que, en ningún caso, será inferior a:",
+            "explanation": "El artículo 162 LCSP exige que el número mínimo de candidatos en el procedimiento restringido no sea inferior a cinco.",
+            "options": [
+                {
+                    "content": "Tres",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siete",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 131.2 de la LCSP, la adjudicación de los contratos se realizará ordinariamente utilizando:",
+            "explanation": "El artículo 131.2 LCSP establece como procedimientos ordinarios el abierto y el restringido. Los demás solo proceden en los supuestos legalmente previstos.",
+            "options": [
+                {
+                    "content": "El procedimiento abierto o el restringido",
+                    "is_correct": true
+                },
+                {
+                    "content": "El procedimiento abierto o el negociado con publicidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "El procedimiento restringido o el diálogo competitivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "El procedimiento abierto simplificado o el negociado sin publicidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 159 de la LCSP, el procedimiento abierto simplificado puede utilizarse cuando el valor estimado no supere, en obras y en suministros y servicios (salvo prestaciones intelectuales), respectivamente:",
+            "explanation": "El artículo 159.1 LCSP permite el abierto simplificado hasta 2.000.000 euros en obras y 100.000 euros en suministros y servicios.",
+            "options": [
+                {
+                    "content": "1.000.000 euros y 60.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "3.000.000 euros y 100.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "2.000.000 euros y 100.000 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "2.000.000 euros y 140.000 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para poder acudir al procedimiento abierto simplificado, los criterios de adjudicación que dependan de un juicio de valor no pueden superar, con carácter general, el siguiente porcentaje de la puntuación total:",
+            "explanation": "El artículo 159.1 LCSP limita al 25 % los criterios sujetos a juicio de valor, elevándose al 45 % en prestaciones de carácter intelectual.",
+            "options": [
+                {
+                    "content": "20 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "25 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "30 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el procedimiento abierto simplificado abreviado (art. 159.6 LCSP), los umbrales de valor estimado son, en obras y en suministros o servicios, inferiores a:",
+            "explanation": "El artículo 159.6 LCSP limita el procedimiento abreviado a obras de valor estimado inferior a 80.000 euros y a suministros y servicios inferior a 35.000 euros.",
+            "options": [
+                {
+                    "content": "100.000 euros y 50.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "60.000 euros y 15.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "40.000 euros y 15.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "80.000 euros y 35.000 euros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es un supuesto que habilite el procedimiento negociado sin publicidad según el artículo 168 de la LCSP:",
+            "explanation": "El artículo 168 LCSP recoge supuestos tasados, entre ellos los tres últimos. La cuantía por sí sola no habilita el negociado sin publicidad.",
+            "options": [
+                {
+                    "content": "Que el valor estimado del suministro sea inferior a 100.000 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que, por razones técnicas o artísticas, o por protección de derechos exclusivos, solo pueda encomendarse a un empresario determinado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que, en un abierto o restringido previo, solo se hayan presentado ofertas irregulares o inaceptables",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una imperiosa urgencia derivada de acontecimientos imprevisibles para el órgano de contratación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el procedimiento negociado sin publicidad, siempre que sea posible, el órgano de contratación solicitará oferta, al menos, a:",
+            "explanation": "La LCSP exige, siempre que sea posible, consultar al menos a tres empresas capacitadas para dar un mínimo de concurrencia al negociado sin publicidad.",
+            "options": [
+                {
+                    "content": "Dos empresas capacitadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro empresas capacitadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres empresas capacitadas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco empresas capacitadas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué procedimiento de adjudicación está previsto para dar respuesta a la necesidad de desarrollar productos, servicios u obras innovadores que no existen en el mercado, y comprar después el resultado?",
+            "explanation": "La asociación para la innovación (arts. 177 y ss. LCSP) está pensada para desarrollar y adquirir productos, servicios u obras innovadores no disponibles en el mercado.",
+            "options": [
+                {
+                    "content": "Diálogo competitivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Asociación para la innovación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Procedimiento restringido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Concurso de proyectos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 44 de la LCSP, son susceptibles de recurso especial en materia de contratación los contratos de obras y de suministro o servicios cuyo valor estimado sea, respectivamente, superior a:",
+            "explanation": "El artículo 44 LCSP admite el recurso especial en obras de valor estimado superior a 3.000.000 euros y en suministros y servicios superior a 100.000 euros.",
+            "options": [
+                {
+                    "content": "3.000.000 euros y 100.000 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "5.000.000 euros y 100.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "3.000.000 euros y 60.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "2.000.000 euros y 140.000 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los contratos susceptibles de recurso especial en materia de contratación, la formalización no podrá efectuarse antes de que transcurran, desde la notificación de la adjudicación:",
+            "explanation": "El artículo 153.3 LCSP prohíbe formalizar el contrato antes de que transcurran 15 días hábiles desde la notificación de la adjudicación.",
+            "options": [
+                {
+                    "content": "10 días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 días hábiles",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 150.2 de la LCSP, el licitador que haya presentado la mejor oferta debe aportar la documentación requerida en un plazo de:",
+            "explanation": "El órgano de contratación concede al licitador un plazo de diez días hábiles, a contar desde el envío del requerimiento, para presentar la documentación (art. 150.2 LCSP).",
+            "options": [
+                {
+                    "content": "5 días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 días hábiles",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 días hábiles",
+                    "is_correct": true
+                },
+                {
+                    "content": "10 días naturales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las modificaciones previstas en el pliego de cláusulas administrativas particulares no podrán superar, en su cuantía, el siguiente porcentaje del precio inicial del contrato:",
+            "explanation": "El artículo 204 LCSP limita las modificaciones previstas al 20 % del precio inicial. El 50 % es el límite de las no previstas del artículo 205.",
+            "options": [
+                {
+                    "content": "10 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "30 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 77.1.a de la LCSP, la clasificación del empresario es requisito para contratar obras cuyo valor estimado sea igual o superior a:",
+            "explanation": "La clasificación es exigible en los contratos de obras de valor estimado igual o superior a 500.000 euros (art. 77.1.a LCSP).",
+            "options": [
+                {
+                    "content": "500.000 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "350.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.000.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "300.000 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la disposición adicional segunda de la LCSP, corresponde a los Alcaldes la contratación de obras, suministros y servicios cuando su valor estimado no supere el:",
+            "explanation": "La disposición adicional segunda LCSP atribuye al Alcalde esos contratos hasta el 10 % de los recursos ordinarios y 6.000.000 euros. El resto corresponde al Pleno.",
+            "options": [
+                {
+                    "content": "5 % de los recursos ordinarios del presupuesto ni 3.000.000 de euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 % de los recursos ordinarios del presupuesto ni 6.000.000 de euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 % de los recursos ordinarios del presupuesto ni 3.000.000 de euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 % de los recursos ordinarios del presupuesto ni 6.000.000 de euros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En las Entidades Locales, la mesa de contratación estará formada por un número total de miembros que no podrá ser inferior a:",
+            "explanation": "La disposición adicional segunda, apartado 7, LCSP exige un mínimo de tres miembros, entre ellos el Secretario y el Interventor.",
+            "options": [
+                {
+                    "content": "Cinco",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuatro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siete",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes prestaciones constituye un contrato de suministro conforme a la LCSP?",
+            "explanation": "El contrato de suministro incluye la adquisición y el arrendamiento (con o sin opción de compra) de productos o bienes muebles (art. 16 LCSP). Los demás supuestos son otros contratos.",
+            "options": [
+                {
+                    "content": "El arrendamiento de un local propiedad del Ayuntamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "La reparación de un edificio municipal",
+                    "is_correct": false
+                },
+                {
+                    "content": "El arrendamiento, con opción de compra, de bienes muebles",
+                    "is_correct": true
+                },
+                {
+                    "content": "La gestión indirecta de un servicio público con riesgo operacional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los contratos mixtos, para determinar las normas que rigen su adjudicación se atenderá a:",
+            "explanation": "El artículo 18 LCSP remite a la prestación económicamente más importante para determinar las normas de adjudicación de un contrato mixto.",
+            "options": [
+                {
+                    "content": "Las características de la prestación que tenga más importancia desde el punto de vista económico",
+                    "is_correct": true
+                },
+                {
+                    "content": "La prestación que tenga una duración más larga",
+                    "is_correct": false
+                },
+                {
+                    "content": "La prestación que figure en primer lugar en el pliego",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siempre las normas del contrato de obras",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre el valor estimado y el presupuesto base de licitación según la LCSP:",
+            "explanation": "El valor estimado se calcula sin IVA e incluye prórrogas y modificaciones previstas (art. 101 LCSP). El presupuesto base de licitación sí incluye el IVA (art. 100).",
+            "options": [
+                {
+                    "content": "El presupuesto base de licitación incluye el IVA",
+                    "is_correct": false
+                },
+                {
+                    "content": "El valor estimado debe tener en cuenta las prórrogas previstas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El valor estimado debe incluir las modificaciones previstas en el pliego",
+                    "is_correct": false
+                },
+                {
+                    "content": "El valor estimado del contrato incluye el IVA",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La duración máxima de los contratos de concesión de obras y de concesión de servicios, incluidas las posibles prórrogas, no podrá exceder de:",
+            "explanation": "El artículo 29.6 LCSP fija en 40 años la duración máxima de las concesiones de obras y de servicios.",
+            "options": [
+                {
+                    "content": "25 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "40 años",
+                    "is_correct": true
+                },
+                {
+                    "content": "50 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Salvo supuestos excepcionales, la duración de un acuerdo marco no podrá exceder de:",
+            "explanation": "El artículo 219 LCSP limita la duración de los acuerdos marco a cuatro años, salvo supuestos excepcionales debidamente justificados.",
+            "options": [
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la tramitación de emergencia (art. 120 LCSP), si el contrato ha de celebrarse, el plazo máximo para iniciar la ejecución de la prestación es de:",
+            "explanation": "El artículo 120 LCSP establece que la ejecución de la prestación debe iniciarse en el plazo máximo de un mes desde la adopción del acuerdo.",
+            "options": [
+                {
+                    "content": "Un mes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los contratos de servicios que celebren las Administraciones Públicas tienen carácter de contratos administrativos.",
+            "explanation": "Según el artículo 25 LCSP, los contratos de obras, concesión de obras, concesión de servicios, suministro y servicios celebrados por Administraciones Públicas son administrativos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Para que exista un contrato de concesión de servicios basta con que el contratista reciba una retribución, aunque no asuma el riesgo operacional.",
+            "explanation": "La concesión de servicios exige la transferencia al concesionario del riesgo operacional (art. 15 LCSP). Sin ella se trataría de un contrato de servicios.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En el procedimiento restringido, cualquier empresario interesado puede presentar directamente su proposición sin necesidad de solicitar antes su participación.",
+            "explanation": "En el restringido solo presentan proposición los empresarios seleccionados e invitados por el órgano de contratación tras solicitar su participación.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

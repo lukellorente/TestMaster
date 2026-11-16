@@ -1,0 +1,544 @@
+{
+    "slug": "java-poo",
+    "title": "Programación UT5 - POO en Java (clases, herencia, interfaces)",
+    "description": "Test de POO en Java para repasar la UT5 de Programación de DAM/DAW: clases, herencia, interfaces y records. Lo hice con el temario de este curso, a ver qué tal os sale.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:46:23+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué característica define a un constructor en Java?",
+            "explanation": "Un constructor se llama igual que la clase y no lleva tipo de retorno, ni siquiera void. Puede haber varios constructores sobrecargados.",
+            "options": [
+                {
+                    "content": "Devuelve siempre un valor de tipo void",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tiene el mismo nombre que la clase y no declara tipo de retorno",
+                    "is_correct": true
+                },
+                {
+                    "content": "Debe ser siempre static",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo puede existir uno por clase",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si una clase no declara ningún constructor, ¿qué ocurre?",
+            "explanation": "Java proporciona un constructor por defecto sin argumentos solo cuando la clase no define ningún constructor.",
+            "options": [
+                {
+                    "content": "El compilador añade un constructor por defecto sin parámetros",
+                    "is_correct": true
+                },
+                {
+                    "content": "La clase no se puede instanciar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se produce un error de compilación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la forma habitual de aplicar la encapsulación en una clase?",
+            "explanation": "La encapsulación oculta el estado interno con atributos privados y controla el acceso a ellos mediante métodos públicos.",
+            "options": [
+                {
+                    "content": "Declarar atributos public y métodos private",
+                    "is_correct": false
+                },
+                {
+                    "content": "Declarar todos los atributos static",
+                    "is_correct": false
+                },
+                {
+                    "content": "Declarar los atributos private y ofrecer acceso mediante métodos getter y setter",
+                    "is_correct": true
+                },
+                {
+                    "content": "Declarar la clase como final",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el siguiente código, ¿a qué hace referencia this?\n\nclass Persona {\n  private String nombre;\n  Persona(String nombre) { this.nombre = nombre; }\n}",
+            "explanation": "this es una referencia al objeto actual; this.nombre es el atributo de la instancia, distinto del parámetro con el mismo nombre.",
+            "options": [
+                {
+                    "content": "Al parámetro nombre del constructor",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la clase Persona como tipo",
+                    "is_correct": false
+                },
+                {
+                    "content": "A la clase padre de Persona",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al objeto actual que se está construyendo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué palabra clave se usa para que una clase herede de otra?",
+            "explanation": "En Java una clase hereda de otra con extends; implements se reserva para las interfaces.",
+            "options": [
+                {
+                    "content": "extends",
+                    "is_correct": true
+                },
+                {
+                    "content": "implements",
+                    "is_correct": false
+                },
+                {
+                    "content": "inherits",
+                    "is_correct": false
+                },
+                {
+                    "content": "super",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una subclase que sobrescribe un método, ¿para qué sirve la llamada super.calcular()?",
+            "explanation": "super.metodo() invoca la versión del método definida en la superclase, aunque la subclase la haya sobrescrito.",
+            "options": [
+                {
+                    "content": "Para ejecutar el método calcular() de la propia subclase de forma recursiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para eliminar el método calcular() de la clase padre",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para ejecutar la implementación de calcular() de la clase padre",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para crear un nuevo objeto de la clase padre",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué mostrará por pantalla este código?\n\nclass Animal { void sonido() { System.out.println(\"...\"); } }\nclass Perro extends Animal {\n  @Override void sonido() { System.out.println(\"Guau\"); }\n}\n// en main:\nAnimal a = new Perro();\na.sonido();",
+            "explanation": "Por polimorfismo (enlace dinámico) se ejecuta el método del tipo real del objeto, que es Perro.",
+            "options": [
+                {
+                    "content": "...",
+                    "is_correct": false
+                },
+                {
+                    "content": "Guau",
+                    "is_correct": true
+                },
+                {
+                    "content": "Error de compilación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Error en ejecución",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ocurre si se intenta hacer new sobre una clase abstracta?",
+            "explanation": "Una clase abstracta no puede instanciarse directamente; solo se pueden crear objetos de sus subclases concretas.",
+            "options": [
+                {
+                    "content": "Se crea el objeto, pero sus métodos abstractos devuelven null",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se crea el objeto y se avisa con un warning",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lanza una excepción en tiempo de ejecución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Da error de compilación porque no se puede instanciar",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la herencia múltiple en Java, ¿qué afirmación es correcta?",
+            "explanation": "Java tiene herencia simple de clases, pero permite implementar varias interfaces a la vez.",
+            "options": [
+                {
+                    "content": "Una clase solo puede extender una clase, pero puede implementar varias interfaces",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una clase puede extender varias clases separadas por comas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una clase no puede implementar más de una interfaz",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las interfaces no pueden extender otras interfaces",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado el record public record Punto(int x, int y) {}, ¿cómo se obtiene el valor de x de un objeto p?",
+            "explanation": "Un record genera automáticamente métodos de acceso con el mismo nombre del componente, sin prefijo get.",
+            "options": [
+                {
+                    "content": "p.getX()",
+                    "is_correct": false
+                },
+                {
+                    "content": "p.x",
+                    "is_correct": false
+                },
+                {
+                    "content": "p.x()",
+                    "is_correct": true
+                },
+                {
+                    "content": "Punto.x(p)",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la utilidad de la anotación @Override?",
+            "explanation": "@Override hace que el compilador verifique que realmente se está sobrescribiendo un método heredado, evitando errores de firma.",
+            "options": [
+                {
+                    "content": "Hace que el método se ejecute más rápido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Indica al compilador que el método debe sobrescribir uno de la superclase o interfaz, y avisa si no es así",
+                    "is_correct": true
+                },
+                {
+                    "content": "Permite sobrecargar un método con otros parámetros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impide que otras clases sobrescriban el método",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es la sobrecarga de métodos?",
+            "explanation": "La sobrecarga (overload) permite varios métodos con igual nombre y distinta lista de parámetros; la redefinición en subclases es sobrescritura.",
+            "options": [
+                {
+                    "content": "Redefinir en la subclase un método heredado con la misma firma",
+                    "is_correct": false
+                },
+                {
+                    "content": "Declarar un método en una interfaz",
+                    "is_correct": false
+                },
+                {
+                    "content": "Heredar un método de varias clases a la vez",
+                    "is_correct": false
+                },
+                {
+                    "content": "Definir en una misma clase varios métodos con el mismo nombre y distintos parámetros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un atributo declarado como static en una clase:",
+            "explanation": "Los miembros static pertenecen a la clase, no a cada objeto, por lo que existe una única copia compartida.",
+            "options": [
+                {
+                    "content": "Pertenece a la clase y se comparte entre todas sus instancias",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tiene una copia distinta en cada objeto",
+                    "is_correct": false
+                },
+                {
+                    "content": "No puede modificarse nunca",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo es accesible desde las subclases",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene declarar una clase como final?",
+            "explanation": "Una clase final no puede ser extendida; un ejemplo es la clase String.",
+            "options": [
+                {
+                    "content": "Sus atributos pasan a ser constantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "No puede instanciarse",
+                    "is_correct": false
+                },
+                {
+                    "content": "No se puede heredar de ella",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo puede tener métodos estáticos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué indica la palabra default en un método de una interfaz?",
+            "explanation": "Los métodos default (desde Java 8) llevan cuerpo en la interfaz y las clases que la implementan pueden usarlos tal cual o sobrescribirlos.",
+            "options": [
+                {
+                    "content": "Que el método tiene visibilidad de paquete",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que el método proporciona una implementación por defecto que las clases pueden heredar o sobrescribir",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que el método es obligatorio en todas las clases implementadoras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que el método es estático",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un record de Java puede extender (extends) otra clase.",
+            "explanation": "Los records extienden implícitamente java.lang.Record, por lo que no pueden extender otra clase; sí pueden implementar interfaces.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una clase abstracta puede tener constructores.",
+            "explanation": "Aunque no se pueda instanciar directamente, su constructor se ejecuta cuando se construye un objeto de una subclase concreta.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una subclase puede acceder directamente a los atributos private de su superclase.",
+            "explanation": "Los miembros private solo son accesibles dentro de la propia clase; la subclase debe usar métodos públicos o protegidos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los atributos declarados en una interfaz son implícitamente public static final.",
+            "explanation": "Una interfaz no tiene estado de instancia: sus atributos son constantes públicas, estáticas y finales.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué palabra clave se usa en el constructor de una subclase para invocar al constructor de la superclase?",
+            "explanation": "super(...) llama al constructor de la clase padre.",
+            "options": [
+                {
+                    "content": "super",
+                    "is_correct": true
+                },
+                {
+                    "content": "super()",
+                    "is_correct": true
+                },
+                {
+                    "content": "la palabra super",
+                    "is_correct": true
+                },
+                {
+                    "content": "super(...)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué palabra clave se usa para que una clase cumpla el contrato de una interfaz?",
+            "explanation": "Una clase declara que implementa una interfaz con implements.",
+            "options": [
+                {
+                    "content": "implements",
+                    "is_correct": true
+                },
+                {
+                    "content": "implement",
+                    "is_correct": true
+                },
+                {
+                    "content": "la palabra implements",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué método de la clase Object se suele sobrescribir para devolver la representación en texto de un objeto?",
+            "explanation": "toString() devuelve un String descriptivo del objeto y es el que se invoca, por ejemplo, al imprimirlo con println.",
+            "options": [
+                {
+                    "content": "toString",
+                    "is_correct": true
+                },
+                {
+                    "content": "toString()",
+                    "is_correct": true
+                },
+                {
+                    "content": "el método toString",
+                    "is_correct": true
+                },
+                {
+                    "content": "tostring",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué modificador se aplica a un método para impedir que las subclases lo sobrescriban?",
+            "explanation": "Un método final no puede ser sobrescrito en las subclases.",
+            "options": [
+                {
+                    "content": "final",
+                    "is_correct": true
+                },
+                {
+                    "content": "modificador final",
+                    "is_correct": true
+                },
+                {
+                    "content": "la palabra final",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Sobre las clases abstractas en Java, selecciona las afirmaciones correctas (hay varias correctas):",
+            "explanation": "Una clase abstracta mezcla métodos abstractos y concretos y puede tener atributos, pero no se instancia y las subclases concretas deben implementar los métodos abstractos.",
+            "options": [
+                {
+                    "content": "Pueden contener métodos abstractos sin cuerpo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pueden contener métodos con implementación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se pueden instanciar con new directamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pueden tener atributos de instancia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una subclase concreta no está obligada a implementar sus métodos abstractos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Sobre los modificadores de acceso en Java, selecciona las afirmaciones correctas (hay varias correctas):",
+            "explanation": "Sin modificador (acceso de paquete) solo se accede desde el mismo paquete; no desde subclases de otros paquetes.",
+            "options": [
+                {
+                    "content": "private permite el acceso solo desde dentro de la propia clase",
+                    "is_correct": true
+                },
+                {
+                    "content": "protected permite el acceso desde el mismo paquete y desde las subclases",
+                    "is_correct": true
+                },
+                {
+                    "content": "public permite el acceso desde cualquier clase",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sin modificador, el miembro es accesible desde subclases de cualquier paquete",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

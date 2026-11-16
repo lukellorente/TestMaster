@@ -1,0 +1,679 @@
+{
+    "slug": "enfermeria-farmacologia",
+    "title": "Enfermería: farmacología y administración de medicamentos",
+    "description": "Test de farmacología y administración de medicamentos para repasar el temario de Enfermería de las oposiciones de sanidad. Incluye cálculo de dosis, vías, farmacocinética y seguridad del paciente.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:15:57+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes vías de administración evita el efecto de primer paso hepático?",
+            "explanation": "La mucosa sublingual drena a la circulación sistémica (vena cava superior) sin pasar por el hígado, a diferencia de las vías que usan la absorción intestinal.",
+            "options": [
+                {
+                    "content": "Oral con comprimido convencional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sublingual",
+                    "is_correct": true
+                },
+                {
+                    "content": "Enteral por sonda nasogástrica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Oral con cubierta entérica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la administración intradérmica, señale la respuesta incorrecta:",
+            "explanation": "La vía intradérmica se administra casi paralela a la piel (5-15°), con el bisel hacia arriba, y debe formar una pápula; 45-60° no es correcto.",
+            "options": [
+                {
+                    "content": "Se introduce el bisel de la aguja hacia arriba.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El ángulo de inserción es de 5-15°.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al inyectar debe formarse una pápula.",
+                    "is_correct": false
+                },
+                {
+                    "content": "El ángulo de inserción es de 45-60°.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el adulto, ¿qué zona de inyección intramuscular se considera de elección por presentar menor riesgo de lesión de nervios y vasos y un grosor muscular adecuado?",
+            "explanation": "La zona ventroglútea está alejada del nervio ciático y de grandes vasos, y tiene poco tejido subcutáneo, por lo que se recomienda de elección.",
+            "options": [
+                {
+                    "content": "Cuadrante superoexterno del glúteo (dorsoglútea)",
+                    "is_correct": false
+                },
+                {
+                    "content": "Zona ventroglútea (de Hochstetter)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cara anterior del muslo, tercio inferior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cara posterior del brazo (tríceps)",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se prescribe un fármaco a dosis de 500 mg. La ampolla disponible contiene 1 g en 5 ml. ¿Qué volumen hay que administrar?",
+            "explanation": "1000 mg están en 5 ml, es decir, 200 mg/ml; 500 mg corresponden a 2,5 ml.",
+            "options": [
+                {
+                    "content": "1 ml",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 ml",
+                    "is_correct": false
+                },
+                {
+                    "content": "2,5 ml",
+                    "is_correct": true
+                },
+                {
+                    "content": "10 ml",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Hay que pasar 1000 ml de suero en 8 horas con un equipo de macrogoteo (20 gotas = 1 ml). ¿Cuál es la velocidad de goteo aproximada?",
+            "explanation": "(1000 ml × 20 gotas) / (8 × 60 min) = 20 000 / 480 ≈ 41,7, es decir, unas 42 gotas/min.",
+            "options": [
+                {
+                    "content": "21 gotas/min",
+                    "is_correct": false
+                },
+                {
+                    "content": "56 gotas/min",
+                    "is_correct": false
+                },
+                {
+                    "content": "83 gotas/min",
+                    "is_correct": false
+                },
+                {
+                    "content": "42 gotas/min",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se deben administrar 500 ml de suero en 4 horas con un equipo de microgoteo (60 microgotas = 1 ml). ¿Cuántas microgotas por minuto corresponden?",
+            "explanation": "500 ml / 4 h = 125 ml/h; con microgoteo las microgotas/min equivalen a los ml/h, es decir, 125.",
+            "options": [
+                {
+                    "content": "42",
+                    "is_correct": false
+                },
+                {
+                    "content": "83",
+                    "is_correct": false
+                },
+                {
+                    "content": "167",
+                    "is_correct": false
+                },
+                {
+                    "content": "125",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un niño de 20 kg tiene prescrito un antibiótico a 15 mg/kg/día repartido en 3 tomas. ¿Qué dosis corresponde a cada toma?",
+            "explanation": "15 mg × 20 kg = 300 mg/día; dividido entre 3 tomas son 100 mg por toma.",
+            "options": [
+                {
+                    "content": "75 mg",
+                    "is_correct": false
+                },
+                {
+                    "content": "150 mg",
+                    "is_correct": false
+                },
+                {
+                    "content": "100 mg",
+                    "is_correct": true
+                },
+                {
+                    "content": "300 mg",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "A un paciente de 70 kg se le prescribe dopamina a 5 µg/kg/min. La dilución es de 400 mg en 250 ml (1,6 mg/ml). ¿A qué ritmo, en ml/h, debe programarse la bomba?",
+            "explanation": "5 × 70 = 350 µg/min = 21 mg/h; 21 mg/h dividido entre 1,6 mg/ml = 13,1 ml/h.",
+            "options": [
+                {
+                    "content": "8,4 ml/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "21 ml/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "26,2 ml/h",
+                    "is_correct": false
+                },
+                {
+                    "content": "13,1 ml/h",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En farmacocinética, ¿cuál es la biodisponibilidad de un fármaco administrado por vía intravenosa?",
+            "explanation": "La vía intravenosa introduce el fármaco directamente en la circulación sistémica, sin fase de absorción, por lo que la biodisponibilidad es del 100 %.",
+            "options": [
+                {
+                    "content": "Del 100 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "Depende del efecto de primer paso hepático",
+                    "is_correct": false
+                },
+                {
+                    "content": "Del 50 % de media",
+                    "is_correct": false
+                },
+                {
+                    "content": "Depende del pH gástrico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con dosis repetidas a intervalos regulares, el estado estacionario de un fármaco se alcanza aproximadamente tras:",
+            "explanation": "Tras 4-5 semividas se alcanza más del 90 % de la concentración en equilibrio, que se considera el estado estacionario.",
+            "options": [
+                {
+                    "content": "1 semivida de eliminación",
+                    "is_correct": false
+                },
+                {
+                    "content": "2 semividas de eliminación",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 semividas de eliminación",
+                    "is_correct": false
+                },
+                {
+                    "content": "4-5 semividas de eliminación",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes fármacos presenta una cinética de eliminación saturable (orden cero) a dosis terapéuticas?",
+            "explanation": "La fenitoína satura su metabolismo hepático dentro del rango terapéutico, por lo que pequeños aumentos de dosis producen grandes aumentos de concentración.",
+            "options": [
+                {
+                    "content": "Amoxicilina",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fenitoína",
+                    "is_correct": true
+                },
+                {
+                    "content": "Furosemida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Atenolol",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Solo la fracción de un fármaco que circula libre, no unida a proteínas plasmáticas, es farmacológicamente activa y puede ser filtrada en el glomérulo.",
+            "explanation": "La fracción unida a albúmina actúa como reservorio inactivo; solo la fracción libre se distribuye a los tejidos, ejerce efecto y se filtra.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes fármacos es un potente inductor enzimático del citocromo P450?",
+            "explanation": "La rifampicina induce el CYP450 y reduce los niveles de muchos fármacos; los otros tres son inhibidores enzimáticos.",
+            "options": [
+                {
+                    "content": "Cimetidina",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ketoconazol",
+                    "is_correct": false
+                },
+                {
+                    "content": "Rifampicina",
+                    "is_correct": true
+                },
+                {
+                    "content": "Eritromicina",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la asociación fármaco-antídoto incorrecta:",
+            "explanation": "El antídoto de las benzodiacepinas es el flumazenilo; la naloxona antagoniza los opioides.",
+            "options": [
+                {
+                    "content": "Morfina - naloxona",
+                    "is_correct": false
+                },
+                {
+                    "content": "Paracetamol - N-acetilcisteína",
+                    "is_correct": false
+                },
+                {
+                    "content": "Benzodiacepinas - naloxona",
+                    "is_correct": true
+                },
+                {
+                    "content": "Heparina sódica - sulfato de protamina",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Antes de administrar digoxina a un adulto, la enfermera debe:",
+            "explanation": "La digoxina puede causar bradicardia y arritmias; por eso se valora el pulso apical y se consulta antes de administrarla si hay bradicardia.",
+            "options": [
+                {
+                    "content": "Comprobar la frecuencia apical durante un minuto y consultar si es inferior a 60 lpm",
+                    "is_correct": true
+                },
+                {
+                    "content": "Medir la glucemia capilar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comprobar la saturación de oxígeno y suspender si es inferior al 98 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "Medir la temperatura y suspender si supera 37 °C",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el efecto adverso más característico de los inhibidores de la enzima convertidora de angiotensina (IECA)?",
+            "explanation": "Los IECA aumentan la bradicinina, lo que provoca tos seca; además pueden causar hiperpotasemia y angioedema.",
+            "options": [
+                {
+                    "content": "Hipopotasemia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Taquicardia refleja",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hiperglucemia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tos seca persistente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para monitorizar el tratamiento con heparina sódica no fraccionada por vía intravenosa se utiliza habitualmente:",
+            "explanation": "La heparina no fraccionada se controla con el TTPa; el INR se emplea para los antagonistas de la vitamina K.",
+            "options": [
+                {
+                    "content": "El INR",
+                    "is_correct": false
+                },
+                {
+                    "content": "El tiempo de tromboplastina parcial activada (TTPa)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El tiempo de sangría",
+                    "is_correct": false
+                },
+                {
+                    "content": "El recuento de hematíes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un paciente con fibrilación auricular tratado con acenocumarol, ¿cuál es el rango terapéutico de INR habitual?",
+            "explanation": "En la fibrilación auricular el objetivo de INR con antagonistas de la vitamina K es de 2,0 a 3,0.",
+            "options": [
+                {
+                    "content": "1,0-1,5",
+                    "is_correct": false
+                },
+                {
+                    "content": "3,5-4,5",
+                    "is_correct": false
+                },
+                {
+                    "content": "2,0-3,0",
+                    "is_correct": true
+                },
+                {
+                    "content": "4,0-5,0",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la única insulina que puede administrarse por vía intravenosa?",
+            "explanation": "Solo la insulina regular o cristalina, soluble y de acción rápida, está indicada por vía intravenosa, por ejemplo en perfusión.",
+            "options": [
+                {
+                    "content": "Insulina NPH",
+                    "is_correct": false
+                },
+                {
+                    "content": "Insulina glargina",
+                    "is_correct": false
+                },
+                {
+                    "content": "Insulina regular (cristalina)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mezclas de insulina bifásicas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando se mezclan en una misma jeringa insulina regular e insulina NPH, el procedimiento correcto es:",
+            "explanation": "Se carga primero la insulina transparente (regular) y después la turbia (NPH), para no contaminar el vial de insulina regular.",
+            "options": [
+                {
+                    "content": "Cargar primero la NPH y después la regular",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cargar primero la regular y después la NPH",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cargar ambas por separado y mezclarlas en el vial",
+                    "is_correct": false
+                },
+                {
+                    "content": "El orden de carga es indiferente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO forma parte de los «cinco correctos» clásicos de la administración segura de medicamentos:",
+            "explanation": "Los cinco correctos son paciente, medicamento, dosis, vía y hora correctos.",
+            "options": [
+                {
+                    "content": "Paciente correcto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vía correcta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hora correcta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Médico correcto",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes se considera un medicamento de alto riesgo según el ISMP?",
+            "explanation": "El cloruro potásico concentrado IV figura entre los medicamentos de alto riesgo, junto con insulinas, heparinas u opioides, por la gravedad de sus errores.",
+            "options": [
+                {
+                    "content": "Paracetamol oral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Omeprazol oral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ibuprofeno oral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cloruro potásico parenteral concentrado",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El cloruro potásico concentrado puede administrarse en bolo intravenoso directo siempre que el paciente esté monitorizado.",
+            "explanation": "El cloruro potásico concentrado debe diluirse y administrarse en perfusión lenta; el bolo directo puede causar parada cardiaca.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La terminación «-prazol» en la denominación común de un fármaco identifica a:",
+            "explanation": "Omeprazol, pantoprazol o esomeprazol son IBP; los betabloqueantes acaban en «-olol», los ARA II en «-sartán» y las estatinas en «-statina».",
+            "options": [
+                {
+                    "content": "Los inhibidores de la bomba de protones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los betabloqueantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los antagonistas de los receptores de angiotensina II",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los inhibidores de la HMG-CoA reductasa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto adverso grave, aunque infrecuente, se asocia a las estatinas y obliga a vigilar el dolor muscular?",
+            "explanation": "Las estatinas pueden producir miopatía y, en casos graves, rabdomiólisis con elevación de CK.",
+            "options": [
+                {
+                    "content": "Hipoglucemia grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "Rabdomiólisis",
+                    "is_correct": true
+                },
+                {
+                    "content": "Agranulocitosis",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ototoxicidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la furosemida, señale la respuesta incorrecta:",
+            "explanation": "La furosemida es un diurético de asa que aumenta la pérdida de potasio; los ahorradores de potasio son, por ejemplo, la espironolactona.",
+            "options": [
+                {
+                    "content": "Es un diurético de asa.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puede producir hipopotasemia.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es un diurético ahorrador de potasio.",
+                    "is_correct": true
+                },
+                {
+                    "content": "En dosis altas y por infusión rápida puede producir ototoxicidad.",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La infusión intravenosa demasiado rápida de vancomicina se asocia con:",
+            "explanation": "La liberación de histamina por infusión rápida de vancomicina causa enrojecimiento e hipotensión; se previene perfundiendo lentamente.",
+            "options": [
+                {
+                    "content": "Síndrome del hombre rojo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Síndrome serotoninérgico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Síndrome neuroléptico maligno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Síndrome de Stevens-Johnson de forma constante",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un adulto con anafilaxia, el tratamiento inicial de primera línea es:",
+            "explanation": "La adrenalina IM es el fármaco de elección y debe administrarse lo antes posible; corticoides y antihistamínicos son tratamientos secundarios.",
+            "options": [
+                {
+                    "content": "Hidrocortisona intravenosa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Antihistamínico intravenoso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Salbutamol inhalado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adrenalina intramuscular en la cara anterolateral del muslo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la administración de medicación por sonda nasogástrica, es correcto afirmar que:",
+            "explanation": "Triturar formas retardadas o entéricas altera su liberación y puede causar sobredosis o inactivación; los fármacos se administran por separado, lavando la sonda entre ellos.",
+            "options": [
+                {
+                    "content": "Todos los comprimidos pueden triturarse sin riesgo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los comprimidos de liberación retardada o con cubierta entérica no deben triturarse",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se deben mezclar todos los fármacos en la misma jeringa",
+                    "is_correct": false
+                },
+                {
+                    "content": "No es necesario lavar la sonda entre fármacos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe administrarse siempre con la sonda cerrada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En la administración subcutánea de heparina de bajo peso molecular no se debe aspirar ni masajear la zona tras la inyección.",
+            "explanation": "Aspirar y masajear aumenta el riesgo de hematoma por la acción anticoagulante del fármaco.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

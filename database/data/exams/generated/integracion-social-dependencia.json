@@ -1,0 +1,437 @@
+{
+    "slug": "integracion-social-dependencia",
+    "title": "Integración Social: atención a personas en situación de dependencia",
+    "description": "Test para repasar el módulo de atención a personas en situación de dependencia: Ley 39/2006, grados, servicios, prestaciones y recursos sociales. Útil para el examen de Integración Social.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:21:30+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el título de la Ley 39/2006, de 14 de diciembre?",
+            "explanation": "La Ley 39/2006 regula la promoción de la autonomía personal y la atención a las personas en situación de dependencia.",
+            "options": [
+                {
+                    "content": "Ley de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ley de Servicios Sociales y Dependencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley General de derechos de las personas con discapacidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley de Protección Social de personas mayores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 39/2006, ¿qué se entiende por dependencia?",
+            "explanation": "La dependencia es un estado permanente que exige apoyo de terceros para las actividades básicas de la vida diaria, y no depende solo de la edad.",
+            "options": [
+                {
+                    "content": "La necesidad de ayuda económica por falta de ingresos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El estado de carácter permanente en que se encuentran las personas que, por razones derivadas de la edad, la enfermedad o la discapacidad, precisan atención de otra u otras personas o ayudas importantes para realizar actividades básicas de la vida diaria",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cualquier enfermedad crónica diagnosticada por un médico",
+                    "is_correct": false
+                },
+                {
+                    "content": "La situación de las personas mayores de 65 años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos grados de dependencia establece la Ley 39/2006 en su redacción actual?",
+            "explanation": "Se establecen tres grados: Grado I (dependencia moderada), Grado II (severa) y Grado III (gran dependencia).",
+            "options": [
+                {
+                    "content": "Dos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una persona necesita ayuda para varias actividades básicas de la vida diaria dos o tres veces al día, pero no requiere la presencia permanente de un cuidador. ¿Qué grado le corresponde?",
+            "explanation": "El Grado II se da cuando se necesita ayuda dos o tres veces al día sin requerir presencia permanente del cuidador.",
+            "options": [
+                {
+                    "content": "Grado I, dependencia moderada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grado III, gran dependencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sin grado reconocido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grado II, dependencia severa",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué órgano de coordinación y cooperación entre la Administración General del Estado y las comunidades autónomas prevé la Ley 39/2006?",
+            "explanation": "El Consejo Territorial es el órgano de cooperación interadministrativa del SAAD.",
+            "options": [
+                {
+                    "content": "El Consejo de Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo Territorial del Sistema para la Autonomía y Atención a la Dependencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Conferencia de Presidentes",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Defensor del Pueblo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes es un servicio del catálogo del Sistema para la Autonomía y Atención a la Dependencia (SAAD)?",
+            "explanation": "La teleasistencia forma parte del catálogo de servicios del SAAD, mientras que las demás son prestaciones de otros sistemas.",
+            "options": [
+                {
+                    "content": "Servicio de teleasistencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pensión no contributiva de jubilación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Subsidio de desempleo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ingreso mínimo vital",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La prestación económica para cuidados en el entorno familiar y apoyo a cuidadores no profesionales tiene carácter...",
+            "explanation": "La ley la configura como excepcional y supeditada a que la persona sea atendida en su entorno y se den condiciones adecuadas de convivencia y habitabilidad.",
+            "options": [
+                {
+                    "content": "Obligatorio, para todas las personas dependientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Excepcional, cuando no es posible el acceso a un servicio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Universal y compatible con cualquier servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivo del Grado I",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un usuario con dependencia reconocida vive solo, tiene riesgo de caídas y necesita poder avisar rápidamente en caso de emergencia. ¿Qué recurso es el más adecuado?",
+            "explanation": "La teleasistencia permite respuesta inmediata ante emergencias y favorece permanecer en el domicilio.",
+            "options": [
+                {
+                    "content": "Centro de noche",
+                    "is_correct": false
+                },
+                {
+                    "content": "Residencia asistida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Teleasistencia con dispositivo de alarma",
+                    "is_correct": true
+                },
+                {
+                    "content": "Prestación vinculada a vivienda tutelada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué recurso social ofrece atención integral durante el día, con servicios terapéuticos y de cuidado personal, y la persona regresa a su domicilio por la noche?",
+            "explanation": "El centro de día es un servicio diurno que mantiene a la persona en su entorno habitual.",
+            "options": [
+                {
+                    "content": "Centro de día",
+                    "is_correct": true
+                },
+                {
+                    "content": "Residencia permanente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Piso tutelado de larga estancia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Albergue de transeúntes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué documento recoge los servicios y prestaciones concretos que corresponden a la persona dependiente tras el reconocimiento de su situación?",
+            "explanation": "El PIA determina las modalidades de intervención más adecuadas a las necesidades de la persona.",
+            "options": [
+                {
+                    "content": "El Programa Individual de Atención (PIA)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El certificado de empadronamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "El informe de vida laboral",
+                    "is_correct": false
+                },
+                {
+                    "content": "El libro de familia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una de las funciones principales del técnico en Integración Social en la atención a personas dependientes es...",
+            "explanation": "El técnico interviene en el apoyo y entrenamiento de habilidades de autonomía, sin funciones sanitarias de diagnóstico ni prescripción.",
+            "options": [
+                {
+                    "content": "Emitir el diagnóstico médico de la dependencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prescribir tratamiento farmacológico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fijar la cuantía de las prestaciones económicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fomentar la autonomía personal y apoyar en las actividades de la vida diaria",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El reconocimiento de la situación de dependencia y de su grado es competencia exclusiva del propio usuario, que se lo autovalora mediante un cuestionario.",
+            "explanation": "Lo reconoce la administración autonómica competente tras una valoración mediante el baremo oficial.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La Ley 39/2006 configura el acceso a las prestaciones de dependencia como un derecho subjetivo de ciudadanía.",
+            "explanation": "La ley reconoce un derecho subjetivo y universal, perfeccionado con el reconocimiento de la situación de dependencia.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las ayudas técnicas y los productos de apoyo, como las grúas o las sillas de ruedas, son un recurso que puede favorecer la autonomía de la persona dependiente.",
+            "explanation": "Los productos de apoyo compensan limitaciones funcionales y facilitan las actividades cotidianas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Con qué siglas se denomina al Sistema para la Autonomía y Atención a la Dependencia?",
+            "explanation": "El SAAD es el sistema que garantiza las condiciones básicas de atención a la dependencia en todo el territorio.",
+            "options": [
+                {
+                    "content": "SAAD",
+                    "is_correct": true
+                },
+                {
+                    "content": "S.A.A.D.",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se denomina el grado III de dependencia?",
+            "explanation": "El Grado III, gran dependencia, se da cuando se necesita ayuda varias veces al día y apoyo permanente de otra persona.",
+            "options": [
+                {
+                    "content": "Gran dependencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "gran dependencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "La gran dependencia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el servicio de ayuda que presta atención en el hogar a personas dependientes, con tareas personales y domésticas?",
+            "explanation": "El servicio de ayuda a domicilio atiende necesidades de la vida diaria en el hogar de la persona.",
+            "options": [
+                {
+                    "content": "Servicio de ayuda a domicilio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ayuda a domicilio",
+                    "is_correct": true
+                },
+                {
+                    "content": "SAD",
+                    "is_correct": true
+                },
+                {
+                    "content": "El servicio de ayuda a domicilio",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Señala los servicios del catálogo de la Ley 39/2006 (hay varias respuestas correctas):",
+            "explanation": "Teleasistencia, ayuda a domicilio y atención residencial están en el catálogo; las otras dos son prestaciones de la Seguridad Social.",
+            "options": [
+                {
+                    "content": "Servicio de teleasistencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Servicio de ayuda a domicilio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Servicio de atención residencial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Servicio de seguro de desempleo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servicio de prestación por maternidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes son modalidades de prestaciones económicas del SAAD? (hay varias correctas)",
+            "explanation": "Son las tres prestaciones económicas de la ley; el desempleo pertenece a otro ámbito de protección.",
+            "options": [
+                {
+                    "content": "Prestación económica vinculada al servicio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Prestación económica de asistencia personal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Prestación económica para cuidados en el entorno familiar",
+                    "is_correct": true
+                },
+                {
+                    "content": "Prestación por desempleo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué recurso social es una vivienda con apoyo y supervisión profesional para personas con dependencia que mantienen cierta autonomía?",
+            "explanation": "Las viviendas tuteladas combinan convivencia en un entorno normalizado con apoyo profesional.",
+            "options": [
+                {
+                    "content": "Hospital de agudos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vivienda tutelada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Centro penitenciario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comedor social",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

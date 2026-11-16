@@ -1,0 +1,632 @@
+{
+    "slug": "fundamentos-hardware",
+    "title": "Fundamentos de Hardware - componentes del PC",
+    "description": "Test de hardware básico para repasar antes del examen de Montaje y Mantenimiento de Equipos: CPU, placa base, RAM DDR5, NVMe, fuentes y unidades. Apuntes de este curso 2026-27.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:05:31+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué significan las siglas CPU?",
+            "explanation": "CPU son las siglas de Central Processing Unit, es decir, Unidad Central de Procesamiento.",
+            "options": [
+                {
+                    "content": "Controlador Principal de Periféricos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Unidad Central de Procesamiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Unidad de Control de Placa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Circuito Primario Universal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué componente interno de la CPU realiza las operaciones aritméticas y lógicas?",
+            "explanation": "La ALU (Unidad Aritmético-Lógica) es la parte de la CPU que ejecuta las operaciones aritméticas y lógicas.",
+            "options": [
+                {
+                    "content": "La ALU",
+                    "is_correct": true
+                },
+                {
+                    "content": "El chipset",
+                    "is_correct": false
+                },
+                {
+                    "content": "La BIOS",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un módulo de memoria DDR4 se puede instalar en una ranura DIMM de DDR5 porque ambos tienen el mismo número de pines.",
+            "explanation": "DDR4 y DDR5 no son compatibles: la muesca está en distinta posición y las características eléctricas son diferentes.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una placa base, ¿qué es el socket?",
+            "explanation": "El socket es el zócalo de la placa base en el que se monta la CPU, y debe ser compatible con ella.",
+            "options": [
+                {
+                    "content": "La ranura donde se instala la tarjeta gráfica",
+                    "is_correct": false
+                },
+                {
+                    "content": "El conector de la fuente de alimentación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El zócalo donde se instala el procesador",
+                    "is_correct": true
+                },
+                {
+                    "content": "El chip que almacena la BIOS",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la memoria muy rápida y de poca capacidad integrada en la CPU, situada entre los núcleos y la RAM?",
+            "explanation": "La memoria caché (L1, L2, L3) guarda datos e instrucciones de uso frecuente para evitar accesos más lentos a la RAM.",
+            "options": [
+                {
+                    "content": "caché",
+                    "is_correct": true
+                },
+                {
+                    "content": "cache",
+                    "is_correct": true
+                },
+                {
+                    "content": "memoria caché",
+                    "is_correct": true
+                },
+                {
+                    "content": "memoria cache",
+                    "is_correct": true
+                },
+                {
+                    "content": "la caché",
+                    "is_correct": true
+                },
+                {
+                    "content": "la memoria caché",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estos formatos de placa base es el más pequeño?",
+            "explanation": "Mini-ITX mide 170 × 170 mm, menos que Micro-ATX, ATX y E-ATX.",
+            "options": [
+                {
+                    "content": "ATX",
+                    "is_correct": false
+                },
+                {
+                    "content": "Micro-ATX",
+                    "is_correct": false
+                },
+                {
+                    "content": "E-ATX",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mini-ITX",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la función principal del chipset de una placa base?",
+            "explanation": "El chipset coordina el tráfico de datos entre la CPU y elementos como almacenamiento, USB o ranuras de expansión.",
+            "options": [
+                {
+                    "content": "Gestionar la comunicación entre la CPU y otros buses y periféricos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Convertir la corriente alterna en continua",
+                    "is_correct": false
+                },
+                {
+                    "content": "Almacenar el sistema operativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Refrigerar el procesador",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Gracias al Hyper-Threading o SMT, un núcleo físico de la CPU puede ejecutar dos hilos a la vez.",
+            "explanation": "SMT (Hyper-Threading en Intel) permite que cada núcleo físico gestione dos hilos de ejecución simultáneamente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una placa tiene una pila de botón que mantiene la hora y la configuración de la BIOS/UEFI cuando el equipo está apagado. ¿Qué modelo de pila se usa habitualmente?",
+            "explanation": "La pila de botón de litio CR2032 de 3 V es la habitual en las placas base para alimentar el CMOS/RTC.",
+            "options": [
+                {
+                    "content": "AAA",
+                    "is_correct": false
+                },
+                {
+                    "content": "CR2032",
+                    "is_correct": true
+                },
+                {
+                    "content": "LR44 de 12 V",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los equipos actuales, ¿dónde suele estar integrado el controlador de memoria RAM?",
+            "explanation": "Desde hace años el controlador de memoria forma parte del procesador, no del chipset.",
+            "options": [
+                {
+                    "content": "En la fuente de alimentación",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el módulo de RAM únicamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el disco duro",
+                    "is_correct": false
+                },
+                {
+                    "content": "En la propia CPU",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la tensión de funcionamiento estándar de la memoria DDR5?",
+            "explanation": "DDR5 trabaja a 1,1 V de forma estándar, menos que los 1,2 V de DDR4.",
+            "options": [
+                {
+                    "content": "1,1 V",
+                    "is_correct": true
+                },
+                {
+                    "content": "1,2 V",
+                    "is_correct": false
+                },
+                {
+                    "content": "1,5 V",
+                    "is_correct": false
+                },
+                {
+                    "content": "3,3 V",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La velocidad de un módulo DDR5-4800 se expresa en MT/s. ¿Qué significa esa unidad?",
+            "explanation": "MT/s son megatransferencias por segundo; DDR5-4800 realiza 4800 millones de transferencias por segundo.",
+            "options": [
+                {
+                    "content": "Megabytes totales por segundo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Megatransferencias por segundo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mil transistores por segundo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué siglas recibe el firmware moderno que ha sustituido a la BIOS clásica en las placas base actuales?",
+            "explanation": "UEFI (Unified Extensible Firmware Interface) es el sucesor de la BIOS tradicional.",
+            "options": [
+                {
+                    "content": "UEFI",
+                    "is_correct": true
+                },
+                {
+                    "content": "uefi",
+                    "is_correct": true
+                },
+                {
+                    "content": "el UEFI",
+                    "is_correct": true
+                },
+                {
+                    "content": "Unified Extensible Firmware Interface",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Instalas dos módulos de RAM idénticos en las ranuras correspondientes de la placa para trabajar en dual channel. ¿Qué consigues?",
+            "explanation": "El dual channel permite acceder a dos módulos en paralelo y aumenta el ancho de banda de memoria.",
+            "options": [
+                {
+                    "content": "Reducir el consumo de la CPU a la mitad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Duplicar la capacidad de cada módulo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aumentar el ancho de banda de acceso a la memoria",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que la placa admita DDR4 y DDR5 a la vez",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué interfaz de conexión utilizan los SSD NVMe?",
+            "explanation": "NVMe es un protocolo diseñado para el bus PCI Express, lo que le da mucha más velocidad que SATA.",
+            "options": [
+                {
+                    "content": "PCI Express",
+                    "is_correct": true
+                },
+                {
+                    "content": "IDE",
+                    "is_correct": false
+                },
+                {
+                    "content": "SATA III",
+                    "is_correct": false
+                },
+                {
+                    "content": "VGA",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Todo SSD con formato M.2 utiliza el protocolo NVMe.",
+            "explanation": "Existen SSD M.2 que funcionan con interfaz SATA, por lo que el formato M.2 no implica NVMe.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un SSD M.2 con denominación 2280, ¿qué indican esos números?",
+            "explanation": "En M.2, las dos primeras cifras son el ancho en mm y las restantes el largo en mm.",
+            "options": [
+                {
+                    "content": "22 mm de ancho y 80 mm de largo",
+                    "is_correct": true
+                },
+                {
+                    "content": "2280 GB de capacidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "22 mm de largo y 80 mm de ancho",
+                    "is_correct": false
+                },
+                {
+                    "content": "Velocidad de 2280 MB/s",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la velocidad teórica máxima de la interfaz SATA III?",
+            "explanation": "SATA III trabaja a 6 Gbit/s, unos 600 MB/s reales como máximo.",
+            "options": [
+                {
+                    "content": "1,5 Gbit/s",
+                    "is_correct": false
+                },
+                {
+                    "content": "3 Gbit/s",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 Gbit/s",
+                    "is_correct": true
+                },
+                {
+                    "content": "16 Gbit/s",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La certificación 80 PLUS (Bronze, Silver, Gold…) de una fuente de alimentación indica su…",
+            "explanation": "80 PLUS certifica que la fuente tiene una eficiencia mínima en distintos niveles de carga.",
+            "options": [
+                {
+                    "content": "Potencia máxima en vatios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eficiencia energética",
+                    "is_correct": true
+                },
+                {
+                    "content": "Número de conectores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué conector de la fuente de alimentación se usa normalmente para alimentar directamente la CPU?",
+            "explanation": "El conector EPS (CPU) de 4+4 u 8 pines lleva la alimentación al procesador a través de la placa base.",
+            "options": [
+                {
+                    "content": "ATX de 24 pines",
+                    "is_correct": false
+                },
+                {
+                    "content": "EPS de 4+4 pines",
+                    "is_correct": true
+                },
+                {
+                    "content": "SATA de 15 pines",
+                    "is_correct": false
+                },
+                {
+                    "content": "Molex de 4 pines",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Al dimensionar una fuente de alimentación conviene dejar un margen de potencia sobre el consumo máximo estimado del equipo.",
+            "explanation": "Un margen evita trabajar al límite, mejora la eficiencia y permite ampliaciones futuras.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Una línea de 12 V suministra 5 A. ¿Cuántos vatios (W) de potencia entrega? (P = V × I)",
+            "explanation": "P = 12 V × 5 A = 60 W.",
+            "options": [
+                {
+                    "content": "60",
+                    "is_correct": true
+                },
+                {
+                    "content": "60 W",
+                    "is_correct": true
+                },
+                {
+                    "content": "60 vatios",
+                    "is_correct": true
+                },
+                {
+                    "content": "60W",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una CPU funciona a 3,5 GHz. ¿Qué significa?",
+            "explanation": "1 GHz equivale a mil millones de ciclos por segundo, así que 3,5 GHz son 3.500 millones.",
+            "options": [
+                {
+                    "content": "Realiza 3,5 millones de ciclos por segundo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tiene 3,5 GB de caché",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su reloj genera 3.500 millones de ciclos por segundo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Consume 3,5 vatios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos MiB hay en 1 GiB?",
+            "explanation": "Los prefijos binarios usan potencias de 2: 1 GiB = 1024 MiB.",
+            "options": [
+                {
+                    "content": "1000",
+                    "is_correct": false
+                },
+                {
+                    "content": "1024",
+                    "is_correct": true
+                },
+                {
+                    "content": "512",
+                    "is_correct": false
+                },
+                {
+                    "content": "8",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuántos bits forman un byte?",
+            "explanation": "Un byte está formado por 8 bits.",
+            "options": [
+                {
+                    "content": "8",
+                    "is_correct": true
+                },
+                {
+                    "content": "ocho",
+                    "is_correct": true
+                },
+                {
+                    "content": "8 bits",
+                    "is_correct": true
+                },
+                {
+                    "content": "ocho bits",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una conexión de red de 8 Mbps permite transferir como máximo, en teoría, 1 MB por segundo.",
+            "explanation": "Como 1 byte son 8 bits, 8 Mbit/s equivalen a 1 MB/s en teoría.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los sockets de procesador (hay varias respuestas correctas).",
+            "explanation": "AM5 (AMD) y LGA1700 (Intel) son sockets de CPU; M.2 y SATA son interfaces de almacenamiento.",
+            "options": [
+                {
+                    "content": "AM5",
+                    "is_correct": true
+                },
+                {
+                    "content": "LGA1700",
+                    "is_correct": true
+                },
+                {
+                    "content": "M.2 2280",
+                    "is_correct": false
+                },
+                {
+                    "content": "SATA III",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes elementos forman parte de una CPU? Hay varias correctas.",
+            "explanation": "La CPU contiene unidad de control, ALU y registros; la fuente y las ranuras DIMM son externas.",
+            "options": [
+                {
+                    "content": "Unidad de control",
+                    "is_correct": true
+                },
+                {
+                    "content": "ALU",
+                    "is_correct": true
+                },
+                {
+                    "content": "Registros",
+                    "is_correct": true
+                },
+                {
+                    "content": "Fuente de alimentación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ranura DIMM",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los conectores que se encuentran en una fuente de alimentación ATX actual (varias respuestas correctas).",
+            "explanation": "Las fuentes ATX incluyen ATX 24 pines, EPS para la CPU y PCIe para la gráfica; RJ-45 es un conector de red.",
+            "options": [
+                {
+                    "content": "ATX de 24 pines",
+                    "is_correct": true
+                },
+                {
+                    "content": "EPS de 4+4 pines",
+                    "is_correct": true
+                },
+                {
+                    "content": "PCIe de 6+2 pines",
+                    "is_correct": true
+                },
+                {
+                    "content": "RJ-45",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

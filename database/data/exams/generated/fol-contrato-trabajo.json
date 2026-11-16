@@ -1,0 +1,548 @@
+{
+    "slug": "fol-contrato-trabajo",
+    "title": "FOL - el contrato de trabajo y modalidades",
+    "description": "Test de FOL para repasar el contrato de trabajo y sus modalidades después de la reforma laboral de 2021. Me ha servido para el módulo de FP, espero que os ayude.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:09:38+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuáles son los tres elementos esenciales de un contrato de trabajo?",
+            "explanation": "Como todo contrato, el laboral requiere consentimiento de las partes, un objeto cierto (el trabajo) y una causa (intercambio de trabajo por salario).",
+            "options": [
+                {
+                    "content": "Nómina, convenio y jornada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Consentimiento, objeto y causa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Salario, vacaciones y preaviso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alta, baja y finiquito",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con carácter general, ¿a partir de qué edad se puede trabajar por cuenta ajena en España?",
+            "explanation": "La edad mínima para trabajar es de 16 años; los menores de 18 emancipados o con autorización de sus representantes legales pueden contratar.",
+            "options": [
+                {
+                    "content": "14 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "16 años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la forma del contrato de trabajo, la regla general es que:",
+            "explanation": "El contrato puede ser verbal o escrito, salvo en los casos en que la ley exige forma escrita (temporales, formativos, fijos discontinuos, etc.).",
+            "options": [
+                {
+                    "content": "Puede celebrarse por escrito o de palabra",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siempre debe ser por escrito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siempre debe hacerse ante notario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo es válido si lo firma el comité de empresa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Durante el periodo de prueba válidamente pactado, ¿qué ocurre con la relación laboral?",
+            "explanation": "Durante la prueba empresa y trabajador pueden resolver el contrato libremente, sin preaviso ni indemnización, salvo pacto en contrario.",
+            "options": [
+                {
+                    "content": "No se puede extinguir en ningún caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo la empresa puede ponerle fin",
+                    "is_correct": false
+                },
+                {
+                    "content": "Requiere siempre un preaviso de un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquiera de las partes puede desistir sin alegar causa ni indemnización, salvo pacto en contrario",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En defecto de convenio, ¿cuál es la duración máxima del periodo de prueba de un trabajador que no es técnico titulado en una empresa de más de 25 trabajadores?",
+            "explanation": "El Estatuto de los Trabajadores fija seis meses para técnicos titulados y dos para los demás (tres en empresas de menos de 25 trabajadores).",
+            "options": [
+                {
+                    "content": "15 días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos meses",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tras la reforma laboral de 2021, ¿cuál es la forma de contratación que se considera la general?",
+            "explanation": "La reforma de 2021 refuerza la presunción de que el contrato de trabajo es indefinido y limita la contratación temporal a causas concretas.",
+            "options": [
+                {
+                    "content": "El contrato indefinido",
+                    "is_correct": true
+                },
+                {
+                    "content": "El contrato temporal por circunstancias de la producción",
+                    "is_correct": false
+                },
+                {
+                    "content": "El contrato de obra o servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "El contrato de prácticas de seis meses",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un hotel de playa solo abre de junio a septiembre y quiere contar cada año con los mismos camareros. ¿Qué modalidad es la más adecuada?",
+            "explanation": "El fijo discontinuo se usa para trabajos de naturaleza estacional o de temporada que se repiten en fechas ciertas.",
+            "options": [
+                {
+                    "content": "Contrato de formación en alternancia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contrato de sustitución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contrato fijo discontinuo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contrato verbal sin alta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ha ocurrido con el contrato por obra o servicio determinado tras la reforma de 2021?",
+            "explanation": "El Real Decreto-ley 32/2021 suprimió el contrato por obra o servicio determinado.",
+            "options": [
+                {
+                    "content": "Se ha ampliado a cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se permite en el sector público",
+                    "is_correct": false
+                },
+                {
+                    "content": "Es obligatorio en la construcción",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ha desaparecido como modalidad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El contrato de duración determinada por circunstancias de la producción tiene, con carácter general, una duración máxima de:",
+            "explanation": "Se puede contratar hasta seis meses por un aumento imprevisible u oscilaciones de la producción, ampliable a doce meses por convenio colectivo sectorial.",
+            "options": [
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis meses, ampliable hasta doce por convenio sectorial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa necesita cubrir a una trabajadora que está de baja por nacimiento y tiene derecho a reserva de puesto. ¿Qué contrato temporal debe utilizar?",
+            "explanation": "El contrato de sustitución permite cubrir temporalmente a una persona trabajadora con derecho a reserva de puesto de trabajo.",
+            "options": [
+                {
+                    "content": "Contrato de sustitución",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contrato fijo discontinuo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contrato formativo para práctica profesional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contrato por obra o servicio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la duración máxima del contrato formativo en alternancia con los estudios?",
+            "explanation": "El contrato formativo en alternancia dura entre tres meses y dos años.",
+            "options": [
+                {
+                    "content": "Seis meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El contrato formativo para la obtención de la práctica profesional tiene una duración máxima de:",
+            "explanation": "Este contrato dura entre seis meses y un año y se dirige a personas con titulación que buscan adquirir experiencia profesional.",
+            "options": [
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un año",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si un contrato de trabajo se celebra solo de palabra, ¿qué se presume salvo prueba en contrario?",
+            "explanation": "A falta de forma escrita, el contrato se presume celebrado por tiempo indefinido y a jornada completa.",
+            "options": [
+                {
+                    "content": "Que es temporal y a media jornada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que es nulo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que está en periodo de prueba de un año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que es indefinido y a jornada completa",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el Estatuto de los Trabajadores, una persona que ha estado contratada más de 18 meses en un periodo de 24 meses con la misma empresa mediante contratos temporales:",
+            "explanation": "El encadenamiento de contratos temporales por encima de 18 meses en 24 convierte a la persona trabajadora en fija.",
+            "options": [
+                {
+                    "content": "Debe ser despedida con indemnización",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vuelve a firmar un periodo de prueba",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adquiere la condición de trabajadora fija",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pasa a ser trabajadora en prácticas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Lucía estudia un ciclo de FP y trabaja en una empresa a la vez, combinando la actividad laboral con su formación. ¿Qué contrato le corresponde?",
+            "explanation": "El contrato formativo en alternancia compatibiliza la actividad laboral retribuida con los procesos formativos, como un ciclo de FP.",
+            "options": [
+                {
+                    "content": "Contrato formativo en alternancia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contrato de sustitución",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contrato por circunstancias de la producción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El pacto del periodo de prueba debe constar por escrito en el contrato.",
+            "explanation": "El periodo de prueba solo es válido si se acuerda por escrito, con su duración, respetando los límites legales o del convenio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Cuando termina la temporada, una persona con contrato fijo discontinuo pierde su condición de trabajadora indefinida.",
+            "explanation": "El fijo discontinuo es un contrato indefinido: la relación se suspende entre campañas y la empresa debe llamar a la persona al reanudarse la actividad.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Tras la reforma de 2021, los contratos formativos se dividen en dos modalidades: formación en alternancia y obtención de práctica profesional.",
+            "explanation": "El contrato en prácticas y el de formación y aprendizaje se sustituyeron por estas dos modalidades de contrato formativo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El contrato por circunstancias de la producción es el adecuado para cubrir la baja por enfermedad de otro trabajador de la plantilla.",
+            "explanation": "Para cubrir a una persona con reserva de puesto corresponde el contrato de sustitución, no el de circunstancias de la producción.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el aviso con el que la empresa convoca a la persona con contrato fijo discontinuo al inicio de cada campaña?",
+            "explanation": "La empresa debe efectuar el llamamiento, con la antelación y forma que fije el convenio colectivo, cuando se reanuda la actividad.",
+            "options": [
+                {
+                    "content": "llamamiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "el llamamiento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Llamamiento",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué tipo de contrato, por su duración, se presume como regla general tras la reforma laboral de 2021?",
+            "explanation": "La reforma de 2021 establece el contrato indefinido como forma ordinaria de contratación.",
+            "options": [
+                {
+                    "content": "indefinido",
+                    "is_correct": true
+                },
+                {
+                    "content": "contrato indefinido",
+                    "is_correct": true
+                },
+                {
+                    "content": "el indefinido",
+                    "is_correct": true
+                },
+                {
+                    "content": "el contrato indefinido",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué norma, aprobada en diciembre de 2021, introdujo la reforma laboral que redefinió las modalidades de contratación? (Indica su denominación abreviada con número.)",
+            "explanation": "La reforma se aprobó mediante el Real Decreto-ley 32/2021, de 28 de diciembre, de medidas urgentes para la reforma laboral.",
+            "options": [
+                {
+                    "content": "RDL 32/2021",
+                    "is_correct": true
+                },
+                {
+                    "content": "Real Decreto-ley 32/2021",
+                    "is_correct": true
+                },
+                {
+                    "content": "Real Decreto Ley 32/2021",
+                    "is_correct": true
+                },
+                {
+                    "content": "Real Decreto-Ley 32/2021",
+                    "is_correct": true
+                },
+                {
+                    "content": "RDL 32/21",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la ley que regula, entre otros aspectos, los contratos de trabajo y el periodo de prueba? (Nombre o siglas.)",
+            "explanation": "El Estatuto de los Trabajadores es la norma básica de la relación laboral individual en España.",
+            "options": [
+                {
+                    "content": "Estatuto de los Trabajadores",
+                    "is_correct": true
+                },
+                {
+                    "content": "el Estatuto de los Trabajadores",
+                    "is_correct": true
+                },
+                {
+                    "content": "ET",
+                    "is_correct": true
+                },
+                {
+                    "content": "Estatuto de los Trabajadores (ET)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Señala las modalidades que deben formalizarse por escrito (hay varias respuestas correctas).",
+            "explanation": "Fijos discontinuos, formativos y temporales deben constar por escrito; el indefinido ordinario a jornada completa puede ser verbal.",
+            "options": [
+                {
+                    "content": "Contrato fijo discontinuo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contrato formativo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contrato temporal de duración determinada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contrato indefinido ordinario a jornada completa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Tras la reforma de 2021, ¿qué contratos temporales siguen vigentes? Hay varias respuestas correctas.",
+            "explanation": "Tras la reforma solo existen el contrato por circunstancias de la producción y el de sustitución; el de obra o servicio fue suprimido.",
+            "options": [
+                {
+                    "content": "Por circunstancias de la producción",
+                    "is_correct": true
+                },
+                {
+                    "content": "De sustitución",
+                    "is_correct": true
+                },
+                {
+                    "content": "Por obra o servicio determinado",
+                    "is_correct": false
+                },
+                {
+                    "content": "De lanzamiento de nueva actividad",
+                    "is_correct": false
+                },
+                {
+                    "content": "De prácticas con duración de cuatro años",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

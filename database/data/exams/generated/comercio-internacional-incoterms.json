@@ -1,0 +1,453 @@
+{
+    "slug": "comercio-internacional-incoterms",
+    "title": "Comercio Internacional: Incoterms 2020",
+    "description": "Test de Comercio Internacional para repasar los Incoterms 2020, medios de pago y documentos de exportación antes del examen del módulo. Nivel medio, con teoría y algún caso práctico.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:24:27+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué organización publica y mantiene las reglas Incoterms?",
+            "explanation": "Las reglas Incoterms son elaboradas y publicadas por la Cámara de Comercio Internacional (ICC).",
+            "options": [
+                {
+                    "content": "La Organización Mundial del Comercio (OMC)",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Cámara de Comercio Internacional (CCI/ICC)",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Comisión Europea",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Organización de las Naciones Unidas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos Incoterms contiene la versión Incoterms 2020?",
+            "explanation": "Incoterms 2020 recoge 11 reglas: 7 para cualquier modo de transporte y 4 para transporte marítimo y vías navegables interiores.",
+            "options": [
+                {
+                    "content": "9",
+                    "is_correct": false
+                },
+                {
+                    "content": "10",
+                    "is_correct": false
+                },
+                {
+                    "content": "11",
+                    "is_correct": true
+                },
+                {
+                    "content": "13",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos de los 11 Incoterms 2020 son aptos para cualquier modo de transporte (incluido el multimodal)?",
+            "explanation": "EXW, FCA, CPT, CIP, DAP, DPU y DDP valen para cualquier modo; FAS, FOB, CFR y CIF son solo para transporte marítimo y vías navegables interiores.",
+            "options": [
+                {
+                    "content": "4",
+                    "is_correct": false
+                },
+                {
+                    "content": "5",
+                    "is_correct": false
+                },
+                {
+                    "content": "6",
+                    "is_correct": false
+                },
+                {
+                    "content": "7",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes Incoterms 2020 solo debe usarse en transporte marítimo o por vías navegables interiores?",
+            "explanation": "FOB pertenece al grupo de términos marítimos, junto con FAS, CFR y CIF.",
+            "options": [
+                {
+                    "content": "CIP",
+                    "is_correct": false
+                },
+                {
+                    "content": "FOB",
+                    "is_correct": true
+                },
+                {
+                    "content": "DAP",
+                    "is_correct": false
+                },
+                {
+                    "content": "FCA",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una venta FOB Valencia, ¿en qué momento se transmite el riesgo del vendedor al comprador?",
+            "explanation": "En FOB el vendedor entrega la mercancía a bordo del buque designado por el comprador y en ese momento se transmite el riesgo.",
+            "options": [
+                {
+                    "content": "Cuando la mercancía llega al puerto de destino",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando la mercancía sale del almacén del vendedor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando la mercancía está a bordo del buque en el puerto de embarque",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando la mercancía se descarga en el puerto de destino",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa vende EXW desde su almacén de Sevilla. ¿Quién es responsable de cargar la mercancía en el vehículo del comprador?",
+            "explanation": "En EXW el vendedor solo pone la mercancía a disposición del comprador en sus instalaciones, sin cargarla, salvo pacto en contrario.",
+            "options": [
+                {
+                    "content": "El comprador, ya que el vendedor solo pone la mercancía a su disposición",
+                    "is_correct": true
+                },
+                {
+                    "content": "El vendedor, siempre",
+                    "is_correct": false
+                },
+                {
+                    "content": "El transitario del país de destino por ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "La aduana de exportación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el Incoterm CIP (versión 2020), ¿qué seguro debe contratar el vendedor como mínimo?",
+            "explanation": "Incoterms 2020 elevó la cobertura mínima en CIP a la más amplia (Cláusulas A), mientras que en CIF se mantiene la mínima (Cláusulas C).",
+            "options": [
+                {
+                    "content": "Ninguno, solo debe contratar el transporte",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un seguro con cobertura mínima de las Cláusulas C del Instituto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un seguro de responsabilidad civil del comprador",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un seguro con cobertura amplia (Cláusulas A del Instituto de Aseguradores de Londres)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué Incoterm supone la máxima obligación para el vendedor, incluido el despacho de importación y el pago de aranceles en destino?",
+            "explanation": "En DDP el vendedor entrega la mercancía despachada para importación en destino y asume costes y riesgos hasta ese punto.",
+            "options": [
+                {
+                    "content": "DDP",
+                    "is_correct": true
+                },
+                {
+                    "content": "DAP",
+                    "is_correct": false
+                },
+                {
+                    "content": "CIP",
+                    "is_correct": false
+                },
+                {
+                    "content": "FCA",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un crédito documentario irrevocable, ¿cuál es la principal garantía para el exportador?",
+            "explanation": "El banco emisor asume un compromiso de pago independiente del contrato de compraventa, siempre que los documentos presentados sean conformes.",
+            "options": [
+                {
+                    "content": "El comprador paga cuando le conviene tras recibir la mercancía",
+                    "is_correct": false
+                },
+                {
+                    "content": "El vendedor cobra mediante un cheque personal del comprador",
+                    "is_correct": false
+                },
+                {
+                    "content": "El banco se compromete a pagar si se presentan documentos conformes con las condiciones del crédito",
+                    "is_correct": true
+                },
+                {
+                    "content": "El pago se hace antes de fabricar la mercancía",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué documento de transporte marítimo prueba el contrato de transporte, acredita la recepción de la mercancía y puede funcionar como título representativo de la misma?",
+            "explanation": "El conocimiento de embarque (B/L) cumple las tres funciones: recibo, prueba del contrato de transporte y título de la mercancía.",
+            "options": [
+                {
+                    "content": "Carta de porte CMR",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conocimiento de embarque (Bill of Lading)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Packing list",
+                    "is_correct": false
+                },
+                {
+                    "content": "Certificado de origen",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En CPT París, el vendedor paga el transporte hasta París. ¿Cuándo se transmite el riesgo al comprador?",
+            "explanation": "En CPT los costes y el riesgo se separan: el vendedor paga el transporte principal, pero el riesgo pasa al comprador al entregar al primer transportista.",
+            "options": [
+                {
+                    "content": "Al llegar la mercancía a París",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al descargar la mercancía en París",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al despachar la mercancía en la aduana de importación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando la mercancía se entrega al primer transportista",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué medio de pago internacional ofrece mayor seguridad de cobro al exportador?",
+            "explanation": "Con el pago anticipado el exportador cobra antes de enviar la mercancía, por lo que no corre riesgo de impago.",
+            "options": [
+                {
+                    "content": "El pago anticipado",
+                    "is_correct": true
+                },
+                {
+                    "content": "La cuenta abierta",
+                    "is_correct": false
+                },
+                {
+                    "content": "La remesa simple",
+                    "is_correct": false
+                },
+                {
+                    "content": "El cheque personal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En el Incoterm FOB el vendedor está obligado a contratar un seguro de transporte para el comprador.",
+            "explanation": "En FOB ninguna de las partes tiene obligación de contratar seguro; el comprador suele asegurar por su cuenta el riesgo que asume.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los Incoterms regulan la transmisión de la propiedad de la mercancía y la ley aplicable al contrato.",
+            "explanation": "Los Incoterms regulan entrega, riesgos, costes y obligaciones documentales, pero no la transmisión de la propiedad ni la ley aplicable.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En el Incoterm DAP, el despacho aduanero de importación corresponde al comprador.",
+            "explanation": "En DAP el vendedor entrega en destino lista para descargar, pero el despacho de importación y los derechos corren a cargo del comprador.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué Incoterm de 2020 sustituyó al antiguo DAT (Delivered at Terminal)? Responde con la sigla.",
+            "explanation": "DPU (Delivered at Place Unloaded) sustituyó a DAT en 2020 y permite que el lugar de entrega sea cualquiera, no solo una terminal.",
+            "options": [
+                {
+                    "content": "DPU",
+                    "is_correct": true
+                },
+                {
+                    "content": "Delivered at Place Unloaded",
+                    "is_correct": true
+                },
+                {
+                    "content": "Delivered at Place Unloaded (DPU)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama por sus siglas el documento de transporte utilizado en el transporte internacional de mercancías por carretera?",
+            "explanation": "La carta de porte CMR es el documento del contrato de transporte internacional por carretera.",
+            "options": [
+                {
+                    "content": "CMR",
+                    "is_correct": true
+                },
+                {
+                    "content": "La CMR",
+                    "is_correct": true
+                },
+                {
+                    "content": "Carta de porte CMR",
+                    "is_correct": true
+                },
+                {
+                    "content": "Carta CMR",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué reglas de la CCI regulan los créditos documentarios? Indica el nombre abreviado con su número.",
+            "explanation": "Los créditos documentarios se rigen habitualmente por las Reglas y Usos Uniformes de la CCI, publicación UCP 600.",
+            "options": [
+                {
+                    "content": "UCP 600",
+                    "is_correct": true
+                },
+                {
+                    "content": "UCP600",
+                    "is_correct": true
+                },
+                {
+                    "content": "Reglas y Usos Uniformes 600",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usos y Reglas Uniformes UCP 600",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las UCP 600",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "En una venta CIF, ¿cuáles de las siguientes son obligaciones del vendedor? (Hay varias correctas)",
+            "explanation": "En CIF el vendedor contrata transporte y seguro mínimo y despacha la exportación, pero el riesgo pasa al comprador al cargar a bordo y la importación es del comprador.",
+            "options": [
+                {
+                    "content": "Contratar el transporte principal hasta el puerto de destino",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contratar un seguro con cobertura mínima",
+                    "is_correct": true
+                },
+                {
+                    "content": "Realizar el despacho de exportación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pagar los aranceles de importación en destino",
+                    "is_correct": false
+                },
+                {
+                    "content": "Asumir el riesgo durante el transporte marítimo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes documentos se utilizan habitualmente en una operación de exportación? (Hay varias correctas)",
+            "explanation": "La factura comercial, el packing list y el DUA son documentos típicos de exportación; los documentos laborales no tienen relación con la operación.",
+            "options": [
+                {
+                    "content": "Factura comercial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lista de embalaje (packing list)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Documento Único Administrativo (DUA)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nómina del transportista",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contrato laboral del comprador",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

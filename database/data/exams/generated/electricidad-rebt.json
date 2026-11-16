@@ -1,0 +1,556 @@
+{
+    "slug": "electricidad-rebt",
+    "title": "Instalaciones eléctricas - REBT básico",
+    "description": "Test de repaso del módulo de Instalaciones Eléctricas con lo básico del REBT: ITC, circuitos de vivienda, protecciones y tierra. Me ha servido para preparar el examen, a ver qué tal os va.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:22:38+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué instrucción técnica complementaria del REBT regula las instalaciones de puesta a tierra?",
+            "explanation": "La ITC-BT-18 trata las instalaciones de puesta a tierra; la ITC-BT-24 se ocupa de la protección contra contactos directos e indirectos.",
+            "options": [
+                {
+                    "content": "ITC-BT-24",
+                    "is_correct": false
+                },
+                {
+                    "content": "ITC-BT-18",
+                    "is_correct": true
+                },
+                {
+                    "content": "ITC-BT-15",
+                    "is_correct": false
+                },
+                {
+                    "content": "ITC-BT-25",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la potencia mínima a prever en una vivienda con grado de electrificación elevada?",
+            "explanation": "La electrificación elevada se dimensiona como mínimo para 9200 W a 230 V.",
+            "options": [
+                {
+                    "content": "3450 W",
+                    "is_correct": false
+                },
+                {
+                    "content": "5750 W",
+                    "is_correct": false
+                },
+                {
+                    "content": "11500 W",
+                    "is_correct": false
+                },
+                {
+                    "content": "9200 W",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una vivienda con electrificación elevada tiene 9200 W a 230 V monofásica. ¿Qué intensidad corresponde a esa potencia?",
+            "explanation": "I = P / V = 9200 / 230 = 40 A, que es la intensidad del interruptor general automático en este grado.",
+            "options": [
+                {
+                    "content": "40 A",
+                    "is_correct": true
+                },
+                {
+                    "content": "25 A",
+                    "is_correct": false
+                },
+                {
+                    "content": "32 A",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 A",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para el circuito C2 (tomas de corriente de uso general) de una vivienda, ¿qué calibre de PIA y sección de conductor corresponden?",
+            "explanation": "El C2 se protege con un PIA de 16 A y se cablea con conductores de 2,5 mm² (ITC-BT-25).",
+            "options": [
+                {
+                    "content": "10 A y 1,5 mm²",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 A y 4 mm²",
+                    "is_correct": false
+                },
+                {
+                    "content": "16 A y 2,5 mm²",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El circuito C3, que alimenta la cocina y el horno, se protege con un PIA de 25 A. ¿Qué sección mínima de conductor le corresponde?",
+            "explanation": "El C3 (cocina y horno) lleva PIA de 25 A y conductores de 6 mm².",
+            "options": [
+                {
+                    "content": "2,5 mm²",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 mm²",
+                    "is_correct": true
+                },
+                {
+                    "content": "4 mm²",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 mm²",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué circuito de vivienda alimenta la lavadora, el lavavajillas y el termo eléctrico, y con qué características mínimas?",
+            "explanation": "El C4 alimenta lavadora, lavavajillas y termo, con PIA de 20 A y conductores de 4 mm².",
+            "options": [
+                {
+                    "content": "C4, PIA de 20 A y 4 mm²",
+                    "is_correct": true
+                },
+                {
+                    "content": "C4, PIA de 16 A y 2,5 mm²",
+                    "is_correct": false
+                },
+                {
+                    "content": "C2, PIA de 16 A y 2,5 mm²",
+                    "is_correct": false
+                },
+                {
+                    "content": "C3, PIA de 25 A y 6 mm²",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué sección mínima de conductor se emplea en el circuito de iluminación C1 de una vivienda?",
+            "explanation": "El C1 de iluminación se cablea con 1,5 mm² y se protege con un PIA de 10 A.",
+            "options": [
+                {
+                    "content": "1 mm²",
+                    "is_correct": false
+                },
+                {
+                    "content": "2,5 mm²",
+                    "is_correct": false
+                },
+                {
+                    "content": "4 mm²",
+                    "is_correct": false
+                },
+                {
+                    "content": "1,5 mm²",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos circuitos interiores mínimos tiene una vivienda con grado de electrificación básica?",
+            "explanation": "La electrificación básica comprende los circuitos C1 a C5.",
+            "options": [
+                {
+                    "content": "3",
+                    "is_correct": false
+                },
+                {
+                    "content": "4",
+                    "is_correct": false
+                },
+                {
+                    "content": "5",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué dispositivo protege a las personas contra contactos indirectos en una instalación de vivienda?",
+            "explanation": "El interruptor diferencial de 30 mA detecta las corrientes de fuga a tierra y desconecta el circuito, lo que protege frente a contactos indirectos.",
+            "options": [
+                {
+                    "content": "Interruptor magnetotérmico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Interruptor diferencial de alta sensibilidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Fusible de cartucho",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seccionador",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué dispositivo protege los conductores de un circuito frente a sobrecargas y cortocircuitos?",
+            "explanation": "El magnetotérmico combina protección térmica (sobrecarga) y magnética (cortocircuito).",
+            "options": [
+                {
+                    "content": "Interruptor magnetotérmico (PIA)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Interruptor diferencial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pica de tierra",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contactor",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una instalación con tensión de contacto límite de 50 V y un diferencial de 300 mA, ¿cuál es la resistencia máxima de la toma de tierra?",
+            "explanation": "R = Uc / Is = 50 V / 0,3 A = 166,7 Ω.",
+            "options": [
+                {
+                    "content": "16,7 Ω",
+                    "is_correct": false
+                },
+                {
+                    "content": "1666,7 Ω",
+                    "is_correct": false
+                },
+                {
+                    "content": "166,7 Ω",
+                    "is_correct": true
+                },
+                {
+                    "content": "600 Ω",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la tensión de contacto límite convencional en locales o emplazamientos húmedos o mojados?",
+            "explanation": "En emplazamientos húmedos o mojados la tensión límite es 24 V, y en locales secos es 50 V.",
+            "options": [
+                {
+                    "content": "12 V",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 V",
+                    "is_correct": false
+                },
+                {
+                    "content": "48 V",
+                    "is_correct": false
+                },
+                {
+                    "content": "24 V",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ITC del REBT regula las derivaciones individuales?",
+            "explanation": "La ITC-BT-15 trata las derivaciones individuales; la ITC-BT-14 trata la línea general de alimentación.",
+            "options": [
+                {
+                    "content": "ITC-BT-14",
+                    "is_correct": false
+                },
+                {
+                    "content": "ITC-BT-15",
+                    "is_correct": true
+                },
+                {
+                    "content": "ITC-BT-16",
+                    "is_correct": false
+                },
+                {
+                    "content": "ITC-BT-13",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué caídas de tensión máximas se admiten en instalaciones interiores alimentadas desde la red pública de baja tensión?",
+            "explanation": "La ITC-BT-19 admite el 3 % para alumbrado y el 5 % para los demás usos.",
+            "options": [
+                {
+                    "content": "3 % en alumbrado y 5 % en el resto de usos",
+                    "is_correct": true
+                },
+                {
+                    "content": "5 % en alumbrado y 3 % en el resto de usos",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 % en todos los usos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué cargas alimenta el circuito C5 en una vivienda?",
+            "explanation": "El C5 alimenta las tomas de los baños y las bases auxiliares de la cocina, con PIA de 16 A y 2,5 mm².",
+            "options": [
+                {
+                    "content": "Lavadora y lavavajillas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Iluminación del baño",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tomas del cuarto de baño y bases auxiliares de la cocina",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un interruptor diferencial de 30 mA protege los conductores frente a sobrecargas y cortocircuitos.",
+            "explanation": "El diferencial detecta corrientes de fuga a tierra. Para sobrecargas y cortocircuitos se usa el magnetotérmico.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una vivienda con superficie útil superior a 160 m² debe tener grado de electrificación elevada.",
+            "explanation": "Según la ITC-BT-10, superar los 160 m² de superficie útil obliga a electrificación elevada.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Se considera baja tensión en corriente alterna la que no supera los 1000 V.",
+            "explanation": "El REBT define la baja tensión en corriente alterna hasta 1000 V.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El circuito C1 de alumbrado de una vivienda se protege con un PIA de 16 A.",
+            "explanation": "El C1 se protege con un PIA de 10 A y conductores de 1,5 mm².",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué ITC del REBT establece el número de circuitos y las características de las instalaciones interiores en viviendas? (Escribe su código)",
+            "explanation": "La ITC-BT-25 regula los circuitos de las instalaciones interiores en viviendas.",
+            "options": [
+                {
+                    "content": "ITC-BT-25",
+                    "is_correct": true
+                },
+                {
+                    "content": "ITC BT 25",
+                    "is_correct": true
+                },
+                {
+                    "content": "ITC-BT25",
+                    "is_correct": true
+                },
+                {
+                    "content": "BT-25",
+                    "is_correct": true
+                },
+                {
+                    "content": "ITCBT25",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué potencia mínima, en vatios, se prevé en una vivienda con electrificación básica? (Escribe el valor con su unidad)",
+            "explanation": "La electrificación básica se dimensiona para 5750 W a 230 V, equivalentes a 25 A.",
+            "options": [
+                {
+                    "content": "5750 W",
+                    "is_correct": true
+                },
+                {
+                    "content": "5750",
+                    "is_correct": true
+                },
+                {
+                    "content": "5.750 W",
+                    "is_correct": true
+                },
+                {
+                    "content": "5750 vatios",
+                    "is_correct": true
+                },
+                {
+                    "content": "5,75 kW",
+                    "is_correct": true
+                },
+                {
+                    "content": "5.750",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿De qué color es el aislamiento del conductor neutro en una instalación de baja tensión?",
+            "explanation": "El neutro se identifica con azul claro, la fase con marrón, negro o gris y la protección con verde-amarillo.",
+            "options": [
+                {
+                    "content": "azul",
+                    "is_correct": true
+                },
+                {
+                    "content": "azul claro",
+                    "is_correct": true
+                },
+                {
+                    "content": "el azul",
+                    "is_correct": true
+                },
+                {
+                    "content": "color azul",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué sensibilidad tiene un interruptor diferencial de alta sensibilidad en viviendas? (Escribe el valor con su unidad)",
+            "explanation": "Los diferenciales de alta sensibilidad en viviendas son de 30 mA.",
+            "options": [
+                {
+                    "content": "30 mA",
+                    "is_correct": true
+                },
+                {
+                    "content": "30mA",
+                    "is_correct": true
+                },
+                {
+                    "content": "30 miliamperios",
+                    "is_correct": true
+                },
+                {
+                    "content": "0,03 A",
+                    "is_correct": true
+                },
+                {
+                    "content": "30 ma",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los colores permitidos para identificar el conductor de fase (hay varias respuestas correctas).",
+            "explanation": "Las fases se identifican con marrón, negro o gris. El azul es del neutro y el verde-amarillo del conductor de protección.",
+            "options": [
+                {
+                    "content": "Marrón",
+                    "is_correct": true
+                },
+                {
+                    "content": "Negro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Gris",
+                    "is_correct": true
+                },
+                {
+                    "content": "Azul claro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verde-amarillo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de estos son circuitos adicionales propios de la electrificación elevada? (Hay varias respuestas correctas).",
+            "explanation": "C8, C9 y C10 se añaden en la electrificación elevada. El C4 ya existe en la electrificación básica.",
+            "options": [
+                {
+                    "content": "C8, calefacción eléctrica",
+                    "is_correct": true
+                },
+                {
+                    "content": "C9, aire acondicionado",
+                    "is_correct": true
+                },
+                {
+                    "content": "C10, secadora",
+                    "is_correct": true
+                },
+                {
+                    "content": "C4, lavadora, lavavajillas y termo",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

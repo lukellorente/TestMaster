@@ -1,0 +1,453 @@
+{
+    "slug": "maestros-atencion-diversidad",
+    "title": "Maestros: atención a la diversidad y DUA",
+    "description": "Test para repasar el tema de atención a la diversidad, ACNEAE y DUA de las oposiciones de Maestros. Preguntas tipo examen sacadas del temario actualizado.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:29:54+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 2/2006, de Educación, modificada por la LOMLOE, ¿cómo se denomina al conjunto del alumnado que requiere una atención educativa diferente a la ordinaria por presentar necesidades educativas especiales, altas capacidades, incorporación tardía u otras condiciones?",
+            "explanation": "El título II de la LOE (equidad en la educación) agrupa a todo este alumnado bajo la denominación «alumnado con necesidad específica de apoyo educativo»; las NEE son solo uno de sus grupos.",
+            "options": [
+                {
+                    "content": "Alumnado con necesidades educativas especiales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alumnado de atención preferente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alumnado con necesidad específica de apoyo educativo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Alumnado con necesidades educativas especiales asociadas a discapacidad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 73 de la LOE, se entiende por alumnado con necesidades educativas especiales aquel que afronta barreras que limitan su acceso, presencia, participación o aprendizaje, derivadas de:",
+            "explanation": "El artículo 73 define así al alumnado con NEE; el resto de supuestos pertenecen a otros grupos del alumnado con necesidad específica de apoyo educativo.",
+            "options": [
+                {
+                    "content": "Discapacidad o trastornos graves de conducta, de la comunicación y del lenguaje",
+                    "is_correct": true
+                },
+                {
+                    "content": "Retraso madurativo o incorporación tardía al sistema educativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Situaciones de vulnerabilidad socioeducativa o altas capacidades",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desconocimiento grave de la lengua de aprendizaje o historia escolar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 74 de la LOE, la escolarización del alumnado con necesidades educativas especiales se regirá por los principios de:",
+            "explanation": "La LOE establece que la escolarización de este alumnado se rige por los principios de normalización e inclusión.",
+            "options": [
+                {
+                    "content": "Especialización y compensación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Igualdad formal y homogeneidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Selección y flexibilidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Normalización e inclusión",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la escolarización en unidades o centros de educación especial, la LOE establece que solo se llevará a cabo cuando:",
+            "explanation": "La escolarización en educación especial tiene carácter excepcional y solo procede cuando los centros ordinarios, con sus medidas de atención a la diversidad, no pueden atender las necesidades del alumno.",
+            "options": [
+                {
+                    "content": "La familia lo solicite expresamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las necesidades del alumno no puedan ser atendidas en el marco de las medidas de atención a la diversidad de los centros ordinarios",
+                    "is_correct": true
+                },
+                {
+                    "content": "El alumno tenga reconocida una discapacidad de cualquier grado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El centro ordinario más próximo carezca de especialista de Pedagogía Terapéutica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuáles son los tres principios del Diseño Universal para el Aprendizaje (DUA)?",
+            "explanation": "El modelo DUA se organiza en torno a tres principios: múltiples formas de implicación, de representación y de acción y expresión.",
+            "options": [
+                {
+                    "content": "Prevención, detección e intervención",
+                    "is_correct": false
+                },
+                {
+                    "content": "Accesibilidad, adaptación y evaluación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Individualización, compensación y refuerzo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Proporcionar múltiples formas de implicación, de representación y de acción y expresión",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el marco del DUA, el principio de proporcionar múltiples formas de implicación se relaciona con:",
+            "explanation": "La implicación atiende a la motivación y al interés (el porqué), vinculados a las redes afectivas; la representación es el qué y la acción y expresión, el cómo.",
+            "options": [
+                {
+                    "content": "El «porqué» del aprendizaje y las redes afectivas",
+                    "is_correct": true
+                },
+                {
+                    "content": "El «qué» del aprendizaje y las redes de reconocimiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "El «cómo» del aprendizaje y las redes estratégicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El «cuándo» del aprendizaje y las redes de memoria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes estrategias responde al principio DUA de múltiples formas de acción y expresión?",
+            "explanation": "Ofrecer varias vías para expresar lo aprendido corresponde a la acción y expresión; las otras opciones pertenecen a la representación o a la implicación.",
+            "options": [
+                {
+                    "content": "Presentar la información en formato visual y auditivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Permitir al alumnado demostrar lo aprendido mediante exposición oral, producción escrita o proyecto digital",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ofrecer opciones para despertar el interés y mantener el esfuerzo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aclarar el vocabulario y los símbolos del texto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué diferencia fundamental existe entre el DUA y las adaptaciones curriculares individuales?",
+            "explanation": "El DUA es un enfoque proactivo y preventivo pensado para todo el alumnado, mientras que las adaptaciones son respuestas individualizadas a necesidades concretas.",
+            "options": [
+                {
+                    "content": "El DUA solo se aplica al alumnado con discapacidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "El DUA anticipa las barreras desde el diseño para todo el alumnado, mientras que las adaptaciones responden a necesidades ya identificadas de un alumno concreto",
+                    "is_correct": true
+                },
+                {
+                    "content": "El DUA modifica los objetivos del currículo y las adaptaciones no",
+                    "is_correct": false
+                },
+                {
+                    "content": "El DUA exige un dictamen de escolarización previo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué organización desarrolló el marco del Diseño Universal para el Aprendizaje, inspirándose en el diseño universal de la arquitectura?",
+            "explanation": "El DUA fue desarrollado por el CAST, que trasladó al ámbito educativo el concepto de diseño universal surgido en la arquitectura.",
+            "options": [
+                {
+                    "content": "UNESCO",
+                    "is_correct": false
+                },
+                {
+                    "content": "CAST (Center for Applied Special Technology)",
+                    "is_correct": true
+                },
+                {
+                    "content": "OCDE",
+                    "is_correct": false
+                },
+                {
+                    "content": "Agencia Europea para las Necesidades Educativas Especiales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una adaptación curricular significativa se caracteriza por:",
+            "explanation": "Las adaptaciones significativas alteran elementos básicos del currículo y son una medida extraordinaria dirigida a alumnado con NEE, previa evaluación psicopedagógica.",
+            "options": [
+                {
+                    "content": "Modificar solo la metodología y los materiales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cambiar únicamente el horario de las áreas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aplicarse a todo el grupo-clase como medida preventiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Modificar elementos prescriptivos del currículo, como objetivos o criterios de evaluación, y requerir evaluación psicopedagógica previa",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes medidas se dirige específicamente al alumnado con altas capacidades intelectuales?",
+            "explanation": "El enriquecimiento (y, en su caso, la flexibilización del periodo de escolarización) es la respuesta propia para altas capacidades; las demás medidas atienden otros perfiles.",
+            "options": [
+                {
+                    "content": "Programas de enriquecimiento curricular",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aulas de enlace",
+                    "is_correct": false
+                },
+                {
+                    "content": "Programas de refuerzo lingüístico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Repetición extraordinaria de curso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un alumno de 4.º de Primaria tiene diagnóstico de dislexia. ¿Qué medida es la más adecuada, sin modificar los objetivos del curso?",
+            "explanation": "Una dificultad específica de aprendizaje se atiende con ajustes de acceso y metodológicos que mantienen los objetivos, no con medidas extraordinarias.",
+            "options": [
+                {
+                    "content": "Escolarizarlo en un aula de educación especial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aplicarle una adaptación curricular significativa de todas las áreas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Adaptaciones de acceso y metodológicas, como más tiempo en las pruebas y lectura en voz alta de los enunciados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Eximirlo de la evaluación de Lengua",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Quién realiza habitualmente la evaluación psicopedagógica del alumnado con necesidades educativas especiales?",
+            "explanation": "La identificación y valoración de las necesidades corresponde a personal con la cualificación adecuada, que son los servicios de orientación educativa.",
+            "options": [
+                {
+                    "content": "El tutor, en solitario",
+                    "is_correct": false
+                },
+                {
+                    "content": "El equipo directivo del centro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los servicios especializados de orientación educativa (orientador o equipo de orientación)",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Inspección educativa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la función principal del maestro especialista en Audición y Lenguaje (AL)?",
+            "explanation": "El maestro de AL interviene en la prevención y la atención de los trastornos del lenguaje y la comunicación, en colaboración con el tutor y la familia.",
+            "options": [
+                {
+                    "content": "Atender al alumnado con altas capacidades",
+                    "is_correct": false
+                },
+                {
+                    "content": "Elaborar los dictámenes de escolarización",
+                    "is_correct": false
+                },
+                {
+                    "content": "Coordinar el plan de acción tutorial del centro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prevenir, detectar y atender las dificultades del lenguaje oral y escrito y de la comunicación",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La Convención sobre los Derechos de las Personas con Discapacidad (2006) reconoce en su artículo 24 el derecho a la educación y exige a los Estados Partes asegurar:",
+            "explanation": "El artículo 24 obliga a los Estados a garantizar un sistema educativo inclusivo en todos los niveles, sin exclusión por motivo de discapacidad.",
+            "options": [
+                {
+                    "content": "Un sistema de educación inclusivo a todos los niveles",
+                    "is_correct": true
+                },
+                {
+                    "content": "Centros específicos separados para cada tipo de discapacidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La escolarización obligatoria en educación especial hasta los 18 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una educación inclusiva únicamente en la etapa obligatoria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la afirmación INCORRECTA sobre el Diseño Universal para el Aprendizaje:",
+            "explanation": "El DUA reduce la necesidad de ajustes, pero no elimina la posibilidad de que algún alumnado requiera apoyos específicos o medidas extraordinarias.",
+            "options": [
+                {
+                    "content": "Busca eliminar las barreras del entorno de aprendizaje",
+                    "is_correct": false
+                },
+                {
+                    "content": "Beneficia a todo el alumnado, no solo al que tiene dificultades",
+                    "is_correct": false
+                },
+                {
+                    "content": "Propone flexibilidad en objetivos, métodos, materiales y evaluación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hace innecesarios los apoyos específicos y las medidas extraordinarias para cualquier alumno",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un alumno llega a mitad de curso desde otro país sin conocer la lengua de enseñanza. ¿Qué medida de atención es la más adecuada?",
+            "explanation": "El desconocimiento grave de la lengua se atiende con programas de refuerzo lingüístico, favoreciendo su integración en el grupo ordinario.",
+            "options": [
+                {
+                    "content": "Programas específicos de refuerzo lingüístico, compatibles con su permanencia en el grupo ordinario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Evaluarlo como alumno con NEE por discapacidad intelectual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Escolarizarlo en un curso inferior sin ningún apoyo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aplazar su escolarización hasta que domine la lengua",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué documento del centro se integra el plan de atención a la diversidad?",
+            "explanation": "El proyecto educativo recoge, entre otros aspectos, la atención a la diversidad del alumnado y la acción tutorial.",
+            "options": [
+                {
+                    "content": "En la programación general anual exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "En la memoria final de curso",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el proyecto educativo",
+                    "is_correct": true
+                },
+                {
+                    "content": "En el plan de convivencia exclusivamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La Declaración de Salamanca (1994), aprobada en una conferencia mundial promovida por la UNESCO, defendió el principio de escuelas inclusivas que acojan a todo el alumnado.",
+            "explanation": "La Declaración de Salamanca de 1994 sobre principios, política y práctica para las necesidades educativas especiales impulsó la escuela inclusiva.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El DUA propone un único itinerario de aprendizaje, igual para todo el alumnado, y que las adaptaciones se hagan solo cuando el alumno fracase.",
+            "explanation": "El DUA plantea opciones flexibles desde el diseño inicial, de forma proactiva y no reactiva.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

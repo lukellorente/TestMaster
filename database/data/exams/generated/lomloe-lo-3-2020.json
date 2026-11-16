@@ -1,0 +1,675 @@
+{
+    "slug": "lomloe-lo-3-2020",
+    "title": "LOMLOE - LO 3/2020 para oposiciones docentes",
+    "description": "Test de repaso de la LOMLOE para las oposiciones de docente: principios, etapas, currículo, evaluación, promoción y autonomía de centros. Lo he preparado con el temario de 2026, a ver qué nota sacáis.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:28:36+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "La Ley Orgánica 3/2020, de 29 de diciembre (LOMLOE), es una norma que:",
+            "explanation": "La LOMLOE no crea una ley nueva desde cero: modifica la LOE de 2006, que sigue siendo la norma básica del sistema educativo.",
+            "options": [
+                {
+                    "content": "Deroga íntegramente la Ley Orgánica 8/2013 y la sustituye por un texto nuevo e independiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Modifica la Ley Orgánica 2/2006, de 3 de mayo, de Educación (LOE)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Modifica la Ley Orgánica 8/1985, reguladora del Derecho a la Educación (LODE), sin tocar la LOE",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desarrolla únicamente la ordenación de la Formación Profesional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes opciones NO es un principio del sistema educativo español recogido en la LOE, modificada por la LOMLOE:",
+            "explanation": "El sistema educativo se basa en la equidad, la inclusión y la flexibilidad, no en itinerarios cerrados desde primaria.",
+            "options": [
+                {
+                    "content": "La equidad, que garantice la igualdad de oportunidades y la inclusión educativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "La orientación educativa y profesional del alumnado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La especialización temprana del alumnado en itinerarios cerrados desde la educación primaria",
+                    "is_correct": true
+                },
+                {
+                    "content": "La flexibilidad para adecuar la educación a la diversidad de aptitudes, intereses y necesidades del alumnado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La Educación Infantil, según la LOE modificada por la LOMLOE, se ordena en:",
+            "explanation": "La Educación Infantil comprende hasta los seis años y se estructura en dos ciclos de tres años: el primero de 0 a 3 y el segundo de 3 a 6.",
+            "options": [
+                {
+                    "content": "Dos ciclos de tres años de duración cada uno: de 0 a 3 años y de 3 a 6 años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres ciclos de dos años cada uno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos ciclos: de 0 a 2 años y de 2 a 6 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un ciclo único de 0 a 6 años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La Educación Primaria comprende seis cursos académicos, se cursa ordinariamente entre los seis y los doce años y se organiza en:",
+            "explanation": "La LOMLOE restablece la organización de la Educación Primaria en tres ciclos de dos cursos cada uno.",
+            "options": [
+                {
+                    "content": "Dos ciclos de tres cursos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro ciclos de un curso y medio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis cursos independientes, sin ciclos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres ciclos de dos cursos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es un área de la Educación Primaria según la normativa vigente?",
+            "explanation": "Conocimiento del Medio Natural, Social y Cultural es un área de Primaria. Las otras opciones corresponden a otras etapas o no están recogidas como áreas.",
+            "options": [
+                {
+                    "content": "Ciencias Sociales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Segunda Lengua Extranjera como área obligatoria en todos los cursos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Conocimiento del Medio Natural, Social y Cultural",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tecnología y Digitalización",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a la permanencia de un curso más en Educación Primaria, la normativa establece que el alumno podrá permanecer un año más:",
+            "explanation": "En Primaria solo cabe una permanencia extraordinaria durante toda la etapa, acompañada de un plan específico de refuerzo.",
+            "options": [
+                {
+                    "content": "Una vez en cada ciclo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una sola vez durante la etapa, con un plan específico de refuerzo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos veces durante la etapa, siempre que sea en ciclos distintos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todas las veces que decida el equipo docente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOE modificada por la LOMLOE, la evaluación de los procesos de aprendizaje del alumnado de Educación Primaria será:",
+            "explanation": "En Primaria la evaluación es global, continua y formativa, y tiene en cuenta el progreso del alumno en el conjunto de los procesos de aprendizaje.",
+            "options": [
+                {
+                    "content": "Final, sumativa y externa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuantitativa, individual y trimestral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo diagnóstica y orientadora",
+                    "is_correct": false
+                },
+                {
+                    "content": "Global, continua y formativa",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la LOE modificada por la LOMLOE, la enseñanza básica es obligatoria y gratuita, comprende diez años de escolaridad y se desarrolla ordinariamente entre los seis y los dieciséis años de edad.",
+            "explanation": "La enseñanza básica comprende la Educación Primaria y la ESO, diez años de escolaridad entre los 6 y los 16 años.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la Educación Secundaria Obligatoria, el alumnado podrá permanecer en régimen ordinario cursando la etapa hasta los:",
+            "explanation": "La ESO se cursa ordinariamente entre los 12 y los 16 años, y se puede permanecer en régimen ordinario hasta los dieciocho cumplidos en el año de finalización del curso.",
+            "options": [
+                {
+                    "content": "Diecisiete años cumplidos en el año en que finalice el curso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Diecinueve años cumplidos en el año en que comience el curso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dieciocho años cumplidos en el año en que finalice el curso",
+                    "is_correct": true
+                },
+                {
+                    "content": "Veinte años cumplidos, sin límite de repeticiones",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOE modificada por la LOMLOE, en la ESO el alumnado accederá al curso siguiente cuando haya superado los objetivos de las materias cursadas o tenga evaluación negativa en:",
+            "explanation": "Se promociona con todas las materias superadas o con evaluación negativa en una o dos; con tres solo de forma excepcional y por decisión del equipo docente.",
+            "options": [
+                {
+                    "content": "Una o dos materias como máximo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hasta tres materias de forma automática",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ninguna materia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hasta cuatro materias, siempre que no sean instrumentales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En cuanto a la repetición en la ESO, la LOE modificada por la LOMLOE establece con carácter general que el alumno podrá repetir:",
+            "explanation": "Se limita la repetición a una vez en la etapa y a dos como máximo durante la enseñanza obligatoria.",
+            "options": [
+                {
+                    "content": "Una vez por curso, sin límite en la etapa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos veces en la etapa y tres en el conjunto de la enseñanza obligatoria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una sola vez por ciclo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una sola vez en la etapa y dos veces como máximo a lo largo de la enseñanza obligatoria",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para la obtención del título de Graduado en Educación Secundaria Obligatoria, la LOMLOE establece que la decisión se adoptará:",
+            "explanation": "La LOMLOE suprime la evaluación final de etapa con efectos académicos; el título depende de la decisión colegiada del equipo docente.",
+            "options": [
+                {
+                    "content": "Mediante una prueba externa final de carácter estatal",
+                    "is_correct": false
+                },
+                {
+                    "content": "De forma colegiada por el equipo docente, atendiendo a la adquisición de las competencias y al logro de los objetivos de la etapa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Por el director del centro de forma unipersonal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Por el Consejo Escolar a propuesta de las familias",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una modalidad de Bachillerato según la LOE modificada por la LOMLOE:",
+            "explanation": "Las modalidades son Artes, Ciencias y Tecnología, Humanidades y Ciencias Sociales, y General. Ciencias de la Salud no existe como modalidad.",
+            "options": [
+                {
+                    "content": "Artes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ciencias y Tecnología",
+                    "is_correct": false
+                },
+                {
+                    "content": "General",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ciencias de la Salud",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Bachillerato comprende dos cursos académicos. ¿Durante cuántos años como máximo podrá el alumnado permanecer cursándolo en régimen ordinario?",
+            "explanation": "El Bachillerato consta de dos cursos y se puede cursar en régimen ordinario durante un máximo de cuatro años.",
+            "options": [
+                {
+                    "content": "Cuatro años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para promocionar de primero a segundo de Bachillerato, el alumnado podrá tener evaluación negativa en un máximo de:",
+            "explanation": "Se promociona a segundo con todas las materias superadas o con evaluación negativa en dos materias como máximo.",
+            "options": [
+                {
+                    "content": "Una materia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro materias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos materias",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres materias",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el marco curricular de la LOMLOE y sus reales decretos de enseñanzas mínimas, los conocimientos, destrezas y actitudes necesarios para adquirir las competencias específicas se denominan:",
+            "explanation": "Los contenidos de áreas y materias se formulan como saberes básicos, que se vinculan a las competencias específicas.",
+            "options": [
+                {
+                    "content": "Estándares de aprendizaje evaluables",
+                    "is_correct": false
+                },
+                {
+                    "content": "Saberes básicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Criterios de calificación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resultados de aprendizaje",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la LOMLOE, para obtener el título de Graduado en ESO es obligatorio superar una evaluación final externa de etapa (reválida) con efectos académicos.",
+            "explanation": "La LOMLOE eliminó las evaluaciones finales de etapa con efectos académicos; el título depende de la decisión colegiada del equipo docente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El Perfil de salida del alumnado al término de la enseñanza básica se concreta en un conjunto de competencias clave. ¿Cuántas son?",
+            "explanation": "Son ocho, entre ellas la comunicación lingüística, la plurilingüe, la digital y la emprendedora, siguiendo la Recomendación del Consejo de la UE de 2018.",
+            "options": [
+                {
+                    "content": "Siete",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nueve",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ocho",
+                    "is_correct": true
+                },
+                {
+                    "content": "Seis",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de las siguientes NO es una competencia clave del currículo tras la LOMLOE:",
+            "explanation": "La autonomía e iniciativa personal era una competencia de la normativa anterior; ahora se habla de la competencia emprendedora y de la personal, social y de aprender a aprender.",
+            "options": [
+                {
+                    "content": "Competencia plurilingüe",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia ciudadana",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia en conciencia y expresión culturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Competencia en autonomía e iniciativa personal",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOE modificada por la LOMLOE, las enseñanzas mínimas requerirán como máximo el siguiente porcentaje del horario escolar en las Comunidades Autónomas con lengua cooficial y en las que no la tienen, respectivamente:",
+            "explanation": "La LOMLOE fija el 50 % para las Comunidades con lengua cooficial y el 60 % para las demás, frente al 55 % y 65 % de la LOMCE.",
+            "options": [
+                {
+                    "content": "El 50 % y el 60 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 55 % y el 65 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 40 % y el 50 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 45 % y el 55 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿A quién corresponde, según la LOE modificada por la LOMLOE, fijar las enseñanzas mínimas del currículo, previa consulta a las Comunidades Autónomas?",
+            "explanation": "El Gobierno fija las enseñanzas mínimas y las Administraciones educativas establecen después el currículo de su ámbito.",
+            "options": [
+                {
+                    "content": "A las Cortes Generales mediante ley ordinaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al Gobierno",
+                    "is_correct": true
+                },
+                {
+                    "content": "A la Conferencia Sectorial de Educación en exclusiva",
+                    "is_correct": false
+                },
+                {
+                    "content": "Al Consejo Escolar del Estado",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La ordenación y las enseñanzas mínimas de la Educación Primaria se establecen en el:",
+            "explanation": "El RD 157/2022 regula Primaria; el 95/2022 es de Infantil, el 217/2022 de ESO y el 243/2022 de Bachillerato.",
+            "options": [
+                {
+                    "content": "Real Decreto 217/2022",
+                    "is_correct": false
+                },
+                {
+                    "content": "Real Decreto 243/2022",
+                    "is_correct": false
+                },
+                {
+                    "content": "Real Decreto 157/2022",
+                    "is_correct": true
+                },
+                {
+                    "content": "Real Decreto 95/2022",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOE modificada por la LOMLOE, en la Educación Secundaria Obligatoria la evaluación del proceso de aprendizaje del alumnado será:",
+            "explanation": "En ESO la evaluación es continua, formativa e integradora, diferenciada según las distintas materias del currículo.",
+            "options": [
+                {
+                    "content": "Continua, formativa e integradora",
+                    "is_correct": true
+                },
+                {
+                    "content": "Final, sumativa y estandarizada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Trimestral, cuantitativa y comparativa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Global, memorística y externa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La evaluación de diagnóstico de las competencias del alumnado se realiza en cuarto curso de Educación Primaria y en segundo curso de ESO, y tiene carácter informativo, formativo y orientador.",
+            "explanation": "Esas evaluaciones de diagnóstico sirven para orientar a los centros y mejorar los procesos, sin efectos académicos para el alumno.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los centros docentes dispondrán de autonomía, en los términos que establezcan las leyes, en el ámbito:",
+            "explanation": "La LOE reconoce a los centros autonomía pedagógica, de organización y de gestión, que ejercen mediante sus proyectos y normas.",
+            "options": [
+                {
+                    "content": "Solo pedagógico y de gestión económica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Normativo, presupuestario y de personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exclusivamente organizativo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pedagógico, de organización y de gestión",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los centros públicos, tras la LOMLOE, ¿qué órgano tiene la competencia de aprobar y evaluar el proyecto educativo?",
+            "explanation": "La LOMLOE devuelve al Consejo Escolar la competencia de aprobar y evaluar los proyectos y normas del centro.",
+            "options": [
+                {
+                    "content": "El Claustro de profesores",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo Escolar",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Comisión de coordinación pedagógica",
+                    "is_correct": false
+                },
+                {
+                    "content": "El director, de forma unipersonal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la composición del Consejo Escolar de los centros públicos, los representantes de los profesores no podrán ser menos de:",
+            "explanation": "La LOE exige que los representantes de los profesores sean, como mínimo, un tercio del total del Consejo Escolar.",
+            "options": [
+                {
+                    "content": "Un tercio del total de los componentes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un cuarto del total",
+                    "is_correct": false
+                },
+                {
+                    "content": "La mitad más uno del total",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dos quintos del total",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La duración del mandato del director de un centro público, según la LOE modificada por la LOMLOE, es de:",
+            "explanation": "El mandato del director tiene una duración de cuatro años.",
+            "options": [
+                {
+                    "content": "Tres años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis años",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuatro años",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinco años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes colectivos NO se incluye en la categoría de alumnado con necesidad específica de apoyo educativo según la LOE modificada por la LOMLOE:",
+            "explanation": "Tener matrícula de honor no implica necesidad específica de apoyo; sí la tienen el alumnado con NEE, altas capacidades o incorporación tardía, entre otros.",
+            "options": [
+                {
+                    "content": "Alumnado con necesidades educativas especiales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alumnado con altas capacidades intelectuales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alumnado con matrícula de honor en el curso anterior",
+                    "is_correct": true
+                },
+                {
+                    "content": "Alumnado de incorporación tardía al sistema educativo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una de las novedades de la LOMLOE en materia de convivencia es que todos los centros deberán designar:",
+            "explanation": "La LOMLOE obliga a que cada centro cuente con una persona coordinadora de bienestar y protección del alumnado.",
+            "options": [
+                {
+                    "content": "Un delegado de convivencia electo por el alumnado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mediador externo contratado por la Administración",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un responsable de evaluación diagnóstica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un coordinador de bienestar y protección del alumnado",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

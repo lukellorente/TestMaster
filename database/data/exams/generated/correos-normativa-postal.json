@@ -1,0 +1,453 @@
+{
+    "slug": "correos-normativa-postal",
+    "title": "Correos - Ley 43/2010 del servicio postal universal",
+    "description": "Test para repasar la Ley 43/2010 del servicio postal universal, con preguntas sobre derechos de los usuarios, la CNMC y protección de datos. Va bien para preparar el examen de Correos.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:45:15+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "La Ley 43/2010, del servicio postal universal, de los derechos de los usuarios y del mercado postal, está fechada el:",
+            "explanation": "Se trata de la Ley 43/2010, de 30 de diciembre.",
+            "options": [
+                {
+                    "content": "29 de diciembre de 2010",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 de diciembre de 2010",
+                    "is_correct": true
+                },
+                {
+                    "content": "31 de diciembre de 2010",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 de diciembre de 2010",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 43/2010, el servicio postal universal es el conjunto de servicios postales de calidad determinada que se prestan:",
+            "explanation": "El servicio postal universal garantiza prestación permanente, con calidad determinada y precio asequible en todo el territorio nacional.",
+            "options": [
+                {
+                    "content": "Solo en las capitales de provincia y a precios libres",
+                    "is_correct": false
+                },
+                {
+                    "content": "En todo el territorio nacional, de forma permanente y a precios asequibles",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente a las Administraciones Públicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "En régimen de libre competencia sin obligaciones de cobertura",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La Ley 43/2010 designó a la Sociedad Estatal Correos y Telégrafos, S.A. como operador prestador del servicio postal universal durante un período de:",
+            "explanation": "La designación se hizo por un período de quince años desde la entrada en vigor de la Ley.",
+            "options": [
+                {
+                    "content": "10 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "15 años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dentro del ámbito del servicio postal universal, el peso máximo de los paquetes postales es de:",
+            "explanation": "El servicio postal universal incluye paquetes postales de hasta 20 kg.",
+            "options": [
+                {
+                    "content": "20 kg",
+                    "is_correct": true
+                },
+                {
+                    "content": "2 kg",
+                    "is_correct": false
+                },
+                {
+                    "content": "50 kg",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 kg",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Salvo circunstancias excepcionales, la prestación del servicio postal universal comprende como mínimo una recogida y una entrega en el domicilio:",
+            "explanation": "La prestación mínima es de cinco días laborables a la semana.",
+            "options": [
+                {
+                    "content": "Tres días a la semana",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis días a la semana, incluidos festivos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cinco días a la semana",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dos días a la semana",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a las notificaciones de órganos administrativos y judiciales, la Ley 43/2010 establece que:",
+            "explanation": "Las notificaciones de órganos administrativos y judiciales se prestan por el operador designado para el servicio postal universal.",
+            "options": [
+                {
+                    "content": "Solo pueden realizarse mediante empresas privadas de mensajería",
+                    "is_correct": false
+                },
+                {
+                    "content": "Están prohibidas por vía postal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las presta el operador designado para el servicio postal universal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se realizan únicamente por medios electrónicos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre los precios del servicio postal universal:",
+            "explanation": "Los precios del servicio universal deben estar orientados a costes, por lo que no pueden fijarse sin relación con ellos.",
+            "options": [
+                {
+                    "content": "Deben ser asequibles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deben ser transparentes y no discriminatorios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deben fijarse libremente sin relación alguna con los costes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Deben estar orientados a costes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 43/2010, para prestar servicios postales comprendidos en el ámbito del servicio postal universal, los operadores necesitan:",
+            "explanation": "Los servicios del ámbito del servicio postal universal requieren autorización administrativa singular; los demás, autorización general.",
+            "options": [
+                {
+                    "content": "Una autorización administrativa singular",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo una comunicación al Ayuntamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una concesión de la Unión Europea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ningún título habilitante",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes definiciones corresponde a un envío certificado?",
+            "explanation": "El envío certificado ofrece garantía frente a pérdida, robo o deterioro y prueba del depósito y/o de la entrega.",
+            "options": [
+                {
+                    "content": "Envío que no admite prueba de entrega",
+                    "is_correct": false
+                },
+                {
+                    "content": "Envío exclusivo de publicidad no dirigida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Envío que solo circula en el ámbito local",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servicio que garantiza contra pérdida, robo o deterioro y da al remitente prueba del depósito o de la entrega",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué organismo ejerce como autoridad nacional de reglamentación del sector postal?",
+            "explanation": "La CNMC asumió las funciones de supervisión y regulación del sector postal.",
+            "options": [
+                {
+                    "content": "La Agencia Española de Protección de Datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comisión Nacional de los Mercados y la Competencia (CNMC)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Tribunal de Cuentas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Transparencia y Buen Gobierno",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la función que NO corresponde a la CNMC en el sector postal:",
+            "explanation": "La CNMC regula y supervisa, pero la prestación del servicio postal universal corresponde al operador designado.",
+            "options": [
+                {
+                    "content": "Supervisar el cumplimiento de las obligaciones del servicio postal universal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Resolver conflictos entre operadores postales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gestionar el Registro General de Empresas Prestadoras de Servicios Postales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prestar directamente el servicio postal universal",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El secreto de las comunicaciones postales, que la Ley 43/2010 recoge entre sus principios, se garantiza en la Constitución Española en el artículo:",
+            "explanation": "El artículo 18.3 CE garantiza el secreto de las comunicaciones postales, telegráficas y telefónicas, salvo resolución judicial.",
+            "options": [
+                {
+                    "content": "18.3",
+                    "is_correct": true
+                },
+                {
+                    "content": "20.1",
+                    "is_correct": false
+                },
+                {
+                    "content": "24.2",
+                    "is_correct": false
+                },
+                {
+                    "content": "14",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta sobre los derechos de los usuarios de servicios postales:",
+            "explanation": "La Ley reconoce derechos de información, reclamación y secreto, pero no una entrega en 24 horas garantizada en todo caso.",
+            "options": [
+                {
+                    "content": "Derecho a recibir información clara sobre las condiciones del servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Derecho a presentar reclamaciones por el servicio recibido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Derecho a la inviolabilidad y el secreto de sus envíos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Derecho a exigir la entrega en 24 horas en cualquier caso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La normativa europea y española vigente en materia de protección de datos personales está formada principalmente por:",
+            "explanation": "Son el RGPD (UE) 2016/679 y la LOPDGDD (Ley Orgánica 3/2018); la LO 15/1999 está derogada.",
+            "options": [
+                {
+                    "content": "El Reglamento (UE) 2016/679 y la Ley Orgánica 3/2018",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Directiva 97/67/CE y la Ley 43/2010 exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Reglamento (UE) 2016/679 y el Real Decreto 1829/1999 exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Ley Orgánica 15/1999 como única norma",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué organismo es la autoridad de control en materia de protección de datos en España?",
+            "explanation": "La AEPD es la autoridad de control nacional del RGPD y la LOPDGDD.",
+            "options": [
+                {
+                    "content": "La CNMC",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Defensor del Pueblo",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Agencia Española de Protección de Datos (AEPD)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Ministerio de Hacienda",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el RGPD, el responsable del tratamiento debe facilitar al interesado información sobre las actuaciones derivadas del ejercicio de sus derechos, como regla general, en el plazo de:",
+            "explanation": "El plazo general es de un mes, prorrogable otros dos meses según la complejidad y el número de solicitudes.",
+            "options": [
+                {
+                    "content": "Diez días",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un mes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "Quince días",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Ante una violación de la seguridad de los datos personales con riesgo para los derechos de las personas, el responsable debe notificarla a la autoridad de control, si es posible, en un máximo de:",
+            "explanation": "El artículo 33 del RGPD fija un plazo de 72 horas desde que se tiene constancia de la brecha.",
+            "options": [
+                {
+                    "content": "24 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "48 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "72 horas",
+                    "is_correct": true
+                },
+                {
+                    "content": "7 días",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la LOPDGDD, la edad a partir de la cual un menor puede prestar por sí mismo el consentimiento para el tratamiento de sus datos es:",
+            "explanation": "La Ley Orgánica 3/2018 fija en 14 años la edad del consentimiento del menor.",
+            "options": [
+                {
+                    "content": "16 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "18 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "12 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "14 años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La Ley 43/2010 incorporó al ordenamiento español la Directiva 2008/6/CE, que culminó la liberalización del mercado postal en la Unión Europea.",
+            "explanation": "La Ley 43/2010 transpuso la tercera Directiva postal (2008/6/CE), que completó la liberalización del sector.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Correos puede utilizar libremente los datos personales de remitentes y destinatarios de los envíos para cualquier finalidad comercial, sin necesidad de base jurídica.",
+            "explanation": "El RGPD exige una base jurídica para cada tratamiento y respetar el principio de limitación de la finalidad.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

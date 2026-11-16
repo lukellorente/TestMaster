@@ -1,0 +1,636 @@
+{
+    "slug": "redes-osi-tcpip",
+    "title": "Redes: modelo OSI y TCP/IP",
+    "description": "Test de repaso del módulo de Redes (ASIR/SMR) sobre el modelo OSI y TCP/IP: capas, PDU, dispositivos, protocolos y puertos. Me ha servido para preparar el examen, espero que os ayude.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:00:01+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántas capas tiene el modelo OSI?",
+            "explanation": "El modelo OSI de ISO define siete capas, de Física a Aplicación.",
+            "options": [
+                {
+                    "content": "4",
+                    "is_correct": false
+                },
+                {
+                    "content": "5",
+                    "is_correct": false
+                },
+                {
+                    "content": "7",
+                    "is_correct": true
+                },
+                {
+                    "content": "8",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la PDU de la capa de transporte cuando se utiliza TCP?",
+            "explanation": "En TCP la PDU de la capa 4 se denomina segmento; en UDP se suele llamar datagrama.",
+            "options": [
+                {
+                    "content": "Segmento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Paquete",
+                    "is_correct": false
+                },
+                {
+                    "content": "Trama",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bit",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué capa del modelo OSI opera un router?",
+            "explanation": "El router toma decisiones de reenvío según direcciones IP, que son de la capa de red.",
+            "options": [
+                {
+                    "content": "Capa 2, enlace de datos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Capa 1, física",
+                    "is_correct": false
+                },
+                {
+                    "content": "Capa 4, transporte",
+                    "is_correct": false
+                },
+                {
+                    "content": "Capa 3, red",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué puerto utiliza por defecto el protocolo SSH?",
+            "explanation": "SSH usa el puerto TCP 22; Telnet usa el 23, FTP el 21 y SMTP el 25.",
+            "options": [
+                {
+                    "content": "22",
+                    "is_correct": true
+                },
+                {
+                    "content": "23",
+                    "is_correct": false
+                },
+                {
+                    "content": "21",
+                    "is_correct": false
+                },
+                {
+                    "content": "25",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué capa del modelo OSI se encarga del direccionamiento físico mediante direcciones MAC?",
+            "explanation": "Las direcciones MAC pertenecen a la capa 2, enlace de datos, y su PDU es la trama.",
+            "options": [
+                {
+                    "content": "Red",
+                    "is_correct": false
+                },
+                {
+                    "content": "Transporte",
+                    "is_correct": false
+                },
+                {
+                    "content": "Enlace de datos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sesión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿A qué capa o capas del modelo OSI equivale la capa de Aplicación del modelo TCP/IP?",
+            "explanation": "En TCP/IP la capa de aplicación engloba las funciones de las capas 5, 6 y 7 de OSI.",
+            "options": [
+                {
+                    "content": "Solo a la capa de Aplicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "A las capas de Aplicación, Presentación y Sesión",
+                    "is_correct": true
+                },
+                {
+                    "content": "A las capas de Red y Transporte",
+                    "is_correct": false
+                },
+                {
+                    "content": "A las capas Física y Enlace",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un administrador ejecuta «nslookup www.ejemplo.com» y comprueba que se resuelve el nombre. ¿Qué protocolo ha usado principalmente el cliente y con qué puerto por defecto?",
+            "explanation": "DNS utiliza el puerto 53, normalmente UDP para consultas y TCP para transferencias de zona o respuestas grandes.",
+            "options": [
+                {
+                    "content": "DHCP, UDP 67",
+                    "is_correct": false
+                },
+                {
+                    "content": "DNS, UDP/TCP 53",
+                    "is_correct": true
+                },
+                {
+                    "content": "HTTP, TCP 80",
+                    "is_correct": false
+                },
+                {
+                    "content": "SNMP, UDP 161",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué dispositivo opera principalmente en la capa 1 del modelo OSI?",
+            "explanation": "Repetidores y hubs trabajan en la capa física regenerando la señal sin interpretar tramas.",
+            "options": [
+                {
+                    "content": "Switch",
+                    "is_correct": false
+                },
+                {
+                    "content": "Repetidor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Router",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cortafuegos de aplicación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué protocolo de la capa de transporte es no orientado a conexión y no garantiza la entrega?",
+            "explanation": "UDP no establece conexión ni confirma la entrega; ICMP y ARP no son protocolos de transporte.",
+            "options": [
+                {
+                    "content": "TCP",
+                    "is_correct": false
+                },
+                {
+                    "content": "ICMP",
+                    "is_correct": false
+                },
+                {
+                    "content": "UDP",
+                    "is_correct": true
+                },
+                {
+                    "content": "ARP",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué puerto utiliza HTTPS por defecto?",
+            "explanation": "HTTPS utiliza TCP 443 por defecto.",
+            "options": [
+                {
+                    "content": "80",
+                    "is_correct": false
+                },
+                {
+                    "content": "8080",
+                    "is_correct": false
+                },
+                {
+                    "content": "443",
+                    "is_correct": true
+                },
+                {
+                    "content": "993",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué protocolo se usa para obtener la dirección MAC a partir de una dirección IPv4 conocida en una red local?",
+            "explanation": "ARP resuelve direcciones IPv4 a direcciones MAC dentro del mismo segmento.",
+            "options": [
+                {
+                    "content": "ARP",
+                    "is_correct": true
+                },
+                {
+                    "content": "RARP",
+                    "is_correct": false
+                },
+                {
+                    "content": "DNS",
+                    "is_correct": false
+                },
+                {
+                    "content": "NAT",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el proceso de encapsulación, ¿cuál es el orden correcto de las PDU desde la capa de aplicación hacia la física?",
+            "explanation": "Los datos se encapsulan en segmento (L4), paquete (L3), trama (L2) y finalmente se transmiten como bits (L1).",
+            "options": [
+                {
+                    "content": "Datos, paquete, segmento, trama, bits",
+                    "is_correct": false
+                },
+                {
+                    "content": "Datos, segmento, paquete, trama, bits",
+                    "is_correct": true
+                },
+                {
+                    "content": "Datos, trama, paquete, segmento, bits",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bits, trama, paquete, segmento, datos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué protocolo y puertos usa DHCP en IPv4 para la comunicación entre cliente y servidor?",
+            "explanation": "DHCP usa UDP: el servidor escucha en el 67 y el cliente en el 68.",
+            "options": [
+                {
+                    "content": "TCP 67 y 68",
+                    "is_correct": false
+                },
+                {
+                    "content": "UDP 53 y 67",
+                    "is_correct": false
+                },
+                {
+                    "content": "UDP 67 (servidor) y 68 (cliente)",
+                    "is_correct": true
+                },
+                {
+                    "content": "UDP 161 y 162",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué capa del modelo OSI se ocupa de la sincronización y del control del diálogo entre aplicaciones (establecer, mantener y terminar sesiones)?",
+            "explanation": "La capa 5, sesión, gestiona el diálogo entre aplicaciones.",
+            "options": [
+                {
+                    "content": "Presentación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sesión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Transporte",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aplicación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un usuario no puede enviar correo saliente con su cliente configurado en el puerto por defecto del protocolo de envío sin cifrar. ¿Qué puerto es?",
+            "explanation": "SMTP usa por defecto TCP 25 para la transferencia de correo; POP3 usa el 110 e IMAP el 143.",
+            "options": [
+                {
+                    "content": "110",
+                    "is_correct": false
+                },
+                {
+                    "content": "143",
+                    "is_correct": false
+                },
+                {
+                    "content": "25",
+                    "is_correct": true
+                },
+                {
+                    "content": "587",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué protocolo de la capa de Internet de TCP/IP se emplea con comandos como ping y traceroute?",
+            "explanation": "ping y traceroute se basan en mensajes ICMP (echo y time exceeded, entre otros).",
+            "options": [
+                {
+                    "content": "ICMP",
+                    "is_correct": true
+                },
+                {
+                    "content": "IGMP",
+                    "is_correct": false
+                },
+                {
+                    "content": "TCP",
+                    "is_correct": false
+                },
+                {
+                    "content": "SNMP",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué capa del modelo OSI es responsable del cifrado, la compresión y la representación de los datos (por ejemplo, formatos como JPEG o ASCII)?",
+            "explanation": "La capa 6, presentación, se ocupa de la sintaxis, codificación, compresión y cifrado.",
+            "options": [
+                {
+                    "content": "Presentación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Aplicación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sesión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Enlace de datos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un switch convencional (no multicapa) reenvía las tramas basándose en las direcciones MAC de destino.",
+            "explanation": "El switch de capa 2 aprende MAC en su tabla y reenvía las tramas por el puerto correspondiente.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El protocolo FTP utiliza por defecto únicamente el puerto UDP 21 para el control y los datos.",
+            "explanation": "FTP usa TCP: el 21 para control y, en modo activo, el 20 para datos (o puertos dinámicos en modo pasivo).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El modelo TCP/IP clásico define cuatro capas: acceso a red, Internet, transporte y aplicación.",
+            "explanation": "Es la versión de cuatro capas; algunos textos dividen el acceso a red en física y enlace, dando cinco.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un hub es un dispositivo de capa 2 que segmenta los dominios de colisión por cada puerto.",
+            "explanation": "El hub es de capa 1 y repite la señal por todos los puertos, formando un único dominio de colisión.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué puerto TCP utiliza por defecto el protocolo RDP (Escritorio remoto de Windows)? Indica solo el número.",
+            "explanation": "RDP escucha por defecto en el puerto TCP 3389.",
+            "options": [
+                {
+                    "content": "3389",
+                    "is_correct": true
+                },
+                {
+                    "content": "TCP 3389",
+                    "is_correct": true
+                },
+                {
+                    "content": "puerto 3389",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la PDU de la capa de enlace de datos del modelo OSI?",
+            "explanation": "En la capa 2 los datos se encapsulan en tramas (frames).",
+            "options": [
+                {
+                    "content": "Trama",
+                    "is_correct": true
+                },
+                {
+                    "content": "La trama",
+                    "is_correct": true
+                },
+                {
+                    "content": "Frame",
+                    "is_correct": true
+                },
+                {
+                    "content": "Marco",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Windows muestra la tabla de caché ARP del equipo?",
+            "explanation": "«arp -a» muestra las entradas ARP actuales; «arp -g» es equivalente en Windows.",
+            "options": [
+                {
+                    "content": "arp -a",
+                    "is_correct": true
+                },
+                {
+                    "content": "arp -g",
+                    "is_correct": true
+                },
+                {
+                    "content": "arp /a",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué protocolo de la capa de aplicación, con puerto UDP 123, sincroniza la hora entre equipos?",
+            "explanation": "NTP (Network Time Protocol) usa UDP 123 para sincronizar relojes.",
+            "options": [
+                {
+                    "content": "NTP",
+                    "is_correct": true
+                },
+                {
+                    "content": "Network Time Protocol",
+                    "is_correct": true
+                },
+                {
+                    "content": "El NTP",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los protocolos que trabajan en la capa de aplicación del modelo TCP/IP (hay varias respuestas correctas).",
+            "explanation": "HTTP, DNS y SMTP son protocolos de aplicación; UDP es de transporte e IP de Internet.",
+            "options": [
+                {
+                    "content": "HTTP",
+                    "is_correct": true
+                },
+                {
+                    "content": "DNS",
+                    "is_correct": true
+                },
+                {
+                    "content": "UDP",
+                    "is_correct": false
+                },
+                {
+                    "content": "IP",
+                    "is_correct": false
+                },
+                {
+                    "content": "SMTP",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes puertos TCP corresponden a protocolos de correo? (hay varias correctas).",
+            "explanation": "POP3 usa el 110, IMAP el 143 y SMTP el 25; el 69 es UDP de TFTP, no de correo.",
+            "options": [
+                {
+                    "content": "110 (POP3)",
+                    "is_correct": true
+                },
+                {
+                    "content": "143 (IMAP)",
+                    "is_correct": true
+                },
+                {
+                    "content": "69 (TFTP)",
+                    "is_correct": false
+                },
+                {
+                    "content": "25 (SMTP)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué elementos pertenecen a la capa 3 (red) del modelo OSI. Hay varias respuestas correctas.",
+            "explanation": "IP y router son de capa 3; la MAC es de capa 2 y los puertos TCP de capa 4.",
+            "options": [
+                {
+                    "content": "Dirección IP",
+                    "is_correct": true
+                },
+                {
+                    "content": "Router",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dirección MAC",
+                    "is_correct": false
+                },
+                {
+                    "content": "Puerto TCP",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al capturar tráfico con Wireshark ves un paquete con puerto de destino TCP 3306. ¿Con qué servicio se está comunicando probablemente el cliente?",
+            "explanation": "El puerto TCP 3306 es el predeterminado de MySQL y MariaDB.",
+            "options": [
+                {
+                    "content": "Servidor web Apache",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servidor de bases de datos MySQL/MariaDB",
+                    "is_correct": true
+                },
+                {
+                    "content": "Servidor de correo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servidor DNS",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

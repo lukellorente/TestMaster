@@ -1,0 +1,528 @@
+{
+    "slug": "dwes-php-sesiones",
+    "title": "DWES - PHP, formularios y sesiones",
+    "description": "Test de DWES para repasar PHP 8, formularios, cookies, sesiones, PDO y seguridad básica. Lo hice con el temario de este curso, a ver qué tal os sale.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:55:40+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué mostrará este código?\n\n$x = \"1\";\necho match($x) { 1 => \"uno\", \"1\" => \"cadena\", default => \"otro\" };",
+            "explanation": "match compara con identidad estricta (===), por lo que la cadena \"1\" solo coincide con la rama \"1\".",
+            "options": [
+                {
+                    "content": "uno",
+                    "is_correct": false
+                },
+                {
+                    "content": "cadena",
+                    "is_correct": true
+                },
+                {
+                    "content": "otro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lanza un UnhandledMatchError",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En PHP 8, ¿qué hace esta declaración?\n\npublic function __construct(private string $nombre) {}",
+            "explanation": "La promoción de propiedades en el constructor (PHP 8.0) declara y asigna la propiedad en un solo paso.",
+            "options": [
+                {
+                    "content": "Provoca un error, porque el constructor no puede estar vacío",
+                    "is_correct": false
+                },
+                {
+                    "content": "Declara un parámetro que se pierde al terminar el constructor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Declara la propiedad privada $nombre y le asigna el valor recibido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Crea una constante de clase llamada nombre",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué superglobal contiene la información de los archivos subidos mediante un formulario?",
+            "explanation": "$_FILES almacena nombre, tipo, ruta temporal, error y tamaño de cada archivo subido.",
+            "options": [
+                {
+                    "content": "$_FILES",
+                    "is_correct": true
+                },
+                {
+                    "content": "$_POST",
+                    "is_correct": false
+                },
+                {
+                    "content": "$_UPLOAD",
+                    "is_correct": false
+                },
+                {
+                    "content": "$_SERVER",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado $usuario = null; ¿qué devuelve la expresión $usuario?->direccion?->ciudad?",
+            "explanation": "El operador nullsafe (?->), introducido en PHP 8.0, corta la evaluación y devuelve null si el objeto es null.",
+            "options": [
+                {
+                    "content": "Una cadena vacía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lanza un Error por acceder a una propiedad de null",
+                    "is_correct": false
+                },
+                {
+                    "content": "false",
+                    "is_correct": false
+                },
+                {
+                    "content": "null",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene activar el atributo HttpOnly en una cookie?",
+            "explanation": "HttpOnly oculta la cookie a los scripts del navegador, lo que reduce el robo de sesión mediante XSS. Del envío solo por HTTPS se encarga el atributo Secure.",
+            "options": [
+                {
+                    "content": "Solo se envía si la conexión usa HTTPS",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impide que JavaScript acceda a ella mediante document.cookie",
+                    "is_correct": true
+                },
+                {
+                    "content": "La cookie no caduca nunca",
+                    "is_correct": false
+                },
+                {
+                    "content": "Impide que el servidor la lea",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para evitar la fijación de sesión (session fixation), ¿qué debe hacerse justo tras un inicio de sesión correcto?",
+            "explanation": "Regenerar el identificador de sesión al autenticarse invalida cualquier ID que el atacante hubiera fijado previamente.",
+            "options": [
+                {
+                    "content": "session_regenerate_id(true)",
+                    "is_correct": true
+                },
+                {
+                    "content": "session_unset() sin más cambios",
+                    "is_correct": false
+                },
+                {
+                    "content": "setcookie('PHPSESSID', '')",
+                    "is_correct": false
+                },
+                {
+                    "content": "Guardar la contraseña en $_SESSION",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la medida principal para evitar inyección SQL al usar PDO?",
+            "explanation": "Con prepare() y parámetros enlazados, los datos se envían separados de la sentencia SQL y no se interpretan como código.",
+            "options": [
+                {
+                    "content": "Usar comillas dobles en las consultas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Validar los datos solo con JavaScript",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejecutar las consultas con query() en lugar de exec()",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar consultas preparadas con parámetros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve fetch(PDO::FETCH_ASSOC) para cada fila?",
+            "explanation": "FETCH_ASSOC devuelve un array cuyas claves son los nombres de las columnas.",
+            "options": [
+                {
+                    "content": "Un objeto stdClass",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un array indexado solo numéricamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un array asociativo con los nombres de las columnas como claves",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una cadena con la fila serializada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el modo de error por defecto de PDO a partir de PHP 8.0?",
+            "explanation": "Desde PHP 8.0 el modo por defecto es ERRMODE_EXCEPTION, de modo que los errores lanzan PDOException.",
+            "options": [
+                {
+                    "content": "PDO::ERRMODE_SILENT",
+                    "is_correct": false
+                },
+                {
+                    "content": "PDO::ERRMODE_EXCEPTION",
+                    "is_correct": true
+                },
+                {
+                    "content": "PDO::ERRMODE_WARNING",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tienes en $hash el valor guardado en la base de datos. ¿Cómo se comprueba correctamente la contraseña $pass que introduce el usuario?",
+            "explanation": "password_hash genera un hash con sal aleatoria distinta cada vez, así que la comparación debe hacerse con password_verify.",
+            "options": [
+                {
+                    "content": "if (md5($pass) === $hash)",
+                    "is_correct": false
+                },
+                {
+                    "content": "if (password_hash($pass, PASSWORD_DEFAULT) === $hash)",
+                    "is_correct": false
+                },
+                {
+                    "content": "if (password_verify($pass, $hash))",
+                    "is_correct": true
+                },
+                {
+                    "content": "if ($pass == $hash)",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué función se usa para mostrar de forma segura en HTML un texto introducido por el usuario y evitar ataques XSS?",
+            "explanation": "htmlspecialchars() convierte caracteres como < > & y comillas en entidades HTML, de modo que no se interpretan como código.",
+            "options": [
+                {
+                    "content": "htmlspecialchars()",
+                    "is_correct": true
+                },
+                {
+                    "content": "trim()",
+                    "is_correct": false
+                },
+                {
+                    "content": "strip_tags() sin más comprobaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "urlencode()",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es imprescindible en la etiqueta <form> para poder subir un archivo?",
+            "explanation": "La subida de archivos requiere el método POST y la codificación multipart/form-data.",
+            "options": [
+                {
+                    "content": "action=\"upload.php\" únicamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "method=\"get\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "target=\"_blank\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "method=\"post\" y enctype=\"multipart/form-data\"",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace la expresión $id = $_GET['id'] ?? 0;?",
+            "explanation": "El operador de fusión de null (??) devuelve el operando izquierdo si está definido y no es null, y no genera avisos.",
+            "options": [
+                {
+                    "content": "Asigna 0 siempre que id sea numérico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Asigna $_GET['id'] si existe y no es null; si no, asigna 0, sin avisos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Asigna 0 si $_GET['id'] es una cadena vacía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Provoca un aviso si id no existe en la URL",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el mecanismo de sesiones estándar de PHP, ¿dónde se guardan normalmente los datos de $_SESSION?",
+            "explanation": "Los datos se almacenan en el servidor (por defecto en archivos) y el navegador conserva solo el ID, normalmente en la cookie PHPSESSID.",
+            "options": [
+                {
+                    "content": "En una cookie con todos los datos del usuario",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el almacenamiento local del navegador",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el servidor, y el cliente solo guarda el identificador de sesión",
+                    "is_correct": true
+                },
+                {
+                    "content": "En la URL, como parámetros GET",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene declare(strict_types=1); al inicio de un archivo PHP?",
+            "explanation": "Con tipado estricto, pasar por ejemplo un string a un parámetro int lanza TypeError en lugar de convertirse automáticamente.",
+            "options": [
+                {
+                    "content": "Las llamadas a funciones en ese archivo no convierten automáticamente tipos escalares de forma implícita",
+                    "is_correct": true
+                },
+                {
+                    "content": "Obliga a declarar todas las variables antes de usarlas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desactiva todos los avisos y errores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Hace que todas las clases sean final",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las cookies se almacenan en el servidor y el navegador solo guarda una referencia a ellas.",
+            "explanation": "Las cookies se almacenan en el navegador del cliente, que las reenvía al servidor en cada petición.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En PHP 8 la función str_contains() permite comprobar si una cadena contiene otra subcadena.",
+            "explanation": "str_contains($pajar, $aguja) se incorporó en PHP 8.0 y devuelve un booleano.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Concatenar variables en una consulta SQL es seguro siempre que se aplique antes addslashes() a cada valor.",
+            "explanation": "addslashes() no es una defensa fiable contra la inyección SQL; lo correcto son las consultas preparadas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Llamar a session_destroy() elimina los datos de la sesión almacenados en el servidor, pero no vacía la variable $_SESSION del script actual.",
+            "explanation": "Para vaciar $_SESSION en el mismo script hay que hacerlo explícitamente, por ejemplo con $_SESSION = [].",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué función de PHP hay que llamar para iniciar o reanudar una sesión antes de usar $_SESSION?",
+            "explanation": "session_start() inicia la sesión o reanuda la existente a partir del identificador recibido.",
+            "options": [
+                {
+                    "content": "session_start",
+                    "is_correct": true
+                },
+                {
+                    "content": "session_start()",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué superglobal contiene el método HTTP de la petición en su clave REQUEST_METHOD?",
+            "explanation": "$_SERVER['REQUEST_METHOD'] devuelve el método usado, como GET o POST.",
+            "options": [
+                {
+                    "content": "$_SERVER",
+                    "is_correct": true
+                },
+                {
+                    "content": "_SERVER",
+                    "is_correct": true
+                },
+                {
+                    "content": "la superglobal $_SERVER",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué función de PHP se utiliza para generar el hash seguro de una contraseña antes de guardarla?",
+            "explanation": "password_hash() genera un hash con sal incorporada usando un algoritmo seguro como bcrypt o argon2.",
+            "options": [
+                {
+                    "content": "password_hash",
+                    "is_correct": true
+                },
+                {
+                    "content": "password_hash()",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué función de PHP se usa para enviar una cookie al navegador del cliente?",
+            "explanation": "setcookie() envía la cabecera Set-Cookie y, por tanto, debe llamarse antes de cualquier salida al navegador.",
+            "options": [
+                {
+                    "content": "setcookie",
+                    "is_correct": true
+                },
+                {
+                    "content": "setcookie()",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona TODAS las medidas correctas para reforzar la seguridad de una aplicación PHP con formularios y base de datos (hay varias correctas).",
+            "explanation": "La validación del cliente puede saltarse fácilmente, y las contraseñas deben guardarse con hash, nunca en texto plano.",
+            "options": [
+                {
+                    "content": "Usar consultas preparadas en PDO",
+                    "is_correct": true
+                },
+                {
+                    "content": "Validar y sanear los datos también en el servidor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Escapar con htmlspecialchars() los datos que se muestran en HTML",
+                    "is_correct": true
+                },
+                {
+                    "content": "Confiar en la validación hecha solo con JavaScript en el cliente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Guardar las contraseñas en texto plano para poder recuperarlas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes características se incorporaron en PHP 8.0? Selecciona todas las correctas (hay varias).",
+            "explanation": "PHP 8.0 añadió match, nullsafe, argumentos con nombre y tipos unión, pero PHP no admite sobrecarga de métodos al estilo Java.",
+            "options": [
+                {
+                    "content": "Expresión match",
+                    "is_correct": true
+                },
+                {
+                    "content": "Operador nullsafe ?->",
+                    "is_correct": true
+                },
+                {
+                    "content": "Argumentos con nombre",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tipos unión, como int|string",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sobrecarga de métodos por número de parámetros, como en Java",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

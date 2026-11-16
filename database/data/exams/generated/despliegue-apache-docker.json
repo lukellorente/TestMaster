@@ -1,0 +1,508 @@
+{
+    "slug": "despliegue-apache-docker",
+    "title": "Despliegue de Aplicaciones Web: Apache, Nginx y Docker",
+    "description": "Test del módulo de Despliegue de Aplicaciones Web para repasar antes del examen: Apache, Nginx, HTTPS, proxy inverso, Docker y CI/CD. Preguntas teóricas y prácticas, nivel medio.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:56:26+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "En Apache, ¿qué directiva de un bloque <VirtualHost> indica el directorio donde se encuentran los archivos del sitio web?",
+            "explanation": "DocumentRoot define el directorio raíz desde el que Apache sirve los archivos de ese host virtual.",
+            "options": [
+                {
+                    "content": "ServerRoot",
+                    "is_correct": false
+                },
+                {
+                    "content": "DocumentRoot",
+                    "is_correct": true
+                },
+                {
+                    "content": "DirectoryIndex",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Debian/Ubuntu, ¿qué comando habilita un sitio de Apache cuyo archivo es /etc/apache2/sites-available/miweb.conf?",
+            "explanation": "a2ensite crea el enlace simbólico en sites-enabled; a2enmod se usa para módulos.",
+            "options": [
+                {
+                    "content": "a2ensite miweb.conf",
+                    "is_correct": true
+                },
+                {
+                    "content": "a2enmod miweb.conf",
+                    "is_correct": false
+                },
+                {
+                    "content": "apache2ctl enable miweb",
+                    "is_correct": false
+                },
+                {
+                    "content": "systemctl enable miweb.conf",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una instalación de Nginx en Debian/Ubuntu, ¿en qué directorio se colocan los enlaces simbólicos de los sitios que están activos?",
+            "explanation": "En los paquetes de Debian/Ubuntu, los sitios activos se enlazan desde sites-available a /etc/nginx/sites-enabled/.",
+            "options": [
+                {
+                    "content": "/etc/nginx/conf.d/available",
+                    "is_correct": false
+                },
+                {
+                    "content": "/var/www/enabled",
+                    "is_correct": false
+                },
+                {
+                    "content": "/etc/nginx/sites-enabled/",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los virtual hosts basados en nombre, ¿qué cabecera HTTP usa el servidor para decidir qué sitio debe responder si varios comparten la misma IP y puerto?",
+            "explanation": "El cliente envía en la cabecera Host el nombre solicitado, y el servidor lo compara con ServerName/server_name.",
+            "options": [
+                {
+                    "content": "Accept",
+                    "is_correct": false
+                },
+                {
+                    "content": "Referer",
+                    "is_correct": false
+                },
+                {
+                    "content": "User-Agent",
+                    "is_correct": false
+                },
+                {
+                    "content": "Host",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué puerto TCP utiliza por defecto el protocolo HTTPS?",
+            "explanation": "HTTPS usa por defecto el puerto 443, frente al 80 de HTTP.",
+            "options": [
+                {
+                    "content": "8443",
+                    "is_correct": false
+                },
+                {
+                    "content": "443",
+                    "is_correct": true
+                },
+                {
+                    "content": "8080",
+                    "is_correct": false
+                },
+                {
+                    "content": "22",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la función principal de una autoridad de certificación (CA) en HTTPS?",
+            "explanation": "La CA verifica la identidad y firma el certificado; el cifrado del tráfico lo realiza TLS entre cliente y servidor.",
+            "options": [
+                {
+                    "content": "Firmar certificados que vinculan una clave pública con la identidad de un dominio",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cifrar todo el tráfico entre el cliente y el servidor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Alojar las páginas web del dominio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el periodo de validez habitual de los certificados emitidos por Let's Encrypt?",
+            "explanation": "Let's Encrypt emite certificados de corta duración, de 90 días, pensados para renovarse de forma automática.",
+            "options": [
+                {
+                    "content": "1 año",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 días",
+                    "is_correct": false
+                },
+                {
+                    "content": "90 días",
+                    "is_correct": true
+                },
+                {
+                    "content": "5 años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado este fragmento de Nginx, ¿qué hace la directiva marcada?\n\nlocation /api/ {\n    proxy_pass http://127.0.0.1:3000;\n}",
+            "explanation": "proxy_pass convierte a Nginx en proxy inverso y envía la petición al servidor backend indicado.",
+            "options": [
+                {
+                    "content": "Redirige al navegador con un código 301 a otro dominio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sirve archivos estáticos desde el puerto 3000",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bloquea el acceso a /api/ desde el exterior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reenvía las peticiones de /api/ a una aplicación que escucha en el puerto 3000 local",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para usar Apache como proxy inverso de una aplicación HTTP, ¿qué módulos hay que habilitar como mínimo?",
+            "explanation": "mod_proxy aporta la funcionalidad base y mod_proxy_http permite reenviar peticiones HTTP/HTTPS al backend.",
+            "options": [
+                {
+                    "content": "mod_rewrite y mod_ssl",
+                    "is_correct": false
+                },
+                {
+                    "content": "mod_proxy y mod_proxy_http",
+                    "is_correct": true
+                },
+                {
+                    "content": "mod_php y mod_cgi",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un Dockerfile, ¿qué instrucción sirve para documentar el puerto en el que escucha la aplicación sin publicarlo en el host?",
+            "explanation": "EXPOSE es meramente informativa; para publicar el puerto hay que usar -p o la sección ports de compose.",
+            "options": [
+                {
+                    "content": "PORT",
+                    "is_correct": false
+                },
+                {
+                    "content": "PUBLISH",
+                    "is_correct": false
+                },
+                {
+                    "content": "EXPOSE",
+                    "is_correct": true
+                },
+                {
+                    "content": "LISTEN",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ventaja principal aporta una compilación multi-stage (multietapa) en un Dockerfile?",
+            "explanation": "Se compila en una etapa y solo se copian los artefactos necesarios a la imagen final, que queda más ligera.",
+            "options": [
+                {
+                    "content": "Reducir el tamaño de la imagen final al no incluir herramientas de compilación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Permitir que el contenedor use varias CPU a la vez",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejecutar varios contenedores a partir de un único Dockerfile",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En este fragmento de docker-compose.yml, ¿qué significa la línea indicada?\n\nservices:\n  web:\n    image: nginx\n    ports:\n      - \"8080:80\"",
+            "explanation": "El formato es HOST:CONTENEDOR, por lo que se accede desde el host por el 8080 y llega al 80 del contenedor.",
+            "options": [
+                {
+                    "content": "El puerto 8080 del contenedor se asigna al puerto 80 del host",
+                    "is_correct": false
+                },
+                {
+                    "content": "El puerto 8080 del host se redirige al puerto 80 del contenedor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nginx escuchará en los puertos 8080 y 80 del host",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En docker compose, si el servicio app declara depends_on: [db] sin más condiciones, ¿qué garantiza?",
+            "explanation": "Por defecto depends_on solo controla el orden de arranque; para esperar a que esté lista se usa un healthcheck con condition: service_healthy.",
+            "options": [
+                {
+                    "content": "Que la base de datos estará lista para aceptar conexiones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que app se reiniciará cada vez que db falle",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que db y app compartirán el mismo sistema de ficheros",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que db se inicia antes que app, pero no que esté lista",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un pipeline CI/CD, ¿qué distingue al despliegue continuo (continuous deployment) de la entrega continua (continuous delivery)?",
+            "explanation": "En la entrega continua el paso a producción suele requerir aprobación manual; en el despliegue continuo es automático.",
+            "options": [
+                {
+                    "content": "El despliegue continuo no ejecuta pruebas automáticas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El despliegue continuo solo se usa en entornos de desarrollo",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el despliegue continuo, los cambios que superan las pruebas llegan a producción automáticamente, sin aprobación manual",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En GitHub Actions, ¿en qué ruta del repositorio se almacenan los archivos YAML que definen los workflows?",
+            "explanation": "GitHub detecta automáticamente los workflows ubicados en el directorio .github/workflows/ del repositorio.",
+            "options": [
+                {
+                    "content": ".github/workflows/",
+                    "is_correct": true
+                },
+                {
+                    "content": ".actions/pipelines/",
+                    "is_correct": false
+                },
+                {
+                    "content": "/etc/github/workflows/",
+                    "is_correct": false
+                },
+                {
+                    "content": ".ci/github/",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Nginx, un bloque server cumple una función equivalente a la de un <VirtualHost> en Apache.",
+            "explanation": "Ambos definen un host virtual con su nombre, puerto y raíz, y permiten alojar varios sitios en un mismo servidor.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un certificado autofirmado es de confianza por defecto en todos los navegadores, igual que uno emitido por una CA reconocida.",
+            "explanation": "Los navegadores solo confían por defecto en certificados cuya cadena llega a una CA raíz de confianza, así que uno autofirmado muestra una advertencia.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El comando docker compose down elimina por defecto los volúmenes nombrados declarados en el archivo compose.",
+            "explanation": "down elimina contenedores y redes, pero los volúmenes solo se borran si se añade la opción -v.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En una red creada por docker compose, los contenedores pueden comunicarse entre sí usando el nombre del servicio como nombre de host.",
+            "explanation": "Compose crea una red por defecto con DNS interno que resuelve los nombres de los servicios.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando comprueba la sintaxis de los archivos de configuración de Nginx?",
+            "explanation": "nginx -t comprueba que la configuración es válida antes de recargar el servicio.",
+            "options": [
+                {
+                    "content": "nginx -t",
+                    "is_correct": true
+                },
+                {
+                    "content": "sudo nginx -t",
+                    "is_correct": true
+                },
+                {
+                    "content": "nginx -T",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando levanta los servicios de un archivo compose en segundo plano?",
+            "explanation": "La opción -d (detached) ejecuta los contenedores en segundo plano.",
+            "options": [
+                {
+                    "content": "docker compose up -d",
+                    "is_correct": true
+                },
+                {
+                    "content": "docker-compose up -d",
+                    "is_correct": true
+                },
+                {
+                    "content": "docker compose up --detach",
+                    "is_correct": true
+                },
+                {
+                    "content": "docker-compose up --detach",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué instrucción de un Dockerfile define el comando por defecto que se ejecuta al iniciar el contenedor y que puede sobrescribirse fácilmente desde la línea de comandos?",
+            "explanation": "CMD establece el comando por defecto, mientras que ENTRYPOINT define el ejecutable principal y es más difícil de sobrescribir.",
+            "options": [
+                {
+                    "content": "CMD",
+                    "is_correct": true
+                },
+                {
+                    "content": "cmd",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el cliente ACME más utilizado para obtener y renovar certificados de Let's Encrypt de forma automática?",
+            "explanation": "Certbot automatiza la obtención, instalación y renovación de certificados de Let's Encrypt en Apache y Nginx.",
+            "options": [
+                {
+                    "content": "Certbot",
+                    "is_correct": true
+                },
+                {
+                    "content": "certbot",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las buenas prácticas al escribir un Dockerfile (hay varias correctas):",
+            "explanation": "Reducir contexto, fijar bases ligeras y limitar capas es recomendable; ejecutar como root y dejar secretos en la imagen es una mala práctica de seguridad.",
+            "options": [
+                {
+                    "content": "Usar un archivo .dockerignore para excluir ficheros innecesarios del contexto de build",
+                    "is_correct": true
+                },
+                {
+                    "content": "Elegir imágenes base ligeras y con versión concreta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ejecutar siempre la aplicación como root",
+                    "is_correct": false
+                },
+                {
+                    "content": "Guardar contraseñas en instrucciones ENV dentro de la imagen",
+                    "is_correct": false
+                },
+                {
+                    "content": "Combinar comandos relacionados para reducir capas innecesarias",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Qué ventajas ofrece un proxy inverso delante de una aplicación web? Marca todas las correctas (hay varias).",
+            "explanation": "El proxy inverso centraliza TLS, balancea carga y oculta el backend; la navegación anónima de clientes internos es propia de un proxy directo.",
+            "options": [
+                {
+                    "content": "Terminar la conexión TLS en un único punto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Repartir la carga entre varios servidores backend",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ocultar la estructura y las direcciones de los servidores internos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Permitir que los clientes internos naveguen de forma anónima por Internet",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

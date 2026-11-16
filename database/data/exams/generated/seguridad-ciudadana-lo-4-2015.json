@@ -1,0 +1,560 @@
+{
+    "slug": "seguridad-ciudadana-lo-4-2015",
+    "title": "Ley Orgánica 4/2015 Seguridad Ciudadana",
+    "description": "Test sobre la LO 4/2015 de protección de la seguridad ciudadana (Ley Mordaza) para preparar las oposiciones de Policía y Guardia Civil. Cubre documentación, potestades de policía, infracciones y sanciones.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:20:23+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "La Ley Orgánica 4/2015, de 30 de marzo, de protección de la seguridad ciudadana, entró en vigor el:",
+            "explanation": "La ley se publicó en el BOE el 31 de marzo de 2015 y entró en vigor el 1 de julio de 2015.",
+            "options": [
+                {
+                    "content": "31 de marzo de 2015",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 de julio de 2015",
+                    "is_correct": true
+                },
+                {
+                    "content": "1 de enero de 2016",
+                    "is_correct": false
+                },
+                {
+                    "content": "30 de junio de 2015",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 4/2015, ¿cuál es el único documento con suficiente valor por sí solo para acreditar, a todos los efectos, la identidad y los datos personales de su titular?",
+            "explanation": "La ley atribuye al DNI ese valor exclusivo: es documento público y oficial y el único que acredita por sí solo la identidad y los datos personales.",
+            "options": [
+                {
+                    "content": "El pasaporte",
+                    "is_correct": false
+                },
+                {
+                    "content": "El permiso de conducir",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Documento Nacional de Identidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "La tarjeta sanitaria individual",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 4/2015, están obligados a obtener el DNI los españoles residentes en España mayores de:",
+            "explanation": "La obligación de obtener el DNI nace a los catorce años para los españoles residentes en España.",
+            "options": [
+                {
+                    "content": "16 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "12 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "18 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "14 años",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Cuando no sea posible la identificación por cualquier medio, los agentes pueden requerir a la persona que los acompañe a dependencias próximas con medios adecuados. ¿Cuál es el tiempo máximo que puede durar esta medida?",
+            "explanation": "La ley limita la permanencia al tiempo imprescindible, que en ningún caso puede superar las seis horas.",
+            "options": [
+                {
+                    "content": "Tres horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Seis horas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Doce horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinticuatro horas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es un supuesto que permita a los agentes entrar en un domicilio sin mandamiento judicial:",
+            "explanation": "La inviolabilidad del domicilio (art. 18.2 CE) solo cede por consentimiento, resolución judicial o flagrante delito. Una infracción administrativa leve no lo habilita.",
+            "options": [
+                {
+                    "content": "El consentimiento del titular",
+                    "is_correct": false
+                },
+                {
+                    "content": "La existencia de un delito flagrante",
+                    "is_correct": false
+                },
+                {
+                    "content": "La sospecha de que en su interior se ha cometido una infracción administrativa leve",
+                    "is_correct": true
+                },
+                {
+                    "content": "La necesidad de evitar daños graves e inminentes a personas en caso de delito flagrante",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 4/2015, el registro corporal externo que obligue a la persona a desnudarse total o parcialmente se realizará:",
+            "explanation": "El registro con desnudo total o parcial debe hacerse en lugar cerrado, sin presencia de otras personas y por un agente del mismo sexo.",
+            "options": [
+                {
+                    "content": "En la vía pública, con la debida discreción",
+                    "is_correct": false
+                },
+                {
+                    "content": "En lugar cerrado, sin presencia de personas ajenas y por un agente del mismo sexo que la persona registrada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siempre en presencia de un letrado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente en dependencias judiciales",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 4/2015, las infracciones muy graves se sancionan con multa de:",
+            "explanation": "Escala de multas: muy graves, de 30.001 a 600.000 €; graves, de 601 a 30.000 €; leves, de 100 a 600 €.",
+            "options": [
+                {
+                    "content": "De 601 a 30.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "De 10.001 a 300.000 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "De 100 a 600 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "De 30.001 a 600.000 euros",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las infracciones graves de la Ley Orgánica 4/2015 se sancionan con multa de 601 a 30.000 euros.",
+            "explanation": "Es la escala prevista para las infracciones graves; las leves van de 100 a 600 € y las muy graves de 30.001 a 600.000 €.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las infracciones leves de la Ley Orgánica 4/2015 se sancionan con multa de:",
+            "explanation": "La multa para infracciones leves va de 100 a 600 euros.",
+            "options": [
+                {
+                    "content": "De 100 a 600 euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "De 50 a 300 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "De 300 a 1.500 euros",
+                    "is_correct": false
+                },
+                {
+                    "content": "De 601 a 3.000 euros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Las faltas de respeto y consideración cuyo destinatario sea un miembro de las Fuerzas y Cuerpos de Seguridad en el ejercicio de sus funciones de protección de la seguridad, cuando no constituyan infracción penal, son infracción:",
+            "explanation": "La ley las tipifica como infracción leve.",
+            "options": [
+                {
+                    "content": "Muy grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "Leve",
+                    "is_correct": true
+                },
+                {
+                    "content": "No constituyen infracción administrativa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La negativa a identificarse a requerimiento de la autoridad o de sus agentes, o la alegación de datos falsos o inexactos en los procesos de identificación, constituye infracción:",
+            "explanation": "Ambas conductas se tipifican como infracción grave en la Ley Orgánica 4/2015.",
+            "options": [
+                {
+                    "content": "Leve",
+                    "is_correct": false
+                },
+                {
+                    "content": "Muy grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grave",
+                    "is_correct": true
+                },
+                {
+                    "content": "Leve, salvo reincidencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes conductas es constitutiva de infracción muy grave según la Ley Orgánica 4/2015?",
+            "explanation": "Las reuniones o manifestaciones no comunicadas o prohibidas ante infraestructuras críticas, con riesgo claro para las personas, son infracción muy grave.",
+            "options": [
+                {
+                    "content": "El consumo de drogas tóxicas en la vía pública",
+                    "is_correct": false
+                },
+                {
+                    "content": "La falta de respeto a un agente de la autoridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La negativa a identificarse ante los agentes",
+                    "is_correct": false
+                },
+                {
+                    "content": "La reunión o manifestación no comunicada o prohibida ante infraestructuras en las que se prestan servicios básicos para la comunidad, cuando se genere un riesgo claro para las personas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El consumo de drogas tóxicas, estupefacientes o sustancias psicotrópicas en lugares, vías, establecimientos públicos o transportes colectivos, siempre que no constituya infracción penal, es una infracción:",
+            "explanation": "El consumo en espacios públicos, igual que la tenencia ilícita en ellos, está tipificado como infracción grave.",
+            "options": [
+                {
+                    "content": "Grave",
+                    "is_correct": true
+                },
+                {
+                    "content": "Leve",
+                    "is_correct": false
+                },
+                {
+                    "content": "Muy grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que solo es sancionable si hay reincidencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La sanción de multa por consumo o tenencia ilícita de drogas en lugares públicos puede suspenderse si el infractor se somete a un tratamiento de deshabituación en un centro o servicio debidamente acreditado.",
+            "explanation": "La ley prevé suspender la ejecución de la sanción por estas infracciones si el infractor acepta y sigue un tratamiento de deshabituación.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El uso no autorizado de imágenes o datos personales o profesionales de autoridades o miembros de las Fuerzas y Cuerpos de Seguridad que pueda poner en peligro la seguridad personal o familiar de los agentes, de las instalaciones protegidas o el éxito de una operación, es una infracción:",
+            "explanation": "La ley tipifica este uso no autorizado como infracción grave, con la salvaguarda de los derechos de información y de otros bienes jurídicos.",
+            "options": [
+                {
+                    "content": "Leve",
+                    "is_correct": false
+                },
+                {
+                    "content": "Muy grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "No sancionable administrativamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grave",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En supuestos de alteración de la seguridad ciudadana o de la pacífica convivencia, o cuando existan indicios racionales de que pueda producirse, los agentes de la autoridad podrán:",
+            "explanation": "Es la potestad de restricción del tránsito y de establecimiento de controles en las vías públicas, que debe respetar los principios de proporcionalidad e idoneidad.",
+            "options": [
+                {
+                    "content": "Detener a cualquier persona presente en la zona durante 24 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Limitar o restringir la circulación o permanencia en vías o lugares públicos y establecer zonas de seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entrar en los domicilios de la zona sin mandamiento judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Intervenir las comunicaciones de los presentes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los agentes de las Fuerzas y Cuerpos de Seguridad pueden practicar comprobaciones y registros en lugares públicos con la finalidad de:",
+            "explanation": "La ley permite estos registros y comprobaciones para descubrir y detener a los partícipes de un delito que cause grave alarma social y recoger sus pruebas.",
+            "options": [
+                {
+                    "content": "Descubrir y detener a los partícipes en un hecho delictivo causante de grave alarma social y recoger los instrumentos, efectos o pruebas del delito",
+                    "is_correct": true
+                },
+                {
+                    "content": "Controlar de forma generalizada a todos los ciudadanos sin necesidad de motivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sancionar de forma inmediata infracciones leves",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verificar únicamente la documentación de los extranjeros",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Los agentes podrán practicar el registro corporal externo y superficial de una persona cuando:",
+            "explanation": "El registro corporal externo exige indicios racionales de que pueda conducir al hallazgo de objetos relevantes para la indagación o prevención.",
+            "options": [
+                {
+                    "content": "La persona se niegue a mostrar el DNI",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exista cualquier sospecha genérica sobre el aspecto de la persona",
+                    "is_correct": false
+                },
+                {
+                    "content": "La persona se encuentre en la vía pública a determinadas horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Existan indicios racionales para suponer que pueda conducir al hallazgo de instrumentos, efectos u otros objetos relevantes para la indagación o prevención",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1 de la Ley Orgánica 4/2015, esta ley tiene por objeto:",
+            "explanation": "El artículo 1 señala como objeto la protección de personas y bienes y el mantenimiento de la tranquilidad ciudadana.",
+            "options": [
+                {
+                    "content": "La defensa de la integridad territorial y del ordenamiento constitucional",
+                    "is_correct": false
+                },
+                {
+                    "content": "La regulación exclusiva de la seguridad privada",
+                    "is_correct": false
+                },
+                {
+                    "content": "La protección de personas y bienes y el mantenimiento de la tranquilidad ciudadana",
+                    "is_correct": true
+                },
+                {
+                    "content": "La regulación del régimen de los estados de alarma, excepción y sitio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es un criterio de graduación de las sanciones previsto en la Ley Orgánica 4/2015:",
+            "explanation": "La graduación atiende a factores como la gravedad, la trascendencia, el perjuicio causado, la reincidencia o la capacidad económica, nunca a la nacionalidad.",
+            "options": [
+                {
+                    "content": "La reincidencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "La nacionalidad del infractor",
+                    "is_correct": true
+                },
+                {
+                    "content": "La capacidad económica del infractor",
+                    "is_correct": false
+                },
+                {
+                    "content": "La gravedad y trascendencia del hecho para la seguridad ciudadana",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley Orgánica 4/2015, ¿en cuál de estos supuestos pueden los agentes requerir la identificación de las personas?",
+            "explanation": "La identificación se requiere ante indicios de participación en una infracción o cuando sea razonable para prevenir un delito, nunca por razones discriminatorias.",
+            "options": [
+                {
+                    "content": "Cuando existan indicios de que han podido participar en la comisión de una infracción",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando su aspecto físico o su origen étnico resulten llamativos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando circulen por la vía pública de noche",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuando se trate de extranjeros, en todo caso y sin otro motivo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La perturbación grave de la seguridad ciudadana que se produzca en actos públicos, espectáculos deportivos o culturales, solemnidades y oficios religiosos u otras reuniones a las que asistan numerosas personas es una infracción:",
+            "explanation": "La ley la tipifica como infracción grave, siempre que no constituya infracción penal.",
+            "options": [
+                {
+                    "content": "Leve",
+                    "is_correct": false
+                },
+                {
+                    "content": "Muy grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grave",
+                    "is_correct": true
+                },
+                {
+                    "content": "Delito en todo caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué norma regula con carácter general el procedimiento sancionador aplicable a las infracciones de la Ley Orgánica 4/2015?",
+            "explanation": "Las sanciones son administrativas y se tramitan conforme al procedimiento administrativo común, sin perjuicio de las especialidades de la propia ley.",
+            "options": [
+                {
+                    "content": "La Ley de Enjuiciamiento Criminal",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Ley Orgánica del Poder Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Ley 40/2015, de Régimen Jurídico del Sector Público, de forma exclusiva",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La imposición de las sanciones por las infracciones tipificadas en la Ley Orgánica 4/2015 corresponde a los jueces y tribunales del orden penal.",
+            "explanation": "Son infracciones administrativas que sancionan los órganos administrativos competentes, con control posterior de la jurisdicción contencioso-administrativa.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes afirmaciones sobre la identificación en dependencias policiales es correcta según la Ley Orgánica 4/2015?",
+            "explanation": "El traslado a dependencias próximas es una medida de carácter excepcional, limitada al tiempo imprescindible y a un máximo de seis horas.",
+            "options": [
+                {
+                    "content": "Solo puede acordarse si la persona ha cometido un delito grave",
+                    "is_correct": false
+                },
+                {
+                    "content": "La medida se limita al tiempo imprescindible para la identificación y nunca puede exceder de seis horas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Puede prolongarse hasta 72 horas con autorización del juez",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe realizarse siempre en el lugar donde se requirió la identificación",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

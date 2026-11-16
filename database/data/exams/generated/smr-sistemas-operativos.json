@@ -1,0 +1,552 @@
+{
+    "slug": "smr-sistemas-operativos",
+    "title": "SMR - Sistemas Operativos Monopuesto",
+    "description": "Test de repaso de Sistemas Operativos Monopuesto de SMR: instalación, particiones MBR/GPT, sistemas de archivos, arranque, virtualización y usuarios. Va bien para repasar antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:07:05+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántas particiones primarias como máximo admite una tabla de particiones MBR?",
+            "explanation": "La tabla de particiones MBR solo tiene cuatro entradas, por lo que admite como máximo 4 particiones primarias (o 3 primarias y 1 extendida).",
+            "options": [
+                {
+                    "content": "2",
+                    "is_correct": false
+                },
+                {
+                    "content": "4",
+                    "is_correct": true
+                },
+                {
+                    "content": "8",
+                    "is_correct": false
+                },
+                {
+                    "content": "128",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con sectores de 512 bytes, ¿cuál es el tamaño máximo de disco que puede gestionar MBR?",
+            "explanation": "MBR usa direcciones de sector de 32 bits, lo que con sectores de 512 bytes limita el direccionamiento a 2 TiB.",
+            "options": [
+                {
+                    "content": "512 GiB",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 TiB",
+                    "is_correct": false
+                },
+                {
+                    "content": "2 TiB",
+                    "is_correct": true
+                },
+                {
+                    "content": "16 TiB",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de firmware se utiliza normalmente para arrancar un equipo desde un disco con tabla de particiones GPT?",
+            "explanation": "GPT forma parte del estándar UEFI y es la combinación habitual para arrancar equipos modernos.",
+            "options": [
+                {
+                    "content": "UEFI",
+                    "is_correct": true
+                },
+                {
+                    "content": "POST",
+                    "is_correct": false
+                },
+                {
+                    "content": "CMOS",
+                    "is_correct": false
+                },
+                {
+                    "content": "MBR",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el sistema de archivos más habitual en las instalaciones de Linux?",
+            "explanation": "ext4 es el sistema de archivos con journaling usado por defecto en muchas distribuciones Linux.",
+            "options": [
+                {
+                    "content": "NTFS",
+                    "is_correct": false
+                },
+                {
+                    "content": "FAT32",
+                    "is_correct": false
+                },
+                {
+                    "content": "exFAT",
+                    "is_correct": false
+                },
+                {
+                    "content": "ext4",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el tamaño máximo de un fichero individual en un sistema de archivos FAT32?",
+            "explanation": "FAT32 almacena el tamaño del fichero en 32 bits, así que el máximo es 4 GiB menos 1 byte.",
+            "options": [
+                {
+                    "content": "1 GiB",
+                    "is_correct": false
+                },
+                {
+                    "content": "4 GiB (menos 1 byte)",
+                    "is_correct": true
+                },
+                {
+                    "content": "16 GiB",
+                    "is_correct": false
+                },
+                {
+                    "content": "2 TiB",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué comando de Linux muestra los discos y sus particiones en forma de árbol?",
+            "explanation": "lsblk lista los dispositivos de bloque (discos y particiones) con su tamaño y punto de montaje.",
+            "options": [
+                {
+                    "content": "ps aux",
+                    "is_correct": false
+                },
+                {
+                    "content": "whoami",
+                    "is_correct": false
+                },
+                {
+                    "content": "lsblk",
+                    "is_correct": true
+                },
+                {
+                    "content": "uname -r",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué fichero se guarda la información básica de las cuentas de usuario en Linux (nombre, UID, GID, shell...)?",
+            "explanation": "/etc/passwd contiene una línea por cuenta con nombre, UID, GID, directorio personal y shell; las contraseñas cifradas están en /etc/shadow.",
+            "options": [
+                {
+                    "content": "/etc/passwd",
+                    "is_correct": true
+                },
+                {
+                    "content": "/etc/fstab",
+                    "is_correct": false
+                },
+                {
+                    "content": "/etc/hosts",
+                    "is_correct": false
+                },
+                {
+                    "content": "/boot/grub",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes es un gestor de arranque habitual en Linux?",
+            "explanation": "GRUB es el gestor de arranque más extendido en Linux; BOOTMGR y NTLDR son componentes de arranque de Windows.",
+            "options": [
+                {
+                    "content": "BOOTMGR",
+                    "is_correct": false
+                },
+                {
+                    "content": "NTLDR",
+                    "is_correct": false
+                },
+                {
+                    "content": "Winload",
+                    "is_correct": false
+                },
+                {
+                    "content": "GRUB",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estos programas es un hipervisor de tipo 2, es decir, se instala sobre un sistema operativo anfitrión?",
+            "explanation": "VirtualBox se ejecuta como una aplicación sobre el sistema anfitrión; ESXi, Xen y Hyper-V Server son de tipo 1 (se ejecutan directamente sobre el hardware).",
+            "options": [
+                {
+                    "content": "VMware ESXi",
+                    "is_correct": false
+                },
+                {
+                    "content": "Xen",
+                    "is_correct": false
+                },
+                {
+                    "content": "Oracle VirtualBox",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hyper-V Server",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Windows, desde un símbolo del sistema con permisos de administrador, ¿qué comando crea el usuario local «ana»?",
+            "explanation": "El comando net user con el modificador /add crea una cuenta de usuario local.",
+            "options": [
+                {
+                    "content": "net add ana",
+                    "is_correct": false
+                },
+                {
+                    "content": "net user ana /add",
+                    "is_correct": true
+                },
+                {
+                    "content": "user create ana",
+                    "is_correct": false
+                },
+                {
+                    "content": "adduser ana /win",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En Linux, ¿qué comando añade al usuario «ana» al grupo «sudo» sin quitarla de sus otros grupos secundarios?",
+            "explanation": "La opción -a (append) combinada con -G añade el grupo; sin -a, -G sustituiría los grupos secundarios actuales.",
+            "options": [
+                {
+                    "content": "usermod -G sudo ana",
+                    "is_correct": false
+                },
+                {
+                    "content": "groupadd sudo ana",
+                    "is_correct": false
+                },
+                {
+                    "content": "chmod sudo ana",
+                    "is_correct": false
+                },
+                {
+                    "content": "usermod -aG sudo ana",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué fichero de Linux define qué sistemas de archivos se montan automáticamente durante el arranque?",
+            "explanation": "/etc/fstab recoge los dispositivos, puntos de montaje y opciones de montaje que se aplican al iniciar el sistema.",
+            "options": [
+                {
+                    "content": "/etc/fstab",
+                    "is_correct": true
+                },
+                {
+                    "content": "/etc/shadow",
+                    "is_correct": false
+                },
+                {
+                    "content": "/etc/group",
+                    "is_correct": false
+                },
+                {
+                    "content": "/etc/hostname",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Para qué sirve la partición swap en una instalación de Linux?",
+            "explanation": "La partición swap es un área de intercambio que se usa como extensión de la memoria RAM.",
+            "options": [
+                {
+                    "content": "Almacenar las copias de seguridad del sistema",
+                    "is_correct": false
+                },
+                {
+                    "content": "Guardar las cuentas de usuario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Servir de memoria virtual cuando falta RAM",
+                    "is_correct": true
+                },
+                {
+                    "content": "Contener el gestor de arranque",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En virtualización, ¿qué es una instantánea (snapshot) de una máquina virtual?",
+            "explanation": "La instantánea registra el estado del disco (y opcionalmente de la memoria) de la VM para poder restaurarlo después.",
+            "options": [
+                {
+                    "content": "Una copia que elimina la máquina virtual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un guardado del estado de la máquina virtual al que se puede volver más tarde",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una actualización de la BIOS del equipo anfitrión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un duplicado del hardware físico",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El MBR ocupa el primer sector del disco. ¿Cuál es el tamaño habitual de ese sector?",
+            "explanation": "El MBR ocupa un sector de 512 bytes, donde se guardan el código de arranque y la tabla de particiones.",
+            "options": [
+                {
+                    "content": "64 bytes",
+                    "is_correct": false
+                },
+                {
+                    "content": "128 bytes",
+                    "is_correct": false
+                },
+                {
+                    "content": "1024 bytes",
+                    "is_correct": false
+                },
+                {
+                    "content": "512 bytes",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una tabla de particiones GPT permite crear muchas más particiones que MBR (por ejemplo, 128 en Windows) sin necesidad de particiones extendidas.",
+            "explanation": "GPT no tiene el límite de cuatro entradas de MBR; Windows admite hasta 128 particiones en un disco GPT.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El sistema de archivos ext4 es el sistema de archivos que usa Windows por defecto en sus instalaciones.",
+            "explanation": "Windows utiliza NTFS por defecto; ext4 es propio de Linux.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Linux, el usuario root tiene el identificador de usuario (UID) 0.",
+            "explanation": "El superusuario root siempre tiene UID 0 y es el que tiene todos los privilegios.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un hipervisor de tipo 1 necesita un sistema operativo anfitrión instalado previamente para poder ejecutarse.",
+            "explanation": "Los hipervisores de tipo 1 se ejecutan directamente sobre el hardware (bare metal); es el tipo 2 el que necesita un SO anfitrión.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Linux se usa para cambiar la contraseña de un usuario?",
+            "explanation": "El comando passwd permite cambiar la contraseña del usuario actual o, siendo root, la de otro usuario.",
+            "options": [
+                {
+                    "content": "passwd",
+                    "is_correct": true
+                },
+                {
+                    "content": "el comando passwd",
+                    "is_correct": true
+                },
+                {
+                    "content": "sudo passwd",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Escribe el comando de Linux (con la opción para formato legible) que muestra el espacio libre y usado de los sistemas de archivos montados.",
+            "explanation": "df informa del uso de los sistemas de archivos montados y la opción -h muestra los tamaños en unidades legibles (GB, MB...).",
+            "options": [
+                {
+                    "content": "df -h",
+                    "is_correct": true
+                },
+                {
+                    "content": "df -H",
+                    "is_correct": true
+                },
+                {
+                    "content": "df -h /",
+                    "is_correct": true
+                },
+                {
+                    "content": "df",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el sistema de archivos que usan por defecto las versiones modernas de Windows?",
+            "explanation": "NTFS ofrece permisos, cifrado, compresión y journaling, y es el sistema de archivos habitual de Windows.",
+            "options": [
+                {
+                    "content": "NTFS",
+                    "is_correct": true
+                },
+                {
+                    "content": "ntfs",
+                    "is_correct": true
+                },
+                {
+                    "content": "New Technology File System",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué formato de fichero se usa habitualmente para distribuir una imagen de disco con el instalador de un sistema operativo?",
+            "explanation": "Los instaladores se distribuyen normalmente como imagen ISO, que se puede grabar en un USB o montar en una máquina virtual.",
+            "options": [
+                {
+                    "content": "ISO",
+                    "is_correct": true
+                },
+                {
+                    "content": "iso",
+                    "is_correct": true
+                },
+                {
+                    "content": "imagen ISO",
+                    "is_correct": true
+                },
+                {
+                    "content": "fichero ISO",
+                    "is_correct": true
+                },
+                {
+                    "content": "archivo ISO",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los programas de virtualización (hay varias respuestas correctas):",
+            "explanation": "VirtualBox, VMware Workstation Player y Hyper-V permiten crear máquinas virtuales; GParted es un editor de particiones y Notepad++ un editor de texto.",
+            "options": [
+                {
+                    "content": "Oracle VirtualBox",
+                    "is_correct": true
+                },
+                {
+                    "content": "VMware Workstation Player",
+                    "is_correct": true
+                },
+                {
+                    "content": "Hyper-V",
+                    "is_correct": true
+                },
+                {
+                    "content": "GParted",
+                    "is_correct": false
+                },
+                {
+                    "content": "Notepad++",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica cuáles de los siguientes son sistemas de archivos (hay varias respuestas correctas):",
+            "explanation": "NTFS, ext4 y FAT32 son sistemas de archivos; GPT es un esquema de tabla de particiones.",
+            "options": [
+                {
+                    "content": "NTFS",
+                    "is_correct": true
+                },
+                {
+                    "content": "ext4",
+                    "is_correct": true
+                },
+                {
+                    "content": "FAT32",
+                    "is_correct": true
+                },
+                {
+                    "content": "GPT",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,449 @@
+{
+    "slug": "redes-ipv6",
+    "title": "IPv6 direccionamiento",
+    "description": "Test de IPv6 para repasar antes del examen de redes de ASIR/SMR. Entran formato, tipos de direcciones, SLAAC, EUI-64 y NDP.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:01:29+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos bits tiene una dirección IPv6?",
+            "explanation": "Una dirección IPv6 tiene 128 bits, escritos en 8 grupos de 16 bits en hexadecimal.",
+            "options": [
+                {
+                    "content": "32 bits",
+                    "is_correct": false
+                },
+                {
+                    "content": "64 bits",
+                    "is_correct": false
+                },
+                {
+                    "content": "128 bits",
+                    "is_correct": true
+                },
+                {
+                    "content": "256 bits",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la forma abreviada correcta de 2001:0db8:0000:0000:0000:0000:0000:0001?",
+            "explanation": "Se eliminan los ceros a la izquierda de cada grupo y se sustituye una secuencia de grupos a cero por «::».",
+            "options": [
+                {
+                    "content": "2001:db8::1",
+                    "is_correct": true
+                },
+                {
+                    "content": "2001:db8:1",
+                    "is_correct": false
+                },
+                {
+                    "content": "2001:db8::0001::",
+                    "is_correct": false
+                },
+                {
+                    "content": "2001:db8:0:1",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes direcciones IPv6 NO es válida?",
+            "explanation": "El símbolo «::» solo puede aparecer una vez en la dirección; si no, sería ambiguo saber cuántos grupos a cero representa cada uno.",
+            "options": [
+                {
+                    "content": "fe80::1",
+                    "is_correct": false
+                },
+                {
+                    "content": "2001:db8:0:1::5",
+                    "is_correct": false
+                },
+                {
+                    "content": "2001:db8::1::5",
+                    "is_correct": true
+                },
+                {
+                    "content": "::1",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué prefijo corresponde a las direcciones unicast de enlace local (link-local)?",
+            "explanation": "Las direcciones link-local pertenecen a fe80::/10 y solo son válidas dentro del enlace local.",
+            "options": [
+                {
+                    "content": "fc00::/7",
+                    "is_correct": false
+                },
+                {
+                    "content": "ff00::/8",
+                    "is_correct": false
+                },
+                {
+                    "content": "2000::/3",
+                    "is_correct": false
+                },
+                {
+                    "content": "fe80::/10",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa quiere direccionar su red interna con direcciones privadas, no enrutables en Internet. ¿Qué tipo de direcciones IPv6 debe usar?",
+            "explanation": "Las direcciones Unique Local (ULA) son el equivalente aproximado a las direcciones privadas de IPv4 y no se enrutan en Internet.",
+            "options": [
+                {
+                    "content": "Unique Local (fc00::/7, en la práctica fd00::/8)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Global unicast (2000::/3)",
+                    "is_correct": false
+                },
+                {
+                    "content": "Multicast (ff00::/8)",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué prefijo identifica a las direcciones multicast en IPv6?",
+            "explanation": "Todas las direcciones multicast IPv6 comienzan por ff (ff00::/8).",
+            "options": [
+                {
+                    "content": "fe80::/10",
+                    "is_correct": false
+                },
+                {
+                    "content": "2001::/16",
+                    "is_correct": false
+                },
+                {
+                    "content": "::/128",
+                    "is_correct": false
+                },
+                {
+                    "content": "ff00::/8",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una organización recibe el prefijo 2001:db8:acad::/48. Si crea subredes /64, ¿cuántas subredes puede definir?",
+            "explanation": "Entre /48 y /64 hay 16 bits para subredes, es decir, 2^16 = 65 536 subredes.",
+            "options": [
+                {
+                    "content": "256",
+                    "is_correct": false
+                },
+                {
+                    "content": "65 536",
+                    "is_correct": true
+                },
+                {
+                    "content": "16",
+                    "is_correct": false
+                },
+                {
+                    "content": "4 294 967 296",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En SLAAC, ¿qué mensaje ICMPv6 envía el router para anunciar a los hosts el prefijo de la red?",
+            "explanation": "El router publica el prefijo en mensajes Router Advertisement (ICMPv6 tipo 134), periódicamente o como respuesta a un Router Solicitation.",
+            "options": [
+                {
+                    "content": "Neighbor Solicitation",
+                    "is_correct": false
+                },
+                {
+                    "content": "Neighbor Advertisement",
+                    "is_correct": false
+                },
+                {
+                    "content": "Router Advertisement",
+                    "is_correct": true
+                },
+                {
+                    "content": "Redirect",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué mensaje de NDP utiliza un host para averiguar la dirección MAC de otro nodo del mismo enlace, función que en IPv4 realizaba ARP?",
+            "explanation": "El host envía un Neighbor Solicitation (ICMPv6 tipo 135) y el vecino responde con un Neighbor Advertisement con su dirección de capa 2.",
+            "options": [
+                {
+                    "content": "Router Solicitation",
+                    "is_correct": false
+                },
+                {
+                    "content": "Neighbor Solicitation",
+                    "is_correct": true
+                },
+                {
+                    "content": "Router Advertisement",
+                    "is_correct": false
+                },
+                {
+                    "content": "Echo Request",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Antes de usar una dirección que ha configurado por SLAAC, un host comprueba que nadie más la tiene. ¿Cómo se llama este mecanismo?",
+            "explanation": "DAD envía un Neighbor Solicitation por la dirección tentativa; si alguien responde, la dirección está duplicada y no se usa.",
+            "options": [
+                {
+                    "content": "Prefix Delegation",
+                    "is_correct": false
+                },
+                {
+                    "content": "Duplicate Address Detection (DAD)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Router Discovery",
+                    "is_correct": false
+                },
+                {
+                    "content": "Neighbor Unreachability Detection",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un host recién arrancado quiere descubrir routers sin esperar al siguiente anuncio periódico. ¿A qué dirección envía su Router Solicitation?",
+            "explanation": "El Router Solicitation se envía a la multicast ff02::2, que escuchan todos los routers del enlace.",
+            "options": [
+                {
+                    "content": "ff02::2 (todos los routers del enlace)",
+                    "is_correct": true
+                },
+                {
+                    "content": "ff02::1 (todos los nodos del enlace)",
+                    "is_correct": false
+                },
+                {
+                    "content": "::1 (loopback)",
+                    "is_correct": false
+                },
+                {
+                    "content": "255.255.255.255",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En SLAAC, ¿cómo forma el host su dirección global unicast?",
+            "explanation": "El prefijo (normalmente /64) viene en el Router Advertisement y el host genera los 64 bits restantes, por EUI-64 o de forma aleatoria.",
+            "options": [
+                {
+                    "content": "Pide una dirección concreta a un servidor DHCPv6 con estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usa el prefijo recibido en el RA y le añade un identificador de interfaz de 64 bits",
+                    "is_correct": true
+                },
+                {
+                    "content": "Resuelve la dirección con ARP y la confirma con el router",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En IPv6 existe la dirección de broadcast, que se usa para enviar un paquete a todos los nodos del enlace.",
+            "explanation": "IPv6 no tiene broadcast; se sustituye por multicast, por ejemplo ff02::1 para todos los nodos del enlace.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Al generar un identificador EUI-64 a partir de una MAC se inserta ff:fe en el centro y se invierte el séptimo bit del primer octeto (bit U/L).",
+            "explanation": "EUI-64 modificado divide la MAC de 48 bits en dos mitades, inserta fffe entre ellas e invierte el bit universal/local.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La dirección :: (sin especificar) se puede asignar de forma permanente a una interfaz como dirección normal.",
+            "explanation": "La dirección :: solo se usa como origen mientras el host aún no tiene dirección, por ejemplo en los mensajes DAD, y no se asigna a una interfaz.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué longitud de prefijo se recomienda para una subred LAN IPv6 y es necesaria para que funcione SLAAC? (formato /n)",
+            "explanation": "SLAAC necesita un prefijo /64, ya que el identificador de interfaz ocupa los 64 bits restantes.",
+            "options": [
+                {
+                    "content": "/64",
+                    "is_correct": true
+                },
+                {
+                    "content": "64",
+                    "is_correct": true
+                },
+                {
+                    "content": "prefijo /64",
+                    "is_correct": true
+                },
+                {
+                    "content": "/64 bits",
+                    "is_correct": true
+                },
+                {
+                    "content": "64 bits",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "Una interfaz tiene la MAC 00:1A:2B:3C:4D:5E. ¿Qué identificador de interfaz EUI-64 se obtiene? (formato xxxx:xxxx:xxxx:xxxx)",
+            "explanation": "Se inserta ff:fe en medio (001a:2bff:fe3c:4d5e) y se invierte el bit U/L, con lo que 00 pasa a 02.",
+            "options": [
+                {
+                    "content": "021a:2bff:fe3c:4d5e",
+                    "is_correct": true
+                },
+                {
+                    "content": "21a:2bff:fe3c:4d5e",
+                    "is_correct": true
+                },
+                {
+                    "content": "021A:2BFF:FE3C:4D5E",
+                    "is_correct": true
+                },
+                {
+                    "content": "21A:2BFF:FE3C:4D5E",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Linux muestra la tabla de vecinos IPv6, equivalente a «arp -a» en IPv4?",
+            "explanation": "«ip -6 neigh» muestra la caché de vecinos que mantiene NDP, con sus direcciones MAC y su estado.",
+            "options": [
+                {
+                    "content": "ip -6 neigh",
+                    "is_correct": true
+                },
+                {
+                    "content": "ip -6 neighbor",
+                    "is_correct": true
+                },
+                {
+                    "content": "ip -6 neigh show",
+                    "is_correct": true
+                },
+                {
+                    "content": "ip -6 neighbor show",
+                    "is_correct": true
+                },
+                {
+                    "content": "ip -6 neighbour",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los tipos de direcciones que existen en IPv6 (hay varias correctas).",
+            "explanation": "IPv6 define unicast, multicast y anycast; el broadcast no existe y lo sustituye el multicast.",
+            "options": [
+                {
+                    "content": "Unicast",
+                    "is_correct": true
+                },
+                {
+                    "content": "Multicast",
+                    "is_correct": true
+                },
+                {
+                    "content": "Anycast",
+                    "is_correct": true
+                },
+                {
+                    "content": "Broadcast",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Sobre SLAAC, señala las afirmaciones correctas (hay varias correctas).",
+            "explanation": "SLAAC es autoconfiguración sin estado: usa RA y DAD con prefijo /64, sin servidor DHCPv6 con estado y sin ARP, que no existe en IPv6.",
+            "options": [
+                {
+                    "content": "El router anuncia el prefijo mediante mensajes Router Advertisement.",
+                    "is_correct": true
+                },
+                {
+                    "content": "El host comprueba que la dirección no está duplicada mediante DAD.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Habitualmente se usa un prefijo /64.",
+                    "is_correct": true
+                },
+                {
+                    "content": "Necesita un servidor DHCPv6 con estado que asigne cada dirección.",
+                    "is_correct": false
+                },
+                {
+                    "content": "Utiliza ARP para obtener el prefijo de red.",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

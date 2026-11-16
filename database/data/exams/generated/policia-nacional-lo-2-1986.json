@@ -1,0 +1,675 @@
+{
+    "slug": "policia-nacional-lo-2-1986",
+    "title": "LO 2/1986 Fuerzas y Cuerpos de Seguridad",
+    "description": "Test para repasar la LO 2/1986: principios básicos de actuación, competencias de Policía Nacional y Guardia Civil, y policías autonómicas y locales. Me ha servido para el temario de Policía y Guardia Civil de 2026.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:18:02+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1 de la Ley Orgánica 2/1986, de Fuerzas y Cuerpos de Seguridad, la seguridad pública es competencia exclusiva de:",
+            "explanation": "El artículo 1 declara que la seguridad pública es competencia exclusiva del Estado, sin perjuicio de la participación de las Comunidades Autónomas en los términos legales y estatutarios.",
+            "options": [
+                {
+                    "content": "Las Comunidades Autónomas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Estado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los municipios",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Ministerio de Defensa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes NO es un cuerpo de los que el artículo 2 de la LO 2/1986 considera Fuerzas y Cuerpos de Seguridad:",
+            "explanation": "El artículo 2 solo incluye las Fuerzas y Cuerpos de Seguridad del Estado, los Cuerpos de Policía autonómicos y los de las Corporaciones Locales; la seguridad privada queda fuera.",
+            "options": [
+                {
+                    "content": "Los Cuerpos de Policía dependientes de las Comunidades Autónomas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los Cuerpos de Policía dependientes de las Corporaciones Locales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Fuerzas y Cuerpos de Seguridad del Estado dependientes del Gobierno de la Nación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las empresas y el personal de seguridad privada",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Entre los principios básicos de actuación del artículo 5 de la LO 2/1986, los miembros de las Fuerzas y Cuerpos de Seguridad deben actuar con absoluta neutralidad política e imparcialidad y, en consecuencia:",
+            "explanation": "El artículo 5.1.b exige neutralidad política e imparcialidad y, por tanto, actuar sin discriminación por razón de raza, religión u opinión.",
+            "options": [
+                {
+                    "content": "Sin discriminación alguna por razón de raza, religión u opinión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sin otra limitación que las órdenes de sus superiores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Con exclusión de toda colaboración con otras Administraciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Absteniéndose de intervenir fuera del horario de servicio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Respecto a los principios de jerarquía y subordinación, la LO 2/1986 establece que la obediencia debida:",
+            "explanation": "El artículo 5.1.d limita expresamente la obediencia debida: no ampara órdenes que manifiestamente constituyan delito o vulneren la Constitución o las Leyes.",
+            "options": [
+                {
+                    "content": "Ampara cualquier orden dada por un superior jerárquico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo ampara órdenes dadas por escrito",
+                    "is_correct": false
+                },
+                {
+                    "content": "No puede amparar órdenes que entrañen actos que manifiestamente constituyan delito o sean contrarios a la Constitución o a las Leyes",
+                    "is_correct": true
+                },
+                {
+                    "content": "No es aplicable a la Guardia Civil por su naturaleza militar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5.2 de la LO 2/1986, los miembros de las Fuerzas y Cuerpos de Seguridad solo deben utilizar las armas cuando exista:",
+            "explanation": "El uso de armas queda limitado a situaciones de riesgo racionalmente grave para la vida o integridad física propia o de terceros, o de grave riesgo para la seguridad ciudadana.",
+            "options": [
+                {
+                    "content": "Una orden expresa de un superior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un riesgo racionalmente grave para su vida, su integridad física o la de terceras personas, o circunstancias que supongan un grave riesgo para la seguridad ciudadana",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cualquier resistencia a la autoridad por parte de un ciudadano",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una fuga de un detenido, en todo caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En sus relaciones con la comunidad, según el artículo 5.2 de la LO 2/1986, en todas sus intervenciones los miembros de las Fuerzas y Cuerpos de Seguridad proporcionarán:",
+            "explanation": "El deber de trato correcto y esmerado incluye proporcionar información cumplida y tan amplia como sea posible sobre causas y finalidad de la intervención.",
+            "options": [
+                {
+                    "content": "Información reservada sobre las causas de la actuación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente la información solicitada por escrito",
+                    "is_correct": false
+                },
+                {
+                    "content": "Información solo cuando se trate de una detención",
+                    "is_correct": false
+                },
+                {
+                    "content": "Información cumplida, y tan amplia como sea posible, sobre las causas y finalidad de las mismas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En cuanto al tratamiento de detenidos, el artículo 5.3 de la LO 2/1986 obliga a los miembros de las Fuerzas y Cuerpos de Seguridad a:",
+            "explanation": "El artículo 5.3.a impone la obligación de identificarse debidamente como agentes en el momento de la detención.",
+            "options": [
+                {
+                    "content": "Identificarse debidamente como tales en el momento de efectuar una detención",
+                    "is_correct": true
+                },
+                {
+                    "content": "Comunicar la detención a la prensa en un plazo máximo de 24 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Requerir autorización judicial previa en toda detención",
+                    "is_correct": false
+                },
+                {
+                    "content": "Practicar la detención siempre en uniforme y con armas reglamentarias visibles",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 5.6 de la LO 2/1986, los miembros de las Fuerzas y Cuerpos de Seguridad son responsables personal y directamente por los actos que lleven a cabo infringiendo las normas legales y reglamentarias de su profesión:",
+            "explanation": "La responsabilidad personal y directa del agente es compatible con la responsabilidad patrimonial de la Administración.",
+            "options": [
+                {
+                    "content": "Con exclusión de toda responsabilidad de la Administración",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo cuando actúen fuera de servicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sin perjuicio de la responsabilidad patrimonial que pueda corresponder a las Administraciones Públicas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo ante la jurisdicción disciplinaria, no ante la penal",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El principio de secreto profesional del artículo 5 de la LO 2/1986 obliga a guardar riguroso secreto respecto de:",
+            "explanation": "El deber de secreto abarca todas las informaciones conocidas por razón o con ocasión del desempeño de las funciones, con los límites legales.",
+            "options": [
+                {
+                    "content": "Solo las informaciones clasificadas oficialmente como secretas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todas las informaciones que conozcan por razón o con ocasión del desempeño de sus funciones",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente las investigaciones sobre delitos graves",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las informaciones obtenidas durante el horario de servicio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta INCORRECTA sobre los principios básicos de actuación del artículo 5 de la LO 2/1986:",
+            "explanation": "La Ley exige abstenerse de todo acto de corrupción y, además, oponerse a él resueltamente.",
+            "options": [
+                {
+                    "content": "Deben actuar con integridad y dignidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deben colaborar con la Administración de Justicia y auxiliarla en los términos establecidos en la Ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deben impedir cualquier práctica abusiva, arbitraria o discriminatoria que entrañe violencia física o moral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Deben abstenerse de todo acto de corrupción, pero no tienen obligación de oponerse a él",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la LO 2/1986, los miembros de las Fuerzas y Cuerpos de Seguridad solo están obligados a intervenir en defensa de la Ley y de la seguridad ciudadana cuando se hallen de servicio.",
+            "explanation": "El principio de dedicación profesional les obliga a intervenir siempre, en cualquier tiempo y lugar, se hallen o no de servicio.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 7 de la LO 2/1986, en el ejercicio de sus funciones los miembros de las Fuerzas y Cuerpos de Seguridad tendrán a todos los efectos legales el carácter de:",
+            "explanation": "El artículo 7 les atribuye el carácter de agentes de la autoridad, no de autoridad.",
+            "options": [
+                {
+                    "content": "Autoridad judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Agentes de la autoridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Funcionarios de la Administración de Justicia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Autoridad gubernativa",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 11 de la LO 2/1986, las Fuerzas y Cuerpos de Seguridad del Estado tienen como misión:",
+            "explanation": "Es la misión que fija el artículo 11, en coherencia con el artículo 104 de la Constitución.",
+            "options": [
+                {
+                    "content": "Ejercer la potestad sancionadora en materia de tráfico y extranjería",
+                    "is_correct": false
+                },
+                {
+                    "content": "Defender la integridad territorial de España frente a agresiones exteriores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dirigir las investigaciones judiciales sobre delitos graves",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es una de las funciones de las Fuerzas y Cuerpos de Seguridad del Estado recogidas en el artículo 11 de la LO 2/1986:",
+            "explanation": "La prisión provisional la acuerda la autoridad judicial; las demás son funciones del artículo 11.",
+            "options": [
+                {
+                    "content": "Dictar resoluciones sobre la prisión provisional de los detenidos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Auxiliar y proteger a las personas y asegurar la conservación y custodia de los bienes en situación de peligro",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vigilar y proteger los edificios e instalaciones públicos que lo requieran",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prevenir la comisión de actos delictivos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 12 de la LO 2/1986, el Cuerpo Nacional de Policía ejercerá sus competencias:",
+            "explanation": "El resto del territorio y el mar territorial corresponde a la Guardia Civil.",
+            "options": [
+                {
+                    "content": "En todo el territorio nacional sin excepción, con carácter exclusivo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente en las capitales de provincia",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el resto del territorio nacional y su mar territorial",
+                    "is_correct": false
+                },
+                {
+                    "content": "En las capitales de provincia y en los términos municipales y núcleos urbanos que el Gobierno determine",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una competencia exclusiva del Cuerpo Nacional de Policía según el artículo 12 de la LO 2/1986?",
+            "explanation": "La expedición del DNI y pasaportes es competencia exclusiva del Cuerpo Nacional de Policía; las otras corresponden a la Guardia Civil.",
+            "options": [
+                {
+                    "content": "La expedición del documento nacional de identidad y de los pasaportes",
+                    "is_correct": true
+                },
+                {
+                    "content": "La vigilancia del tráfico en vías interurbanas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El resguardo fiscal del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "La intervención de armas y explosivos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes funciones corresponde con carácter exclusivo a la Guardia Civil según el artículo 12 de la LO 2/1986?",
+            "explanation": "El resguardo fiscal y la persecución del contrabando son exclusivos de la Guardia Civil.",
+            "options": [
+                {
+                    "content": "El control de entrada y salida del territorio nacional de españoles y extranjeros",
+                    "is_correct": false
+                },
+                {
+                    "content": "El resguardo fiscal del Estado y las actuaciones para evitar y perseguir el contrabando",
+                    "is_correct": true
+                },
+                {
+                    "content": "La expedición de pasaportes",
+                    "is_correct": false
+                },
+                {
+                    "content": "La investigación de la extranjería, el refugio y el asilo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La vigilancia del tráfico, tránsito y transporte en las vías públicas interurbanas es una competencia que el artículo 12 de la LO 2/1986 atribuye a:",
+            "explanation": "El artículo 12.1.B atribuye a la Guardia Civil la vigilancia del tráfico en vías interurbanas.",
+            "options": [
+                {
+                    "content": "El Cuerpo Nacional de Policía",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Policía Local",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Guardia Civil",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las Juntas de Seguridad",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es una competencia exclusiva del Cuerpo Nacional de Policía según el artículo 12 de la LO 2/1986:",
+            "explanation": "Las armas y explosivos son competencia exclusiva de la Guardia Civil.",
+            "options": [
+                {
+                    "content": "El régimen de extranjería, refugio y asilo, extradición, expulsión, emigración e inmigración",
+                    "is_correct": false
+                },
+                {
+                    "content": "La expedición del documento nacional de identidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "La intervención y control de armas y explosivos",
+                    "is_correct": true
+                },
+                {
+                    "content": "El control de entrada y salida del territorio nacional",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la LO 2/1986, la Guardia Civil es un instituto armado de naturaleza civil.",
+            "explanation": "La Guardia Civil es un instituto armado de naturaleza militar; el Cuerpo Nacional de Policía es un instituto armado de naturaleza civil.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La conducción interurbana de presos y detenidos es una competencia exclusiva de:",
+            "explanation": "El artículo 12.1.B incluye la conducción interurbana de presos y detenidos entre las funciones exclusivas de la Guardia Civil.",
+            "options": [
+                {
+                    "content": "La Guardia Civil",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Cuerpo Nacional de Policía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Policías Locales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las Policías autonómicas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 1 de la LO 2/1986, las Comunidades Autónomas participarán en el mantenimiento de la seguridad pública:",
+            "explanation": "La participación autonómica depende de lo previsto en los Estatutos y en la Ley Orgánica, siempre dentro del marco constitucional.",
+            "options": [
+                {
+                    "content": "Con competencia exclusiva en su territorio",
+                    "is_correct": false
+                },
+                {
+                    "content": "En los términos que establezcan sus Estatutos y la propia Ley, en el marco de la Constitución",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo mediante convenios con los Ayuntamientos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente a través de la Guardia Civil",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una función propia de los Cuerpos de Policía de las Comunidades Autónomas?",
+            "explanation": "Es la primera de las funciones propias de las policías autonómicas; las demás corresponden a las Fuerzas y Cuerpos de Seguridad del Estado.",
+            "options": [
+                {
+                    "content": "La expedición de pasaportes",
+                    "is_correct": false
+                },
+                {
+                    "content": "El resguardo fiscal del Estado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El control de entrada y salida de españoles y extranjeros",
+                    "is_correct": false
+                },
+                {
+                    "content": "La vigilancia y protección de personas, órganos, edificios e instalaciones de la Comunidad Autónoma y de sus entes instrumentales",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 51 de la LO 2/1986, los Cuerpos de Policía Local son institutos armados de naturaleza civil, con estructura y organización jerarquizada, bajo la superior autoridad y dependencia directa de:",
+            "explanation": "Los Cuerpos de Policía Local dependen directamente del Alcalde.",
+            "options": [
+                {
+                    "content": "El Delegado del Gobierno",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Alcalde",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Gobernador civil",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Presidente de la Comunidad Autónoma",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 53 de la LO 2/1986, corresponde a los Cuerpos de Policía Local:",
+            "explanation": "El artículo 53 atribuye a la Policía Local la ordenación, señalización y dirección del tráfico en el casco urbano.",
+            "options": [
+                {
+                    "content": "Controlar la entrada y salida de extranjeros del territorio nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ordenar, señalizar y dirigir el tráfico en el casco urbano",
+                    "is_correct": true
+                },
+                {
+                    "content": "Expedir el documento nacional de identidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vigilar las fronteras y costas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál NO es una función de los Cuerpos de Policía Local según el artículo 53 de la LO 2/1986:",
+            "explanation": "La custodia de costas y fronteras corresponde a las Fuerzas y Cuerpos de Seguridad del Estado, no a la Policía Local.",
+            "options": [
+                {
+                    "content": "Instruir atestados por accidentes de circulación dentro del casco urbano",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ejercer la policía administrativa en lo relativo a Ordenanzas, Bandos y demás disposiciones municipales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prestar auxilio en casos de accidente, catástrofe o calamidad pública",
+                    "is_correct": false
+                },
+                {
+                    "content": "Vigilar y custodiar de forma exclusiva las costas y fronteras",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el artículo 51 de la LO 2/1986, los Cuerpos de Policía Local solo podrán actuar fuera del término municipal:",
+            "explanation": "La actuación extramunicipal es excepcional: solo en situaciones de emergencia y previo requerimiento de las autoridades competentes.",
+            "options": [
+                {
+                    "content": "Siempre que lo ordene el Alcalde",
+                    "is_correct": false
+                },
+                {
+                    "content": "En situaciones de emergencia y previo requerimiento de las autoridades competentes",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuando persigan a un presunto delincuente, sin ninguna otra condición",
+                    "is_correct": false
+                },
+                {
+                    "content": "Nunca, en ningún caso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué órgano coordina la política de seguridad entre la Administración General del Estado y las Comunidades Autónomas conforme a la LO 2/1986?",
+            "explanation": "El Consejo de Política de Seguridad es el órgano de coordinación general en materia de seguridad entre el Estado y las Comunidades Autónomas.",
+            "options": [
+                {
+                    "content": "El Consejo de Seguridad Nacional",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comisión Nacional de Coordinación de la Policía Judicial",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo de Política de Seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "La Conferencia de Presidentes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para coordinar la actuación de las Fuerzas y Cuerpos de Seguridad del Estado y de la Policía Local en los municipios que cuenten con ella se constituye:",
+            "explanation": "La Ley prevé las Juntas Locales de Seguridad como órgano de coordinación en los municipios con Policía Local.",
+            "options": [
+                {
+                    "content": "La Junta de Gobierno Local",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Comisión Municipal de Seguridad",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Consejo Local de Policía",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Junta Local de Seguridad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según el artículo 2 de la LO 2/1986, los Cuerpos de Policía dependientes de las Corporaciones Locales forman parte de las Fuerzas y Cuerpos de Seguridad.",
+            "explanation": "El artículo 2 incluye entre las Fuerzas y Cuerpos de Seguridad a los Cuerpos de Policía dependientes de las Corporaciones Locales, junto con los del Estado y las Comunidades Autónomas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

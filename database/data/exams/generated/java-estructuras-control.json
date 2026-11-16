@@ -1,0 +1,532 @@
+{
+    "slug": "java-estructuras-control",
+    "title": "Programación 1º DAM - estructuras de control y arrays",
+    "description": "Test de repaso de Programación de 1º DAM con Java: tipos primitivos, operadores, if/switch, bucles y arrays. Perfecto para repasar antes del examen del trimestre.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:45:39+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes es un tipo primitivo de Java?",
+            "explanation": "int es un tipo primitivo; String, Integer y los arrays son tipos de referencia.",
+            "options": [
+                {
+                    "content": "String",
+                    "is_correct": false
+                },
+                {
+                    "content": "int",
+                    "is_correct": true
+                },
+                {
+                    "content": "Integer",
+                    "is_correct": false
+                },
+                {
+                    "content": "Array",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo primitivo es el más adecuado para almacenar el valor 3.14 con decimales en una variable habitual?",
+            "explanation": "double es el tipo en coma flotante de 64 bits que se usa por defecto para valores decimales.",
+            "options": [
+                {
+                    "content": "int",
+                    "is_correct": false
+                },
+                {
+                    "content": "char",
+                    "is_correct": false
+                },
+                {
+                    "content": "double",
+                    "is_correct": true
+                },
+                {
+                    "content": "boolean",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué valor tiene la variable r tras ejecutar: int r = 17 % 5;?",
+            "explanation": "El operador % devuelve el resto de la división entera: 17 = 5·3 + 2.",
+            "options": [
+                {
+                    "content": "3",
+                    "is_correct": false
+                },
+                {
+                    "content": "2",
+                    "is_correct": true
+                },
+                {
+                    "content": "3.4",
+                    "is_correct": false
+                },
+                {
+                    "content": "12",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué valor tiene x tras ejecutar: int x = 7 / 2;?",
+            "explanation": "La división entre dos enteros es una división entera y descarta la parte decimal.",
+            "options": [
+                {
+                    "content": "3.5",
+                    "is_correct": false
+                },
+                {
+                    "content": "4",
+                    "is_correct": false
+                },
+                {
+                    "content": "3",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el resultado de la expresión (5 > 3) && (2 > 4)?",
+            "explanation": "El operador && exige que ambas condiciones sean verdaderas y 2 > 4 es falso.",
+            "options": [
+                {
+                    "content": "true",
+                    "is_correct": false
+                },
+                {
+                    "content": "false",
+                    "is_correct": true
+                },
+                {
+                    "content": "Error de compilación",
+                    "is_correct": false
+                },
+                {
+                    "content": "null",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué imprime el siguiente código?\n\nint a = 5;\nint b = a++;\nSystem.out.println(a + \" \" + b);",
+            "explanation": "a++ devuelve primero el valor actual (5) a b y después incrementa a a 6.",
+            "options": [
+                {
+                    "content": "5 5",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 6",
+                    "is_correct": false
+                },
+                {
+                    "content": "5 6",
+                    "is_correct": false
+                },
+                {
+                    "content": "6 5",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué instrucción se usa para ejecutar un bloque solo si una condición es verdadera y, si no, ejecutar otro?",
+            "explanation": "if-else permite bifurcar la ejecución según se cumpla o no la condición.",
+            "options": [
+                {
+                    "content": "if-else",
+                    "is_correct": true
+                },
+                {
+                    "content": "for",
+                    "is_correct": false
+                },
+                {
+                    "content": "break",
+                    "is_correct": false
+                },
+                {
+                    "content": "do-while",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un switch clásico, ¿qué ocurre si se omite break al final de un case que coincide?",
+            "explanation": "Sin break se produce el llamado fallthrough y continúa la ejecución en el siguiente case.",
+            "options": [
+                {
+                    "content": "Se produce un error de compilación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se ejecutan también las sentencias de los case siguientes hasta encontrar un break",
+                    "is_correct": true
+                },
+                {
+                    "content": "El programa termina inmediatamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se ejecuta el default",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántas veces se ejecuta el cuerpo de este bucle?\n\nfor (int i = 0; i < 5; i++) {\n    System.out.println(i);\n}",
+            "explanation": "i toma los valores 0, 1, 2, 3 y 4, es decir, 5 iteraciones.",
+            "options": [
+                {
+                    "content": "4",
+                    "is_correct": false
+                },
+                {
+                    "content": "6",
+                    "is_correct": false
+                },
+                {
+                    "content": "5",
+                    "is_correct": true
+                },
+                {
+                    "content": "0",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué bucle garantiza que su cuerpo se ejecuta al menos una vez?",
+            "explanation": "do-while evalúa la condición al final, por lo que el cuerpo se ejecuta siempre una vez como mínimo.",
+            "options": [
+                {
+                    "content": "while",
+                    "is_correct": false
+                },
+                {
+                    "content": "for",
+                    "is_correct": false
+                },
+                {
+                    "content": "do-while",
+                    "is_correct": true
+                },
+                {
+                    "content": "for-each",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace la sentencia continue dentro de un bucle?",
+            "explanation": "continue omite el resto del cuerpo en la iteración actual y pasa a la siguiente.",
+            "options": [
+                {
+                    "content": "Termina el bucle por completo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Salta a la siguiente iteración",
+                    "is_correct": true
+                },
+                {
+                    "content": "Termina el programa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reinicia el programa desde main",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la forma correcta de declarar un array de 10 enteros en Java?",
+            "explanation": "En Java se declara con int[] y se reserva memoria con new int[10].",
+            "options": [
+                {
+                    "content": "int[] v = new int[10];",
+                    "is_correct": true
+                },
+                {
+                    "content": "int v = new int(10);",
+                    "is_correct": false
+                },
+                {
+                    "content": "int v[10];",
+                    "is_correct": false
+                },
+                {
+                    "content": "array int v = [10];",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado int[] v = {4, 8, 15, 16}; ¿qué valor devuelve v.length?",
+            "explanation": "length es el atributo que indica el número de elementos del array, que son 4.",
+            "options": [
+                {
+                    "content": "3",
+                    "is_correct": false
+                },
+                {
+                    "content": "4",
+                    "is_correct": true
+                },
+                {
+                    "content": "16",
+                    "is_correct": false
+                },
+                {
+                    "content": "5",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado int[] v = {4, 8, 15, 16}; ¿qué devuelve v[2]?",
+            "explanation": "Los índices empiezan en 0, así que v[2] es el tercer elemento: 15.",
+            "options": [
+                {
+                    "content": "8",
+                    "is_correct": false
+                },
+                {
+                    "content": "15",
+                    "is_correct": true
+                },
+                {
+                    "content": "16",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lanza una excepción",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué valor tienen por defecto los elementos de un array creado con new int[3]?",
+            "explanation": "Java inicializa los elementos numéricos de un array a 0 automáticamente.",
+            "options": [
+                {
+                    "content": "null",
+                    "is_correct": false
+                },
+                {
+                    "content": "0",
+                    "is_correct": true
+                },
+                {
+                    "content": "-1",
+                    "is_correct": false
+                },
+                {
+                    "content": "Valores aleatorios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En Java, el tipo primitivo boolean solo puede tomar los valores true o false.",
+            "explanation": "boolean admite únicamente los literales true y false; no se puede usar 0 o 1 como en C.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El índice del último elemento de un array de tamaño n es n.",
+            "explanation": "Los índices van de 0 a n-1; acceder al índice n lanza ArrayIndexOutOfBoundsException.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El operador == es el adecuado para comparar el contenido de dos cadenas String en Java.",
+            "explanation": "== compara referencias; para comparar el contenido se usa el método equals.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un bucle while (true) sin ninguna sentencia break ni return en su interior es un bucle infinito.",
+            "explanation": "La condición siempre es verdadera, así que el bucle no termina por sí solo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué palabra reservada de Java se usa en un switch para definir el caso que se ejecuta cuando ningún case coincide?",
+            "explanation": "La etiqueta default recoge los valores que no coinciden con ningún case.",
+            "options": [
+                {
+                    "content": "default",
+                    "is_correct": true
+                },
+                {
+                    "content": "la palabra default",
+                    "is_correct": true
+                },
+                {
+                    "content": "default:",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué excepción lanza Java al acceder a una posición inexistente de un array? (Nombre de la clase)",
+            "explanation": "Acceder a un índice negativo o mayor o igual que length lanza ArrayIndexOutOfBoundsException.",
+            "options": [
+                {
+                    "content": "ArrayIndexOutOfBoundsException",
+                    "is_correct": true
+                },
+                {
+                    "content": "java.lang.ArrayIndexOutOfBoundsException",
+                    "is_correct": true
+                },
+                {
+                    "content": "ArrayIndexOutOfBounds",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué valor muestra System.out.println(10 + 5 * 2);?",
+            "explanation": "La multiplicación tiene mayor precedencia que la suma: 5·2 = 10 y 10 + 10 = 20.",
+            "options": [
+                {
+                    "content": "20",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los tipos primitivos de Java (hay varias respuestas correctas):",
+            "explanation": "long, char y byte son primitivos; String y Double (con mayúscula) son clases.",
+            "options": [
+                {
+                    "content": "long",
+                    "is_correct": true
+                },
+                {
+                    "content": "char",
+                    "is_correct": true
+                },
+                {
+                    "content": "String",
+                    "is_correct": false
+                },
+                {
+                    "content": "byte",
+                    "is_correct": true
+                },
+                {
+                    "content": "Double",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de las siguientes son estructuras de bucle válidas en Java? (hay varias correctas)",
+            "explanation": "Java dispone de for, while y do-while; el for-each se escribe como for (tipo x : coleccion).",
+            "options": [
+                {
+                    "content": "for",
+                    "is_correct": true
+                },
+                {
+                    "content": "while",
+                    "is_correct": true
+                },
+                {
+                    "content": "foreach (x in lista)",
+                    "is_correct": false
+                },
+                {
+                    "content": "do-while",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué imprime este código?\n\nint[] v = {1, 2, 3, 4};\nint suma = 0;\nfor (int n : v) {\n    suma += n;\n}\nSystem.out.println(suma);",
+            "explanation": "El bucle for-each acumula 1+2+3+4 = 10.",
+            "options": [
+                {
+                    "content": "4",
+                    "is_correct": false
+                },
+                {
+                    "content": "6",
+                    "is_correct": false
+                },
+                {
+                    "content": "10",
+                    "is_correct": true
+                },
+                {
+                    "content": "24",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

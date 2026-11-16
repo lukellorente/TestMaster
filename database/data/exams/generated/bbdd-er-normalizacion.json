@@ -1,0 +1,449 @@
+{
+    "slug": "bbdd-er-normalizacion",
+    "title": "Bases de Datos: modelo E/R y normalización",
+    "description": "Test de repaso del tema de bases de datos: modelo entidad-relación, paso a relacional y formas normales hasta la FNBC. Está pensado para el módulo de Bases de Datos de DAM/DAW.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:49:34+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Al pasar al modelo relacional una relación 1:N entre CLIENTE (lado 1) y PEDIDO (lado N), ¿qué se hace normalmente?",
+            "explanation": "En una relación 1:N la clave del lado «uno» migra como clave foránea a la tabla del lado «muchos».",
+            "options": [
+                {
+                    "content": "Se crea una tabla intermedia con las dos claves primarias",
+                    "is_correct": false
+                },
+                {
+                    "content": "La clave primaria de CLIENTE se añade a PEDIDO como clave foránea",
+                    "is_correct": true
+                },
+                {
+                    "content": "La clave primaria de PEDIDO se añade a CLIENTE como clave foránea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se fusionan ambas entidades en una sola tabla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una relación N:M entre ALUMNO y ASIGNATURA con el atributo propio «nota» se transforma en:",
+            "explanation": "Las relaciones N:M generan una tabla propia cuya clave se forma con las claves de las entidades; los atributos de la relación pasan a esa tabla.",
+            "options": [
+                {
+                    "content": "Una tabla intermedia con las claves de ambas entidades y el atributo «nota»",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una clave foránea en ALUMNO y el atributo «nota» en ASIGNATURA",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una clave foránea en ASIGNATURA y el atributo «nota» en ALUMNO",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el modelo E/R la entidad EMPLEADO tiene un atributo multivaluado «teléfono». ¿Cómo se resuelve en el modelo relacional?",
+            "explanation": "Un atributo multivaluado se convierte en una tabla propia relacionada con la entidad mediante su clave, lo que respeta la 1FN.",
+            "options": [
+                {
+                    "content": "Se guardan todos los teléfonos separados por comas en una columna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se crean tantas columnas como teléfonos pueda tener como máximo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se crea una tabla aparte con el teléfono y la clave de EMPLEADO",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se declara el atributo como clave primaria",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La tabla CONTACTO(id, nombre, telefonos) guarda en «telefonos» valores como «600111222, 911222333». ¿Qué forma normal incumple?",
+            "explanation": "La 1FN exige que todos los atributos tengan valores atómicos, sin listas ni grupos repetidos.",
+            "options": [
+                {
+                    "content": "La 2FN",
+                    "is_correct": false
+                },
+                {
+                    "content": "La 3FN",
+                    "is_correct": false
+                },
+                {
+                    "content": "La FNBC",
+                    "is_correct": false
+                },
+                {
+                    "content": "La 1FN, porque el atributo no es atómico",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En MATRICULA(idAlumno, idAsignatura, nombreAsignatura, nota), con clave primaria (idAlumno, idAsignatura), ¿qué ocurre?",
+            "explanation": "Hay una dependencia parcial de parte de la clave (idAsignatura → nombreAsignatura), lo que viola la 2FN.",
+            "options": [
+                {
+                    "content": "Cumple la 2FN",
+                    "is_correct": false
+                },
+                {
+                    "content": "No cumple la 2FN, porque nombreAsignatura depende solo de idAsignatura",
+                    "is_correct": true
+                },
+                {
+                    "content": "No cumple la 1FN",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cumple la FNBC pero no la 3FN",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué condición define la forma normal de Boyce-Codd (FNBC)?",
+            "explanation": "En FNBC, para toda dependencia funcional no trivial X → Y, X debe ser superclave (clave candidata).",
+            "options": [
+                {
+                    "content": "Que todos los atributos sean atómicos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que no existan dependencias parciales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que no existan atributos multivaluados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que todo determinante de una dependencia funcional sea clave candidata",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En PEDIDO(idPedido, idCliente, nombreCliente), con clave primaria idPedido y la dependencia idCliente → nombreCliente, ¿cuál es la situación?",
+            "explanation": "La clave es simple, así que no hay dependencias parciales (2FN). Pero nombreCliente depende de idPedido a través de idCliente, que es una dependencia transitiva que viola la 3FN.",
+            "options": [
+                {
+                    "content": "Cumple la 3FN",
+                    "is_correct": false
+                },
+                {
+                    "content": "No cumple la 1FN",
+                    "is_correct": false
+                },
+                {
+                    "content": "Está en 2FN pero no en 3FN",
+                    "is_correct": true
+                },
+                {
+                    "content": "No cumple la 2FN porque la clave es compuesta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué caracteriza a una entidad débil en el modelo E/R?",
+            "explanation": "Una entidad débil no se identifica por sí misma y necesita la clave de la entidad fuerte de la que depende.",
+            "options": [
+                {
+                    "content": "No tiene atributos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo puede participar en relaciones 1:1",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su identificación depende de otra entidad, y su clave incluye la clave de esta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siempre tiene cardinalidad (0,N)",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la notación (cardinalidad mínima, cardinalidad máxima), ¿qué indica (1,1) en el lado de una entidad dentro de una relación?",
+            "explanation": "El mínimo 1 indica participación obligatoria y el máximo 1 indica que solo puede participar una vez.",
+            "options": [
+                {
+                    "content": "Que participa de forma opcional y puede aparecer muchas veces",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que no participa nunca en la relación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que participa de forma opcional como máximo una vez",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que cada ocurrencia participa obligatoriamente exactamente una vez",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una relación 1:1 entre PERSONA y PASAPORTE, donde todo pasaporte pertenece a una persona, pero no toda persona tiene pasaporte, lo más habitual es:",
+            "explanation": "Se coloca la clave foránea en la entidad con participación total (PASAPORTE) para evitar valores nulos, con restricción UNIQUE.",
+            "options": [
+                {
+                    "content": "Poner la clave de PERSONA como clave foránea (única) en PASAPORTE",
+                    "is_correct": true
+                },
+                {
+                    "content": "Crear siempre una tabla intermedia con tres columnas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Duplicar la clave de PASAPORTE en PERSONA sin restricciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "Eliminar la entidad PERSONA",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dada TUTORIA(alumno, asignatura, profesor), con las dependencias (alumno, asignatura) → profesor y profesor → asignatura, ¿qué se puede afirmar?",
+            "explanation": "«profesor» determina «asignatura» sin ser clave candidata, así que no cumple la FNBC. Sí cumple la 3FN porque «asignatura» forma parte de una clave candidata.",
+            "options": [
+                {
+                    "content": "No está en 1FN",
+                    "is_correct": false
+                },
+                {
+                    "content": "Está en FNBC",
+                    "is_correct": false
+                },
+                {
+                    "content": "Está en 3FN pero no en FNBC",
+                    "is_correct": true
+                },
+                {
+                    "content": "No está en 2FN",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el modelo E/R, ¿qué es una relación ternaria?",
+            "explanation": "El grado de una relación es el número de entidades que participan en ella; en la ternaria son tres.",
+            "options": [
+                {
+                    "content": "Una relación con tres atributos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una relación entre una entidad y ella misma tres veces",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una relación con cardinalidad 3:3",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una relación en la que participan tres entidades",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una tabla en 1FN cuya clave primaria está formada por un único atributo cumple automáticamente la 2FN.",
+            "explanation": "La 2FN solo puede incumplirse por dependencias parciales respecto a una clave compuesta; con clave simple no puede haberlas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Toda tabla que está en 3FN está también en FNBC.",
+            "explanation": "La FNBC es más estricta que la 3FN: existen tablas en 3FN que no están en FNBC, como las que tienen claves candidatas solapadas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Toda tabla que cumple la FNBC cumple también la 3FN.",
+            "explanation": "La FNBC es una forma normal más fuerte que la 3FN, por lo que implica su cumplimiento.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué tipo de dependencia entre atributos no clave provoca que una tabla incumpla la 3FN?",
+            "explanation": "La 3FN prohíbe que un atributo no clave dependa de la clave a través de otro atributo no clave (dependencia transitiva).",
+            "options": [
+                {
+                    "content": "transitiva",
+                    "is_correct": true
+                },
+                {
+                    "content": "dependencia transitiva",
+                    "is_correct": true
+                },
+                {
+                    "content": "dependencias transitivas",
+                    "is_correct": true
+                },
+                {
+                    "content": "la dependencia transitiva",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué cláusula SQL se usa en CREATE TABLE para declarar una clave foránea? (Escribe las dos palabras clave.)",
+            "explanation": "Se declara con FOREIGN KEY (columna) REFERENCES tabla(columna).",
+            "options": [
+                {
+                    "content": "FOREIGN KEY",
+                    "is_correct": true
+                },
+                {
+                    "content": "foreign key",
+                    "is_correct": true
+                },
+                {
+                    "content": "Foreign Key",
+                    "is_correct": true
+                },
+                {
+                    "content": "FOREIGN KEY REFERENCES",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué tipo de dependencia incumple la 2FN: la de un atributo respecto a solo una parte de una clave compuesta?",
+            "explanation": "La 2FN exige dependencia funcional completa de la clave; la dependencia de solo una parte de ella se llama parcial.",
+            "options": [
+                {
+                    "content": "parcial",
+                    "is_correct": true
+                },
+                {
+                    "content": "dependencia parcial",
+                    "is_correct": true
+                },
+                {
+                    "content": "dependencias parciales",
+                    "is_correct": true
+                },
+                {
+                    "content": "la dependencia parcial",
+                    "is_correct": true
+                },
+                {
+                    "content": "dependencia funcional parcial",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Una tabla con mucha redundancia puede sufrir anomalías. Selecciona las que son correctas (hay varias respuestas correctas).",
+            "explanation": "La redundancia provoca anomalías de inserción, borrado y actualización; la «compilación» no es una anomalía de normalización.",
+            "options": [
+                {
+                    "content": "Anomalía de inserción",
+                    "is_correct": true
+                },
+                {
+                    "content": "Anomalía de borrado",
+                    "is_correct": true
+                },
+                {
+                    "content": "Anomalía de actualización",
+                    "is_correct": true
+                },
+                {
+                    "content": "Anomalía de compilación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes son elementos propios del modelo entidad-relación? (hay varias respuestas correctas)",
+            "explanation": "El modelo E/R se compone de entidades, atributos y relaciones; tupla y clave foránea son conceptos del modelo relacional.",
+            "options": [
+                {
+                    "content": "Entidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Atributo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Interrelación (relación)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tupla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Clave foránea",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

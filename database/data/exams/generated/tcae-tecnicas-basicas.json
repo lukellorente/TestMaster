@@ -1,0 +1,667 @@
+{
+    "slug": "tcae-tecnicas-basicas",
+    "title": "TCAE - Técnicas básicas de enfermería",
+    "description": "Test de repaso de técnicas básicas de enfermería para el módulo de TCAE: constantes, posiciones, higiene, cama, muestras y postmortem. Está bien para preparar el examen del módulo.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:17:43+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el rango normal de la frecuencia respiratoria en un adulto sano en reposo?",
+            "explanation": "En un adulto sano en reposo se considera normal una frecuencia respiratoria de 12 a 20 respiraciones por minuto.",
+            "options": [
+                {
+                    "content": "30-40 respiraciones por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "12-20 respiraciones por minuto",
+                    "is_correct": true
+                },
+                {
+                    "content": "5-8 respiraciones por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "25-30 respiraciones por minuto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el rango normal de la frecuencia cardíaca en un adulto en reposo?",
+            "explanation": "La frecuencia cardíaca normal del adulto en reposo está entre 60 y 100 latidos por minuto.",
+            "options": [
+                {
+                    "content": "40-50 latidos por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "110-130 latidos por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "60-100 latidos por minuto",
+                    "is_correct": true
+                },
+                {
+                    "content": "20-40 latidos por minuto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué rango de temperatura axilar se considera normal en un adulto?",
+            "explanation": "La temperatura axilar normal se sitúa aproximadamente entre 36 y 37 °C.",
+            "options": [
+                {
+                    "content": "Entre 34 y 35 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre 38 y 39 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre 39 y 40 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre 36 y 37 °C",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué pulso se toma con más frecuencia en un adulto para controlar la frecuencia cardíaca?",
+            "explanation": "El pulso radial, en la muñeca, es el más accesible y el más utilizado de forma rutinaria.",
+            "options": [
+                {
+                    "content": "Radial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pedio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Poplíteo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué valor de saturación de oxígeno se considera normal en una persona sana?",
+            "explanation": "Una saturación de oxígeno del 95 % al 100 % es lo habitual en una persona sana.",
+            "options": [
+                {
+                    "content": "Entre el 95 % y el 100 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entre el 80 % y el 85 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre el 60 % y el 70 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre el 70 % y el 80 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un paciente respira 8 veces por minuto. ¿Cómo se denomina esta alteración?",
+            "explanation": "La bradipnea es una frecuencia respiratoria inferior a la normal; la taquipnea es la elevada y la apnea es la ausencia de respiración.",
+            "options": [
+                {
+                    "content": "Taquipnea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Disnea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Bradipnea",
+                    "is_correct": true
+                },
+                {
+                    "content": "Apnea",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama el aparato que mide de forma no invasiva la saturación de oxígeno de la sangre, colocado normalmente en un dedo?",
+            "explanation": "El pulsioxímetro (oxímetro de pulso) mide la saturación de oxígeno y la frecuencia del pulso mediante un sensor en el dedo.",
+            "options": [
+                {
+                    "content": "pulsioxímetro",
+                    "is_correct": true
+                },
+                {
+                    "content": "pulsioximetro",
+                    "is_correct": true
+                },
+                {
+                    "content": "el pulsioxímetro",
+                    "is_correct": true
+                },
+                {
+                    "content": "pulsioxímetro de pulso",
+                    "is_correct": true
+                },
+                {
+                    "content": "oxímetro de pulso",
+                    "is_correct": true
+                },
+                {
+                    "content": "oxímetro",
+                    "is_correct": true
+                },
+                {
+                    "content": "pulsioximetría",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se denomina la tensión arterial anormalmente baja?",
+            "explanation": "La hipotensión es la disminución de la tensión arterial por debajo de los valores normales.",
+            "options": [
+                {
+                    "content": "hipotensión",
+                    "is_correct": true
+                },
+                {
+                    "content": "hipotension",
+                    "is_correct": true
+                },
+                {
+                    "content": "la hipotensión",
+                    "is_correct": true
+                },
+                {
+                    "content": "hipotensión arterial",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Se denomina taquicardia a una frecuencia cardíaca superior a 100 latidos por minuto en un adulto en reposo.",
+            "explanation": "Taquicardia es el aumento de la frecuencia cardíaca por encima de 100 lpm en un adulto en reposo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se coloca al paciente en decúbito prono?",
+            "explanation": "En decúbito prono el paciente está tumbado boca abajo; boca arriba es decúbito supino.",
+            "options": [
+                {
+                    "content": "Tumbado boca arriba",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tumbado boca abajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tumbado sobre un costado",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sentado con las piernas colgando",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La posición de Fowler consiste en:",
+            "explanation": "En Fowler el paciente está semisentado con la cabecera elevada, lo que facilita la respiración.",
+            "options": [
+                {
+                    "content": "Tumbado boca abajo con la cabeza girada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tumbado con la cabeza más baja que los pies",
+                    "is_correct": false
+                },
+                {
+                    "content": "Semisentado, con la cabecera de la cama elevada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tumbado de lado con la pierna superior flexionada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la posición de Trendelenburg el paciente está tumbado boca arriba y:",
+            "explanation": "Trendelenburg es el decúbito supino con la cabeza más baja que los pies, por ejemplo en situaciones de hipotensión.",
+            "options": [
+                {
+                    "content": "Con la cabeza más baja que los pies",
+                    "is_correct": true
+                },
+                {
+                    "content": "Con la cabeza más alta que los pies",
+                    "is_correct": false
+                },
+                {
+                    "content": "Con las piernas flexionadas y separadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sobre el costado izquierdo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué posición, en decúbito lateral izquierdo con la pierna superior flexionada, se usa habitualmente para administrar un enema?",
+            "explanation": "La posición de Sims facilita el acceso al recto para enemas y supositorios.",
+            "options": [
+                {
+                    "content": "Sims",
+                    "is_correct": true
+                },
+                {
+                    "content": "posición de Sims",
+                    "is_correct": true
+                },
+                {
+                    "content": "la posición de Sims",
+                    "is_correct": true
+                },
+                {
+                    "content": "decúbito lateral izquierdo de Sims",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las posiciones que son variantes de decúbito (hay varias respuestas correctas):",
+            "explanation": "Supino, prono y lateral son decúbitos, es decir, el paciente está tumbado. Fowler es semisentado y Trendelenburg es un supino inclinado.",
+            "options": [
+                {
+                    "content": "Decúbito supino",
+                    "is_correct": true
+                },
+                {
+                    "content": "Decúbito prono",
+                    "is_correct": true
+                },
+                {
+                    "content": "Decúbito lateral",
+                    "is_correct": true
+                },
+                {
+                    "content": "Posición de Fowler",
+                    "is_correct": false
+                },
+                {
+                    "content": "Posición de Trendelenburg",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La posición ginecológica (litotomía) se caracteriza por tener a la paciente boca arriba con las piernas flexionadas y separadas.",
+            "explanation": "En la posición ginecológica la paciente está en decúbito supino con caderas y rodillas flexionadas y las piernas separadas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el aseo completo de un paciente encamado, ¿cómo se debe proceder en general?",
+            "explanation": "Se avanza de la zona más limpia a la más sucia para evitar arrastrar microorganismos, dejando la zona genital para el final.",
+            "options": [
+                {
+                    "content": "De la zona más sucia a la más limpia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sin un orden concreto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Empezando siempre por los pies",
+                    "is_correct": false
+                },
+                {
+                    "content": "De la zona más limpia a la más sucia",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuánto debe durar aproximadamente un lavado de manos con agua y jabón según la OMS?",
+            "explanation": "La OMS recomienda 40-60 segundos para el lavado con agua y jabón y 20-30 segundos para la fricción con solución alcohólica.",
+            "options": [
+                {
+                    "content": "5-10 segundos",
+                    "is_correct": false
+                },
+                {
+                    "content": "40-60 segundos",
+                    "is_correct": true
+                },
+                {
+                    "content": "3-5 minutos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre 10 y 15 minutos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es una de las zonas de aparición más frecuente de las úlceras por presión en un paciente encamado boca arriba?",
+            "explanation": "La región sacra soporta mucha presión en decúbito supino y es una localización muy frecuente de úlceras por presión.",
+            "options": [
+                {
+                    "content": "El sacro",
+                    "is_correct": true
+                },
+                {
+                    "content": "El abdomen",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los antebrazos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El cuello",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En la higiene genital se debe limpiar de atrás hacia delante, es decir, del ano hacia el pubis.",
+            "explanation": "Se limpia de delante hacia atrás (del pubis hacia el ano) para no arrastrar gérmenes de la zona anal a la uretra.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué medidas ayudan a prevenir las úlceras por presión (hay varias respuestas correctas):",
+            "explanation": "Los cambios posturales, el cuidado de la piel y las sábanas sin arrugas previenen las úlceras; no se debe masajear una zona enrojecida ni dejar la piel húmeda.",
+            "options": [
+                {
+                    "content": "Realizar cambios posturales periódicos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mantener la piel limpia, seca e hidratada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mantener la ropa de cama estirada y sin arrugas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Masajear con fuerza las prominencias óseas enrojecidas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dejar la piel húmeda tras el aseo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cómo se denomina la cama que se prepara para recibir a un paciente que vuelve de quirófano?",
+            "explanation": "La cama quirúrgica o de postoperado se prepara de modo que se pueda pasar fácilmente al paciente desde la camilla.",
+            "options": [
+                {
+                    "content": "Cama cerrada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cama ocupada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cama pediátrica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cama quirúrgica",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué se diferencia la cama abierta de la cama cerrada?",
+            "explanation": "En la cama abierta se dobla la ropa superior hacia los pies para que el paciente pueda acostarse; la cerrada está totalmente cubierta.",
+            "options": [
+                {
+                    "content": "En la abierta hay un paciente dentro",
+                    "is_correct": false
+                },
+                {
+                    "content": "En la abierta la ropa superior está doblada hacia los pies para recibir al paciente",
+                    "is_correct": true
+                },
+                {
+                    "content": "En la abierta no hay sábana bajera",
+                    "is_correct": false
+                },
+                {
+                    "content": "No hay ninguna diferencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cómo se llama la cama que se hace o se cambia con el paciente dentro de ella?",
+            "explanation": "La cama ocupada es aquella que se arregla mientras el paciente permanece en ella, por ejemplo si no puede levantarse.",
+            "options": [
+                {
+                    "content": "cama ocupada",
+                    "is_correct": true
+                },
+                {
+                    "content": "la cama ocupada",
+                    "is_correct": true
+                },
+                {
+                    "content": "ocupada",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La ropa sucia de la cama se debe sacudir dentro de la habitación para quitar los restos antes de retirarla.",
+            "explanation": "La ropa sucia no se sacude ni se apoya en el suelo, ya que dispersa microorganismos; se enrolla con lo sucio hacia dentro y va a la bolsa de ropa sucia.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para un urocultivo, ¿qué tipo de muestra de orina se recoge habitualmente?",
+            "explanation": "Se desecha el primer chorro y se recoge el medio en un recipiente estéril tras lavar la zona genital, para evitar contaminación.",
+            "options": [
+                {
+                    "content": "La de la primera gota de la micción",
+                    "is_correct": false
+                },
+                {
+                    "content": "La de todo el volumen de 24 horas",
+                    "is_correct": false
+                },
+                {
+                    "content": "La del chorro medio, tras la higiene genital",
+                    "is_correct": true
+                },
+                {
+                    "content": "La recogida de la bolsa de diuresis acumulada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para obtener una buena muestra de esputo, ¿qué se recomienda al paciente?",
+            "explanation": "El esputo debe proceder de las vías respiratorias profundas, no de la saliva, y la primera hora de la mañana suele dar mejor muestra.",
+            "options": [
+                {
+                    "content": "Escupir saliva en el recipiente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tomar un antibiótico antes de la recogida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Recogerlo por la noche sin enjuagarse",
+                    "is_correct": false
+                },
+                {
+                    "content": "Enjuagarse la boca y toser profundamente, preferiblemente a primera hora de la mañana",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Señala las normas correctas para la recogida de muestras (hay varias respuestas correctas):",
+            "explanation": "Toda muestra debe ir bien identificada, en el envase correcto y llegar pronto al laboratorio; el interior de un recipiente estéril no debe tocarse.",
+            "options": [
+                {
+                    "content": "Identificar la muestra con los datos del paciente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usar el recipiente adecuado para cada tipo de muestra",
+                    "is_correct": true
+                },
+                {
+                    "content": "Enviar la muestra al laboratorio lo antes posible",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tocar el interior del recipiente estéril",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En los cuidados postmortem, ¿quién certifica la defunción?",
+            "explanation": "La muerte debe ser constatada y certificada por un médico antes de iniciar los cuidados postmortem.",
+            "options": [
+                {
+                    "content": "El médico",
+                    "is_correct": true
+                },
+                {
+                    "content": "El técnico en cuidados de enfermería",
+                    "is_correct": false
+                },
+                {
+                    "content": "El celador",
+                    "is_correct": false
+                },
+                {
+                    "content": "La familia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al realizar los cuidados postmortem, ¿cómo se debe colocar el cuerpo?",
+            "explanation": "El cuerpo se coloca en decúbito supino, alineado y con ojos y boca cerrados, antes de que se instaure la rigidez cadavérica.",
+            "options": [
+                {
+                    "content": "En decúbito prono con los brazos separados",
+                    "is_correct": false
+                },
+                {
+                    "content": "En posición de Sims con las piernas flexionadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "En decúbito supino alineado, con los ojos cerrados y la boca cerrada",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las pertenencias del fallecido deben registrarse y entregarse a la familia.",
+            "explanation": "Las pertenencias se inventarían y se entregan a la familia o se custodian según el protocolo del centro.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

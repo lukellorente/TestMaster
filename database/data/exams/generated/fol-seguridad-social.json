@@ -1,0 +1,445 @@
+{
+    "slug": "fol-seguridad-social",
+    "title": "FOL - Seguridad Social y prestaciones",
+    "description": "Test de FOL para repasar la Seguridad Social: afiliación, altas, incapacidad temporal, nacimiento y cuidado de menor y desempleo. Ideal para el examen del módulo.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:11:03+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué organismo es el encargado de gestionar la afiliación, las altas y las bajas de los trabajadores en el sistema de la Seguridad Social?",
+            "explanation": "La TGSS es el servicio común que gestiona la inscripción de empresas, la afiliación, las altas y bajas y la recaudación de cotizaciones.",
+            "options": [
+                {
+                    "content": "Servicio Público de Empleo Estatal (SEPE)",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tesorería General de la Seguridad Social (TGSS)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Inspección de Trabajo y Seguridad Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fondo de Garantía Salarial (FOGASA)",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La afiliación a la Seguridad Social es un acto único y vitalicio que se realiza una sola vez en la vida de la persona, mientras que las altas y las bajas se producen cada vez que comienza o cesa una actividad.",
+            "explanation": "La afiliación es única y para toda la vida y genera el número de afiliación; el alta y la baja reflejan el inicio y el fin de cada actividad.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa contrata a una persona que nunca ha trabajado. ¿Quién tiene la obligación de solicitar el alta del trabajador en la Seguridad Social?",
+            "explanation": "El alta es responsabilidad del empresario y debe solicitarse con carácter previo al inicio de la actividad del trabajador.",
+            "options": [
+                {
+                    "content": "El propio trabajador, en el plazo de un mes",
+                    "is_correct": false
+                },
+                {
+                    "content": "El SEPE, de oficio",
+                    "is_correct": false
+                },
+                {
+                    "content": "El empresario, antes del inicio de la prestación de servicios",
+                    "is_correct": true
+                },
+                {
+                    "content": "La mutua colaboradora, tras el primer mes",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Con qué siglas se conoce el subsidio que recibe un trabajador que no puede trabajar por enfermedad común o accidente no laboral y que está de baja médica?",
+            "explanation": "La incapacidad temporal (IT) cubre la pérdida de renta mientras el trabajador recibe asistencia sanitaria y está impedido para trabajar.",
+            "options": [
+                {
+                    "content": "IT",
+                    "is_correct": true
+                },
+                {
+                    "content": "Incapacidad temporal",
+                    "is_correct": true
+                },
+                {
+                    "content": "La incapacidad temporal",
+                    "is_correct": true
+                },
+                {
+                    "content": "incapacidad temporal (IT)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una incapacidad temporal por enfermedad común, ¿a partir de qué día de baja la prestación es abonada por la entidad gestora o la mutua, y no por la empresa?",
+            "explanation": "Del día 4 al 15 el pago corre a cargo de la empresa y a partir del día 16 lo abona la entidad gestora o la mutua.",
+            "options": [
+                {
+                    "content": "Desde el día 4",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde el día 16",
+                    "is_correct": true
+                },
+                {
+                    "content": "Desde el día 21",
+                    "is_correct": false
+                },
+                {
+                    "content": "Desde el día 31",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un trabajador está de baja por enfermedad común. ¿Qué porcentaje de la base reguladora le corresponde del día 4 al 20 de baja?",
+            "explanation": "En enfermedad común el subsidio es del 60 % de la base reguladora del día 4 al 20, y del 75 % desde el día 21.",
+            "options": [
+                {
+                    "content": "El 60 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 75 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 100 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "El 50 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En la incapacidad temporal por enfermedad común, los tres primeros días de baja no dan derecho a prestación económica.",
+            "explanation": "En contingencias comunes existe un periodo de espera de tres días y la prestación empieza a abonarse desde el cuarto día de baja.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona TODAS las situaciones que dan lugar a una incapacidad temporal (hay varias correctas).",
+            "explanation": "La IT cubre enfermedad común o profesional y accidentes, laborales o no, con baja médica; vacaciones y permisos no son incapacidad.",
+            "options": [
+                {
+                    "content": "Enfermedad común con asistencia sanitaria de la Seguridad Social",
+                    "is_correct": true
+                },
+                {
+                    "content": "Accidente de trabajo que impide trabajar",
+                    "is_correct": true
+                },
+                {
+                    "content": "Periodos de observación por enfermedad profesional",
+                    "is_correct": true
+                },
+                {
+                    "content": "Vacaciones anuales retribuidas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Permiso por matrimonio",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la duración máxima ordinaria de la incapacidad temporal, sin contar las prórrogas?",
+            "explanation": "La IT tiene una duración máxima de 365 días, prorrogables 180 más si se prevé la curación durante ese periodo.",
+            "options": [
+                {
+                    "content": "180 días",
+                    "is_correct": false
+                },
+                {
+                    "content": "365 días",
+                    "is_correct": true
+                },
+                {
+                    "content": "545 días",
+                    "is_correct": false
+                },
+                {
+                    "content": "730 días",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una trabajadora da a luz y cumple los requisitos. ¿Cuál es la duración de la prestación por nacimiento y cuidado de menor para cada progenitor, en un parto simple?",
+            "explanation": "Desde 2021 los permisos de ambos progenitores están equiparados y suman 16 semanas cada uno, con parto simple.",
+            "options": [
+                {
+                    "content": "16 semanas",
+                    "is_correct": true
+                },
+                {
+                    "content": "12 semanas",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 semanas",
+                    "is_correct": false
+                },
+                {
+                    "content": "26 semanas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "De las semanas de la prestación por nacimiento y cuidado de menor, las seis primeras posteriores al parto son de descanso obligatorio e ininterrumpido para cada progenitor.",
+            "explanation": "Las seis semanas inmediatamente posteriores al parto deben disfrutarse a jornada completa y de forma obligatoria por ambos progenitores.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué porcentaje de la base reguladora cubre la prestación por nacimiento y cuidado de menor? (Responde solo con el número y el símbolo)",
+            "explanation": "El subsidio por nacimiento y cuidado de menor equivale al 100 % de la base reguladora correspondiente a contingencias comunes.",
+            "options": [
+                {
+                    "content": "100 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "100%",
+                    "is_correct": true
+                },
+                {
+                    "content": "El 100 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "el 100%",
+                    "is_correct": true
+                },
+                {
+                    "content": "100 por cien",
+                    "is_correct": true
+                },
+                {
+                    "content": "100 por ciento",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Por un parto múltiple de gemelos, ¿cómo se amplía la duración de la prestación por nacimiento y cuidado de menor de cada progenitor?",
+            "explanation": "En parto, adopción o acogimiento múltiples se añade una semana más para cada progenitor por cada hijo a partir del segundo.",
+            "options": [
+                {
+                    "content": "No se amplía, es siempre igual",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se amplía en una semana por cada hijo a partir del segundo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se duplica la duración total",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se amplía en un mes a repartir entre los dos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué entidad gestiona y reconoce la prestación por nacimiento y cuidado de menor?",
+            "explanation": "El INSS es la entidad gestora que reconoce y abona las prestaciones por nacimiento y cuidado de menor.",
+            "options": [
+                {
+                    "content": "El Instituto Nacional de la Seguridad Social (INSS)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Servicio Público de Empleo Estatal (SEPE)",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Agencia Tributaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "El ayuntamiento de residencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué entidad gestiona la prestación contributiva por desempleo?",
+            "explanation": "La prestación por desempleo la gestiona y reconoce el SEPE.",
+            "options": [
+                {
+                    "content": "El Instituto Nacional de la Seguridad Social (INSS)",
+                    "is_correct": false
+                },
+                {
+                    "content": "La Tesorería General de la Seguridad Social",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Servicio Público de Empleo Estatal (SEPE)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Instituto Social de la Marina",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuántos días de cotización se necesitan como mínimo en los seis años anteriores a la situación legal de desempleo para tener derecho a la prestación contributiva?",
+            "explanation": "Se exige un mínimo de 360 días cotizados en los seis años anteriores a la situación legal de desempleo.",
+            "options": [
+                {
+                    "content": "360",
+                    "is_correct": true
+                },
+                {
+                    "content": "360 días",
+                    "is_correct": true
+                },
+                {
+                    "content": "360 días de cotización",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un trabajador ha cotizado 720 días en los últimos seis años y se queda en paro tras un despido. ¿Cuántos días de prestación contributiva le corresponden?",
+            "explanation": "Con 720 a 899 días cotizados corresponden 240 días de prestación, según la escala legal.",
+            "options": [
+                {
+                    "content": "120 días",
+                    "is_correct": false
+                },
+                {
+                    "content": "180 días",
+                    "is_correct": false
+                },
+                {
+                    "content": "240 días",
+                    "is_correct": true
+                },
+                {
+                    "content": "360 días",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Dentro de qué plazo desde la situación legal de desempleo se debe solicitar la prestación para no perder días de derecho?",
+            "explanation": "La solicitud debe presentarse en los 15 días hábiles siguientes al cese; si se retrasa, se pierden días de prestación.",
+            "options": [
+                {
+                    "content": "15 días hábiles",
+                    "is_correct": true
+                },
+                {
+                    "content": "30 días naturales",
+                    "is_correct": false
+                },
+                {
+                    "content": "3 meses",
+                    "is_correct": false
+                },
+                {
+                    "content": "1 año",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un trabajador que abandona voluntariamente su empleo sin causa justificada se encuentra en situación legal de desempleo y puede cobrar la prestación contributiva.",
+            "explanation": "La baja voluntaria no es situación legal de desempleo, que exige una pérdida involuntaria del empleo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona TODAS las situaciones que son situación legal de desempleo (hay varias correctas).",
+            "explanation": "El despido, el fin del contrato temporal y los despidos colectivos son pérdidas involuntarias de empleo; la dimisión voluntaria no lo es.",
+            "options": [
+                {
+                    "content": "Despido improcedente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Finalización de un contrato temporal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Despido colectivo autorizado por ERE",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dimisión voluntaria sin causa justificada",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

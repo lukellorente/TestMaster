@@ -1,0 +1,521 @@
+{
+    "slug": "ley-41-2002-autonomia-paciente",
+    "title": "Ley 41/2002 autonomía del paciente",
+    "description": "Test del tema de autonomía del paciente (Ley 41/2002) para repasar antes del examen de sanidad. Incluye información clínica, consentimiento, instrucciones previas e historia clínica.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:03:03+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, ¿cuál es el título completo de la norma?",
+            "explanation": "Es el título oficial de la Ley 41/2002, de 14 de noviembre.",
+            "options": [
+                {
+                    "content": "Ley básica reguladora de la autonomía del paciente y de derechos y obligaciones en materia de información y documentación clínica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ley general de derechos del paciente y de los usuarios del sistema sanitario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley reguladora de la información sanitaria y del consentimiento del usuario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ley básica de protección de datos clínicos y autonomía del paciente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, ¿cuál de los siguientes NO es uno de los principios básicos que enuncia?",
+            "explanation": "El paciente tiene derecho a decidir libremente entre las opciones clínicas disponibles y a negarse al tratamiento, salvo en los casos determinados por la ley.",
+            "options": [
+                {
+                    "content": "La dignidad de la persona y el respeto a su autonomía de la voluntad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Toda actuación en el ámbito de la sanidad requiere, con carácter general, el consentimiento previo de los pacientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "El paciente tiene obligación de aceptar siempre el tratamiento indicado por el facultativo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Todo profesional que interviene en la actividad asistencial está obligado al cumplimiento de los deberes de información y documentación clínica",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, la información clínica forma parte de todas las actuaciones asistenciales y, como regla general, se proporcionará al paciente:",
+            "explanation": "La información se proporciona, como regla general, de forma verbal y se deja constancia en la historia clínica.",
+            "options": [
+                {
+                    "content": "Por escrito y con acuse de recibo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Verbalmente, dejando constancia en la historia clínica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente a sus familiares",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo cuando el paciente la solicite expresamente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, la información clínica debe comprender, como mínimo:",
+            "explanation": "La ley establece como contenido mínimo la finalidad y naturaleza de la intervención, sus riesgos y sus consecuencias.",
+            "options": [
+                {
+                    "content": "Diagnóstico y pronóstico exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "La finalidad y la naturaleza de cada intervención, sus riesgos y sus consecuencias",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo los riesgos graves de la intervención",
+                    "is_correct": false
+                },
+                {
+                    "content": "El coste económico de la intervención y sus alternativas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Quién es el titular del derecho a la información asistencial según la Ley 41/2002?",
+            "explanation": "El titular es el paciente; a las personas vinculadas se les informa en la medida en que el paciente lo permita de manera expresa o tácita.",
+            "options": [
+                {
+                    "content": "El paciente, que también puede estar informado en su caso las personas vinculadas a él por razones familiares o de hecho, en la medida que el paciente lo permita",
+                    "is_correct": true
+                },
+                {
+                    "content": "El familiar de primer grado del paciente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El médico responsable del proceso",
+                    "is_correct": false
+                },
+                {
+                    "content": "El representante legal en todos los casos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, ¿quién garantiza que el paciente reciba la información y es el interlocutor principal con él?",
+            "explanation": "El médico responsable garantiza el cumplimiento del derecho a la información; los profesionales que le atiendan o apliquen una técnica también son responsables de informar.",
+            "options": [
+                {
+                    "content": "El director del centro sanitario",
+                    "is_correct": false
+                },
+                {
+                    "content": "El trabajador social",
+                    "is_correct": false
+                },
+                {
+                    "content": "El médico responsable del paciente",
+                    "is_correct": true
+                },
+                {
+                    "content": "El jefe del servicio de admisión",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 41/2002, el derecho a la información sanitaria de los pacientes puede limitarse por la existencia acreditada de un estado de necesidad terapéutica.",
+            "explanation": "La ley permite actuar profesionalmente sin informar antes cuando existan razones objetivas por las que el conocimiento de la situación pueda perjudicar de manera grave su salud (necesidad terapéutica), dejando constancia motivada en la historia clínica.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, el consentimiento informado, como regla general, se prestará:",
+            "explanation": "La regla general es el consentimiento verbal, y se presta por escrito en los supuestos legalmente previstos.",
+            "options": [
+                {
+                    "content": "Por escrito en todos los casos",
+                    "is_correct": false
+                },
+                {
+                    "content": "De forma verbal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Mediante documento notarial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Siempre ante testigos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, ¿en cuál de los siguientes supuestos el consentimiento se prestará por escrito?",
+            "explanation": "Se exige consentimiento escrito en intervención quirúrgica, procedimientos diagnósticos y terapéuticos invasores y, en general, procedimientos que suponen riesgos o inconvenientes de notoria y previsible repercusión negativa sobre la salud.",
+            "options": [
+                {
+                    "content": "Una consulta de revisión rutinaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una intervención quirúrgica",
+                    "is_correct": true
+                },
+                {
+                    "content": "La toma de la tensión arterial",
+                    "is_correct": false
+                },
+                {
+                    "content": "La prescripción de un fármaco de uso común",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta. Según la Ley 41/2002, los facultativos podrán llevar a cabo las intervenciones clínicas indispensables a favor de la salud del paciente, sin necesidad de contar con su consentimiento, cuando:",
+            "explanation": "Las excepciones a la exigencia de consentimiento son el riesgo para la salud pública y la situación de urgencia con riesgo inmediato grave; el rechazo de un adulto capaz debe respetarse.",
+            "options": [
+                {
+                    "content": "Existe riesgo para la salud pública a causa de razones sanitarias establecidas por la ley",
+                    "is_correct": false
+                },
+                {
+                    "content": "Existe riesgo inmediato grave para la integridad física o psíquica del enfermo y no es posible conseguir su autorización, consultando cuando las circunstancias lo permitan a sus familiares o personas vinculadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El paciente rechaza el tratamiento por motivos religiosos y es mayor de edad y capaz",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ambas excepciones legales son las anteriores",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, el paciente puede revocar libremente por escrito su consentimiento:",
+            "explanation": "La ley reconoce que el paciente puede revocar libremente por escrito su consentimiento en cualquier momento.",
+            "options": [
+                {
+                    "content": "Solo antes de iniciar la intervención y con aprobación del médico",
+                    "is_correct": false
+                },
+                {
+                    "content": "En cualquier momento",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente en los siete días siguientes a firmarlo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo ante el comité de ética asistencial",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, el consentimiento por representación se otorgará cuando el paciente:",
+            "explanation": "El consentimiento por representación procede cuando el paciente carece de capacidad para decidir, a criterio del médico, o presenta una situación que le impide hacerse cargo de ella.",
+            "options": [
+                {
+                    "content": "Sea mayor de 65 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "No sea capaz de tomar decisiones, a criterio del médico responsable, o su estado físico o psíquico no le permita hacerse cargo de su situación",
+                    "is_correct": true
+                },
+                {
+                    "content": "Lo solicite su familia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Esté ingresado en una unidad de cuidados intensivos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, ¿a partir de qué edad se considera, con carácter general, que el paciente puede otorgar por sí mismo el consentimiento?",
+            "explanation": "Desde la reforma de 2015, la ley establece que se ha de contar con la mayoría de edad o con menor emancipado o con 16 años cumplidos, salvo excepciones (actuaciones de grave riesgo).",
+            "options": [
+                {
+                    "content": "A los 14 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "A los 16 años",
+                    "is_correct": true
+                },
+                {
+                    "content": "A los 18 años",
+                    "is_correct": false
+                },
+                {
+                    "content": "A los 12 años",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 41/2002, cuando el paciente menor de edad no sea capaz intelectual ni emocionalmente de comprender el alcance de la intervención, el consentimiento lo dará el representante legal del menor tras haber escuchado su opinión.",
+            "explanation": "En ese caso el consentimiento lo presta el representante legal, después de haber escuchado la opinión del menor si tiene doce años cumplidos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, el documento de instrucciones previas es aquel por el cual una persona mayor de edad, capaz y libre:",
+            "explanation": "Las instrucciones previas permiten manifestar anticipadamente la voluntad sobre cuidados y tratamiento de la salud o, llegado el caso, el destino del cuerpo y de los órganos.",
+            "options": [
+                {
+                    "content": "Manifiesta anticipadamente su voluntad para que se cumpla cuando llegue a situaciones en que no sea capaz de expresarla personalmente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Designa a su heredero universal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Autoriza el acceso de terceros a su historia clínica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solicita la cesión de su historia clínica a otro centro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, ¿qué ocurre con las instrucciones previas contrarias al ordenamiento jurídico o a la lex artis?",
+            "explanation": "No se tendrán en cuenta las instrucciones previas contrarias al ordenamiento jurídico, a la lex artis ni las que no se correspondan con el supuesto de hecho previsto.",
+            "options": [
+                {
+                    "content": "Se aplican siempre si el paciente las firmó ante notario",
+                    "is_correct": false
+                },
+                {
+                    "content": "No se tendrán en cuenta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se aplican tras consultar a la familia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se aplican solo parcialmente cuando lo autorice el director del centro",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 41/2002, las instrucciones previas pueden ser revocadas libremente en cualquier momento, dejando constancia por escrito.",
+            "explanation": "La ley establece que las instrucciones previas podrán revocarse libremente en cualquier momento dejando constancia por escrito.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, ¿qué se crea para asegurar la eficacia en todo el territorio nacional de las instrucciones previas?",
+            "explanation": "Se creó el Registro nacional de instrucciones previas, adscrito al Ministerio de Sanidad, regulado por Real Decreto 124/2007.",
+            "options": [
+                {
+                    "content": "El Registro nacional de instrucciones previas, en el Ministerio de Sanidad",
+                    "is_correct": true
+                },
+                {
+                    "content": "El Registro Civil de voluntades sanitarias",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Archivo central de historias clínicas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El Registro general de protocolos notariales sanitarios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, la historia clínica comprende:",
+            "explanation": "La historia clínica incluye el conjunto de documentos de los procesos asistenciales de cada paciente, con identificación de los profesionales que han intervenido.",
+            "options": [
+                {
+                    "content": "Solo los informes de alta del paciente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El conjunto de los documentos relativos a los procesos asistenciales de cada paciente, con la identificación de los médicos y de los demás profesionales que han intervenido",
+                    "is_correct": true
+                },
+                {
+                    "content": "Únicamente las pruebas diagnósticas realizadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los datos económicos y administrativos del paciente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, los centros sanitarios tienen la obligación de conservar la documentación clínica en condiciones que garanticen su correcto mantenimiento y seguridad, aunque no necesariamente en el soporte original, durante:",
+            "explanation": "La ley fija un mínimo de cinco años desde la fecha del alta de cada proceso asistencial, sin perjuicio de la normativa autonómica.",
+            "options": [
+                {
+                    "content": "Cinco años, contados desde la fecha del alta de cada proceso asistencial",
+                    "is_correct": true
+                },
+                {
+                    "content": "Diez años desde el alta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres años desde el alta",
+                    "is_correct": false
+                },
+                {
+                    "content": "Veinte años desde el primer ingreso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, el paciente tiene derecho de acceso a la documentación de la historia clínica, pero este derecho no puede ejercitarse en perjuicio del derecho de terceras personas a la confidencialidad de los datos que constan en ella, ni del derecho de los profesionales participantes en su elaboración a oponer:",
+            "explanation": "Los profesionales pueden oponer al derecho de acceso sus anotaciones subjetivas.",
+            "options": [
+                {
+                    "content": "Sus reservas sobre las anotaciones subjetivas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Su derecho a la intimidad personal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su derecho a la libertad de cátedra",
+                    "is_correct": false
+                },
+                {
+                    "content": "Su derecho a la objeción de conciencia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la Ley 41/2002, ¿quién puede acceder a la historia clínica de un paciente fallecido?",
+            "explanation": "Se limita a las personas vinculadas por razones familiares o de hecho, salvo prohibición expresa del fallecido, y no se facilitará información que afecte a la intimidad del fallecido ni a anotaciones subjetivas.",
+            "options": [
+                {
+                    "content": "Cualquier persona que lo solicite",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las personas vinculadas a él por razones familiares o de hecho, salvo que el fallecido lo hubiese prohibido expresamente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Solo el juez",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente el cónyuge",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 41/2002, el informe de alta es un derecho del paciente que se entrega al finalizar la estancia en una institución hospitalaria.",
+            "explanation": "Todo paciente, familiar o persona vinculada tiene derecho a recibir un informe de alta al finalizar su estancia en una institución hospitalaria, que especifica los datos del paciente, un resumen de su historial clínico, la actividad asistencial prestada, el diagnóstico y las recomendaciones terapéuticas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según la Ley 41/2002, el derecho a negarse al tratamiento exige que el paciente lo haga constar por escrito, y si no lo firma, la dirección del centro puede imponerle el tratamiento.",
+            "explanation": "Si el paciente no acepta el alta, la dirección del centro, previa propuesta del médico responsable, puede dar el alta forzosa; no se le impone el tratamiento. Además, la ley señala que se negará por escrito y, si no firma, constará en la historia clínica.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

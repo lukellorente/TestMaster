@@ -1,0 +1,437 @@
+{
+    "slug": "par-vlan-switching",
+    "title": "VLANs, STP y conmutación (PAR)",
+    "description": "Test para repasar VLAN, trunking 802.1Q, STP, routing entre VLAN y comandos básicos de Cisco IOS antes del examen del módulo de redes. Dificultad media, con teoría y casos prácticos.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:02:09+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué es una VLAN?",
+            "explanation": "Una VLAN segmenta lógicamente una red de capa 2 en dominios de difusión separados, sin depender de la ubicación física.",
+            "options": [
+                {
+                    "content": "Un cable especial que une dos conmutadores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un dominio de difusión lógico independiente de la ubicación física de los equipos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un protocolo que evita bucles en la capa 2",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una dirección IP reservada para la gestión del switch",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuántos bits ocupa el campo VLAN ID de la etiqueta 802.1Q?",
+            "explanation": "El VID tiene 12 bits, lo que permite 4096 valores (con 0 y 4095 reservados, quedan 1-4094 utilizables).",
+            "options": [
+                {
+                    "content": "8 bits",
+                    "is_correct": false
+                },
+                {
+                    "content": "10 bits",
+                    "is_correct": false
+                },
+                {
+                    "content": "16 bits",
+                    "is_correct": false
+                },
+                {
+                    "content": "12 bits",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un switch Cisco con la configuración de fábrica, ¿a qué VLAN pertenecen todos los puertos?",
+            "explanation": "Por defecto todos los puertos de un switch Cisco están en la VLAN 1, que además es la VLAN nativa por defecto.",
+            "options": [
+                {
+                    "content": "VLAN 0",
+                    "is_correct": false
+                },
+                {
+                    "content": "VLAN 1",
+                    "is_correct": true
+                },
+                {
+                    "content": "VLAN 99",
+                    "is_correct": false
+                },
+                {
+                    "content": "VLAN 1002",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En STP (802.1D), ¿cómo se elige el puente raíz (root bridge)?",
+            "explanation": "El root bridge es el switch con el Bridge ID (prioridad + MAC) numéricamente más bajo.",
+            "options": [
+                {
+                    "content": "El switch con más puertos activos",
+                    "is_correct": false
+                },
+                {
+                    "content": "El switch con mayor ancho de banda en sus enlaces",
+                    "is_correct": false
+                },
+                {
+                    "content": "El switch con el Bridge ID más bajo",
+                    "is_correct": true
+                },
+                {
+                    "content": "El switch con la dirección IP más alta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dos switches tienen la misma prioridad de STP. ¿Qué criterio decide cuál será el puente raíz?",
+            "explanation": "Con prioridades iguales desempata la MAC del Bridge ID, y gana la más baja.",
+            "options": [
+                {
+                    "content": "La dirección MAC más baja",
+                    "is_correct": true
+                },
+                {
+                    "content": "La dirección MAC más alta",
+                    "is_correct": false
+                },
+                {
+                    "content": "El que lleve más tiempo encendido",
+                    "is_correct": false
+                },
+                {
+                    "content": "El que tenga más VLAN configuradas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un técnico configura en un puerto de acceso conectado a un PC el comando «spanning-tree portfast». ¿Qué efecto tiene?",
+            "explanation": "PortFast evita los retardos de listening y learning en puertos de acceso hacia equipos finales.",
+            "options": [
+                {
+                    "content": "El puerto pasa directamente al estado de reenvío sin pasar por listening y learning",
+                    "is_correct": true
+                },
+                {
+                    "content": "El puerto se convierte en troncal automáticamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El puerto se convierte en el puerto raíz del switch",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se desactiva STP en todo el switch",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué estándar IEEE define el protocolo RSTP (Rapid Spanning Tree)?",
+            "explanation": "RSTP se definió en 802.1w y posteriormente se integró en la revisión 802.1D-2004.",
+            "options": [
+                {
+                    "content": "802.1Q",
+                    "is_correct": false
+                },
+                {
+                    "content": "802.3ad",
+                    "is_correct": false
+                },
+                {
+                    "content": "802.1w",
+                    "is_correct": true
+                },
+                {
+                    "content": "802.1X",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un router con «router on a stick», se está configurando la subinterfaz GigabitEthernet0/0.30 para la VLAN 30. Ya se ha escrito «interface g0/0.30». ¿Qué comando falta para asociarla a la VLAN?",
+            "explanation": "En la subinterfaz del router se usa «encapsulation dot1Q 30» y después se asigna la IP que actuará de gateway.",
+            "options": [
+                {
+                    "content": "switchport access vlan 30",
+                    "is_correct": false
+                },
+                {
+                    "content": "vlan 30",
+                    "is_correct": false
+                },
+                {
+                    "content": "encapsulation dot1Q 30",
+                    "is_correct": true
+                },
+                {
+                    "content": "switchport trunk allowed vlan 30",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para que un switch multicapa enrute entre VLAN mediante SVI, además de crear «interface vlan 10» con su dirección IP, ¿qué comando global es imprescindible si no está activo?",
+            "explanation": "«ip routing» habilita la función de enrutamiento de capa 3 en el switch multicapa.",
+            "options": [
+                {
+                    "content": "ip routing",
+                    "is_correct": true
+                },
+                {
+                    "content": "router rip",
+                    "is_correct": false
+                },
+                {
+                    "content": "spanning-tree vlan 10",
+                    "is_correct": false
+                },
+                {
+                    "content": "switchport mode trunk",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el objetivo de BPDU Guard en un puerto con PortFast?",
+            "explanation": "BPDU Guard protege la topología: si un puerto de acceso recibe una BPDU, se deshabilita (err-disabled).",
+            "options": [
+                {
+                    "content": "Aumentar la prioridad del puerto para ser puerto raíz",
+                    "is_correct": false
+                },
+                {
+                    "content": "Reenviar las BPDU por todas las VLAN",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cifrar las BPDU entre switches",
+                    "is_correct": false
+                },
+                {
+                    "content": "Poner el puerto en estado err-disabled si recibe una BPDU",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estas secuencias crea la VLAN 20 con el nombre VENTAS en un switch Cisco, desde el modo de configuración global?",
+            "explanation": "Se entra en la VLAN con «vlan 20» y se le da nombre con «name VENTAS».",
+            "options": [
+                {
+                    "content": "vlan 20 / name VENTAS",
+                    "is_correct": true
+                },
+                {
+                    "content": "interface vlan 20 / name VENTAS",
+                    "is_correct": false
+                },
+                {
+                    "content": "vlan database 20 / hostname VENTAS",
+                    "is_correct": false
+                },
+                {
+                    "content": "switchport vlan 20 / description VENTAS",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué información principal muestra el comando «show interfaces trunk»?",
+            "explanation": "Muestra los puertos en modo trunk, la encapsulación, la VLAN nativa y las VLAN permitidas y activas.",
+            "options": [
+                {
+                    "content": "La tabla de direcciones MAC aprendidas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los puertos troncales, su VLAN nativa y las VLAN permitidas",
+                    "is_correct": true
+                },
+                {
+                    "content": "El estado de las rutas del router",
+                    "is_correct": false
+                },
+                {
+                    "content": "Las VLAN creadas y sus puertos de acceso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un enlace troncal 802.1Q, las tramas de la VLAN nativa se envían sin etiqueta.",
+            "explanation": "Las tramas de la VLAN nativa viajan sin etiquetar (untagged) por el troncal.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Dos equipos de VLAN distintas pueden comunicarse entre sí sin ningún dispositivo de capa 3, solo con un switch de capa 2.",
+            "explanation": "Al ser dominios de difusión separados, el tráfico entre VLAN requiere un dispositivo de capa 3 (router o switch multicapa).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En STP, cada switch no raíz elige exactamente un puerto raíz.",
+            "explanation": "Cada switch que no es el root bridge selecciona un único puerto raíz: el de menor coste hacia el puente raíz.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando de Cisco IOS muestra un resumen de las VLAN y de los puertos de acceso asignados a cada una?",
+            "explanation": "«show vlan brief» lista las VLAN, su estado y los puertos de acceso que pertenecen a cada una.",
+            "options": [
+                {
+                    "content": "show vlan brief",
+                    "is_correct": true
+                },
+                {
+                    "content": "sh vlan brief",
+                    "is_correct": true
+                },
+                {
+                    "content": "show vlan br",
+                    "is_correct": true
+                },
+                {
+                    "content": "show vlan-switch brief",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuál es el valor de prioridad de puente por defecto en STP (802.1D)?",
+            "explanation": "La prioridad por defecto es 32768 (en PVST+ se le suma el ID de VLAN, por ejemplo 32769 en la VLAN 1).",
+            "options": [
+                {
+                    "content": "32768",
+                    "is_correct": true
+                },
+                {
+                    "content": "32.768",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué comando se introduce en una interfaz de un switch Cisco para configurarla como troncal de forma estática?",
+            "explanation": "«switchport mode trunk» fuerza el puerto a modo troncal sin negociar.",
+            "options": [
+                {
+                    "content": "switchport mode trunk",
+                    "is_correct": true
+                },
+                {
+                    "content": "sw mode trunk",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las afirmaciones correctas sobre 802.1Q (hay varias correctas):",
+            "explanation": "802.1Q añade una etiqueta de 4 bytes en la trama Ethernet con un VID de 12 bits, y deja sin etiquetar la VLAN nativa.",
+            "options": [
+                {
+                    "content": "Inserta una etiqueta de 4 bytes en la trama Ethernet",
+                    "is_correct": true
+                },
+                {
+                    "content": "El identificador de VLAN ocupa 12 bits",
+                    "is_correct": true
+                },
+                {
+                    "content": "Las tramas de la VLAN nativa no se etiquetan",
+                    "is_correct": true
+                },
+                {
+                    "content": "La etiqueta se añade dentro de la cabecera IP",
+                    "is_correct": false
+                },
+                {
+                    "content": "Añade una etiqueta de 8 bytes a cada trama",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué estados pertenecen a STP clásico (802.1D). Hay varias correctas:",
+            "explanation": "802.1D usa blocking, listening, learning y forwarding (además de disabled); «discarding» es un estado de RSTP.",
+            "options": [
+                {
+                    "content": "Blocking",
+                    "is_correct": true
+                },
+                {
+                    "content": "Listening",
+                    "is_correct": true
+                },
+                {
+                    "content": "Learning",
+                    "is_correct": true
+                },
+                {
+                    "content": "Forwarding",
+                    "is_correct": true
+                },
+                {
+                    "content": "Discarding",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

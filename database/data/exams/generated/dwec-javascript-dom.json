@@ -1,0 +1,552 @@
+{
+    "slug": "dwec-javascript-dom",
+    "title": "DWEC: JavaScript, DOM y eventos",
+    "description": "Test de DWEC sobre JavaScript moderno: let/const, funciones flecha, arrays, DOM, eventos, fetch con async/await y módulos. Para repasar antes del examen del módulo de DAW.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:54:52+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ámbito tiene una variable declarada con let dentro de un bloque if { ... }?",
+            "explanation": "let tiene ámbito de bloque, a diferencia de var, que tiene ámbito de función.",
+            "options": [
+                {
+                    "content": "Todo el archivo, como si fuera global",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo el bloque donde se declara",
+                    "is_correct": true
+                },
+                {
+                    "content": "Toda la función que contiene el bloque",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo la línea donde se declara",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ocurre al ejecutar este código?\n\nconst lista = [1, 2];\nlista.push(3);\nconsole.log(lista);",
+            "explanation": "const impide reasignar la variable, pero no modificar el contenido del array al que apunta.",
+            "options": [
+                {
+                    "content": "Lanza un TypeError porque lista es const",
+                    "is_correct": false
+                },
+                {
+                    "content": "Muestra [1, 2, 3]",
+                    "is_correct": true
+                },
+                {
+                    "content": "Muestra [1, 2]",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve typeof null en JavaScript?",
+            "explanation": "typeof null devuelve \"object\", un error histórico del lenguaje que se mantiene por compatibilidad.",
+            "options": [
+                {
+                    "content": "\"null\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "\"undefined\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "\"object\"",
+                    "is_correct": true
+                },
+                {
+                    "content": "\"number\"",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el resultado de la expresión \"5\" + 3?",
+            "explanation": "Con el operador + y un string, JavaScript convierte el número a texto y concatena.",
+            "options": [
+                {
+                    "content": "8",
+                    "is_correct": false
+                },
+                {
+                    "content": "NaN",
+                    "is_correct": false
+                },
+                {
+                    "content": "Lanza un error",
+                    "is_correct": false
+                },
+                {
+                    "content": "\"53\"",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué muestra este código?\n\nconsole.log(null == undefined, null === undefined);",
+            "explanation": "== aplica coerción y considera iguales null y undefined, pero === compara también el tipo y son distintos.",
+            "options": [
+                {
+                    "content": "true false",
+                    "is_correct": true
+                },
+                {
+                    "content": "false true",
+                    "is_correct": false
+                },
+                {
+                    "content": "true true",
+                    "is_correct": false
+                },
+                {
+                    "content": "false false",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué característica distingue a las funciones flecha respecto a las funciones tradicionales?",
+            "explanation": "Las funciones flecha heredan this de forma léxica, no tienen arguments propio y no son constructores.",
+            "options": [
+                {
+                    "content": "Pueden usarse con new para crear objetos",
+                    "is_correct": false
+                },
+                {
+                    "content": "No tienen su propio this, usan el del ámbito donde se definen",
+                    "is_correct": true
+                },
+                {
+                    "content": "Siempre son asíncronas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tienen su propio objeto arguments",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve este código?\n\n[1, 2, 3, 4].reduce((acc, n) => acc + n, 0);",
+            "explanation": "reduce acumula la suma empezando en 0: 0+1+2+3+4 = 10.",
+            "options": [
+                {
+                    "content": "[1, 2, 3, 4]",
+                    "is_correct": false
+                },
+                {
+                    "content": "4",
+                    "is_correct": false
+                },
+                {
+                    "content": "10",
+                    "is_correct": true
+                },
+                {
+                    "content": "0",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve document.querySelectorAll('.item')?",
+            "explanation": "querySelectorAll devuelve un NodeList estático; para usar map hay que convertirlo antes con Array.from o el operador spread.",
+            "options": [
+                {
+                    "content": "Un HTMLCollection vivo que se actualiza solo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Únicamente el primer elemento con esa clase",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un array con todos los métodos de Array, como map",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un NodeList estático con todos los elementos que coinciden",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Por qué es peligroso asignar texto introducido por el usuario a elemento.innerHTML?",
+            "explanation": "innerHTML interpreta el contenido como HTML; para texto plano es más seguro usar textContent.",
+            "options": [
+                {
+                    "content": "Porque puede inyectar HTML o scripts y provocar ataques XSS",
+                    "is_correct": true
+                },
+                {
+                    "content": "Porque borra todos los listeners del documento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque solo funciona con números",
+                    "is_correct": false
+                },
+                {
+                    "content": "Porque bloquea el hilo principal siempre",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tienes una lista <ul> con muchos <li> que se añaden dinámicamente. ¿Qué técnica evita registrar un listener en cada <li>?",
+            "explanation": "Gracias a la propagación (bubbling), el listener del padre recibe los eventos de los hijos, incluidos los añadidos después.",
+            "options": [
+                {
+                    "content": "Usar setInterval para revisar los clics",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar var en lugar de let",
+                    "is_correct": false
+                },
+                {
+                    "content": "Delegación de eventos: un único listener en el <ul> y comprobar event.target",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usar innerHTML para recrear la lista tras cada clic",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Con fetch, si el servidor responde con un 404, ¿qué ocurre con la promesa?",
+            "explanation": "fetch solo rechaza ante errores de red; los códigos HTTP de error resuelven la promesa con ok igual a false.",
+            "options": [
+                {
+                    "content": "Se rechaza siempre y salta el catch",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se resuelve, y hay que comprobar response.ok o response.status",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se queda pendiente indefinidamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se reintenta automáticamente tres veces",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve una función declarada como async function f() { return 1; } al llamarla con f()?",
+            "explanation": "Una función async siempre devuelve una promesa, y el valor del return es el de su resolución.",
+            "options": [
+                {
+                    "content": "El número 1",
+                    "is_correct": false
+                },
+                {
+                    "content": "undefined",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un objeto Error",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una Promise que se resuelve con el valor 1",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un archivo saludo.js contiene export default function saludar() {}. ¿Cómo se importa correctamente?",
+            "explanation": "Las exportaciones por defecto se importan sin llaves y con el nombre que elijamos.",
+            "options": [
+                {
+                    "content": "import saludar from './saludo.js';",
+                    "is_correct": true
+                },
+                {
+                    "content": "import { saludar } from './saludo.js';",
+                    "is_correct": false
+                },
+                {
+                    "content": "const saludar = require.default('./saludo.js');",
+                    "is_correct": false
+                },
+                {
+                    "content": "include './saludo.js' as saludar;",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atributo hay que poner en la etiqueta <script> para usar import y export en el navegador?",
+            "explanation": "Para que el navegador trate el archivo como módulo ES se usa type=\"module\".",
+            "options": [
+                {
+                    "content": "async=\"modules\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "type=\"module\"",
+                    "is_correct": true
+                },
+                {
+                    "content": "lang=\"es6\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "rel=\"module\"",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Tienes un formulario y quieres evitar que se recargue la página al enviarlo y validar antes con JavaScript. ¿Qué haces en el manejador del evento submit?",
+            "explanation": "preventDefault cancela el comportamiento por defecto del navegador, que aquí es enviar el formulario y recargar.",
+            "options": [
+                {
+                    "content": "Llamar a event.stopPropagation() únicamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Devolver undefined",
+                    "is_correct": false
+                },
+                {
+                    "content": "Llamar a event.preventDefault()",
+                    "is_correct": true
+                },
+                {
+                    "content": "Llamar a window.stop()",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Las funciones flecha se pueden utilizar como constructores con el operador new.",
+            "explanation": "Las funciones flecha no tienen prototype ni [[Construct]], y new lanza un TypeError.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una variable declarada con let no se puede usar antes de su declaración, porque está en la zona muerta temporal (TDZ).",
+            "explanation": "Acceder a una variable let o const antes de su declaración lanza un ReferenceError.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El método response.json() de fetch devuelve una promesa.",
+            "explanation": "La lectura del cuerpo es asíncrona, por lo que hay que usar await o then para obtener el objeto.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En JavaScript, la expresión NaN === NaN devuelve true.",
+            "explanation": "NaN no es igual a nada, ni a sí mismo; para comprobarlo se usa Number.isNaN().",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué método de los arrays devuelve un nuevo array solo con los elementos que cumplen una condición?",
+            "explanation": "filter recibe una función de condición y devuelve un array nuevo con los elementos para los que devuelve true.",
+            "options": [
+                {
+                    "content": "filter",
+                    "is_correct": true
+                },
+                {
+                    "content": "filter()",
+                    "is_correct": true
+                },
+                {
+                    "content": "Array.prototype.filter",
+                    "is_correct": true
+                },
+                {
+                    "content": "el método filter",
+                    "is_correct": true
+                },
+                {
+                    "content": "método filter",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué método de un elemento del DOM se usa para registrar un manejador de eventos?",
+            "explanation": "addEventListener(tipo, función) registra un listener sin sobrescribir los que ya existan.",
+            "options": [
+                {
+                    "content": "addEventListener",
+                    "is_correct": true
+                },
+                {
+                    "content": "addEventListener()",
+                    "is_correct": true
+                },
+                {
+                    "content": "el método addEventListener",
+                    "is_correct": true
+                },
+                {
+                    "content": "método addEventListener",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué palabra clave se usa dentro de una función async para esperar a que una promesa se resuelva?",
+            "explanation": "await pausa la ejecución de la función async hasta que la promesa se resuelva o rechace.",
+            "options": [
+                {
+                    "content": "await",
+                    "is_correct": true
+                },
+                {
+                    "content": "la palabra await",
+                    "is_correct": true
+                },
+                {
+                    "content": "palabra clave await",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué propiedad del objeto evento referencia al elemento en el que se registró el listener, aunque el clic se produzca en un hijo?",
+            "explanation": "currentTarget es el elemento que tiene el listener, mientras que target es el elemento que originó el evento.",
+            "options": [
+                {
+                    "content": "currentTarget",
+                    "is_correct": true
+                },
+                {
+                    "content": "event.currentTarget",
+                    "is_correct": true
+                },
+                {
+                    "content": "e.currentTarget",
+                    "is_correct": true
+                },
+                {
+                    "content": "la propiedad currentTarget",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los tipos primitivos de JavaScript (hay varias respuestas correctas).",
+            "explanation": "Los primitivos son string, number, bigint, boolean, undefined, null y symbol; los arrays y objetos son tipos por referencia.",
+            "options": [
+                {
+                    "content": "string",
+                    "is_correct": true
+                },
+                {
+                    "content": "symbol",
+                    "is_correct": true
+                },
+                {
+                    "content": "array",
+                    "is_correct": false
+                },
+                {
+                    "content": "bigint",
+                    "is_correct": true
+                },
+                {
+                    "content": "object",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "¿Cuáles de los siguientes métodos sirven para seleccionar elementos existentes del DOM? (hay varias respuestas correctas)",
+            "explanation": "createElement crea un elemento nuevo y no selecciona ninguno existente; los otros tres sí buscan en el documento.",
+            "options": [
+                {
+                    "content": "document.createElement",
+                    "is_correct": false
+                },
+                {
+                    "content": "document.getElementById",
+                    "is_correct": true
+                },
+                {
+                    "content": "document.querySelector",
+                    "is_correct": true
+                },
+                {
+                    "content": "document.getElementsByClassName",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

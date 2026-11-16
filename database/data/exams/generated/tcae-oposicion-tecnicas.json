@@ -1,0 +1,897 @@
+{
+    "slug": "tcae-oposicion-tecnicas",
+    "title": "TCAE oposición SAS/SERMAS - técnicas y cuidados",
+    "description": "Test de técnicas y cuidados para la oposición de TCAE del SAS y el SERMAS: constantes, posiciones, higiene, UPP, aislamientos y esterilización. Lo hice para repasar antes del examen, con dificultad media.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:14:03+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el rango normal de la frecuencia cardíaca en reposo en un adulto?",
+            "explanation": "En el adulto sano en reposo la frecuencia cardíaca normal está entre 60 y 100 lpm; por debajo es bradicardia y por encima, taquicardia.",
+            "options": [
+                {
+                    "content": "40-60 latidos por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "60-100 latidos por minuto",
+                    "is_correct": true
+                },
+                {
+                    "content": "100-120 latidos por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "80-140 latidos por minuto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La frecuencia respiratoria normal de un adulto en reposo se sitúa entre:",
+            "explanation": "El rango normal en el adulto es de 12 a 20 rpm. Menos de 12 es bradipnea y más de 20, taquipnea.",
+            "options": [
+                {
+                    "content": "6 y 10 respiraciones por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "20 y 30 respiraciones por minuto",
+                    "is_correct": false
+                },
+                {
+                    "content": "12 y 20 respiraciones por minuto",
+                    "is_correct": true
+                },
+                {
+                    "content": "25 y 35 respiraciones por minuto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué patrón respiratorio, profundo y rápido, es característico de la acidosis metabólica, como en la cetoacidosis diabética?",
+            "explanation": "La respiración de Kussmaul es profunda y rápida, y es la respuesta compensadora a la acidosis metabólica.",
+            "options": [
+                {
+                    "content": "Respiración de Cheyne-Stokes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Respiración de Biot",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ortopnea",
+                    "is_correct": false
+                },
+                {
+                    "content": "Respiración de Kussmaul",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al medir la tensión arterial, si se utiliza un manguito demasiado estrecho para el brazo del paciente, el resultado será:",
+            "explanation": "Un manguito estrecho necesita más presión para comprimir la arteria y da valores falsamente elevados.",
+            "options": [
+                {
+                    "content": "Una cifra falsamente elevada",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una cifra falsamente baja",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una cifra exacta si se infla más rápido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo se altera la presión diastólica a la baja",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En cuál de las siguientes localizaciones se obtiene habitualmente el valor más alto de temperatura corporal?",
+            "explanation": "La temperatura rectal es más alta, cerca de medio grado, que la axilar y se acerca más a la temperatura central.",
+            "options": [
+                {
+                    "content": "Axilar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Inguinal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Rectal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cutánea en la frente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se define como hipotermia una temperatura corporal central inferior a:",
+            "explanation": "Se habla de hipotermia cuando la temperatura central desciende por debajo de 35 °C.",
+            "options": [
+                {
+                    "content": "37 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "35 °C",
+                    "is_correct": true
+                },
+                {
+                    "content": "33 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "32 °C",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale cuál de los siguientes factores puede falsear la lectura de la pulsioximetría:",
+            "explanation": "El esmalte oscuro, las uñas artificiales, la mala perfusión periférica y la luz ambiente intensa interfieren en la lectura.",
+            "options": [
+                {
+                    "content": "La edad del paciente",
+                    "is_correct": false
+                },
+                {
+                    "content": "La posición de decúbito supino",
+                    "is_correct": false
+                },
+                {
+                    "content": "El ayuno prolongado",
+                    "is_correct": false
+                },
+                {
+                    "content": "El esmalte de uñas oscuro en el dedo del sensor",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué valor de saturación de oxígeno se considera normal en una persona sana sin patología respiratoria?",
+            "explanation": "En una persona sana la saturación de oxígeno es normalmente del 95 % o más.",
+            "options": [
+                {
+                    "content": "Igual o superior al 95 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "Entre el 85 % y el 90 %",
+                    "is_correct": false
+                },
+                {
+                    "content": "Entre el 90 % y el 92 % exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Igual o superior al 75 %",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se considera hipoglucemia una glucemia capilar inferior a:",
+            "explanation": "El umbral habitual de hipoglucemia es una glucemia inferior a 70 mg/dl.",
+            "options": [
+                {
+                    "content": "100 mg/dl",
+                    "is_correct": false
+                },
+                {
+                    "content": "120 mg/dl",
+                    "is_correct": false
+                },
+                {
+                    "content": "70 mg/dl",
+                    "is_correct": true
+                },
+                {
+                    "content": "40 mg/dl",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Ante una persona inconsciente adulta, ¿en qué arteria se debe comprobar el pulso central?",
+            "explanation": "La arteria carótida es la de elección para valorar el pulso central en el adulto.",
+            "options": [
+                {
+                    "content": "Radial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Carótida",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pedia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Poplítea",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La posición de Fowler consiste en colocar al paciente:",
+            "explanation": "En la posición de Fowler el paciente está semisentado con el cabecero elevado, en torno a 45°. En la semi-Fowler son unos 30°.",
+            "options": [
+                {
+                    "content": "En decúbito supino con la cabecera plana y las piernas elevadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "En decúbito lateral con la pierna superior flexionada",
+                    "is_correct": false
+                },
+                {
+                    "content": "En decúbito prono con la cabeza girada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Semisentado, con la cabecera de la cama elevada unos 45°",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la posición de Trendelenburg:",
+            "explanation": "En Trendelenburg el paciente está en decúbito supino con la cabeza más baja que el resto del cuerpo.",
+            "options": [
+                {
+                    "content": "La cabeza queda más baja que los pies",
+                    "is_correct": true
+                },
+                {
+                    "content": "La cabeza queda más alta que los pies",
+                    "is_correct": false
+                },
+                {
+                    "content": "El paciente se apoya sobre las rodillas y el tórax",
+                    "is_correct": false
+                },
+                {
+                    "content": "El paciente está en decúbito lateral izquierdo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué posición es decúbito lateral izquierdo con la pierna derecha flexionada y el brazo derecho hacia delante, y se usa para enemas y exploraciones rectales?",
+            "explanation": "La posición de Sims es un decúbito lateral izquierdo semiprono, útil para enemas, supositorios y exploración rectal.",
+            "options": [
+                {
+                    "content": "Genupectoral",
+                    "is_correct": false
+                },
+                {
+                    "content": "Litotomía",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sims",
+                    "is_correct": true
+                },
+                {
+                    "content": "Fowler",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La posición de litotomía o ginecológica se caracteriza por:",
+            "explanation": "En la litotomía el paciente está en supino con caderas y rodillas flexionadas y las piernas separadas sobre soportes.",
+            "options": [
+                {
+                    "content": "Paciente en decúbito prono con las piernas juntas",
+                    "is_correct": false
+                },
+                {
+                    "content": "Paciente en decúbito supino con las piernas flexionadas, separadas y apoyadas en estribos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Paciente sentado con el tronco inclinado hacia delante",
+                    "is_correct": false
+                },
+                {
+                    "content": "Paciente en decúbito lateral con las rodillas hacia el pecho",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La posición genupectoral o mahometana es aquella en la que el paciente se apoya sobre:",
+            "explanation": "En la genupectoral el paciente se apoya sobre rodillas y pecho, con las nalgas elevadas. Se usa en exploraciones rectales.",
+            "options": [
+                {
+                    "content": "Las rodillas y el pecho, con las nalgas elevadas",
+                    "is_correct": true
+                },
+                {
+                    "content": "La espalda con las rodillas flexionadas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El costado izquierdo con una pierna extendida",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los glúteos con el tronco a 90°",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El decúbito prono es la posición en la que el paciente se encuentra:",
+            "explanation": "Decúbito prono es estar tumbado boca abajo, con el abdomen apoyado sobre la cama.",
+            "options": [
+                {
+                    "content": "Tumbado de lado sobre el costado derecho",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tumbado sobre la espalda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sentado con las piernas colgando",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tumbado boca abajo",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un paciente inconsciente que respira con normalidad y no tiene sospecha de lesión medular, la posición recomendada es:",
+            "explanation": "La posición lateral de seguridad mantiene la vía aérea permeable y reduce el riesgo de aspiración si hay vómito.",
+            "options": [
+                {
+                    "content": "Trendelenburg",
+                    "is_correct": false
+                },
+                {
+                    "content": "Decúbito supino con la cabeza flexionada",
+                    "is_correct": false
+                },
+                {
+                    "content": "Posición lateral de seguridad",
+                    "is_correct": true
+                },
+                {
+                    "content": "Genupectoral",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el aseo completo del paciente encamado, ¿cuál es la norma general sobre el orden de lavado?",
+            "explanation": "El aseo va de zonas limpias a sucias para no arrastrar microorganismos. Los genitales se dejan para el final.",
+            "options": [
+                {
+                    "content": "Se empieza por los genitales para ahorrar tiempo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se lava de la zona más limpia a la más sucia, dejando los genitales para el final",
+                    "is_correct": true
+                },
+                {
+                    "content": "Se lava de la zona más sucia a la más limpia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se lava solo con agua muy caliente y sin secar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la higiene bucal de un paciente inconsciente es fundamental:",
+            "explanation": "Con la cabeza lateralizada y poca cantidad de líquido se previene la broncoaspiración. La higiene bucal no se omite.",
+            "options": [
+                {
+                    "content": "Colocarlo en decúbito supino con la cabeza en extensión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Utilizar gran cantidad de agua para aclarar la boca",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dejar la higiene para cuando recupere la consciencia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mantener la cabeza lateralizada y evitar la aspiración de líquidos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el cambio de ropa de una cama ocupada, la ropa sucia debe:",
+            "explanation": "La ropa sucia no se sacude ni se apoya en el uniforme, para evitar dispersar microorganismos. Se enrolla con la parte sucia hacia dentro.",
+            "options": [
+                {
+                    "content": "Enrollarse con la parte sucia hacia dentro y sin sacudirla",
+                    "is_correct": true
+                },
+                {
+                    "content": "Sacudirse para eliminar restos antes de retirarla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dejarse en el suelo junto a la cama",
+                    "is_correct": false
+                },
+                {
+                    "content": "Apoyarse sobre el uniforme para no perder tiempo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la OMS, ¿cuál es la duración recomendada de la higiene de manos mediante fricción con solución hidroalcohólica?",
+            "explanation": "La fricción con solución hidroalcohólica dura entre 20 y 30 segundos. Con agua y jabón son de 40 a 60 segundos.",
+            "options": [
+                {
+                    "content": "5-10 segundos",
+                    "is_correct": false
+                },
+                {
+                    "content": "10-15 segundos",
+                    "is_correct": false
+                },
+                {
+                    "content": "20-30 segundos",
+                    "is_correct": true
+                },
+                {
+                    "content": "2-3 minutos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la higiene de los pies de un paciente diabético es correcto:",
+            "explanation": "Hay que secar bien los espacios interdigitales para evitar maceración e infección. Se evita el agua caliente, los callicidas y andar descalzo.",
+            "options": [
+                {
+                    "content": "Cortar los callos con cuchilla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Secar cuidadosamente, sobre todo entre los dedos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usar agua muy caliente para mejorar la circulación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aconsejar que ande descalzo para ventilar los pies",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La úlcera por presión en estadio I se caracteriza por:",
+            "explanation": "El estadio I es un eritema que no blanquea a la presión sobre piel intacta.",
+            "options": [
+                {
+                    "content": "Eritema cutáneo que no palidece al presionar, con la piel intacta",
+                    "is_correct": true
+                },
+                {
+                    "content": "Pérdida parcial del grosor de la piel con ampolla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pérdida total del grosor con exposición de tejido subcutáneo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exposición de hueso o tendón",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una úlcera por presión que presenta pérdida parcial del espesor de la piel, con aspecto de abrasión o ampolla, se clasifica como estadio:",
+            "explanation": "El estadio II implica pérdida parcial del espesor de la piel, con abrasión, ampolla o úlcera superficial.",
+            "options": [
+                {
+                    "content": "I",
+                    "is_correct": false
+                },
+                {
+                    "content": "III",
+                    "is_correct": false
+                },
+                {
+                    "content": "IV",
+                    "is_correct": false
+                },
+                {
+                    "content": "II",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La úlcera por presión con pérdida total del espesor de la piel y exposición de músculo, hueso o tendón es de estadio:",
+            "explanation": "En el estadio IV hay destrucción extensa con afectación de músculo, hueso o estructuras de soporte.",
+            "options": [
+                {
+                    "content": "II",
+                    "is_correct": false
+                },
+                {
+                    "content": "III",
+                    "is_correct": false
+                },
+                {
+                    "content": "IV",
+                    "is_correct": true
+                },
+                {
+                    "content": "I",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes es una zona de riesgo de úlcera por presión en un paciente en decúbito supino?",
+            "explanation": "En decúbito supino se afectan sacro, talones, occipucio y escápulas. El trocánter y el maléolo externo corresponden al decúbito lateral y el isquion a la sedestación.",
+            "options": [
+                {
+                    "content": "Trocánter mayor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sacro",
+                    "is_correct": true
+                },
+                {
+                    "content": "Isquion",
+                    "is_correct": false
+                },
+                {
+                    "content": "Maléolo externo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Señale la respuesta incorrecta respecto a los aspectos que valora la escala de Braden:",
+            "explanation": "La escala de Braden valora percepción sensorial, humedad, actividad, movilidad, nutrición y roce o fricción. No incluye la edad.",
+            "options": [
+                {
+                    "content": "Percepción sensorial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Exposición a la humedad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Movilidad",
+                    "is_correct": false
+                },
+                {
+                    "content": "Edad del paciente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la prevención de úlceras por presión, la elevación de la cabecera de la cama debe mantenerse, siempre que sea posible, en un ángulo:",
+            "explanation": "Una cabecera elevada más de 30° aumenta las fuerzas de cizalla y la presión sobre el sacro.",
+            "options": [
+                {
+                    "content": "No superior a 30°, salvo en las comidas o por indicación médica",
+                    "is_correct": true
+                },
+                {
+                    "content": "De 60° de forma continua",
+                    "is_correct": false
+                },
+                {
+                    "content": "De 90° para favorecer la circulación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Superior a 45° durante la noche",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un paciente con tuberculosis pulmonar bacilífera requiere aislamiento:",
+            "explanation": "La tuberculosis se transmite por vía aérea, por lo que requiere mascarilla FFP2 o N95 y habitación con presión negativa.",
+            "options": [
+                {
+                    "content": "De contacto con bata y guantes exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "De gotas con mascarilla quirúrgica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Aéreo, con mascarilla FFP2 y habitación individual con presión negativa",
+                    "is_correct": true
+                },
+                {
+                    "content": "Protector inverso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes enfermedades requiere aislamiento por gotas?",
+            "explanation": "La gripe se transmite por gotas de más de 5 micras, por lo que requiere mascarilla quirúrgica. El sarampión y la tuberculosis son aéreos y C. difficile es de contacto.",
+            "options": [
+                {
+                    "content": "Sarampión",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gripe",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tuberculosis pulmonar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Infección por Clostridioides difficile",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El aislamiento protector o inverso está indicado, entre otros casos, en:",
+            "explanation": "El aislamiento protector protege al paciente inmunodeprimido de los microorganismos del entorno.",
+            "options": [
+                {
+                    "content": "Pacientes con varicela",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pacientes con sarna",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pacientes con meningitis meningocócica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pacientes con neutropenia grave o trasplantados de médula ósea",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la secuencia habitual de colocación del equipo de protección individual, ¿qué elemento se coloca en primer lugar?",
+            "explanation": "La secuencia habitual es bata, mascarilla, protección ocular y guantes. Los guantes se colocan al final y cubren el puño de la bata.",
+            "options": [
+                {
+                    "content": "Bata",
+                    "is_correct": true
+                },
+                {
+                    "content": "Guantes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Gafas de protección",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mascarilla",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El método de esterilización más utilizado en el ámbito hospitalario es:",
+            "explanation": "El autoclave de vapor es el método más empleado, seguro y económico para material termorresistente.",
+            "options": [
+                {
+                    "content": "La inmersión en glutaraldehído",
+                    "is_correct": false
+                },
+                {
+                    "content": "El calor seco a 60 °C",
+                    "is_correct": false
+                },
+                {
+                    "content": "El vapor de agua a presión (autoclave)",
+                    "is_correct": true
+                },
+                {
+                    "content": "El lavado con agua y jabón",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué tipo de indicador ofrece la mayor garantía de esterilidad de una carga?",
+            "explanation": "Los indicadores biológicos usan esporas, como Geobacillus stearothermophilus en el vapor. Comprueban realmente la destrucción de los microorganismos.",
+            "options": [
+                {
+                    "content": "Indicador físico exclusivamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Indicador biológico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cinta adhesiva de control",
+                    "is_correct": false
+                },
+                {
+                    "content": "Indicador visual del envase",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "El óxido de etileno se emplea para esterilizar material:",
+            "explanation": "El óxido de etileno actúa a baja temperatura, pero es tóxico, por lo que el material debe airearse tras el proceso.",
+            "options": [
+                {
+                    "content": "Termorresistente que admite el autoclave",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que va a usarse inmediatamente sin aireación",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que no requiere limpieza previa",
+                    "is_correct": false
+                },
+                {
+                    "content": "Termosensible, y requiere un periodo de aireación posterior por su toxicidad",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según la clasificación de Spaulding, el instrumental quirúrgico que penetra en tejidos estériles se considera material:",
+            "explanation": "El material crítico entra en tejido estéril o en el sistema vascular y debe esterilizarse.",
+            "options": [
+                {
+                    "content": "Crítico, y requiere esterilización",
+                    "is_correct": true
+                },
+                {
+                    "content": "Semicrítico, y requiere desinfección de bajo nivel",
+                    "is_correct": false
+                },
+                {
+                    "content": "No crítico, y solo requiere limpieza",
+                    "is_correct": false
+                },
+                {
+                    "content": "Semicrítico, y requiere solo antisepsia",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En la medición de la tensión arterial con esfigmomanómetro, el primer ruido de Korotkoff que se oye corresponde a la presión arterial sistólica.",
+            "explanation": "El primer ruido de Korotkoff indica la presión sistólica y su desaparición, la diastólica.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un paciente con infección por Clostridioides difficile, la higiene de manos con solución hidroalcohólica es suficiente y no es necesario el lavado con agua y jabón.",
+            "explanation": "Las soluciones hidroalcohólicas no eliminan las esporas de C. difficile, por lo que se recomienda lavarse con agua y jabón.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Ante una zona enrojecida sobre una prominencia ósea, la medida preventiva recomendada es realizar un masaje enérgico para activar la circulación.",
+            "explanation": "No se debe masajear una zona enrojecida sobre una prominencia ósea, porque puede aumentar el daño tisular.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La desinfección de alto nivel destruye todas las formas de vida microbiana, incluidas todas las esporas bacterianas, y equivale a la esterilización.",
+            "explanation": "La desinfección de alto nivel no garantiza la destrucción de todas las esporas. Solo la esterilización elimina toda forma de vida microbiana.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

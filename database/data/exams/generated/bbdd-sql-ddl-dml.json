@@ -1,0 +1,533 @@
+{
+    "slug": "bbdd-sql-ddl-dml",
+    "title": "BBDD UT3 - SQL DDL y DML",
+    "description": "Test del tema 3 de Bases de Datos para repasar SQL: creación y modificación de tablas, restricciones, INSERT/UPDATE/DELETE y consultas con JOIN, GROUP BY, HAVING y subconsultas. Me ha venido bien para preparar el examen de DAM/DAW.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:48:51+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "Dada la tabla creada con: CREATE TABLE producto (id INT PRIMARY KEY, nombre VARCHAR(50) NOT NULL, precio DECIMAL(8,2) DEFAULT 0); ¿qué valor tendrá la columna precio tras ejecutar INSERT INTO producto (id, nombre) VALUES (1, 'Ratón');?",
+            "explanation": "Al omitir la columna en el INSERT se aplica su valor DEFAULT, que es 0 (0.00 con DECIMAL(8,2)).",
+            "options": [
+                {
+                    "content": "NULL",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se produce un error porque falta el precio",
+                    "is_correct": false
+                },
+                {
+                    "content": "0.00",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una cadena vacía",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué restricción garantiza que los valores de una columna sean únicos y no nulos, y solo puede definirse una vez por tabla?",
+            "explanation": "La clave primaria identifica cada fila, no admite NULL ni duplicados y solo hay una por tabla; UNIQUE puede repetirse en varias columnas.",
+            "options": [
+                {
+                    "content": "PRIMARY KEY",
+                    "is_correct": true
+                },
+                {
+                    "content": "UNIQUE",
+                    "is_correct": false
+                },
+                {
+                    "content": "CHECK",
+                    "is_correct": false
+                },
+                {
+                    "content": "FOREIGN KEY",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la sentencia correcta para añadir una columna telefono de tipo VARCHAR(15) a la tabla empleado?",
+            "explanation": "Para modificar la estructura de una tabla existente se usa ALTER TABLE con ADD COLUMN.",
+            "options": [
+                {
+                    "content": "UPDATE TABLE empleado ADD telefono VARCHAR(15);",
+                    "is_correct": false
+                },
+                {
+                    "content": "ALTER TABLE empleado ADD COLUMN telefono VARCHAR(15);",
+                    "is_correct": true
+                },
+                {
+                    "content": "CREATE COLUMN telefono VARCHAR(15) IN empleado;",
+                    "is_correct": false
+                },
+                {
+                    "content": "INSERT INTO empleado COLUMN telefono VARCHAR(15);",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La cláusula WHERE no puede utilizar directamente funciones de agregado como SUM() o COUNT(); para filtrar por ellas se usa HAVING.",
+            "explanation": "WHERE filtra filas antes de agrupar, por lo que no admite agregados; HAVING filtra los grupos ya formados.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una tabla pedido tiene una clave ajena id_cliente definida con ON DELETE CASCADE hacia cliente. ¿Qué ocurre al borrar un cliente que tiene pedidos?",
+            "explanation": "ON DELETE CASCADE propaga el borrado de la fila padre a las filas hijas que la referencian.",
+            "options": [
+                {
+                    "content": "El borrado se rechaza con un error",
+                    "is_correct": false
+                },
+                {
+                    "content": "El id_cliente de sus pedidos pasa a NULL",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los pedidos se mantienen sin cambios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se borran también automáticamente sus pedidos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué cláusula se utiliza para filtrar grupos después de aplicar GROUP BY?",
+            "explanation": "HAVING aplica condiciones sobre los grupos generados por GROUP BY, normalmente con funciones de agregado.",
+            "options": [
+                {
+                    "content": "HAVING",
+                    "is_correct": true
+                },
+                {
+                    "content": "having",
+                    "is_correct": true
+                },
+                {
+                    "content": "cláusula HAVING",
+                    "is_correct": true
+                },
+                {
+                    "content": "la cláusula HAVING",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué hace la sentencia UPDATE empleado SET salario = salario * 1.05; (sin WHERE)?",
+            "explanation": "Sin WHERE, el UPDATE afecta a todas las filas de la tabla.",
+            "options": [
+                {
+                    "content": "Da error de sintaxis por no tener WHERE",
+                    "is_correct": false
+                },
+                {
+                    "content": "Modifica solo la primera fila de la tabla",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sube un 5 % el salario de todos los empleados",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve un INNER JOIN entre las tablas cliente y pedido?",
+            "explanation": "INNER JOIN devuelve únicamente las combinaciones de filas que cumplen la condición ON.",
+            "options": [
+                {
+                    "content": "Todos los clientes, tengan o no pedidos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Solo las filas de ambas tablas que cumplen la condición de unión",
+                    "is_correct": true
+                },
+                {
+                    "content": "Todos los pedidos, tengan o no cliente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El producto cartesiano de ambas tablas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Una columna con restricción UNIQUE no admite nunca el valor NULL.",
+            "explanation": "UNIQUE impide duplicados, pero en los SGBD habituales (como MySQL o PostgreSQL) permite NULL; es PRIMARY KEY la que lo prohíbe.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se quiere listar todos los clientes, incluso los que no han hecho ningún pedido, junto con sus pedidos. ¿Qué consulta es la adecuada?",
+            "explanation": "LEFT JOIN conserva todas las filas de la tabla izquierda (cliente) y rellena con NULL las columnas de pedido cuando no hay coincidencia.",
+            "options": [
+                {
+                    "content": "SELECT * FROM cliente c INNER JOIN pedido p ON c.id = p.id_cliente;",
+                    "is_correct": false
+                },
+                {
+                    "content": "SELECT * FROM cliente c RIGHT JOIN pedido p ON c.id = p.id_cliente;",
+                    "is_correct": false
+                },
+                {
+                    "content": "SELECT * FROM cliente c LEFT JOIN pedido p ON c.id = p.id_cliente;",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué sentencia SQL elimina por completo una tabla, incluida su estructura?",
+            "explanation": "DROP TABLE borra la tabla con su definición y datos; DELETE solo elimina filas.",
+            "options": [
+                {
+                    "content": "DROP TABLE",
+                    "is_correct": true
+                },
+                {
+                    "content": "drop table",
+                    "is_correct": true
+                },
+                {
+                    "content": "DROP TABLE nombre_tabla",
+                    "is_correct": true
+                },
+                {
+                    "content": "DROP",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Para la consulta SELECT dpto, COUNT(*) FROM empleado GROUP BY dpto; ¿qué resultado se obtiene?",
+            "explanation": "GROUP BY agrupa las filas por dpto y COUNT(*) cuenta las filas de cada grupo.",
+            "options": [
+                {
+                    "content": "Una única fila con el total de empleados",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una fila por departamento con su número de empleados",
+                    "is_correct": true
+                },
+                {
+                    "content": "Una fila por empleado con el nombre de su departamento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un error porque falta HAVING",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las restricciones de integridad que se pueden definir en un CREATE TABLE (hay varias correctas):",
+            "explanation": "PRIMARY KEY, CHECK y UNIQUE son restricciones; HAVING y DISTINCT son elementos de consulta SELECT.",
+            "options": [
+                {
+                    "content": "PRIMARY KEY",
+                    "is_correct": true
+                },
+                {
+                    "content": "CHECK",
+                    "is_correct": true
+                },
+                {
+                    "content": "HAVING",
+                    "is_correct": false
+                },
+                {
+                    "content": "UNIQUE",
+                    "is_correct": true
+                },
+                {
+                    "content": "DISTINCT",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la tabla empleado, 5 filas tienen la columna comision con estos valores: 100, NULL, 200, NULL, 50. ¿Qué devuelve SELECT COUNT(comision) FROM empleado;?",
+            "explanation": "COUNT(columna) ignora los valores NULL, así que cuenta solo las 3 filas con valor.",
+            "options": [
+                {
+                    "content": "5",
+                    "is_correct": false
+                },
+                {
+                    "content": "2",
+                    "is_correct": false
+                },
+                {
+                    "content": "3",
+                    "is_correct": true
+                },
+                {
+                    "content": "350",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué devuelve la consulta SELECT nombre FROM empleado WHERE salario > (SELECT AVG(salario) FROM empleado);?",
+            "explanation": "La subconsulta escalar calcula la media y la consulta externa filtra los salarios mayores que ella.",
+            "options": [
+                {
+                    "content": "Los empleados con salario superior a la media",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los empleados con salario igual a la media",
+                    "is_correct": false
+                },
+                {
+                    "content": "La media de los salarios",
+                    "is_correct": false
+                },
+                {
+                    "content": "Un error, porque no se puede usar AVG en una subconsulta",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La sentencia INSERT INTO ... SELECT permite insertar en una tabla las filas obtenidas de una consulta sobre otra tabla.",
+            "explanation": "INSERT INTO destino (columnas) SELECT ... FROM origen inserta todas las filas devueltas por el SELECT.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "La consulta SELECT * FROM empleado WHERE id_dpto = (SELECT id FROM departamento WHERE ciudad = 'Madrid'); falla porque hay dos departamentos en Madrid. ¿Cómo se corrige?",
+            "explanation": "El operador = exige una subconsulta de una sola fila; IN admite varias filas.",
+            "options": [
+                {
+                    "content": "Cambiando = por IN",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cambiando WHERE por HAVING",
+                    "is_correct": false
+                },
+                {
+                    "content": "Añadiendo GROUP BY id_dpto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Sustituyendo la subconsulta por DISTINCT",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la diferencia principal entre DELETE FROM cliente; y DROP TABLE cliente;?",
+            "explanation": "DELETE es DML y borra filas; DROP TABLE es DDL y elimina también la estructura.",
+            "options": [
+                {
+                    "content": "No hay diferencia, ambas eliminan la tabla",
+                    "is_correct": false
+                },
+                {
+                    "content": "DELETE elimina la tabla y DROP solo sus filas",
+                    "is_correct": false
+                },
+                {
+                    "content": "DELETE elimina las filas pero conserva la tabla; DROP elimina la tabla entera",
+                    "is_correct": true
+                },
+                {
+                    "content": "DROP solo funciona si la tabla está vacía",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué restricción se usa para exigir que una columna cumpla una condición, por ejemplo CHECK (edad >= 18)? Escribe su nombre.",
+            "explanation": "La restricción CHECK valida que los valores cumplan una expresión booleana.",
+            "options": [
+                {
+                    "content": "CHECK",
+                    "is_correct": true
+                },
+                {
+                    "content": "check",
+                    "is_correct": true
+                },
+                {
+                    "content": "restricción CHECK",
+                    "is_correct": true
+                },
+                {
+                    "content": "la restricción CHECK",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué consulta muestra los departamentos con más de 3 empleados?",
+            "explanation": "Hay que agrupar por departamento y filtrar los grupos con HAVING, ya que WHERE no admite agregados.",
+            "options": [
+                {
+                    "content": "SELECT id_dpto FROM empleado WHERE COUNT(*) > 3 GROUP BY id_dpto;",
+                    "is_correct": false
+                },
+                {
+                    "content": "SELECT id_dpto FROM empleado GROUP BY id_dpto HAVING COUNT(*) > 3;",
+                    "is_correct": true
+                },
+                {
+                    "content": "SELECT id_dpto FROM empleado HAVING COUNT(*) > 3;",
+                    "is_correct": false
+                },
+                {
+                    "content": "SELECT id_dpto FROM empleado GROUP BY COUNT(*) > 3;",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué sentencias pertenecen al DML (hay varias correctas):",
+            "explanation": "INSERT, UPDATE y DELETE manipulan datos (DML); CREATE y ALTER definen estructuras (DDL).",
+            "options": [
+                {
+                    "content": "INSERT",
+                    "is_correct": true
+                },
+                {
+                    "content": "CREATE TABLE",
+                    "is_correct": false
+                },
+                {
+                    "content": "UPDATE",
+                    "is_correct": true
+                },
+                {
+                    "content": "ALTER TABLE",
+                    "is_correct": false
+                },
+                {
+                    "content": "DELETE",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué palabra clave se coloca tras SELECT para eliminar las filas duplicadas del resultado?",
+            "explanation": "SELECT DISTINCT devuelve solo filas distintas en las columnas seleccionadas.",
+            "options": [
+                {
+                    "content": "DISTINCT",
+                    "is_correct": true
+                },
+                {
+                    "content": "distinct",
+                    "is_correct": true
+                },
+                {
+                    "content": "SELECT DISTINCT",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Intentas ejecutar INSERT INTO empleado (id) VALUES (7); y la columna nombre está definida como VARCHAR(50) NOT NULL sin valor DEFAULT. ¿Qué ocurre normalmente?",
+            "explanation": "Sin valor ni DEFAULT, la columna quedaría en NULL, lo que NOT NULL no permite (en modo estricto de MySQL y en otros SGBD da error).",
+            "options": [
+                {
+                    "content": "Se inserta la fila con nombre vacío en cualquier caso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se inserta la fila con nombre NULL",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se crea la columna nombre automáticamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se produce un error por incumplir la restricción NOT NULL",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué sentencia elimina únicamente los empleados del departamento 10?",
+            "explanation": "DELETE FROM con WHERE borra solo las filas que cumplen la condición.",
+            "options": [
+                {
+                    "content": "DELETE FROM empleado WHERE id_dpto = 10;",
+                    "is_correct": true
+                },
+                {
+                    "content": "DROP FROM empleado WHERE id_dpto = 10;",
+                    "is_correct": false
+                },
+                {
+                    "content": "DELETE empleado SET id_dpto = NULL;",
+                    "is_correct": false
+                },
+                {
+                    "content": "ALTER TABLE empleado DELETE id_dpto = 10;",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

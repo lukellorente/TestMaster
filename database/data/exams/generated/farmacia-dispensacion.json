@@ -1,0 +1,481 @@
+{
+    "slug": "farmacia-dispensacion",
+    "title": "Farmacia y Parafarmacia: dispensación de productos",
+    "description": "Test para repasar la dispensación en farmacia y parafarmacia del módulo de FP de Sanidad: recetas, genéricos, estupefacientes, conservación y productos sanitarios. Ideal para practicar antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:19:38+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué demuestra que un medicamento genérico (EFG) es equivalente al medicamento de referencia?",
+            "explanation": "La equivalencia terapéutica de un genérico se basa en estudios de biodisponibilidad que demuestran su bioequivalencia con el medicamento de referencia.",
+            "options": [
+                {
+                    "content": "Que utiliza exactamente los mismos excipientes",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que se han realizado estudios de biodisponibilidad que demuestran su bioequivalencia",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que tiene el mismo precio de venta al público",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que lo fabrica el mismo laboratorio con otra marca",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un médico prescribe «omeprazol 20 mg cápsulas» indicando solo el principio activo. ¿Qué debe dispensar el farmacéutico?",
+            "explanation": "Cuando la prescripción se hace por principio activo (DCI), se dispensa el medicamento de menor precio de la agrupación correspondiente.",
+            "options": [
+                {
+                    "content": "Siempre el medicamento de marca original",
+                    "is_correct": false
+                },
+                {
+                    "content": "El medicamento que el paciente elija, sin ninguna limitación",
+                    "is_correct": false
+                },
+                {
+                    "content": "El medicamento de menor precio con ese principio activo, dosis y forma farmacéutica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Un medicamento con otro principio activo similar",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un medicamento genérico debe tener la misma composición cualitativa y cuantitativa en principio activo, la misma forma farmacéutica y la misma dosis que el medicamento de referencia.",
+            "explanation": "Es la definición básica de medicamento genérico; solo pueden variar los excipientes y el aspecto del envase.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué significan las siglas EFG que aparecen en el envase de algunos medicamentos?",
+            "explanation": "EFG significa «equivalente farmacéutico genérico» y identifica los medicamentos genéricos.",
+            "options": [
+                {
+                    "content": "Equivalente farmacéutico genérico",
+                    "is_correct": true
+                },
+                {
+                    "content": "equivalente farmaceutico generico",
+                    "is_correct": true
+                },
+                {
+                    "content": "EFG",
+                    "is_correct": true
+                },
+                {
+                    "content": "Especialidad farmacéutica genérica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Especialidad farmacéutica genérica (EFG)",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes medicamentos requiere receta oficial de estupefacientes o su equivalente electrónico?",
+            "explanation": "La morfina es un estupefaciente de la Lista I de la Convención Única de 1961 y se prescribe con receta específica.",
+            "options": [
+                {
+                    "content": "Morfina",
+                    "is_correct": true
+                },
+                {
+                    "content": "Ibuprofeno 600 mg",
+                    "is_correct": false
+                },
+                {
+                    "content": "Amoxicilina",
+                    "is_correct": false
+                },
+                {
+                    "content": "Paracetamol 1 g",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué registro debe llevar la farmacia para controlar las entradas y salidas de estupefacientes?",
+            "explanation": "La farmacia debe llevar la contabilidad de estupefacientes con su libro oficial, en el que se anotan entradas y salidas.",
+            "options": [
+                {
+                    "content": "El libro de reclamaciones",
+                    "is_correct": false
+                },
+                {
+                    "content": "El registro de temperaturas del frigorífico",
+                    "is_correct": false
+                },
+                {
+                    "content": "El libro de visitas de inspección",
+                    "is_correct": false
+                },
+                {
+                    "content": "El libro oficial de contabilidad de estupefacientes",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La receta oficial de estupefacientes no puede prescribir más de 30 días de tratamiento.",
+            "explanation": "La normativa sobre recetas de estupefacientes limita la cantidad prescrita a un máximo de 30 días de tratamiento.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la dispensación con receta electrónica del Sistema Nacional de Salud, ¿cómo accede normalmente el farmacéutico a la prescripción del paciente?",
+            "explanation": "En la receta electrónica la farmacia consulta las prescripciones pendientes a partir de la identificación del paciente con su tarjeta sanitaria.",
+            "options": [
+                {
+                    "content": "Solicitando el informe de alta hospitalaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Llamando por teléfono al médico prescriptor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mediante una fotocopia de la receta anterior",
+                    "is_correct": false
+                },
+                {
+                    "content": "Con la tarjeta sanitaria individual del paciente, que permite consultar las prescripciones activas",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un paciente con receta electrónica retira hoy parte de los envases de un tratamiento crónico. ¿Qué ocurre con la dispensación?",
+            "explanation": "La receta electrónica registra cada dispensación y mantiene activa la prescripción mientras queden envases o dispensaciones pendientes.",
+            "options": [
+                {
+                    "content": "Se registra en el sistema y quedan pendientes las dispensaciones restantes, según la pauta prescrita",
+                    "is_correct": true
+                },
+                {
+                    "content": "La prescripción se anula automáticamente",
+                    "is_correct": false
+                },
+                {
+                    "content": "El paciente debe pedir una nueva receta al médico",
+                    "is_correct": false
+                },
+                {
+                    "content": "El farmacéutico entrega el tratamiento completo de golpe",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una insulina sin abrir debe conservarse, en general:",
+            "explanation": "Las insulinas sin abrir se conservan entre 2 y 8 ºC y no deben congelarse, porque pierden su eficacia.",
+            "options": [
+                {
+                    "content": "En el congelador a −18 ºC",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el frigorífico, entre 2 y 8 ºC, sin congelar",
+                    "is_correct": true
+                },
+                {
+                    "content": "A la intemperie, protegida solo de la lluvia",
+                    "is_correct": false
+                },
+                {
+                    "content": "Junto a una fuente de calor para mantenerla fluida",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Entre qué temperaturas se mantiene el frigorífico de una farmacia para los medicamentos termolábiles? (indica el intervalo en ºC)",
+            "explanation": "Los medicamentos que requieren frío se conservan entre 2 ºC y 8 ºC.",
+            "options": [
+                {
+                    "content": "2 a 8 ºC",
+                    "is_correct": true
+                },
+                {
+                    "content": "2-8 ºC",
+                    "is_correct": true
+                },
+                {
+                    "content": "entre 2 y 8 ºC",
+                    "is_correct": true
+                },
+                {
+                    "content": "2 y 8 ºC",
+                    "is_correct": true
+                },
+                {
+                    "content": "2 a 8 grados",
+                    "is_correct": true
+                },
+                {
+                    "content": "2-8",
+                    "is_correct": true
+                },
+                {
+                    "content": "de 2 a 8 ºC",
+                    "is_correct": true
+                },
+                {
+                    "content": "2 a 8 °C",
+                    "is_correct": true
+                },
+                {
+                    "content": "2-8 °C",
+                    "is_correct": true
+                },
+                {
+                    "content": "entre 2 y 8 grados",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Si un envase indica «No conservar a temperatura superior a 25 ºC», ¿qué significa?",
+            "explanation": "Esa indicación permite conservarlo a temperatura ambiente, siempre que no se superen los 25 ºC.",
+            "options": [
+                {
+                    "content": "Que debe guardarse siempre en el frigorífico",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que puede congelarse sin problema",
+                    "is_correct": false
+                },
+                {
+                    "content": "Que puede guardarse a temperatura ambiente sin superar los 25 ºC",
+                    "is_correct": true
+                },
+                {
+                    "content": "Que solo se puede conservar en el congelador",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de las siguientes definiciones corresponde a un producto sanitario?",
+            "explanation": "Los productos sanitarios se distinguen de los medicamentos porque su acción principal no es farmacológica, inmunológica ni metabólica.",
+            "options": [
+                {
+                    "content": "Producto cuya acción principal se logra por mecanismos farmacológicos, inmunológicos o metabólicos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier alimento destinado a una dieta especial",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cualquier producto cosmético de uso diario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Instrumento, aparato o material usado con fines médicos cuya acción principal no se logra por mecanismos farmacológicos, inmunológicos o metabólicos",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué marcado debe llevar un producto sanitario para poder comercializarse en la Unión Europea?",
+            "explanation": "El marcado CE acredita que el producto sanitario cumple los requisitos de la normativa europea aplicable.",
+            "options": [
+                {
+                    "content": "Marcado CE",
+                    "is_correct": true
+                },
+                {
+                    "content": "marcado CE",
+                    "is_correct": true
+                },
+                {
+                    "content": "CE",
+                    "is_correct": true
+                },
+                {
+                    "content": "el marcado CE",
+                    "is_correct": true
+                },
+                {
+                    "content": "Conformité Européenne",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los productos que se consideran productos sanitarios (hay varias respuestas correctas):",
+            "explanation": "Termómetros, jeringas y apósitos son productos sanitarios; el ibuprofeno es un medicamento.",
+            "options": [
+                {
+                    "content": "Termómetro clínico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Jeringa estéril",
+                    "is_correct": true
+                },
+                {
+                    "content": "Comprimidos de ibuprofeno",
+                    "is_correct": false
+                },
+                {
+                    "content": "Apósito adhesivo estéril",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué datos debe contener una receta médica (hay varias respuestas correctas):",
+            "explanation": "La receta recoge datos del paciente, del prescriptor, del medicamento y de la fecha; la opinión del farmacéutico no forma parte de ella.",
+            "options": [
+                {
+                    "content": "Identificación del paciente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Identificación y firma del médico prescriptor",
+                    "is_correct": true
+                },
+                {
+                    "content": "Denominación del medicamento, por principio activo o por marca",
+                    "is_correct": true
+                },
+                {
+                    "content": "Opinión del farmacéutico sobre la eficacia del tratamiento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Fecha de prescripción",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un cliente pide amoxicilina sin receta alegando que «ya la tomó otras veces». ¿Qué debe hacer el técnico o el farmacéutico?",
+            "explanation": "Los antibióticos son medicamentos sujetos a prescripción médica y no pueden dispensarse sin receta.",
+            "options": [
+                {
+                    "content": "No dispensarla sin receta y aconsejarle acudir a su médico",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dispensarla si el cliente firma una declaración",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dispensarla si paga el precio completo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dispensar un envase más pequeño",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En la revisión de caducidades del 16 de noviembre de 2026, encuentras un envase con caducidad «10/2026». ¿Qué debes hacer?",
+            "explanation": "La caducidad indica el último día del mes señalado, así que un envase con caducidad 10/2026 ya no puede dispensarse en noviembre de 2026.",
+            "options": [
+                {
+                    "content": "Dispensarlo, porque la caducidad es del mismo año",
+                    "is_correct": false
+                },
+                {
+                    "content": "Dispensarlo con un descuento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Retirarlo de la venta, porque ya está caducado, y gestionarlo como residuo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Dispensarlo solo si lo pide el cliente",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de los siguientes productos se vende habitualmente en la sección de parafarmacia sin necesidad de receta?",
+            "explanation": "La crema solar es un producto cosmético de parafarmacia; los otros son medicamentos sujetos a prescripción.",
+            "options": [
+                {
+                    "content": "Insulina",
+                    "is_correct": false
+                },
+                {
+                    "content": "Crema solar",
+                    "is_correct": true
+                },
+                {
+                    "content": "Morfina",
+                    "is_correct": false
+                },
+                {
+                    "content": "Antibiótico oral",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Está permitido vender por internet medicamentos que requieren receta médica, siempre que la farmacia tenga página web.",
+            "explanation": "En España la venta a distancia al público solo se permite para medicamentos no sujetos a prescripción médica, desde farmacias autorizadas.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        }
+    ]
+}

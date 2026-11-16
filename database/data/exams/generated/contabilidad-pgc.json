@@ -1,0 +1,552 @@
+{
+    "slug": "contabilidad-pgc",
+    "title": "Contabilidad: PGC y asientos básicos",
+    "description": "Test de contabilidad del módulo de FP de Administración y Gestión: grupos del PGC, debe y haber, IVA, compras y ventas, amortizaciones y balance. Va bien para repasar antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T01:14:46+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "En el Plan General de Contabilidad (PGC), ¿qué recoge el grupo 2?",
+            "explanation": "El grupo 1 es Financiación básica, el 2 Activo no corriente, el 3 Existencias y el 5 Cuentas financieras.",
+            "options": [
+                {
+                    "content": "Financiación básica",
+                    "is_correct": false
+                },
+                {
+                    "content": "Activo no corriente",
+                    "is_correct": true
+                },
+                {
+                    "content": "Existencias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cuentas financieras",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿A qué grupo del PGC pertenece la cuenta 600 «Compras de mercaderías»?",
+            "explanation": "Las cuentas que empiezan por 6 son de compras y gastos; las compras de mercaderías son un gasto del ejercicio.",
+            "options": [
+                {
+                    "content": "Grupo 3: Existencias",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grupo 4: Acreedores y deudores por operaciones comerciales",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grupo 6: Compras y gastos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Grupo 7: Ventas e ingresos",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué número tiene la cuenta «Caja, euros» en el PGC?",
+            "explanation": "La cuenta 570 es Caja, euros, dentro del grupo 5 (Cuentas financieras).",
+            "options": [
+                {
+                    "content": "570",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuenta 570",
+                    "is_correct": true
+                },
+                {
+                    "content": "la 570",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Según el método de la partida doble, ¿cómo se registra un aumento de una cuenta de activo?",
+            "explanation": "Las cuentas de activo aumentan con cargos (debe) y disminuyen con abonos (haber).",
+            "options": [
+                {
+                    "content": "En el haber (abono)",
+                    "is_correct": false
+                },
+                {
+                    "content": "En el debe (cargo)",
+                    "is_correct": true
+                },
+                {
+                    "content": "No se registra hasta el cierre del ejercicio",
+                    "is_correct": false
+                },
+                {
+                    "content": "Mitad en el debe y mitad en el haber",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa compra mercaderías por 1.000 € más un 21 % de IVA, y las deja a pagar al proveedor. ¿Qué importe se abona en la cuenta 400 «Proveedores»?",
+            "explanation": "Se debe al proveedor la base más el IVA: 1.000 + 210 = 1.210 €. El IVA se carga en la 472 y las compras en la 600.",
+            "options": [
+                {
+                    "content": "1.000 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "1.210 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.021 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "790 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se venden mercaderías por 2.000 € más un 21 % de IVA y el cliente paga por banco. ¿Cuál es el asiento correcto?",
+            "explanation": "El banco aumenta (debe) por el total cobrado; se abonan las ventas (700) por la base y el IVA repercutido (477) por la cuota.",
+            "options": [
+                {
+                    "content": "Debe 700 por 2.000 € y 477 por 420 €; Haber 572 por 2.420 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe 430 por 2.420 €; Haber 700 por 2.420 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe 572 por 2.420 €; Haber 700 por 2.000 € y 477 por 420 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "Debe 572 por 2.000 € y 472 por 420 €; Haber 700 por 2.420 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La cuenta 472 «Hacienda Pública, IVA soportado» es una cuenta de activo.",
+            "explanation": "El IVA soportado es un derecho de la empresa frente a Hacienda, por lo que se clasifica como activo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Cuando una empresa vende mercaderías con IVA, la cuenta 477 «Hacienda Pública, IVA repercutido» se carga (debe) por la cuota de IVA.",
+            "explanation": "El IVA repercutido es una deuda con Hacienda, de modo que se abona (haber) al realizar la venta.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una máquina cuesta 12.000 €, tiene un valor residual de 2.000 € y una vida útil de 5 años. Con amortización lineal, ¿cuál es la cuota anual?",
+            "explanation": "Cuota = (12.000 − 2.000) / 5 = 2.000 € al año.",
+            "options": [
+                {
+                    "content": "2.400 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "2.000 €",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.600 €",
+                    "is_correct": false
+                },
+                {
+                    "content": "10.000 €",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es el asiento habitual de la dotación anual a la amortización de maquinaria?",
+            "explanation": "La cuota se carga como gasto en la 681 y se abona en la 281, que es la cuenta correctora del activo.",
+            "options": [
+                {
+                    "content": "Debe 213 Maquinaria; Haber 681 Amortización del inmovilizado material",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe 281 Amortización acumulada del inmovilizado material; Haber 213 Maquinaria",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe 572 Bancos; Haber 281 Amortización acumulada del inmovilizado material",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe 681 Amortización del inmovilizado material; Haber 281 Amortización acumulada del inmovilizado material",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué número tiene la cuenta «Amortización acumulada del inmovilizado material»?",
+            "explanation": "La 281 acumula las amortizaciones del inmovilizado material y resta del valor del activo en el balance.",
+            "options": [
+                {
+                    "content": "281",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cuenta 281",
+                    "is_correct": true
+                },
+                {
+                    "content": "la 281",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la ecuación fundamental del balance?",
+            "explanation": "Los bienes y derechos de la empresa (activo) se financian con fondos propios (patrimonio neto) o ajenos (pasivo).",
+            "options": [
+                {
+                    "content": "Activo = Patrimonio neto + Pasivo",
+                    "is_correct": true
+                },
+                {
+                    "content": "Activo = Pasivo − Patrimonio neto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pasivo = Activo + Patrimonio neto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Patrimonio neto = Activo + Pasivo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una deuda con un proveedor a pagar en dos meses, ¿dónde se muestra en el balance?",
+            "explanation": "Las deudas comerciales a corto plazo con proveedores forman parte del pasivo corriente.",
+            "options": [
+                {
+                    "content": "Activo corriente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Patrimonio neto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Activo no corriente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pasivo corriente",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En una liquidación de IVA, el IVA repercutido es de 5.000 € y el IVA soportado deducible es de 3.200 €. ¿Qué resulta?",
+            "explanation": "IVA repercutido − IVA soportado = 5.000 − 3.200 = 1.800 €, que es positivo y se ingresa.",
+            "options": [
+                {
+                    "content": "1.800 € a ingresar a Hacienda",
+                    "is_correct": true
+                },
+                {
+                    "content": "1.800 € a compensar o devolver",
+                    "is_correct": false
+                },
+                {
+                    "content": "8.200 € a ingresar a Hacienda",
+                    "is_correct": false
+                },
+                {
+                    "content": "3.200 € a ingresar a Hacienda",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las cuentas que son de activo (hay varias correctas).",
+            "explanation": "Caja, Clientes e IVA soportado son bienes o derechos. Proveedores es pasivo y Capital social es patrimonio neto.",
+            "options": [
+                {
+                    "content": "570 Caja, euros",
+                    "is_correct": true
+                },
+                {
+                    "content": "430 Clientes",
+                    "is_correct": true
+                },
+                {
+                    "content": "400 Proveedores",
+                    "is_correct": false
+                },
+                {
+                    "content": "472 Hacienda Pública, IVA soportado",
+                    "is_correct": true
+                },
+                {
+                    "content": "100 Capital social",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué cuentas pertenecen al grupo 6, Compras y gastos (hay varias correctas).",
+            "explanation": "Compras, sueldos y amortización son gastos. Las ventas son del grupo 7 y el capital del grupo 1.",
+            "options": [
+                {
+                    "content": "600 Compras de mercaderías",
+                    "is_correct": true
+                },
+                {
+                    "content": "640 Sueldos y salarios",
+                    "is_correct": true
+                },
+                {
+                    "content": "681 Amortización del inmovilizado material",
+                    "is_correct": true
+                },
+                {
+                    "content": "700 Ventas de mercaderías",
+                    "is_correct": false
+                },
+                {
+                    "content": "100 Capital social",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En cada asiento contable la suma de los importes del debe debe ser igual a la suma de los importes del haber.",
+            "explanation": "Es el principio de la partida doble: todo cargo tiene su abono por el mismo importe total.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Los terrenos son un elemento del inmovilizado material que se amortiza todos los años.",
+            "explanation": "Los terrenos no se amortizan, porque no pierden valor por el uso ni por el paso del tiempo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué grupo del PGC recoge las ventas e ingresos? (indica el número)",
+            "explanation": "El grupo 7 es Ventas e ingresos; por ejemplo, la cuenta 700 es Ventas de mercaderías.",
+            "options": [
+                {
+                    "content": "7",
+                    "is_correct": true
+                },
+                {
+                    "content": "Grupo 7",
+                    "is_correct": true
+                },
+                {
+                    "content": "el 7",
+                    "is_correct": true
+                },
+                {
+                    "content": "el grupo 7",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Cuál es el tipo general del IVA en España, en porcentaje?",
+            "explanation": "El tipo general del IVA en España es el 21 %. Los reducidos son el 10 % y el 4 %.",
+            "options": [
+                {
+                    "content": "21%",
+                    "is_correct": true
+                },
+                {
+                    "content": "21 %",
+                    "is_correct": true
+                },
+                {
+                    "content": "21",
+                    "is_correct": true
+                },
+                {
+                    "content": "21 por ciento",
+                    "is_correct": true
+                },
+                {
+                    "content": "el 21%",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un cliente devuelve mercaderías que le vendimos. ¿Qué cuenta se utiliza para registrar la devolución en la empresa vendedora?",
+            "explanation": "Las devoluciones de ventas se registran en la 708, que se carga y reduce las ventas netas. La 608 es para las devoluciones de compras.",
+            "options": [
+                {
+                    "content": "608 Devoluciones de compras y operaciones similares",
+                    "is_correct": false
+                },
+                {
+                    "content": "708 Devoluciones de ventas y operaciones similares",
+                    "is_correct": true
+                },
+                {
+                    "content": "700 Ventas de mercaderías, en el haber",
+                    "is_correct": false
+                },
+                {
+                    "content": "430 Clientes, en el debe",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Al cierre, una empresa tiene ingresos de 50.000 € y gastos de 42.000 €. ¿Cuál es el resultado y cómo queda la cuenta 129 «Resultado del ejercicio»?",
+            "explanation": "Ingresos − gastos = 8.000 € de beneficio, que figura en el haber de la cuenta 129.",
+            "options": [
+                {
+                    "content": "Pérdida de 8.000 €, con saldo deudor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Beneficio de 92.000 €, con saldo acreedor",
+                    "is_correct": false
+                },
+                {
+                    "content": "Beneficio de 8.000 €, con saldo acreedor",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿En qué grupo del PGC se encuentra la cuenta 100 «Capital social»?",
+            "explanation": "El capital social forma parte de los fondos propios, que se recogen en el grupo 1.",
+            "options": [
+                {
+                    "content": "Grupo 1: Financiación básica",
+                    "is_correct": true
+                },
+                {
+                    "content": "Grupo 2: Activo no corriente",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grupo 5: Cuentas financieras",
+                    "is_correct": false
+                },
+                {
+                    "content": "Grupo 9: Ingresos imputados al patrimonio neto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una empresa compra un ordenador para uso propio. ¿En qué cuenta se registra su adquisición?",
+            "explanation": "Los ordenadores son inmovilizado material y se registran en la 217, no como una compra de mercaderías.",
+            "options": [
+                {
+                    "content": "600 Compras de mercaderías",
+                    "is_correct": false
+                },
+                {
+                    "content": "216 Mobiliario",
+                    "is_correct": false
+                },
+                {
+                    "content": "217 Equipos para procesos de información",
+                    "is_correct": true
+                },
+                {
+                    "content": "629 Otros servicios",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Se paga por banco una factura de 1.210 € a un proveedor al que se debía esa cantidad. ¿Cuál es el asiento?",
+            "explanation": "La deuda con el proveedor se cancela con un cargo en la 400 y el dinero del banco disminuye con un abono en la 572.",
+            "options": [
+                {
+                    "content": "Debe 572 Bancos; Haber 400 Proveedores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe 400 Proveedores; Haber 572 Bancos",
+                    "is_correct": true
+                },
+                {
+                    "content": "Debe 600 Compras; Haber 572 Bancos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Debe 430 Clientes; Haber 572 Bancos",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

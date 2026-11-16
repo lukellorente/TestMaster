@@ -1,0 +1,429 @@
+{
+    "slug": "diw-accesibilidad",
+    "title": "DIW - accesibilidad (WCAG 2.2) y usabilidad",
+    "description": "Test de DIW para repasar accesibilidad web y usabilidad antes del examen: POUR, niveles WCAG 2.2, contraste, ARIA y heurísticas de Nielsen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:56:53+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuáles son los cuatro principios de las WCAG recogidos en el acrónimo POUR?",
+            "explanation": "POUR significa Perceptible, Operable, Comprensible (Understandable) y Robusto.",
+            "options": [
+                {
+                    "content": "Perceptible, Operable, Comprensible y Robusto",
+                    "is_correct": true
+                },
+                {
+                    "content": "Privado, Operable, Usable y Responsive",
+                    "is_correct": false
+                },
+                {
+                    "content": "Perceptible, Optimizado, Universal y Rápido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Portable, Operable, Usable y Robusto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un usuario ciego usa un lector de pantalla y llega a una imagen informativa sin atributo alt. ¿Qué criterio principal incumple la página?",
+            "explanation": "Es el criterio 1.1.1 Contenido no textual (nivel A), del principio Perceptible: toda imagen informativa necesita una alternativa textual.",
+            "options": [
+                {
+                    "content": "Contenido no textual (alternativa textual)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Orden del foco",
+                    "is_correct": false
+                },
+                {
+                    "content": "Identificación de errores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Cambio de contexto en la entrada",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué relación de contraste mínima exige el nivel AA para texto normal (no grande) respecto al fondo?",
+            "explanation": "El criterio 1.4.3 exige 4,5:1 para texto normal y 3:1 para texto grande.",
+            "options": [
+                {
+                    "content": "3:1",
+                    "is_correct": false
+                },
+                {
+                    "content": "4,5:1",
+                    "is_correct": true
+                },
+                {
+                    "content": "7:1",
+                    "is_correct": false
+                },
+                {
+                    "content": "2:1",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El nivel de conformidad AAA de las WCAG es el que se suele exigir como requisito general en la normativa europea de accesibilidad web, y se considera obligatorio cumplirlo en todos sus criterios.",
+            "explanation": "El nivel exigido habitualmente es AA; el AAA no se recomienda como requisito general porque algunos contenidos no pueden cumplirlo.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Dado este código, ¿cuál es el problema de accesibilidad?\n\n<div onclick=\"enviar()\">Enviar</div>",
+            "explanation": "Un div no es focalizable ni operable con teclado por defecto ni expone rol de botón; lo correcto es usar <button>.",
+            "options": [
+                {
+                    "content": "El texto es demasiado corto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falta el atributo lang",
+                    "is_correct": false
+                },
+                {
+                    "content": "No es operable con teclado ni expone el rol de botón; debería ser un <button>",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los div no pueden contener texto",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué atributo ARIA se usa para dar un nombre accesible a un elemento cuando no hay texto visible, por ejemplo un botón con solo un icono?",
+            "explanation": "aria-label proporciona un nombre accesible directamente en el elemento.",
+            "options": [
+                {
+                    "content": "aria-label",
+                    "is_correct": true
+                },
+                {
+                    "content": "aria label",
+                    "is_correct": true
+                },
+                {
+                    "content": "label",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál es la primera regla del uso de ARIA?",
+            "explanation": "Si existe un elemento HTML nativo con la semántica y el comportamiento necesarios, debe usarse en lugar de añadir ARIA a otro elemento.",
+            "options": [
+                {
+                    "content": "Añadir role a todos los elementos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar siempre aria-hidden en los iconos",
+                    "is_correct": false
+                },
+                {
+                    "content": "Usar un elemento HTML nativo si existe, antes que ARIA",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona los criterios o novedades que se incorporaron en WCAG 2.2 (hay varias correctas).",
+            "explanation": "WCAG 2.2 añadió, entre otros, Apariencia del foco, Tamaño mínimo del objetivo y Autenticación accesible; Audiodescripción ya existía en 2.0 y el criterio 4.1.1 Procesamiento se eliminó en 2.2.",
+            "options": [
+                {
+                    "content": "Tamaño mínimo del objetivo (2.5.8)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Foco no oculto (2.4.11)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Autenticación accesible (3.3.8)",
+                    "is_correct": true
+                },
+                {
+                    "content": "Audiodescripción grabada (1.2.5), nuevo en 2.2",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Una web muestra un error en un formulario solo poniendo el borde del campo en rojo. ¿Qué criterio incumple?",
+            "explanation": "El criterio 1.4.1 Uso del color prohíbe que el color sea el único medio para transmitir información.",
+            "options": [
+                {
+                    "content": "Uso del color",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tamaño del texto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Pausar, detener, ocultar",
+                    "is_correct": false
+                },
+                {
+                    "content": "Idioma de la página",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué atributo HTML en el elemento <html> indica el idioma principal de la página, necesario para los lectores de pantalla?",
+            "explanation": "El atributo lang (por ejemplo lang=\"es\") define el idioma y permite pronunciación correcta.",
+            "options": [
+                {
+                    "content": "lang",
+                    "is_correct": true
+                },
+                {
+                    "content": "atributo lang",
+                    "is_correct": true
+                },
+                {
+                    "content": "lang=\"es\"",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué heurística de Nielsen se vulnera cuando una aplicación no muestra ningún indicador mientras procesa una operación larga?",
+            "explanation": "La primera heurística, visibilidad del estado del sistema, exige mantener informado al usuario sobre lo que ocurre.",
+            "options": [
+                {
+                    "content": "Prevención de errores",
+                    "is_correct": false
+                },
+                {
+                    "content": "Flexibilidad y eficiencia de uso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Estética y diseño minimalista",
+                    "is_correct": false
+                },
+                {
+                    "content": "Visibilidad del estado del sistema",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Según las heurísticas de Nielsen, ofrecer atajos de teclado para usuarios expertos responde al principio de flexibilidad y eficiencia de uso.",
+            "explanation": "Los aceleradores como los atajos permiten a usuarios expertos trabajar más rápido sin estorbar a los novatos.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "Un formulario permite eliminar una cuenta con un solo clic sin confirmación ni opción de deshacer. ¿Qué heurística se incumple principalmente?",
+            "explanation": "Prevención de errores y control y libertad del usuario exigen confirmaciones o formas de deshacer en acciones destructivas.",
+            "options": [
+                {
+                    "content": "Coincidencia entre el sistema y el mundo real",
+                    "is_correct": false
+                },
+                {
+                    "content": "Prevención de errores / control y libertad del usuario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Consistencia y estándares",
+                    "is_correct": false
+                },
+                {
+                    "content": "Ayuda y documentación",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atributo ARIA marca una región para que el lector de pantalla anuncie automáticamente sus cambios de contenido, como un mensaje de éxito?",
+            "explanation": "aria-live (polite o assertive) crea una región dinámica cuyos cambios se anuncian.",
+            "options": [
+                {
+                    "content": "aria-expanded",
+                    "is_correct": false
+                },
+                {
+                    "content": "aria-live",
+                    "is_correct": true
+                },
+                {
+                    "content": "aria-describedby",
+                    "is_correct": false
+                },
+                {
+                    "content": "aria-current",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué elementos cumplen buenas prácticas de accesibilidad en formularios (hay varias correctas).",
+            "explanation": "Asociar label con for/id, agrupar con fieldset/legend y mensajes de error textuales son buenas prácticas; usar solo placeholder como etiqueta no lo es.",
+            "options": [
+                {
+                    "content": "Asociar cada <label> a su campo mediante for e id",
+                    "is_correct": true
+                },
+                {
+                    "content": "Agrupar radios relacionados con <fieldset> y <legend>",
+                    "is_correct": true
+                },
+                {
+                    "content": "Usar solo el placeholder como etiqueta del campo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Describir los errores con texto, no solo con color",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué nivel de conformidad WCAG (A, AA o AAA) es el más bajo?",
+            "explanation": "El nivel A es el mínimo; AA es intermedio y AAA el más alto.",
+            "options": [
+                {
+                    "content": "A",
+                    "is_correct": true
+                },
+                {
+                    "content": "nivel A",
+                    "is_correct": true
+                },
+                {
+                    "content": "Nivel A",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué principio POUR se incumple si un menú desplegable solo se puede abrir con el ratón y no con teclado?",
+            "explanation": "Operable exige que toda la funcionalidad esté disponible mediante teclado (criterio 2.1.1, nivel A).",
+            "options": [
+                {
+                    "content": "Perceptible",
+                    "is_correct": false
+                },
+                {
+                    "content": "Comprensible",
+                    "is_correct": false
+                },
+                {
+                    "content": "Robusto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Operable",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué relación de contraste exige el nivel AA para los componentes de interfaz y elementos gráficos significativos (por ejemplo, el borde de un campo de formulario)?",
+            "explanation": "El criterio 1.4.11 Contraste no textual exige al menos 3:1.",
+            "options": [
+                {
+                    "content": "3:1",
+                    "is_correct": true
+                },
+                {
+                    "content": "4,5:1",
+                    "is_correct": false
+                },
+                {
+                    "content": "7:1",
+                    "is_correct": false
+                },
+                {
+                    "content": "1,5:1",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El atributo aria-hidden=\"true\" en un elemento focalizable, como un botón, es una buena práctica porque lo oculta de forma segura a los lectores de pantalla.",
+            "explanation": "Un elemento focalizable con aria-hidden=\"true\" sigue recibiendo foco pero no es anunciado, lo que genera confusión.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué función cumple el rol ARIA role=\"alert\"?",
+            "explanation": "role=\"alert\" es una región live asertiva que anuncia de inmediato mensajes importantes y urgentes.",
+            "options": [
+                {
+                    "content": "Marca un enlace de salto al contenido",
+                    "is_correct": false
+                },
+                {
+                    "content": "Anuncia de forma inmediata un mensaje importante al usuario",
+                    "is_correct": true
+                },
+                {
+                    "content": "Define la navegación principal",
+                    "is_correct": false
+                },
+                {
+                    "content": "Oculta el elemento visualmente",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}

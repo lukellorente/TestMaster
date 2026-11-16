@@ -1,0 +1,544 @@
+{
+    "slug": "lmsgi-html-css",
+    "title": "Lenguajes de marcas: HTML5 y CSS3",
+    "description": "Test de repaso de HTML5 y CSS3 para el módulo de Lenguajes de marcas de DAM/DAW: etiquetas semánticas, formularios, selectores, especificidad, modelo de caja, flexbox y grid. Nivel fácil, ideal para repasar antes del examen.",
+    "model": "claude-sonnet-5-5",
+    "generated_at": "2026-11-16T00:51:01+00:00",
+    "questions": [
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué etiqueta semántica de HTML5 se utiliza para el pie de una página o sección?",
+            "explanation": "<footer> representa el pie de la página o de una sección y suele contener autoría, enlaces legales o contacto.",
+            "options": [
+                {
+                    "content": "<bottom>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<end>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<footer>",
+                    "is_correct": true
+                },
+                {
+                    "content": "<section-end>",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué etiqueta es la más adecuada para una entrada de blog que tiene sentido por sí misma, de forma independiente?",
+            "explanation": "<article> agrupa contenido autocontenido y reutilizable, como una noticia o una entrada de blog.",
+            "options": [
+                {
+                    "content": "<article>",
+                    "is_correct": true
+                },
+                {
+                    "content": "<aside>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<div>",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un formulario, ¿con qué se enlaza el atributo for de una etiqueta <label>?",
+            "explanation": "El valor de for debe coincidir con el id del campo, de modo que al pulsar la etiqueta se activa ese campo.",
+            "options": [
+                {
+                    "content": "Con el atributo name del formulario",
+                    "is_correct": false
+                },
+                {
+                    "content": "Con el atributo id del control que describe",
+                    "is_correct": true
+                },
+                {
+                    "content": "Con el atributo class del control",
+                    "is_correct": false
+                },
+                {
+                    "content": "Con el atributo action del formulario",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué valor de type en un <input> es el adecuado para pedir una dirección de correo electrónico?",
+            "explanation": "type=\"email\" hace que el navegador valide el formato básico de un correo electrónico.",
+            "options": [
+                {
+                    "content": "type=\"text-mail\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "type=\"mail\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "type=\"address\"",
+                    "is_correct": false
+                },
+                {
+                    "content": "type=\"email\"",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estos selectores CSS selecciona todos los elementos con class=\"menu\"?",
+            "explanation": "El punto indica un selector de clase; la almohadilla (#) es para id y el nombre sin prefijo es para etiquetas.",
+            "options": [
+                {
+                    "content": ".menu",
+                    "is_correct": true
+                },
+                {
+                    "content": "#menu",
+                    "is_correct": false
+                },
+                {
+                    "content": "menu",
+                    "is_correct": false
+                },
+                {
+                    "content": "*menu",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué selecciona el selector CSS ul > li?",
+            "explanation": "El combinador > selecciona únicamente hijos directos, no descendientes más profundos.",
+            "options": [
+                {
+                    "content": "Todos los li de la página",
+                    "is_correct": false
+                },
+                {
+                    "content": "Todos los ul que estén dentro de un li",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los li que sean hijos directos de un ul",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los li que sigan inmediatamente a un ul",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Cuál de estos selectores tiene mayor especificidad?",
+            "explanation": "Un selector de id pesa más que uno de clase o de etiqueta, por lo que #titulo gana a los demás.",
+            "options": [
+                {
+                    "content": ".titulo",
+                    "is_correct": false
+                },
+                {
+                    "content": "#titulo",
+                    "is_correct": true
+                },
+                {
+                    "content": "h1",
+                    "is_correct": false
+                },
+                {
+                    "content": "h1.titulo",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En el modelo de caja de CSS, ¿cuál es el orden de las capas desde el interior hacia el exterior?",
+            "explanation": "Desde dentro: el contenido, luego el padding, después el borde y por fuera el margen.",
+            "options": [
+                {
+                    "content": "Contenido, margen, borde, padding",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contenido, borde, padding, margen",
+                    "is_correct": false
+                },
+                {
+                    "content": "Contenido, padding, borde, margen",
+                    "is_correct": true
+                },
+                {
+                    "content": "Padding, contenido, margen, borde",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué efecto tiene box-sizing: border-box; sobre un elemento con width: 200px?",
+            "explanation": "Con border-box el ancho declarado incluye contenido, padding y borde, pero no el margen.",
+            "options": [
+                {
+                    "content": "El margen se incluye en los 200px",
+                    "is_correct": false
+                },
+                {
+                    "content": "El borde se elimina",
+                    "is_correct": false
+                },
+                {
+                    "content": "El padding se suma siempre por fuera de los 200px",
+                    "is_correct": false
+                },
+                {
+                    "content": "El padding y el borde quedan incluidos dentro de los 200px",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué ocurre al aplicar display: flex; a un contenedor?",
+            "explanation": "Flexbox actúa sobre los hijos directos del contenedor, que se organizan a lo largo de un eje principal.",
+            "options": [
+                {
+                    "content": "Sus hijos directos pasan a ser elementos flex",
+                    "is_correct": true
+                },
+                {
+                    "content": "Todos sus descendientes se convierten en columnas",
+                    "is_correct": false
+                },
+                {
+                    "content": "El contenedor desaparece del flujo del documento",
+                    "is_correct": false
+                },
+                {
+                    "content": "Se crea una cuadrícula de filas y columnas",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En un contenedor flex con flex-direction: row, ¿qué hace la propiedad justify-content?",
+            "explanation": "justify-content reparte los elementos en el eje principal; align-items lo hace en el eje transversal.",
+            "options": [
+                {
+                    "content": "Alinea los elementos en el eje secundario (vertical)",
+                    "is_correct": false
+                },
+                {
+                    "content": "Distribuye los elementos a lo largo del eje principal",
+                    "is_correct": true
+                },
+                {
+                    "content": "Cambia el orden de los elementos en el HTML",
+                    "is_correct": false
+                },
+                {
+                    "content": "Define el espacio entre filas de una cuadrícula",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué define la declaración grid-template-columns: repeat(3, 1fr);?",
+            "explanation": "La unidad fr reparte el espacio libre en fracciones, por lo que tres columnas de 1fr son iguales.",
+            "options": [
+                {
+                    "content": "Tres filas de 1 fracción de alto",
+                    "is_correct": false
+                },
+                {
+                    "content": "Una columna que se repite 3 píxeles",
+                    "is_correct": false
+                },
+                {
+                    "content": "Tres columnas de igual anchura que se reparten el espacio disponible",
+                    "is_correct": true
+                },
+                {
+                    "content": "Tres columnas de 1 píxel de ancho",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué elementos selecciona el selector p.aviso?",
+            "explanation": "Al escribir etiqueta y clase sin espacios, se seleccionan solo los elementos de esa etiqueta que tengan dicha clase.",
+            "options": [
+                {
+                    "content": "Los elementos con class=\"aviso\" dentro de un párrafo",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los párrafos <p> que tengan la clase aviso",
+                    "is_correct": true
+                },
+                {
+                    "content": "Los párrafos y también los elementos con clase aviso",
+                    "is_correct": false
+                },
+                {
+                    "content": "Los párrafos con id=\"aviso\"",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "En CSS Grid, ¿para qué sirve la propiedad gap?",
+            "explanation": "gap (o row-gap y column-gap) define los huecos entre las pistas de la cuadrícula.",
+            "options": [
+                {
+                    "content": "Para fijar el tamaño de cada celda",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para cambiar el color de las líneas de la cuadrícula",
+                    "is_correct": false
+                },
+                {
+                    "content": "Para establecer el espacio entre filas y columnas",
+                    "is_correct": true
+                },
+                {
+                    "content": "Para ocultar las celdas vacías",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "content": "¿Qué atributo de HTML5 impide enviar un formulario si un campo está vacío?",
+            "explanation": "required marca el campo como obligatorio y el navegador bloquea el envío mientras esté vacío.",
+            "options": [
+                {
+                    "content": "placeholder",
+                    "is_correct": false
+                },
+                {
+                    "content": "value",
+                    "is_correct": false
+                },
+                {
+                    "content": "autofocus",
+                    "is_correct": false
+                },
+                {
+                    "content": "required",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "La etiqueta <div> es una etiqueta semántica de HTML5 porque describe el significado de su contenido.",
+            "explanation": "<div> es un contenedor genérico sin significado semántico; las semánticas son por ejemplo <header>, <nav> o <article>.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "Un estilo escrito en el atributo style de una etiqueta (estilo en línea) tiene mayor especificidad que un selector de id definido en una hoja CSS.",
+            "explanation": "Los estilos en línea pesan más que los selectores de id, clase o etiqueta (salvo que se use !important).",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "En un contenedor con display: flex, el valor por defecto de flex-direction es row.",
+            "explanation": "Por defecto el eje principal es horizontal, de izquierda a derecha en idiomas como el español.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": true
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": false
+                }
+            ]
+        },
+        {
+            "type": "true_false",
+            "content": "El atributo placeholder sustituye por completo a la etiqueta <label> en cuanto a accesibilidad.",
+            "explanation": "El placeholder desaparece al escribir y no es un sustituto fiable de <label>, que es lo recomendado para accesibilidad.",
+            "options": [
+                {
+                    "content": "Verdadero",
+                    "is_correct": false
+                },
+                {
+                    "content": "Falso",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué valor de la propiedad display convierte un contenedor en una cuadrícula CSS? (display: ______)",
+            "explanation": "display: grid crea un contenedor de cuadrícula; también existe inline-grid.",
+            "options": [
+                {
+                    "content": "grid",
+                    "is_correct": true
+                },
+                {
+                    "content": "display: grid",
+                    "is_correct": true
+                },
+                {
+                    "content": "display:grid",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué etiqueta semántica de HTML5 se usa para agrupar el menú principal de enlaces de navegación de un sitio?",
+            "explanation": "<nav> está pensada para bloques de enlaces de navegación principales.",
+            "options": [
+                {
+                    "content": "nav",
+                    "is_correct": true
+                },
+                {
+                    "content": "<nav>",
+                    "is_correct": true
+                },
+                {
+                    "content": "etiqueta nav",
+                    "is_correct": true
+                },
+                {
+                    "content": "la etiqueta nav",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué propiedad CSS define el espacio interior entre el contenido de un elemento y su borde?",
+            "explanation": "padding es el espacio interior; margin es el espacio exterior al borde.",
+            "options": [
+                {
+                    "content": "padding",
+                    "is_correct": true
+                },
+                {
+                    "content": "el padding",
+                    "is_correct": true
+                },
+                {
+                    "content": "relleno",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "short_answer",
+            "content": "¿Qué atributo de la etiqueta <form> indica el método HTTP de envío, como GET o POST?",
+            "explanation": "El atributo method del formulario define si los datos se envían con GET o con POST.",
+            "options": [
+                {
+                    "content": "method",
+                    "is_correct": true
+                },
+                {
+                    "content": "el atributo method",
+                    "is_correct": true
+                },
+                {
+                    "content": "atributo method",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Selecciona las etiquetas semánticas de HTML5 (hay varias correctas):",
+            "explanation": "<header>, <aside> y <nav> tienen significado propio; <div> y <span> son contenedores genéricos.",
+            "options": [
+                {
+                    "content": "<header>",
+                    "is_correct": true
+                },
+                {
+                    "content": "<div>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<aside>",
+                    "is_correct": true
+                },
+                {
+                    "content": "<span>",
+                    "is_correct": false
+                },
+                {
+                    "content": "<nav>",
+                    "is_correct": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_select",
+            "content": "Indica qué valores son tipos válidos del atributo type de un <input> en HTML5 (hay varias correctas):",
+            "explanation": "email, number y date son tipos estándar de HTML5; correo y string no existen como tipos de input.",
+            "options": [
+                {
+                    "content": "email",
+                    "is_correct": true
+                },
+                {
+                    "content": "number",
+                    "is_correct": true
+                },
+                {
+                    "content": "correo",
+                    "is_correct": false
+                },
+                {
+                    "content": "date",
+                    "is_correct": true
+                },
+                {
+                    "content": "string",
+                    "is_correct": false
+                }
+            ]
+        }
+    ]
+}
